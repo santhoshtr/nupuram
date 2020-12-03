@@ -1,0 +1,70 @@
+
+# GPOS
+lookup viramaPos {
+  lookupflag 0;
+    pos xx [quotesingle quotedbl quoteleft quoteright quotedblleft quotedblright] 200;
+    pos xx parenleft 200;
+    pos xx parenright 200;
+    pos xx exclam 200;
+    pos [n1cil n1rh] i1 100;
+    pos [n1cil n1rh] [xx i2] 150;
+} viramaPos;
+
+@lc_right_slant = [r v f w t];
+@lc_left_slant = [v w];
+@lc_left_round = [e c a d o q g];
+@lc_right_round = [a e b c o p g];
+
+@uc_left_slant = [V Y W T];
+@uc_right_slant = [V Y W T];
+@uc_left_round = [O Q];
+@uc_right_round = [O Q D P];
+
+lookup latinPos {
+  lookupflag 0;
+    pos @lc_right_slant @lc_left_round -50;
+    pos @lc_right_round @lc_left_slant -50;
+
+    pos @uc_right_slant @lc_left_round  -160;
+    pos @uc_right_slant @uc_left_slant  -160;
+
+    pos A @uc_left_slant -160;
+    pos A @lc_left_slant -80;
+    pos @uc_right_slant A -160;
+
+    pos @uc_right_slant @uc_left_round -160;
+    pos @uc_right_round @uc_left_slant -160;
+    pos @uc_left_slant @uc_left_slant 50;
+
+    pos [P T V W] J -160;
+    pos L @uc_left_slant -160;
+    pos L @lc_left_slant -160;
+
+    pos T @uc_left_round -80;
+    pos T @lc_left_round -200;
+    pos T @lc_left_slant -160;
+
+    pos [i l I ] [I i l] 80;
+} latinPos;
+
+feature kern {
+  script DFLT;
+    language dflt;
+      lookup viramaPos;
+      lookup latinPos;
+
+  script latn;
+    language dflt;
+      lookup latinPos;
+
+  script mlm2;
+    language dflt;
+      lookup viramaPos;
+
+ script mlym;
+    language dflt;
+      lookup viramaPos;
+} kern;
+
+#Mark attachment classes (defined in GDEF, used in lookupflags)
+@nomark = [  ];
