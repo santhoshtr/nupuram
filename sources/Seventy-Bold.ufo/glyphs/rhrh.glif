@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="rhrh" format="2">
-	<advance width="1292.1028000833"/>
-	<outline>
-		<component base="_rh" xOffset="277" yOffset="-6"/>
-		<component base="rh"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
-		</dict>
-	</lib>
+  <advance width="459.6841228123798"/>
+  <outline>
+    <component base="_rh" xOffset="65.4136416047439" yOffset="7.951613974015999"/>
+    <component base="rh" xOffset="1.4277608345550625"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseligature</string>
+    </dict>
+  </lib>
 </glyph>
