@@ -23,53 +23,6 @@ lookup blwf_la_sign {
     sub xx l3  by l4;
 } blwf_la_sign;
 
-lookup half_forms_mlym {
-    lookupflag 0;
-    sub k1 xx  by k1xx;
-    sub k2 xx  by k2xx;
-    sub k3 xx  by k3xx;
-    sub k4 xx  by k4xx;
-    sub ng xx  by ngxx;
-    sub ch1 xx  by ch1xx;
-    sub ch2 xx  by ch2xx;
-    sub ch3 xx  by ch3xx;
-    sub ch4 xx  by ch4xx;
-    sub nj xx  by njxx;
-    sub t1 xx  by t1xx;
-    sub t2 xx  by t2xx;
-    sub t3 xx  by t3xx;
-    sub t4 xx  by t4xx;
-    sub nh xx  by nhxx;
-    sub th1 xx  by th1xx;
-    sub th2 xx  by th2xx;
-    sub th3 xx  by th3xx;
-    sub th4 xx  by th4xx;
-    sub n1 xx  by n1xx;
-    sub p1 xx  by p1xx;
-    sub p2 xx  by p2xx;
-    sub p3 xx  by p3xx;
-    sub p4 xx  by p4xx;
-    sub m1 xx  by m1xx;
-    sub y1 xx  by y1xx;
-    sub r3 xx  by r3xx;
-    sub rh xx  by rhxx;
-    sub l3 xx  by l3xx;
-    sub lh xx  by lhxx;
-    sub zh xx  by zhxx;
-    sub v1 xx  by v1xx;
-    sub z1 xx  by z1xx;
-    sub sh xx  by shxx;
-    sub s1 xx  by s1xx;
-    sub h1 xx  by h1xx;
-} half_forms_mlym;
-
-lookup pstf_cons_signs_mlym {
-    lookupflag 0;
-    sub r3 xx  by r4;
-    sub y1 xx  by y2;
-    sub v1 xx  by v2;
-} pstf_cons_signs_mlym;
-
 lookup pstf_cons_signs {
     lookupflag 0;
     sub xx y1  by y2;

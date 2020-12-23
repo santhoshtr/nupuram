@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="lhlhu1" format="2">
-	<advance width="2630.2009735483"/>
-	<outline>
-		<component base="lhlh"/>
-		<component base="u_sign_drop" xOffset="1900" yOffset="-370"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
-		</dict>
-	</lib>
+  <advance width="1074.4908265307474"/>
+  <outline>
+    <component base="lhlh"/>
+    <component base="u_sign_drop" xOffset="743.5618974884774" yOffset="2.214396318770582"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseligature</string>
+    </dict>
+  </lib>
 </glyph>

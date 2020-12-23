@@ -3,9 +3,8 @@
 # -------------------
 
 feature pref {
-
  script mlm2;
-     language dflt ;
+     language dflt;
       lookup pref_reph;
 } pref;
 
@@ -14,13 +13,8 @@ feature pref {
 feature akhn {
 
  script mlm2;
-     language dflt ;
+     language dflt;
       lookup  chillu;
-      lookup akhn_conjuncts;
-      lookup akhn_conditional_stacking;
- script mlym;
-     language dflt ;
-      lookup chillu;
       lookup akhn_conjuncts;
       lookup akhn_conditional_stacking;
 } akhn;
@@ -28,55 +22,30 @@ feature akhn {
 feature blwf {
 
  script mlm2;
-     language dflt ;
+     language dflt;
       lookup blwf_la_sign;
 
- script mlym;
-     language dflt ;
-      lookup blwf_la_sign_mlym;
 } blwf;
-
-feature half {
-
- script mlym;
-     language dflt ;
-      lookup  chillu;
-      lookup half_forms_mlym;
-} half;
 
 feature pstf {
 
  script mlm2;
-     language dflt ;
+     language dflt;
       lookup pstf_cons_signs;
-      lookup pstf_cons_signs_fix_order;
-
- script mlym;
-     language dflt ;
-      lookup pstf_cons_signs_mlym;
       lookup pstf_cons_signs_fix_order;
 } pstf;
 
 feature pres {
 
  script mlm2;
-     language dflt ;
+     language dflt;
       lookup pres_reph;
-
- script mlym;
-     language dflt ;
-      lookup pres_reph_mlym;
 } pres;
 
 feature blws {
 
  script mlm2;
-     language dflt ;
-      lookup blws_la_signs;
-      lookup blws_la_sign_excludes;
-
- script mlym;
-     language dflt ;
+     language dflt;
       lookup blws_la_signs;
       lookup blws_la_sign_excludes;
 } blws;
@@ -84,18 +53,7 @@ feature blws {
 feature psts {
 
  script mlm2;
-     language dflt ;
-      lookup psts_vowel_signs_common;
-      lookup psts_vowel_signs;
- script mlym;
-     language dflt ;
+     language dflt;
       lookup psts_vowel_signs_common;
       lookup psts_vowel_signs;
 } psts;
-
-feature haln {
-
- script mlym;
-     language dflt ;
-      lookup chillu;
-} haln;
