@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="y2u1" format="2">
-	<advance width="539.1308040368"/>
-	<outline>
-		<component base="u_sign_drop" xOffset="35" yOffset="-470"/>
-		<component base="y2" yOffset="1"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseglyph</string>
-		</dict>
-	</lib>
+  <advance width="249.12611135851276"/>
+  <outline>
+    <component base="u_sign_drop" xOffset="-78.80281768375733" yOffset="-61.606460830574406"/>
+    <component base="y2" yOffset="1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseglyph</string>
+    </dict>
+  </lib>
 </glyph>
