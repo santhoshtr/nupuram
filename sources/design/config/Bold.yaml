@@ -4,6 +4,76 @@ font:
     ufo: sources/Seventy-Bold.ufo
     version: 2 # UFO version
 svgs:
+    exclamationmark:
+        left: 10
+        right: 10
+        base: -200
+        width: 164
+        unicode: '0021'
+        glyph_name: exclam
+    questionmark:
+        left: 10
+        right: 10
+        base: -200
+        width: 306
+        unicode: 003F
+        glyph_name: question
+    hash:
+        left: 10
+        right: 10
+        base: -200
+        width: 500
+        unicode: '0023'
+        glyph_name: numbersign
+    multiplicationsign:
+        left: 10
+        right: 10
+        base: -200
+        width: 660
+        unicode: 00D7
+        glyph_name: multiply
+    dollar:
+        left: 10
+        right: 10
+        base: -200
+        width: 520
+        unicode: '0024'
+        glyph_name: dollar
+    equalsign:
+        left: 10
+        right: 10
+        base: -200
+        width: 500
+        unicode: 003D
+        glyph_name: equal
+    plus:
+        left: 10
+        right: 10
+        base: -200
+        width: 500
+        unicode: 002B
+        glyph_name: plus
+    slash:
+        left: 10
+        right: 10
+        base: -200
+        width: 300
+        unicode: 002F
+        glyph_name: slash
+    squarebracketleft:
+        left: 10
+        right: 10
+        base: -200
+        width: 300
+        unicode: 005B
+        glyph_name: bracketleft
+    s:
+        left: 10
+        right: 10
+        base: -200
+        width: 520
+        unicode: '0073'
+        glyph_name: s
     ം:
         left: 4
         right: 4
@@ -186,9 +256,10 @@ svgs:
         base: -486
         glyph_name: k1th1r3
     ക്ര:
-        left: 80
-        right: 80
-        base: -486
+        left: 10
+        right: 10
+        base: -200
+        width: 772
         glyph_name: k1r3
     ക്ഷ:
         left: 80
@@ -657,9 +728,10 @@ svgs:
         width: 600
         glyph_name: th1u1
     തൂ:
-        left: 80
-        right: 80
-        base: -486
+        left: 10
+        right: 10
+        base: -200
+        width: 600
         glyph_name: th1u2
     തൃ:
         left: 80
@@ -1282,7 +1354,7 @@ svgs:
         left: 20
         right: 20
         base: -200
-        width: 755
+        width: 810
         unicode: 0D7E
         glyph_name: lhcil
     ള:
@@ -1353,9 +1425,10 @@ svgs:
         base: -295
         glyph_name: r4
     ്ല:
-        left: -1377
-        right: 157
-        base: -566
+        left: 0
+        right: 0
+        base: -200
+        width: 300
         glyph_name: l4
     ്വ:
         left: -280
@@ -1452,9 +1525,10 @@ svgs:
         unicode: 0D43
         glyph_name: r1
     ൄ_short:
-        left: -120
+        left: 0
         right: 0
-        base: -486
+        base: -200
+        width: 586
         glyph_name: vocalic_rr_sign_drop
     ൄ:
         left: 30
@@ -1850,3 +1924,10 @@ svgs:
       right: 0
       base: -904
       glyph_name: _rhrhr3
+    ഺ:
+      left: 10
+      right: 10
+      base: -200
+      width: 580
+      unicode: 0D3A
+      glyph_name: rh_half
