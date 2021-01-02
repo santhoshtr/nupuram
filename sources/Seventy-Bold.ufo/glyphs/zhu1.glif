@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="zhu1" format="2">
-	<advance width="647.9756848704"/>
-	<outline>
-		<component base="zh" yOffset="-3"/>
-		<component base="u_sign_drop" xOffset="315.013299665" yOffset="93.3997597251"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
-		</dict>
-	</lib>
+  <advance width="647.9756848704"/>
+  <outline>
+    <component base="zh" yOffset="-3"/>
+    <component base="u_sign_drop" xOffset="353.3911132751897" yOffset="28.092164870312168"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseligature</string>
+    </dict>
+  </lib>
 </glyph>
