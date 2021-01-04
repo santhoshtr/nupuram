@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="s1th1r3" format="2">
-	<advance width="2299"/>
-	<outline>
-		<component base="s1"/>
-		<component base="_th1r3" xOffset="1063"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
-		</dict>
-	</lib>
+  <advance width="898.8222277738778"/>
+  <outline>
+    <component base="_th1r3" xOffset="253.44778048113312" yOffset="10.032051470157505"/>
+    <component base="s1_"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseligature</string>
+    </dict>
+  </lib>
 </glyph>

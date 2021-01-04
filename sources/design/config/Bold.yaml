@@ -487,9 +487,10 @@ svgs:
         width: 772
         glyph_name: k1r3
     ക്ഷ:
-        left: 80
+        left: 10
         right: 10
         base: -200
+        width: 1100
         glyph_name: k1sh
     ഖ:
         left: 10
@@ -895,6 +896,13 @@ svgs:
         width: 1092
         unicode: 0D23
         glyph_name: nh
+    ണ്ണ:
+        left: 8
+        right: 8
+        base: -200
+        width: 1100
+        unicode: 0D23
+        glyph_name: nhnh
     ണു:
         left: 8
         right: 8
@@ -1483,9 +1491,10 @@ svgs:
         unicode: 0D35
         glyph_name: v1
     വ്ര:
-        left: 80
+        left: 10
         right: 10
-        base: -486
+        base: -200
+        width: 774
         glyph_name: v1r3
     ശ:
         left: 10
@@ -1517,15 +1526,16 @@ svgs:
         base: -200
         glyph_name: z1ch1
     ശ്ര:
-        left: 80
-        right: 80
-        base: -486
+        left: 10
+        right: 10
+        base: -200
+        width: 1000
         glyph_name: z1r3
     ഷ:
         left: 10
         right: 10
         base: -200
-        width: 945
+        width: 880
         unicode: 0D37
         glyph_name: sh
     ഷ്ര:
@@ -1557,9 +1567,10 @@ svgs:
         base: -200
         glyph_name: s1th2
     സ്ര:
-        left: 80
-        right: 80
-        base: -486
+        left: 10
+        right: 10
+        base: -200
+        width: 1000
         glyph_name: s1r3
     ഹ:
         left: 20
@@ -1607,9 +1618,10 @@ svgs:
         base: -12
         glyph_name: h1m1
     ഹ്ര:
-        left: 80
-        right: 80
-        base: -486
+        left: 10
+        right: 10
+        base: -200
+        width: 1040
         glyph_name: h1r3
     ൾ:
         left: 20
@@ -2021,7 +2033,8 @@ svgs:
     ത്ര_small:
       left: 0
       right: 0
-      base: -904
+      base: -700
+      width: 865
       glyph_name: _th1r3
     ദ_small:
       left: 0
