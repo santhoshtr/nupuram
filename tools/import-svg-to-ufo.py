@@ -125,11 +125,16 @@ def main(args=None):
         unicodeVal = unicode_hex_list(svg_config['unicode'])
     else:
         unicodeVal = None
-    if 'width' in svg_config:
+
+    prefix_map = {"sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd", "inkscape": "http://www.inkscape.org/namespaces/inkscape"}
+    widthGuide = svgObj.find(".//sodipodi:guide/[@inkscape:label='width']", prefix_map)
+    width = svgWidth
+    if widthGuide != None:
+        width = int(float(widthGuide.attrib['position'].split(',')[0]))
+    elif 'width' in svg_config:
         width = int(svg_config['width'])
-    else:
-        width = svgWidth
-    glyphWidth = width + int(svg_config['left']) + int(svg_config['right'])
+
+    glyphWidth = width  # + int(svg_config['left']) + int(svg_config['right'])
     if glyphWidth < 0 :
         raise UFOLibError("Glyph %s has negative width." % name)
 
@@ -150,10 +155,17 @@ def main(args=None):
 
     # Calculate the transformation to do
     transform = transform_list(config['font']['transform'])
+
+    baseGuide = svgObj.find(".//sodipodi:guide/[@inkscape:label='base']", prefix_map)
     base = 0
-    if 'base' in svg_config:
+    if baseGuide != None:
+        base = int(float(baseGuide.attrib['position'].split(',')[1])) * -1
+    elif 'base' in svg_config:
         base=int(svg_config['base'])
-    transform[4] += int(svg_config['left'])  # X offset = left bearing
+    if 'left' in svg_config:
+        transform[4] += int(svg_config['left'])  # X offset = left bearing
+    else:
+        transform[4] += 0
     transform[5] += height + base # Y offset
 
     glif = svg2glif(svg_file,
