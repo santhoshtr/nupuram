@@ -61,7 +61,7 @@ lookup blws_la_sign_excludes {
            t1 r3 va_sign
            k1l3 k3l3 th1l3 p1l3 p2l3 m1l3 l3l3 v1v1 v1l3 z1l3 s1l3 h1l3
            k1t1 k1n1 k1m1 k1s1 k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1th1 p1n1 p1p2
-           y1k1 l3k1 l3p1 z1n1 z1m1 z1z1 sht1 sht2 s1th1 s1s1 s1p1 s1m1 s1n1 rhrh zhk1 zhch1
+           y1k1 l3k1 l3p1 z1n1 z1m1 z1z1 sht1 sht2 s1th1 s1s1 s1p1 s1m1 s1n1 rhrh
         ]
         l4'
         lookup restore_virama;
@@ -189,11 +189,6 @@ lookup akhn_conditional_stacking {
     #ignore sub s1' xx' rh' xx' rh' xx r3;
     #sub s1' xx' rh' xx' rh' by s1rhrh;
 
-    ignore sub zh' xx' [k1 ch1]' [r1 r2 l1 l2];
-    ignore sub zh' xx' k1' xx [k1 r3 l3];
-    ignore sub zh' xx' ch1' xx [ch1 r3 l3];
-    sub zh' xx' k1' by zhk1;
-    sub zh' xx' ch1' by zhch1;
 
 } akhn_conditional_stacking;
 
@@ -605,7 +600,6 @@ lookup psts_vowel_signs_common {
     sub m1l3 u2 by m1l3u2;
     sub y1 u1 by y1u1;
     sub y1 u2 by y1u2;
-    sub y1 r1 by y1r1;
     sub y1 y2 by y1y1;
     sub y1y1 u1 by y1y1u1;
     sub y1 y2 u1 by y1y1u1;
@@ -703,10 +697,6 @@ lookup psts_vowel_signs_common {
     sub lhlh u2 by lhlhu2;
     sub zh u1 by zhu1;
     sub zh u2 by zhu2;
-    sub zhch1 u1 by zhch1u1;
-    sub zhch1 u2 by zhch1u2;
-    sub zhk1 u1 by zhk1u1;
-    sub zhk1 u2 by zhk1u2;
     sub rh u1 by rhu1;
     sub rh u2 by rhu2;
     sub rhrh u1 by rhrhu1;
