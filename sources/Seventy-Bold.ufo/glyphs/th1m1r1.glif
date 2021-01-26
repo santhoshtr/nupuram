@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="th1m1r1" format="2">
-	<advance width="2529"/>
-	<outline>
-		<component base="vocalic_r_sign_drop" xOffset="1382.6259366511" yOffset="37.8654335617"/>
-		<component base="th1m1"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
-		</dict>
-	</lib>
+  <advance width="1128.3396999999998"/>
+  <outline>
+    <component base="vocalic_r_sign_drop" xOffset="513.8000019401127" yOffset="-7.041846217112621"/>
+    <component base="th1m1"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>org.fontforge.glyphclass</key>
+      <string>baseligature</string>
+    </dict>
+  </lib>
 </glyph>

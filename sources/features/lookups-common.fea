@@ -60,7 +60,7 @@ lookup blws_la_sign_excludes {
         [
            t1 r3 va_sign
            k1l3 k3l3 th1l3 p1l3 p2l3 m1l3 l3l3 v1v1 v1l3 z1l3 s1l3 h1l3
-           k1t1 k1n1 k1m1 k1s1 k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1th1 p1n1 p1p2
+           k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1th1 p1n1 p1p2
            y1k1 l3k1 l3p1 z1n1 z1m1 z1z1 sht1 sht2 s1th1 s1s1 s1p1 s1m1 s1n1 rhrh
         ]
         l4'
@@ -69,19 +69,6 @@ lookup blws_la_sign_excludes {
 
 # GSUB
 lookup akhn_conditional_stacking {
-
-    ignore sub k1' xx' t1' [r1 r2 l1 l2];
-    ignore sub k1' xx' t1' xx t1;
-    sub k1' xx' t1' by k1t1;
-
-    ignore sub k1' xx' n1' [r1 r2 l1 l2];
-    ignore sub k1' xx' n1' xx [n1 r3];
-    sub k1' xx' n1' by k1n1;
-
-    ignore sub k1' xx' m1' [r1 r2 l1 l2];
-    ignore sub k1' xx' m1' xx [r3 l3];
-    sub k1' xx' m1' by k1m1;
-
     ignore sub k1' xx' rh' xx' rh' [r1 r2 l1 l2];
     sub k1' xx' rh' xx' rh' by k1rhrh;
 
@@ -197,7 +184,6 @@ lookup akhn_conjuncts {
     sub k1 l1 by k1l1;
     sub k1 xx k1 by k1k1;
     sub k1 xx th1 by k1th1;
-    sub k1 xx s1 by k1s1;
     sub k1 xx sh by k1sh;
     sub k3 xx k3 by k3k3;
     sub k3 xx th3 by k3th3;
@@ -254,7 +240,6 @@ lookup pres_reph {
     sub r4 k1 by k1r3;
     sub r4 k1k1 by k1k1r3;
     sub r4 k1th1 by k1th1r3;
-    sub r4 k1s1 by k1s1r3;
     sub r4 k2 by k2r3;
     sub r4 k3 by k3r3;
     sub r4 k3k3 by k3k3r3;
@@ -327,23 +312,11 @@ lookup psts_vowel_signs_common {
     sub k1k1 r1 by k1k1r1;
     sub k1k1r3 u1 by k1k1r3u1;
     sub k1k1r3 u2 by k1k1r3u2;
-    sub k1t1 u1 by k1t1u1;
-    sub k1t1 u2 by k1t1u2;
     sub k1th1 u1 by k1th1u1;
     sub k1th1 u2 by k1th1u2;
     sub k1th1 r1 by k1th1r1;
     sub k1th1r3 u1 by k1th1r3u1;
     sub k1th1r3 u2 by k1th1r3u2;
-    sub k1n1 u1 by k1n1u1;
-    sub k1n1 u2 by k1n1u2;
-    sub k1m1 u1 by k1m1u1;
-    sub k1m1 u2 by k1m1u2;
-    sub k1s1 u1 by k1s1u1;
-    sub k1s1 u2 by k1s1u2;
-    sub k1s1 r1 by k1s1r1;
-    sub k1s1r3 u1 by k1s1r3u1;
-    sub k1s1r3 u2 by k1s1r3u2;
-    sub k1n1 u2 by k1n1u2;
     sub k1r3 u1 by k1r3u1;
     sub k1r3 u2 by k1r3u2;
     sub k1l3 u1 by k1l3u1;
