@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="shu2" format="2">
-  <advance width="888.949888479996"/>
-  <outline>
-    <component base="sh"/>
-    <component base="uu_sign_drop" xOffset="462.349814004369" yOffset="82.05655923241733"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseligature</string>
-    </dict>
-  </lib>
+	<advance width="888.94988848"/>
+	<outline>
+		<component base="sh"/>
+		<component base="uu_sign_drop" xOffset="462.3498140044" yOffset="82.0565592324"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseligature</string>
+		</dict>
+	</lib>
 </glyph>

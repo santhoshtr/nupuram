@@ -364,16 +364,6 @@
       <string>au2</string>
       <string>datemark</string>
       <string>rh_half</string>
-      <string>ml_0</string>
-      <string>ml_1</string>
-      <string>ml_2</string>
-      <string>ml_3</string>
-      <string>ml_4</string>
-      <string>ml_5</string>
-      <string>ml_6</string>
-      <string>ml_7</string>
-      <string>ml_8</string>
-      <string>ml_9</string>
       <string>mlpara</string>
       <string>arakaani</string>
       <string>aramaa</string>
@@ -503,12 +493,6 @@
       <string>ch1ch1u1</string>
       <string>ch1ch1u2</string>
       <string>ch1ch2</string>
-      <string>ch1ch2u1</string>
-      <string>ch1ch2u2</string>
-      <string>ch1ch2r1</string>
-      <string>ch1ch2r3</string>
-      <string>ch1ch2r3u1</string>
-      <string>ch1ch2r3u2</string>
       <string>ch2u1</string>
       <string>ch2u2</string>
       <string>ch2r1</string>
@@ -588,10 +572,6 @@
       <string>nht3</string>
       <string>nht3u1</string>
       <string>nht3u2</string>
-      <string>nht3r1</string>
-      <string>nht3r3</string>
-      <string>nht3r3u1</string>
-      <string>nht3r3u2</string>
       <string>nht4</string>
       <string>nht4r1</string>
       <string>nhnh</string>
@@ -780,8 +760,6 @@
       <string>m1l3u2</string>
       <string>y1u1</string>
       <string>y1u2</string>
-      <string>y1k1</string>
-      <string>y1th1</string>
       <string>y1y1</string>
       <string>y1y1u1</string>
       <string>y1y1u2</string>
@@ -790,16 +768,6 @@
       <string>r3r1</string>
       <string>l3u1</string>
       <string>l3u2</string>
-      <string>l3k1</string>
-      <string>l3k1u1</string>
-      <string>l3k1u2</string>
-      <string>l3k1r1</string>
-      <string>l3k1r3</string>
-      <string>l3k1r3u1</string>
-      <string>l3k1r3u2</string>
-      <string>l3p1</string>
-      <string>l3p1u1</string>
-      <string>l3p1u2</string>
       <string>l3l3</string>
       <string>l3l3u1</string>
       <string>l3l3u2</string>
@@ -821,10 +789,6 @@
       <string>z1ch1</string>
       <string>z1ch1u1</string>
       <string>z1ch1u2</string>
-      <string>z1ch2</string>
-      <string>z1ch2u1</string>
-      <string>z1ch2u2</string>
-      <string>z1ch2r1</string>
       <string>z1n1</string>
       <string>z1n1u1</string>
       <string>z1n1u2</string>
@@ -919,40 +883,26 @@
       <string>u_sign_drop_small</string>
       <string>uu_sign_drop_small</string>
       <string>va_sign</string>
-      <string>th2_half</string>
       <string>vocalic_r_sign_drop</string>
-      <string>vocalic_rr_sign_drop</string>
       <string>_k1</string>
-      <string>_k1u1</string>
       <string>_k1u2</string>
       <string>_k1r1</string>
       <string>_k1r3</string>
       <string>_k3</string>
-      <string>_k3u1</string>
       <string>_k3u2</string>
       <string>_k3r1</string>
       <string>_k3r3</string>
       <string>_k1k1</string>
       <string>_k1k1u1</string>
       <string>_k1k1u2</string>
-      <string>_k1k1r1</string>
       <string>_k1k1r3</string>
       <string>_k2</string>
       <string>_ch1</string>
       <string>_ch2</string>
-      <string>_ch2u1</string>
-      <string>_ch2u2</string>
-      <string>_ch2r1</string>
-      <string>_ch2r3</string>
       <string>_ch3</string>
-      <string>_ch3u1</string>
       <string>_ch3u2</string>
       <string>_ch3r1</string>
       <string>_t1</string>
-      <string>_t1r3</string>
-      <string>_t2</string>
-      <string>_t3</string>
-      <string>_t4</string>
       <string>_th1</string>
       <string>_th1u1</string>
       <string>_th1u2</string>
@@ -985,21 +935,12 @@
       <string>_z1u2</string>
       <string>_z1r1</string>
       <string>_z1r3</string>
-      <string>_s1</string>
       <string>_s1r1</string>
-      <string>_s1r2</string>
-      <string>_s1r3</string>
       <string>_h1</string>
       <string>_rh</string>
-      <string>_rhrhr3</string>
       <string>s1_</string>
       <string>l3_</string>
-      <string>njch2</string>
-      <string>njch2u1</string>
-      <string>njch2u2</string>
-      <string>njch2r1</string>
       <string>_nh</string>
-      <string>_nhu1</string>
       <string>_th1th1</string>
       <string>mlzero</string>
       <string>mltwo</string>
@@ -1008,7 +949,7 @@
       <string>mlsix</string>
       <string>mleight</string>
       <string>mlnine</string>
-      <string>th1s1r2</string>
+      <string>l3p1</string>
     </array>
   </dict>
 </plist>

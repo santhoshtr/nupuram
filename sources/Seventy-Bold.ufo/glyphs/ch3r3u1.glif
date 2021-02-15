@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ch3r3u1" format="2">
-  <advance width="1005.9817621977473"/>
-  <outline>
-    <component base="ch3r3" xOffset="-3.3492468506128663"/>
-    <component base="u_sign_drop" xOffset="714.7824270153662" yOffset="-160.06556404864492"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseligature</string>
-    </dict>
-  </lib>
+	<advance width="1005.9817621977"/>
+	<outline>
+		<component base="ch3r3" xOffset="-3.3492468506"/>
+		<component base="u_sign_drop" xOffset="714.7824270154" yOffset="-160.0655640486"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseligature</string>
+		</dict>
+	</lib>
 </glyph>

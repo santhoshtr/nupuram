@@ -40,6 +40,9 @@ svgs:
     squarebracketleft:
         unicode: 005B
         glyph_name: bracketleft
+    atsign:
+        unicode: '0040'
+        glyph_name: at
     A:
         unicode: '0041'
         glyph_name: A
@@ -127,9 +130,39 @@ svgs:
     o:
         unicode: 006F
         glyph_name: o
+    P:
+        unicode: 0050
+        glyph_name: P
+    p:
+        unicode: 0070
+        glyph_name: p
+    R:
+        unicode: '0052'
+        glyph_name: R
     s:
         unicode: '0073'
         glyph_name: s
+    S:
+        unicode: '0053'
+        glyph_name: S
+    t:
+        unicode: '0074'
+        glyph_name: t
+    u:
+        unicode: '0075'
+        glyph_name: u
+    v:
+        unicode: '0076'
+        glyph_name: v
+    w:
+        unicode: '0077'
+        glyph_name: w
+    x:
+        unicode: '0078'
+        glyph_name: x
+    z:
+        unicode: '0079'
+        glyph_name: z
     ം:
         unicode: 0D02
         glyph_name: anuswara
@@ -930,3 +963,33 @@ svgs:
     ൰:
       unicode: 0D70
       glyph_name: mlten
+    '0':
+        unicode: '0030'
+        glyph_name: zero
+    '1':
+        unicode: '0031'
+        glyph_name: one
+    '2':
+        unicode: '0032'
+        glyph_name: two
+    '3':
+        unicode: '0033'
+        glyph_name: three
+    '4':
+        unicode: '0034'
+        glyph_name: four
+    '5':
+        unicode: '0035'
+        glyph_name: five
+    '6':
+        unicode: '0036'
+        glyph_name: six
+    '7':
+        unicode: '0037'
+        glyph_name: seven
+    '8':
+        unicode: '0038'
+        glyph_name: eight
+    '9':
+        unicode: '0039'
+        glyph_name: nine

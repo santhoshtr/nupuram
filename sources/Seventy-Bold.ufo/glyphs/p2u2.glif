@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="p2u2" format="2">
-  <advance width="921.2441591083145"/>
-  <outline>
-    <component base="p2"/>
-    <component base="uu_sign_drop" xOffset="532.8439742038911" yOffset="85.77645798500929"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseligature</string>
-    </dict>
-  </lib>
+	<advance width="921.2441591083"/>
+	<outline>
+		<component base="p2"/>
+		<component base="uu_sign_drop" xOffset="532.8439742039" yOffset="85.776457985"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseligature</string>
+		</dict>
+	</lib>
 </glyph>

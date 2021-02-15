@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="n1rhu2" format="2">
-  <advance width="1017.8521874337991"/>
-  <outline>
-    <component base="n1rh"/>
-    <component base="uu_sign_drop_small" xOffset="579.0172433255784" yOffset="-632.6805516318232"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseligature</string>
-    </dict>
-  </lib>
+	<advance width="1017.8521874338"/>
+	<outline>
+		<component base="n1rh"/>
+		<component base="uu_sign_drop_small" xOffset="579.0172433256" yOffset="-632.6805516318"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseligature</string>
+		</dict>
+	</lib>
 </glyph>
