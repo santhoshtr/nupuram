@@ -15,7 +15,9 @@ OTF=$(FONTS:%=$(BLDDIR)/$(NAME)-%.otf)
 TTF=$(FONTS:%=$(BLDDIR)/$(NAME)-%.ttf)
 WOFF2=$(FONTS:%=$(BLDDIR)/$(NAME)-%.woff2)
 PDFS=$(FONTS:%=$(BLDDIR)/$(NAME)-%-ligatures.pdf)   \
-	$(FONTS:%=$(BLDDIR)/$(NAME)-%-content.pdf)      \
+	$(FONTS:%=$(BLDDIR)/$(NAME)-%-content.pdf)  \
+	$(FONTS:%=$(BLDDIR)/$(NAME)-%-latin.pdf)    \
+	$(FONTS:%=$(BLDDIR)/$(NAME)-%-kerning.pdf)   \
 	$(FONTS:%=$(BLDDIR)/$(NAME)-%-table.pdf)
 
 $(BLDDIR)/%.otf: $(SRCDIR)/%.ufo
@@ -48,6 +50,18 @@ $(BLDDIR)/%-content.pdf: $(BLDDIR)/%.ttf
 	@echo "   TEST    $(@F)"
 	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/content.txt \
+		--output-file $(BLDDIR)/$(@F);
+
+$(BLDDIR)/%-kerning.pdf: $(BLDDIR)/%.ttf
+	@echo "   TEST    $(@F)"
+	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/kerning.txt \
+		--output-file $(BLDDIR)/$(@F);
+
+$(BLDDIR)/%-latin.pdf: $(BLDDIR)/%.ttf
+	@echo "   TEST    $(@F)"
+	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/latin.txt \
 		--output-file $(BLDDIR)/$(@F);
 
 ttf: $(TTF)
