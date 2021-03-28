@@ -9,10 +9,9 @@ lookup abvm_dotreph {
 	pos base [k1k1 k1k1u1 k1k1u2 k1k1r1] <anchor 1300 0> mark @visual_centrepoint;
 	pos base [k1k1r3 k1k1r3u1 k1k1r3u2] <anchor 1660 0> mark @visual_centrepoint;
 	pos base [k1th1 k1th1u1 k1th1u2 k1th1r1 k1th1r3  k1th1r3u1 k1th1r3u2 k1sh k1shu1 k1shu2] <anchor 1500 0> mark @visual_centrepoint;
-	pos base [k3 k3u1 k3u2 k3r1 k3k3 k3k3u1 k3k3u2 k3k3r1 k3k3r3 k3k3r3u1 k3k3r3u2 k3m1 k3m1u1 k3m1u2 k3l3 k3l3u1 k3l3u2 k3th3 k3th3u1 k3th3u2 k3th3r1] <anchor 740 0> mark @visual_centrepoint;
+	pos base [k3 k3u1 k3u2 k3r1 k3k3 k3k3u1 k3k3u2 k3k3r1 k3m1 k3m1u1 k3m1u2 k3l3 k3l3u1 k3l3u2 k3th3 k3th3u1 k3th3u2 k3th3r1] <anchor 740 0> mark @visual_centrepoint;
 	pos base [k3r3 k3r3u1 k3r3u2 ] <anchor 1107 0> mark @visual_centrepoint;
-	pos base [k3k4 k3k4u1 k3k4u2 ] <anchor 2069 0> mark @visual_centrepoint;
-	pos base [k3th3th4 k3th3th4u1 k3th3th4u2 k3th3th4r1] <anchor 1950 0> mark @visual_centrepoint;
+ 	pos base [k3th3th4 k3th3th4u1 k3th3th4u2 k3th3th4r1] <anchor 1950 0> mark @visual_centrepoint;
 	pos base [k3th3th4 k3th3th4r3 k3th3th4r3u1 k3th3th4r3u2] <anchor 1973 0> mark @visual_centrepoint;
 	pos base [k3n1 k3n1u1 k3n1u2] <anchor 1390 0> mark @visual_centrepoint;
 	pos base [k2 k2u1 k2u2 k2r1 v1 v1u1 v1u2 v1v1 v1v1u1 v1v1u2] <anchor 650 0> mark @visual_centrepoint;

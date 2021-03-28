@@ -72,11 +72,6 @@ lookup akhn_conditional_stacking {
     ignore sub k1' xx' rh' xx' rh' [r1 r2 l1 l2];
     sub k1' xx' rh' xx' rh' by k1rhrh;
 
-    ignore sub k3' xx' k4' [r1 r2 l1 l2];
-    ignore sub k3' xx' k4' xx r3;
-    sub k3' xx' k4' by k3k4;
-
-
     ignore sub ch1' xx' ch2' [r2 l1 l2];
     sub ch1' xx' ch2' by ch1ch2;
 
@@ -220,7 +215,6 @@ lookup pres_reph {
     sub r4 k1th1 by k1th1r3;
     sub r4 k2 by k2r3;
     sub r4 k3 by k3r3;
-    sub r4 k3k3 by k3k3r3;
     sub r4 k3th3th4 by k3th3th4r3;
     sub r4 k4 by k4r3;
     sub r4 ngk1 by ngk1r3;
@@ -308,11 +302,7 @@ lookup psts_vowel_signs_common {
     sub k3 r1 by k3r1;
     sub k3k3 u1 by k3k3u1;
     sub k3k3 u2 by k3k3u2;
-    sub k3k3r3 u1 by k3k3r3u1;
-    sub k3k3r3 u2 by k3k3r3u2;
     sub k3k3 r1 by k3k3r1;
-    sub k3k4 u1 by k3k4u1;
-    sub k3k4 u2 by k3k4u2;
     sub k3th3 u1 by k3th3u1;
     sub k3th3 u2 by k3th3u2;
     sub k3th3 r1 by k3th3r1;
