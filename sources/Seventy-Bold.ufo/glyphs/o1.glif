@@ -1,15 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="o1" format="2">
-  <advance width="791.9448065839"/>
-  <unicode hex="0D4A"/>
-  <outline>
-    <component base="e1" xOffset="-1.5708357936117636" yOffset="19.071136115853363"/>
-    <component base="a2" xOffset="573.2268334743" yOffset="-5.6073891945"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseglyph</string>
-    </dict>
-  </lib>
+	<unicode hex="0D4A"/>
+	<advance width="791.9448065839"/>
+	<outline>
+		<component base="e1" xOffset="-1.5708357936" yOffset="19.0711361159"/>
+		<component base="a2" xOffset="573.2268334743" yOffset="-5.6073891945"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseglyph</string>
+		</dict>
+	</lib>
 </glyph>

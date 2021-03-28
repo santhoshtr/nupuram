@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="nht3u2" format="2">
-  <advance width="1633.2399374772026"/>
-  <outline>
-    <component base="nht3"/>
-    <component base="uu_sign_drop" xOffset="1244.8397525727792" yOffset="77.9989978777638"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>org.fontforge.glyphclass</key>
-      <string>baseligature</string>
-    </dict>
-  </lib>
+	<advance width="1633.2399374772"/>
+	<outline>
+		<component base="nht3"/>
+		<component base="uu_sign_drop" xOffset="1244.8397525728" yOffset="77.9989978778"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>org.fontforge.glyphclass</key>
+			<string>baseligature</string>
+		</dict>
+	</lib>
 </glyph>
