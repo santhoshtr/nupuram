@@ -25,6 +25,9 @@ svgs:
     ampersand:
         unicode: '0026'
         glyph_name: ampersand
+    quotesingle:
+        unicode: '0027'
+        glyph_name: quotesingle
     parenthesisleft:
         unicode: '0028'
         glyph_name: parenleft
@@ -49,6 +52,9 @@ svgs:
     a:
         unicode: '0061'
         glyph_name: a
+    acute:
+        unicode: '00B4'
+        glyph_name: acute
     B:
         unicode: '0042'
         glyph_name: B
@@ -163,6 +169,12 @@ svgs:
     z:
         unicode: '0079'
         glyph_name: z
+    braceleft:
+        unicode: '007B'
+        glyph_name: braceleft
+    bar:
+        unicode: 007C
+        glyph_name: bar
     ം:
         unicode: 0D02
         glyph_name: anuswara
@@ -369,6 +381,10 @@ svgs:
         glyph_name: njch3u2
     ഞ്ഞ:
         glyph_name: njnj
+    ഞ്ഞു:
+        glyph_name: njnju1
+    ഞ്ഞൂ:
+        glyph_name: njnju2
     ട:
         unicode: 0D1F
         glyph_name: t1
@@ -514,6 +530,9 @@ svgs:
     ന:
         unicode: 0D28
         glyph_name: n1
+    ഩ:
+        unicode: 0D29
+        glyph_name: n2
     നു:
         glyph_name: n1u1
     നൂ:
@@ -998,3 +1017,6 @@ svgs:
     '9':
         unicode: '0039'
         glyph_name: nine
+    bullet:
+        unicode: '2022'
+        glyph_name: bullet
