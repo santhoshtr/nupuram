@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="x" format="2">
-  <advance height="1000" width="539"/>
-  <unicode hex="0078"/>
-  <outline>
-    <contour>
-      <point x="362.8466" y="442.36992" type="curve" smooth="yes"/>
-      <point x="282.4143" y="303.12853"/>
-      <point x="218.6331" y="154.27859999999998"/>
-      <point x="173.29404" y="0.0" type="curve"/>
-      <point x="0.0" y="0.0" type="line"/>
-      <point x="390.15245" y="700.0" type="line"/>
-      <point x="539.4586" y="700.0" type="line"/>
-      <point x="474.08151" y="618.83401"/>
-      <point x="414.9773" y="532.61664"/>
-    </contour>
-    <contour>
-      <point x="0.0" y="700.0" type="curve"/>
-      <point x="149.30615" y="700.0" type="line"/>
-      <point x="539.4586" y="0.0" type="line"/>
-      <point x="366.16456" y="0.0" type="line"/>
-      <point x="332.33789" y="133.09849999999994"/>
-      <point x="282.40392" y="262.09542999999996"/>
-      <point x="217.79912" y="383.27989" type="curve" smooth="yes"/>
-      <point x="157.39615" y="496.58265"/>
-      <point x="84.182067" y="603.04943"/>
-    </contour>
-  </outline>
+	<unicode hex="0078"/>
+	<advance height="1000" width="539"/>
+	<outline>
+		<contour>
+			<point x="362.8466" y="442.36992" type="curve" smooth="yes"/>
+			<point x="282.4143" y="303.12853"/>
+			<point x="218.6331" y="154.2786"/>
+			<point x="173.29404" y="0" type="curve"/>
+			<point x="0" y="0" type="line"/>
+			<point x="390.15245" y="700" type="line"/>
+			<point x="539.4586" y="700" type="line"/>
+			<point x="474.08151" y="618.83401"/>
+			<point x="414.9773" y="532.61664"/>
+		</contour>
+		<contour>
+			<point x="0" y="700" type="curve"/>
+			<point x="149.30615" y="700" type="line"/>
+			<point x="539.4586" y="0" type="line"/>
+			<point x="366.16456" y="0" type="line"/>
+			<point x="332.33789" y="133.0985"/>
+			<point x="282.40392" y="262.09543"/>
+			<point x="217.79912" y="383.27989" type="curve" smooth="yes"/>
+			<point x="157.39615" y="496.58265"/>
+			<point x="84.182067" y="603.04943"/>
+		</contour>
+	</outline>
 </glyph>
