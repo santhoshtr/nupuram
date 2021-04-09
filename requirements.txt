@@ -1,7 +1,6 @@
-Brotli>=1.0.9
+fonttools[ufo,lxml,woff,unicode]>=4.22.0
 fontmake>=2.4.0
 pyyaml
-ufolint>=1.1.1
-ufonormalizer>=0.4.2
+ufolint>=1.2.0
+ufonormalizer>=0.5.3
 fontbakery>=0.7.33
-fonttools>4.18.0

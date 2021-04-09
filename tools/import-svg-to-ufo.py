@@ -2,19 +2,19 @@
 """
 Convert SVG paths to UFO glyphs and that to a UFO font
 Author: Santhosh Thottingal <santhosh.thottingal@gmail.com>
-Copyright 2018, MIT License
+Copyright 2021, MIT License
 """
 
 from __future__ import print_function, absolute_import
 
-__requires__ = ["FontTools", "ufoLib"]
+__requires__ = ["FontTools"]
 
 from fontTools.misc.py23 import SimpleNamespace
 from fontTools.svgLib import SVGPath
-from ufoLib import UFOReader, UFOWriter, writePlistAtomically, UFOLibError
-from ufoLib.pointPen import SegmentToPointPen
-from ufoLib.glifLib import writeGlyphToString
-from ufoLib.plistlib import load
+from fontTools.ufoLib import UFOReader, UFOWriter, UFOLibError
+from fontTools.pens.pointPen import SegmentToPointPen
+from fontTools.ufoLib.glifLib import writeGlyphToString
+from fontTools.ufoLib.plistlib import load, writePlist
 import argparse
 import os
 import re
@@ -189,7 +189,7 @@ def main(args=None):
     # If this is a new glyph, add it to the UFO/glyphs/contents.plist
     if not existing_glyph:
         contentsPlist[glyph_name] = glyph_file_name
-        writePlistAtomically(contentsPlist, contentsPlistPath)
+        writePlist(contentsPlist, contentsPlistPath)
         print("\033[94m[%s]\033[0m \033[92mAdd\033[0m %s -> %s \033[92m✔️\033[0m" %
               (fontName, glyph_name, glyph_file_name))
         lib_obj = reader.readLib()

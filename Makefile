@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 NAME=Seventy
-FONTS=Bold
+FONTS=Regular
 INSTALLPATH=/usr/share/fonts/opentype/malayalam
 PY=python3
 version=`cat VERSION`
@@ -35,8 +35,8 @@ $(BLDDIR)/%.woff2: $(BLDDIR)/%.ttf
 $(BLDDIR)/%-table.pdf: $(BLDDIR)/%.ttf
 	@echo "   TEST    $(@F)"
 	@fntsample --font-file $< --output-file $(BLDDIR)/$(@F)        \
-		--style="header-font: Noto Sans Bold 12"                   \
-		--style="font-name-font: Noto Serif Bold 12"               \
+		--style="header-font: Noto Sans Regular 12"                   \
+		--style="font-name-font: Noto Serif Regular 12"               \
 		--style="table-numbers-font: Noto Sans 10"                 \
 		--style="cell-numbers-font:Noto Sans Mono 8"
 
