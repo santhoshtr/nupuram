@@ -26,7 +26,7 @@ $(BLDDIR)/%.otf: $(SRCDIR)/%.ufo
 
 $(BLDDIR)/%.ttf: $(SRCDIR)/%.ufo
 	@echo "  BUILD    $(@F)"
-	@fontmake --verbose=WARNING -o ttf --output-dir $(BLDDIR) -u $<
+	@fontmake --validate-ufo --verbose=WARNING -o ttf --output-dir $(BLDDIR) -u $<
 
 $(BLDDIR)/%.woff2: $(BLDDIR)/%.ttf
 	@echo "WEBFONT    $(@F)"
