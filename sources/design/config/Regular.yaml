@@ -70,6 +70,9 @@ svgs:
     d:
         unicode: '0064'
         glyph_name: d
+    D:
+        unicode: '0044'
+        glyph_name: D
     e:
         unicode: '0065'
         glyph_name: e
@@ -137,38 +140,65 @@ svgs:
         unicode: 006F
         glyph_name: o
     P:
-        unicode: 0050
+        unicode: '0050'
         glyph_name: P
     p:
-        unicode: 0070
+        unicode: 'T'
         glyph_name: p
+    Q:
+        unicode: '0051'
+        glyph_name: Q
     R:
         unicode: '0052'
         glyph_name: R
+    r:
+        unicode: '0072'
+        glyph_name: r
     s:
         unicode: '0073'
         glyph_name: s
     S:
         unicode: '0053'
         glyph_name: S
+    T:
+        unicode: '0054'
+        glyph_name: T
     t:
         unicode: '0074'
         glyph_name: t
     u:
         unicode: '0075'
         glyph_name: u
+    U:
+        unicode: '0055'
+        glyph_name: U
+    V:
+        unicode: '0056'
+        glyph_name: V
     v:
         unicode: '0076'
         glyph_name: v
     w:
         unicode: '0077'
         glyph_name: w
+    W:
+        unicode: '0057'
+        glyph_name: W
+    X:
+        unicode: '0058'
+        glyph_name: X
     x:
         unicode: '0078'
         glyph_name: x
+    Y:
+        unicode: '0059'
+        glyph_name: Y
     z:
-        unicode: '0079'
+        unicode: '007A'
         glyph_name: z
+    Z:
+        unicode: '005A'
+        glyph_name: Z
     braceleft:
         unicode: '007B'
         glyph_name: braceleft
