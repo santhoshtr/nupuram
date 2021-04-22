@@ -143,11 +143,14 @@ svgs:
         unicode: '0050'
         glyph_name: P
     p:
-        unicode: 'T'
+        unicode: '0070'
         glyph_name: p
     Q:
         unicode: '0051'
         glyph_name: Q
+    q:
+        unicode: '0071'
+        glyph_name: q
     R:
         unicode: '0052'
         glyph_name: R
@@ -193,6 +196,9 @@ svgs:
     Y:
         unicode: '0059'
         glyph_name: Y
+    y:
+        unicode: '0079'
+        glyph_name: y
     z:
         unicode: '007A'
         glyph_name: z
@@ -1055,3 +1061,6 @@ svgs:
     bullet:
         unicode: '2022'
         glyph_name: bullet
+    ₹:
+        unicode: '20B9'
+        glyph_name: rupee
