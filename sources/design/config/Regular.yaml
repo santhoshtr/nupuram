@@ -205,12 +205,48 @@ svgs:
     Z:
         unicode: '005A'
         glyph_name: Z
+    underscore:
+        unicode: 005F
+        glyph_name: underscore
     braceleft:
         unicode: '007B'
         glyph_name: braceleft
     bar:
         unicode: 007C
         glyph_name: bar
+    tilde:
+        unicode: 007E
+        glyph_name: tilde
+    Ω:
+        unicode: '2126'
+        glyph_name: omega
+    registeredsign:
+        unicode: 00AE
+        glyph_name: registeredsign
+    oslash:
+        unicode: 00F8
+        glyph_name: oslash
+    Oslash:
+        unicode: 00D8
+        glyph_name: Oslash
+    degree:
+        unicode: '00B0'
+        glyph_name: degree
+    Dotless_i:
+        unicode: '0131'
+        glyph_name: dotlessi
+    colon:
+        unicode: '003A'
+        glyph_name: colon
+    Bullet:
+        unicode: '2022'
+        glyph_name: bullet
+    asterisk:
+        unicode: 002A
+        glyph_name: asterisk
+    Thorn_capital:
+        unicode: '00DE'
+        glyph_name: Thorn
     ം:
         unicode: 0D02
         glyph_name: anuswara

@@ -2,12 +2,12 @@
 # GPOS
 lookup viramaPos {
   lookupflag 0;
-    pos xx [quotesingle quotedbl quoteleft quoteright quotedblleft quotedblright] 200;
-    pos xx parenleft 200;
-    pos xx parenright 200;
-    pos xx exclam 200;
-    pos [n1cil n1rh] i1 100;
-    pos [n1cil n1rh] [xx i2] 150;
+    pos xx [quotesingle quotedbl quoteleft quoteright quotedblleft quotedblright] 100;
+    pos xx parenleft 100;
+    pos xx parenright 100;
+    pos xx exclam 100;
+    pos [n1cil n1rh] i1 50;
+    pos [n1cil n1rh] [xx i2] 80;
 } viramaPos;
 
 @lc_right_slant = [r v f w t];
@@ -25,26 +25,26 @@ lookup latinPos {
     pos @lc_right_slant @lc_left_round -50;
     pos @lc_right_round @lc_left_slant -50;
 
-    pos @uc_right_slant @lc_left_round  -160;
-    pos @uc_right_slant @uc_left_slant  -160;
+    pos @uc_right_slant @lc_left_round  -80;
+    pos @uc_right_slant @uc_left_slant  -80;
 
-    pos A @uc_left_slant -160;
-    pos A @lc_left_slant -80;
-    pos @uc_right_slant A -160;
+    pos A @uc_left_slant -80;
+    pos A @lc_left_slant -40;
+    pos @uc_right_slant A -80;
 
-    pos @uc_right_slant @uc_left_round -160;
-    pos @uc_right_round @uc_left_slant -160;
-    pos @uc_left_slant @uc_left_slant 50;
+    pos @uc_right_slant @uc_left_round -80;
+    pos @uc_right_round @uc_left_slant -80;
+    pos @uc_left_slant @uc_left_slant 25;
 
-    pos [P T V W] J -160;
-    pos L @uc_left_slant -160;
-    pos L @lc_left_slant -160;
+    pos [P T V W] J -80;
+    pos L @uc_left_slant -80;
+    pos L @lc_left_slant -80;
 
-    pos T @uc_left_round -80;
-    pos T @lc_left_round -200;
-    pos T @lc_left_slant -160;
+    pos T @uc_left_round -40;
+    pos T @lc_left_round -100;
+    pos T @lc_left_slant -80;
 
-    pos [i l I ] [I i l] 80;
+    pos [i l I ] [I i l] 40;
 } latinPos;
 
 feature kern {
