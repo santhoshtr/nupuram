@@ -55,6 +55,12 @@ svgs:
     acute:
         unicode: '00B4'
         glyph_name: acute
+    ae:
+        unicode: '00E6'
+        glyph_name: ae
+    AE_capital:
+        unicode: '00C6'
+        glyph_name: AE
     B:
         unicode: '0042'
         glyph_name: B
@@ -67,6 +73,12 @@ svgs:
     C:
         unicode: '0043'
         glyph_name: C
+    cedilla:
+        unicode: '00B8'
+        glyph_name: cedilla
+    C_cedilla_capital:
+        unicode: '00C7'
+        glyph_name: cedilla
     d:
         unicode: '0064'
         glyph_name: d
@@ -238,9 +250,21 @@ svgs:
     colon:
         unicode: '003A'
         glyph_name: colon
+    semicolon:
+        unicode: '003B'
+        glyph_name: semicolon
+    paragraph:
+        unicode: '00B6'
+        glyph_name: paragraph
+    copyright:
+        unicode: '00A9'
+        glyph_name: copyright
     Bullet:
         unicode: '2022'
         glyph_name: bullet
+    divisionsign:
+        unicode: '00F7'
+        glyph_name: divisionsign
     asterisk:
         unicode: 002A
         glyph_name: asterisk
