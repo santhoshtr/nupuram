@@ -78,7 +78,7 @@ svgs:
         glyph_name: cedilla
     C_cedilla_capital:
         unicode: '00C7'
-        glyph_name: cedilla
+        glyph_name: Ccedilla
     d:
         unicode: '0064'
         glyph_name: d
@@ -151,6 +151,12 @@ svgs:
     o:
         unicode: 006F
         glyph_name: o
+    oe:
+        unicode: '0153'
+        glyph_name: oe
+    OE_capital:
+        unicode: '0152'
+        glyph_name: OE
     P:
         unicode: '0050'
         glyph_name: P
@@ -228,13 +234,13 @@ svgs:
         glyph_name: bar
     tilde:
         unicode: 007E
-        glyph_name: tilde
+        glyph_name: asciitilde
     Ω:
         unicode: '2126'
         glyph_name: omega
     registeredsign:
         unicode: 00AE
-        glyph_name: registeredsign
+        glyph_name: registeredded
     oslash:
         unicode: 00F8
         glyph_name: oslash
@@ -264,10 +270,13 @@ svgs:
         glyph_name: bullet
     divisionsign:
         unicode: '00F7'
-        glyph_name: divisionsign
+        glyph_name: divide
     asterisk:
         unicode: 002A
         glyph_name: asterisk
+    percent:
+        unicode: '0025'
+        glyph_name: percent
     Thorn_capital:
         unicode: '00DE'
         glyph_name: Thorn
