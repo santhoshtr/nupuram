@@ -39,9 +39,9 @@
 			<point x="448.88741" y="198.27215"/>
 		</contour>
 		<contour>
-			<point x="58.326675" y="700" type="line"/>
-			<point x="28.390741" y="579.05815"/>
-			<point x="11.669184" y="454.85021"/>
+			<point x="52.93438" y="677.56777" type="curve" smooth="yes"/>
+			<point x="26.378295" y="563.72324"/>
+			<point x="11.476977" y="447.16213"/>
 			<point x="8.5552763" y="330.29743" type="curve" smooth="yes"/>
 			<point x="6.8505883" y="262.11185"/>
 			<point x="9.3313134" y="193.02393"/>
@@ -157,9 +157,15 @@
 			<point x="74.282548" y="323.19852"/>
 			<point x="78.010226" y="363.74531"/>
 			<point x="84.828521" y="403.55215" type="curve" smooth="yes"/>
-			<point x="102.88328" y="508.96016"/>
-			<point x="142.86932" y="610.56069"/>
-			<point x="201.49895" y="700" type="curve"/>
+			<point x="101.66687" y="501.85851"/>
+			<point x="137.58092" y="596.85315"/>
+			<point x="189.90368" y="681.75958" type="curve" smooth="yes"/>
+			<point x="196.16617" y="691.92199"/>
+			<point x="191.82174" y="700"/>
+			<point x="179.88429" y="700" type="curve" smooth="yes"/>
+			<point x="81.398078" y="700" type="line" smooth="yes"/>
+			<point x="68.656094" y="700"/>
+			<point x="55.828924" y="689.97653"/>
 		</contour>
 	</outline>
 </glyph>
