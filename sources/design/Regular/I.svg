@@ -15,7 +15,7 @@
    viewBox="0 0 1000 1000"
    id="svg10"
    sodipodi:docname="I.svg"
-   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"><metadata
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"><metadata
    id="metadata14"><rdf:RDF><cc:Work
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
@@ -28,12 +28,12 @@
    inkscape:pageopacity="0"
    inkscape:pageshadow="2"
    inkscape:window-width="1920"
-   inkscape:window-height="1015"
+   inkscape:window-height="1007"
    id="namedview12"
    showgrid="false"
    inkscape:zoom="0.84890884"
    inkscape:cx="156.65301"
-   inkscape:cy="448.09056"
+   inkscape:cy="400.97125"
    inkscape:window-x="1920"
    inkscape:window-y="0"
    inkscape:window-maximized="1"
@@ -78,7 +78,7 @@
      inkscape:label=""
      inkscape:locked="true"
      inkscape:color="rgb(0,0,255)" /><sodipodi:guide
-     position="130.43226,549.33178"
+     position="147.21851,535.11971"
      orientation="-1,0"
      id="guide841"
      inkscape:label="width"
@@ -86,6 +86,22 @@
      inkscape:color="rgb(0,0,255)" /></sodipodi:namedview>
  <defs
    id="defs4"><inkscape:path-effect
+   effect="fillet_chamfer"
+   id="path-effect850"
+   is_visible="true"
+   lpeversion="1"
+   satellites_param="F,0,0,1,0,23.90859,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,16.931698,0,1 @ F,0,0,1,0,21.097281,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,15.072277,0,1"
+   unit="px"
+   method="auto"
+   mode="F"
+   radius="0"
+   chamfer_steps="1"
+   flexible="false"
+   use_knot_distance="true"
+   apply_no_radius="true"
+   apply_with_radius="true"
+   only_selected="true"
+   hide_knots="false" /><inkscape:path-effect
    effect="spiro"
    id="path-effect889"
    is_visible="true"
@@ -138,7 +154,7 @@
 <path
    id="path847"
    style="fill:#2d2d2d;stroke:#000000;stroke-width:0.854146px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-   d="M 6.62448,0.30765 C 10.926642,33.972801 14.6378,67.713477 17.755667,101.50889 36.664336,306.46514 33.691229,513.14616 14.954374,718.11819 12.456879,745.43956 9.6800543,772.7354 6.62448,800 h 110 c -2.71653,-26.51641 -5.22515,-53.05412 -7.52554,-79.60987 C 91.142344,513.09887 85.901804,304.29073 103.67912,96.984013 106.3348,66.015279 109.50289,35.090486 113.18164,4.22656 Z"
+   d="M 5.3024612,23.312234 C 10.765648,49.146121 14.924447,75.255869 17.755667,101.50889 38.744116,296.12823 -13.400887,493.51271 10.874861,687.7494 14.914886,720.07471 21.063743,752.1362 29.26639,783.66336 31.6209,792.713 41.294924,800 50.646043,800 h 75.065817 c 11.65171,0 16.23526,-8.10471 10.74441,-18.38042 C 125.91216,761.88711 116.76124,741.41012 109.09894,720.39013 74.256487,624.80679 70.973225,520.49997 78.58534,419.04936 86.197454,317.59875 104.27401,217.11298 110.74702,115.58333 112.79033,83.53388 113.67428,51.410537 113.39703,19.297217 113.32516,10.973383 106.43825,3.9747406 98.119861,3.6641056 L 23.891937,0.89220041 C 10.696785,0.39945173 2.5706148,10.394094 5.3024612,23.312234 Z"
    sodipodi:nodetypes="caaccaacc"
-   inkscape:path-effect="#path-effect889"
-   inkscape:original-d="m 6.62448,0.30765 c -0.3026024,10.06028 9.35018,67.310819 11.131187,101.20124 10.786559,205.25532 8.07945,411.35895 -2.801293,616.6093 C 13.502038,745.51453 6.62448,800 6.62448,800 h 110 c 0,0 -6.15417,-52.99025 -7.52554,-79.60987 C 98.407282,512.85546 93.978437,304.56736 103.67912,96.984013 105.12999,65.93692 113.18164,4.22656 113.18164,4.22656 80.972656,4.13676 38.833464,0.39749 6.62448,0.30765 Z" /></svg>
+   inkscape:path-effect="#path-effect889;#path-effect850"
+   inkscape:original-d="M 0,0 C -0.3026024,10.06028 14.986134,67.270696 17.755667,101.50889 33.51232,296.29961 -7.5647327,493.19432 10.874861,687.7494 14.477684,725.76258 33.714345,800 33.714345,800 H 146.80914 c 0,0 -31.30726,-50.95326 -37.7102,-79.60987 C 65.13743,523.63861 108.2689,317.17111 110.74702,115.58333 111.20339,78.45834 113.18164,4.22656 113.18164,4.22656 80.972656,4.13676 32.208984,0.08984 0,0 Z" /></svg>
