@@ -10,13 +10,13 @@ lookup viramaPos {
     pos [n1cil n1rh] [xx i2] 80;
 } viramaPos;
 
-@lc_right_slant = [r v f w t];
-@lc_left_slant = [v w];
+@lc_right_slant = [r v f t];
+@lc_left_slant = [v];
 @lc_left_round = [e c a d o q g];
 @lc_right_round = [a e b c o p g];
 
-@uc_left_slant = [V Y W T];
-@uc_right_slant = [V Y W T];
+@uc_left_slant = [V T];
+@uc_right_slant = [V T];
 @uc_left_round = [O Q];
 @uc_right_round = [O Q D P];
 
@@ -25,8 +25,8 @@ lookup latinPos {
     pos @lc_right_slant @lc_left_round -50;
     pos @lc_right_round @lc_left_slant -50;
 
-    pos @uc_right_slant @lc_left_round  -80;
-    pos @uc_right_slant @uc_left_slant  -80;
+    pos @uc_right_slant @lc_left_round -80;
+    pos @uc_right_slant @uc_left_slant -80;
 
     pos A @uc_left_slant -80;
     pos A @lc_left_slant -40;
@@ -41,7 +41,7 @@ lookup latinPos {
     pos L @lc_left_slant -80;
 
     pos T @uc_left_round -40;
-    pos T @lc_left_round -100;
+    pos T @lc_left_round -50;
     pos T @lc_left_slant -80;
 
     pos [i l I ] [I i l] 40;

@@ -85,6 +85,9 @@ svgs:
     D:
         unicode: '0044'
         glyph_name: D
+    dieresis:
+        unicode: '00A8'
+        glyph_name: dieresis
     e:
         unicode: '0065'
         glyph_name: e
@@ -232,6 +235,9 @@ svgs:
     bar:
         unicode: 007C
         glyph_name: bar
+    caret:
+        unicode: 005E
+        glyph_name: asciicircum
     tilde:
         unicode: 007E
         glyph_name: asciitilde
@@ -240,7 +246,7 @@ svgs:
         glyph_name: omega
     registeredsign:
         unicode: 00AE
-        glyph_name: registeredded
+        glyph_name: registered
     oslash:
         unicode: 00F8
         glyph_name: oslash
