@@ -5,20 +5,25 @@ Author: Santhosh Thottingal <santhosh.thottingal@gmail.com>
 Copyright 2021, MIT License
 """
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import, print_function
 
 __requires__ = ["FontTools"]
 
-from fontTools.misc.py23 import SimpleNamespace
-from fontTools.svgLib import SVGPath
-from fontTools.ufoLib import UFOReader, UFOWriter, UFOLibError
-from fontTools.pens.pointPen import SegmentToPointPen
-from fontTools.ufoLib.glifLib import writeGlyphToString
-from fontTools.ufoLib.plistlib import load, writePlist
 import argparse
+import glob
 import os
 import re
+import sys
 import xml.etree.ElementTree as etree
+from io import open
+
+from fontTools.misc.py23 import SimpleNamespace
+from fontTools.pens.pointPen import SegmentToPointPen
+from fontTools.svgLib import SVGPath
+from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
+from fontTools.ufoLib.glifLib import writeGlyphToString
+from fontTools.ufoLib.plistlib import load, writePlist
+
 
 class InfoObject(object):
     pass
@@ -29,8 +34,7 @@ def parseSvg(path):
 
 def getConfig(configFile):
     import yaml
-    with open(configFile, 'r') as ymlfile:
-        cfg = yaml.load(ymlfile, Loader=yaml.FullLoader)
+    cfg = yaml.load(configFile, Loader=yaml.FullLoader)
     return cfg
 
 
@@ -79,28 +83,19 @@ def unicode_hex_list(arg):
         raise argparse.ArgumentTypeError(msg)
 
 
-def parse_args(args):
+def parse_args():
     parser = argparse.ArgumentParser(
         description="Convert SVG outlines to UFO glyphs (.glif)")
     parser.add_argument(
-        "infile", metavar="INPUT.svg", help="Input SVG file containing "
-        '<path> elements with "d" attributes.')
-    parser.add_argument(
-        "outfile", metavar="OUTPUT.glif", help="Output GLIF file (default: "
-        "print to stdout)", nargs='?')
-    parser.add_argument(
         "-c", "--config", help="The yaml configuration file containing the svg "
-        "to glif mapping", type=str, default="sources/svg-glif-mapping.yaml")
-    return parser.parse_args(args)
+        "to glif mapping", type=argparse.FileType('r'), default="sources/svg-glif-mapping.yaml")
+    parser.add_argument(
+        "-i", "--infiles", nargs='+', help="Input SVG file containing "
+        '<path> elements with "d" attributes.')
+    return parser.parse_args()
 
 
-def main(args=None):
-    from io import open
-
-    options = parse_args(args)
-    config = getConfig(options.config)
-    svg_file = options.infile
-
+def main(config, svg_file):
     # Parse SVG to read the width, height attributes defined in it
     svgObj = parseSvg(svg_file)
     svgWidth = float(svgObj.attrib['width'].replace("px", " "))
@@ -176,10 +171,9 @@ def main(args=None):
                     transform=transform,
                     version=config['font']['version'])
 
-    if options.outfile is None:
-        output_file = ufo_font_path + '/glyphs/' + glyph_file_name
-    else:
-        output_file = options.outfile
+
+    output_file = ufo_font_path + '/glyphs/' + glyph_file_name
+
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(glif)
 
@@ -197,5 +191,10 @@ def main(args=None):
         writer.writeLib(lib_obj)
 
 if __name__ == "__main__":
-    import sys
-    sys.exit(main())
+    options = parse_args()
+    config = getConfig(options.config)
+    for svg_file in options.infiles:
+        try:
+            main(config, svg_file)
+        except:
+            print("could not parse")

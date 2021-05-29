@@ -89,9 +89,7 @@ test: ttf otf $(PDFS)
 glyphs: $(FONTS:%=$(SRCDIR)/$(NAME)-%/glyphs)
 
 $(SRCDIR)/$(NAME)-%/glyphs:
-	@for svg in `ls $(SRCDIR)/design/$*/*.svg`;do \
-		$(PY) tools/import-svg-to-ufo.py -c $(SRCDIR)/design/config/$*.yaml $$svg; \
-	done;
+	$(PY) tools/import-svg-to-ufo.py -c $(SRCDIR)/design/config/$*.yaml -i $(SRCDIR)/design/$*/*.svg
 
 clean:
 	@rm -rf $(BLDDIR)
