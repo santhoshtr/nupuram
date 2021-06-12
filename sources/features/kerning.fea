@@ -28,7 +28,6 @@ lookup latinPos {
     pos @uc_right_slant @lc_left_round -80;
     pos @uc_right_slant @uc_left_slant -80;
 
-    pos A @uc_left_slant -80;
     pos A @lc_left_slant -40;
     pos @uc_right_slant A -80;
 
@@ -36,15 +35,15 @@ lookup latinPos {
     pos @uc_right_round @uc_left_slant -80;
     pos @uc_left_slant @uc_left_slant 25;
 
-    pos [P T V W] J -80;
+    pos A @uc_left_slant -80;
     pos L @uc_left_slant -80;
     pos L @lc_left_slant -80;
+    pos R @uc_left_slant -80;
 
     pos T @uc_left_round -40;
     pos T @lc_left_round -50;
     pos T @lc_left_slant -80;
 
-    pos [i l I ] [I i l] 40;
 } latinPos;
 
 feature kern {
