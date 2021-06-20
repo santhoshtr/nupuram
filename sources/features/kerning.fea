@@ -10,13 +10,13 @@ lookup viramaPos {
     pos [n1cil n1rh] [xx i2] 80;
 } viramaPos;
 
-@lc_right_slant = [r v f t];
+@lc_right_slant = [r v f k];
 @lc_left_slant = [v];
 @lc_left_round = [e c a d o q g];
 @lc_right_round = [a e b c o p g];
 
 @uc_left_slant = [V T];
-@uc_right_slant = [V T];
+@uc_right_slant = [V Y T];
 @uc_left_round = [O Q];
 @uc_right_round = [O Q D P];
 
