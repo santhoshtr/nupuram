@@ -115,8 +115,19 @@
 				padding: 0;
 				margin: 0;
 			}
+
+			#font-version:empty {
+				display: none;
+			}
 		</style>
 		<script>
+			function loadFont(version){
+				let font = new FontFace("Seventy", `url(../build/Seventy-Regular.woff2?v=${version}) format("woff2")`);
+				font.load().then(function(loadedFont) {
+					document.fonts.add(loadedFont);
+				}).catch(console.error);
+			}
+
 			/**
 			 * Shuffles array in place. ES6 version
 			 * @param {Array} a items An array containing the items.
@@ -269,6 +280,14 @@
 					});
 				});
 			}
+
+			const source = new EventSource('/stream');
+			source.onmessage = (event) => {
+				const message = JSON.parse(event.data);
+				document.getElementById("font-version").innerText=`${message.fontname}: ${message.version}-${message.build}`
+				loadFont(`${message.version}-${message.build}`)
+			};
+
 		</script>
 
 	</head>
@@ -280,6 +299,7 @@
 
 			</div>
 			<div class="tools">
+				<h5 id="font-version"></h5>
 				<section class="rows rows-3">
 					<div class="primitive-input">
 						<label for="font-fontSize">Font Size</label>

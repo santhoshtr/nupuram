@@ -1,7 +1,9 @@
 import logging
 import time
+import os
 import subprocess
-import socketserver
+import flask
+from flask import send_from_directory
 from string import Template
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers.polling import PollingObserver
@@ -13,7 +15,8 @@ logging.basicConfig(level=logging.INFO,
 
 logger = logging.root
 
-
+app = flask.Flask(__name__, static_folder="")
+events = []
 class ConfigChangeHandler(FileSystemEventHandler):
 
     @staticmethod
@@ -25,7 +28,6 @@ class ConfigChangeHandler(FileSystemEventHandler):
                 'make glyphs && make ufonormalizer', shell=True)
             process.wait()
 
-
 class UFOChangeHandler(FileSystemEventHandler):
 
     @staticmethod
@@ -36,6 +38,7 @@ class UFOChangeHandler(FileSystemEventHandler):
             process = subprocess.Popen(
                 'make clean && make webfonts', shell=True)
             process.wait()
+            events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % ("Seventy", "1.00", time.strftime("%Y%m%d%H%M%S")))
 
 
 class DesignChangeHandler(FileSystemEventHandler):
@@ -54,11 +57,20 @@ class DesignChangeHandler(FileSystemEventHandler):
             process = subprocess.Popen(command, shell=True)
             process.wait()
 
+static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'tests')
 
+@app.route('/stream')
+def stream():
+    def eventStream():
+        for message in events:
+            # wait for source data to be available, then push it
+            yield 'data: {}\n\n'.format(message)
+            events.pop()
+    return flask.Response(eventStream(), mimetype="text/event-stream")
 class TypeDevServer:
 
     def __init__(self) -> None:
-        self.observer = PollingObserver(timeout=5)
+        self.observer = PollingObserver()
 
     def run(self):
         PORT = 8000
@@ -70,9 +82,8 @@ class TypeDevServer:
                                './sources/Seventy-Regular.ufo', recursive=True)
         # Start the observer
         self.observer.start()
-        httpd = ThreadingHTTPServer(('localhost', PORT), SimpleHTTPRequestHandler)
-        logger.info("Serving at port %s" % PORT)
-        httpd.serve_forever()
+
+        app.run(threaded=True)
         try:
             while True:
                 # Set the thread sleep time
@@ -82,6 +93,9 @@ class TypeDevServer:
         self.observer.join()
 
 
+
 if __name__ == "__main__":
     server = TypeDevServer()
     server.run()
+
+
