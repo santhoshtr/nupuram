@@ -105,6 +105,11 @@
 				grid-template-columns: auto 1fr auto;
 			}
 
+			.rows-1 {
+				grid-template-columns: auto;
+			}
+
+
 			.val-input {
 				width: 3.7rem;
 				padding: 0;
@@ -127,7 +132,9 @@
 			window.onload = () => {
 				const contentArea = document.querySelector('.content')
 				let testLines = [];
-				let paragraphs = []
+				let paragraphsMl = []
+				let pangramsEn = []
+				let paragraphsEn = []
 				let currentTestIndex = 0;
 				let testContents = []
 				fetch('./content.txt').then(response => response.text()).then((content) => {
@@ -140,24 +147,40 @@
 					contentArea.style.lineHeight = document.querySelector('#font-lineHeight').value;
 				})
 
-				fetch('./paragraphs.txt').then(response => response.text()).then((content) => {
-					paragraphs = shuffle(content.split("\n"));
-					paragraphs = paragraphs.filter(paragraph => !!paragraph.trim())
+				fetch('./paragraphs.malayalam.txt').then(response => response.text()).then((content) => {
+					paragraphsMl = shuffle(content.split("\n"));
+					paragraphsMl = paragraphsMl.filter(paragraph => !!paragraph.trim())
+				});
+
+				fetch('./paragraphs.english.txt').then(response => response.text()).then((content) => {
+					paragraphsEn = shuffle(content.split("\n"));
+					paragraphsEn = paragraphsEn.filter(paragraph => !!paragraph.trim())
+				});
+
+				fetch('./pangrams.txt').then(response => response.text()).then((content) => {
+					pangramsEn = shuffle(content.split("\n"));
+					pangramsEn = pangramsEn.filter(paragraph => !!paragraph.trim())
 				});
 
 				document.getElementById('test-content').addEventListener('change', function () {
 					const selected = this.options[this.selectedIndex].value;
-					if (selected == 'paragraphs') {
-						testContents = paragraphs;
+					if (selected == 'paragraphsEn') {
+						testContents = paragraphsEn;
+					}
+					if (selected == 'paragraphsMl') {
+						testContents = paragraphsMl;
 					}
 					if (selected == 'lines') {
 						testContents = testLines;
+					}
+					if (selected == 'pangrams') {
+						testContents = pangramsEn;
 					}
 					contentArea.innerHTML = testContents[++currentTestIndex];
 				});
 
 
-				document.getElementById('next-test').addEventListener('click',   () => {
+				document.getElementById('next-test').addEventListener('click', () => {
 					if (currentTestIndex + 1 >= testContents.length) {
 						currentTestIndex = 0;
 					}
@@ -166,7 +189,6 @@
 
 				document.getElementById('outlined').addEventListener('change', function () {
 					const outlined = this.checked;
-					console.log()
 					if (outlined) {
 						contentArea.classList.add('outline-text');
 					} else {
@@ -221,6 +243,31 @@
 						contentArea.style.color = fontColor;
 					});
 				});
+
+				document.querySelectorAll("[name=opentype]").forEach((element) => {
+					let otFeatures = {
+						'kern': true,
+						'blwf': true,
+						'blws': true,
+						'pref': true,
+						'pres': true,
+						'akhn': true,
+						'pstf': true,
+						'psts': true
+					}
+
+					element.addEventListener('change', function () {
+						const checked = this.checked;
+						otFeatures[element.value] = !!checked
+						const fontFeatureSettings = [];
+						for (let otFeature in otFeatures) {
+							if (otFeatures.hasOwnProperty(otFeature) && !otFeatures[otFeature]) {
+								fontFeatureSettings.push(`"${otFeature}" off`);
+							}
+						}
+						contentArea.style.fontFeatureSettings = fontFeatureSettings.join(',');
+					});
+				});
 			}
 		</script>
 
@@ -266,8 +313,10 @@
 					<div>
 						<label for="test-content">Test content</label>
 						<select class="controls testcontent" id="test-content">
-							<option value="paragraphs">Paragraph</option>
-							<option value="lines" selected>Words</option>
+							<option value="paragraphsMl">ഖണ്ഡികകൾ</option>
+							<option value="paragraphsEn">Paragraphs</option>
+							<option value="lines" selected>സിനിമാപ്പേരുകൾ</option>
+							<option value="pangrams">Pangrams</option>
 						</select>
 						<span id="next-test" style="cursor: pointer;">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
@@ -285,13 +334,8 @@
 						<input type="color" class="font-color val-input" data-id="fontColor" id="font-fontColor">
 					</div>
 					<div>
-						<label for="outlined">Outlined</label>
-						<input type="checkbox" id="outlined" name="fntstyle" value="outlined">
-					</div>
-					<div>
 						<label for="font-align">Text align</label>
 						<ul class="controls align" id="font-align">
-
 							<li data-align="left">
 								<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 									<path d="M16.25 3.75H7.5V5H16.25V3.75Z"></path>
@@ -319,6 +363,55 @@
 								</svg>
 							</li>
 						</ul>
+					</div>
+				</section>
+				<section class="rows rows-1">
+					<div>
+						<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
+							Outlined</label>
+					</div>
+				</section>
+				<h5>Opentype features</h5>
+				<section class="rows" style="grid-template-columns: 3fr auto;">
+					<div>
+						<label for="kern"><input type="checkbox" id="kern" name="opentype" value="kern" checked>
+							Kerning</label>
+						<span>kern</span>
+					</div>
+					<div>
+						<label for="blwf"><input type="checkbox" id="blwf" name="opentype" value="blwf" checked>
+							Below-base forms</label>
+						<span>blwf</span>
+					</div>
+					<div>
+						<label for="blws"><input type="checkbox" id="blws" name="opentype" value="blws" checked>
+							Below-base substitutions</label>
+						<span>blws</span>
+					</div>
+					<div>
+						<label for="akhn"><input type="checkbox" id="akhn" name="opentype" value="akhn" checked> Akhand
+							ligatures</label>
+						<span>akhn</span>
+					</div>
+					<div>
+						<label for="pref"><input type="checkbox" id="pref" name="opentype" value="pref" checked>
+							Pre-base forms</label>
+						<span>pref</span>
+					</div>
+					<div>
+						<label for="pres"><input type="checkbox" id="pres" name="opentype" value="pres" checked>
+							Pre-base substitutions</label>
+						<span>pres</span>
+					</div>
+					<div>
+						<label for="pstf"><input type="checkbox" id="pstf" name="opentype" value="pstf" checked>
+							Post-base forms</label>
+						<span>pstf</span>
+					</div>
+					<div>
+						<label for="psts"><input type="checkbox" id="psts" name="opentype" value="psts" checked>
+							Post-base substitutions</label>
+						<span>psts</span>
 					</div>
 				</section>
 			</div>
