@@ -14,6 +14,8 @@ logging.basicConfig(level=logging.INFO,
                     datefmt='%Y-%m-%d %H:%M:%S')
 
 logger = logging.root
+fontName = "Seventy"
+fontVersion = open('VERSION').readline().strip()
 
 app = flask.Flask(__name__, static_folder="")
 events = []
@@ -38,7 +40,7 @@ class UFOChangeHandler(FileSystemEventHandler):
             process = subprocess.Popen(
                 'make clean && make webfonts', shell=True)
             process.wait()
-            events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % ("Seventy", "1.00", time.strftime("%Y%m%d%H%M%S")))
+            events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % (fontName, fontVersion , time.strftime("%Y%m%d%H%M%S")))
 
 
 class DesignChangeHandler(FileSystemEventHandler):
