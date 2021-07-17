@@ -10,7 +10,23 @@ lookup viramaPos {
     pos [n1cil n1rh] [xx i2] 80;
 } viramaPos;
 
-@lc_right_slant = [r v f k];
+
+lookup signPos {
+  pos [h1 n1 n1u1 n1u2 n1th1 n1th1u1 n1th2u2] anuswara -50;
+  pos anuswara [s1] -50;
+
+  pos [k1 th1 th1r3 n1 ngk1 nh l3 m1 z1r3] i1 -50;
+  pos [k1 th1 th1r3 n1 ngk1 nh l3 m1 z1r3] i2 -50;
+
+} signPos;
+
+
+lookup consPos {
+   pos th4 [n1 n1u1 n1u2 n1cil] -50;
+   pos n1 [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2] -50;
+} consPos;
+
+@lc_right_slant = [v f k];
 @lc_left_slant = [v];
 @lc_left_round = [e c a d o q g];
 @lc_right_round = [a e b c o p g];
@@ -28,14 +44,13 @@ lookup latinPos {
     pos @uc_right_slant @lc_left_round -80;
     pos @uc_right_slant @uc_left_slant -80;
 
-    pos A @lc_left_slant -40;
     pos @uc_right_slant A -80;
 
     pos @uc_right_slant @uc_left_round -80;
     pos @uc_right_round @uc_left_slant -80;
     pos @uc_left_slant @uc_left_slant 25;
 
-    pos A @uc_left_slant -80;
+    pos A [v V T] -80;
     pos L @uc_left_slant -80;
     pos L @lc_left_slant -80;
     pos R @uc_left_slant -80;
@@ -43,6 +58,16 @@ lookup latinPos {
     pos T @uc_left_round -40;
     pos T @lc_left_round -50;
     pos T @lc_left_slant -80;
+    pos f [f t] -80;
+    pos t h -20;
+    pos e r -20;
+    pos r [a c d e s t] -60;
+    pos d [a e c v] -20;
+    pos h [c e v] -20;
+    pos n [c e v] -20;
+    pos m [c e v] -20;
+    pos b j -80;
+
 
 } latinPos;
 
@@ -59,10 +84,9 @@ feature kern {
   script mlm2;
     language dflt;
       lookup viramaPos;
+      lookup signPos;
+      lookup consPos;
 
- script mlym;
-    language dflt;
-      lookup viramaPos;
 } kern;
 
 #Mark attachment classes (defined in GDEF, used in lookupflags)

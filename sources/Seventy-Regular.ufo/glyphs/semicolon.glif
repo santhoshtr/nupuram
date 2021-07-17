@@ -1,38 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="semicolon" format="2">
 	<unicode hex="003B"/>
-	<advance height="1000" width="201.78377"/>
+	<advance height="1000" width="202"/>
 	<outline>
 		<contour>
-			<point x="289.78377" y="462.50793" type="line"/>
-			<point x="289.78377" y="423.1477225404"/>
-			<point x="257.8760174596" y="391.23997"/>
-			<point x="218.51581" y="391.23997" type="curve" smooth="yes"/>
-			<point x="179.1556025404" y="391.23997"/>
-			<point x="147.24785" y="423.1477225404"/>
-			<point x="147.24785" y="462.50793" type="curve" smooth="yes"/>
-			<point x="147.24785" y="501.8681374596"/>
-			<point x="179.1556025404" y="533.77589"/>
-			<point x="218.51581" y="533.77589" type="curve" smooth="yes"/>
-			<point x="257.8760174596" y="533.77589"/>
-			<point x="289.78377" y="501.8681374596"/>
-			<point x="289.78377" y="462.50793" type="curve"/>
+			<point x="51.920063" y="253.20406" type="curve" smooth="yes"/>
+			<point x="176.04326" y="285.15176" type="line" smooth="yes"/>
+			<point x="186.79966" y="287.92032"/>
+			<point x="196.25405" y="281.18056"/>
+			<point x="196.40431" y="270.07632" type="curve" smooth="yes"/>
+			<point x="197.18833" y="212.13804"/>
+			<point x="182.77243" y="154.01701"/>
+			<point x="154.80023" y="103.25769" type="curve" smooth="yes"/>
+			<point x="142.47511" y="80.89211"/>
+			<point x="127.57943" y="59.94576"/>
+			<point x="110.51429" y="40.94865" type="curve" smooth="yes"/>
+			<point x="103.09299" y="32.68717"/>
+			<point x="87.632803" y="26.64027"/>
+			<point x="76.529769" y="26.93631" type="curve" smooth="yes"/>
+			<point x="14.675958" y="28.58553" type="line" smooth="yes"/>
+			<point x="3.5729243" y="28.88157"/>
+			<point x="1.7307291" y="34.65084"/>
+			<point x="9.5016215" y="42.57672" type="curve" smooth="yes"/>
+			<point x="36.181562" y="69.78878"/>
+			<point x="53.40924" y="106.25793"/>
+			<point x="56.982792" y="144.23409" type="curve" smooth="yes"/>
+			<point x="59.749916" y="173.64033"/>
+			<point x="54.44232" y="203.73537"/>
+			<point x="42.005662" y="230.51299" type="curve" smooth="yes"/>
+			<point x="37.330021" y="240.58021"/>
+			<point x="41.163665" y="250.4355"/>
 		</contour>
 		<contour>
-			<point x="32.443882" y="248.19114" type="curve"/>
-			<point x="195.51944" y="290.16468" type="line"/>
-			<point x="200.34226" y="225.68375"/>
-			<point x="186.00833" y="159.88899"/>
-			<point x="154.80023" y="103.25769" type="curve" smooth="yes"/>
-			<point x="139.23961" y="75.02086"/>
-			<point x="119.58166" y="49.04619"/>
-			<point x="96.63359" y="26.40028" type="curve"/>
-			<point x="-5.427863" y="29.12156" type="line"/>
-			<point x="29.700161" y="57.00882"/>
-			<point x="52.780813" y="99.57963"/>
-			<point x="56.982792" y="144.23409" type="curve" smooth="yes"/>
-			<point x="60.378137" y="180.31644"/>
-			<point x="51.616157" y="217.43584"/>
+			<point x="193.84658" y="442.98895" type="curve" smooth="yes"/>
+			<point x="193.84658" y="420.26818"/>
+			<point x="184.49328" y="397.68733"/>
+			<point x="168.42727" y="381.62132" type="curve" smooth="yes"/>
+			<point x="152.36126" y="365.55531"/>
+			<point x="129.78041" y="356.20201"/>
+			<point x="107.05964" y="356.20201" type="curve" smooth="yes"/>
+			<point x="84.338871" y="356.20201"/>
+			<point x="61.758013" y="365.55531"/>
+			<point x="45.692003" y="381.62131" type="curve" smooth="yes"/>
+			<point x="29.625992" y="397.68732"/>
+			<point x="20.272694" y="420.26818"/>
+			<point x="20.272694" y="442.98895" type="curve" smooth="yes"/>
+			<point x="20.272694" y="465.70972"/>
+			<point x="29.625992" y="488.29058"/>
+			<point x="45.692003" y="504.35659" type="curve" smooth="yes"/>
+			<point x="61.758013" y="520.42259"/>
+			<point x="84.338871" y="529.77589"/>
+			<point x="107.05964" y="529.77589" type="curve" smooth="yes"/>
+			<point x="129.78041" y="529.77589"/>
+			<point x="152.36126" y="520.42259"/>
+			<point x="168.42727" y="504.35658" type="curve" smooth="yes"/>
+			<point x="184.49328" y="488.29057"/>
+			<point x="193.84658" y="465.70972"/>
 		</contour>
 	</outline>
 </glyph>

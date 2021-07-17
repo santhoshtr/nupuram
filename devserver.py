@@ -43,6 +43,18 @@ class UFOChangeHandler(FileSystemEventHandler):
             events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % (fontName, fontVersion , time.strftime("%Y%m%d%H%M%S")))
 
 
+class FeatureChangeHandler(FileSystemEventHandler):
+
+    @staticmethod
+    def on_any_event(event):
+        if event.event_type == 'modified':
+            # Event is modified, you can process it now
+            logger.info("UFO modified - % s" % event.src_path)
+            process = subprocess.Popen(
+                'make clean && make webfonts', shell=True)
+            process.wait()
+            events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % (fontName, fontVersion , time.strftime("%Y%m%d%H%M%S")))
+
 class DesignChangeHandler(FileSystemEventHandler):
 
     @staticmethod
@@ -82,6 +94,8 @@ class TypeDevServer:
                                './sources/design/Regular', recursive=True)
         self.observer.schedule(UFOChangeHandler(),
                                './sources/Seventy-Regular.ufo', recursive=True)
+        self.observer.schedule(FeatureChangeHandler(),
+                               './sources/features', recursive=True)
         # Start the observer
         self.observer.start()
 
