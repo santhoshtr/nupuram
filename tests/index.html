@@ -124,6 +124,11 @@
 				filter: blur(2px);
 				opacity: .9;
 			}
+
+			.grid {
+				background-image: linear-gradient(transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px);
+				background-size: 100% 12px, 12px 100%;
+			}
 		</style>
 		<script>
 			function loadFont(version){
@@ -217,6 +222,14 @@
 						contentArea.classList.add('blurry');
 					} else {
 						contentArea.classList.remove('blurry');
+					}
+				});
+				document.getElementById('grid').addEventListener('change', function () {
+					const squint = this.checked;
+					if (squint) {
+						contentArea.classList.add('grid');
+					} else {
+						contentArea.classList.remove('grid');
 					}
 				});
 				document.querySelectorAll('.controls.align > li').forEach((element) => {
@@ -397,13 +410,16 @@
 							</li>
 						</ul>
 					</div>
-					<div>
+
+				</section>
+				<section class="rows" style="grid-template-columns: 3fr 3fr 3fr;">
 						<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
 							⋒ Outline</label>
 
 						<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
 							😉 Squint</label>
-					</div>
+						<label for="grid"><input type="checkbox" id="grid" name="grid" value="grid">
+							🞡 grid</label>
 				</section>
 
 				<h5>Opentype features</h5>
