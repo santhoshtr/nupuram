@@ -119,6 +119,11 @@
 			#font-version:empty {
 				display: none;
 			}
+
+			.blurry {
+				filter: blur(2px);
+				opacity: .9;
+			}
 		</style>
 		<script>
 			function loadFont(version){
@@ -204,6 +209,14 @@
 						contentArea.classList.add('outline-text');
 					} else {
 						contentArea.classList.remove('outline-text');
+					}
+				});
+				document.getElementById('squint').addEventListener('change', function () {
+					const squint = this.checked;
+					if (squint) {
+						contentArea.classList.add('blurry');
+					} else {
+						contentArea.classList.remove('blurry');
 					}
 				});
 				document.querySelectorAll('.controls.align > li').forEach((element) => {
@@ -384,13 +397,15 @@
 							</li>
 						</ul>
 					</div>
-				</section>
-				<section class="rows rows-1">
 					<div>
 						<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
-							Outlined</label>
+							⋒ Outline</label>
+
+						<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
+							😉 Squint</label>
 					</div>
 				</section>
+
 				<h5>Opentype features</h5>
 				<section class="rows" style="grid-template-columns: 3fr auto;">
 					<div>
