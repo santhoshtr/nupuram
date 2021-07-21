@@ -13,16 +13,17 @@ lookup viramaPos {
 
 lookup signPos {
   pos [h1 n1 n1u1 n1u2 n1th1 n1th1u1 n1th2u2] anuswara -50;
-  pos anuswara [s1] -50;
+  pos anuswara [s1 n1] -50;
 
-  pos [k1 th1 th1r3 n1 ngk1 nh l3 m1 z1r3] i1 -50;
-  pos [k1 th1 th1r3 n1 ngk1 nh l3 m1 z1r3] i2 -50;
+  pos [k1 k1sh t1 th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 l3 m1 r3 z1r3] i1 -50;
+  pos [k1 k1sh t1 th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 l3 m1 r3 z1r3] i2 -50;
 
+  pos sh [xx] -60;
 } signPos;
 
 
 lookup consPos {
-   pos th4 [n1 n1u1 n1u2 n1cil] -50;
+   pos [th3 th4] [n1 n1u1 n1u2 n1cil] -50;
    pos n1 [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2] -50;
 } consPos;
 
