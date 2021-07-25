@@ -1143,13 +1143,18 @@ svgs:
         glyph_name: nine
     bullet:
         unicode: '2022'
-        glyph_name: bullet
     ₹:
         unicode: '20B9'
         glyph_name: rupee
+    pound:
+        unicode: '00A3'
+    yen:
+        unicode: '00A5'
+    euro:
+        unicode: '20AC'
     endash:
         unicode: '2013'
-        glyph_name: endash
     emdash:
         unicode: '2014'
-        glyph_name: emdash
+    less:
+        unicode: '003C'

@@ -140,7 +140,10 @@ def main(config, svg_file):
     except:
         raise UFOLibError("The file %s could not be read." % contentsPlistPath)
 
-    glyph_name = svg_config['glyph_name']
+    glyph_name = name
+    if 'glyph_name' in svg_config:
+        glyph_name = svg_config['glyph_name']
+
     # Replace all capital letters with a following '_' to avoid file name clash in Windows
     glyph_file_name = re.sub(r'([A-Z]){1}', lambda pat: pat.group(1) + '_', glyph_name) + '.glif'
     if glyph_name in contentsPlist:

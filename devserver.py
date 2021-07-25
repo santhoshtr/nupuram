@@ -27,7 +27,7 @@ class ConfigChangeHandler(FileSystemEventHandler):
             # Event is modified, you can process it now
             logger.info("Configuration modified - % s" % event.src_path)
             process = subprocess.Popen(
-                'make glyphs && make ufonormalizer', shell=True)
+                'make glyphs ufonormalizer', shell=True)
             process.wait()
 
 class UFOChangeHandler(FileSystemEventHandler):
@@ -38,7 +38,7 @@ class UFOChangeHandler(FileSystemEventHandler):
             # Event is modified, you can process it now
             logger.info("UFO modified - % s" % event.src_path)
             process = subprocess.Popen(
-                'make clean && make webfonts', shell=True)
+                'make clean webfonts', shell=True)
             process.wait()
             events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % (fontName, fontVersion , time.strftime("%Y%m%d%H%M%S")))
 
@@ -51,7 +51,7 @@ class FeatureChangeHandler(FileSystemEventHandler):
             # Event is modified, you can process it now
             logger.info("UFO modified - % s" % event.src_path)
             process = subprocess.Popen(
-                'make clean && make webfonts', shell=True)
+                'make clean webfonts', shell=True)
             process.wait()
             events.append('{"fontname":"%s", "version":"%s", "build":"%s"}' % (fontName, fontVersion , time.strftime("%Y%m%d%H%M%S")))
 
