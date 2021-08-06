@@ -274,6 +274,9 @@ svgs:
     Bullet:
         unicode: '2022'
         glyph_name: bullet
+    period:
+        unicode: '002E'
+        glyph_name: period
     divisionsign:
         unicode: '00F7'
         glyph_name: divide
@@ -286,6 +289,16 @@ svgs:
     Thorn_capital:
         unicode: '00DE'
         glyph_name: Thorn
+    ff:
+        glyph_name: ff
+    fi:
+        glyph_name: fi
+    ffi:
+        glyph_name: ffi
+    ft:
+        glyph_name: ft
+    th:
+        glyph_name: th
     ം:
         unicode: 0D02
         glyph_name: anuswara

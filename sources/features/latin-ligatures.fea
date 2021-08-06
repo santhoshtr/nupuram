@@ -1,0 +1,20 @@
+
+lookup latinligatures {
+  lookupflag 0;
+    sub f f i by ffi;
+    sub f f by ff;
+    sub f i by fi;
+    sub f t by ft;
+    sub t h by th;
+} latinligatures;
+
+feature liga {
+  script DFLT;
+    language dflt;
+      lookup latinligatures;
+
+  script latn;
+    language dflt;
+      lookup latinligatures;
+} liga;
+
