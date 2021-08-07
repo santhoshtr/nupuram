@@ -10,10 +10,9 @@ from __future__ import absolute_import, print_function
 __requires__ = ["FontTools"]
 
 import argparse
-import glob
+import traceback
 import os
 import re
-import sys
 import xml.etree.ElementTree as etree
 from io import open
 
@@ -167,7 +166,7 @@ def main(config, svg_file):
     transform[5] += height + base # Y offset
 
     glif = svg2glif(svg_file,
-                    name=svg_config['glyph_name'],
+                    name=glyph_name,
                     width=glyphWidth,
                     height=getattr(infoObject, 'unitsPerEm'),
                     unicodes=unicodeVal,
@@ -199,5 +198,6 @@ if __name__ == "__main__":
     for svg_file in options.infiles:
         try:
             main(config, svg_file)
-        except:
-            print("could not parse")
+        except Exception:
+            print("Error while processing %s" % svg_file )
+            traceback.print_exc()
