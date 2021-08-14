@@ -21,6 +21,7 @@ build-branch:
 
 test:
   stage: test
+  allow_failure: true
   before_script:
     - apt-get update -y
     - apt-get install -y make libharfbuzz-bin python3-pip
