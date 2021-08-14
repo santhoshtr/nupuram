@@ -1,0 +1,40 @@
+image: "registry.gitlab.com/smc/dockerfiles:font-builder"
+
+stages:
+  - build
+  - test
+
+build-branch:
+  stage: build
+  before_script:
+    - apt-get update -y
+    - apt-get install -y make python3-pip
+    - pip3 install -r requirements.txt
+  script:
+    - make otf ttf webfonts
+  artifacts:
+    paths:
+    - build/
+  except:
+    - tags
+
+test:
+  stage: test
+  before_script:
+    - apt-get update -y
+    - apt-get install -y make libharfbuzz-bin python3-pip
+    - pip3 install -r requirements.txt
+  script:
+    - make test
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -rf build tests public
+  artifacts:
+    paths:
+      - public  # instruct GitLab to keep the public folder
+  only:
+    - master
+
