@@ -12,19 +12,20 @@ lookup viramaPos {
 
 
 lookup signPos {
-  pos [h1 n1 n1u1 n1u2 n1th1 n1th1u1 n1th2u2] anuswara -50;
-  pos anuswara [s1 n1] -50;
-
-  pos [k1 k1sh t1 th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 n1th3 l3 m1 r3 z1r3] i1 -50;
-  pos [k1 k1sh t1 th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 n1th3 l3 m1 r3 s1th1r3 z1r3] i2 -50;
-
+  pos [k1 k1sh t1 t2 th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 n1th3 l3 m1 m1p1 r3 v1 z1r3] [i1 i2] -50;
   pos sh [xx] -60;
 } signPos;
 
 
+lookup anuswaraPos {
+  pos anuswara [s1 n1] -50;
+
+  pos [h1 n1 n1u1 n1u2 n1th1 n1th1u1 n1th2u2] anuswara -50;
+} anuswaraPos;
+
 lookup consPos {
    pos [th3 th4] [n1 n1u1 n1u2 n1cil] -50;
-   pos n1 [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2] -50;
+   pos [n1] [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2] -50;
    pos th3 z1 -50;
 } consPos;
 
@@ -89,7 +90,7 @@ feature kern {
       lookup viramaPos;
       lookup signPos;
       lookup consPos;
-
+      lookup anuswaraPos;
 } kern;
 
 #Mark attachment classes (defined in GDEF, used in lookupflags)
