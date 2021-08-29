@@ -1,8 +1,8 @@
-fonttools[ufo,lxml,woff,unicode]>=4.22.0
-fontmake>=2.4.0
-pyyaml
+fonttools[ufo,lxml,woff,unicode]>=4.26.0
+fontmake>=2.4.1
+pyyaml>=5.4.1
 ufolint>=1.2.0
-ufonormalizer>=0.5.4
-fontbakery>=0.7.38
-watchdog
-flask>=2.0.0
+ufonormalizer>=0.6.0
+fontbakery>=0.8.1
+watchdog>=2.1.5
+flask>=2.0.1
