@@ -23,9 +23,8 @@ lookup anuswaraPos {
 } anuswaraPos;
 
 lookup consPos {
-   pos [th3 th4 sh] [n1 n1u1 n1u2 n1cil] -50;
+   pos [th3 th3u1 n1th3 th4 sh] [n1 n1u1 n1u2 n1cil n1th3 n1th4 z1] -50;
    pos [n1] [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2 h1] -50;
-   pos [th3 n1th3] z1 -50;
 } consPos;
 
 @lc_right_slant = [v f ff k];

@@ -60,8 +60,8 @@ lookup blws_la_sign_excludes {
         [
            t1 r3 va_sign
            k1l3 k3l3 th1l3 p1l3 p2l3 m1l3 l3l3 v1v1 v1l3 z1l3 s1l3 h1l3
-           k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1th1 p1n1 p1p2
-           z1n1 z1m1 z1z1 sht1 s1s1 s1p1 rhrh
+           k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1p2
+           z1z1 sht1 s1s1 s1p1 rhrh
         ]
         l4'
         lookup restore_virama;
@@ -81,11 +81,11 @@ lookup akhn_conditional_stacking {
     ignore sub nj' xx' ch3' [r1 r2 l1 l2];
     sub nj' xx' ch3' by njch3;
 
-    ignore sub t3' xx' t3' [r1 r2 l1 l2];
+    ignore sub t3' xx' t3' [u1 u2 r1 r2 l1 l2];
     ignore sub t3' xx' t3' xx r3;
     sub t3' xx' t3' by t3t3;
 
-    ignore sub t3' xx' t4' [r1 r2 l1 l2];
+    ignore sub t3' xx' t4' [u1 u2 r1 r2 l1 l2];
     ignore sub t3' xx' t4' xx r3;
     sub t3' xx' t4' by t3t4;
 
@@ -101,10 +101,6 @@ lookup akhn_conditional_stacking {
     ignore sub th3' xx' th4' xx r3;
     sub th3' xx' th4' by th3th4;
 
-    ignore sub p1' xx' th1' [u1 u2 r1 r2 l1 l2];
-    ignore sub p1' xx' th1' xx [r3 th1];
-    sub p1' xx' th1' by p1th1;
-
     ignore sub p1' xx' p2' [u1 u2 r1 r2 l1 l2];
     ignore sub p1' xx' p2' xx r3;
     sub p1' xx' p2' by p1p2;
@@ -116,10 +112,6 @@ lookup akhn_conditional_stacking {
     ignore sub l3' xx' p1' [u1 u2 r1 r2 l1 l2];
     ignore sub p3' xx' p1' xx [r3 th3];
     sub l3' xx' p1' by l3p1;
-
-    ignore sub z1' xx' m1' [u1 u2 r1 r2 l1 l2];
-    ignore sub z1' xx' m1' xx [r3 m1];
-    sub z1' xx' m1' by z1m1;
 
     ignore sub z1' xx' z1' [r1 r2 l1 l2];
     ignore sub z1' xx' z1' xx r3;
@@ -179,7 +171,6 @@ lookup akhn_conjuncts {
     sub n1 xx n1 by n1n1;
     sub n1 xx m1 by n1m1;
     sub n1 xx rh by n1rh;
-    sub p1 xx n1 by p1n1;
     sub p1 xx p1 by p1p1;
     sub p3 xx p3 by p3p3;
     sub m1 xx p1 by m1p1;
@@ -188,7 +179,6 @@ lookup akhn_conjuncts {
     sub l3 xx l3 by l3l3;
     sub v1 xx v1 by v1v1;
     sub z1 xx ch1 by z1ch1;
-    sub z1 xx n1 by z1n1;
     sub s1 xx th2 by s1th2;
     sub h1 xx n1 by h1n1;
     sub h1 xx m1 by h1m1;
@@ -356,10 +346,6 @@ lookup psts_vowel_signs_common {
     sub t3 u1 by t3u1;
     sub t3 u2 by t3u2;
     sub t3 r1 by t3r1;
-    sub t3t3 u1 by t3t3u1;
-    sub t3t3 u2 by t3t3u2;
-    sub t3t4 u1 by t3t4u1;
-    sub t3t4 u2 by t3t4u2;
     sub t3r3 u1 by t3r3u1;
     sub t3r3 u2 by t3r3u2;
     sub t4 u1 by t4u1;
@@ -456,8 +442,6 @@ lookup psts_vowel_signs_common {
     sub p1 u1 by p1u1;
     sub p1 u2 by p1u2;
     sub p1 r1 by p1r1;
-    sub p1n1 u1 by p1n1u1;
-    sub p1n1 u2 by p1n1u2;
     sub p1p1 u1 by p1p1u1;
     sub p1p1 u2 by p1p1u2;
     sub p1p1 r1 by p1p1r1;
@@ -532,8 +516,6 @@ lookup psts_vowel_signs_common {
     sub z1 r1 by z1r1;
     sub z1ch1 u1 by z1ch1u1;
     sub z1ch1 u2 by z1ch1u2;
-    sub z1n1 u1 by z1n1u1;
-    sub z1n1 u2 by z1n1u2;
     sub z1r3 u1 by z1r3u1;
     sub z1r3 u2 by z1r3u2;
     sub z1l3 u1 by z1l3u1;
