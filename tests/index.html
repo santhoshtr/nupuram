@@ -88,8 +88,7 @@
 				display: grid;
 				column-gap: 1px;
 				row-gap: 1em;
-				margin-bottom: 1em;
-				;
+				margin: 1em;
 			}
 
 			.rows>div {
@@ -111,7 +110,7 @@
 
 
 			.val-input {
-				width: 3.7rem;
+				width: 3rem;
 				padding: 0;
 				margin: 0;
 			}
@@ -129,6 +128,15 @@
 				background-image: linear-gradient(transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px);
 				background-size: 100% 12px, 12px 100%;
 			}
+
+			input[type="range"] {
+				height: 2px;
+			}
+
+			label {
+				white-space: nowrap;
+			}
+
 		</style>
 		<script>
 			function loadFont(version){
