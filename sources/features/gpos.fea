@@ -83,7 +83,7 @@ lookup abvm_dotreph {
 	pos base [z1 z1u1 z1u2 z1r1 z1z1 z1z1u1 z1z1u2 z1l3 z1l3u1 z1l3u2] <anchor 810 0> mark @visual_centrepoint;
 	pos base [z1r3 z1r3u1 z1r3u2] <anchor 1180 0> mark @visual_centrepoint;
 	pos base [z1ch1 z1ch1u1 z1ch1u2] <anchor 1411 0> mark @visual_centrepoint;
-	pos base [sh shu1 shu2 shr1 sht1 sht1u1 sht1u2] <anchor 1087 0> mark @visual_centrepoint;
+	pos base [sh shu1 shu2 shr1 sht1] <anchor 1087 0> mark @visual_centrepoint;
 	pos base [shr3 shr3u1 shr3u2] <anchor 1451 0> mark @visual_centrepoint;
 	pos base [s1 s1u1 s1u2 s1r1] <anchor 872 0> mark @visual_centrepoint;
 	pos base [s1th2 s1th2u1 s1th2u2 s1th2r1] <anchor 2000 0> mark @visual_centrepoint;
