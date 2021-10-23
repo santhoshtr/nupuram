@@ -21,7 +21,7 @@ from fontTools.pens.pointPen import SegmentToPointPen
 from fontTools.svgLib import SVGPath
 from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
 from fontTools.ufoLib.glifLib import writeGlyphToString
-from fontTools.ufoLib.plistlib import load, writePlist
+from fontTools.ufoLib.plistlib import load, dump
 
 
 class InfoObject(object):
@@ -185,7 +185,7 @@ def main(config, svg_file):
     # If this is a new glyph, add it to the UFO/glyphs/contents.plist
     if not existing_glyph:
         contentsPlist[glyph_name] = glyph_file_name
-        writePlist(contentsPlist, contentsPlistPath)
+        dump(contentsPlist, open(contentsPlistPath, "wb"))
         print("\033[94m[%s]\033[0m \033[92mAdd\033[0m %s -> %s \033[92m✔️\033[0m" %
               (fontName, glyph_name, glyph_file_name))
         lib_obj = reader.readLib()
