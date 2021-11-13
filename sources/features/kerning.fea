@@ -23,8 +23,9 @@ lookup anuswaraPos {
 } anuswaraPos;
 
 lookup consPos {
-   pos [th3 th3u1 n1th3 th4 sh] [n1 n1u1 n1u2 n1cil n1th3 n1th4 z1] -50;
-   pos [n1] [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2 h1] -50;
+   pos [th3 th3u1 n1th3 th4 sh m1 m1m1 m1u1 m1u2 m1m1u1] [n1 n1u1 n1u2 n1cil n1th3 n1th4 n1rh n1m1 n1m1u1 n1m1u2 z1] -50;
+   pos [n1] [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2 sh h1 shu1 shu2] -50;
+   pos [th1] [p1 p1u1 p1u2 p1p1 p1p1u1 p1p1u2 h1 h1u1 h1u2 h1m1 sh shu1 shu2] -50;
 } consPos;
 
 @lc_right_slant = [v f ff k];

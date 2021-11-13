@@ -286,6 +286,9 @@ svgs:
     percent:
         unicode: '0025'
         glyph_name: percent
+    thorn:
+        unicode: '00FE'
+        glyph_name: thorn
     Thorn_capital:
         unicode: '00DE'
         glyph_name: Thorn
@@ -401,6 +404,10 @@ svgs:
         glyph_name: k3th3r1
     ഗ്ഗ:
         glyph_name: k3k3
+    ഗ്ഗു:
+        glyph_name: k3k3u1
+    ഗ്ഗൂ:
+        glyph_name: k3k3u2
     ഗ്ന:
         glyph_name: k3n1
     ഗ്നു:
@@ -1007,12 +1014,18 @@ svgs:
     ൳:
         unicode: 0D73
         glyph_name: kaal
+    ൚:
+        unicode: 0D5A
+        glyph_name: mlthreeightieths
     ൜:
         unicode: 0D5C
         glyph_name: mlonetenths
     ൝:
         unicode: 0D5D
         glyph_name: mlthreetwentieths
+    ൞:
+        unicode: 0D5E
+        glyph_name: mlonefifths
     ൱:
         unicode: 0D71
         glyph_name: mlonehundred
@@ -1025,6 +1038,12 @@ svgs:
     ൵:
         unicode: 0D75
         glyph_name: mlthreefourth
+    ൶:
+        unicode: 0D76
+        glyph_name: mlonesixteenths
+    ൷:
+        unicode: 0D77
+        glyph_name: mloneeighths
     ൸:
         unicode: 0D78
         glyph_name: mlthreesixteenths
