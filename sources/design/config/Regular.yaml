@@ -292,6 +292,15 @@ svgs:
     Thorn_capital:
         unicode: '00DE'
         glyph_name: Thorn
+    ß:
+        unicode: '00DF'
+        glyph_name: germandbls
+    ð:
+        unicode: '00F0'
+        glyph_name: eth
+    Ð:
+        unicode: '00D0'
+        glyph_name: Eth
     ff:
         glyph_name: ff
     fi:
@@ -916,9 +925,12 @@ svgs:
     ൄ:
         unicode: 0D44
         glyph_name: r2
-    ഌ_small:
+    ൢ:
         unicode: 0D62
-        glyph_name: vocalic_l_sign
+        glyph_name: l1
+    ൣ:
+        unicode: 0D63
+        glyph_name: l2
     ജൃ_small:
         glyph_name: _ch3r1
     ട_small:

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ZWNJ" format="2">
 	<unicode hex="200C"/>
-	<advance width="179"/>
+	<advance width="148.988037036"/>
 	<outline>
-		<contour>
-			<point x="10" y="702" type="line"/>
-			<point x="129" y="702" type="line"/>
-			<point x="129" y="3" type="line"/>
-			<point x="10" y="3" type="line"/>
-		</contour>
+		<component base="dotlessi"/>
 	</outline>
 	<lib>
 		<dict>
