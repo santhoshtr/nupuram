@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="wcircumflex" format="2">
 	<unicode hex="0175"/>
-	<advance width="558.6678800476"/>
+	<advance width="589"/>
 	<outline>
-		<component base="asciicircum" xOffset="93.6902087149" yOffset="0.7191671475"/>
 		<component base="w"/>
+		<component base="circumflex"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>

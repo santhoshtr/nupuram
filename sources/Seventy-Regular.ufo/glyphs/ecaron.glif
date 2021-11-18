@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ecaron" format="2">
 	<unicode hex="011B"/>
-	<advance width="424.4195143619"/>
+	<advance width="438"/>
 	<outline>
-		<component base="asciicircum" yScale="-1" xOffset="37.2126377846" yOffset="1650.8726173299"/>
 		<component base="e"/>
+		<component base="caron"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>

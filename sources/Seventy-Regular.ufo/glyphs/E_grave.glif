@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="Egrave" format="2">
 	<unicode hex="00C8"/>
-	<advance width="477.99832"/>
+	<advance width="508"/>
 	<outline>
 		<component base="E"/>
-		<component base="grave" xOffset="74.1662110151" yOffset="183.8202401728"/>
+		<component base="grave" xOffset="77.86264" yOffset="100.284965"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>

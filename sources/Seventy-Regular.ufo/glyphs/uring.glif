@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="uring" format="2">
 	<unicode hex="016F"/>
-	<advance width="472.506668056"/>
+	<advance width="477"/>
 	<outline>
 		<component base="u"/>
-		<component base="degree" xOffset="116.2453568228" yOffset="100.7190253412"/>
+		<component base="ring"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>

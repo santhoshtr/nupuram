@@ -46,6 +46,8 @@ svgs:
     atsign:
         unicode: '0040'
         glyph_name: at
+    caron:
+        unicode: 02C7
     A:
         unicode: '0041'
         glyph_name: A
@@ -55,6 +57,9 @@ svgs:
     acute:
         unicode: '00B4'
         glyph_name: acute
+    grave:
+        unicode: '0060'
+        glyph_name: grave
     ae:
         unicode: '00E6'
         glyph_name: ae
@@ -76,9 +81,6 @@ svgs:
     cedilla:
         unicode: '00B8'
         glyph_name: cedilla
-    C_cedilla_capital:
-        unicode: '00C7'
-        glyph_name: Ccedilla
     d:
         unicode: '0064'
         glyph_name: d
@@ -87,7 +89,8 @@ svgs:
         glyph_name: D
     dieresis:
         unicode: '00A8'
-        glyph_name: dieresis
+    ring:
+        unicode: '02DA'
     e:
         unicode: '0065'
         glyph_name: e
@@ -237,10 +240,9 @@ svgs:
         glyph_name: bar
     caret:
         unicode: 005E
-        glyph_name: asciicircum
+        glyph_name: circumflex
     tilde:
         unicode: 007E
-        glyph_name: asciitilde
     Ω:
         unicode: '2126'
         glyph_name: omega
@@ -1106,3 +1108,201 @@ svgs:
         unicode: '2014'
     less:
         unicode: '003C'
+    Agrave:
+        unicode: '00C0'
+        compose: 'A+grave@top'
+    Aacute:
+        unicode: '00C1'
+        compose: 'A+acute@top'
+    'Acircumflex':
+        compose: 'A+circumflex@top'
+        unicode: '00C2'
+    'Atilde':
+        unicode: '00C3'
+        compose: 'A+tilde@top'
+    'Adieresis':
+        unicode: '00C4'
+        compose: 'A+dieresis@top'
+    'Aring':
+        unicode: '00C5'
+        compose: 'A+ring@top'
+    'Ccedilla':
+        unicode: '00C7'
+        compose: 'C+cedilla@bottom'
+    'Ccircumflex':
+        unicode: '0108'
+        compose: 'C+circumflex@top'
+    'Egrave':
+        unicode: '00C8'
+        compose: 'E+grave@top'
+    'Eacute':
+        unicode: '00C9'
+        compose: 'E+acute@top'
+    'Ecircumflex':
+        unicode: '00CA'
+        compose: 'E+circumflex@top'
+    'Edieresis':
+        unicode: '00CB'
+        compose: 'E+dieresis@top'
+    'Ecaron':
+        unicode: '011A'
+        compose: 'E+caron@top'
+    'Gcircumflex':
+        unicode: '011C'
+        compose: 'G+circumflex@top'
+    'Igrave':
+        unicode: '00CC'
+        compose: 'I+grave@top'
+    'Iacute':
+        unicode: '00CD'
+        compose: 'I+acute@top'
+    'Icircumflex':
+        unicode: '00CE'
+        compose: 'I+circumflex@top'
+    'Idieresis':
+        unicode: '00CF'
+        compose: 'I+dieresis@top'
+    'Itilde':
+        unicode: '0128'
+        compose: 'I+tilde@top'
+    'Ntilde':
+        unicode: '00D1'
+        compose: 'N+tilde@top'
+    'Ograve':
+        unicode: '00D2'
+        compose: 'O+grave@top'
+    'Oacute':
+        unicode: '00D3'
+        compose: 'O+acute@top'
+    'Ocircumflex':
+        unicode: '00D4'
+        compose: 'O+circumflex@top'
+    'Otilde':
+        unicode: '00D5'
+        compose: 'O+tilde@top'
+    'Odieresis':
+        unicode: '00D6'
+        compose: 'O+dieresis@top'
+    'Ugrave':
+        unicode: '00D9'
+        compose: 'U+grave@top'
+    'Uacute':
+        unicode: '00DA'
+        compose: 'U+acute@top'
+    'Ucircumflex':
+        unicode: '00DB'
+        compose: 'U+circumflex@top'
+    'Udieresis':
+        unicode: '00DC'
+        compose: 'U+dieresis@top'
+    'Yacute':
+        unicode: '00DD'
+        compose: 'Y+acute@top'
+    'agrave':
+        unicode: '00E0'
+        compose: 'a+grave@top'
+    'aacute':
+        unicode: '00E1'
+        compose: 'a+acute@top'
+    'acircumflex':
+        unicode: '00E2'
+        compose: 'a+circumflex@top'
+    'atilde':
+        unicode: '00E3'
+        compose: 'a+tilde@top'
+    'adieresis':
+        unicode: '00E4'
+        compose: 'a+dieresis@top'
+    'aring':
+        unicode: '00E5'
+        compose: 'a+ring@top'
+    'ccedilla':
+        unicode: '00C7'
+        compose: 'c+cedilla@bottom'
+    'ccircumflex':
+        unicode: '0109'
+        compose: 'c+circumflex@top'
+    'egrave':
+        unicode: '00E8'
+        compose: 'e+grave@top'
+    'eacute':
+        unicode: '00E9'
+        compose: 'e+acute@top'
+    'ecircumflex':
+        unicode: '00EA'
+        compose: 'e+circumflex@top'
+    'edieresis':
+        unicode: '00EB'
+        compose: 'e+dieresis@top'
+    'ecaron':
+        unicode: '011B'
+        compose: 'e+caron@top'
+    'igrave':
+        unicode: '00EC'
+        compose: 'dotlessi+grave@top'
+    'iacute':
+        unicode: '00ED'
+        compose: 'dotlessi+acute@top'
+    'icircumflex':
+        unicode: '00EE'
+        compose: 'dotlessi+circumflex@top'
+    'idieresis':
+        unicode: '00EF'
+        compose: 'dotlessi+dieresis@top'
+    'ntilde':
+        unicode: '00F1'
+        compose: 'n+tilde@top'
+    'ograve':
+        unicode: '00F2'
+        compose: 'o+grave@top'
+    'oacute':
+        unicode: '00F3'
+        compose: 'o+acute@top'
+    'ocircumflex':
+        unicode: '00F4'
+        compose: 'o+circumflex@top'
+    'otilde':
+        unicode: '00F5'
+        compose: 'o+tilde@top'
+    'odieresis':
+        unicode: '00F6'
+        compose: 'o+dieresis@top'
+    'sacute':
+        unicode: '015B'
+        compose: 's+acute@top'
+    'scircumflex':
+        unicode: '015D'
+        compose: 's+circumflex@top'
+    'scaron':
+        unicode: '0161'
+        compose: 's+caron@top'
+    'ugrave':
+        unicode: '00F9'
+        compose: 'u+grave@top'
+    'uacute':
+        unicode: '00FA'
+        compose: 'u+acute@top'
+    'utilde':
+        unicode: '0169'
+        compose: 'u+tilde@top'
+    'uring':
+        unicode: '016F'
+        compose: 'u+ring@top'
+    'ucircumflex':
+        unicode: '00FB'
+        compose: 'u+circumflex@top'
+    'udieresis':
+        unicode: '00FC'
+        compose: 'u+dieresis@top'
+    'ucaron':
+        unicode: '01D4'
+        compose: 'u+caron@top'
+    'yacute':
+        unicode: '00FD'
+        compose: 'y+acute@top'
+    'ydieresis':
+        unicode: '00FF'
+        compose: 'y+dieresis@top'
+    'wcircumflex':
+        unicode: '0175'
+        compose: 'w+circumflex@top'

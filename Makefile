@@ -90,6 +90,7 @@ glyphs: $(FONTS:%=$(SRCDIR)/$(NAME)-%/glyphs)
 
 $(SRCDIR)/$(NAME)-%/glyphs:
 	$(PY) tools/import-svg-to-ufo.py -c $(SRCDIR)/design/config/$*.yaml -i $(SRCDIR)/design/$*/*.svg
+	$(PY) tools/build-composites.py -c $(SRCDIR)/design/config/$*.yaml
 
 clean:
 	@rm -rf $(BLDDIR)

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="oacute" format="2">
 	<unicode hex="00F3"/>
-	<advance width="469.937071406"/>
+	<advance width="479"/>
 	<outline>
-		<component base="ograve" xScale="-1" xOffset="470.118359039" yOffset="-1.5417231542"/>
+		<component base="o"/>
+		<component base="acute" xOffset="181.963343" yOffset="-51.925933"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>

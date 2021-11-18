@@ -22,7 +22,7 @@ from fontTools.svgLib import SVGPath
 from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
 from fontTools.ufoLib.glifLib import writeGlyphToString
 from fontTools.ufoLib.plistlib import load, dump
-
+from defcon import Font
 
 class InfoObject(object):
     pass
@@ -42,14 +42,14 @@ def split(arg):
 
 
 def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
-             version=2):
+             version=2, anchors=None):
     """ Convert an SVG outline to a UFO glyph with given 'name', advance
     'width' and 'height' (int), and 'unicodes' (list of int).
     Return the resulting string in GLIF format (default: version 2).
     If 'transform' is provided, apply a transformation matrix before the
     conversion (must be tuple of 6 floats, or a FontTools Transform object).
     """
-    glyph = SimpleNamespace(width=width, height=height, unicodes=unicodes)
+    glyph = SimpleNamespace(width=width, height=height, unicodes=unicodes, anchors=anchors)
     outline = SVGPath(svg_file, transform)
 
     # writeGlyphToString takes a callable (usually a glyph's drawPoints
@@ -165,14 +165,26 @@ def main(config, svg_file):
         transform[4] += 0
     transform[5] += height + base # Y offset
 
+    anchorEls = svgObj.findall('{http://www.w3.org/2000/svg}text', prefix_map)
+    anchors = []
+    try:
+        for anchorEl in anchorEls:
+            anchors.append({
+                "x": float(anchorEl.attrib["x"]),
+                "y": height + base - float(anchorEl.attrib["y"]),
+                "name": anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
+            })
+    except:
+        pass
+
     glif = svg2glif(svg_file,
                     name=glyph_name,
                     width=glyphWidth,
                     height=getattr(infoObject, 'unitsPerEm'),
                     unicodes=unicodeVal,
                     transform=transform,
+                    anchors=anchors,
                     version=config['font']['version'])
-
 
     output_file = ufo_font_path + '/glyphs/' + glyph_file_name
 
