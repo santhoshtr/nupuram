@@ -220,8 +220,6 @@
 		<string>aeacute.glif</string>
 		<key>agrave</key>
 		<string>agrave.glif</string>
-		<key>ai1</key>
-		<string>ai1.glif</string>
 		<key>amacron</key>
 		<string>amacron.glif</string>
 		<key>ampersand</key>
@@ -732,6 +730,8 @@
 		<string>ml_aa.glif</string>
 		<key>ml_ai</key>
 		<string>ml_ai.glif</string>
+		<key>ml_ai_sign</key>
+		<string>ml_ai_sign.glif</string>
 		<key>ml_au</key>
 		<string>ml_au.glif</string>
 		<key>ml_e</key>
@@ -750,8 +750,14 @@
 		<string>ml_ll.glif</string>
 		<key>ml_o</key>
 		<string>ml_o.glif</string>
+		<key>ml_o_sign</key>
+		<string>ml_o_sign.glif</string>
 		<key>ml_oo</key>
 		<string>ml_oo.glif</string>
+		<key>ml_oo_sign</key>
+		<string>ml_oo_sign.glif</string>
+		<key>ml_ou_sign</key>
+		<string>ml_ou_sign.glif</string>
 		<key>ml_r</key>
 		<string>ml_r.glif</string>
 		<key>ml_rr</key>
@@ -1010,10 +1016,6 @@
 		<string>numbersign.glif</string>
 		<key>o</key>
 		<string>o.glif</string>
-		<key>o1</key>
-		<string>o1.glif</string>
-		<key>o2</key>
-		<string>o2.glif</string>
 		<key>oacute</key>
 		<string>oacute.glif</string>
 		<key>ocircumflex</key>
@@ -1516,8 +1518,6 @@
 		<string>uni01D_2.glif</string>
 		<key>uni01D3</key>
 		<string>uni01D_3.glif</string>
-		<key>uni0D4C</key>
-		<string>uni0D_4C_.glif</string>
 		<key>uni25CC</key>
 		<string>uni25C_C_.glif</string>
 		<key>uring</key>

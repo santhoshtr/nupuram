@@ -1306,3 +1306,30 @@ svgs:
     'wcircumflex':
         unicode: '0175'
         compose: 'w+circumflex@top'
+    ml_ai_sign:
+        unicode: '0D48'
+        compose: 'e1+e1'
+    ml_o_sign:
+        unicode: '0D4A'
+        compose: 'e1+a2'
+    ml_oo_sign:
+        unicode: '0D4A'
+        compose: 'e2+a2'
+    ml_ou_sign:
+        unicode: '0D4C'
+        compose: 'e1+au2'
+    ml_ii:
+        unicode: '0D08'
+        compose: 'ml_i+au2'
+    ml_uu:
+        unicode: '0D0A'
+        compose: 'ml_u+au2'
+    ml_ai:
+        unicode: '0D10'
+        compose: 'e1+ml_e'
+    ml_oo:
+        unicode: '0D13'
+        compose: 'ml_o+a2'
+    ml_au:
+        unicode: '0D13'
+        compose: 'ml_o+au2'

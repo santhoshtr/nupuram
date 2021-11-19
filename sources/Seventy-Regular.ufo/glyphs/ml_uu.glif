@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_uu" format="2">
 	<unicode hex="0D0A"/>
-	<advance width="1104.4612315171"/>
+	<advance width="1075"/>
 	<outline>
-		<component base="au2" xOffset="552.7756592137" yOffset="-15.85917333"/>
 		<component base="ml_u"/>
+		<component base="au2" xOffset="537"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseglyph</string>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
 		</dict>
 	</lib>
 </glyph>

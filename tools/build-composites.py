@@ -108,20 +108,29 @@ def buildComposite(font, glyph_name, glyph):
     composite.appendComponent(component)
 
     for item in items:
-        baseName, anchorName = item.split("@")
         component = composite.instantiateComponent()
-        component.baseGlyph = baseName
-        anchor = _anchor = None
-        for a in baseGlyph.anchors:
-            if a["name"] == anchorName:
-                anchor = a
-        for a in font[baseName].anchors:
-            if a["name"] == anchorName:
-                _anchor = a
-        if anchor and _anchor:
-            x = anchor["x"] - _anchor["x"]
-            y = anchor["y"] - _anchor["y"]
+        if "@" not in item:
+            # Just append to the right
+            component.baseGlyph = item
+            x = baseGlyph.width
+            y = 0
+            composite.width = composite.width + font[item].width
             component.move((x, y))
+        else:
+            baseName, anchorName = item.split("@")
+            component = composite.instantiateComponent()
+            component.baseGlyph = baseName
+            anchor = _anchor = None
+            for a in baseGlyph.anchors:
+                if a["name"] == anchorName:
+                    anchor = a
+            for a in font[baseName].anchors:
+                if a["name"] == anchorName:
+                    _anchor = a
+            if anchor and _anchor:
+                x = anchor["x"] - _anchor["x"]
+                y = anchor["y"] - _anchor["y"]
+                component.move((x, y))
         composite.appendComponent(component)
         composite.lib['public.markColor'] = '0.73, 0.87, 0.98, 0.5' # grey
 
