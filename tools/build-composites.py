@@ -147,6 +147,9 @@ def main(config):
             except Exception:
                 print("Error while building composites %s" % glyph_name )
                 traceback.print_exc()
+    with open("sources/glyphorder.txt") as order:
+	    glyphOrder = order.read().splitlines()
+    font.glyphOrder = glyphOrder
     font.save(ufo_font_path)
 
 if __name__ == "__main__":
