@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="nht1u2" format="2">
-	<advance width="1139.8635546252"/>
+	<advance width="1129"/>
 	<outline>
 		<component base="nht1"/>
-		<component base="uu_sign_drop" xOffset="710.9674000078" yOffset="-0.7677301351"/>
+		<component base="uu_sign_drop" xOffset="892.28158" yOffset="69.27594"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
 		</dict>
 	</lib>
 </glyph>
