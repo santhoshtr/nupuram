@@ -16,16 +16,9 @@ feature akhn {
      language dflt;
       lookup  chillu;
       lookup akhn_conjuncts;
+      lookup akhn_la_signs;
       lookup akhn_conditional_stacking;
 } akhn;
-
-feature blwf {
-
- script mlm2;
-     language dflt;
-      lookup blwf_la_sign;
-
-} blwf;
 
 feature pstf {
 
@@ -41,14 +34,6 @@ feature pres {
      language dflt;
       lookup pres_reph;
 } pres;
-
-feature blws {
-
- script mlm2;
-     language dflt;
-      lookup blws_la_signs;
-      lookup blws_la_sign_excludes;
-} blws;
 
 feature psts {
 

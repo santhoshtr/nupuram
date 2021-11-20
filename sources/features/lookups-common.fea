@@ -13,16 +13,6 @@ lookup chillu {
     sub m1 xx ZWJ by m1cil;
 } chillu;
 
-lookup blwf_la_sign_mlym {
-    lookupflag 0;
-    sub l3 xx by l4;
-} blwf_la_sign_mlym;
-
-lookup blwf_la_sign {
-    lookupflag 0;
-    sub xx l3 by l4;
-} blwf_la_sign;
-
 lookup pstf_cons_signs {
     lookupflag 0;
     sub xx y1 by y2;
@@ -33,7 +23,6 @@ lookup split_cons_signs {
   lookupflag 0;
     sub v2 by xx v1;
     sub r4 by xx r3;
-    sub l4 by xx l3;
 } split_cons_signs;
 
 lookup pstf_cons_signs_fix_order {
@@ -50,22 +39,6 @@ lookup pref_reph {
     lookupflag 0;
     sub xx r3 by r4;
 } pref_reph;
-
-lookup restore_virama {
-   sub l4 by xx l3;
-} restore_virama;
-
-lookup blws_la_sign_excludes {
-    sub
-        [
-           t1 r3 va_sign
-           k1l3 k3l3 th1l3 p1l3 p2l3 m1l3 l3l3 v1v1 v1l3 z1l3 s1l3 h1l3
-           k1rhrh k3k3 ch1ch1 ch1ch2 t1t1 p1p2
-           z1z1 sht1 s1s1 s1p1 rhrh
-        ]
-        l4'
-        lookup restore_virama;
-} blws_la_sign_excludes;
 
 # GSUB
 lookup akhn_conditional_stacking {
@@ -228,21 +201,21 @@ lookup pres_reph {
     sub r4 rhrh by rhrhr3;
 } pres_reph;
 
-lookup blws_la_signs {
-	lookupflag IgnoreMarks;
-    sub k1 l4 by k1l3;
-    sub k3 l4 by k3l3;
-    sub th1 l4 by th1l3;
-    sub p1 l4 by p1l3;
-    sub p2 l4 by p2l3;
-    sub p3 l4 by p3l3;
-    sub m1 l4 by m1l3;
-    sub l3 l4 by l3l3;
-    sub v1 l4 by v1l3;
-    sub z1 l4 by z1l3;
-    sub s1 l4 by s1l3;
-    sub h1 l4 by h1l3;
-} blws_la_signs;
+lookup akhn_la_signs {
+	lookupflag 0;
+    sub k1 xx l3 by k1l3;
+    sub k3 xx l3 by k3l3;
+    sub th1 xx l3 by th1l3;
+    sub p1 xx l3 by p1l3;
+    sub p2 xx l3 by p2l3;
+    sub p3 xx l3 by p3l3;
+    sub m1 xx l3 by m1l3;
+    sub l3 xx l3 by l3l3;
+    sub v1 xx l3 by v1l3;
+    sub z1 xx l3 by z1l3;
+    sub s1 xx l3 by s1l3;
+    sub h1 xx l3 by h1l3;
+} akhn_la_signs;
 
 lookup psts_vowel_signs_common {
   lookupflag IgnoreMarks;
@@ -494,9 +467,9 @@ lookup psts_vowel_signs_common {
     sub l3 u1 by l3u1;
     sub l3 u2 by l3u2;
     sub l3l3 u1 by l3l3u1;
-    sub l3 l4 u1 by l3l3u1;
+    sub l3 xx l3 u1 by l3l3u1;
     sub l3l3 u2 by l3l3u2;
-    sub l3 l4 u2 by l3l3u2;
+    sub l3 xx l3 u2 by l3l3u2;
     sub v1 u1 by v1u1;
     sub v1 u2 by v1u2;
     sub v1 r1 by v1r1;

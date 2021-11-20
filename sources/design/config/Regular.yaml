@@ -882,7 +882,7 @@ svgs:
     ്ര:
         glyph_name: r4
     ്ല:
-        glyph_name: l4
+        glyph_name: _l3
     ്വ:
         glyph_name: v2
     ാ:
@@ -1252,6 +1252,9 @@ svgs:
     'ntilde':
         unicode: '00F1'
         compose: 'n+tilde@top'
+    'ncaron':
+        unicode: '0148'
+        compose: 'n+caron@top'
     'ograve':
         unicode: '00F2'
         compose: 'o+grave@top'
@@ -1267,6 +1270,12 @@ svgs:
     'odieresis':
         unicode: '00F6'
         compose: 'o+dieresis@top'
+    'racute':
+        unicode: '0155'
+        compose: 'r+acute@top'
+    'rcaron':
+        unicode: '0159'
+        compose: 'r+caron@top'
     'sacute':
         unicode: '015B'
         compose: 's+acute@top'
@@ -1303,9 +1312,18 @@ svgs:
     'ydieresis':
         unicode: '00FF'
         compose: 'y+dieresis@top'
+    'ycircumflex':
+        unicode: '0177'
+        compose: 'y+circumflex@top'
     'wcircumflex':
         unicode: '0175'
         compose: 'w+circumflex@top'
+    'zacute':
+        unicode: '017A'
+        compose: 'z+acute@top'
+    'zcaron':
+        unicode: '017E'
+        compose: 'z+caron@top'
     ml_ai_sign:
         unicode: '0D48'
         compose: 'e1+e1'
@@ -1409,3 +1427,27 @@ svgs:
         compose: 'rh+u_sign_drop@bottom'
     rhu2:
         compose: 'rh+uu_sign_drop@bottom'
+    k1l3:
+        compose: 'k1+_l3@right'
+    k3l3:
+        compose: 'k3+_l3@right'
+    th1l3:
+        compose: 'th1+_l3@right'
+    p1l3:
+        compose: 'p1+_l3@right'
+    p2l3:
+        compose: 'p2+_l3@right'
+    p3l3:
+        compose: 'p3+_l3@right'
+    m1l3:
+        compose: 'm1+_l3@right'
+    # l3l3:
+    #     compose: 'l3+_l3@right'
+    v1l3:
+        compose: 'v1+_l3@right'
+    z1l3:
+        compose: 'z1+_l3@right'
+    s1l3:
+        compose: 's1+_l3@right'
+    h1l3:
+        compose: 'h1+_l3@right'
