@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="lhlhu2" format="2">
-	<advance width="1034.0606970415"/>
+	<advance width="998"/>
 	<outline>
-		<component base="lhlh" xOffset="-8.4249029585" yOffset="-1.0693186051"/>
-		<component base="uu_sign_drop" xOffset="645.2197022937" yOffset="44.1656120061"/>
+		<component base="lhlh"/>
+		<component base="uu_sign_drop" xOffset="778.00305" yOffset="13.05359"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
 		</dict>
 	</lib>
 </glyph>

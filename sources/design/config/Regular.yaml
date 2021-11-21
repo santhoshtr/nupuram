@@ -1351,6 +1351,30 @@ svgs:
     ml_au:
         unicode: '0D13'
         compose: 'ml_o+au2'
+    k1r3u1:
+        compose: 'k1r3+u_sign_drop@bottom'
+    k1r3u2:
+        compose: 'k1r3+uu_sign_drop@bottom'
+    k1shu1:
+        compose: 'k1sh+u_sign_drop@bottom'
+    k1shu2:
+        compose: 'k1sh+uu_sign_drop@bottom'
+    k2u1:
+        compose: 'k2+u_sign_drop@bottom'
+    k2u2:
+        compose: 'k2+uu_sign_drop@bottom'
+    k1k1r3u1:
+        compose: 'k1k1r3+u_sign_drop@bottom'
+    k1k1r3u2:
+        compose: 'k1k1r3+uu_sign_drop@bottom'
+    k3r3u1:
+        compose: 'k3r3+u_sign_drop@bottom'
+    k3r3u2:
+        compose: 'k3r3+uu_sign_drop@bottom'
+    k3th3u1:
+        compose: 'k3th3+u_sign_drop@bottom'
+    k3th3u2:
+        compose: 'k3th3+uu_sign_drop@bottom'
     ch1u1:
         compose: 'ch1+u_sign_drop@bottom'
     ch1u2:
@@ -1387,10 +1411,46 @@ svgs:
         compose: 't4+u_sign_drop@bottom'
     t4u2:
         compose: 't4+uu_sign_drop@bottom'
+    th1r3u1:
+        compose: 'th1r3+u_sign_drop@bottom'
+    th1r3u2:
+        compose: 'th1r3+uu_sign_drop@bottom'
+    th4r3u1:
+        compose: 'th4r3+u_sign_drop@bottom'
+    th4r3u2:
+        compose: 'th4r3+uu_sign_drop@bottom'
+    th3th3u1:
+        compose: 'th3th3+u_sign_drop@bottom'
+    th3th3u2:
+        compose: 'th3th3+uu_sign_drop@bottom'
+    n1m1u1:
+        compose: 'n1m1+u_sign_drop@bottom'
+    n1m1u2:
+        compose: 'n1m1+uu_sign_drop@bottom'
+    n1th4u1:
+        compose: 'n1th4+u_sign_drop@bottom'
+    n1th4u2:
+        compose: 'n1th4+uu_sign_drop@bottom'
+    n1th1r3u1:
+        compose: 'n1th1r3+u_sign_drop@bottom'
+    n1th1r3u2:
+        compose: 'n1th1r3+uu_sign_drop@bottom'
+    n1th4r3u1:
+        compose: 'n1th4r3+u_sign_drop@bottom'
+    n1th4r3u2:
+        compose: 'n1th4r3+uu_sign_drop@bottom'
+    n1th3r3u1:
+        compose: 'n1th3r3+u_sign_drop@bottom'
+    n1th3r3u2:
+        compose: 'n1th3r3+uu_sign_drop@bottom'
     nht1u1:
         compose: 'nht1+u_sign_drop@bottom'
     nht1u2:
         compose: 'nht1+uu_sign_drop@bottom'
+    nht1r3u1:
+        compose: 'nht1r3+u_sign_drop@bottom'
+    nht1r3u2:
+        compose: 'nht1r3+uu_sign_drop@bottom'
     p1u1:
         compose: 'p1+u_sign_drop@bottom'
     p1u2:
@@ -1403,6 +1463,18 @@ svgs:
         compose: 'p3+u_sign_drop@bottom'
     p3u2:
         compose: 'p3+uu_sign_drop@bottom'
+    p3r3u1:
+        compose: 'p3r3+u_sign_drop@bottom'
+    p3r3u2:
+        compose: 'p3r3+uu_sign_drop@bottom'
+    p4r3u1:
+        compose: 'p4r3+u_sign_drop@bottom'
+    p4r3u2:
+        compose: 'p4r3+uu_sign_drop@bottom'
+    p1p1u1:
+        compose: 'p1p1+u_sign_drop@bottom'
+    p1p1u2:
+        compose: 'p1p1+uu_sign_drop@bottom'
     m1u1:
         compose: 'm1+u_sign_drop@bottom'
     m1u2:
@@ -1435,14 +1507,34 @@ svgs:
         compose: 's1+u_sign_drop@bottom'
     s1u2:
         compose: 's1+uu_sign_drop@bottom'
+    s1th2u1:
+        compose: 's1th2+u_sign_drop@bottom'
+    s1th2u2:
+        compose: 's1th2+uu_sign_drop@bottom'
     shu1:
         compose: 'sh+u_sign_drop@bottom'
     shu2:
         compose: 'sh+uu_sign_drop@bottom'
+    shr3u1:
+        compose: 'shr3+u_sign_drop@bottom'
+    shr3u2:
+        compose: 'shr3+uu_sign_drop@bottom'
     rhu1:
         compose: 'rh+u_sign_drop@bottom'
     rhu2:
         compose: 'rh+uu_sign_drop@bottom'
+    h1r3u1:
+        compose: 'h1r3+u_sign_drop@bottom'
+    h1r3u2:
+        compose: 'h1r3+uu_sign_drop@bottom'
+    h1m1u1:
+        compose: 'h1m1+u_sign_drop@bottom'
+    h1m1u2:
+        compose: 'h1m1+uu_sign_drop@bottom'
+    z1r3u1:
+        compose: 'z1r3+u_sign_drop@bottom'
+    z1r3u2:
+        compose: 'z1r3+uu_sign_drop@bottom'
     k1l3:
         compose: 'k1+_l3@right'
     k3l3:
@@ -1467,3 +1559,11 @@ svgs:
         compose: 's1+_l3@right'
     h1l3:
         compose: 'h1+_l3@right'
+    lhu1:
+        compose: 'lh+u_sign_drop@bottom'
+    lhu2:
+        compose: 'lh+uu_sign_drop@bottom'
+    lhlhu1:
+        compose: 'lhlh+u_sign_drop@bottom'
+    lhlhu2:
+        compose: 'lhlh+uu_sign_drop@bottom'

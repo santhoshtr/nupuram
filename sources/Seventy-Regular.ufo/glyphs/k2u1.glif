@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="k2u1" format="2">
-	<advance width="656.6422495608"/>
+	<advance width="658"/>
 	<outline>
-		<component base="k2" yOffset="-6"/>
-		<component base="u_sign_drop" xOffset="381.7692204396" yOffset="2.0264425856"/>
+		<component base="k2"/>
+		<component base="u_sign_drop" xOffset="436.16418" yOffset="31.81115"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
 		</dict>
 	</lib>
 </glyph>

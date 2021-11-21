@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="nht1r3u1" format="2">
-	<advance width="1280.0096863874"/>
+	<advance width="1280"/>
 	<outline>
 		<component base="nht1r3"/>
-		<component base="u_sign_drop" xOffset="945.1461999691" yOffset="-136.593461673"/>
+		<component base="u_sign_drop" xOffset="1024.82961" yOffset="-91.55957"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.73,0.87,0.98,0.5</string>
+		</dict>
+	</lib>
 </glyph>
