@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="Zcaron" format="2">
 	<unicode hex="017D"/>
-	<advance width="591.7604092"/>
+	<advance width="910"/>
 	<outline>
-		<component base="circumflex" yScale="-1" xOffset="190.1578216041" yOffset="1771.0857687108"/>
 		<component base="Z"/>
+		<component base="caron" xOffset="595"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

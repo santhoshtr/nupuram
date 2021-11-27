@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<glyph name="k1l3" format="2">
-	<advance width="673"/>
+<glyph name="Ucaron" format="2">
+	<unicode hex="01D3"/>
+	<advance width="496"/>
 	<outline>
-		<component base="k1"/>
-		<component base="_l3" xOffset="99.3963" yOffset="1.58429"/>
+		<component base="U"/>
+		<component base="caron" xOffset="86.20401" yOffset="101.1681933"/>
 	</outline>
 	<lib>
 		<dict>

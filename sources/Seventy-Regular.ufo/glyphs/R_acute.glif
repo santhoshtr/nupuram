@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="Racute" format="2">
 	<unicode hex="0154"/>
-	<advance width="462.3943392646"/>
+	<advance width="774"/>
 	<outline>
-		<component base="acute" xOffset="52.5408702311" yOffset="190.9173546102"/>
-		<component base="R" xOffset="1.3935292646"/>
+		<component base="R"/>
+		<component base="acute" xOffset="535"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

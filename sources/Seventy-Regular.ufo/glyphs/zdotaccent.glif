@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="zdotaccent" format="2">
 	<unicode hex="017C"/>
-	<advance width="458.12323"/>
+	<advance width="471"/>
 	<outline>
-		<component base="period" xOffset="70.7211749006" yOffset="680.8631543923"/>
 		<component base="z"/>
+		<component base="period" xOffset="150.792602" yOffset="652.27017"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

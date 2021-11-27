@@ -91,6 +91,14 @@ def unicode_hex_list(arg):
         msg = "Invalid unicode hexadecimal value: %r" % arg
         raise argparse.ArgumentTypeError(msg)
 
+def commonAnchor(setA,setB):
+    nameSetA=[anchor["name"] for anchor in setA]
+    nameSetB=[anchor["name"] for anchor in setB]
+    commonNames = [name for name in nameSetA if name in nameSetB]
+    if len(commonNames):
+        return commonNames[0]
+    return None
+
 def buildComposite(font, glyph_name, glyph):
     font.newGlyph(glyph_name)
     composite = font[glyph_name]
@@ -107,32 +115,38 @@ def buildComposite(font, glyph_name, glyph):
     composite.width = baseGlyph.width
     composite.appendComponent(component)
 
-    for item in items:
+    for glyphName in items:
+        baseAnchors = baseGlyph.anchors
+        currentGlyph = font[glyphName]
+        glyphAnchors = currentGlyph.anchors
+        commonAnchorName = commonAnchor(baseAnchors,glyphAnchors)
+
         component = composite.instantiateComponent()
-        if "@" not in item:
+        component.baseGlyph = glyphName
+        if commonAnchorName is None:
             # Just append to the right
-            component.baseGlyph = item
             x = baseGlyph.width
             y = 0
-            composite.width = composite.width + font[item].width
+            composite.width = composite.width + currentGlyph.width
             component.move((x, y))
         else:
-            baseName, anchorName = item.split("@")
-            component = composite.instantiateComponent()
-            component.baseGlyph = baseName
             anchor = _anchor = None
-            for a in baseGlyph.anchors:
-                if a["name"] == anchorName:
+            for a in baseAnchors:
+                if a["name"] == commonAnchorName:
                     anchor = a
-            for a in font[baseName].anchors:
-                if a["name"] == anchorName:
+            for a in glyphAnchors:
+                if a["name"] == commonAnchorName:
                     _anchor = a
             if anchor and _anchor:
                 x = anchor["x"] - _anchor["x"]
                 y = anchor["y"] - _anchor["y"]
                 component.move((x, y))
         composite.appendComponent(component)
-        composite.lib['public.markColor'] = '0.73, 0.87, 0.98, 0.5' # grey
+        composite.lib['public.markColor'] = '0.92, 0.93, 0.94, 1.0' # grey
+        # Now current glyph is base glyph for next one, if any
+        baseGlyph = currentGlyph
+
+    print("Compose\033[0m %s -> %s \033[92m✔️\033[0m" % (glyph["compose"], glyph_name))
 
 def main(config):
     ufo_font_path = config['font']['ufo']
@@ -142,8 +156,7 @@ def main(config):
         if 'compose' in glyph:
             try:
                 buildComposite(font, glyph_name, glyph)
-                print("Compose\033[0m %s -> %s \033[92m✔️\033[0m" %
-          (glyph["compose"], glyph_name))
+
             except Exception:
                 print("Error while building composites %s" % glyph_name )
                 traceback.print_exc()

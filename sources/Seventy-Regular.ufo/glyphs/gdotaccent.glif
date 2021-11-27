@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="gdotaccent" format="2">
 	<unicode hex="0121"/>
-	<advance width="430.6622972903"/>
+	<advance width="635"/>
 	<outline>
-		<component base="period" xOffset="91.4970484618" yOffset="681.8420193719"/>
 		<component base="g"/>
+		<component base="period" xOffset="477"/>
 	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>
