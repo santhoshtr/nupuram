@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="th2u1" format="2">
-	<advance width="639.1734096324"/>
+	<advance width="632"/>
 	<outline>
-		<component base="u_sign_drop" xOffset="324.3331285059" yOffset="16.5286969076"/>
 		<component base="th2"/>
+		<component base="u_sign_drop" xOffset="369.94604" yOffset="5.21838"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
 		</dict>
 	</lib>
 </glyph>

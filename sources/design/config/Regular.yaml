@@ -1093,9 +1093,20 @@ svgs:
         glyph_name: nine
     bullet:
         unicode: '2022'
+    macron:
+        unicode: '00AF'
     ₹:
         unicode: '20B9'
         glyph_name: rupee
+    ₿:
+        unicode: '20BF'
+        glyph_name: bitcoin
+    ₩:
+        unicode: '20A9'
+        glyph_name: won
+    ₵:
+        unicode: '20B5'
+        glyph_name: cent
     pound:
         unicode: '00A3'
     yen:
@@ -1531,6 +1542,14 @@ svgs:
         compose: t1+u_sign_drop
     t1u2:
         compose: t1+uu_sign_drop
+    t1t1u1:
+        compose: t1t1+u_sign_drop
+    t1t1u2:
+        compose: t1t1+uu_sign_drop
+    t1r3u1:
+        compose: t1r3+u_sign_drop
+    t1r3u2:
+        compose: t1r3+uu_sign_drop
     t2u1:
         compose: t2+u_sign_drop
     t2u2:
@@ -1539,6 +1558,10 @@ svgs:
         compose: t3+u_sign_drop
     t3u2:
         compose: t3+uu_sign_drop
+    t3r3u1:
+        compose: t3r3+u_sign_drop
+    t3r3u2:
+        compose: t3r3+uu_sign_drop
     t4u1:
         compose: t4+u_sign_drop
     t4u2:
@@ -1547,6 +1570,26 @@ svgs:
         compose: th1r3+u_sign_drop
     th1r3u2:
         compose: th1r3+uu_sign_drop
+    th1th1r3u1:
+        compose: th1th1r3+u_sign_drop
+    th1th1r3u2:
+        compose: th1th1r3+uu_sign_drop
+    th2u1:
+        compose: th2+u_sign_drop
+    th2u2:
+        compose: th2+uu_sign_drop
+    th2r3u1:
+        compose: th2r3+u_sign_drop
+    th2r3u2:
+        compose: th2r3+uu_sign_drop
+    th3u1:
+        compose: th3+u_sign_drop
+    th3u2:
+        compose: th3+uu_sign_drop
+    th3r3u1:
+        compose: th3r3+u_sign_drop
+    th3r3u2:
+        compose: th3r3+uu_sign_drop
     th4r3u1:
         compose: th4r3+u_sign_drop
     th4r3u2:
@@ -1559,6 +1602,10 @@ svgs:
         compose: n1m1+u_sign_drop
     n1m1u2:
         compose: n1m1+uu_sign_drop
+    n1th2u1:
+        compose: n1th2+u_sign_drop
+    n1th2u2:
+        compose: n1th2+uu_sign_drop
     n1th4u1:
         compose: n1th4+u_sign_drop
     n1th4u2:
