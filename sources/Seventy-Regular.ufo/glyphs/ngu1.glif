@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ngu1" format="2">
-	<advance width="840.0695941042"/>
+	<advance width="1035"/>
 	<outline>
-		<component base="ng" yOffset="1"/>
-		<component base="u_sign_drop" xOffset="524.4913121698" yOffset="-10.6450686412"/>
+		<component base="ng"/>
+		<component base="u_sign_drop" xOffset="813"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
 		</dict>
 	</lib>
 </glyph>

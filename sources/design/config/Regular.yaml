@@ -491,8 +491,6 @@ svgs:
         glyph_name: ch4
     ഝൃ:
         glyph_name: ch4r1
-    ഝ്ര:
-        glyph_name: ch4r3
     ഞ:
         unicode: 0D1E
         glyph_name: nj
@@ -508,10 +506,6 @@ svgs:
         glyph_name: njch3u2
     ഞ്ഞ:
         glyph_name: njnj
-    ഞ്ഞു:
-        glyph_name: njnju1
-    ഞ്ഞൂ:
-        glyph_name: njnju2
     ട:
         unicode: 0D1F
         glyph_name: t1
@@ -696,8 +690,6 @@ svgs:
         glyph_name: n1n1r1
     ന്നൃൃ:
         glyph_name: n1n1r2
-    ന്ന്ര:
-        glyph_name: n1n1r3
     ന്മ:
         glyph_name: n1m1
     ന്റ:
@@ -820,8 +812,6 @@ svgs:
         glyph_name: s1r2
     സ്ഥ:
         glyph_name: s1th2
-    സ്പ:
-        glyph_name: s1p1
     സ്സ:
         glyph_name: s1s1
     സ്ത്ര:
@@ -1514,6 +1504,22 @@ svgs:
         compose: k3th3+u_sign_drop
     k3th3u2:
         compose: k3th3+uu_sign_drop
+    k4u1:
+        compose: k4+u_sign_drop
+    k4u2:
+        compose: k4+uu_sign_drop
+    k4r3u1:
+        compose: k4r3+u_sign_drop
+    k4r3u2:
+        compose: k4r3+uu_sign_drop
+    ngu1:
+        compose: ng+u_sign_drop
+    ngu2:
+        compose: ng+uu_sign_drop
+    ngngu1:
+        compose: ngng+u_sign_drop
+    ngngu2:
+        compose: ngng+uu_sign_drop
     ch1u1:
         compose: ch1+u_sign_drop
     ch1u2:
@@ -1522,10 +1528,30 @@ svgs:
         compose: ch1ch1+u_sign_drop
     ch1ch1u2:
         compose: ch1ch1+uu_sign_drop
+    ch2r3u1:
+        compose: ch2r3+u_sign_drop
+    ch2r3u2:
+        compose: ch2r3+uu_sign_drop
+    ch3r3u1:
+        compose: ch3r3+u_sign_drop
+    ch3r3u2:
+        compose: ch3r3+uu_sign_drop
+    ch4u1:
+        compose: ch4+u_sign_drop
+    ch4u2:
+        compose: ch4+uu_sign_drop
     nju1:
         compose: nj+u_sign_drop
     nju2:
         compose: nj+uu_sign_drop
+    njnju1:
+        compose: njnj+u_sign_drop
+    njnju2:
+        compose: njnj+uu_sign_drop
+    njch1u1:
+        compose: njch1+u_sign_drop
+    njch1u2:
+        compose: njch1+uu_sign_drop
     n1th3u1:
         compose: n1th3+u_sign_drop
     n1th3u2:
@@ -1630,6 +1656,10 @@ svgs:
         compose: p1+u_sign_drop
     p1u2:
         compose: p1+uu_sign_drop
+    p1r3u1:
+        compose: p1r3+u_sign_drop
+    p1r3u2:
+        compose: p1r3+uu_sign_drop
     p2u1:
         compose: p2+u_sign_drop
     p2u2:
@@ -1710,6 +1740,10 @@ svgs:
         compose: z1r3+u_sign_drop
     z1r3u2:
         compose: z1r3+uu_sign_drop
+    zhu1:
+        compose: zh+u_sign_drop
+    zhu2:
+        compose: zh+uu_sign_drop
     k1l3:
         compose: k1+_l3
     k3l3:

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="njnju1" format="2">
-	<advance width="1593.7525985558"/>
+	<advance width="1605"/>
 	<outline>
 		<component base="njnj"/>
-		<component base="u_sign_drop" xOffset="1278.9123174294" yOffset="-17.0078974453"/>
+		<component base="u_sign_drop" xOffset="1325.38631" yOffset="-37.3042"/>
 	</outline>
 	<lib>
 		<dict>
-			<key>org.fontforge.glyphclass</key>
-			<string>baseligature</string>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
 		</dict>
 	</lib>
 </glyph>
