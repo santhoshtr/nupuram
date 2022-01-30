@@ -6,6 +6,7 @@ lookup latinligatures {
     sub f i by fi;
     sub f t by ft;
     sub t h by th;
+    sub e e by ee;
 } latinligatures;
 
 feature liga {

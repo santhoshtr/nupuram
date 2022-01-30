@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ngu1" format="2">
-	<advance width="1035"/>
-	<outline>
-		<component base="ng"/>
-		<component base="u_sign_drop" xOffset="813"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>public.markColor</key>
-			<string>0.92,0.93,0.94,1</string>
-		</dict>
-	</lib>
+  <advance width="813"/>
+  <outline>
+    <component base="ng"/>
+    <component base="u_sign_drop" xOffset="562.1355000000001" yOffset="-0.5816699999999173"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.92, 0.93, 0.94, 1.0</string>
+    </dict>
+  </lib>
 </glyph>

@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="ml_ai_sign" format="2">
-	<unicode hex="0D48"/>
-	<advance width="886"/>
-	<outline>
-		<component base="e1"/>
-		<component base="e1" xOffset="443"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>public.markColor</key>
-			<string>0.92,0.93,0.94,1</string>
-		</dict>
-	</lib>
+  <advance width="886"/>
+  <unicode hex="0D48"/>
+  <outline>
+    <component base="e1"/>
+    <component base="e1" xOffset="443"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.92, 0.93, 0.94, 1.0</string>
+    </dict>
+  </lib>
 </glyph>

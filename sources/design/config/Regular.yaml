@@ -313,6 +313,8 @@ svgs:
         glyph_name: ft
     th:
         glyph_name: th
+    ee:
+        glyph_name: ee
     ം:
         unicode: 0D02
         glyph_name: anuswara
@@ -1520,6 +1522,10 @@ svgs:
         compose: ngng+u_sign_drop
     ngngu2:
         compose: ngng+uu_sign_drop
+    ngk1r3u1:
+        compose: ngk1r3+u_sign_drop
+    ngk1r3u2:
+        compose: ngk1r3+uu_sign_drop
     ch1u1:
         compose: ch1+u_sign_drop
     ch1u2:
@@ -1596,6 +1602,18 @@ svgs:
         compose: th1th1r3+u_sign_drop
     th1th1r3u2:
         compose: th1th1r3+uu_sign_drop
+    th1th2u1:
+        compose: th1th2+u_sign_drop
+    th1th2u2:
+        compose: th1th2+uu_sign_drop
+    th1m1u1:
+        compose: th1m1+u_sign_drop
+    th1m1u2:
+        compose: th1m1+uu_sign_drop
+    th1s1u1:
+        compose: th1s1+u_sign_drop
+    th1s1u2:
+        compose: th1s1+uu_sign_drop
     th2u1:
         compose: th2+u_sign_drop
     th2u2:
@@ -1612,10 +1630,18 @@ svgs:
         compose: th3r3+u_sign_drop
     th3r3u2:
         compose: th3r3+uu_sign_drop
+    th3th4u1:
+        compose: th3th4+u_sign_drop
+    th3th4u2:
+        compose: th3th4+uu_sign_drop
     th4r3u1:
         compose: th4r3+u_sign_drop
     th4r3u2:
         compose: th4r3+uu_sign_drop
+    th4u1:
+        compose: th4+u_sign_drop
+    th4u2:
+        compose: th4+uu_sign_drop
     th3th3u1:
         compose: th3th3+u_sign_drop
     th3th3u2:
@@ -1648,6 +1674,10 @@ svgs:
         compose: nht1+u_sign_drop
     nht1u2:
         compose: nht1+uu_sign_drop
+    nhm1u1:
+        compose: nhm1+u_sign_drop
+    nhm1u2:
+        compose: nhm1+uu_sign_drop
     nht1r3u1:
         compose: nht1r3+u_sign_drop
     nht1r3u2:

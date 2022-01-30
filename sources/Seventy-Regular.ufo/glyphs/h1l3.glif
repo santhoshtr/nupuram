@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <glyph name="h1l3" format="2">
-	<advance width="876"/>
-	<outline>
-		<component base="h1"/>
-		<component base="_l3" xOffset="301.3963" yOffset="1.58429"/>
-	</outline>
-	<lib>
-		<dict>
-			<key>public.markColor</key>
-			<string>0.92,0.93,0.94,1</string>
-		</dict>
-	</lib>
+  <advance width="876"/>
+  <outline>
+    <component base="h1"/>
+    <component base="_l3" xOffset="301.3963" yOffset="1.58429000000001"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.92, 0.93, 0.94, 1.0</string>
+    </dict>
+  </lib>
 </glyph>
