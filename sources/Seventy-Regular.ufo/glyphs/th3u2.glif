@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="th3u2" format="2">
-  <advance width="482"/>
-  <outline>
-    <component base="th3"/>
-    <component base="uu_sign_drop" xOffset="214.10357" yOffset="73.68384000000003"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="482"/>
+	<outline>
+		<component base="th3"/>
+		<component base="uu_sign_drop" xOffset="214.10357" yOffset="73.68384"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

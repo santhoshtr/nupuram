@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="k1r3u2" format="2">
-  <advance width="800"/>
-  <outline>
-    <component base="k1r3"/>
-    <component base="uu_sign_drop" xOffset="483.85083000000003" yOffset="27.505989999999997"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="800"/>
+	<outline>
+		<component base="k1r3"/>
+		<component base="uu_sign_drop" xOffset="483.85083" yOffset="27.50599"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

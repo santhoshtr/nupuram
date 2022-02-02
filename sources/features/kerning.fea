@@ -28,7 +28,7 @@ lookup consPos {
    pos [th1] [p1 p1u1 p1u2 p1p1 p1p1u1 p1p1u2 h1 h1u1 h1u2 h1m1 sh shu1 shu2] -50;
 } consPos;
 
-@lc_right_slant = [v f ff t k];
+@lc_right_slant = [v f ff k];
 @lc_left_slant = [v];
 @lc_left_round = [e c a d o q g];
 @lc_right_round = [a e ee b c o p g];
@@ -40,7 +40,7 @@ lookup consPos {
 
 lookup latinPos {
   lookupflag 0;
-    pos @lc_right_slant @lc_left_round -50;
+    pos @lc_right_slant @lc_left_round -80;
     pos @lc_right_round @lc_left_slant -50;
 
     pos @uc_right_slant @lc_left_round -80;
@@ -61,10 +61,9 @@ lookup latinPos {
     pos T @uc_left_round -40;
     pos T @lc_left_round -80;
     pos T @lc_left_slant -80;
-    pos f [f j t] -80;
-    pos t h -20;
+    pos f [f j t tt] -80;
     pos e r -20;
-    pos r [a c d e ee s t o] -20;
+    pos r [a c d e ee s t tt o] -20;
     pos d [a e ee c v] -20;
     pos h [c e ee v] -20;
     pos n [c e ee v] -20;

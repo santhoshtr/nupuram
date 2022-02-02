@@ -1,15 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_ii" format="2">
-  <advance width="1326"/>
-  <unicode hex="0D08"/>
-  <outline>
-    <component base="ml_i"/>
-    <component base="au2" xOffset="788"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<unicode hex="0D08"/>
+	<advance width="1326"/>
+	<outline>
+		<component base="ml_i"/>
+		<component base="au2" xOffset="788"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>
