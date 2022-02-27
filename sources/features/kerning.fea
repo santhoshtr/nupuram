@@ -12,8 +12,9 @@ lookup viramaPos {
 
 
 lookup signPos {
-  pos [k1 k1k1 k1sh t1 t2 th1 th1th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 n1th3 l3 m1 m1p1 r3 rh v1 z1 z1r3 zh] [i1 i2] -50;
-  pos sh [xx] -60;
+  pos [k1 k1k1 k1sh ch3 t1 t2 th1 th1th1 th1r3 n1 ngk1 nh nhnh n1th1 n1th1r3 n1th3 l3 m1 m1p1 r3 rh v1 z1 z1r3 zh] [i1 i2] -50;
+  pos [k1 s1 l3] [a2] -40;
+  pos [sh] [xx] -30;
 } signPos;
 
 lookup anuswaraPos {
@@ -25,7 +26,10 @@ lookup anuswaraPos {
 lookup consPos {
    pos [th3 th3u1 n1th3 th4 sh m1 m1m1 m1u1 m1u2 m1m1u1] [n1 n1u1 n1u2 n1cil n1th3 n1th4 n1rh n1m1 n1m1u1 n1m1u2 z1] -50;
    pos [n1] [k1 k1k1 k1u1 k1u2 k1k1u1 k1k1u2 sh h1 shu1 shu2] -50;
-   pos [th1] [p1 p1u1 p1u2 p1p1 p1p1u1 p1p1u2 h1 h1u1 h1u2 h1m1 sh shu1 shu2] -50;
+   pos [th1] [k1 k1u1 k1u2 k1k1 k1k1u1 k1k1u2 p1 p1u1 p1u2 p1p1 p1p1u1 p1p1u2 h1 h1u1 h1u2 h1m1 sh shu1 shu2] -50;
+   pos [l3] [k1 ngk1] -50;
+   pos [y1] [n1 n1u1 n1u2 n1n1 n1n1u1 n1n1u2 s1 r3 r3u1 r3u2] -40;
+   pos [ch1 njch1] [l3 y1] -20;
 } consPos;
 
 @lc_right_slant = [v f ff k];
@@ -40,7 +44,7 @@ lookup consPos {
 
 lookup latinPos {
   lookupflag 0;
-    pos @lc_right_slant @lc_left_round -80;
+    pos @lc_right_slant @lc_left_round -50;
     pos @lc_right_round @lc_left_slant -50;
 
     pos @uc_right_slant @lc_left_round -80;

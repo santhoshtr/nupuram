@@ -619,8 +619,6 @@ svgs:
     ഥ:
         unicode: 0D25
         glyph_name: th2
-    ഥ്ര:
-        glyph_name: th2r3
     ദ:
         unicode: 0D26
         glyph_name: th3
@@ -1620,10 +1618,6 @@ svgs:
         compose: th2+u_sign_drop
     th2u2:
         compose: th2+uu_sign_drop
-    th2r3u1:
-        compose: th2r3+u_sign_drop
-    th2r3u2:
-        compose: th2r3+uu_sign_drop
     th3u1:
         compose: th3+u_sign_drop
     th3u2:
