@@ -23,6 +23,8 @@ from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
 from fontTools.ufoLib.glifLib import writeGlyphToString
 from fontTools.ufoLib.plistlib import load, dump
 from defcon import Font
+from typing import List
+
 
 class InfoObject(object):
     pass
@@ -31,25 +33,27 @@ class InfoObject(object):
 def parseSvg(path):
     return etree.parse(path).getroot()
 
+
 def getConfig(configFile):
     import yaml
     cfg = yaml.load(configFile, Loader=yaml.FullLoader)
     return cfg
 
 
-def split(arg):
+def split(arg: str) -> List[str]:
     return arg.replace(",", " ").split()
 
 
-def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
-             version=2, anchors=None):
+def svg2glif(svg_file: str, name: str, width: int = 0, height: int = 0, unicodes: List[int] = None, transform=None,
+             version: int = 2, anchors=None):
     """ Convert an SVG outline to a UFO glyph with given 'name', advance
     'width' and 'height' (int), and 'unicodes' (list of int).
     Return the resulting string in GLIF format (default: version 2).
     If 'transform' is provided, apply a transformation matrix before the
     conversion (must be tuple of 6 floats, or a FontTools Transform object).
     """
-    glyph = SimpleNamespace(width=width, height=height, unicodes=unicodes, anchors=anchors)
+    glyph = SimpleNamespace(width=width, height=height,
+                            unicodes=unicodes, anchors=anchors)
     outline = SVGPath(svg_file, transform)
 
     # writeGlyphToString takes a callable (usually a glyph's drawPoints
@@ -73,6 +77,7 @@ def transform_list(arg):
         msg = "Invalid transformation matrix: %r" % arg
         raise argparse.ArgumentTypeError(msg)
 
+
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Convert SVG outlines to UFO glyphs (.glif)")
@@ -84,6 +89,7 @@ def parse_args():
         '<path> elements with "d" attributes.')
     return parser.parse_args()
 
+
 def unicode_hex_list(arg):
     try:
         return [int(unihex, 16) for unihex in split(arg)]
@@ -91,20 +97,22 @@ def unicode_hex_list(arg):
         msg = "Invalid unicode hexadecimal value: %r" % arg
         raise argparse.ArgumentTypeError(msg)
 
-def commonAnchor(setA,setB):
-    nameSetA=[anchor["name"] for anchor in setA]
-    nameSetB=[anchor["name"] for anchor in setB]
+
+def commonAnchor(setA, setB):
+    nameSetA = [anchor["name"] for anchor in setA]
+    nameSetB = [anchor["name"] for anchor in setB]
     commonNames = [name for name in nameSetA if name in nameSetB]
     if len(commonNames):
         return commonNames[0]
     return None
 
-def buildComposite(font, glyph_name, glyph):
+
+def buildComposite(font:Font, glyph_name:str, glyph):
     font.newGlyph(glyph_name)
     composite = font[glyph_name]
     if "unicode" in glyph:
         composite.unicode = int(glyph["unicode"], 16)
-    composition=glyph["compose"]
+    composition = glyph["compose"]
     items = composition.split("+")
     base = items[0]
     items = items[1:]
@@ -119,7 +127,7 @@ def buildComposite(font, glyph_name, glyph):
         baseAnchors = baseGlyph.anchors
         currentGlyph = font[glyphName]
         glyphAnchors = currentGlyph.anchors
-        commonAnchorName = commonAnchor(baseAnchors,glyphAnchors)
+        commonAnchorName = commonAnchor(baseAnchors, glyphAnchors)
 
         component = composite.instantiateComponent()
         component.baseGlyph = glyphName
@@ -142,11 +150,13 @@ def buildComposite(font, glyph_name, glyph):
                 y = anchor["y"] - _anchor["y"]
                 component.move((x, y))
         composite.appendComponent(component)
-        composite.lib['public.markColor'] = '0.92, 0.93, 0.94, 1.0' # grey
+        composite.lib['public.markColor'] = '0.92, 0.93, 0.94, 1.0'  # grey
         # Now current glyph is base glyph for next one, if any
         baseGlyph = currentGlyph
 
-    print("Compose\033[0m %s -> %s \033[92m✔️\033[0m" % (glyph["compose"], glyph_name))
+    print("Compose\033[0m %s -> %s \033[92m✔️\033[0m" %
+          (glyph["compose"], glyph_name))
+
 
 def main(config):
     ufo_font_path = config['font']['ufo']
@@ -158,12 +168,13 @@ def main(config):
                 buildComposite(font, glyph_name, glyph)
 
             except Exception:
-                print("Error while building composites %s" % glyph_name )
+                print("Error while building composites %s" % glyph_name)
                 traceback.print_exc()
     with open("sources/glyphorder.txt") as order:
-	    glyphOrder = order.read().splitlines()
+        glyphOrder = order.read().splitlines()
     font.glyphOrder = glyphOrder
     font.save(ufo_font_path)
+
 
 if __name__ == "__main__":
     options = parse_args()
