@@ -921,6 +921,9 @@ svgs:
     ൣ:
         unicode: 0D63
         glyph_name: l2
+    avagraha:
+        unicode: 0D3D
+        glyph_name: avagraha
     ജൃ_small:
         glyph_name: _ch3r1
     ട_small:
@@ -1498,6 +1501,10 @@ svgs:
         compose: k1k1r3+u_sign_drop
     k1k1r3u2:
         compose: k1k1r3+uu_sign_drop
+    k3m1u1:
+        compose: k3m1+u_sign_drop
+    k3m1u2:
+        compose: k3m1+uu_sign_drop
     k3r3u1:
         compose: k3r3+u_sign_drop
     k3r3u2:
@@ -1594,6 +1601,10 @@ svgs:
         compose: t4+u_sign_drop
     t4u2:
         compose: t4+uu_sign_drop
+    nhth3u1:
+        compose: nhth3+u_sign_drop
+    nhth3u2:
+        compose: nhth3+uu_sign_drop
     th1r3u1:
         compose: th1r3+u_sign_drop
     th1r3u2:
