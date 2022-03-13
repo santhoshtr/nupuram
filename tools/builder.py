@@ -1,0 +1,408 @@
+
+from __future__ import absolute_import, print_function
+
+__requires__ = ["FontTools"]
+
+import argparse
+import os
+import re
+import traceback
+import xml.etree.ElementTree as etree
+from io import open
+
+from defcon import Font
+from fontFeatures import Chaining, FontFeatures, Routine, Substitution
+from fontTools import agl
+from fontTools.misc.py23 import SimpleNamespace
+from fontTools.pens.pointPen import SegmentToPointPen
+from fontTools.svgLib import SVGPath
+from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
+from fontTools.ufoLib.glifLib import writeGlyphToString
+from fontTools.ufoLib.plistlib import dump, load
+
+ML_GLYPH_NAME_DICT = {
+    'അ': 'a', 'ആ': 'aa', 'ഇ': 'i', 'ഈ': 'ee', 'ഉ': 'u', 'ഊ': 'uu',
+    'ഋ': 'ru',
+    'എ': 'e', 'ഏ': 'e', 'ഐ': 'ai', 'ഒ': 'o', 'ഓ': 'o', 'ഔ': 'a',
+    'ക': 'k', 'ഖ': 'kh', 'ഗ': 'g', 'ഘ': 'gh',  'ങ': 'ng',
+    'ച': 'ch', 'ഛ': 'chh', 'ജ': 'j', 'ഝ': 'jhh', 'ഞ': 'nj',
+    'ട': 't', 'ഠ': 'tt', 'ഡ': 'd', 'ഢ': 'dh', 'ണ': 'nh',
+    'ത': 'th', 'ഥ': 'tth', 'ദ': 'dh', 'ധ': 'ddh', 'ന': 'n',
+    'പ': 'p', 'ഫ': 'ph', 'ബ': 'b', 'ഭ': 'bh', 'മ': 'm',
+    'യ': 'y', 'ര': 'r', 'ല': 'l',  'വ': 'v',  'റ': 'rh',
+    'ശ': 'z', 'ഷ': 'sh', 'സ': 's',  'ഹ': 'h', 'ള': 'lh', 'ഴ': 'zh',
+    '്': 'virama', 'ം': 'anuswaram',
+    'ാ': 'aa_sign', 'ി': 'i_sign', 'ീ': 'ii_sign', 'ു': 'u_sign',
+    'ൂ': 'uu_sign', 'ൃ': 'ru_sign', 'െ': 'e_sign', 'േ': 'ee_sign',
+    'ൈ': 'ai_sign', 'ൊ': 'o_sign', 'ോ': 'oo_sign',
+    'ൗ': 'au_sign', 'ൌ': 'ou_sign',
+    "ൄ": 'ruu_sign',
+    'ൢ': 'lu_sign',
+    '\u200d': 'zwj',
+    "ന്\u200d": 'chillu_n',
+    "ര്\u200d": "chillu_r",
+    "ല്\u200d": "chillu_l",
+    "ള്\u200d": "chillu_lh",
+    "ണ്\u200d": "chillu_nh",
+    "ഴ്\u200d": "chillu_zh",
+    "ക്\u200d": "chill_k",
+    'ൻ': 'chillu_n',
+    'ൽ': 'chillu_l',
+    'ൾ': 'chillu_lh',
+    'ൺ': 'chillu_nh',
+    'ർ': 'chillu_r',
+    'ൿ': 'chillu_k',
+    'ൖ': 'chillu_zh',
+    "്യ": "ya_sign", "്വ": "va_sign",
+    "്ര": "reph"
+}
+ML_CONSONANTS = ['ക', 'ഖ', 'ഗ', 'ഘ',  'ങ',
+                 'ച', 'ഛ', 'ജ', 'ഝ', 'ഞ',
+                 'ട', 'ഠ', 'ഡ', 'ഢ', 'ണ',
+                 'ത', 'ഥ', 'ദ', 'ധ', 'ന',
+                 'പ', 'ഫ', 'ബ', 'ഭ', 'മ',
+                 'യ', 'ര', 'ല',  'വ',  'റ',
+                 'ശ', 'ഷ', 'സ',  'ഹ', 'ള', 'ഴ']
+ML_LA_CONJUNCTS = ["ക്ല", "ഗ്ല", "പ്ല", "ഫ്ല", "ബ്ല", "ല്ല", "ഹ്ല"]
+ML_CONS_CONJUNCTS = ["കൢ", "ക്ക", "ക്ഷ", "ഗ്ഗ", "ഗ്ദ", "ഗ്ന", "ഗ്മ", "ങ്ങ", "ച്ച", "ച്ഛ", "ജ്ജ", "ഞ്ച", "ഞ്ജ", "ഞ്ഞ", "ട്ട", "ണ്ണ", "ക്ത", "ങ്ക", "ണ്ട", "ത്ത", "ത്ഥ", "ത്ന", "ത്ഭ",
+                     "ദ്ദ", "ന്ന" "ത്സ", "ന്ത", "ന്ദ", "ന്ധ", "ന്മ", "ന്റ", "പ്പ", "പ്ഫ", "ബ്ബ", "മ്മ", "മ്പ", "യ്യ", "ല്ല", "വ്വ", "ശ്ച", "സ്സ", "ശ്ശ", "ഷ്ട", "ഹ്ന", "ഹ്മ", "ള്ള", "റ്റ"]
+ML_REPH_CONJUNCTS = ["ക്ര", "ക്ക്ര", "ക്ത്ര", "ഗ്ര", "ഘ്ര", "ങ്ക്ര", "ച്ര", "ജ്ര", "ട്ര", "ഡ്ര", "ഢ്ര", "ണ്ട്ര", "ത്ര", "ത്ത്ര",
+                     "ത്സ്ര", "ദ്ര", "ന്ത്ര", "ന്ദ്ര", "ന്ധ്ര", "പ്ര", "ഫ്ര", "ബ്ര", "മ്ര", "മ്പ്ര", "വ്ര", "ശ്ര", "സ്ര", "ഹ്ര", "ഷ്ര", "റ്റ്ര"]
+
+LANGUAGE_MALAYALAM = [('mlm2', 'dflt')]
+LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
+
+
+class SVGGlyph:
+    def __init__(self, svg_file_path):
+        self.svg_file_path = svg_file_path
+        self.svg_width = 0.0
+        self.svg_height = 0.0
+        self.name = ""
+        self.unicode = None
+        self.glyph_name = ""
+        self.glyph_width = 0
+        self.glyph_height = 1024
+        self.glif = None
+        self.ufo_version = 2
+        self.transform = '1 0 0 -1 0 0'
+
+    @staticmethod
+    def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
+                 version=2, anchors=None):
+        """ Convert an SVG outline to a UFO glyph with given 'name', advance
+        'width' and 'height' (int), and 'unicodes' (list of int).
+        Return the resulting string in GLIF format (default: version 2).
+        If 'transform' is provided, apply a transformation matrix before the
+        conversion (must be tuple of 6 floats, or a FontTools Transform object).
+        """
+        glyph = SimpleNamespace(
+            width=width, height=height, unicodes=unicodes, anchors=anchors)
+        outline = SVGPath(svg_file, transform)
+
+        # writeGlyphToString takes a callable (usually a glyph's drawPoints
+        # method) that accepts a PointPen, however SVGPath currently only has
+        # a draw method that accepts a segment pen. We need to wrap the call
+        # with a converter pen.
+        def drawPoints(pointPen):
+            pen = SegmentToPointPen(pointPen)
+            outline.draw(pen)
+
+        return writeGlyphToString(name,
+                                  glyphObject=glyph,
+                                  drawPointsFunc=drawPoints,
+                                  formatVersion=version)
+
+    @staticmethod
+    def transform_list(arg):
+        try:
+            return [float(n) for n in arg.split()]
+        except ValueError:
+            msg = "Invalid transformation matrix: %r" % arg
+            raise argparse.ArgumentTypeError(msg)
+
+    def parse(self):
+        svgObj = etree.parse(self.svg_file_path).getroot()
+        self.svg_width = float(svgObj.attrib['width'].replace("px", " "))
+        self.svg_height = float(svgObj.attrib['height'].replace("px", " "))
+        self.name = os.path.splitext(os.path.basename(self.svg_file_path))[0]
+        self.unicode = None
+        if len(self.name) == 1:
+            self.unicode = [ord(self.name)]
+        self.glyph_name = self.get_glyph_name()
+        if not self.glyph_name:
+            raise UFOLibError(
+                f"Could not calculate glyph name for {self.svg_file_path}")
+
+        prefix_map = {"sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
+                      "inkscape": "http://www.inkscape.org/namespaces/inkscape"}
+        widthGuide = svgObj.find(
+            ".//sodipodi:guide/[@inkscape:label='width']", prefix_map)
+        width = self.svg_width
+        if widthGuide != None:
+            width = int(float(widthGuide.attrib['position'].split(',')[0]))
+
+        # + int(svg_config['left']) + int(svg_config['right'])
+        self.glyph_width = width
+        if self.glyph_width < 0:
+            raise UFOLibError("Glyph %s has negative width." % self.name)
+
+        # Calculate the transformation to do
+        transform = SVGGlyph.transform_list(self.transform)
+
+        baseGuide = svgObj.find(
+            ".//sodipodi:guide/[@inkscape:label='base']", prefix_map)
+        base = 0
+        if baseGuide != None:
+            base = int(float(baseGuide.attrib['position'].split(',')[1])) * -1
+        transform[5] += self.svg_height + base  # Y offset
+        anchorEls = svgObj.findall(
+            '{http://www.w3.org/2000/svg}text', prefix_map)
+        anchors = []
+        try:
+            for anchorEl in anchorEls:
+                anchors.append({
+                    "x": float(anchorEl.attrib["x"]),
+                    "y": self.svg_height + base - float(anchorEl.attrib["y"]),
+                    "name": anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
+                })
+        except:
+            pass
+        try:
+            self.glif = SVGGlyph.svg2glif(self.svg_file_path,
+                                          name=self.glyph_name,
+                                          width=self.glyph_width,
+                                          height=self.glyph_height,
+                                          unicodes=self.unicode,
+                                          transform=transform,
+                                          anchors=anchors,
+                                          version=self.ufo_version)
+        except Exception:
+            print(f"Error while processing {self.__dict__}")
+            traceback.print_exc()
+
+    def get_glyph_name(self, prefix="ml_"):
+        if self.name in ML_GLYPH_NAME_DICT:
+            return prefix + ML_GLYPH_NAME_DICT.get(self.name)
+        if len(self.name) == 1:
+            return agl.UV2AGL.get(ord(self.name), f"uni{hex(ord(self.name))}")
+        if len(self.name) > 1:
+            return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in self.name)
+        return self.name
+
+
+class MalayalamFontBuilder:
+    def __init__(self, design_path):
+        self.design_path = design_path
+        self.fontFeatures = FontFeatures()
+        self.available_svgs = []
+
+    def get_glyph_name(self, l, prefix="ml_"):
+        if l in ML_GLYPH_NAME_DICT:
+            return prefix + ML_GLYPH_NAME_DICT.get(l)
+        if len(l) == 1:
+            return agl.UV2AGL.get(ord(l))
+        if len(l) > 1:
+            return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in l)
+        return l
+
+    def build_latin_ligatures(self):
+        feature = "liga"
+        name = "latin_ligatures"
+        ligatures = ["ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+
+        rules = []
+        for ligature in ligatures:
+            sub = Substitution([[self.get_glyph_name(l)] for l in ligature],
+                               replacement=[[self.get_glyph_name(ligature)]])
+            rules.append(sub)
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_LATIN)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_chillus(self):
+        feature = "akhn"
+        name = "zwj_chillus"
+        chillus = ["ന്\u200d", "ര്\u200d", "ല്\u200d",
+                   "ള്\u200d", "ണ്\u200d", "ഴ്\u200d", "ക്\u200d"]
+
+        rules = []
+        for chillu in chillus:
+            rules.append(
+                Substitution([[self.get_glyph_name(l)] for l in chillu],
+                             replacement=[[self.get_glyph_name(chillu)]])
+            )
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_cons_la(self):
+        feature = "akhn"
+        name = "cons_la"
+
+        rules = []
+        for conjunct in ML_LA_CONJUNCTS:
+            rules.append(
+                Substitution([[self.get_glyph_name(l)] for l in conjunct],
+                             replacement=[[self.get_glyph_name(conjunct)]])
+            )
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_cons_signs(self):
+        feature = "pstf"
+        name = "cons_signs"
+        cons_signs = ["്യ", "്വ"]
+        rules = []
+        for cons_sign in cons_signs:
+            rules.append(
+                Substitution([[self.get_glyph_name(l)] for l in cons_sign],
+                             replacement=[[self.get_glyph_name(cons_sign)]])
+            )
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_cons_signs_order_fix(self):
+        feature = "pstf"
+        name = "cons_signs_fix_order"
+        cons_signs = ["്യ", "്വ"]
+        reph = "്ര"
+        rules = []
+        for cons_sign in cons_signs:
+            rules.append(
+                Substitution([[self.get_glyph_name(cons_sign)]],
+                             replacement=[[self.get_glyph_name(l)] for l in cons_sign])
+            )
+        split_cons_signs = Routine(
+            rules=rules, name='split_cons_signs', languages=LANGUAGE_MALAYALAM)
+
+        rules = [
+            # Avoid യ + ് + ര ligature
+            Chaining(
+                [[self.get_glyph_name(reph)]],
+                precontext=[[self.get_glyph_name("യ")]],
+                lookups=[[split_cons_signs]],
+            ),
+            # Split reph in  ്യ + ്ര combination
+            Chaining(
+                [[self.get_glyph_name(reph)]],
+                precontext=[[self.get_glyph_name(cons_signs[0])]],
+                lookups=[[split_cons_signs]],
+            ),
+            # Split reph in ്വ + ്ര combination
+            Chaining(
+                [[self.get_glyph_name(reph)]],
+                precontext=[[self.get_glyph_name(cons_signs[1])]],
+                lookups=[[split_cons_signs]],
+            )]
+        split_cons_signs = Routine(
+            rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+
+        self.fontFeatures.addFeature(feature, [split_cons_signs])
+
+    def build_ra_sign(self):
+        feature = "pref"
+        name = "pref_reph"
+        reph = "്ര"
+        rule = Substitution([[self.get_glyph_name(l)] for l in reph],
+                            replacement=[[self.get_glyph_name(reph)]])
+        routine = Routine(rules=[rule], name=name,
+                          languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_conjuncts(self):
+        feature = "akhn"
+        name = "akhn_conjuncts"
+        rules = []
+        for conjunct in ML_CONS_CONJUNCTS:
+            rules.append(
+                Substitution([[self.get_glyph_name(l)] for l in conjunct],
+                             replacement=[[self.get_glyph_name(conjunct)]])
+            )
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_cons_ra_substitutions(self):
+        feature = "pres"
+        name = "pres_reph"
+        reph = "്ര"
+        rules = []
+        for ligature in ML_REPH_CONJUNCTS:
+            ligature = ligature.replace(reph, '')
+            sub = Substitution(
+                [[self.get_glyph_name(reph)], [self.get_glyph_name(ligature)]],
+                replacement=[[self.get_glyph_name(ligature)+self.get_glyph_name(reph, prefix="_")]])
+            rules.append(sub)
+
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_cons_conj_vowel_signs(self):
+        feature = "psts"
+        name = "psts_vowel_signs"
+        rules = []
+        vowel_signs = ["ു", "ൂ", "ൃ", "ൄ"]
+        ligatures = sorted(ML_CONSONANTS+ML_REPH_CONJUNCTS +
+                           ML_CONS_CONJUNCTS+ML_LA_CONJUNCTS)
+        # TODO: Check if ligature exists in design. If not skip
+        # TODO: If ligature exists, but if replacement ligature does not exist,
+        #   add conditional stacking rule
+        for ligature in ligatures:
+            for vowel_sign in vowel_signs:
+                replacement_ligature = self.get_glyph_name(
+                    ligature)+self.get_glyph_name(vowel_sign, prefix="_")
+                sub = Substitution(
+                    [[self.get_glyph_name(ligature)], [
+                        self.get_glyph_name(vowel_sign)]],
+                    replacement=[[replacement_ligature]])
+                rules.append(sub)
+
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def buildFeatures(self):
+        # Latin GSUB
+        self.build_latin_ligatures()
+        # Malayalam GSUB
+        self.build_chillus()
+        self.build_conjuncts()
+        self.build_cons_la()
+        self.build_cons_signs()
+        self.build_cons_signs_order_fix()
+        self.build_ra_sign()
+        self.build_cons_ra_substitutions()
+        self.build_cons_conj_vowel_signs()
+
+    def buildUFO(self):
+        for f in os.listdir(self.design_path):
+            if not f.endswith(".svg"):
+                continue
+            svg_glyf = SVGGlyph(os.path.join(self.design_path, f))
+            svg_glyf.parse()
+            print(svg_glyf.glyph_name)
+            self.available_svgs.append(svg_glyf)
+
+    def build(self):
+        self.buildUFO()
+        self.buildFeatures()
+
+    def getFeatures(self):
+        return self.fontFeatures.asFea()
+
+
+def dir_path(string):
+    if os.path.isdir(string):
+        return string
+    else:
+        raise NotADirectoryError(string)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Build a UFO formatted font")
+    parser.add_argument('--design', required=True, type=dir_path,
+                        help="Path to folder containing glyphs in svg format")
+    parser.add_argument('--ufo', type=dir_path,
+                        required=True, help="Path to output UFO")
+    options = parser.parse_args()
+    builder = MalayalamFontBuilder(design_path=options.design)
+    builder.build()
+    features = builder.getFeatures()
