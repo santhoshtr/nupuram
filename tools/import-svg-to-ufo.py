@@ -73,15 +73,6 @@ def transform_list(arg):
         msg = "Invalid transformation matrix: %r" % arg
         raise argparse.ArgumentTypeError(msg)
 
-
-def unicode_hex_list(arg):
-    try:
-        return [int(unihex, 16) for unihex in split(arg)]
-    except ValueError:
-        msg = "Invalid unicode hexadecimal value: %r" % arg
-        raise argparse.ArgumentTypeError(msg)
-
-
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Convert SVG outlines to UFO glyphs (.glif)")
@@ -115,10 +106,12 @@ def main(config, svg_file):
     except KeyError:
         print("\033[93mSkip: Configuration not found for svg : %r\033[0m" % name)
         return
-    if 'unicode' in svg_config:
-        unicodeVal = unicode_hex_list(svg_config['unicode'])
-    else:
-        unicodeVal = None
+
+    unicodeVal = None
+    if len(name) == 1:
+        unicodeVal=[ord(name)]
+    elif 'unicode' in svg_config:
+        unicodeVal =  [int(svg_config['unicode'], 16)]
 
     prefix_map = {"sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd", "inkscape": "http://www.inkscape.org/namespaces/inkscape"}
     widthGuide = svgObj.find(".//sodipodi:guide/[@inkscape:label='width']", prefix_map)

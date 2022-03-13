@@ -89,15 +89,6 @@ def parse_args():
         '<path> elements with "d" attributes.')
     return parser.parse_args()
 
-
-def unicode_hex_list(arg):
-    try:
-        return [int(unihex, 16) for unihex in split(arg)]
-    except ValueError:
-        msg = "Invalid unicode hexadecimal value: %r" % arg
-        raise argparse.ArgumentTypeError(msg)
-
-
 def commonAnchor(setA, setB):
     nameSetA = [anchor["name"] for anchor in setA]
     nameSetB = [anchor["name"] for anchor in setB]
