@@ -4,13 +4,15 @@ from __future__ import absolute_import, print_function
 __requires__ = ["FontTools"]
 
 import argparse
+import logging
 import os
 import re
 import traceback
 import xml.etree.ElementTree as etree
 from io import open
 
-from defcon import Font
+from defcon import Font, Glyph
+import ufo2ft
 from fontFeatures import Chaining, FontFeatures, Routine, Substitution
 from fontTools import agl
 from fontTools.misc.py23 import SimpleNamespace
@@ -19,11 +21,13 @@ from fontTools.svgLib import SVGPath
 from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
 from fontTools.ufoLib.glifLib import writeGlyphToString
 from fontTools.ufoLib.plistlib import dump, load
+from ufo2ft.util import _LazyFontName
+log = logging.getLogger(__name__)
 
 ML_GLYPH_NAME_DICT = {
-    'അ': 'a', 'ആ': 'aa', 'ഇ': 'i', 'ഈ': 'ee', 'ഉ': 'u', 'ഊ': 'uu',
+    'അ': 'a', 'ആ': 'aa', 'ഇ': 'i', 'ഈ': 'iis', 'ഉ': 'u', 'ഊ': 'uu',
     'ഋ': 'ru',
-    'എ': 'e', 'ഏ': 'e', 'ഐ': 'ai', 'ഒ': 'o', 'ഓ': 'o', 'ഔ': 'a',
+    'എ': 'e', 'ഏ': 'ee', 'ഐ': 'ai', 'ഒ': 'o', 'ഓ': 'oo', 'ഔ': 'au',
     'ക': 'k', 'ഖ': 'kh', 'ഗ': 'g', 'ഘ': 'gh',  'ങ': 'ng',
     'ച': 'ch', 'ഛ': 'chh', 'ജ': 'j', 'ഝ': 'jhh', 'ഞ': 'nj',
     'ട': 't', 'ഠ': 'tt', 'ഡ': 'd', 'ഢ': 'dh', 'ണ': 'nh',
@@ -96,22 +100,16 @@ class SVGGlyph:
         If 'transform' is provided, apply a transformation matrix before the
         conversion (must be tuple of 6 floats, or a FontTools Transform object).
         """
-        glyph = SimpleNamespace(
-            width=width, height=height, unicodes=unicodes, anchors=anchors)
-        outline = SVGPath(svg_file, transform)
-
-        # writeGlyphToString takes a callable (usually a glyph's drawPoints
-        # method) that accepts a PointPen, however SVGPath currently only has
-        # a draw method that accepts a segment pen. We need to wrap the call
-        # with a converter pen.
-        def drawPoints(pointPen):
-            pen = SegmentToPointPen(pointPen)
-            outline.draw(pen)
-
-        return writeGlyphToString(name,
-                                  glyphObject=glyph,
-                                  drawPointsFunc=drawPoints,
-                                  formatVersion=version)
+        glyph = Glyph()
+        glyph.name = name
+        glyph.width = width
+        glyph.height = height
+        glyph.unicodes = unicodes or []
+        glyph.anchors = anchors or []
+        svg = SVGPath(svg_file, transform)
+        pen = glyph.getPen()
+        svg.draw(pen)
+        return glyph
 
     @staticmethod
     def transform_list(arg):
@@ -182,29 +180,34 @@ class SVGGlyph:
             traceback.print_exc()
 
     def get_glyph_name(self, prefix="ml_"):
-        if self.name in ML_GLYPH_NAME_DICT:
-            return prefix + ML_GLYPH_NAME_DICT.get(self.name)
+        codepoint = ord(self.name[0])
+        if codepoint>=3328:
+            if self.name in ML_GLYPH_NAME_DICT:
+                return prefix + ML_GLYPH_NAME_DICT.get(self.name)
+            if len(self.name) > 1:
+                return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in self.name)
         if len(self.name) == 1:
-            return agl.UV2AGL.get(ord(self.name), f"uni{hex(ord(self.name))}")
-        if len(self.name) > 1:
-            return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in self.name)
-        return self.name
-
+            return agl.UV2AGL.get(ord(self.name), f"uni{hex(codepoint)}")
+        return agl.UV2AGL.get(self.name, self.name)
 
 class MalayalamFontBuilder:
-    def __init__(self, design_path):
+    def __init__(self, design_path,ufo_path):
+        self.ufo_path = ufo_path
         self.design_path = design_path
         self.fontFeatures = FontFeatures()
         self.available_svgs = []
+        self.font= Font(ufo_path)
 
     def get_glyph_name(self, l, prefix="ml_"):
-        if l in ML_GLYPH_NAME_DICT:
-            return prefix + ML_GLYPH_NAME_DICT.get(l)
+        codepoint = ord(l[0])
+        if codepoint>=3328:
+            if l in ML_GLYPH_NAME_DICT:
+                return prefix + ML_GLYPH_NAME_DICT.get(l)
+            if len(l) > 1:
+                return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in l)
         if len(l) == 1:
-            return agl.UV2AGL.get(ord(l))
-        if len(l) > 1:
-            return prefix + "_".join(ML_GLYPH_NAME_DICT.get(c, c) for c in l)
-        return l
+            return agl.UV2AGL.get(ord(l), f"uni{hex(codepoint)}")
+        return agl.UV2AGL.get(l, l)
 
     def build_latin_ligatures(self):
         feature = "liga"
@@ -372,17 +375,63 @@ class MalayalamFontBuilder:
         self.build_cons_conj_vowel_signs()
 
     def buildUFO(self):
-        for f in os.listdir(self.design_path):
+        existing_glyphs=self.font.keys().copy()
+        for glyph_name in existing_glyphs:
+            del self.font[glyph_name]
+        self.font.newGlyph('.null')
+        self.font.newGlyph('nonmarkingreturn')
+        self.font.newGlyph('.notdef')
+        space = Glyph()
+        space.width=20
+        self.font.insertGlyph(space, 'space')
+        for f in sorted(os.listdir(self.design_path)):
             if not f.endswith(".svg"):
                 continue
             svg_glyf = SVGGlyph(os.path.join(self.design_path, f))
             svg_glyf.parse()
-            print(svg_glyf.glyph_name)
             self.available_svgs.append(svg_glyf)
+            print(f"{f} -> {svg_glyf.glyph_name}")
+            self.font.insertGlyph(svg_glyf.glif,svg_glyf.glyph_name)
+
+        with open("sources/glyphorder.txt") as order:
+             self.font.glyphOrder = order.read().splitlines()
+        log.debug(f"Glyph Count: {len(self.font)}")
+        self.font.save(self.ufo_path)
+        log.debug(f"Font saved at {self.ufo_path}")
+
+    def compile(self,
+        ufo,             # input UFO as filename string or defcon.Font object
+        outputFilename,  # output filename string
+        cff=True,        # true = makes CFF outlines. false = makes TTF outlines.
+        **kwargs,        # passed along to ufo2ft.compile*()
+    ):
+        if isinstance(ufo, str):
+            ufo = Font(ufo)
+
+        # update version to actual, real version. Must come after any call to setFontInfo.
+        # updateFontVersion(ufo, dummy=False, isVF=False)
+        compilerOptions = dict(
+            useProductionNames=True,
+            inplace=True,  # avoid extra copy
+            removeOverlaps=True,
+            overlapsBackend='pathops', # use Skia's pathops
+        )
+
+        log.info("compiling %s -> %s (%s)", _LazyFontName(ufo), outputFilename,
+                "OTF/CFF-2" if cff else "TTF")
+
+        if cff:
+            font = ufo2ft.compileOTF(ufo, **compilerOptions)
+        else: # ttf
+            font = ufo2ft.compileTTF(ufo, **compilerOptions)
+
+        log.debug("writing %s", outputFilename)
+        font.save(outputFilename)
 
     def build(self):
         self.buildUFO()
         self.buildFeatures()
+        self.compile(self.font, f"build/seventy.ttf" )
 
     def getFeatures(self):
         return self.fontFeatures.asFea()
@@ -403,6 +452,6 @@ if __name__ == "__main__":
     parser.add_argument('--ufo', type=dir_path,
                         required=True, help="Path to output UFO")
     options = parser.parse_args()
-    builder = MalayalamFontBuilder(design_path=options.design)
+    builder = MalayalamFontBuilder(design_path=options.design, ufo_path=options.ufo)
     builder.build()
     features = builder.getFeatures()

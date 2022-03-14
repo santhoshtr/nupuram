@@ -6,3 +6,6 @@ ufonormalizer>=0.6.1
 fontbakery>=0.8.7
 watchdog>=2.1.6
 flask>=2.0.3
+skia-pathops==0.7.2
+ufo2ft[pathops]==2.25.3
+defcon[lxml]==0.6.0
