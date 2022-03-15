@@ -30,7 +30,7 @@ log = logging.getLogger(__name__)
 LaTIN_COMMON_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
                         'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 ML_GLYPH_NAME_DICT = {
-    'അ': 'a', 'ആ': 'aa', 'ഇ': 'i', 'ഈ': 'iis', 'ഉ': 'u', 'ഊ': 'uu',
+    'അ': 'a', 'ആ': 'aa', 'ഇ': 'i', 'ഈ': 'ii', 'ഉ': 'u', 'ഊ': 'uu',
     'ഋ': 'ru',
     'എ': 'e', 'ഏ': 'ee', 'ഐ': 'ai', 'ഒ': 'o', 'ഓ': 'oo', 'ഔ': 'au',
     'ക': 'k', 'ഖ': 'kh', 'ഗ': 'g', 'ഘ': 'gh',  'ങ': 'ng',
@@ -47,14 +47,13 @@ ML_GLYPH_NAME_DICT = {
     'ൗ': 'au_sign', 'ൌ': 'ou_sign',
     "ൄ": 'ruu_sign',
     'ൢ': 'lu_sign',
-    '\u200d': 'zwj',
     "ന്\u200d": 'chillu_n',
     "ര്\u200d": "chillu_r",
     "ല്\u200d": "chillu_l",
     "ള്\u200d": "chillu_lh",
     "ണ്\u200d": "chillu_nh",
     "ഴ്\u200d": "chillu_zh",
-    "ക്\u200d": "chill_k",
+    "ക്\u200d": "chillu_k",
     'ൻ': 'chillu_n',
     'ൽ': 'chillu_l',
     'ൾ': 'chillu_lh',
@@ -73,10 +72,10 @@ ML_CONSONANTS = ['ക', 'ഖ', 'ഗ', 'ഘ',  'ങ',
                  'യ', 'ര', 'ല',  'വ',  'റ',
                  'ശ', 'ഷ', 'സ',  'ഹ', 'ള', 'ഴ']
 ML_LA_CONJUNCTS = ["ക്ല", "ഗ്ല", "പ്ല", "ഫ്ല", "ബ്ല", "ല്ല", "ഹ്ല"]
-ML_CONS_CONJUNCTS = ["കൢ", "ക്ക", "ക്ഷ", "ഗ്ഗ", "ഗ്ദ", "ഗ്ന", "ഗ്മ", "ങ്ങ", "ച്ച", "ച്ഛ", "ജ്ജ", "ഞ്ച", "ഞ്ജ", "ഞ്ഞ", "ട്ട", "ണ്ണ", "ക്ത", "ങ്ക", "ണ്ട", "ത്ത", "ത്ഥ", "ത്ന", "ത്ഭ",
-                     "ദ്ദ", "ന്ന" "ത്സ", "ന്ത", "ന്ദ", "ന്ധ", "ന്മ", "ന്റ", "പ്പ", "പ്ഫ", "ബ്ബ", "മ്മ", "മ്പ", "യ്യ", "ല്ല", "വ്വ", "ശ്ച", "സ്സ", "ശ്ശ", "ഷ്ട", "ഹ്ന", "ഹ്മ", "ള്ള", "റ്റ"]
+ML_CONS_CONJUNCTS = ["കൢ", "ക്ക", "ക്ഷ", "ഗ്ഗ", "ഗ്ദ", "ഗ്ന", "ഗ്മ", "ങ്ങ", "ച്ച", "ച്ഛ", "ജ്ജ", "ഞ്ച", "ഞ്ജ", "ഞ്ഞ", "ട്ട", "ണ്ണ", "ണ്ഡ", "ക്ത", "ങ്ക", "ണ്ട", "ത്ത", "ത്ഥ", "ത്ന", "ത്ഭ",
+                     "ദ്ദ", "ന്ന", "ത്സ", "ത്മ", "ന്ത", "ന്ദ", "ന്ധ", "ന്മ", "ന്റ", "പ്പ", "പ്ഫ", "ബ്ബ", "മ്മ", "മ്പ", "യ്യ", "ല്ല", "വ്വ", "ശ്ച", "സ്സ", "ശ്ശ", "ഷ്ട", "ഹ്ന", "ഹ്മ", "ള്ള", "റ്റ"]
 ML_REPH_CONJUNCTS = ["ക്ര", "ക്ക്ര", "ക്ത്ര", "ഗ്ര", "ഘ്ര", "ങ്ക്ര", "ച്ര", "ജ്ര", "ട്ര", "ഡ്ര", "ഢ്ര", "ണ്ട്ര", "ത്ര", "ത്ത്ര",
-                     "ത്സ്ര", "ദ്ര", "ന്ത്ര", "ന്ദ്ര", "ന്ധ്ര", "പ്ര", "ഫ്ര", "ബ്ര", "മ്ര", "മ്പ്ര", "വ്ര", "ശ്ര", "സ്ര", "ഹ്ര", "ഷ്ര", "റ്റ്ര"]
+                      "ദ്ര", "ന്ത്ര", "ന്ദ്ര", "ന്ധ്ര", "പ്ര", "ഫ്ര", "ബ്ര", "മ്ര", "മ്പ്ര", "വ്ര", "ശ്ര", "സ്ര", "ഹ്ര", "ഷ്ര", "റ്റ്ര"]
 
 LANGUAGE_MALAYALAM = [('mlm2', 'dflt')]
 LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
@@ -189,7 +188,9 @@ class SVGGlyph:
     @staticmethod
     def get_glyph_name(name, prefix="ml_"):
         codepoint = ord(name[0])
-        if codepoint >= 3328:
+        if codepoint==8205:
+            return 'zwj'
+        if codepoint >= 3328 and codepoint<=3455:
             if name in ML_GLYPH_NAME_DICT:
                 return prefix + ML_GLYPH_NAME_DICT.get(name)
             if len(name) > 1:
@@ -325,9 +326,12 @@ class MalayalamFontBuilder:
         name = "akhn_conjuncts"
         rules = []
         for conjunct in ML_CONS_CONJUNCTS:
+            conjunct_glyph_name=SVGGlyph.get_glyph_name(conjunct)
+            if conjunct_glyph_name not in self.font:
+                continue
             rules.append(
                 Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                             replacement=[[SVGGlyph.get_glyph_name(conjunct)]])
+                             replacement=[[conjunct_glyph_name]])
             )
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
@@ -339,10 +343,13 @@ class MalayalamFontBuilder:
         rules = []
         for ligature in ML_REPH_CONJUNCTS:
             ligature = ligature.replace(reph, '')
+            ligature_glyph_name=SVGGlyph.get_glyph_name(ligature+reph)
+            if ligature_glyph_name not in self.font:
+                continue
             sub = Substitution(
                 [[SVGGlyph.get_glyph_name(reph)], [
                     SVGGlyph.get_glyph_name(ligature)]],
-                replacement=[[SVGGlyph.get_glyph_name(ligature)+SVGGlyph.get_glyph_name(reph, prefix="_")]])
+                replacement=[[ ligature_glyph_name]])
             rules.append(sub)
 
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
@@ -362,8 +369,13 @@ class MalayalamFontBuilder:
             for vowel_sign in vowel_signs:
                 replacement_ligature = SVGGlyph.get_glyph_name(
                     ligature)+SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
+                ligature_glyph_name=SVGGlyph.get_glyph_name(ligature)
+                if ligature_glyph_name not in self.font:
+                    continue
+                if replacement_ligature not in self.font:
+                    continue
                 sub = Substitution(
-                    [[SVGGlyph.get_glyph_name(ligature)], [
+                    [[ligature_glyph_name], [
                         SVGGlyph.get_glyph_name(vowel_sign)]],
                     replacement=[[replacement_ligature]])
                 rules.append(sub)
@@ -383,6 +395,7 @@ class MalayalamFontBuilder:
         self.build_ra_sign()
         self.build_cons_ra_substitutions()
         self.build_cons_conj_vowel_signs()
+        self.font.features.text=self.getFeatures()
 
     def buildUFO(self):
         existing_glyphs = self.font.keys().copy()
@@ -397,6 +410,11 @@ class MalayalamFontBuilder:
         space.width = 200
         space.unicodes = [32]
         self.font.insertGlyph(space, 'space')
+
+        zwj = Glyph()
+        zwj.unicodes = [8205]
+        self.font.insertGlyph(zwj, 'zwj')
+
         for f in sorted(os.listdir(self.design_path)):
             if not f.endswith(".svg"):
                 continue
@@ -454,8 +472,7 @@ class MalayalamFontBuilder:
         with open("sources/glyphorder.txt") as order:
             self.font.glyphOrder = order.read().splitlines()
         log.debug(f"Glyph Count: {len(self.font)}")
-        self.font.save(self.ufo_path)
-        log.debug(f"Font saved at {self.ufo_path}")
+
 
     @staticmethod
     def commonAnchor(setA, setB) -> str:
@@ -536,15 +553,22 @@ class MalayalamFontBuilder:
         if cff:
             font = ufo2ft.compileOTF(ufo, **compilerOptions)
         else:  # ttf
+            compilerOptions['flattenComponents']=True
             font = ufo2ft.compileTTF(ufo, **compilerOptions)
 
-        log.debug("writing %s", outputFilename)
+        log.debug(f"Writing {outputFilename}")
         font.save(outputFilename)
+
+    def save(self):
+        self.font.save(self.ufo_path)
+        log.debug(f"Font saved at {self.ufo_path}")
 
     def build(self):
         self.buildUFO()
         self.buildFeatures()
-        self.compile(self.font, f"build/seventy.ttf")
+        self.save()
+        self.compile(self.font, f"build/Seventy-Regular.otf")
+        self.compile(self.font, f"build/Seventy-Regular.ttf",cff=False)
 
     def getFeatures(self):
         return self.fontFeatures.asFea()
