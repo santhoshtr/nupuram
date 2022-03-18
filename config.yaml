@@ -13,3 +13,55 @@ license:
 manufacturer:
   name: SMC
   url: https://smc.org.in
+glyphs:
+  classes:
+    LC_ALL: abcdefghijklmnopqrstuvwxyz
+    UC_ALL: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
+    LC_RIGHT_ROUND: bop
+    UC_LEFT_ROUND: OQ
+    UC_RIGHT_ROUND: OQDP
+    LC_RIGHT_SLANT: ["v", "f", "ff", "k"]
+    LC_LEFT_SLANT: ["v"]
+    UC_LEFT_SLANT: ["A", "V", "Y", "T"]
+    UC_RIGHT_SLANT: AVTYL
+    UC_RIGHT_LEG: ["L"]
+    UC_RIGHT_ARM: ["T"]
+    LC_RIGHT_ARM: rf
+    UC_LEFT_LEG: ["J"]
+    LC_LEFT_LEG: ["j"]
+    LC_RIGHT_LEG: ["t"]
+    LC_RIGHT_MOUTHS: anmhd
+    QUOTES: ["'","\"","‘","’","“","”"]
+    PARANTHESIS: "()"
+    ML_CONSONANTS: കഖഗഘങചഛജഝഞടഠഡഢണതഥദധനപഫബഭമയരലവറശഷസഹളഴ
+    ML_I_SIGNS: ['ി','ീ']
+    ML_CONS_CONJUNCTS: ["കൢ", "ക്ക", "ക്ഷ", "ഗ്ഗ", "ഗ്ദ", "ഗ്ന", "ഗ്മ", "ങ്ങ", "ച്ച", "ച്ഛ", "ജ്ജ", "ഞ്ച", "ഞ്ജ", "ജ്ഞ", "ഞ്ഞ", "ട്ട", "ണ്ണ", "ണ്ഡ", "ക്ത", "ങ്ക", "ണ്ട", "ത്ത", "ത്ഥ", "ത്ന", "ത്ഭ",
+                     "ദ്ദ", "ന്ന", "ത്സ", "ത്മ", "ന്ത", "ന്ദ", "ന്ധ", "ന്മ", "ന്റ", "പ്പ", "പ്ഫ", "ബ്ബ", "മ്മ", "മ്പ", "യ്യ", "ല്ല", "വ്വ", "ശ്ച", "സ്സ", "ശ്ശ", "ഷ്ട", "ഹ്ന", "ഹ്മ", "ള്ള", "റ്റ"]
+    ML_REPH_CONJUNCTS: ["ക്ര", "ക്ക്ര", "ക്ത്ര", "ഗ്ര", "ഘ്ര", "ങ്ക്ര", "ച്ര", "ജ്ര", "ട്ര", "ഡ്ര", "ഢ്ര", "ണ്ട്ര", "ത്ര", "ത്ത്ര",
+                     "ദ്ര", "ന്ത്ര", "ന്ദ്ര", "ന്ധ്ര", "പ്ര", "ഫ്ര", "ബ്ര", "മ്ര", "മ്പ്ര", "വ്ര", "ശ്ര", "സ്ര", "ഹ്ര", "ഷ്ര", "റ്റ്ര"]
+
+    ML_LA_CONJUNCTS: ["ക്ല", "ഗ്ല", "പ്ല", "ഫ്ല", "ബ്ല", "ല്ല", "ഹ്ല"]
+
+  # Kern pairs
+  kern:
+    latin: # script
+      - ["@UC_RIGHT_ROUND", "@UC_LEFT_SLANT", -50]
+      - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -50]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -50]
+    malayalam:
+      - ['്',"@QUOTES", 100 ]
+      - ['്',"@PARANTHESIS", 100 ]
+      - ['്',"!", 100 ]
+      - ['്',"!", 100 ]
+      - ['ദ',"ൻ", -80 ]
+      - ['ള്ള',"ൻ", -80 ]
+      - ['മൂ',"സ", -20 ]
+      - ['ല',"സ", -20 ]
+      - ['@ML_CONSONANTS',"@ML_I_SIGNS", -20 ]
+      - ['@ML_CONS_CONJUNCTS',"@ML_I_SIGNS", -20 ]
+      - ['@ML_REPH_CONJUNCTS',"@ML_I_SIGNS", -20 ]
+
