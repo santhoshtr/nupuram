@@ -44,6 +44,10 @@
 		<string>D_.glif</string>
 		<key>Dcaron</key>
 		<string>D_caron.glif</string>
+		<key>Dot_Reph</key>
+		<string>D_ot_R_eph.glif</string>
+		<key>Dotless_i</key>
+		<string>D_otless_i.glif</string>
 		<key>E</key>
 		<string>E_.glif</string>
 		<key>Eacute</key>
@@ -106,8 +110,8 @@
 		<string>N_tilde.glif</string>
 		<key>O</key>
 		<string>O_.glif</string>
-		<key>OE</key>
-		<string>O_E_.glif</string>
+		<key>OE_capital</key>
+		<string>O_E__capital.glif</string>
 		<key>Oacute</key>
 		<string>O_acute.glif</string>
 		<key>Ocircumflex</key>
@@ -144,8 +148,8 @@
 		<string>S_circumflex.glif</string>
 		<key>T</key>
 		<string>T_.glif</string>
-		<key>Thorn</key>
-		<string>T_horn.glif</string>
+		<key>Thorn_capital</key>
+		<string>T_horn_capital.glif</string>
 		<key>U</key>
 		<string>U_.glif</string>
 		<key>Uacute</key>
@@ -180,32 +184,12 @@
 		<string>Y_circumflex.glif</string>
 		<key>Z</key>
 		<string>Z_.glif</string>
-		<key>ZWJ</key>
-		<string>Z_W_J_.glif</string>
-		<key>ZWNJ</key>
-		<string>Z_W_N_J_.glif</string>
 		<key>Zcaron</key>
 		<string>Z_caron.glif</string>
 		<key>Zdotaccent</key>
 		<string>Z_dotaccent.glif</string>
-		<key>_ch1</key>
-		<string>_ch1.glif</string>
-		<key>_l3</key>
-		<string>_l3.glif</string>
-		<key>_n1</key>
-		<string>_n1.glif</string>
-		<key>_rh</key>
-		<string>_rh.glif</string>
-		<key>_t1</key>
-		<string>_t1.glif</string>
-		<key>_th1</key>
-		<string>_th1.glif</string>
-		<key>_th3</key>
-		<string>_th3.glif</string>
 		<key>a</key>
 		<string>a.glif</string>
-		<key>a2</key>
-		<string>a2.glif</string>
 		<key>aacute</key>
 		<string>aacute.glif</string>
 		<key>acircumflex</key>
@@ -224,10 +208,6 @@
 		<string>amacron.glif</string>
 		<key>ampersand</key>
 		<string>ampersand.glif</string>
-		<key>anuswara</key>
-		<string>anuswara.glif</string>
-		<key>anuswaraabove</key>
-		<string>anuswaraabove.glif</string>
 		<key>aring</key>
 		<string>aring.glif</string>
 		<key>asterisk</key>
@@ -236,32 +216,22 @@
 		<string>at.glif</string>
 		<key>atilde</key>
 		<string>atilde.glif</string>
-		<key>au2</key>
-		<string>au2.glif</string>
-		<key>avagraha</key>
-		<string>avagraha.glif</string>
 		<key>b</key>
 		<string>b.glif</string>
-		<key>backslash</key>
-		<string>backslash.glif</string>
 		<key>bar</key>
 		<string>bar.glif</string>
-		<key>bitcoin</key>
-		<string>bitcoin.glif</string>
 		<key>braceleft</key>
 		<string>braceleft.glif</string>
-		<key>braceright</key>
-		<string>braceright.glif</string>
 		<key>bracketleft</key>
 		<string>bracketleft.glif</string>
-		<key>bracketright</key>
-		<string>bracketright.glif</string>
 		<key>bullet</key>
 		<string>bullet.glif</string>
 		<key>c</key>
 		<string>c.glif</string>
 		<key>cacute</key>
 		<string>cacute.glif</string>
+		<key>caret</key>
+		<string>caret.glif</string>
 		<key>caron</key>
 		<string>caron.glif</string>
 		<key>ccaron</key>
@@ -274,72 +244,6 @@
 		<string>cdotaccent.glif</string>
 		<key>cedilla</key>
 		<string>cedilla.glif</string>
-		<key>cent</key>
-		<string>cent.glif</string>
-		<key>ch1</key>
-		<string>ch1.glif</string>
-		<key>ch1ch1</key>
-		<string>ch1ch1.glif</string>
-		<key>ch1ch1u1</key>
-		<string>ch1ch1u1.glif</string>
-		<key>ch1ch1u2</key>
-		<string>ch1ch1u2.glif</string>
-		<key>ch1ch2</key>
-		<string>ch1ch2.glif</string>
-		<key>ch1u1</key>
-		<string>ch1u1.glif</string>
-		<key>ch1u2</key>
-		<string>ch1u2.glif</string>
-		<key>ch2</key>
-		<string>ch2.glif</string>
-		<key>ch2r1</key>
-		<string>ch2r1.glif</string>
-		<key>ch2r3</key>
-		<string>ch2r3.glif</string>
-		<key>ch2r3u1</key>
-		<string>ch2r3u1.glif</string>
-		<key>ch2r3u2</key>
-		<string>ch2r3u2.glif</string>
-		<key>ch2u1</key>
-		<string>ch2u1.glif</string>
-		<key>ch2u2</key>
-		<string>ch2u2.glif</string>
-		<key>ch3</key>
-		<string>ch3.glif</string>
-		<key>ch3ch3</key>
-		<string>ch3ch3.glif</string>
-		<key>ch3ch3r1</key>
-		<string>ch3ch3r1.glif</string>
-		<key>ch3ch3u1</key>
-		<string>ch3ch3u1.glif</string>
-		<key>ch3ch3u2</key>
-		<string>ch3ch3u2.glif</string>
-		<key>ch3nj</key>
-		<string>ch3nj.glif</string>
-		<key>ch3r1</key>
-		<string>ch3r1.glif</string>
-		<key>ch3r3</key>
-		<string>ch3r3.glif</string>
-		<key>ch3r3u1</key>
-		<string>ch3r3u1.glif</string>
-		<key>ch3r3u2</key>
-		<string>ch3r3u2.glif</string>
-		<key>ch3u1</key>
-		<string>ch3u1.glif</string>
-		<key>ch3u2</key>
-		<string>ch3u2.glif</string>
-		<key>ch4</key>
-		<string>ch4.glif</string>
-		<key>ch4r1</key>
-		<string>ch4r1.glif</string>
-		<key>ch4u1</key>
-		<string>ch4u1.glif</string>
-		<key>ch4u2</key>
-		<string>ch4u2.glif</string>
-		<key>circularvirama</key>
-		<string>circularvirama.glif</string>
-		<key>circumflex</key>
-		<string>circumflex.glif</string>
 		<key>colon</key>
 		<string>colon.glif</string>
 		<key>comma</key>
@@ -352,20 +256,12 @@
 		<string>degree.glif</string>
 		<key>dieresis</key>
 		<string>dieresis.glif</string>
-		<key>divide</key>
-		<string>divide.glif</string>
+		<key>divisionsign</key>
+		<string>divisionsign.glif</string>
 		<key>dollar</key>
 		<string>dollar.glif</string>
-		<key>dotlessi</key>
-		<string>dotlessi.glif</string>
-		<key>dotreph</key>
-		<string>dotreph.glif</string>
 		<key>e</key>
 		<string>e.glif</string>
-		<key>e1</key>
-		<string>e1.glif</string>
-		<key>e2</key>
-		<string>e2.glif</string>
 		<key>eacute</key>
 		<string>eacute.glif</string>
 		<key>ecaron</key>
@@ -382,8 +278,6 @@
 		<string>egrave.glif</string>
 		<key>eight</key>
 		<string>eight.glif</string>
-		<key>ellipsis</key>
-		<string>ellipsis.glif</string>
 		<key>emacron</key>
 		<string>emacron.glif</string>
 		<key>emdash</key>
@@ -398,8 +292,6 @@
 		<string>euro.glif</string>
 		<key>exclam</key>
 		<string>exclam.glif</string>
-		<key>exclamdown</key>
-		<string>exclamdown.glif</string>
 		<key>f</key>
 		<string>f.glif</string>
 		<key>ff</key>
@@ -424,54 +316,12 @@
 		<string>germandbls.glif</string>
 		<key>grave</key>
 		<string>grave.glif</string>
-		<key>greater</key>
-		<string>greater.glif</string>
-		<key>guillemetleft</key>
-		<string>guillemetleft.glif</string>
-		<key>guillemetright</key>
-		<string>guillemetright.glif</string>
 		<key>h</key>
 		<string>h.glif</string>
-		<key>h1</key>
-		<string>h1.glif</string>
-		<key>h1l3</key>
-		<string>h1l3.glif</string>
-		<key>h1m1</key>
-		<string>h1m1.glif</string>
-		<key>h1m1r1</key>
-		<string>h1m1r1.glif</string>
-		<key>h1m1u1</key>
-		<string>h1m1u1.glif</string>
-		<key>h1m1u2</key>
-		<string>h1m1u2.glif</string>
-		<key>h1n1</key>
-		<string>h1n1.glif</string>
-		<key>h1n1u1</key>
-		<string>h1n1u1.glif</string>
-		<key>h1n1u2</key>
-		<string>h1n1u2.glif</string>
-		<key>h1r1</key>
-		<string>h1r1.glif</string>
-		<key>h1r3</key>
-		<string>h1r3.glif</string>
-		<key>h1r3u1</key>
-		<string>h1r3u1.glif</string>
-		<key>h1r3u2</key>
-		<string>h1r3u2.glif</string>
-		<key>h1u1</key>
-		<string>h1u1.glif</string>
-		<key>h1u2</key>
-		<string>h1u2.glif</string>
 		<key>hcircumflex</key>
 		<string>hcircumflex.glif</string>
-		<key>hyphen</key>
-		<string>hyphen.glif</string>
 		<key>i</key>
 		<string>i.glif</string>
-		<key>i1</key>
-		<string>i1.glif</string>
-		<key>i2</key>
-		<string>i2.glif</string>
 		<key>iacute</key>
 		<string>iacute.glif</string>
 		<key>icircumflex</key>
@@ -488,246 +338,578 @@
 		<string>j.glif</string>
 		<key>k</key>
 		<string>k.glif</string>
-		<key>k1</key>
-		<string>k1.glif</string>
-		<key>k1cil</key>
-		<string>k1cil.glif</string>
-		<key>k1k1</key>
-		<string>k1k1.glif</string>
-		<key>k1k1r1</key>
-		<string>k1k1r1.glif</string>
-		<key>k1k1r3</key>
-		<string>k1k1r3.glif</string>
-		<key>k1k1r3u1</key>
-		<string>k1k1r3u1.glif</string>
-		<key>k1k1r3u2</key>
-		<string>k1k1r3u2.glif</string>
-		<key>k1k1u1</key>
-		<string>k1k1u1.glif</string>
-		<key>k1k1u2</key>
-		<string>k1k1u2.glif</string>
-		<key>k1l1</key>
-		<string>k1l1.glif</string>
-		<key>k1l3</key>
-		<string>k1l3.glif</string>
-		<key>k1l3u1</key>
-		<string>k1l3u1.glif</string>
-		<key>k1l3u2</key>
-		<string>k1l3u2.glif</string>
-		<key>k1r1</key>
-		<string>k1r1.glif</string>
-		<key>k1r3</key>
-		<string>k1r3.glif</string>
-		<key>k1r3u1</key>
-		<string>k1r3u1.glif</string>
-		<key>k1r3u2</key>
-		<string>k1r3u2.glif</string>
-		<key>k1rhrh</key>
-		<string>k1rhrh.glif</string>
-		<key>k1sh</key>
-		<string>k1sh.glif</string>
-		<key>k1shr1</key>
-		<string>k1shr1.glif</string>
-		<key>k1shu1</key>
-		<string>k1shu1.glif</string>
-		<key>k1shu2</key>
-		<string>k1shu2.glif</string>
-		<key>k1th1</key>
-		<string>k1th1.glif</string>
-		<key>k1th1r1</key>
-		<string>k1th1r1.glif</string>
-		<key>k1th1r3</key>
-		<string>k1th1r3.glif</string>
-		<key>k1th1r3u1</key>
-		<string>k1th1r3u1.glif</string>
-		<key>k1th1r3u2</key>
-		<string>k1th1r3u2.glif</string>
-		<key>k1th1u1</key>
-		<string>k1th1u1.glif</string>
-		<key>k1th1u2</key>
-		<string>k1th1u2.glif</string>
-		<key>k1u1</key>
-		<string>k1u1.glif</string>
-		<key>k1u2</key>
-		<string>k1u2.glif</string>
-		<key>k2</key>
-		<string>k2.glif</string>
-		<key>k2r1</key>
-		<string>k2r1.glif</string>
-		<key>k2u1</key>
-		<string>k2u1.glif</string>
-		<key>k2u2</key>
-		<string>k2u2.glif</string>
-		<key>k3</key>
-		<string>k3.glif</string>
-		<key>k3k3</key>
-		<string>k3k3.glif</string>
-		<key>k3l3</key>
-		<string>k3l3.glif</string>
-		<key>k3l3u1</key>
-		<string>k3l3u1.glif</string>
-		<key>k3l3u2</key>
-		<string>k3l3u2.glif</string>
-		<key>k3m1</key>
-		<string>k3m1.glif</string>
-		<key>k3m1u1</key>
-		<string>k3m1u1.glif</string>
-		<key>k3m1u2</key>
-		<string>k3m1u2.glif</string>
-		<key>k3n1</key>
-		<string>k3n1.glif</string>
-		<key>k3n1u1</key>
-		<string>k3n1u1.glif</string>
-		<key>k3n1u2</key>
-		<string>k3n1u2.glif</string>
-		<key>k3r1</key>
-		<string>k3r1.glif</string>
-		<key>k3r3</key>
-		<string>k3r3.glif</string>
-		<key>k3r3u1</key>
-		<string>k3r3u1.glif</string>
-		<key>k3r3u2</key>
-		<string>k3r3u2.glif</string>
-		<key>k3th3</key>
-		<string>k3th3.glif</string>
-		<key>k3th3r1</key>
-		<string>k3th3r1.glif</string>
-		<key>k3th3th4</key>
-		<string>k3th3th4.glif</string>
-		<key>k3th3th4r1</key>
-		<string>k3th3th4r1.glif</string>
-		<key>k3th3th4u1</key>
-		<string>k3th3th4u1.glif</string>
-		<key>k3th3th4u2</key>
-		<string>k3th3th4u2.glif</string>
-		<key>k3th3u1</key>
-		<string>k3th3u1.glif</string>
-		<key>k3th3u2</key>
-		<string>k3th3u2.glif</string>
-		<key>k3u1</key>
-		<string>k3u1.glif</string>
-		<key>k3u2</key>
-		<string>k3u2.glif</string>
-		<key>k4</key>
-		<string>k4.glif</string>
-		<key>k4r1</key>
-		<string>k4r1.glif</string>
-		<key>k4r3</key>
-		<string>k4r3.glif</string>
-		<key>k4r3u1</key>
-		<string>k4r3u1.glif</string>
-		<key>k4r3u2</key>
-		<string>k4r3u2.glif</string>
-		<key>k4u1</key>
-		<string>k4u1.glif</string>
-		<key>k4u2</key>
-		<string>k4u2.glif</string>
-		<key>kaal</key>
-		<string>kaal.glif</string>
 		<key>l</key>
 		<string>l.glif</string>
-		<key>l1</key>
-		<string>l1.glif</string>
-		<key>l2</key>
-		<string>l2.glif</string>
-		<key>l3</key>
-		<string>l3.glif</string>
-		<key>l3cil</key>
-		<string>l3cil.glif</string>
-		<key>l3l3</key>
-		<string>l3l3.glif</string>
-		<key>l3l3u1</key>
-		<string>l3l3u1.glif</string>
-		<key>l3l3u2</key>
-		<string>l3l3u2.glif</string>
-		<key>l3p1</key>
-		<string>l3p1.glif</string>
-		<key>l3u1</key>
-		<string>l3u1.glif</string>
-		<key>l3u2</key>
-		<string>l3u2.glif</string>
 		<key>less</key>
 		<string>less.glif</string>
-		<key>lh</key>
-		<string>lh.glif</string>
-		<key>lhcil</key>
-		<string>lhcil.glif</string>
-		<key>lhlh</key>
-		<string>lhlh.glif</string>
-		<key>lhlhu1</key>
-		<string>lhlhu1.glif</string>
-		<key>lhlhu2</key>
-		<string>lhlhu2.glif</string>
-		<key>lhu1</key>
-		<string>lhu1.glif</string>
-		<key>lhu2</key>
-		<string>lhu2.glif</string>
 		<key>m</key>
 		<string>m.glif</string>
-		<key>m1</key>
-		<string>m1.glif</string>
-		<key>m1cil</key>
-		<string>m1cil.glif</string>
-		<key>m1l3</key>
-		<string>m1l3.glif</string>
-		<key>m1m1</key>
-		<string>m1m1.glif</string>
-		<key>m1m1u1</key>
-		<string>m1m1u1.glif</string>
-		<key>m1m1u2</key>
-		<string>m1m1u2.glif</string>
-		<key>m1p1</key>
-		<string>m1p1.glif</string>
-		<key>m1p1r1</key>
-		<string>m1p1r1.glif</string>
-		<key>m1p1r3</key>
-		<string>m1p1r3.glif</string>
-		<key>m1p1r3u1</key>
-		<string>m1p1r3u1.glif</string>
-		<key>m1p1r3u2</key>
-		<string>m1p1r3u2.glif</string>
-		<key>m1p1u1</key>
-		<string>m1p1u1.glif</string>
-		<key>m1p1u2</key>
-		<string>m1p1u2.glif</string>
-		<key>m1r1</key>
-		<string>m1r1.glif</string>
-		<key>m1r3</key>
-		<string>m1r3.glif</string>
-		<key>m1r3u1</key>
-		<string>m1r3u1.glif</string>
-		<key>m1r3u2</key>
-		<string>m1r3u2.glif</string>
-		<key>m1u1</key>
-		<string>m1u1.glif</string>
-		<key>m1u2</key>
-		<string>m1u2.glif</string>
 		<key>macron</key>
 		<string>macron.glif</string>
 		<key>ml_a</key>
 		<string>ml_a.glif</string>
 		<key>ml_aa</key>
 		<string>ml_aa.glif</string>
+		<key>ml_aa_sign</key>
+		<string>ml_aa_sign.glif</string>
 		<key>ml_ai</key>
 		<string>ml_ai.glif</string>
 		<key>ml_ai_sign</key>
 		<string>ml_ai_sign.glif</string>
+		<key>ml_anuswaram</key>
+		<string>ml_anuswaram.glif</string>
 		<key>ml_au</key>
 		<string>ml_au.glif</string>
+		<key>ml_au_sign</key>
+		<string>ml_au_sign.glif</string>
+		<key>ml_b</key>
+		<string>ml_b.glif</string>
+		<key>ml_b_u_sign</key>
+		<string>ml_b_u_sign.glif</string>
+		<key>ml_b_uu_sign</key>
+		<string>ml_b_uu_sign.glif</string>
+		<key>ml_b_virama_dh</key>
+		<string>ml_b_virama_dh.glif</string>
+		<key>ml_b_virama_l</key>
+		<string>ml_b_virama_l.glif</string>
+		<key>ml_b_virama_l_u_sign</key>
+		<string>ml_b_virama_l_u_sign.glif</string>
+		<key>ml_b_virama_l_uu_sign</key>
+		<string>ml_b_virama_l_uu_sign.glif</string>
+		<key>ml_b_virama_r</key>
+		<string>ml_b_virama_r.glif</string>
+		<key>ml_b_virama_r_u_sign</key>
+		<string>ml_b_virama_r_u_sign.glif</string>
+		<key>ml_b_virama_r_uu_sign</key>
+		<string>ml_b_virama_r_uu_sign.glif</string>
+		<key>ml_bh</key>
+		<string>ml_bh.glif</string>
+		<key>ml_bh_ru_sign</key>
+		<string>ml_bh_ru_sign.glif</string>
+		<key>ml_bh_u_sign</key>
+		<string>ml_bh_u_sign.glif</string>
+		<key>ml_bh_uu_sign</key>
+		<string>ml_bh_uu_sign.glif</string>
+		<key>ml_bh_virama_r</key>
+		<string>ml_bh_virama_r.glif</string>
+		<key>ml_ch</key>
+		<string>ml_ch.glif</string>
+		<key>ml_ch_u_sign</key>
+		<string>ml_ch_u_sign.glif</string>
+		<key>ml_ch_uu_sign</key>
+		<string>ml_ch_uu_sign.glif</string>
+		<key>ml_ch_virama_ch</key>
+		<string>ml_ch_virama_ch.glif</string>
+		<key>ml_ch_virama_ch_u_sign</key>
+		<string>ml_ch_virama_ch_u_sign.glif</string>
+		<key>ml_ch_virama_ch_uu_sign</key>
+		<string>ml_ch_virama_ch_uu_sign.glif</string>
+		<key>ml_ch_virama_chh</key>
+		<string>ml_ch_virama_chh.glif</string>
+		<key>ml_ch_virama_chh_u_sign</key>
+		<string>ml_ch_virama_chh_u_sign.glif</string>
+		<key>ml_ch_virama_chh_uu_sign</key>
+		<string>ml_ch_virama_chh_uu_sign.glif</string>
+		<key>ml_chh</key>
+		<string>ml_chh.glif</string>
+		<key>ml_chh_ru_sign</key>
+		<string>ml_chh_ru_sign.glif</string>
+		<key>ml_chh_u_sign</key>
+		<string>ml_chh_u_sign.glif</string>
+		<key>ml_chh_uu_sign</key>
+		<string>ml_chh_uu_sign.glif</string>
+		<key>ml_chh_virama_r</key>
+		<string>ml_chh_virama_r.glif</string>
+		<key>ml_chillu_k</key>
+		<string>ml_chillu_k.glif</string>
+		<key>ml_chillu_l</key>
+		<string>ml_chillu_l.glif</string>
+		<key>ml_chillu_lh</key>
+		<string>ml_chillu_lh.glif</string>
+		<key>ml_chillu_n</key>
+		<string>ml_chillu_n.glif</string>
+		<key>ml_chillu_nh</key>
+		<string>ml_chillu_nh.glif</string>
+		<key>ml_chillu_r</key>
+		<string>ml_chillu_r.glif</string>
+		<key>ml_chillu_zh</key>
+		<string>ml_chillu_zh.glif</string>
+		<key>ml_d</key>
+		<string>ml_d.glif</string>
+		<key>ml_d_ru_sign</key>
+		<string>ml_d_ru_sign.glif</string>
+		<key>ml_d_u_sign</key>
+		<string>ml_d_u_sign.glif</string>
+		<key>ml_d_uu_sign</key>
+		<string>ml_d_uu_sign.glif</string>
+		<key>ml_d_virama_r</key>
+		<string>ml_d_virama_r.glif</string>
+		<key>ml_d_virama_r_u_sign</key>
+		<string>ml_d_virama_r_u_sign.glif</string>
+		<key>ml_d_virama_r_uu_sign</key>
+		<string>ml_d_virama_r_uu_sign.glif</string>
+		<key>ml_ddh</key>
+		<string>ml_ddh.glif</string>
+		<key>ml_ddh_ru_sign</key>
+		<string>ml_ddh_ru_sign.glif</string>
+		<key>ml_ddh_u_sign</key>
+		<string>ml_ddh_u_sign.glif</string>
+		<key>ml_ddh_uu_sign</key>
+		<string>ml_ddh_uu_sign.glif</string>
+		<key>ml_ddh_virama_r</key>
+		<string>ml_ddh_virama_r.glif</string>
+		<key>ml_dh</key>
+		<string>ml_dh.glif</string>
+		<key>ml_dh___s_m_a_l_l</key>
+		<string>ml_dh___s_m_a_l_l.glif</string>
+		<key>ml_dh_ru_sign</key>
+		<string>ml_dh_ru_sign.glif</string>
+		<key>ml_dh_u_sign</key>
+		<string>ml_dh_u_sign.glif</string>
+		<key>ml_dh_uu_sign</key>
+		<string>ml_dh_uu_sign.glif</string>
+		<key>ml_dh_virama_ddh</key>
+		<string>ml_dh_virama_ddh.glif</string>
+		<key>ml_dh_virama_dh</key>
+		<string>ml_dh_virama_dh.glif</string>
+		<key>ml_dh_virama_dh_u_sign</key>
+		<string>ml_dh_virama_dh_u_sign.glif</string>
+		<key>ml_dh_virama_dh_uu_sign</key>
+		<string>ml_dh_virama_dh_uu_sign.glif</string>
+		<key>ml_dh_virama_r</key>
+		<string>ml_dh_virama_r.glif</string>
+		<key>ml_dh_virama_r_u_sign</key>
+		<string>ml_dh_virama_r_u_sign.glif</string>
+		<key>ml_dh_virama_r_uu_sign</key>
+		<string>ml_dh_virama_r_uu_sign.glif</string>
 		<key>ml_e</key>
 		<string>ml_e.glif</string>
+		<key>ml_e_sign</key>
+		<string>ml_e_sign.glif</string>
 		<key>ml_ee</key>
 		<string>ml_ee.glif</string>
+		<key>ml_ee_sign</key>
+		<string>ml_ee_sign.glif</string>
+		<key>ml_g</key>
+		<string>ml_g.glif</string>
+		<key>ml_g_ru_sign</key>
+		<string>ml_g_ru_sign.glif</string>
+		<key>ml_g_u_sign</key>
+		<string>ml_g_u_sign.glif</string>
+		<key>ml_g_uu_sign</key>
+		<string>ml_g_uu_sign.glif</string>
+		<key>ml_g_virama_dh</key>
+		<string>ml_g_virama_dh.glif</string>
+		<key>ml_g_virama_dh_ru_sign</key>
+		<string>ml_g_virama_dh_ru_sign.glif</string>
+		<key>ml_g_virama_dh_u_sign</key>
+		<string>ml_g_virama_dh_u_sign.glif</string>
+		<key>ml_g_virama_dh_uu_sign</key>
+		<string>ml_g_virama_dh_uu_sign.glif</string>
+		<key>ml_g_virama_dh_virama_ddh</key>
+		<string>ml_g_virama_dh_virama_ddh.glif</string>
+		<key>ml_g_virama_g</key>
+		<string>ml_g_virama_g.glif</string>
+		<key>ml_g_virama_g_u_sign</key>
+		<string>ml_g_virama_g_u_sign.glif</string>
+		<key>ml_g_virama_g_uu_sign</key>
+		<string>ml_g_virama_g_uu_sign.glif</string>
+		<key>ml_g_virama_l</key>
+		<string>ml_g_virama_l.glif</string>
+		<key>ml_g_virama_l_u_sign</key>
+		<string>ml_g_virama_l_u_sign.glif</string>
+		<key>ml_g_virama_l_uu_sign</key>
+		<string>ml_g_virama_l_uu_sign.glif</string>
+		<key>ml_g_virama_m</key>
+		<string>ml_g_virama_m.glif</string>
+		<key>ml_g_virama_m_u_sign</key>
+		<string>ml_g_virama_m_u_sign.glif</string>
+		<key>ml_g_virama_m_uu_sign</key>
+		<string>ml_g_virama_m_uu_sign.glif</string>
+		<key>ml_g_virama_n</key>
+		<string>ml_g_virama_n.glif</string>
+		<key>ml_g_virama_n_u_sign</key>
+		<string>ml_g_virama_n_u_sign.glif</string>
+		<key>ml_g_virama_n_uu_sign</key>
+		<string>ml_g_virama_n_uu_sign.glif</string>
+		<key>ml_g_virama_r</key>
+		<string>ml_g_virama_r.glif</string>
+		<key>ml_g_virama_r_u_sign</key>
+		<string>ml_g_virama_r_u_sign.glif</string>
+		<key>ml_g_virama_r_uu_sign</key>
+		<string>ml_g_virama_r_uu_sign.glif</string>
+		<key>ml_gh</key>
+		<string>ml_gh.glif</string>
+		<key>ml_gh_u_sign</key>
+		<string>ml_gh_u_sign.glif</string>
+		<key>ml_gh_uu_sign</key>
+		<string>ml_gh_uu_sign.glif</string>
+		<key>ml_gh_virama_r</key>
+		<string>ml_gh_virama_r.glif</string>
+		<key>ml_gh_virama_r_u_sign</key>
+		<string>ml_gh_virama_r_u_sign.glif</string>
+		<key>ml_gh_virama_r_uu_sign</key>
+		<string>ml_gh_virama_r_uu_sign.glif</string>
+		<key>ml_h</key>
+		<string>ml_h.glif</string>
+		<key>ml_h_ru_sign</key>
+		<string>ml_h_ru_sign.glif</string>
+		<key>ml_h_u_sign</key>
+		<string>ml_h_u_sign.glif</string>
+		<key>ml_h_uu_sign</key>
+		<string>ml_h_uu_sign.glif</string>
+		<key>ml_h_virama_l</key>
+		<string>ml_h_virama_l.glif</string>
+		<key>ml_h_virama_l_u_sign</key>
+		<string>ml_h_virama_l_u_sign.glif</string>
+		<key>ml_h_virama_l_uu_sign</key>
+		<string>ml_h_virama_l_uu_sign.glif</string>
+		<key>ml_h_virama_m</key>
+		<string>ml_h_virama_m.glif</string>
+		<key>ml_h_virama_m_u_sign</key>
+		<string>ml_h_virama_m_u_sign.glif</string>
+		<key>ml_h_virama_m_uu_sign</key>
+		<string>ml_h_virama_m_uu_sign.glif</string>
+		<key>ml_h_virama_n</key>
+		<string>ml_h_virama_n.glif</string>
+		<key>ml_h_virama_n_u_sign</key>
+		<string>ml_h_virama_n_u_sign.glif</string>
+		<key>ml_h_virama_n_uu_sign</key>
+		<string>ml_h_virama_n_uu_sign.glif</string>
+		<key>ml_h_virama_r</key>
+		<string>ml_h_virama_r.glif</string>
+		<key>ml_h_virama_r_u_sign</key>
+		<string>ml_h_virama_r_u_sign.glif</string>
+		<key>ml_h_virama_r_uu_sign</key>
+		<string>ml_h_virama_r_uu_sign.glif</string>
 		<key>ml_i</key>
 		<string>ml_i.glif</string>
+		<key>ml_i_sign</key>
+		<string>ml_i_sign.glif</string>
 		<key>ml_ii</key>
 		<string>ml_ii.glif</string>
-		<key>ml_ii_archaic</key>
-		<string>ml_ii_archaic.glif</string>
+		<key>ml_ii_sign</key>
+		<string>ml_ii_sign.glif</string>
+		<key>ml_j</key>
+		<string>ml_j.glif</string>
+		<key>ml_j_ru_sign</key>
+		<string>ml_j_ru_sign.glif</string>
+		<key>ml_j_u_sign</key>
+		<string>ml_j_u_sign.glif</string>
+		<key>ml_j_uu_sign</key>
+		<string>ml_j_uu_sign.glif</string>
+		<key>ml_j_virama_j</key>
+		<string>ml_j_virama_j.glif</string>
+		<key>ml_j_virama_j_ru_sign</key>
+		<string>ml_j_virama_j_ru_sign.glif</string>
+		<key>ml_j_virama_j_u_sign</key>
+		<string>ml_j_virama_j_u_sign.glif</string>
+		<key>ml_j_virama_j_uu_sign</key>
+		<string>ml_j_virama_j_uu_sign.glif</string>
+		<key>ml_j_virama_nj</key>
+		<string>ml_j_virama_nj.glif</string>
+		<key>ml_j_virama_r</key>
+		<string>ml_j_virama_r.glif</string>
+		<key>ml_j_virama_r_u_sign</key>
+		<string>ml_j_virama_r_u_sign.glif</string>
+		<key>ml_j_virama_r_uu_sign</key>
+		<string>ml_j_virama_r_uu_sign.glif</string>
+		<key>ml_jhh</key>
+		<string>ml_jhh.glif</string>
+		<key>ml_jhh_ru_sign</key>
+		<string>ml_jhh_ru_sign.glif</string>
+		<key>ml_jhh_u_sign</key>
+		<string>ml_jhh_u_sign.glif</string>
+		<key>ml_jhh_uu_sign</key>
+		<string>ml_jhh_uu_sign.glif</string>
+		<key>ml_k</key>
+		<string>ml_k.glif</string>
+		<key>ml_k_lu_sign</key>
+		<string>ml_k_lu_sign.glif</string>
+		<key>ml_k_lu_sign_u_sign</key>
+		<string>ml_k_lu_sign_u_sign.glif</string>
+		<key>ml_k_lu_sign_uu_sign</key>
+		<string>ml_k_lu_sign_uu_sign.glif</string>
+		<key>ml_k_ru_sign</key>
+		<string>ml_k_ru_sign.glif</string>
+		<key>ml_k_u_sign</key>
+		<string>ml_k_u_sign.glif</string>
+		<key>ml_k_uu_sign</key>
+		<string>ml_k_uu_sign.glif</string>
+		<key>ml_k_virama_k</key>
+		<string>ml_k_virama_k.glif</string>
+		<key>ml_k_virama_k_ru_sign</key>
+		<string>ml_k_virama_k_ru_sign.glif</string>
+		<key>ml_k_virama_k_u_sign</key>
+		<string>ml_k_virama_k_u_sign.glif</string>
+		<key>ml_k_virama_k_uu_sign</key>
+		<string>ml_k_virama_k_uu_sign.glif</string>
+		<key>ml_k_virama_k_virama_r</key>
+		<string>ml_k_virama_k_virama_r.glif</string>
+		<key>ml_k_virama_k_virama_r_u_sign</key>
+		<string>ml_k_virama_k_virama_r_u_sign.glif</string>
+		<key>ml_k_virama_k_virama_r_uu_sign</key>
+		<string>ml_k_virama_k_virama_r_uu_sign.glif</string>
+		<key>ml_k_virama_l</key>
+		<string>ml_k_virama_l.glif</string>
+		<key>ml_k_virama_l_u_sign</key>
+		<string>ml_k_virama_l_u_sign.glif</string>
+		<key>ml_k_virama_l_uu_sign</key>
+		<string>ml_k_virama_l_uu_sign.glif</string>
+		<key>ml_k_virama_r</key>
+		<string>ml_k_virama_r.glif</string>
+		<key>ml_k_virama_r_u_sign</key>
+		<string>ml_k_virama_r_u_sign.glif</string>
+		<key>ml_k_virama_r_uu_sign</key>
+		<string>ml_k_virama_r_uu_sign.glif</string>
+		<key>ml_k_virama_sh</key>
+		<string>ml_k_virama_sh.glif</string>
+		<key>ml_k_virama_sh_u_sign</key>
+		<string>ml_k_virama_sh_u_sign.glif</string>
+		<key>ml_k_virama_sh_uu_sign</key>
+		<string>ml_k_virama_sh_uu_sign.glif</string>
+		<key>ml_k_virama_th</key>
+		<string>ml_k_virama_th.glif</string>
+		<key>ml_k_virama_th_ru_sign</key>
+		<string>ml_k_virama_th_ru_sign.glif</string>
+		<key>ml_k_virama_th_u_sign</key>
+		<string>ml_k_virama_th_u_sign.glif</string>
+		<key>ml_k_virama_th_uu_sign</key>
+		<string>ml_k_virama_th_uu_sign.glif</string>
+		<key>ml_k_virama_th_virama_r</key>
+		<string>ml_k_virama_th_virama_r.glif</string>
+		<key>ml_k_virama_th_virama_r_u_sign</key>
+		<string>ml_k_virama_th_virama_r_u_sign.glif</string>
+		<key>ml_k_virama_th_virama_r_uu_sign</key>
+		<string>ml_k_virama_th_virama_r_uu_sign.glif</string>
+		<key>ml_kh</key>
+		<string>ml_kh.glif</string>
+		<key>ml_kh_ru_sign</key>
+		<string>ml_kh_ru_sign.glif</string>
+		<key>ml_kh_u_sign</key>
+		<string>ml_kh_u_sign.glif</string>
+		<key>ml_kh_uu_sign</key>
+		<string>ml_kh_uu_sign.glif</string>
 		<key>ml_l</key>
 		<string>ml_l.glif</string>
-		<key>ml_ll</key>
-		<string>ml_ll.glif</string>
+		<key>ml_l_u_sign</key>
+		<string>ml_l_u_sign.glif</string>
+		<key>ml_l_uu_sign</key>
+		<string>ml_l_uu_sign.glif</string>
+		<key>ml_l_virama_l</key>
+		<string>ml_l_virama_l.glif</string>
+		<key>ml_l_virama_l_u_sign</key>
+		<string>ml_l_virama_l_u_sign.glif</string>
+		<key>ml_l_virama_l_uu_sign</key>
+		<string>ml_l_virama_l_uu_sign.glif</string>
+		<key>ml_l_virama_p</key>
+		<string>ml_l_virama_p.glif</string>
+		<key>ml_lh</key>
+		<string>ml_lh.glif</string>
+		<key>ml_lh_u_sign</key>
+		<string>ml_lh_u_sign.glif</string>
+		<key>ml_lh_uu_sign</key>
+		<string>ml_lh_uu_sign.glif</string>
+		<key>ml_lh_virama_lh</key>
+		<string>ml_lh_virama_lh.glif</string>
+		<key>ml_lh_virama_lh_u_sign</key>
+		<string>ml_lh_virama_lh_u_sign.glif</string>
+		<key>ml_lh_virama_lh_uu_sign</key>
+		<string>ml_lh_virama_lh_uu_sign.glif</string>
+		<key>ml_lu_sign</key>
+		<string>ml_lu_sign.glif</string>
+		<key>ml_m</key>
+		<string>ml_m.glif</string>
+		<key>ml_m_ru_sign</key>
+		<string>ml_m_ru_sign.glif</string>
+		<key>ml_m_u_sign</key>
+		<string>ml_m_u_sign.glif</string>
+		<key>ml_m_uu_sign</key>
+		<string>ml_m_uu_sign.glif</string>
+		<key>ml_m_virama_m</key>
+		<string>ml_m_virama_m.glif</string>
+		<key>ml_m_virama_m_u_sign</key>
+		<string>ml_m_virama_m_u_sign.glif</string>
+		<key>ml_m_virama_m_uu_sign</key>
+		<string>ml_m_virama_m_uu_sign.glif</string>
+		<key>ml_m_virama_p</key>
+		<string>ml_m_virama_p.glif</string>
+		<key>ml_m_virama_p_u_sign</key>
+		<string>ml_m_virama_p_u_sign.glif</string>
+		<key>ml_m_virama_p_uu_sign</key>
+		<string>ml_m_virama_p_uu_sign.glif</string>
+		<key>ml_m_virama_p_virama_r</key>
+		<string>ml_m_virama_p_virama_r.glif</string>
+		<key>ml_m_virama_p_virama_r_u_sign</key>
+		<string>ml_m_virama_p_virama_r_u_sign.glif</string>
+		<key>ml_m_virama_p_virama_r_uu_sign</key>
+		<string>ml_m_virama_p_virama_r_uu_sign.glif</string>
+		<key>ml_m_virama_r</key>
+		<string>ml_m_virama_r.glif</string>
+		<key>ml_m_virama_r_u_sign</key>
+		<string>ml_m_virama_r_u_sign.glif</string>
+		<key>ml_m_virama_r_uu_sign</key>
+		<string>ml_m_virama_r_uu_sign.glif</string>
+		<key>ml_n</key>
+		<string>ml_n.glif</string>
+		<key>ml_n___s_m_a_l_l</key>
+		<string>ml_n___s_m_a_l_l.glif</string>
+		<key>ml_n_ru_sign</key>
+		<string>ml_n_ru_sign.glif</string>
+		<key>ml_n_u_sign</key>
+		<string>ml_n_u_sign.glif</string>
+		<key>ml_n_uu_sign</key>
+		<string>ml_n_uu_sign.glif</string>
+		<key>ml_n_virama_ddh</key>
+		<string>ml_n_virama_ddh.glif</string>
+		<key>ml_n_virama_ddh_u_sign</key>
+		<string>ml_n_virama_ddh_u_sign.glif</string>
+		<key>ml_n_virama_ddh_uu_sign</key>
+		<string>ml_n_virama_ddh_uu_sign.glif</string>
+		<key>ml_n_virama_ddh_virama_r</key>
+		<string>ml_n_virama_ddh_virama_r.glif</string>
+		<key>ml_n_virama_ddh_virama_r_u_sign</key>
+		<string>ml_n_virama_ddh_virama_r_u_sign.glif</string>
+		<key>ml_n_virama_ddh_virama_r_uu_sign</key>
+		<string>ml_n_virama_ddh_virama_r_uu_sign.glif</string>
+		<key>ml_n_virama_dh</key>
+		<string>ml_n_virama_dh.glif</string>
+		<key>ml_n_virama_dh_ru_sign</key>
+		<string>ml_n_virama_dh_ru_sign.glif</string>
+		<key>ml_n_virama_dh_u_sign</key>
+		<string>ml_n_virama_dh_u_sign.glif</string>
+		<key>ml_n_virama_dh_uu_sign</key>
+		<string>ml_n_virama_dh_uu_sign.glif</string>
+		<key>ml_n_virama_dh_virama_r</key>
+		<string>ml_n_virama_dh_virama_r.glif</string>
+		<key>ml_n_virama_dh_virama_r_u_sign</key>
+		<string>ml_n_virama_dh_virama_r_u_sign.glif</string>
+		<key>ml_n_virama_dh_virama_r_uu_sign</key>
+		<string>ml_n_virama_dh_virama_r_uu_sign.glif</string>
+		<key>ml_n_virama_m</key>
+		<string>ml_n_virama_m.glif</string>
+		<key>ml_n_virama_m_u_sign</key>
+		<string>ml_n_virama_m_u_sign.glif</string>
+		<key>ml_n_virama_m_uu_sign</key>
+		<string>ml_n_virama_m_uu_sign.glif</string>
+		<key>ml_n_virama_n</key>
+		<string>ml_n_virama_n.glif</string>
+		<key>ml_n_virama_n_ru_sign</key>
+		<string>ml_n_virama_n_ru_sign.glif</string>
+		<key>ml_n_virama_n_u_sign</key>
+		<string>ml_n_virama_n_u_sign.glif</string>
+		<key>ml_n_virama_n_uu_sign</key>
+		<string>ml_n_virama_n_uu_sign.glif</string>
+		<key>ml_n_virama_rh</key>
+		<string>ml_n_virama_rh.glif</string>
+		<key>ml_n_virama_rh_-_a_l_t</key>
+		<string>ml_n_virama_rh_-_a_l_t.glif</string>
+		<key>ml_n_virama_rh_u_sign</key>
+		<string>ml_n_virama_rh_u_sign.glif</string>
+		<key>ml_n_virama_rh_uu_sign</key>
+		<string>ml_n_virama_rh_uu_sign.glif</string>
+		<key>ml_n_virama_th</key>
+		<string>ml_n_virama_th.glif</string>
+		<key>ml_n_virama_th_ru_sign</key>
+		<string>ml_n_virama_th_ru_sign.glif</string>
+		<key>ml_n_virama_th_u_sign</key>
+		<string>ml_n_virama_th_u_sign.glif</string>
+		<key>ml_n_virama_th_uu_sign</key>
+		<string>ml_n_virama_th_uu_sign.glif</string>
+		<key>ml_n_virama_th_virama_r</key>
+		<string>ml_n_virama_th_virama_r.glif</string>
+		<key>ml_n_virama_th_virama_r_u_sign</key>
+		<string>ml_n_virama_th_virama_r_u_sign.glif</string>
+		<key>ml_n_virama_th_virama_r_uu_sign</key>
+		<string>ml_n_virama_th_virama_r_uu_sign.glif</string>
+		<key>ml_n_virama_tth</key>
+		<string>ml_n_virama_tth.glif</string>
+		<key>ml_ng</key>
+		<string>ml_ng.glif</string>
+		<key>ml_ng_u_sign</key>
+		<string>ml_ng_u_sign.glif</string>
+		<key>ml_ng_uu_sign</key>
+		<string>ml_ng_uu_sign.glif</string>
+		<key>ml_ng_virama_k</key>
+		<string>ml_ng_virama_k.glif</string>
+		<key>ml_ng_virama_k_ru_sign</key>
+		<string>ml_ng_virama_k_ru_sign.glif</string>
+		<key>ml_ng_virama_k_u_sign</key>
+		<string>ml_ng_virama_k_u_sign.glif</string>
+		<key>ml_ng_virama_k_uu_sign</key>
+		<string>ml_ng_virama_k_uu_sign.glif</string>
+		<key>ml_ng_virama_k_virama_r</key>
+		<string>ml_ng_virama_k_virama_r.glif</string>
+		<key>ml_ng_virama_k_virama_r_u_sign</key>
+		<string>ml_ng_virama_k_virama_r_u_sign.glif</string>
+		<key>ml_ng_virama_k_virama_r_uu_sign</key>
+		<string>ml_ng_virama_k_virama_r_uu_sign.glif</string>
+		<key>ml_ng_virama_ng</key>
+		<string>ml_ng_virama_ng.glif</string>
+		<key>ml_ng_virama_ng_u_sign</key>
+		<string>ml_ng_virama_ng_u_sign.glif</string>
+		<key>ml_ng_virama_ng_uu_sign</key>
+		<string>ml_ng_virama_ng_uu_sign.glif</string>
+		<key>ml_nh</key>
+		<string>ml_nh.glif</string>
+		<key>ml_nh_u_sign</key>
+		<string>ml_nh_u_sign.glif</string>
+		<key>ml_nh_uu_sign</key>
+		<string>ml_nh_uu_sign.glif</string>
+		<key>ml_nh_virama_d</key>
+		<string>ml_nh_virama_d.glif</string>
+		<key>ml_nh_virama_d_ru_sign</key>
+		<string>ml_nh_virama_d_ru_sign.glif</string>
+		<key>ml_nh_virama_d_u_sign</key>
+		<string>ml_nh_virama_d_u_sign.glif</string>
+		<key>ml_nh_virama_d_uu_sign</key>
+		<string>ml_nh_virama_d_uu_sign.glif</string>
+		<key>ml_nh_virama_d_virama_r</key>
+		<string>ml_nh_virama_d_virama_r.glif</string>
+		<key>ml_nh_virama_m</key>
+		<string>ml_nh_virama_m.glif</string>
+		<key>ml_nh_virama_nh</key>
+		<string>ml_nh_virama_nh.glif</string>
+		<key>ml_nh_virama_nh_u_sign</key>
+		<string>ml_nh_virama_nh_u_sign.glif</string>
+		<key>ml_nh_virama_nh_uu_sign</key>
+		<string>ml_nh_virama_nh_uu_sign.glif</string>
+		<key>ml_nh_virama_t</key>
+		<string>ml_nh_virama_t.glif</string>
+		<key>ml_nh_virama_t_u_sign</key>
+		<string>ml_nh_virama_t_u_sign.glif</string>
+		<key>ml_nh_virama_t_uu_sign</key>
+		<string>ml_nh_virama_t_uu_sign.glif</string>
+		<key>ml_nh_virama_t_virama_r</key>
+		<string>ml_nh_virama_t_virama_r.glif</string>
+		<key>ml_nh_virama_t_virama_r_u_sign</key>
+		<string>ml_nh_virama_t_virama_r_u_sign.glif</string>
+		<key>ml_nh_virama_t_virama_r_uu_sign</key>
+		<string>ml_nh_virama_t_virama_r_uu_sign.glif</string>
+		<key>ml_nj</key>
+		<string>ml_nj.glif</string>
+		<key>ml_nj_u_sign</key>
+		<string>ml_nj_u_sign.glif</string>
+		<key>ml_nj_uu_sign</key>
+		<string>ml_nj_uu_sign.glif</string>
+		<key>ml_nj_virama_ch</key>
+		<string>ml_nj_virama_ch.glif</string>
+		<key>ml_nj_virama_ch_u_sign</key>
+		<string>ml_nj_virama_ch_u_sign.glif</string>
+		<key>ml_nj_virama_ch_uu_sign</key>
+		<string>ml_nj_virama_ch_uu_sign.glif</string>
+		<key>ml_nj_virama_j</key>
+		<string>ml_nj_virama_j.glif</string>
+		<key>ml_nj_virama_j_u_sign</key>
+		<string>ml_nj_virama_j_u_sign.glif</string>
+		<key>ml_nj_virama_j_uu_sign</key>
+		<string>ml_nj_virama_j_uu_sign.glif</string>
+		<key>ml_nj_virama_nj</key>
+		<string>ml_nj_virama_nj.glif</string>
+		<key>ml_nj_virama_nj_u_sign</key>
+		<string>ml_nj_virama_nj_u_sign.glif</string>
+		<key>ml_nj_virama_nj_uu_sign</key>
+		<string>ml_nj_virama_nj_uu_sign.glif</string>
 		<key>ml_o</key>
 		<string>ml_o.glif</string>
 		<key>ml_o_sign</key>
@@ -738,252 +920,316 @@
 		<string>ml_oo_sign.glif</string>
 		<key>ml_ou_sign</key>
 		<string>ml_ou_sign.glif</string>
+		<key>ml_p</key>
+		<string>ml_p.glif</string>
+		<key>ml_p_u_sign</key>
+		<string>ml_p_u_sign.glif</string>
+		<key>ml_p_uu_sign</key>
+		<string>ml_p_uu_sign.glif</string>
+		<key>ml_p_virama_l</key>
+		<string>ml_p_virama_l.glif</string>
+		<key>ml_p_virama_l_u_sign</key>
+		<string>ml_p_virama_l_u_sign.glif</string>
+		<key>ml_p_virama_l_uu_sign</key>
+		<string>ml_p_virama_l_uu_sign.glif</string>
+		<key>ml_p_virama_p</key>
+		<string>ml_p_virama_p.glif</string>
+		<key>ml_p_virama_p_u_sign</key>
+		<string>ml_p_virama_p_u_sign.glif</string>
+		<key>ml_p_virama_p_uu_sign</key>
+		<string>ml_p_virama_p_uu_sign.glif</string>
+		<key>ml_p_virama_ph</key>
+		<string>ml_p_virama_ph.glif</string>
+		<key>ml_p_virama_ph_u_sign</key>
+		<string>ml_p_virama_ph_u_sign.glif</string>
+		<key>ml_p_virama_ph_uu_sign</key>
+		<string>ml_p_virama_ph_uu_sign.glif</string>
+		<key>ml_p_virama_r</key>
+		<string>ml_p_virama_r.glif</string>
+		<key>ml_p_virama_r_u_sign</key>
+		<string>ml_p_virama_r_u_sign.glif</string>
+		<key>ml_p_virama_r_uu_sign</key>
+		<string>ml_p_virama_r_uu_sign.glif</string>
+		<key>ml_ph</key>
+		<string>ml_ph.glif</string>
+		<key>ml_ph_u_sign</key>
+		<string>ml_ph_u_sign.glif</string>
+		<key>ml_ph_uu_sign</key>
+		<string>ml_ph_uu_sign.glif</string>
+		<key>ml_ph_virama_l</key>
+		<string>ml_ph_virama_l.glif</string>
+		<key>ml_ph_virama_l_u_sign</key>
+		<string>ml_ph_virama_l_u_sign.glif</string>
+		<key>ml_ph_virama_l_uu_sign</key>
+		<string>ml_ph_virama_l_uu_sign.glif</string>
+		<key>ml_ph_virama_r</key>
+		<string>ml_ph_virama_r.glif</string>
+		<key>ml_ph_virama_r_u_sign</key>
+		<string>ml_ph_virama_r_u_sign.glif</string>
+		<key>ml_ph_virama_r_uu_sign</key>
+		<string>ml_ph_virama_r_uu_sign.glif</string>
 		<key>ml_r</key>
 		<string>ml_r.glif</string>
-		<key>ml_rr</key>
-		<string>ml_rr.glif</string>
+		<key>ml_r_ru_sign</key>
+		<string>ml_r_ru_sign.glif</string>
+		<key>ml_r_u_sign</key>
+		<string>ml_r_u_sign.glif</string>
+		<key>ml_r_uu_sign</key>
+		<string>ml_r_uu_sign.glif</string>
+		<key>ml_reph</key>
+		<string>ml_reph.glif</string>
+		<key>ml_rh</key>
+		<string>ml_rh.glif</string>
+		<key>ml_rh___s_m_a_l_l</key>
+		<string>ml_rh___s_m_a_l_l.glif</string>
+		<key>ml_rh_u_sign</key>
+		<string>ml_rh_u_sign.glif</string>
+		<key>ml_rh_uu_sign</key>
+		<string>ml_rh_uu_sign.glif</string>
+		<key>ml_rh_virama_rh</key>
+		<string>ml_rh_virama_rh.glif</string>
+		<key>ml_rh_virama_rh_u_sign</key>
+		<string>ml_rh_virama_rh_u_sign.glif</string>
+		<key>ml_rh_virama_rh_uu_sign</key>
+		<string>ml_rh_virama_rh_uu_sign.glif</string>
+		<key>ml_rh_virama_rh_virama_r</key>
+		<string>ml_rh_virama_rh_virama_r.glif</string>
+		<key>ml_rh_virama_rh_virama_r_u_sign</key>
+		<string>ml_rh_virama_rh_virama_r_u_sign.glif</string>
+		<key>ml_rh_virama_rh_virama_r_uu_sign</key>
+		<string>ml_rh_virama_rh_virama_r_uu_sign.glif</string>
+		<key>ml_ru</key>
+		<string>ml_ru.glif</string>
+		<key>ml_ru_sign</key>
+		<string>ml_ru_sign.glif</string>
+		<key>ml_ru_sign___s_h_o_r_t</key>
+		<string>ml_ru_sign___s_h_o_r_t.glif</string>
+		<key>ml_ruu_sign</key>
+		<string>ml_ruu_sign.glif</string>
+		<key>ml_s</key>
+		<string>ml_s.glif</string>
+		<key>ml_s_ru_sign</key>
+		<string>ml_s_ru_sign.glif</string>
+		<key>ml_s_u_sign</key>
+		<string>ml_s_u_sign.glif</string>
+		<key>ml_s_uu_sign</key>
+		<string>ml_s_uu_sign.glif</string>
+		<key>ml_s_virama_p</key>
+		<string>ml_s_virama_p.glif</string>
+		<key>ml_s_virama_r</key>
+		<string>ml_s_virama_r.glif</string>
+		<key>ml_s_virama_r_u_sign</key>
+		<string>ml_s_virama_r_u_sign.glif</string>
+		<key>ml_s_virama_r_uu_sign</key>
+		<string>ml_s_virama_r_uu_sign.glif</string>
+		<key>ml_s_virama_s</key>
+		<string>ml_s_virama_s.glif</string>
+		<key>ml_s_virama_s_u_sign</key>
+		<string>ml_s_virama_s_u_sign.glif</string>
+		<key>ml_s_virama_s_uu_sign</key>
+		<string>ml_s_virama_s_uu_sign.glif</string>
+		<key>ml_s_virama_tth</key>
+		<string>ml_s_virama_tth.glif</string>
+		<key>ml_sh</key>
+		<string>ml_sh.glif</string>
+		<key>ml_sh_u_sign</key>
+		<string>ml_sh_u_sign.glif</string>
+		<key>ml_sh_uu_sign</key>
+		<string>ml_sh_uu_sign.glif</string>
+		<key>ml_sh_virama_r</key>
+		<string>ml_sh_virama_r.glif</string>
+		<key>ml_sh_virama_r_u_sign</key>
+		<string>ml_sh_virama_r_u_sign.glif</string>
+		<key>ml_sh_virama_r_uu_sign</key>
+		<string>ml_sh_virama_r_uu_sign.glif</string>
+		<key>ml_t</key>
+		<string>ml_t.glif</string>
+		<key>ml_t___s_m_a_l_l</key>
+		<string>ml_t___s_m_a_l_l.glif</string>
+		<key>ml_t_ru_sign</key>
+		<string>ml_t_ru_sign.glif</string>
+		<key>ml_t_u_sign</key>
+		<string>ml_t_u_sign.glif</string>
+		<key>ml_t_uu_sign</key>
+		<string>ml_t_uu_sign.glif</string>
+		<key>ml_t_virama_r</key>
+		<string>ml_t_virama_r.glif</string>
+		<key>ml_t_virama_r_u_sign</key>
+		<string>ml_t_virama_r_u_sign.glif</string>
+		<key>ml_t_virama_r_uu_sign</key>
+		<string>ml_t_virama_r_uu_sign.glif</string>
+		<key>ml_t_virama_t</key>
+		<string>ml_t_virama_t.glif</string>
+		<key>ml_t_virama_t_u_sign</key>
+		<string>ml_t_virama_t_u_sign.glif</string>
+		<key>ml_t_virama_t_uu_sign</key>
+		<string>ml_t_virama_t_uu_sign.glif</string>
+		<key>ml_th</key>
+		<string>ml_th.glif</string>
+		<key>ml_th___s_m_a_l_l</key>
+		<string>ml_th___s_m_a_l_l.glif</string>
+		<key>ml_th_ru_sign</key>
+		<string>ml_th_ru_sign.glif</string>
+		<key>ml_th_u_sign</key>
+		<string>ml_th_u_sign.glif</string>
+		<key>ml_th_uu_sign</key>
+		<string>ml_th_uu_sign.glif</string>
+		<key>ml_th_virama_bh</key>
+		<string>ml_th_virama_bh.glif</string>
+		<key>ml_th_virama_bh_u_sign</key>
+		<string>ml_th_virama_bh_u_sign.glif</string>
+		<key>ml_th_virama_m</key>
+		<string>ml_th_virama_m.glif</string>
+		<key>ml_th_virama_m_u_sign</key>
+		<string>ml_th_virama_m_u_sign.glif</string>
+		<key>ml_th_virama_m_uu_sign</key>
+		<string>ml_th_virama_m_uu_sign.glif</string>
+		<key>ml_th_virama_n</key>
+		<string>ml_th_virama_n.glif</string>
+		<key>ml_th_virama_n_u_sign</key>
+		<string>ml_th_virama_n_u_sign.glif</string>
+		<key>ml_th_virama_n_uu_sign</key>
+		<string>ml_th_virama_n_uu_sign.glif</string>
+		<key>ml_th_virama_r</key>
+		<string>ml_th_virama_r.glif</string>
+		<key>ml_th_virama_r_u_sign</key>
+		<string>ml_th_virama_r_u_sign.glif</string>
+		<key>ml_th_virama_r_uu_sign</key>
+		<string>ml_th_virama_r_uu_sign.glif</string>
+		<key>ml_th_virama_s</key>
+		<string>ml_th_virama_s.glif</string>
+		<key>ml_th_virama_s_ru_sign</key>
+		<string>ml_th_virama_s_ru_sign.glif</string>
+		<key>ml_th_virama_s_u_sign</key>
+		<string>ml_th_virama_s_u_sign.glif</string>
+		<key>ml_th_virama_s_uu_sign</key>
+		<string>ml_th_virama_s_uu_sign.glif</string>
+		<key>ml_th_virama_s_virama_r</key>
+		<string>ml_th_virama_s_virama_r.glif</string>
+		<key>ml_th_virama_th</key>
+		<string>ml_th_virama_th.glif</string>
+		<key>ml_th_virama_th_ru_sign</key>
+		<string>ml_th_virama_th_ru_sign.glif</string>
+		<key>ml_th_virama_th_u_sign</key>
+		<string>ml_th_virama_th_u_sign.glif</string>
+		<key>ml_th_virama_th_uu_sign</key>
+		<string>ml_th_virama_th_uu_sign.glif</string>
+		<key>ml_th_virama_th_virama_r</key>
+		<string>ml_th_virama_th_virama_r.glif</string>
+		<key>ml_th_virama_th_virama_r_u_sign</key>
+		<string>ml_th_virama_th_virama_r_u_sign.glif</string>
+		<key>ml_th_virama_th_virama_r_uu_sign</key>
+		<string>ml_th_virama_th_virama_r_uu_sign.glif</string>
+		<key>ml_th_virama_tth</key>
+		<string>ml_th_virama_tth.glif</string>
+		<key>ml_th_virama_tth_u_sign</key>
+		<string>ml_th_virama_tth_u_sign.glif</string>
+		<key>ml_th_virama_tth_uu_sign</key>
+		<string>ml_th_virama_tth_uu_sign.glif</string>
+		<key>ml_tt</key>
+		<string>ml_tt.glif</string>
+		<key>ml_tt_u_sign</key>
+		<string>ml_tt_u_sign.glif</string>
+		<key>ml_tt_uu_sign</key>
+		<string>ml_tt_uu_sign.glif</string>
+		<key>ml_tth</key>
+		<string>ml_tth.glif</string>
+		<key>ml_tth_u_sign</key>
+		<string>ml_tth_u_sign.glif</string>
+		<key>ml_tth_uu_sign</key>
+		<string>ml_tth_uu_sign.glif</string>
 		<key>ml_u</key>
 		<string>ml_u.glif</string>
+		<key>ml_u_sign</key>
+		<string>ml_u_sign.glif</string>
 		<key>ml_uu</key>
 		<string>ml_uu.glif</string>
-		<key>mlarakaani</key>
-		<string>mlarakaani.glif</string>
-		<key>mlaramaa</key>
-		<string>mlaramaa.glif</string>
-		<key>mlchandrabindu</key>
-		<string>mlchandrabindu.glif</string>
-		<key>mldatemark</key>
-		<string>mldatemark.glif</string>
-		<key>mleight</key>
-		<string>mleight.glif</string>
-		<key>mlfive</key>
-		<string>mlfive.glif</string>
-		<key>mlfour</key>
-		<string>mlfour.glif</string>
-		<key>mlhalf</key>
-		<string>mlhalf.glif</string>
-		<key>mlnine</key>
-		<string>mlnine.glif</string>
-		<key>mlone</key>
-		<string>mlone.glif</string>
-		<key>mloneeighths</key>
-		<string>mloneeighths.glif</string>
-		<key>mlonefifths</key>
-		<string>mlonefifths.glif</string>
-		<key>mlonehundred</key>
-		<string>mlonehundred.glif</string>
-		<key>mlonesixteenths</key>
-		<string>mlonesixteenths.glif</string>
-		<key>mlonetenths</key>
-		<string>mlonetenths.glif</string>
-		<key>mlpara</key>
-		<string>mlpara.glif</string>
-		<key>mlseven</key>
-		<string>mlseven.glif</string>
-		<key>mlsix</key>
-		<string>mlsix.glif</string>
-		<key>mlten</key>
-		<string>mlten.glif</string>
-		<key>mlthree</key>
-		<string>mlthree.glif</string>
-		<key>mlthreefourth</key>
-		<string>mlthreefourth.glif</string>
-		<key>mlthreeightieths</key>
-		<string>mlthreeightieths.glif</string>
-		<key>mlthreesixteenths</key>
-		<string>mlthreesixteenths.glif</string>
-		<key>mlthreetwentieths</key>
-		<string>mlthreetwentieths.glif</string>
-		<key>mltwo</key>
-		<string>mltwo.glif</string>
-		<key>mlzero</key>
-		<string>mlzero.glif</string>
+		<key>ml_uu_sign</key>
+		<string>ml_uu_sign.glif</string>
+		<key>ml_uu_sign___s_m_a_l_l</key>
+		<string>ml_uu_sign___s_m_a_l_l.glif</string>
+		<key>ml_v</key>
+		<string>ml_v.glif</string>
+		<key>ml_v_u_sign</key>
+		<string>ml_v_u_sign.glif</string>
+		<key>ml_v_uu_sign</key>
+		<string>ml_v_uu_sign.glif</string>
+		<key>ml_v_virama_r</key>
+		<string>ml_v_virama_r.glif</string>
+		<key>ml_v_virama_r_u_sign</key>
+		<string>ml_v_virama_r_u_sign.glif</string>
+		<key>ml_v_virama_r_uu_sign</key>
+		<string>ml_v_virama_r_uu_sign.glif</string>
+		<key>ml_v_virama_v</key>
+		<string>ml_v_virama_v.glif</string>
+		<key>ml_v_virama_v_u_sign</key>
+		<string>ml_v_virama_v_u_sign.glif</string>
+		<key>ml_v_virama_v_uu_sign</key>
+		<string>ml_v_virama_v_uu_sign.glif</string>
+		<key>ml_va_sign</key>
+		<string>ml_va_sign.glif</string>
+		<key>ml_virama</key>
+		<string>ml_virama.glif</string>
+		<key>ml_virama_ch</key>
+		<string>ml_virama_ch.glif</string>
+		<key>ml_virama_l</key>
+		<string>ml_virama_l.glif</string>
+		<key>ml_y</key>
+		<string>ml_y.glif</string>
+		<key>ml_y_u_sign</key>
+		<string>ml_y_u_sign.glif</string>
+		<key>ml_y_uu_sign</key>
+		<string>ml_y_uu_sign.glif</string>
+		<key>ml_y_virama_y</key>
+		<string>ml_y_virama_y.glif</string>
+		<key>ml_y_virama_y_u_sign</key>
+		<string>ml_y_virama_y_u_sign.glif</string>
+		<key>ml_y_virama_y_uu_sign</key>
+		<string>ml_y_virama_y_uu_sign.glif</string>
+		<key>ml_ya_sign</key>
+		<string>ml_ya_sign.glif</string>
+		<key>ml_z</key>
+		<string>ml_z.glif</string>
+		<key>ml_z_ru_sign</key>
+		<string>ml_z_ru_sign.glif</string>
+		<key>ml_z_u_sign</key>
+		<string>ml_z_u_sign.glif</string>
+		<key>ml_z_uu_sign</key>
+		<string>ml_z_uu_sign.glif</string>
+		<key>ml_z_virama_ch</key>
+		<string>ml_z_virama_ch.glif</string>
+		<key>ml_z_virama_ch_u_sign</key>
+		<string>ml_z_virama_ch_u_sign.glif</string>
+		<key>ml_z_virama_ch_uu_sign</key>
+		<string>ml_z_virama_ch_uu_sign.glif</string>
+		<key>ml_z_virama_r</key>
+		<string>ml_z_virama_r.glif</string>
+		<key>ml_z_virama_r_u_sign</key>
+		<string>ml_z_virama_r_u_sign.glif</string>
+		<key>ml_z_virama_r_uu_sign</key>
+		<string>ml_z_virama_r_uu_sign.glif</string>
+		<key>ml_z_virama_z</key>
+		<string>ml_z_virama_z.glif</string>
+		<key>ml_z_virama_z_u_sign</key>
+		<string>ml_z_virama_z_u_sign.glif</string>
+		<key>ml_z_virama_z_uu_sign</key>
+		<string>ml_z_virama_z_uu_sign.glif</string>
+		<key>ml_zh</key>
+		<string>ml_zh.glif</string>
+		<key>ml_zh_u_sign</key>
+		<string>ml_zh_u_sign.glif</string>
+		<key>ml_zh_uu_sign</key>
+		<string>ml_zh_uu_sign.glif</string>
 		<key>multiply</key>
 		<string>multiply.glif</string>
 		<key>n</key>
 		<string>n.glif</string>
-		<key>n1</key>
-		<string>n1.glif</string>
-		<key>n1cil</key>
-		<string>n1cil.glif</string>
-		<key>n1m1</key>
-		<string>n1m1.glif</string>
-		<key>n1m1u1</key>
-		<string>n1m1u1.glif</string>
-		<key>n1m1u2</key>
-		<string>n1m1u2.glif</string>
-		<key>n1n1</key>
-		<string>n1n1.glif</string>
-		<key>n1n1r1</key>
-		<string>n1n1r1.glif</string>
-		<key>n1n1u1</key>
-		<string>n1n1u1.glif</string>
-		<key>n1n1u2</key>
-		<string>n1n1u2.glif</string>
-		<key>n1r1</key>
-		<string>n1r1.glif</string>
-		<key>n1rh</key>
-		<string>n1rh.glif</string>
-		<key>n1rhu1</key>
-		<string>n1rhu1.glif</string>
-		<key>n1rhu2</key>
-		<string>n1rhu2.glif</string>
-		<key>n1th1</key>
-		<string>n1th1.glif</string>
-		<key>n1th1r1</key>
-		<string>n1th1r1.glif</string>
-		<key>n1th1r3</key>
-		<string>n1th1r3.glif</string>
-		<key>n1th1r3u1</key>
-		<string>n1th1r3u1.glif</string>
-		<key>n1th1r3u2</key>
-		<string>n1th1r3u2.glif</string>
-		<key>n1th1u1</key>
-		<string>n1th1u1.glif</string>
-		<key>n1th1u2</key>
-		<string>n1th1u2.glif</string>
-		<key>n1th2</key>
-		<string>n1th2.glif</string>
-		<key>n1th2r1</key>
-		<string>n1th2r1.glif</string>
-		<key>n1th2u1</key>
-		<string>n1th2u1.glif</string>
-		<key>n1th2u2</key>
-		<string>n1th2u2.glif</string>
-		<key>n1th3</key>
-		<string>n1th3.glif</string>
-		<key>n1th3r1</key>
-		<string>n1th3r1.glif</string>
-		<key>n1th3r3</key>
-		<string>n1th3r3.glif</string>
-		<key>n1th3r3u1</key>
-		<string>n1th3r3u1.glif</string>
-		<key>n1th3r3u2</key>
-		<string>n1th3r3u2.glif</string>
-		<key>n1th3u1</key>
-		<string>n1th3u1.glif</string>
-		<key>n1th3u2</key>
-		<string>n1th3u2.glif</string>
-		<key>n1th4</key>
-		<string>n1th4.glif</string>
-		<key>n1th4r3</key>
-		<string>n1th4r3.glif</string>
-		<key>n1th4r3u1</key>
-		<string>n1th4r3u1.glif</string>
-		<key>n1th4r3u2</key>
-		<string>n1th4r3u2.glif</string>
-		<key>n1th4u1</key>
-		<string>n1th4u1.glif</string>
-		<key>n1th4u2</key>
-		<string>n1th4u2.glif</string>
-		<key>n1u1</key>
-		<string>n1u1.glif</string>
-		<key>n1u2</key>
-		<string>n1u2.glif</string>
-		<key>n2</key>
-		<string>n2.glif</string>
 		<key>nacute</key>
 		<string>nacute.glif</string>
 		<key>ncaron</key>
 		<string>ncaron.glif</string>
-		<key>ng</key>
-		<string>ng.glif</string>
-		<key>ngk1</key>
-		<string>ngk1.glif</string>
-		<key>ngk1r1</key>
-		<string>ngk1r1.glif</string>
-		<key>ngk1r3</key>
-		<string>ngk1r3.glif</string>
-		<key>ngk1r3u1</key>
-		<string>ngk1r3u1.glif</string>
-		<key>ngk1r3u2</key>
-		<string>ngk1r3u2.glif</string>
-		<key>ngk1u1</key>
-		<string>ngk1u1.glif</string>
-		<key>ngk1u2</key>
-		<string>ngk1u2.glif</string>
-		<key>ngng</key>
-		<string>ngng.glif</string>
-		<key>ngngu1</key>
-		<string>ngngu1.glif</string>
-		<key>ngngu2</key>
-		<string>ngngu2.glif</string>
-		<key>ngu1</key>
-		<string>ngu1.glif</string>
-		<key>ngu2</key>
-		<string>ngu2.glif</string>
-		<key>nh</key>
-		<string>nh.glif</string>
-		<key>nhcil</key>
-		<string>nhcil.glif</string>
-		<key>nhm1</key>
-		<string>nhm1.glif</string>
-		<key>nhm1u1</key>
-		<string>nhm1u1.glif</string>
-		<key>nhm1u2</key>
-		<string>nhm1u2.glif</string>
-		<key>nhnh</key>
-		<string>nhnh.glif</string>
-		<key>nhnhu1</key>
-		<string>nhnhu1.glif</string>
-		<key>nhnhu2</key>
-		<string>nhnhu2.glif</string>
-		<key>nht1</key>
-		<string>nht1.glif</string>
-		<key>nht1r3</key>
-		<string>nht1r3.glif</string>
-		<key>nht1r3u1</key>
-		<string>nht1r3u1.glif</string>
-		<key>nht1r3u2</key>
-		<string>nht1r3u2.glif</string>
-		<key>nht1u1</key>
-		<string>nht1u1.glif</string>
-		<key>nht1u2</key>
-		<string>nht1u2.glif</string>
-		<key>nht2</key>
-		<string>nht2.glif</string>
-		<key>nht3</key>
-		<string>nht3.glif</string>
-		<key>nht3r1</key>
-		<string>nht3r1.glif</string>
-		<key>nht3r3</key>
-		<string>nht3r3.glif</string>
-		<key>nht3u1</key>
-		<string>nht3u1.glif</string>
-		<key>nht3u2</key>
-		<string>nht3u2.glif</string>
-		<key>nhu1</key>
-		<string>nhu1.glif</string>
-		<key>nhu2</key>
-		<string>nhu2.glif</string>
 		<key>nine</key>
 		<string>nine.glif</string>
-		<key>nj</key>
-		<string>nj.glif</string>
-		<key>njch1</key>
-		<string>njch1.glif</string>
-		<key>njch1r1</key>
-		<string>njch1r1.glif</string>
-		<key>njch1u1</key>
-		<string>njch1u1.glif</string>
-		<key>njch1u2</key>
-		<string>njch1u2.glif</string>
-		<key>njch3</key>
-		<string>njch3.glif</string>
-		<key>njch3u1</key>
-		<string>njch3u1.glif</string>
-		<key>njch3u2</key>
-		<string>njch3u2.glif</string>
-		<key>njnj</key>
-		<string>njnj.glif</string>
-		<key>njnju1</key>
-		<string>njnju1.glif</string>
-		<key>njnju2</key>
-		<string>njnju2.glif</string>
-		<key>nju1</key>
-		<string>nju1.glif</string>
-		<key>nju2</key>
-		<string>nju2.glif</string>
 		<key>nonmarkingreturn</key>
 		<string>nonmarkingreturn.glif</string>
 		<key>ntilde</key>
@@ -1006,110 +1252,18 @@
 		<string>ograve.glif</string>
 		<key>omacron</key>
 		<string>omacron.glif</string>
-		<key>omega</key>
-		<string>omega.glif</string>
 		<key>one</key>
 		<string>one.glif</string>
-		<key>orumaa</key>
-		<string>orumaa.glif</string>
 		<key>oslash</key>
 		<string>oslash.glif</string>
 		<key>otilde</key>
 		<string>otilde.glif</string>
 		<key>p</key>
 		<string>p.glif</string>
-		<key>p1</key>
-		<string>p1.glif</string>
-		<key>p1l3</key>
-		<string>p1l3.glif</string>
-		<key>p1l3u1</key>
-		<string>p1l3u1.glif</string>
-		<key>p1l3u2</key>
-		<string>p1l3u2.glif</string>
-		<key>p1p1</key>
-		<string>p1p1.glif</string>
-		<key>p1p1r1</key>
-		<string>p1p1r1.glif</string>
-		<key>p1p1u1</key>
-		<string>p1p1u1.glif</string>
-		<key>p1p1u2</key>
-		<string>p1p1u2.glif</string>
-		<key>p1p2</key>
-		<string>p1p2.glif</string>
-		<key>p1r1</key>
-		<string>p1r1.glif</string>
-		<key>p1r3</key>
-		<string>p1r3.glif</string>
-		<key>p1r3u1</key>
-		<string>p1r3u1.glif</string>
-		<key>p1r3u2</key>
-		<string>p1r3u2.glif</string>
-		<key>p1u1</key>
-		<string>p1u1.glif</string>
-		<key>p1u2</key>
-		<string>p1u2.glif</string>
-		<key>p2</key>
-		<string>p2.glif</string>
-		<key>p2l3</key>
-		<string>p2l3.glif</string>
-		<key>p2l3u1</key>
-		<string>p2l3u1.glif</string>
-		<key>p2l3u2</key>
-		<string>p2l3u2.glif</string>
-		<key>p2r3</key>
-		<string>p2r3.glif</string>
-		<key>p2r3u1</key>
-		<string>p2r3u1.glif</string>
-		<key>p2r3u2</key>
-		<string>p2r3u2.glif</string>
-		<key>p2u1</key>
-		<string>p2u1.glif</string>
-		<key>p2u2</key>
-		<string>p2u2.glif</string>
-		<key>p3</key>
-		<string>p3.glif</string>
-		<key>p3l3</key>
-		<string>p3l3.glif</string>
-		<key>p3p3</key>
-		<string>p3p3.glif</string>
-		<key>p3p3u1</key>
-		<string>p3p3u1.glif</string>
-		<key>p3p3u2</key>
-		<string>p3p3u2.glif</string>
-		<key>p3r1</key>
-		<string>p3r1.glif</string>
-		<key>p3r3</key>
-		<string>p3r3.glif</string>
-		<key>p3r3u1</key>
-		<string>p3r3u1.glif</string>
-		<key>p3r3u2</key>
-		<string>p3r3u2.glif</string>
-		<key>p3th3</key>
-		<string>p3th3.glif</string>
-		<key>p3u1</key>
-		<string>p3u1.glif</string>
-		<key>p3u2</key>
-		<string>p3u2.glif</string>
-		<key>p4</key>
-		<string>p4.glif</string>
-		<key>p4r1</key>
-		<string>p4r1.glif</string>
-		<key>p4r3</key>
-		<string>p4r3.glif</string>
-		<key>p4r3u1</key>
-		<string>p4r3u1.glif</string>
-		<key>p4r3u2</key>
-		<string>p4r3u2.glif</string>
-		<key>p4u1</key>
-		<string>p4u1.glif</string>
-		<key>p4u2</key>
-		<string>p4u2.glif</string>
 		<key>paragraph</key>
 		<string>paragraph.glif</string>
 		<key>parenleft</key>
 		<string>parenleft.glif</string>
-		<key>parenright</key>
-		<string>parenright.glif</string>
 		<key>percent</key>
 		<string>percent.glif</string>
 		<key>period</key>
@@ -1122,104 +1276,20 @@
 		<string>q.glif</string>
 		<key>question</key>
 		<string>question.glif</string>
-		<key>questiondown</key>
-		<string>questiondown.glif</string>
-		<key>quotedbl</key>
-		<string>quotedbl.glif</string>
-		<key>quotedblbase</key>
-		<string>quotedblbase.glif</string>
-		<key>quotedblleft</key>
-		<string>quotedblleft.glif</string>
-		<key>quotedblright</key>
-		<string>quotedblright.glif</string>
-		<key>quoteleft</key>
-		<string>quoteleft.glif</string>
-		<key>quoteright</key>
-		<string>quoteright.glif</string>
-		<key>quotesinglbase</key>
-		<string>quotesinglbase.glif</string>
 		<key>quotesingle</key>
 		<string>quotesingle.glif</string>
 		<key>r</key>
 		<string>r.glif</string>
-		<key>r1</key>
-		<string>r1.glif</string>
-		<key>r2</key>
-		<string>r2.glif</string>
-		<key>r3</key>
-		<string>r3.glif</string>
-		<key>r3cil</key>
-		<string>r3cil.glif</string>
-		<key>r3r1</key>
-		<string>r3r1.glif</string>
-		<key>r3u1</key>
-		<string>r3u1.glif</string>
-		<key>r3u2</key>
-		<string>r3u2.glif</string>
-		<key>r4</key>
-		<string>r4.glif</string>
 		<key>racute</key>
 		<string>racute.glif</string>
 		<key>rcaron</key>
 		<string>rcaron.glif</string>
 		<key>registered</key>
 		<string>registered.glif</string>
-		<key>rh</key>
-		<string>rh.glif</string>
-		<key>rh_half</key>
-		<string>rh_half.glif</string>
-		<key>rhrh</key>
-		<string>rhrh.glif</string>
-		<key>rhrhr3</key>
-		<string>rhrhr3.glif</string>
-		<key>rhrhr3u1</key>
-		<string>rhrhr3u1.glif</string>
-		<key>rhrhr3u2</key>
-		<string>rhrhr3u2.glif</string>
-		<key>rhrhu1</key>
-		<string>rhrhu1.glif</string>
-		<key>rhrhu2</key>
-		<string>rhrhu2.glif</string>
-		<key>rhu1</key>
-		<string>rhu1.glif</string>
-		<key>rhu2</key>
-		<string>rhu2.glif</string>
 		<key>ring</key>
 		<string>ring.glif</string>
-		<key>rupee</key>
-		<string>rupee.glif</string>
 		<key>s</key>
 		<string>s.glif</string>
-		<key>s1</key>
-		<string>s1.glif</string>
-		<key>s1l3</key>
-		<string>s1l3.glif</string>
-		<key>s1r1</key>
-		<string>s1r1.glif</string>
-		<key>s1r3</key>
-		<string>s1r3.glif</string>
-		<key>s1r3u1</key>
-		<string>s1r3u1.glif</string>
-		<key>s1r3u2</key>
-		<string>s1r3u2.glif</string>
-		<key>s1s1</key>
-		<string>s1s1.glif</string>
-		<key>s1s1u1</key>
-		<string>s1s1u1.glif</string>
-		<key>s1s1u2</key>
-		<string>s1s1u2.glif</string>
-		<key>s1th2</key>
-		<string>s1th2.glif</string>
-		<key>s1th2r1</key>
-		<string>s1th2r1.glif</string>
-		<key>s1th2u1</key>
-		<string>s1th2u1.glif</string>
-		<key>s1th2u2</key>
-		<string>s1th2u2.glif</string>
-		<key>s1u1</key>
-		<string>s1u1.glif</string>
-		<key>s1u2</key>
-		<string>s1u2.glif</string>
 		<key>sacute</key>
 		<string>sacute.glif</string>
 		<key>scaron</key>
@@ -1232,206 +1302,16 @@
 		<string>semicolon.glif</string>
 		<key>seven</key>
 		<string>seven.glif</string>
-		<key>sh</key>
-		<string>sh.glif</string>
-		<key>shr1</key>
-		<string>shr1.glif</string>
-		<key>shr3</key>
-		<string>shr3.glif</string>
-		<key>shr3u1</key>
-		<string>shr3u1.glif</string>
-		<key>shr3u2</key>
-		<string>shr3u2.glif</string>
-		<key>sht1</key>
-		<string>sht1.glif</string>
-		<key>shu1</key>
-		<string>shu1.glif</string>
-		<key>shu2</key>
-		<string>shu2.glif</string>
 		<key>six</key>
 		<string>six.glif</string>
 		<key>slash</key>
 		<string>slash.glif</string>
-		<key>softhyphen</key>
-		<string>softhyphen.glif</string>
 		<key>space</key>
 		<string>space.glif</string>
 		<key>t</key>
 		<string>t.glif</string>
-		<key>t1</key>
-		<string>t1.glif</string>
-		<key>t1r1</key>
-		<string>t1r1.glif</string>
-		<key>t1r3</key>
-		<string>t1r3.glif</string>
-		<key>t1r3u1</key>
-		<string>t1r3u1.glif</string>
-		<key>t1r3u2</key>
-		<string>t1r3u2.glif</string>
-		<key>t1t1</key>
-		<string>t1t1.glif</string>
-		<key>t1t1u1</key>
-		<string>t1t1u1.glif</string>
-		<key>t1t1u2</key>
-		<string>t1t1u2.glif</string>
-		<key>t1u1</key>
-		<string>t1u1.glif</string>
-		<key>t1u2</key>
-		<string>t1u2.glif</string>
-		<key>t2</key>
-		<string>t2.glif</string>
-		<key>t2u1</key>
-		<string>t2u1.glif</string>
-		<key>t2u2</key>
-		<string>t2u2.glif</string>
-		<key>t3</key>
-		<string>t3.glif</string>
-		<key>t3r1</key>
-		<string>t3r1.glif</string>
-		<key>t3r3</key>
-		<string>t3r3.glif</string>
-		<key>t3r3u1</key>
-		<string>t3r3u1.glif</string>
-		<key>t3r3u2</key>
-		<string>t3r3u2.glif</string>
-		<key>t3t3</key>
-		<string>t3t3.glif</string>
-		<key>t3t4</key>
-		<string>t3t4.glif</string>
-		<key>t3u1</key>
-		<string>t3u1.glif</string>
-		<key>t3u2</key>
-		<string>t3u2.glif</string>
-		<key>t4</key>
-		<string>t4.glif</string>
-		<key>t4r1</key>
-		<string>t4r1.glif</string>
-		<key>t4r3</key>
-		<string>t4r3.glif</string>
-		<key>t4r3u1</key>
-		<string>t4r3u1.glif</string>
-		<key>t4r3u2</key>
-		<string>t4r3u2.glif</string>
-		<key>t4u1</key>
-		<string>t4u1.glif</string>
-		<key>t4u2</key>
-		<string>t4u2.glif</string>
 		<key>th</key>
 		<string>th.glif</string>
-		<key>th1</key>
-		<string>th1.glif</string>
-		<key>th1l3</key>
-		<string>th1l3.glif</string>
-		<key>th1m1</key>
-		<string>th1m1.glif</string>
-		<key>th1m1r1</key>
-		<string>th1m1r1.glif</string>
-		<key>th1m1u1</key>
-		<string>th1m1u1.glif</string>
-		<key>th1m1u2</key>
-		<string>th1m1u2.glif</string>
-		<key>th1n1</key>
-		<string>th1n1.glif</string>
-		<key>th1p4</key>
-		<string>th1p4.glif</string>
-		<key>th1p4r1</key>
-		<string>th1p4r1.glif</string>
-		<key>th1p4u1</key>
-		<string>th1p4u1.glif</string>
-		<key>th1p4u2</key>
-		<string>th1p4u2.glif</string>
-		<key>th1r1</key>
-		<string>th1r1.glif</string>
-		<key>th1r3</key>
-		<string>th1r3.glif</string>
-		<key>th1r3u1</key>
-		<string>th1r3u1.glif</string>
-		<key>th1r3u2</key>
-		<string>th1r3u2.glif</string>
-		<key>th1s1</key>
-		<string>th1s1.glif</string>
-		<key>th1s1r3</key>
-		<string>th1s1r3.glif</string>
-		<key>th1s1r3u1</key>
-		<string>th1s1r3u1.glif</string>
-		<key>th1s1r3u2</key>
-		<string>th1s1r3u2.glif</string>
-		<key>th1s1u1</key>
-		<string>th1s1u1.glif</string>
-		<key>th1s1u2</key>
-		<string>th1s1u2.glif</string>
-		<key>th1th1</key>
-		<string>th1th1.glif</string>
-		<key>th1th1r1</key>
-		<string>th1th1r1.glif</string>
-		<key>th1th1r3</key>
-		<string>th1th1r3.glif</string>
-		<key>th1th1r3u1</key>
-		<string>th1th1r3u1.glif</string>
-		<key>th1th1r3u2</key>
-		<string>th1th1r3u2.glif</string>
-		<key>th1th1u1</key>
-		<string>th1th1u1.glif</string>
-		<key>th1th1u2</key>
-		<string>th1th1u2.glif</string>
-		<key>th1th2</key>
-		<string>th1th2.glif</string>
-		<key>th1th2r1</key>
-		<string>th1th2r1.glif</string>
-		<key>th1th2u1</key>
-		<string>th1th2u1.glif</string>
-		<key>th1th2u2</key>
-		<string>th1th2u2.glif</string>
-		<key>th1u1</key>
-		<string>th1u1.glif</string>
-		<key>th1u2</key>
-		<string>th1u2.glif</string>
-		<key>th2</key>
-		<string>th2.glif</string>
-		<key>th2u1</key>
-		<string>th2u1.glif</string>
-		<key>th2u2</key>
-		<string>th2u2.glif</string>
-		<key>th3</key>
-		<string>th3.glif</string>
-		<key>th3r1</key>
-		<string>th3r1.glif</string>
-		<key>th3r3</key>
-		<string>th3r3.glif</string>
-		<key>th3r3u1</key>
-		<string>th3r3u1.glif</string>
-		<key>th3r3u2</key>
-		<string>th3r3u2.glif</string>
-		<key>th3th3</key>
-		<string>th3th3.glif</string>
-		<key>th3th3u1</key>
-		<string>th3th3u1.glif</string>
-		<key>th3th3u2</key>
-		<string>th3th3u2.glif</string>
-		<key>th3th4</key>
-		<string>th3th4.glif</string>
-		<key>th3th4u1</key>
-		<string>th3th4u1.glif</string>
-		<key>th3th4u2</key>
-		<string>th3th4u2.glif</string>
-		<key>th3u1</key>
-		<string>th3u1.glif</string>
-		<key>th3u2</key>
-		<string>th3u2.glif</string>
-		<key>th4</key>
-		<string>th4.glif</string>
-		<key>th4r1</key>
-		<string>th4r1.glif</string>
-		<key>th4r3</key>
-		<string>th4r3.glif</string>
-		<key>th4r3u1</key>
-		<string>th4r3u1.glif</string>
-		<key>th4r3u2</key>
-		<string>th4r3u2.glif</string>
-		<key>th4u1</key>
-		<string>th4u1.glif</string>
-		<key>th4u2</key>
-		<string>th4u2.glif</string>
 		<key>thorn</key>
 		<string>thorn.glif</string>
 		<key>three</key>
@@ -1444,14 +1324,8 @@
 		<string>two.glif</string>
 		<key>u</key>
 		<string>u.glif</string>
-		<key>u1</key>
-		<string>u1.glif</string>
-		<key>u2</key>
-		<string>u2.glif</string>
-		<key>u_sign_drop</key>
-		<string>u_sign_drop.glif</string>
-		<key>u_sign_drop_small</key>
-		<string>u_sign_drop_small.glif</string>
+		<key>u_drop_sign</key>
+		<string>u_drop_sign.glif</string>
 		<key>uacute</key>
 		<string>uacute.glif</string>
 		<key>ucaron</key>
@@ -1466,86 +1340,104 @@
 		<string>umacron.glif</string>
 		<key>underscore</key>
 		<string>underscore.glif</string>
-		<key>uni0000</key>
-		<string>uni0000.glif</string>
-		<key>uni00AD</key>
-		<string>uni00A_D_.glif</string>
-		<key>uni25CC</key>
-		<string>uni25C_C_.glif</string>
+		<key>uni20A9</key>
+		<string>uni20A_9.glif</string>
+		<key>uni20B5</key>
+		<string>uni20B_5.glif</string>
+		<key>uni20B9</key>
+		<string>uni20B_9.glif</string>
+		<key>uni20BF</key>
+		<string>uni20B_F_.glif</string>
+		<key>uni3A9</key>
+		<string>uni3A_9.glif</string>
+		<key>uniD03</key>
+		<string>uniD_03.glif</string>
+		<key>uniD0C</key>
+		<string>uniD_0C_.glif</string>
+		<key>uniD29</key>
+		<string>uniD_29.glif</string>
+		<key>uniD3A</key>
+		<string>uniD_3A_.glif</string>
+		<key>uniD3D</key>
+		<string>uniD_3D_.glif</string>
+		<key>uniD4F</key>
+		<string>uniD_4F_.glif</string>
+		<key>uniD54</key>
+		<string>uniD_54.glif</string>
+		<key>uniD55</key>
+		<string>uniD_55.glif</string>
+		<key>uniD58</key>
+		<string>uniD_58.glif</string>
+		<key>uniD59</key>
+		<string>uniD_59.glif</string>
+		<key>uniD5A</key>
+		<string>uniD_5A_.glif</string>
+		<key>uniD5C</key>
+		<string>uniD_5C_.glif</string>
+		<key>uniD5D</key>
+		<string>uniD_5D_.glif</string>
+		<key>uniD5E</key>
+		<string>uniD_5E_.glif</string>
+		<key>uniD60</key>
+		<string>uniD_60.glif</string>
+		<key>uniD61</key>
+		<string>uniD_61.glif</string>
+		<key>uniD63</key>
+		<string>uniD_63.glif</string>
+		<key>uniD66</key>
+		<string>uniD_66.glif</string>
+		<key>uniD67</key>
+		<string>uniD_67.glif</string>
+		<key>uniD68</key>
+		<string>uniD_68.glif</string>
+		<key>uniD69</key>
+		<string>uniD_69.glif</string>
+		<key>uniD6A</key>
+		<string>uniD_6A_.glif</string>
+		<key>uniD6B</key>
+		<string>uniD_6B_.glif</string>
+		<key>uniD6C</key>
+		<string>uniD_6C_.glif</string>
+		<key>uniD6D</key>
+		<string>uniD_6D_.glif</string>
+		<key>uniD6E</key>
+		<string>uniD_6E_.glif</string>
+		<key>uniD6F</key>
+		<string>uniD_6F_.glif</string>
+		<key>uniD70</key>
+		<string>uniD_70.glif</string>
+		<key>uniD71</key>
+		<string>uniD_71.glif</string>
+		<key>uniD73</key>
+		<string>uniD_73.glif</string>
+		<key>uniD74</key>
+		<string>uniD_74.glif</string>
+		<key>uniD75</key>
+		<string>uniD_75.glif</string>
+		<key>uniD76</key>
+		<string>uniD_76.glif</string>
+		<key>uniD77</key>
+		<string>uniD_77.glif</string>
+		<key>uniD78</key>
+		<string>uniD_78.glif</string>
+		<key>uniD79</key>
+		<string>uniD_79.glif</string>
 		<key>uring</key>
 		<string>uring.glif</string>
 		<key>utilde</key>
 		<string>utilde.glif</string>
-		<key>uu_sign_drop</key>
-		<string>uu_sign_drop.glif</string>
-		<key>uu_sign_drop_small</key>
-		<string>uu_sign_drop_small.glif</string>
+		<key>uu_drop_sign</key>
+		<string>uu_drop_sign.glif</string>
 		<key>v</key>
 		<string>v.glif</string>
-		<key>v1</key>
-		<string>v1.glif</string>
-		<key>v1l3</key>
-		<string>v1l3.glif</string>
-		<key>v1r1</key>
-		<string>v1r1.glif</string>
-		<key>v1r3</key>
-		<string>v1r3.glif</string>
-		<key>v1r3u1</key>
-		<string>v1r3u1.glif</string>
-		<key>v1r3u2</key>
-		<string>v1r3u2.glif</string>
-		<key>v1u1</key>
-		<string>v1u1.glif</string>
-		<key>v1u2</key>
-		<string>v1u2.glif</string>
-		<key>v1v1</key>
-		<string>v1v1.glif</string>
-		<key>v1v1u1</key>
-		<string>v1v1u1.glif</string>
-		<key>v1v1u2</key>
-		<string>v1v1u2.glif</string>
-		<key>v2</key>
-		<string>v2.glif</string>
-		<key>va_sign</key>
-		<string>va_sign.glif</string>
-		<key>verticalbarvirama</key>
-		<string>verticalbarvirama.glif</string>
-		<key>visarga</key>
-		<string>visarga.glif</string>
-		<key>vocalic_r_sign_drop</key>
-		<string>vocalic_r_sign_drop.glif</string>
 		<key>w</key>
 		<string>w.glif</string>
 		<key>wcircumflex</key>
 		<string>wcircumflex.glif</string>
-		<key>won</key>
-		<string>won.glif</string>
 		<key>x</key>
 		<string>x.glif</string>
-		<key>xx</key>
-		<string>xx.glif</string>
 		<key>y</key>
 		<string>y.glif</string>
-		<key>y1</key>
-		<string>y1.glif</string>
-		<key>y1cil</key>
-		<string>y1cil.glif</string>
-		<key>y1u1</key>
-		<string>y1u1.glif</string>
-		<key>y1u2</key>
-		<string>y1u2.glif</string>
-		<key>y1y1</key>
-		<string>y1y1.glif</string>
-		<key>y1y1u1</key>
-		<string>y1y1u1.glif</string>
-		<key>y1y1u2</key>
-		<string>y1y1u2.glif</string>
-		<key>y2</key>
-		<string>y2.glif</string>
-		<key>y2u1</key>
-		<string>y2u1.glif</string>
-		<key>y2u2</key>
-		<string>y2u2.glif</string>
 		<key>yacute</key>
 		<string>yacute.glif</string>
 		<key>ycircumflex</key>
@@ -1556,34 +1448,6 @@
 		<string>yen.glif</string>
 		<key>z</key>
 		<string>z.glif</string>
-		<key>z1</key>
-		<string>z1.glif</string>
-		<key>z1ch1</key>
-		<string>z1ch1.glif</string>
-		<key>z1ch1u1</key>
-		<string>z1ch1u1.glif</string>
-		<key>z1ch1u2</key>
-		<string>z1ch1u2.glif</string>
-		<key>z1l3</key>
-		<string>z1l3.glif</string>
-		<key>z1r1</key>
-		<string>z1r1.glif</string>
-		<key>z1r3</key>
-		<string>z1r3.glif</string>
-		<key>z1r3u1</key>
-		<string>z1r3u1.glif</string>
-		<key>z1r3u2</key>
-		<string>z1r3u2.glif</string>
-		<key>z1u1</key>
-		<string>z1u1.glif</string>
-		<key>z1u2</key>
-		<string>z1u2.glif</string>
-		<key>z1z1</key>
-		<string>z1z1.glif</string>
-		<key>z1z1u1</key>
-		<string>z1z1u1.glif</string>
-		<key>z1z1u2</key>
-		<string>z1z1u2.glif</string>
 		<key>zacute</key>
 		<string>zacute.glif</string>
 		<key>zcaron</key>
@@ -1592,13 +1456,7 @@
 		<string>zdotaccent.glif</string>
 		<key>zero</key>
 		<string>zero.glif</string>
-		<key>zh</key>
-		<string>zh.glif</string>
-		<key>zhcil</key>
-		<string>zhcil.glif</string>
-		<key>zhu1</key>
-		<string>zhu1.glif</string>
-		<key>zhu2</key>
-		<string>zhu2.glif</string>
+		<key>zwj</key>
+		<string>zwj.glif</string>
 	</dict>
 </plist>
