@@ -387,9 +387,33 @@ class MalayalamFontBuilder:
                         SVGGlyph.get_glyph_name(vowel_sign)]],
                     replacement=[[replacement_ligature]])
                 rules.append(sub)
-
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
+
+    def build_gdef(self):
+        ligatures = sorted(
+            self.get_glyphs_named_class('ML_REPH_CONJUNCTS') +
+            self.get_glyphs_named_class('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_named_class('ML_LA_CONJUNCTS') +
+            self.get_glyphs_named_class('LATIN_EXTRA')
+        )
+        for ligature in ligatures:
+            ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
+            if ligature_glyph_name in self.font:
+                self.fontFeatures.glyphclasses[ligature_glyph_name] = "ligature"
+
+        for c in self.get_glyphs_named_class('LC_ALL') + self.get_glyphs_named_class('UC_ALL'):
+            c_glyph_name = SVGGlyph.get_glyph_name(c)
+            if c_glyph_name in self.font:
+                self.fontFeatures.glyphclasses[c_glyph_name] = "base"
+
+        for cons in self.get_glyphs_named_class('ML_CONSONANTS'):
+            cons_glyph_name = SVGGlyph.get_glyph_name(cons)
+            if cons_glyph_name in self.font:
+                self.fontFeatures.glyphclasses[cons_glyph_name] = "base"
+
+        self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('്')] = "mark"
+        self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('ൎ')] = "mark"
 
     def buildFeatures(self):
         self.build_glyph_classes()
@@ -405,6 +429,7 @@ class MalayalamFontBuilder:
         self.build_cons_ra_substitutions()
         self.build_cons_conj_vowel_signs()
         self.build_latin_pos()
+        self.build_gdef()
         self.font.features.text = self.getFeatures()
 
     def buildUFO(self):
@@ -426,7 +451,6 @@ class MalayalamFontBuilder:
                 continue
             svg_glyph = SVGGlyph(os.path.join(self.options.design, f))
             svg_glyph.parse()
-            self.available_svgs.append(svg_glyph)
             log.debug(f"{f} -> {svg_glyph.glyph_name}")
             self.font.insertGlyph(svg_glyph.glif, svg_glyph.glyph_name)
 
