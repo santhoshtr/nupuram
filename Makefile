@@ -2,51 +2,13 @@
 
 INSTALLPATH=/usr/share/fonts/opentype/malayalam
 PY=python3
-version=`cat VERSION`
-TOOLDIR=tools
-SRCDIR=sources
+
+NAME=`awk -F " " '/^name:/ {print $$2}' config.yaml`
+VERSION=`awk -F ": " '/version/ {print $$2}' config.yaml`
+BLDDIR=`awk -F ": " '/build/ {print $$2}' config.yaml`
 tests=tests
-BLDDIR=build
 default: build
 all: clean build test PDFS
-
-PDFS=$(FONTS:%=$(BLDDIR)/$(NAME)-%-ligatures.pdf)   \
-	$(FONTS:%=$(BLDDIR)/$(NAME)-%-content.pdf)  \
-	$(FONTS:%=$(BLDDIR)/$(NAME)-%-latin.pdf)    \
-	$(FONTS:%=$(BLDDIR)/$(NAME)-%-kerning.pdf)   \
-	$(FONTS:%=$(BLDDIR)/$(NAME)-%-table.pdf)
-
-$(BLDDIR)/%-table.pdf:
-	@echo "   TEST    $(@F)"
-	@fntsample --font-file $< --output-file $(BLDDIR)/*.otf        \
-		--style="header-font: Noto Sans Regular 12"                   \
-		--style="font-name-font: Noto Serif Regular 12"               \
-		--style="table-numbers-font: Noto Sans 10"                 \
-		--style="cell-numbers-font:Noto Sans Mono 8"
-
-$(BLDDIR)/%-ligatures.pdf:
-	@echo "   TEST    $(@F)"
-	@hb-view $< --font-size 14 --margin 100 --line-space 1.5 \
-		--foreground=333333 --text-file $(tests)/ligatures.txt \
-		--output-file $(BLDDIR)/*.otf;
-
-$(BLDDIR)/%-content.pdf:
-	@echo "   TEST    $(@F)"
-	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(tests)/content.txt \
-		--output-file $(BLDDIR)/*.otf;
-
-$(BLDDIR)/%-kerning.pdf:
-	@echo "   TEST    $(@F)"
-	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(tests)/kerning.txt \
-		--output-file $(BLDDIR)/*.otf;
-
-$(BLDDIR)/%-latin.pdf:
-	@echo "   TEST    $(@F)"
-	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(tests)/latin.txt \
-		--output-file $(BLDDIR)/*.otf;
 
 build:
 	$(PY) tools/builder.py
@@ -63,3 +25,18 @@ test: build
 
 clean:
 	@rm -rf $(BLDDIR)
+
+pdfs:
+	@hb-view  $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+		--foreground=333333 --text-file $(tests)/ligatures.txt \
+		--output-file $(BLDDIR)/ligatures.pdf;
+	@hb-view $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+		--foreground=333333 --text-file $(tests)/content.txt \
+		--output-file $(BLDDIR)/content.pdf;
+
+	@hb-view  $(BLDDIR)/*.otf  --font-size 1 --margin 1 --line-space 1 \
+		--foreground=333333 --text-file $(tests)/kerning.txt \
+		--output-file  $(BLDDIR)/kerning.pdf ;
+	@hb-view  $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+		--foreground=333333 --text-file $(tests)/latin.txt \
+		--output-file  $(BLDDIR)/latin.pdf ;

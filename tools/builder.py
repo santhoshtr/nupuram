@@ -728,7 +728,7 @@ class MalayalamFontBuilder:
         self.buildFeatures()
         self.updateFontVersion()
 
-        os.makedirs('build', exist_ok=True)
+        os.makedirs(self.options.build, exist_ok=True)
         ufo_file_name = f"build/{self.options.name}-{self.options.style}.ufo"
         ttfFile = ufo_file_name.replace('.ufo', '.ttf')
         otfFile = ufo_file_name.replace('.ufo', '.otf')
