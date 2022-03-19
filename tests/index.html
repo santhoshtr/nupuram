@@ -165,7 +165,9 @@
 				let testLines = [];
 				let paragraphsMl = []
 				let pangramsEn = []
+				let kerning = []
 				let paragraphsEn = []
+				let ligaturesMl=[]
 				let currentTestIndex = 0;
 				let testContents = []
 				fetch('./content.txt').then(response => response.text()).then((content) => {
@@ -193,6 +195,15 @@
 					pangramsEn = pangramsEn.filter(paragraph => !!paragraph.trim())
 				});
 
+
+				fetch('./kerning.txt').then(response => response.text()).then((content) => {
+					kerning = shuffle(content.split("\n\n"))
+				});
+
+				fetch('./ligatures.txt').then(response => response.text()).then((content) => {
+					ligaturesMl = shuffle(content.split("\n\n"))
+				});
+
 				document.getElementById('test-content').addEventListener('change', function () {
 					const selected = this.options[this.selectedIndex].value;
 					if (selected == 'paragraphsEn') {
@@ -206,6 +217,12 @@
 					}
 					if (selected == 'pangrams') {
 						testContents = pangramsEn;
+					}
+					if (selected == 'kerning') {
+						testContents = kerning;
+					}
+					if (selected == 'ligaturesMl') {
+						testContents = ligaturesMl;
 					}
 					contentArea.innerHTML = testContents[0];
 				});
@@ -374,6 +391,8 @@
 							<option value="paragraphsEn">Paragraphs</option>
 							<option value="lines" selected>സിനിമാപ്പേരുകൾ</option>
 							<option value="pangrams">Pangrams</option>
+							<option value="kerning">Kerning</option>
+							<option value="ligaturesMl">കൂട്ടക്ഷരങ്ങൾ</option>
 						</select>
 						<span id="next-test" style="cursor: pointer;">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
@@ -430,7 +449,7 @@
 						<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
 							😉 Squint</label>
 						<label for="grid"><input type="checkbox" id="grid" name="grid" value="grid">
-							🞡 grid</label>
+							▦ grid</label>
 				</section>
 
 				<h5>Opentype features</h5>
