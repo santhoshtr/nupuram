@@ -41,6 +41,7 @@ log = logging.getLogger(__name__)
 LANGUAGE_MALAYALAM = [('mlm2', 'dflt')]
 LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
 
+
 class SVGGlyph:
     def __init__(self, svg_file_path):
         self.svg_file_path = svg_file_path
@@ -195,10 +196,10 @@ class MalayalamFontBuilder:
             self.fontFeatures.namedClasses[gclass] = glyph_names
 
     def get_glyphs_named_class(self, class_name):
-        glyphs =  self.options.glyphs.classes[class_name]
+        glyphs = self.options.glyphs.classes[class_name]
         if isinstance(glyphs, list):
             return glyphs
-        else :
+        else:
             return [g for g in glyphs]
 
     def build_latin_ligatures(self):
@@ -438,20 +439,55 @@ class MalayalamFontBuilder:
         zwj.unicodes = [0x200D]
         self.font.insertGlyph(zwj, 'zwj')
 
-        with open("tools/compose.txt") as compositions_def_file:
-            compositions = compositions_def_file.read().splitlines()
-            for composition in compositions:
-                composite_def = composition.split('\t')
-                composite = composite_def[0].strip()
-                items = composite_def[1].strip().split('+')
-                if len(composite_def) == 3:
-                    composite_unicode = int(composite_def[2].strip())
+        dotaccent = Glyph()
+        dotaccent.unicodes = [0x02D9]
+        composite = dotaccent.instantiateComponent()
+        composite.baseGlyph = 'period'
+        dotaccent.appendComponent(composite)
+        self.font.insertGlyph(dotaccent, 'dotaccent')
+
+        diacritics = "´^¸˚¯`ˇ~¨˙˜"
+        for diacritic in diacritics:
+            for base in self.get_glyphs_named_class('LC_ALL')+self.get_glyphs_named_class('UC_ALL'):
+                base_name = SVGGlyph.get_glyph_name(base)
+                diacritc_name = SVGGlyph.get_glyph_name(diacritic)
+                items = [base_name, diacritc_name]
+                composite_glyph_name = ''.join(items)
+                if composite_glyph_name in agl.AGL2UV:
+                    composite_unicode = agl.AGL2UV[composite_glyph_name]
                 else:
-                    composite_unicode = None
-                self.buildComposite(composite, composite_unicode, items)
+                    continue
+                if chr(composite_unicode) not in self.get_glyphs_named_class('LATIN_EXTRA'):
+                    continue
+                if diacritc_name not in self.font:
+                    continue
+                if base_name not in self.font:
+                    continue
                 log.debug(
-                    f"Compose {composite} : {'+'.join(items)} : {composite_unicode}")
-            compositions_def_file.close()
+                    f"Compose {chr(composite_unicode)} - {composite_glyph_name} : {'+'.join(items)} : {composite_unicode}")
+                self.buildComposite(composite_glyph_name,
+                                    composite_unicode, items)
+
+        self.buildComposite(SVGGlyph.get_glyph_name('ഈ'), ord('ഈ'), [
+            SVGGlyph.get_glyph_name('ഇ'),  SVGGlyph.get_glyph_name('ൗ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ഊ'), ord('ഊ'), [
+            SVGGlyph.get_glyph_name('ഉ'),  SVGGlyph.get_glyph_name('ൗ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ഓ'), ord('ഓ'), [
+            SVGGlyph.get_glyph_name('ഒ'),  SVGGlyph.get_glyph_name('ാ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ഔ'), ord('ഔ'), [
+            SVGGlyph.get_glyph_name('ഒ'),  SVGGlyph.get_glyph_name('ൗ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ഐ'), ord('ഐ'), [
+            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('എ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ൊ'), ord('ൊ'), [
+            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ാ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ോ'), ord('ോ'), [
+            SVGGlyph.get_glyph_name('േ'),  SVGGlyph.get_glyph_name('ാ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ൈ'), ord('ൈ'), [
+            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('െ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('ൌ'), ord('ൌ'), [
+            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ൗ')])
+        self.buildComposite(SVGGlyph.get_glyph_name('കൢ'), None, [
+            SVGGlyph.get_glyph_name('ക'),  SVGGlyph.get_glyph_name('ൢ')])
 
         for base in self.get_glyphs_named_class('ML_CONSONANTS'):
             base_glyph_name = SVGGlyph.get_glyph_name(base)
@@ -466,7 +502,8 @@ class MalayalamFontBuilder:
             self.buildComposite(la_glyph_name, None, [
                                 base_glyph_name, la_sign_glyph_name])
 
-        base_for_u = self.get_glyphs_named_class('ML_CONSONANTS')+self.get_glyphs_named_class('ML_CONS_CONJUNCTS')+self.get_glyphs_named_class('ML_LA_CONJUNCTS')+self.get_glyphs_named_class('ML_REPH_CONJUNCTS')
+        base_for_u = self.get_glyphs_named_class('ML_CONSONANTS')+self.get_glyphs_named_class(
+            'ML_CONS_CONJUNCTS')+self.get_glyphs_named_class('ML_LA_CONJUNCTS')+self.get_glyphs_named_class('ML_REPH_CONJUNCTS')
         for base in base_for_u:
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             if base_glyph_name not in self.font:
@@ -556,7 +593,8 @@ class MalayalamFontBuilder:
         versionMajor, versionMinor = [int(num) for num in version.split(".")]
         self.font.info.versionMajor = versionMajor
         self.font.info.versionMinor = versionMinor
-        self.font.info.openTypeNameVersion =  "Version %d.%03d" % (versionMajor, versionMinor)
+        self.font.info.openTypeNameVersion = "Version %d.%03d" % (
+            versionMajor, versionMinor)
         psFamily = re.sub(r'\s', '', self.options.name)
         psStyle = re.sub(r'\s', '', self.options.style)
         self.font.info.openTypeNameUniqueID = "%s-%s:%d" % (
