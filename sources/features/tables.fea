@@ -1,8 +1,8 @@
 #Mark attachment classes (defined in GDEF, used in lookupflags)
 
-@GDEF_Simple = [.notdef .null nonmarkingreturn space exclam quotedbl
-	numbersign dollar percent ampersand quotesingle parenleft parenright
-	asterisk plus comma hyphen period slash zero one two three four five
+@GDEF_Simple = [.notdef .null nonmarkingreturn space exclam
+	numbersign dollar percent ampersand quotesingle parenleft
+	asterisk plus comma   period slash zero one two three four five
 	six seven eight nine colon semicolon less equal greater question at
 	braceleft bar braceright tilde uni00AD anuswaraabove anuswara visarga ml_a ml_aa
 	ml_i ml_ii ml_u ml_uu ml_r ml_l ml_e ml_ee ml_ai ml_o ml_oo ml_au k1 k2

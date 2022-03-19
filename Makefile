@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-NAME=Seventy
-FONTS=Regular
 INSTALLPATH=/usr/share/fonts/opentype/malayalam
 PY=python3
 version=`cat VERSION`
@@ -9,82 +7,59 @@ TOOLDIR=tools
 SRCDIR=sources
 tests=tests
 BLDDIR=build
-default: otf
-all: clean lint otf ttf webfonts test
-OTF=$(FONTS:%=$(BLDDIR)/$(NAME)-%.otf)
-TTF=$(FONTS:%=$(BLDDIR)/$(NAME)-%.ttf)
-WOFF2=$(FONTS:%=$(BLDDIR)/$(NAME)-%.woff2)
+default: build
+all: clean build test PDFS
+
 PDFS=$(FONTS:%=$(BLDDIR)/$(NAME)-%-ligatures.pdf)   \
 	$(FONTS:%=$(BLDDIR)/$(NAME)-%-content.pdf)  \
 	$(FONTS:%=$(BLDDIR)/$(NAME)-%-latin.pdf)    \
 	$(FONTS:%=$(BLDDIR)/$(NAME)-%-kerning.pdf)   \
 	$(FONTS:%=$(BLDDIR)/$(NAME)-%-table.pdf)
 
-$(BLDDIR)/%.otf: $(SRCDIR)/%.ufo
-	@echo "  BUILD    $(@F)"
-	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(BLDDIR) -u $<
-
-$(BLDDIR)/%.ttf: $(SRCDIR)/%.ufo
-	@echo "  BUILD    $(@F)"
-	@fontmake --validate-ufo --verbose=WARNING -o ttf --output-dir $(BLDDIR) -u $<
-
-$(BLDDIR)/%.woff2: $(BLDDIR)/%.ttf
-	@echo "WEBFONT    $(@F)"
-	@fonttools ttLib.woff2 compress  $<
-
-$(BLDDIR)/%-table.pdf: $(BLDDIR)/%.ttf
+$(BLDDIR)/%-table.pdf:
 	@echo "   TEST    $(@F)"
-	@fntsample --font-file $< --output-file $(BLDDIR)/$(@F)        \
+	@fntsample --font-file $< --output-file $(BLDDIR)/*.otf        \
 		--style="header-font: Noto Sans Regular 12"                   \
 		--style="font-name-font: Noto Serif Regular 12"               \
 		--style="table-numbers-font: Noto Sans 10"                 \
 		--style="cell-numbers-font:Noto Sans Mono 8"
 
-$(BLDDIR)/%-ligatures.pdf: $(BLDDIR)/%.ttf
+$(BLDDIR)/%-ligatures.pdf:
 	@echo "   TEST    $(@F)"
 	@hb-view $< --font-size 14 --margin 100 --line-space 1.5 \
 		--foreground=333333 --text-file $(tests)/ligatures.txt \
-		--output-file $(BLDDIR)/$(@F);
+		--output-file $(BLDDIR)/*.otf;
 
-$(BLDDIR)/%-content.pdf: $(BLDDIR)/%.ttf
+$(BLDDIR)/%-content.pdf:
 	@echo "   TEST    $(@F)"
 	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/content.txt \
-		--output-file $(BLDDIR)/$(@F);
+		--output-file $(BLDDIR)/*.otf;
 
-$(BLDDIR)/%-kerning.pdf: $(BLDDIR)/%.ttf
+$(BLDDIR)/%-kerning.pdf:
 	@echo "   TEST    $(@F)"
 	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/kerning.txt \
-		--output-file $(BLDDIR)/$(@F);
+		--output-file $(BLDDIR)/*.otf;
 
-$(BLDDIR)/%-latin.pdf: $(BLDDIR)/%.ttf
+$(BLDDIR)/%-latin.pdf:
 	@echo "   TEST    $(@F)"
 	@hb-view $< --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/latin.txt \
-		--output-file $(BLDDIR)/$(@F);
+		--output-file $(BLDDIR)/*.otf;
 
-ttf: $(TTF)
-otf: $(OTF)
-webfonts: $(WOFF2)
-lint: ufolint
-ufo: glyphs ufonormalizer lint
+build:
+	$(PY) tools/builder.py
 
 install: otf
 	@mkdir -p ${DESTDIR}${INSTALLPATH}
 	install -D -m 0644 $(BLDDIR)/*.otf ${DESTDIR}${INSTALLPATH}/
 
-test: ttf otf $(PDFS)
+test: build
 	# fontbakery check-fontval $(BLDDIR)/*.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
-	fontbakery check-ufo-sources $(SRCDIR)/*.ufo
+	fontbakery check-ufo-sources $(BLDDIR)/*.ufo
 	fontbakery check-opentype $(BLDDIR)/*.otf
-	fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(BLDDIR)/*.ttf
-
-glyphs: $(FONTS:%=$(SRCDIR)/$(NAME)-%/glyphs)
-
-$(SRCDIR)/$(NAME)-%/glyphs:
-	$(PY) tools/import-svg-to-ufo.py -c $(SRCDIR)/design/config/$*.yaml -i $(SRCDIR)/design/$*/*.svg
-	$(PY) tools/build-composites.py -c $(SRCDIR)/design/config/$*.yaml
+	# fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(BLDDIR)/*.ttf
 
 clean:
 	@rm -rf $(BLDDIR)

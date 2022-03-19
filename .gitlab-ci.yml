@@ -12,7 +12,7 @@ build-branch:
     - apt-get install -y make python3-pip
     - pip3 install -r requirements.txt
   script:
-    - make otf ttf webfonts
+    - make build
   artifacts:
     paths:
     - build/

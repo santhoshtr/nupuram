@@ -7,7 +7,7 @@
 		<style>
 			@font-face {
 				font-family: 'Seventy';
-				src: url(../build/Seventy-Regular.woff2?v=1.100) format('woff2');
+				src: url(../build/Seventy-Regular.woff2?v=1.100) format('truetype');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
@@ -22,7 +22,7 @@
 			main {
 				display: grid;
 				grid-template-columns: minmax(0, 1fr) 20rem;
-				overflow: hidden;
+				overflow: auto;
 				height: 100%;
 			}
 
@@ -42,8 +42,10 @@
 				flex-direction: column;
 				font-family: sans;
 				overflow: auto;
-				font-size: 0.8em;
+				font-size: 0.75em;
 				color: #214761;
+				position: absolute;
+				right: 1em;
 			}
 
 			.controls {

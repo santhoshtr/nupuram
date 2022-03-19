@@ -116,13 +116,13 @@ ydieresis	y+dieresis	255
 zacute	z+acute	378
 zcaron	z+caron	382
 zdotaccent	z+period	380
-ml_ii	ml_i + ml_au_sign	3336
-ml_uu	ml_u +  ml_au_sign	3338
-ml_ai	ml_e_sign + ml_e	3344
-ml_ai_sign	ml_e_sign + ml_aa_sign	3400
-ml_oo	ml_o + ml_aa_sign	3347
-ml_o_sign	ml_e_sign + ml_aa_sign	3402
-ml_oo_sign	ml_ee_sign + ml_aa_sign	3403
-ml_au	ml_o + ml_au_sign	3348
-ml_ou_sign	ml_e_sign + ml_au_sign	3404
-ml_k_lu_sign	ml_k + ml_lu_sign
+ml_ii	ml_i + ml_au_length_mark	3336
+ml_uu	ml_u +  ml_au_length_mark	3338
+ml_ai	ml_sign_e + ml_e	3344
+ml_ai_sign	ml_sign_e + ml_sign_e	3400
+ml_oo	ml_o + ml_sign_aa	3347
+ml_o_sign	ml_sign_e + ml_sign_aa	3402
+ml_oo_sign	ml_sign_ee + ml_sign_aa	3403
+ml_au	ml_o + ml_au_length_mark	3348
+ml_ou_sign	ml_sign_e + ml_au_length_mark	3404
+ml_k_lu_sign	ml_ka + ml_sign_vocalic_l

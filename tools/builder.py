@@ -556,8 +556,7 @@ class MalayalamFontBuilder:
         versionMajor, versionMinor = [int(num) for num in version.split(".")]
         self.font.info.versionMajor = versionMajor
         self.font.info.versionMinor = versionMinor
-        self.font.info.year = now.year
-        self.font.info.openTypeNameVersion = f"Version {versionMajor}.{versionMinor}"
+        self.font.info.openTypeNameVersion =  "Version %d.%03d" % (versionMajor, versionMinor)
         psFamily = re.sub(r'\s', '', self.options.name)
         psStyle = re.sub(r'\s', '', self.options.style)
         self.font.info.openTypeNameUniqueID = "%s-%s:%d" % (
@@ -650,38 +649,37 @@ class MalayalamFontBuilder:
         style = self.options.style
         repo = self.options.source
 
-        info = Info(self.font)
         # set various font metadata; see the full list of fontinfo attributes at
         # https://unifiedfontobject.org/versions/ufo3/fontinfo.plist/#generic-dimension-information
-        info.unitsPerEm = 1000
+        self.font.info.unitsPerEm = 1000
         # we just use a simple scheme that makes all sets of vertical metrics the same;
         # if one needs more fine-grained control they can fix up post build
-        info.ascender = (
-            info.openTypeHheaAscender
-        ) = info.openTypeOS2TypoAscender = 800
-        info.descender = (
-            info.openTypeHheaDescender
-        ) = info.openTypeOS2TypoDescender = -200
-        info.openTypeHheaLineGap = info.openTypeOS2TypoLineGap = 0
+        self.font.info.ascender = (
+            self.font.info.openTypeHheaAscender
+        ) = self.font.info.openTypeOS2TypoAscender = 800
+        self.font.info.descender = (
+            self.font.info.openTypeHheaDescender
+        ) = self.font.info.openTypeOS2TypoDescender = -200
+        self.font.info.openTypeHheaLineGap = self.font.info.openTypeOS2TypoLineGap = 0
 
         # Names
-        info.familyName = name
-        info.styleMapFamilyName = info.familyName
-        info.styleName = style
-        info.copyright = f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
-        info.openTypeNameDesigner = f"{self.options.author.name} &lt;{self.options.author.email}&gt"
-        info.openTypeNameDesignerURL = self.options.author.url
-        info.openTypeNameLicense = self.options.license.text
-        info.openTypeNameLicenseURL = self.options.license.url
-        info.openTypeNameManufacturer = self.options.manufacturer.name
-        info.openTypeOS2VendorID = info.openTypeNameManufacturer
-        info.openTypeNameManufacturerURL = self.options.manufacturer.url
+        self.font.info.familyName = name
+        self.font.info.styleMapFamilyName = self.font.info.familyName
+        self.font.info.styleName = style
+        self.font.info.copyright = f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
+        self.font.info.openTypeNameDesigner = f"{self.options.author.name} &lt;{self.options.author.email}&gt"
+        self.font.info.openTypeNameDesignerURL = self.options.author.url
+        self.font.info.openTypeNameLicense = self.options.license.text
+        self.font.info.openTypeNameLicenseURL = self.options.license.url
+        self.font.info.openTypeNameManufacturer = self.options.manufacturer.name
+        self.font.info.openTypeOS2VendorID = self.font.info.openTypeNameManufacturer
+        self.font.info.openTypeNameManufacturerURL = self.options.manufacturer.url
 
         # Metrics
-        info.xHeight = 700
-        info.capHeight = 700
-        info.guidelines = []
-        info.italicAngle = 0
+        self.font.info.xHeight = 700
+        self.font.info.capHeight = 700
+        self.font.info.guidelines = []
+        self.font.info.italicAngle = 0
 
         # OpenType OS/2 Table
         # info.openTypeOS2CodePageRanges=[01]
@@ -690,38 +688,37 @@ class MalayalamFontBuilder:
         # set USE_TYPO_METRICS flag (OS/2.fsSelection bit 7) to make sure OS/2 Typo* metrics
         # are preferred to define Windows line spacing over legacy WinAscent/WinDescent:
         # https://docs.microsoft.com/en-us/typography/opentype/spec/os2#fsselection
-        info.openTypeOS2Selection = [7]
-        info.openTypeOS2Type = []
-        info.openTypeOS2TypoAscender = info.ascender
-        info.openTypeOS2TypoDescender = -info.descender
-        info.openTypeOS2TypoLineGap = 0
+        self.font.info.openTypeOS2Selection = [7]
+        self.font.info.openTypeOS2Type = []
+        self.font.info.openTypeOS2TypoAscender = self.font.info.ascender
+        self.font.info.openTypeOS2TypoDescender = -self.font.info.descender
+        self.font.info.openTypeOS2TypoLineGap = 0
         # info.openTypeOS2UnicodeRanges=[12323]
-        info.openTypeOS2WeightClass = 700
-        info.openTypeOS2WidthClass = 5
-        info.openTypeOS2WinAscent = info.ascender
-        info.openTypeOS2WinDescent = -info.descender
+        self.font.info.openTypeOS2WeightClass = 400
+        self.font.info.openTypeOS2WidthClass = 5
+        self.font.info.openTypeOS2WinAscent = self.font.info.ascender
+        self.font.info.openTypeOS2WinDescent = -self.font.info.descender
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]
-        info.postscriptFamilyBlues = []
-        info.postscriptFamilyOtherBlues = []
-        info.postscriptOtherBlues = []
-        info.postscriptSlantAngle = 0
-        info.postscriptStemSnapH = []
-        info.postscriptStemSnapV = []
-        info.postscriptUnderlinePosition = -603
-        info.postscriptUnderlineThickness = 100
-        info.postscriptUniqueID = 0
+        self.font.info.postscriptFamilyBlues = []
+        self.font.info.postscriptFamilyOtherBlues = []
+        self.font.info.postscriptOtherBlues = []
+        self.font.info.postscriptSlantAngle = 0
+        self.font.info.postscriptStemSnapH = []
+        self.font.info.postscriptStemSnapV = []
+        self.font.info.postscriptUnderlinePosition = -603
+        self.font.info.postscriptUnderlineThickness = 100
+        self.font.info.postscriptUniqueID = 0
 
-    def buildWebFont(self, ttfFile):
+    def buildWebFont(self, ttfFile, webfontFile):
         ttFont = ttLib.TTFont(ttfFile)
         ttFont.flavor = "woff2"
-        webfont_name = ttfFile.replace('.ttf', '.woff2')
-        ttFont.save(webfont_name)
-        log.info(f"Webfont saved at {webfont_name}")
 
-    def save(self):
-        ufo_file_name = f"build/{self.options.name}-{self.options.style}.ufo"
+        ttFont.save(webfontFile)
+        log.info(f"Webfont saved at {webfontFile}")
+
+    def saveUFO(self, ufo_file_name):
         self.font.save(ufo_file_name)
         log.info(f"UFO font saved at {ufo_file_name}")
 
@@ -730,16 +727,21 @@ class MalayalamFontBuilder:
         self.buildUFO()
         self.buildFeatures()
         self.updateFontVersion()
-        self.save()
 
-        ttfFile = f"build/{self.options.name}-{self.options.style}.ttf"
-        otfFile = f"build/{self.options.name}-{self.options.style}.otf"
+        os.makedirs('build', exist_ok=True)
+        ufo_file_name = f"build/{self.options.name}-{self.options.style}.ufo"
+        ttfFile = ufo_file_name.replace('.ufo', '.ttf')
+        otfFile = ufo_file_name.replace('.ufo', '.otf')
+        webfontFile = ufo_file_name.replace('.ufo', '.woff2')
+
+        if 'UFO' in options.output_format:
+            self.saveUFO(ufo_file_name)
         if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
             self.compile(self.font, ttfFile, cff=False)
         if 'OTF' in options.output_format:
             self.compile(self.font, otfFile)
         if 'WOFF2' in options.output_format:
-            self.buildWebFont(ttfFile)
+            self.buildWebFont(ttfFile, webfontFile)
 
     def getFeatures(self):
         return self.fontFeatures.asFea()
@@ -753,8 +755,8 @@ if __name__ == "__main__":
         default="config.yaml", type=argparse.FileType('r'))
     parser.add_argument('-l', '--log-level', default='INFO',
                         required=False, help="Set log level")
-    parser.add_argument('-f', '--output-format', default='OTF,TTF,WOFF2',
-                        required=False, help="Set output format: OTF, TTF or WOFF2. For multiple formats, use commas")
+    parser.add_argument('-f', '--output-format', default='UFO, OTF,TTF,WOFF2',
+                        required=False, help="Set output format: UFO, OTF, TTF or WOFF2. For multiple formats, use commas")
 
     options = parser.parse_args()
     try:
