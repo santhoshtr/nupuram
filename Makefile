@@ -8,7 +8,7 @@ VERSION=`awk -F ": " '/version/ {print $$2}' config.yaml`
 BLDDIR=`awk -F ": " '/build/ {print $$2}' config.yaml`
 tests=tests
 default: build
-all: clean build test PDFS
+all: clean build test pdfs
 
 build:
 	$(PY) tools/builder.py
