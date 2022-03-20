@@ -12,6 +12,13 @@
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
+			@font-face {
+				font-family: 'SeventyColor';
+				src: url(../build/Seventy-Regular.color.woff2?v=1.100) format('truetype');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
 
 			body {
 				font-size: 100%;
@@ -35,6 +42,10 @@
 				line-height: 1.2;
 				padding: 0.5em;
 				outline: none;
+			}
+
+			.content.color {
+				font-family: 'SeventyColor', sans;
 			}
 
 			.tools {
@@ -127,7 +138,7 @@
 			}
 
 			.grid {
-				background-image: linear-gradient(transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220,220,200,.8) 12px, transparent 12px);
+				background-image: linear-gradient(transparent 11px, rgba(220, 220, 200, .8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220, 220, 200, .8) 12px, transparent 12px);
 				background-size: 100% 12px, 12px 100%;
 			}
 
@@ -138,12 +149,11 @@
 			label {
 				white-space: nowrap;
 			}
-
 		</style>
 		<script>
-			function loadFont(version){
+			function loadFont(version) {
 				let font = new FontFace("Seventy", `url(../build/Seventy-Regular.woff2?v=${version}) format("woff2")`);
-				font.load().then(function(loadedFont) {
+				font.load().then(function (loadedFont) {
 					document.fonts.add(loadedFont);
 				}).catch(console.error);
 			}
@@ -167,7 +177,7 @@
 				let pangramsEn = []
 				let kerning = []
 				let paragraphsEn = []
-				let ligaturesMl=[]
+				let ligaturesMl = []
 				let currentTestIndex = 0;
 				let testContents = []
 				fetch('./content.txt').then(response => response.text()).then((content) => {
@@ -225,6 +235,20 @@
 						testContents = ligaturesMl;
 					}
 					contentArea.innerHTML = testContents[0];
+				});
+
+
+				document.getElementById('test-font').addEventListener('change', function () {
+					const selected = this.options[this.selectedIndex].value;
+					if (selected==='SeventyColor') {
+						contentArea.classList.add('color');
+						document.getElementById('font-fontColor').disabled=true
+						document.getElementById('outlined').disabled=true
+					} else {
+						contentArea.classList.remove('color');
+						document.getElementById('font-fontColor').disabled=false
+						document.getElementById('outlined').disabled=false
+					}
 				});
 
 
@@ -338,7 +362,7 @@
 			const source = new EventSource('/stream');
 			source.onmessage = (event) => {
 				const message = JSON.parse(event.data);
-				document.getElementById("font-version").innerText=`${message.fontname}: ${message.version}-${message.build}`
+				document.getElementById("font-version").innerText = `${message.fontname}: ${message.version}-${message.build}`
 				loadFont(`${message.version}-${message.build}`)
 			};
 
@@ -354,6 +378,15 @@
 			</div>
 			<div class="tools">
 				<h5 id="font-version"></h5>
+				<section class="rows rows-2">
+					<div class="primitive-input">
+						<label for="font-name">Font</label>
+						<select class="controls fontname" id="test-font">
+							<option value="Seventy">Seventy</option>
+							<option value="SeventyColor">Seventy Color</option>
+						</select>
+					</div>
+				</section>
 				<section class="rows rows-3">
 					<div class="primitive-input">
 						<label for="font-fontSize">Font Size</label>
@@ -443,13 +476,13 @@
 
 				</section>
 				<section class="rows" style="grid-template-columns: 3fr 3fr 3fr;">
-						<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
-							⋒ Outline</label>
+					<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
+						⋒ Outline</label>
 
-						<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
-							😉 Squint</label>
-						<label for="grid"><input type="checkbox" id="grid" name="grid" value="grid">
-							▦ grid</label>
+					<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
+						😉 Squint</label>
+					<label for="grid"><input type="checkbox" id="grid" name="grid" value="grid">
+						▦ grid</label>
 				</section>
 
 				<h5>Opentype features</h5>

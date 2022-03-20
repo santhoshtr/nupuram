@@ -17,7 +17,7 @@ install: otf
 	@mkdir -p ${DESTDIR}${INSTALLPATH}
 	install -D -m 0644 $(BLDDIR)/*.otf ${DESTDIR}${INSTALLPATH}/
 
-test: build
+test: build pdfs
 	# fontbakery check-fontval $(BLDDIR)/*.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
 	fontbakery check-ufo-sources $(BLDDIR)/*.ufo
 	fontbakery check-opentype $(BLDDIR)/*.otf
@@ -27,16 +27,31 @@ clean:
 	@rm -rf $(BLDDIR)
 
 pdfs:
-	@hb-view  $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+	@hb-view  $(BLDDIR)/*.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/ligatures.txt \
 		--output-file $(BLDDIR)/ligatures.pdf;
-	@hb-view $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+	@hb-view $(BLDDIR)/*.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/content.txt \
 		--output-file $(BLDDIR)/content.pdf;
 
-	@hb-view  $(BLDDIR)/*.otf  --font-size 1 --margin 1 --line-space 1 \
+	@hb-view  $(BLDDIR)/*.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/kerning.txt \
 		--output-file  $(BLDDIR)/kerning.pdf ;
-	@hb-view  $(BLDDIR)/*.otf --font-size 1 --margin 1 --line-space 1 \
+	@hb-view  $(BLDDIR)/*.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(tests)/latin.txt \
 		--output-file  $(BLDDIR)/latin.pdf ;
+
+	# Color pdfs
+	@hb-view  $(BLDDIR)/*.color.ttf --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/ligatures.txt \
+		--output-file $(BLDDIR)/ligatures.color.pdf;
+	@hb-view $(BLDDIR)/*.color.ttf --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/content.txt \
+		--output-file $(BLDDIR)/content.color.pdf;
+
+	@hb-view  $(BLDDIR)/*.color.ttf --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/kerning.txt \
+		--output-file  $(BLDDIR)/kerning.color.pdf ;
+	@hb-view  $(BLDDIR)/*.color.ttf --font-size 24 --margin 100 --line-space 2.4 \
+		--foreground=333333 --text-file $(tests)/latin.txt \
+		--output-file  $(BLDDIR)/latin.color.pdf ;

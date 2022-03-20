@@ -1,5 +1,6 @@
 
 from __future__ import absolute_import, print_function
+from email.policy import default
 
 import unicodedata
 from ast import List
@@ -17,6 +18,7 @@ import argparse
 import logging
 import os
 import re
+import copy
 import sys
 import traceback
 import xml.etree.ElementTree as etree
@@ -25,7 +27,7 @@ from io import open
 
 import ufo2ft
 import yaml
-from defcon import Font, Glyph, Info
+from defcon import Font, Glyph, Info, Layer
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine,
                           Substitution, ValueRecord)
 from fontTools import agl, ttLib
@@ -33,8 +35,9 @@ from fontTools.misc.py23 import SimpleNamespace
 from fontTools.pens.pointPen import SegmentToPointPen
 from fontTools.svgLib import SVGPath
 from fontTools.ufoLib import UFOLibError, UFOReader, UFOWriter
-from fontTools.ufoLib.glifLib import writeGlyphToString
+from fontTools.ufoLib.glifLib import writeGlyphToString, readGlyphFromString
 from fontTools.ufoLib.plistlib import dump, load
+from fontTools.colorLib.builder import buildCOLR, buildCPAL
 
 log = logging.getLogger(__name__)
 
@@ -191,16 +194,19 @@ class MalayalamFontBuilder:
     def build_glyph_classes(self):
         for gclass in self.options.glyphs.classes:
             glyph_names = [SVGGlyph.get_glyph_name(
-                g) for g in self.get_glyphs_named_class(gclass)]
+                g) for g in self.get_glyphs_from_named_classes(gclass)]
             glyph_names = [g for g in glyph_names if g in self.font]
             self.fontFeatures.namedClasses[gclass] = glyph_names
 
-    def get_glyphs_named_class(self, class_name):
-        glyphs = self.options.glyphs.classes[class_name]
-        if isinstance(glyphs, list):
-            return glyphs
-        else:
-            return [g for g in glyphs]
+    def get_glyphs_from_named_classes(self, *argv):
+        all_glyphs = []
+        for class_name in argv:
+            glyphs = self.options.glyphs.classes[class_name]
+            if isinstance(glyphs, list):
+                all_glyphs = all_glyphs + glyphs
+            else:
+                all_glyphs = all_glyphs + [g for g in glyphs]
+        return all_glyphs
 
     def build_latin_ligatures(self):
         feature = "liga"
@@ -257,7 +263,7 @@ class MalayalamFontBuilder:
         name = "cons_la"
 
         rules = []
-        for conjunct in self.get_glyphs_named_class('ML_LA_CONJUNCTS'):
+        for conjunct in self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS'):
             rules.append(
                 Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
                              replacement=[[SVGGlyph.get_glyph_name(conjunct)]])
@@ -330,7 +336,7 @@ class MalayalamFontBuilder:
         feature = "akhn"
         name = "akhn_conjuncts"
         rules = []
-        for conjunct in self.get_glyphs_named_class('ML_CONS_CONJUNCTS'):
+        for conjunct in self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS'):
             conjunct_glyph_name = SVGGlyph.get_glyph_name(conjunct)
             if conjunct_glyph_name not in self.font:
                 continue
@@ -346,7 +352,7 @@ class MalayalamFontBuilder:
         name = "pres_reph"
         reph = "്ര"
         rules = []
-        for ligature in self.get_glyphs_named_class('ML_REPH_CONJUNCTS'):
+        for ligature in self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS'):
             ligature = ligature.replace(reph, '')
             ligature_glyph_name = SVGGlyph.get_glyph_name(ligature+reph)
             if ligature_glyph_name not in self.font:
@@ -366,10 +372,10 @@ class MalayalamFontBuilder:
         rules = []
         vowel_signs = ["ു", "ൂ", "ൃ", "ൄ"]
         ligatures = sorted(
-            self.get_glyphs_named_class('ML_CONSONANTS') +
-            self.get_glyphs_named_class('ML_REPH_CONJUNCTS') +
-            self.get_glyphs_named_class('ML_CONS_CONJUNCTS') +
-            self.get_glyphs_named_class('ML_LA_CONJUNCTS'))
+            self.get_glyphs_from_named_classes('ML_CONSONANTS') +
+            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS'))
         # TODO: Check if ligature exists in design. If not skip
         # TODO: If ligature exists, but if replacement ligature does not exist,
         #   add conditional stacking rule
@@ -392,22 +398,22 @@ class MalayalamFontBuilder:
 
     def build_gdef(self):
         ligatures = sorted(
-            self.get_glyphs_named_class('ML_REPH_CONJUNCTS') +
-            self.get_glyphs_named_class('ML_CONS_CONJUNCTS') +
-            self.get_glyphs_named_class('ML_LA_CONJUNCTS') +
-            self.get_glyphs_named_class('LATIN_EXTRA')
+            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('LATIN_EXTRA')
         )
         for ligature in ligatures:
             ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
             if ligature_glyph_name in self.font:
                 self.fontFeatures.glyphclasses[ligature_glyph_name] = "ligature"
 
-        for c in self.get_glyphs_named_class('LC_ALL') + self.get_glyphs_named_class('UC_ALL'):
+        for c in self.get_glyphs_from_named_classes('LC_ALL') + self.get_glyphs_from_named_classes('UC_ALL'):
             c_glyph_name = SVGGlyph.get_glyph_name(c)
             if c_glyph_name in self.font:
                 self.fontFeatures.glyphclasses[c_glyph_name] = "base"
 
-        for cons in self.get_glyphs_named_class('ML_CONSONANTS'):
+        for cons in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
             cons_glyph_name = SVGGlyph.get_glyph_name(cons)
             if cons_glyph_name in self.font:
                 self.fontFeatures.glyphclasses[cons_glyph_name] = "base"
@@ -433,10 +439,6 @@ class MalayalamFontBuilder:
         self.font.features.text = self.getFeatures()
 
     def buildUFO(self):
-        existing_glyphs = self.font.keys().copy()
-        for glyph_name in existing_glyphs:
-            del self.font[glyph_name]
-
         self.font.newGlyph('.null')
         self.font.newGlyph('nonmarkingreturn')
         self.font.newGlyph('.notdef')
@@ -472,7 +474,7 @@ class MalayalamFontBuilder:
 
         diacritics = "´^¸˚¯`ˇ~¨˙˜"
         for diacritic in diacritics:
-            for base in self.get_glyphs_named_class('LC_ALL')+self.get_glyphs_named_class('UC_ALL'):
+            for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
                 base_name = SVGGlyph.get_glyph_name(base)
                 diacritc_name = SVGGlyph.get_glyph_name(diacritic)
                 items = [base_name, diacritc_name]
@@ -481,7 +483,7 @@ class MalayalamFontBuilder:
                     composite_unicode = agl.AGL2UV[composite_glyph_name]
                 else:
                     continue
-                if chr(composite_unicode) not in self.get_glyphs_named_class('LATIN_EXTRA'):
+                if chr(composite_unicode) not in self.get_glyphs_from_named_classes('LATIN_EXTRA'):
                     continue
                 if diacritc_name not in self.font:
                     continue
@@ -513,11 +515,11 @@ class MalayalamFontBuilder:
         self.buildComposite(SVGGlyph.get_glyph_name('കൢ'), None, [
             SVGGlyph.get_glyph_name('ക'),  SVGGlyph.get_glyph_name('ൢ')])
 
-        for base in self.get_glyphs_named_class('ML_CONSONANTS'):
+        for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             if base_glyph_name not in self.font:
                 continue
-            if base+'്ല' not in self.get_glyphs_named_class('ML_LA_CONJUNCTS'):
+            if base+'്ല' not in self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS'):
                 continue
             la_glyph_name = SVGGlyph.get_glyph_name(base+'്ല')
             la_sign_glyph_name = SVGGlyph.get_glyph_name('്ല')
@@ -526,8 +528,8 @@ class MalayalamFontBuilder:
             self.buildComposite(la_glyph_name, None, [
                                 base_glyph_name, la_sign_glyph_name])
 
-        base_for_u = self.get_glyphs_named_class('ML_CONSONANTS')+self.get_glyphs_named_class(
-            'ML_CONS_CONJUNCTS')+self.get_glyphs_named_class('ML_LA_CONJUNCTS')+self.get_glyphs_named_class('ML_REPH_CONJUNCTS')
+        base_for_u = self.get_glyphs_from_named_classes('ML_CONSONANTS')+self.get_glyphs_from_named_classes(
+            'ML_CONS_CONJUNCTS')+self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')+self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')
         for base in base_for_u:
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             if base_glyph_name not in self.font:
@@ -546,7 +548,7 @@ class MalayalamFontBuilder:
                 self.buildComposite(uu_glyph_name, None, [
                                     base_glyph_name, 'uu_drop_sign'])
 
-        for base in self.get_glyphs_named_class('ML_CONSONANTS'):
+        for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             ru_glyph_name = SVGGlyph.get_glyph_name(base+'ൃ')
             if ru_glyph_name not in self.font:
@@ -556,6 +558,33 @@ class MalayalamFontBuilder:
                     base_glyph_name, 'ru_bottom_sign'])
 
         log.info(f"Total glyph count: {len(self.font)}")
+
+    def buildColorUFO(self):
+        default_layer: Layer = self.font.layers['public.default']
+        shadowLayer: Layer = self.font.newLayer('shadow')
+
+        # Add offset glyph
+        for glyph in default_layer:
+            glyph.decomposeAllComponents()
+            shadow_glyph = copy.deepcopy(glyph)
+            shadowLayer.insertGlyph(shadow_glyph,  glyph.name)
+            temp_glyph_name = 'glyph.name'+".temp"
+            temp_glyph = shadowLayer.newGlyph(temp_glyph_name)
+            component = temp_glyph.instantiateComponent()
+            component.baseGlyph = glyph.name
+            component.move((40, -40))
+            temp_glyph.appendComponent(component)
+            temp_glyph.decomposeAllComponents()
+            shadowLayer.insertGlyph(temp_glyph,  glyph.name)
+            del shadowLayer[temp_glyph_name]
+
+        self.font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = [
+            ['shadow', 0],  ['public.default', 1]]
+        TOMOTO_ORANGE = (255, 99, 71)
+        GRAY = (120, 120, 120)
+        palette = [GRAY, TOMOTO_ORANGE]
+        CPAL_palette = [(r/255., g/255., b/255., 1.0) for (r, g, b) in palette]
+        self.font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [CPAL_palette]
 
     @staticmethod
     def commonAnchor(setA, setB) -> str:
@@ -721,7 +750,7 @@ class MalayalamFontBuilder:
         ) = self.font.info.openTypeOS2TypoAscender = 800
         self.font.info.descender = (
             self.font.info.openTypeHheaDescender
-        ) = self.font.info.openTypeOS2TypoDescender = -200
+        ) = self.font.info.openTypeOS2TypoDescender = 200
         self.font.info.openTypeHheaLineGap = self.font.info.openTypeOS2TypoLineGap = 0
 
         # Names
@@ -739,7 +768,7 @@ class MalayalamFontBuilder:
 
         # Metrics
         self.font.info.xHeight = 700
-        self.font.info.capHeight = 700
+        self.font.info.capHeight = 800
         self.font.info.guidelines = []
         self.font.info.italicAngle = 0
 
@@ -759,7 +788,7 @@ class MalayalamFontBuilder:
         self.font.info.openTypeOS2WeightClass = 400
         self.font.info.openTypeOS2WidthClass = 5
         self.font.info.openTypeOS2WinAscent = self.font.info.ascender
-        self.font.info.openTypeOS2WinDescent = -self.font.info.descender
+        self.font.info.openTypeOS2WinDescent = self.font.info.descender
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]
@@ -798,12 +827,34 @@ class MalayalamFontBuilder:
 
         if 'UFO' in options.output_format:
             self.saveUFO(ufo_file_name)
+
         if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
             self.compile(self.font, ttfFile, cff=False)
+
         if 'OTF' in options.output_format:
             self.compile(self.font, otfFile)
+
         if 'WOFF2' in options.output_format:
             self.buildWebFont(ttfFile, webfontFile)
+
+        isColor = 'COLOR' in options.output_format
+        if isColor:
+            self.buildColorUFO()
+        ufo_file_name = f"build/{self.options.name}-{self.options.style}.color.ufo"
+        ttfFile = ufo_file_name.replace('.ufo', '.ttf')
+        otfFile = ufo_file_name.replace('.ufo', '.otf')
+        webfontFile = ufo_file_name.replace('.ufo', '.woff2')
+        if 'UFO' in options.output_format:
+            self.saveUFO(ufo_file_name)
+
+        if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
+            self.compile(self.font, ttfFile, cff=False)
+
+        if 'WOFF2' in options.output_format:
+            self.buildWebFont(ttfFile, webfontFile)
+        # FIXME. Fix error here
+        # if 'OTF' in options.output_format:
+        #     self.compile(self.font, otfFile)
 
     def getFeatures(self):
         return self.fontFeatures.asFea()
@@ -817,7 +868,7 @@ if __name__ == "__main__":
         default="config.yaml", type=argparse.FileType('r'))
     parser.add_argument('-l', '--log-level', default='INFO',
                         required=False, help="Set log level")
-    parser.add_argument('-f', '--output-format', default='UFO, OTF,TTF,WOFF2',
+    parser.add_argument('-f', '--output-format', default='UFO, OTF,TTF,WOFF2,COLOR',
                         required=False, help="Set output format: UFO, OTF, TTF or WOFF2. For multiple formats, use commas")
 
     options = parser.parse_args()
