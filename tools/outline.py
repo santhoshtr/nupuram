@@ -7,33 +7,36 @@ from string import Template
 import sys
 
 source_svg_name = sys.argv[1]
-output_svg = ""
-# FIXME. Do this with svg2paths?
-with open(source_svg_name) as svg_f:
-    for line in svg_f:
-        matches = re.match(r"(.*)(stroke:)([0-9a-z]+);(.*)", line)
-        if matches:
-            line = line.replace(matches.group(3), "#000000")
-        matches = re.match(r"(.*)(stroke-width:)([0-9.]+)px;(.*)", line)
-        if matches:
-            line = line.replace(matches.group(3), "60")
-        matches = re.match(r"(\s?)(id=)([0-9a-z\"]+)(\s?)", line)
-        if matches:
-            line = line.replace(matches.group(3), "\"svgglif\"")
-        output_svg += line
-svg_f.close()
+output_svg_name = sys.argv[2]
 
-temp_svg_name = source_svg_name.replace(".svg", ".temp.svg")
-with open(temp_svg_name, 'w') as f:
-    f.write(output_svg)
-f.close()
+path_index = 0
+paths, attributes, svg_attributes = svg2paths2(source_svg_name)
+for path in paths:
+    path_attrs = attributes[path_index]
+    style_attr = ""
+    if 'style' in path_attrs:
+        style_attr = path_attrs['style']
+    style_defs = style_attr.split(';')
+    style = {}
+    for style_def in style_defs:
+        style[style_def.split(":")[0]] = style_def.split(":")[1]
+    style['stroke-width'] = "60px"
+    style['stroke'] = "#000000"
+    style['fill'] = "#241f31ff"
+    style_attr = ";".join([f"{key}:{style[key]}" for key in style])
+    path_attrs['style'] = style_attr
+    attributes[path_index] = path_attrs
+    path_index += 1
+
+wsvg(paths, attributes=attributes,
+     svg_attributes=svg_attributes, filename=output_svg_name)
 
 # Execute
 # inkscape -g --actions "select-all;StrokeToPath;FileSave;FileQuit" step1.svg
 context = {
     'inkscape': 'inkscape',
     'actions': ';'.join(['select-all', 'StrokeToPath', 'FileSave', 'FileQuit']),
-    'filename':  temp_svg_name
+    'filename':  output_svg_name
 }
 command = Template(
     '${inkscape} -g --actions "${actions}" ${filename}').safe_substitute(**context)
@@ -41,19 +44,17 @@ print(f"{command}")
 process = subprocess.Popen(command, shell=True)
 process.wait()
 
-paths, attributes, svg_attributes = svg2paths2(temp_svg_name)
+paths, attributes, svg_attributes = svg2paths2(output_svg_name)
 path_index = 0
 output_paths = []
 output_attrs = []
 for path in paths:
     path_attrs = attributes[path_index]
-    style = path_attrs['style']
-    if "fill:#000000;" in style:
-        output_paths.append(path)
-        output_attrs.append(path_attrs)
     path_index += 1
+    if "241f31ff" in path_attrs['style']:
+       continue
+    output_paths.append(path)
+    output_attrs.append(path_attrs)
 
-os.remove(temp_svg_name)
-output_svg_name = source_svg_name.replace(".svg", ".outline.svg")
 wsvg(output_paths, attributes=output_attrs,
      svg_attributes=svg_attributes, filename=output_svg_name)
