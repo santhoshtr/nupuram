@@ -7,25 +7,53 @@
 		<style>
 			@font-face {
 				font-family: 'Seventy';
-				src: url(../build/Seventy-Regular.woff2?v=1.100) format('truetype');
+				src: url(../build/Seventy-Regular.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 			@font-face {
 				font-family: 'SeventyOutline';
-				src: url(../build/Seventy-Outline.woff2?v=1.100) format('truetype');
+				src: url(../build/Seventy-Outline.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 
 			@font-face {
-				font-family: 'SeventyColor';
-				src: url(../build/Seventy-Color.woff2?v=1.100) format('truetype');
+				font-family: 'SeventyOutlineColor';
+				src: url(../build/Seventy-Outline-Color.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
+
+			@font-face {
+				font-family: 'SeventyShadowColorEast';
+				src: url(../build/Seventy-Shadow-Color-East.woff2?v=1.100) format('woff2');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
+			@font-face {
+				font-family: 'SeventyShadowColorWest';
+				src: url(../build/Seventy-Shadow-Color-West.woff2?v=1.100) format('woff2');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
+			@font-face {
+				font-family: 'SeventyShadowColorSouth';
+				src: url(../build/Seventy-Shadow-Color-South.woff2?v=1.100) format('woff2');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+			@font-face {
+				font-family: 'SeventyShadowColorNorth';
+				src: url(../build/Seventy-Shadow-Color-North.woff2?v=1.100) format('woff2');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
 
 			body {
 				font-size: 100%;
@@ -59,6 +87,27 @@
 			.content.outline {
 				font-family: 'SeventyOutline', sans;
 			}
+
+			.content.outlinecolor {
+				font-family: 'SeventyOutlineColor', sans;
+			}
+
+			.content.shadowcoloreast {
+				font-family: 'SeventyShadowColorEast', sans;
+			}
+
+			.content.shadowcolorwest {
+				font-family: 'SeventyShadowColorWest', sans;
+			}
+
+			.content.shadowcolorsouth {
+				font-family: 'SeventyShadowColorSouth', sans;
+			}
+
+			.content.shadowcolornorth {
+				font-family: 'SeventyShadowColorNorth', sans;
+			}
+
 
 			.tools {
 				display: flex;
@@ -252,6 +301,8 @@
 
 				document.getElementById('test-font').addEventListener('change', function () {
 					const selected = this.options[this.selectedIndex].value;
+						contentArea.classList.add('shadowcolornorth');
+						contentArea.classList.remove("color", "outline", "outlinecolor" ,"shadowcoloreast", "shadowcolorwest", "shadowcolorsouth", "shadowcolornorth");
 					if (selected==='SeventyColor') {
 						contentArea.classList.add('color');
 						document.getElementById('font-fontColor').disabled=true
@@ -259,6 +310,26 @@
 					}
 					if (selected==='SeventyOutline') {
 						contentArea.classList.add('outline');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='SeventyOutlineColor') {
+						contentArea.classList.add('outlinecolor');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='SeventyShadowColorEast') {
+						contentArea.classList.add('shadowcoloreast');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='SeventyShadowColorWest') {
+						contentArea.classList.add('shadowcolorwest');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='SeventyShadowColorSouth') {
+						contentArea.classList.add('shadowcolorsouth');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='SeventyShadowColorNorth') {
+						contentArea.classList.add('shadowcolornorth');
 						document.getElementById('outlined').disabled=true
 					}
 					if (selected==='Seventy') {
@@ -408,7 +479,11 @@
 						<select class="controls fontname" id="test-font">
 							<option value="Seventy">Seventy</option>
 							<option value="SeventyOutline">Seventy Outline</option>
-							<option value="SeventyColor">Seventy Color</option>
+							<option value="SeventyOutlineColor">Seventy Outline Color</option>
+							<option value="SeventyShadowColorEast">Seventy Shadow Color East</option>
+							<option value="SeventyShadowColorWest">Seventy Shadow Color West</option>
+							<option value="SeventyShadowColorSouth">Seventy Shadow Color South</option>
+							<option value="SeventyShadowColorNorth">Seventy Shadow Color North</option>
 						</select>
 					</div>
 				</section>

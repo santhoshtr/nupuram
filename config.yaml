@@ -8,6 +8,65 @@ designs:
   outline:
     style: Outline
     source: sources/design/Outline
+  color-outline:
+    style: Outline-Color
+    layers:
+      default:
+        source: regular
+        order: 1  # Foreground layer
+        color: [165, 29, 45, 1] # TOMOTO_ORANGE
+      outline:
+        source: outline
+        order: 0 # background layer
+        color: [36, 31, 49,1] # GRAY
+  color-shadow-west:
+    style: Shadow-Color-West
+    layers:
+      default:
+        source: regular
+        order: 1  # Foreground layer
+        color: [165, 29, 45, 1] # TOMOTO_ORANGE
+      shadow.left:
+        source: outline
+        order: 0 # background layer
+        color: [36, 31, 49,1] # GRAY
+        offset: [-30, 0]
+  color-shadow-east:
+    style: Shadow-Color-East
+    layers:
+      default:
+        source: regular
+        order: 1  # Foreground layer
+        color: [165, 29, 45, 1] # TOMOTO_ORANGE
+      shadow.left:
+        source: outline
+        order: 0 # background layer
+        color: [36, 31, 49,1] # GRAY
+        offset: [30, 0]
+  color-shadow-North:
+    style: Shadow-Color-North
+    layers:
+      default:
+        source: regular
+        order: 1  # Foreground layer
+        color: [165, 29, 45, 1] # TOMOTO_ORANGE
+      shadow.left:
+        source: outline
+        order: 0 # background layer
+        color: [36, 31, 49,1] # GRAY
+        offset: [0, 30]
+  color-shadow-South:
+    style: Shadow-Color-South
+    layers:
+      default:
+        source: regular
+        order: 1  # Foreground layer
+        color: [165, 29, 45, 1] # TOMOTO_ORANGE
+      shadow.left:
+        source: outline
+        order: 0 # background layer
+        color: [36, 31, 49,1] # GRAY
+        offset: [0, -30]
 build: build
 author:
   name: Santhosh Thottingal

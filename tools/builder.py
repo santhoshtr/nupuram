@@ -9,19 +9,16 @@ from defcon import Font, Glyph, Layer
 import ufo2ft
 import yaml
 from fontTools import ttLib
-
+from typing import List, Dict
 from malayalamfont import MalayalamFont
 
 log = logging.getLogger(__name__)
-
-LANGUAGE_MALAYALAM = [('mlm2', 'dflt')]
-LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
 
 
 class MalayalamFontBuilder:
     def __init__(self, options):
         self.options = options
-        self.font: MalayalamFont = None
+        self.fonts: Dict[str, str] = {}
 
     def compile(self,
                 ufo: MalayalamFont,             # input UFO as filename string or defcon.Font object
@@ -51,33 +48,6 @@ class MalayalamFontBuilder:
 
         log.debug(f"Writing {outputFilename}")
         font.save(outputFilename)
-
-    def buildColorUFO(self):
-        default_layer: Layer = self.font.layers['public.default']
-        shadowLayer: Layer = self.font.newLayer('shadow')
-
-        # Add offset glyph
-        for glyph in default_layer:
-            glyph.decomposeAllComponents()
-            shadow_glyph = copy.deepcopy(glyph)
-            shadowLayer.insertGlyph(shadow_glyph,  glyph.name)
-            temp_glyph_name = 'glyph.name'+".temp"
-            temp_glyph = shadowLayer.newGlyph(temp_glyph_name)
-            component = temp_glyph.instantiateComponent()
-            component.baseGlyph = glyph.name
-            component.move((40, -40))
-            temp_glyph.appendComponent(component)
-            temp_glyph.decomposeAllComponents()
-            shadowLayer.insertGlyph(temp_glyph,  glyph.name)
-            del shadowLayer[temp_glyph_name]
-
-        self.font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = [
-            ['shadow', 0],  ['public.default', 1]]
-        TOMOTO_ORANGE = (255, 99, 71)
-        GRAY = (120, 120, 120)
-        palette = [GRAY, TOMOTO_ORANGE]
-        CPAL_palette = [(r/255., g/255., b/255., 1.0) for (r, g, b) in palette]
-        self.font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [CPAL_palette]
 
     def fix_font(self, fontFile):
         log.debug(f"Fixing {fontFile}")
@@ -137,8 +107,10 @@ class MalayalamFontBuilder:
         log.info(f"Webfont saved at {webfontFile}")
 
     def build(self, options):
-        for design_key in self.options.designs:
-            design = self.options.designs[design_key]
+        for design_name in self.options.designs:
+            design = self.options.designs[design_name]
+            if "source" not in design:
+                continue
             ufo_file_name = f"build/{self.options.name}-{design.style}.ufo"
             font: MalayalamFont = MalayalamFont(
                 self.options, style=design.style)
@@ -161,26 +133,70 @@ class MalayalamFontBuilder:
                 otfFile = ufo_file_name.replace('.ufo', '.otf')
                 self.compile(font, otfFile)
                 self.fix_font(otfFile)
+            self.fonts[design_name] = ufo_file_name
 
-        # isColor = 'COLOR' in options.output_format
-        # if isColor:
-        #     self.buildColorUFO()
-        # ufo_file_name = f"build/{self.options.name}-{self.options.style}.color.ufo"
-        # ttfFile = ufo_file_name.replace('.ufo', '.ttf')
-        # otfFile = ufo_file_name.replace('.ufo', '.otf')
-        # webfontFile = ufo_file_name.replace('.ufo', '.woff2')
-        # if 'UFO' in options.output_format:
-        #     self.saveUFO(ufo_file_name)
 
-        # if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
-        #     self.compile(self.font, ttfFile, cff=False)
+        for design_name in self.options.designs:
+            layer_mapping = []
+            CPAL_palette = []
+            design = self.options.designs[design_name]
+            if "layers" not in design:
+                continue
+            for layer_name in design.layers:
+                if layer_name == 'default':
+                    layer_mapping.append(
+                        ['public.default', design.layers.default.order])
+                    font = Font(self.fonts[design.layers.default.source])
+                else:
+                    if not font:
+                        raise ValueError(
+                            "Default font not found. Define default source as first item in layers")
+                    layer: Layer = font.newLayer(layer_name)
+                    layer_font: Font = Font(self.fonts[design.layers[layer_name].source])
+                    for base_glyph in layer_font:
+                        glyph = copy.deepcopy(base_glyph)
+                        layer.insertGlyph(glyph, glyph.name)
+                        if "offset" in design.layers[layer_name]:
+                            [offset_x, offset_y] = design.layers[layer_name].offset
+                            temp_glyph_name = f"{glyph.name}.temp"
+                            temp_glyph = layer.newGlyph(temp_glyph_name)
+                            component = temp_glyph.instantiateComponent()
+                            component.baseGlyph = glyph.name
+                            component.move((offset_x, offset_y))
+                            temp_glyph.appendComponent(component)
+                            temp_glyph.decomposeAllComponents()
+                            layer.insertGlyph(temp_glyph, glyph.name)
+                            del layer[temp_glyph_name]
 
-        # if 'WOFF2' in options.output_format:
-        #     self.buildWebFont(ttfFile, webfontFile)
-        # # FIXME. Fix error here
-        # # if 'OTF' in options.output_format:
-        # #     self.compile(self.font, otfFile)
+                    layer_mapping.append(
+                        [layer_name, design.layers[layer_name].order])
+                [r, g, b, a] = design.layers[layer_name].color
+                CPAL_palette.append((r/255., g/255., b/255., 1.0))
 
+            print(layer_mapping)
+            layer_mapping.reverse()
+            CPAL_palette.reverse()
+            font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = layer_mapping
+            font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [
+                CPAL_palette]
+
+            ufo_file_name = f"build/{self.options.name}-{design.style}.ufo"
+            font.save(ufo_file_name)
+            log.info(f"Color UFO font saved at {ufo_file_name}")
+
+            if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
+                ttfFile = ufo_file_name.replace('.ufo', '.ttf')
+                self.compile(font, ttfFile, cff=False)
+                self.fix_font(ttfFile)
+                if 'WOFF2' in options.output_format:
+                    webfontFile = ufo_file_name.replace('.ufo', '.woff2')
+                    self.buildWebFont(ttfFile, webfontFile)
+
+            # if 'OTF' in options.output_format:
+            #     otfFile = ufo_file_name.replace('.ufo', '.otf')
+            #     self.compile(font, otfFile)
+            #     self.fix_font(otfFile)
+            self.fonts[design_name] = ufo_file_name
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
