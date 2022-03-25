@@ -113,7 +113,6 @@ class SVGGlyph:
             print(f"Error while processing {self.__dict__}")
             traceback.print_exc()
 
-
     @staticmethod
     def name_from_uc(char):
         return unicodedata.name(char).replace('MALAYALAM', '').replace('LETTER', '').replace('VOWEL', '').lower().strip().replace(' ', '_', -1)

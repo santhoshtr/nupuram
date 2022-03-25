@@ -1,8 +1,13 @@
 name: Seventy
-style: Regular
 version: 1.0
 source: https://gitlab.com/smc/fonts/seventy
-design: sources/design/Regular
+designs:
+  regular:
+    style: Regular
+    source: sources/design/Regular
+  outline:
+    style: Outline
+    source: sources/design/Outline
 build: build
 author:
   name: Santhosh Thottingal

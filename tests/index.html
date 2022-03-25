@@ -13,16 +13,24 @@
 			}
 
 			@font-face {
-				font-family: 'SeventyColor';
-				src: url(../build/Seventy-Regular.color.woff2?v=1.100) format('truetype');
+				font-family: 'SeventyOutline';
+				src: url(../build/Seventy-Outline.woff2?v=1.100) format('truetype');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 
+			@font-face {
+				font-family: 'SeventyColor';
+				src: url(../build/Seventy-Color.woff2?v=1.100) format('truetype');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
 			body {
 				font-size: 100%;
 				color: #214761;
+				background-color: #f5f5dc;
 				line-height: 1.2;
 			}
 
@@ -46,6 +54,10 @@
 
 			.content.color {
 				font-family: 'SeventyColor', sans;
+			}
+
+			.content.outline {
+				font-family: 'SeventyOutline', sans;
 			}
 
 			.tools {
@@ -244,7 +256,12 @@
 						contentArea.classList.add('color');
 						document.getElementById('font-fontColor').disabled=true
 						document.getElementById('outlined').disabled=true
-					} else {
+					}
+					if (selected==='SeventyOutline') {
+						contentArea.classList.add('outline');
+						document.getElementById('outlined').disabled=true
+					}
+					if (selected==='Seventy') {
 						contentArea.classList.remove('color');
 						document.getElementById('font-fontColor').disabled=false
 						document.getElementById('outlined').disabled=false
@@ -328,7 +345,14 @@
 				document.querySelectorAll("[data-id='fontColor']").forEach((element) => {
 					element.addEventListener('input', function () {
 						const fontColor = element.value;
-						contentArea.style.color = fontColor;
+						document.body.style.color = fontColor;
+					});
+				});
+
+				document.querySelectorAll("[data-id='background-color']").forEach((element) => {
+					element.addEventListener('input', function () {
+						const color = element.value;
+						document.body.style.backgroundColor = color;
 					});
 				});
 
@@ -383,6 +407,7 @@
 						<label for="font-name">Font</label>
 						<select class="controls fontname" id="test-font">
 							<option value="Seventy">Seventy</option>
+							<option value="SeventyOutline">Seventy Outline</option>
 							<option value="SeventyColor">Seventy Color</option>
 						</select>
 					</div>
@@ -441,6 +466,10 @@
 					<div class="primitive-input">
 						<label for="font-fontColor">Font color</label>
 						<input type="color" class="font-color val-input" data-id="fontColor" id="font-fontColor">
+					</div>
+					<div class="primitive-input">
+						<label for="background-color">Background color</label>
+						<input type="color" class="background-color val-input" data-id="background-color" id="background-color">
 					</div>
 					<div>
 						<label for="font-align">Text align</label>
