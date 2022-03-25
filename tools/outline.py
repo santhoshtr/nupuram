@@ -7,8 +7,7 @@ from munch import DefaultMunch
 import xml.etree.ElementTree as etree
 
 marker_fill = "#1a5fb4"
-text_nodes = []
-
+text_nodes={}
 
 class Style:
     def __init__(self, style):
@@ -54,7 +53,7 @@ def preprocess(source_svg_name, output_svg_name):
         style.set('stroke-linejoin', 'round')
         path.set('style', str(style))
 
-    text_nodes = tree.getroot().findall('.//{http://www.w3.org/2000/svg}text')
+    text_nodes[output_svg_name] = tree.getroot().findall('.//{http://www.w3.org/2000/svg}text')
     tree.write(output_svg_name, encoding="UTF-8")
 
 
@@ -92,7 +91,7 @@ def postprocess(output_svg_name):
                 path.set('style', str(style))
             path_index += 1
 
-    for text in text_nodes:
+    for text in text_nodes[output_svg_name]:
         tree.getroot().insert(0, text)
     tree.write(output_svg_name, encoding="UTF-8")
 
@@ -118,7 +117,7 @@ if __name__ == "__main__":
         "inkscape --shell", stdin=cat.stdout, shell=True)
     process.wait()
 
-    for f in os.listdir():
+    for f in os.listdir(out_dir):
         if not f.endswith(".svg"):
             continue
         postprocess(os.path.join(out_dir, f))
