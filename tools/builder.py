@@ -154,6 +154,7 @@ class MalayalamFontBuilder:
                     layer: Layer = font.newLayer(layer_name)
                     layer_font: Font = Font(self.fonts[design.layers[layer_name].source])
                     for base_glyph in layer_font:
+                        base_glyph.decomposeAllComponents()
                         glyph = copy.deepcopy(base_glyph)
                         layer.insertGlyph(glyph, glyph.name)
                         if "offset" in design.layers[layer_name]:
