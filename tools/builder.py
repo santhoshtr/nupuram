@@ -10,6 +10,7 @@ import ufo2ft
 import yaml
 from fontTools import ttLib
 from typing import List, Dict
+from operator import itemgetter
 from malayalamfont import MalayalamFont
 
 log = logging.getLogger(__name__)
@@ -174,9 +175,8 @@ class MalayalamFontBuilder:
                 [r, g, b, a] = design.layers[layer_name].color
                 CPAL_palette.append((r/255., g/255., b/255., 1.0))
 
-            print(layer_mapping)
-            layer_mapping.reverse()
-            CPAL_palette.reverse()
+            layer_mapping = sorted(layer_mapping, key=itemgetter(1))
+            CPAL_palette = sorted(CPAL_palette, key=itemgetter(1))
             font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = layer_mapping
             font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [
                 CPAL_palette]
