@@ -503,22 +503,22 @@ class MalayalamFont(Font):
         self.info.italicAngle = 0
 
         # OpenType OS/2 Table
-        # info.openTypeOS2CodePageRanges=[01]
-        # info.openTypeOS2FamilyClass=[00]
-        # info.openTypeOS2Panose=[0083000000]
+        self.info.openTypeOS2CodePageRanges = [0, 1]
+        self.info.openTypeOS2FamilyClass = [0, 0]
+        self.info.openTypeOS2Panose = [0, 0, 8, 3, 0, 0, 0, 0, 0, 0]
         # set USE_TYPO_METRICS flag (OS/2.fsSelection bit 7) to make sure OS/2 Typo* metrics
         # are preferred to define Windows line spacing over legacy WinAscent/WinDescent:
         # https://docs.microsoft.com/en-us/typography/opentype/spec/os2#fsselection
         self.info.openTypeOS2Selection = [7]
         self.info.openTypeOS2Type = []
-        self.info.openTypeOS2TypoAscender = self.info.ascender
-        self.info.openTypeOS2TypoDescender = -self.info.descender
+        self.info.openTypeOS2TypoAscender = self.info.ascender+100
+        self.info.openTypeOS2TypoDescender = -(self.info.descender+100)
         self.info.openTypeOS2TypoLineGap = 0
-        # info.openTypeOS2UnicodeRanges=[12323]
+        self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = 400
         self.info.openTypeOS2WidthClass = 5
-        self.info.openTypeOS2WinAscent = self.info.ascender
-        self.info.openTypeOS2WinDescent = self.info.descender
+        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender
+        self.info.openTypeOS2WinDescent = self.info.openTypeOS2TypoDescender * -1
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]
