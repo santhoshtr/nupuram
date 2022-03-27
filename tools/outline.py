@@ -30,6 +30,10 @@ class Style:
         else:
             return default_value
 
+    def remove(self, key):
+        if key in self.style_dict:
+            del self.style_dict[key]
+
     def toString(self):
         return ";".join([f"{key}:{self.style_dict.get(key)}" for key in self.style_dict])
 
@@ -51,6 +55,7 @@ def preprocess(source_svg_name, output_svg_name):
         style.set('stroke-width', "60px")
         style.set('stroke-linecap', 'round')
         style.set('stroke-linejoin', 'round')
+        style.set('paint-order', "fill stroke markers")
         path.set('style', str(style))
 
     text_nodes[output_svg_name] = tree.getroot().findall('.//{http://www.w3.org/2000/svg}text')
