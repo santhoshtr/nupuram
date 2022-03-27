@@ -5,9 +5,11 @@ import subprocess
 import sys
 from munch import DefaultMunch
 import xml.etree.ElementTree as etree
+import svgpathtools
 
 marker_fill = "#1a5fb4"
-text_nodes={}
+text_nodes = {}
+
 
 class Style:
     def __init__(self, style):
@@ -58,7 +60,8 @@ def preprocess(source_svg_name, output_svg_name):
         style.set('paint-order', "fill stroke markers")
         path.set('style', str(style))
 
-    text_nodes[output_svg_name] = tree.getroot().findall('.//{http://www.w3.org/2000/svg}text')
+    text_nodes[output_svg_name] = tree.getroot().findall(
+        './/{http://www.w3.org/2000/svg}text')
     tree.write(output_svg_name, encoding="UTF-8")
 
 
@@ -86,6 +89,9 @@ def postprocess(output_svg_name):
             continue
         path_index = 0
         for path in group.findall('{http://www.w3.org/2000/svg}path', namespaces):
+            # Fix the path to something that svg.path in fontools can parse
+            # See https://github.com/regebro/svg.path/issues/69
+            path.set("d", svgpathtools.parse_path(path.get("d")).d())
             style = Style(path.get('style'))
             fill = style.get('fill')
             if path_index == 0:
