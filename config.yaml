@@ -9,7 +9,7 @@ designs:
     style: Outline
     source: sources/design/Outline
   color-outline:
-    style: Outline-Color
+    style: Shadow
     layers:
       default:
         source: regular
@@ -18,9 +18,9 @@ designs:
       outline:
         source: outline
         order: 0 # background layer
-        color: [85, 34, 0,1]
+        color: [85, 34, 0, 1]
   color-shadow-west:
-    style: Shadow-Color-West
+    style: Shadow-West
     layers:
       default:
         source: regular
@@ -29,10 +29,10 @@ designs:
       shadow.left:
         source: outline
         order: 0 # background layer
-        color: [85, 34, 0,1]
+        color: [85, 34, 0, 1]
         offset: [-30, 0]
   color-shadow-east:
-    style: Shadow-Color-East
+    style: Shadow-East
     layers:
       default:
         source: regular
@@ -41,10 +41,10 @@ designs:
       shadow.left:
         source: outline
         order: 0 # background layer
-        color: [85, 34, 0,1]
+        color: [85, 34, 0, 1]
         offset: [30, 0]
   color-shadow-North:
-    style: Shadow-Color-North
+    style: Shadow-North
     layers:
       default:
         source: regular
@@ -56,7 +56,7 @@ designs:
         color: [85, 34, 0, 1]
         offset: [0, 30]
   color-shadow-South:
-    style: Shadow-Color-South
+    style: Shadow-South
     layers:
       default:
         source: regular

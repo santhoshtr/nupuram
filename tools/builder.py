@@ -8,13 +8,17 @@ from datetime import datetime
 from defcon import Font, Glyph, Layer
 import ufo2ft
 import yaml
-from fontTools import ttLib
+from fontTools import ttLib, colorLib
+from fontTools.ttLib.tables import otTables as ot
 from typing import List, Dict
 from operator import itemgetter
 from malayalamfont import MalayalamFont
 
 log = logging.getLogger(__name__)
 
+
+def color(hex: str):
+  return ttLib.getTableModule('CPAL').Color.fromHex(hex)
 
 class MalayalamFontBuilder:
     def __init__(self, options):
@@ -107,6 +111,40 @@ class MalayalamFontBuilder:
         ttFont.save(webfontFile)
         log.info(f"Webfont saved at {webfontFile}")
 
+    def build_colorv1( self, ttfFile, colorv1_font_name):
+        font = ttLib.TTFont(ttfFile)
+        colr0 = font["COLR"]
+        cpal = font["CPAL"]
+
+        cpal.numPaletteEntries = len(cpal.palettes[0])
+        colrv1_map = {}
+        for glyph_name, layers in colr0.ColorLayers.items():
+            v1_layers = []
+            colrv1_map[glyph_name] = (ot.PaintFormat.PaintColrLayers, v1_layers)
+
+            for layer in layers:
+                # Match COLRv0 fill
+                fill = {
+                  "Format": ot.PaintFormat.PaintSolid,
+                  "PaletteIndex": layer.colorID,
+                  "Alpha": 1,
+                }
+                v1_layers.append({
+                    "Format": ot.PaintFormat.PaintGlyph,
+                    "Paint": fill,
+                    "Glyph": layer.name,
+                })
+
+            if len(v1_layers) == 1:
+                colrv1_map[glyph_name] = v1_layers[0]
+
+        # pprint.PrettyPrinter(indent=2).pprint(colrv1_map)
+
+        colr = colorLib.builder.buildCOLR(colrv1_map)
+        font["COLR"] = colr
+        font.save(colorv1_font_name)
+        log.info(f"Colrv1 saved at {colorv1_font_name}")
+
     def build(self, options):
         for design_name in self.options.designs:
             design = self.options.designs[design_name]
@@ -186,15 +224,19 @@ class MalayalamFontBuilder:
             log.info(f"Color UFO font saved at {ufo_file_name}")
 
             if 'TTF' in options.output_format or 'WOFF2' in options.output_format:
-                ttfFile = ufo_file_name.replace('.ufo', '.ttf')
+                ttfFile = ufo_file_name.replace('.ufo', '-colrv0.ttf')
                 self.compile(font, ttfFile, cff=False)
                 self.fix_font(ttfFile)
-                if 'WOFF2' in options.output_format:
-                    webfontFile = ufo_file_name.replace('.ufo', '.woff2')
-                    self.buildWebFont(ttfFile, webfontFile)
+                colorv1_file = ufo_file_name.replace('.ufo', '-colrv1.ttf')
+                self.build_colorv1(ttfFile,colorv1_file)
 
+                if 'WOFF2' in options.output_format:
+                    webfontFile = ttfFile.replace('.ttf', '.woff2')
+                    self.buildWebFont(ttfFile, webfontFile)
+                    webfontFile = colorv1_file.replace('.ttf', '.woff2')
+                    self.buildWebFont(colorv1_file, webfontFile)
             # if 'OTF' in options.output_format:
-            #     otfFile = ufo_file_name.replace('.ufo', '.otf')
+            #     otfFile = ufo_file_name.replace('.ufo', '-colrv0.otf')
             #     self.compile(font, otfFile)
             #     self.fix_font(otfFile)
             self.fonts[design_name] = ufo_file_name

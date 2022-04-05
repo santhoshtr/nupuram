@@ -19,41 +19,52 @@
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
-
 			@font-face {
-				font-family: 'SeventyOutlineColor';
-				src: url(../build/Seventy-Outline-Color.woff2?v=1.100) format('woff2');
+				font-family: 'SeventyShadow';
+				src: url(../build/Seventy-Shadow-colrv1.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 			@font-face {
-				font-family: 'SeventyShadowColorEast';
-				src: url(../build/Seventy-Shadow-Color-East.woff2?v=1.100) format('woff2');
+				font-family: 'SeventyShadowEast';
+				src: url(../build/Seventy-Shadow-East-colrv1.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 			@font-face {
-				font-family: 'SeventyShadowColorWest';
-				src: url(../build/Seventy-Shadow-Color-West.woff2?v=1.100) format('woff2');
+				font-family: 'SeventyShadowWest';
+				src: url(../build/Seventy-Shadow-West-colrv1.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
 			@font-face {
-				font-family: 'SeventyShadowColorSouth';
-				src: url(../build/Seventy-Shadow-Color-South.woff2?v=1.100) format('woff2');
-				font-weight: 400;
-				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
-			}
-			@font-face {
-				font-family: 'SeventyShadowColorNorth';
-				src: url(../build/Seventy-Shadow-Color-North.woff2?v=1.100) format('woff2');
+				font-family: 'SeventyShadowSouth';
+				src: url(../build/Seventy-Shadow-South-colrv1.woff2?v=1.100) format('woff2');
 				font-weight: 400;
 				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
 			}
 
+			@font-face {
+				font-family: 'SeventyShadowNorth';
+				src: url(../build/Seventy-Shadow-North-colrv0.woff2?v=1.100) format('woff2');
+				font-weight: 400;
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+			}
+
+			@font-palette-values --colorized {
+				font-family: "SeventyShadowEast";
+				base-palette: 0;
+				override-colors: 0 black, 1 white;
+			  }
+
+			  @font-palette-values --shadowcolorized {
+				font-family: "SeventyShadow";
+				base-palette: 0;
+				override-colors: 0 black, 1 white;
+			  }
 
 			body {
 				font-size: 100%;
@@ -88,24 +99,26 @@
 				font-family: 'SeventyOutline', sans;
 			}
 
-			.content.outlinecolor {
-				font-family: 'SeventyOutlineColor', sans;
+			.content.shadow {
+				font-family: 'SeventyShadow', sans;
+				font-palette: --shadowcolorized;
 			}
 
-			.content.shadowcoloreast {
-				font-family: 'SeventyShadowColorEast', sans;
+			.content.shadoweast {
+				font-family: 'SeventyShadowEast', sans;
+				font-palette: --colorized;
 			}
 
-			.content.shadowcolorwest {
-				font-family: 'SeventyShadowColorWest', sans;
+			.content.shadowwest {
+				font-family: 'SeventyShadowWest', sans;
 			}
 
-			.content.shadowcolorsouth {
-				font-family: 'SeventyShadowColorSouth', sans;
+			.content.shadowsouth {
+				font-family: 'SeventyShadowSouth', sans;
 			}
 
-			.content.shadowcolornorth {
-				font-family: 'SeventyShadowColorNorth', sans;
+			.content.shadownorth {
+				font-family: 'SeventyShadowNorth', sans;
 			}
 
 
@@ -301,8 +314,8 @@
 
 				document.getElementById('test-font').addEventListener('change', function () {
 					const selected = this.options[this.selectedIndex].value;
-						contentArea.classList.add('shadowcolornorth');
-						contentArea.classList.remove("color", "outline", "outlinecolor" ,"shadowcoloreast", "shadowcolorwest", "shadowcolorsouth", "shadowcolornorth");
+						contentArea.classList.add('shadownorth');
+						contentArea.classList.remove("color", "outline", "shadow" ,"shadoweast", "shadowwest", "shadowsouth", "shadownorth");
 					if (selected==='SeventyColor') {
 						contentArea.classList.add('color');
 						document.getElementById('font-fontColor').disabled=true
@@ -312,24 +325,24 @@
 						contentArea.classList.add('outline');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyOutlineColor') {
-						contentArea.classList.add('outlinecolor');
+					if (selected==='SeventyShadow') {
+						contentArea.classList.add('shadow');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyShadowColorEast') {
-						contentArea.classList.add('shadowcoloreast');
+					if (selected==='SeventyShadowEast') {
+						contentArea.classList.add('shadoweast');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyShadowColorWest') {
-						contentArea.classList.add('shadowcolorwest');
+					if (selected==='SeventyShadowWest') {
+						contentArea.classList.add('shadowwest');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyShadowColorSouth') {
-						contentArea.classList.add('shadowcolorsouth');
+					if (selected==='SeventyShadowSouth') {
+						contentArea.classList.add('shadowsouth');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyShadowColorNorth') {
-						contentArea.classList.add('shadowcolornorth');
+					if (selected==='SeventyShadowNorth') {
+						contentArea.classList.add('shadownorth');
 						document.getElementById('outlined').disabled=true
 					}
 					if (selected==='Seventy') {
@@ -479,11 +492,11 @@
 						<select class="controls fontname" id="test-font">
 							<option value="Seventy">Seventy</option>
 							<option value="SeventyOutline">Seventy Outline</option>
-							<option value="SeventyOutlineColor">Seventy Outline Color</option>
-							<option value="SeventyShadowColorEast">Seventy Shadow Color East</option>
-							<option value="SeventyShadowColorWest">Seventy Shadow Color West</option>
-							<option value="SeventyShadowColorSouth">Seventy Shadow Color South</option>
-							<option value="SeventyShadowColorNorth">Seventy Shadow Color North</option>
+							<option value="SeventyShadow">Seventy Shadow Color</option>
+							<option value="SeventyShadowEast">Seventy Shadow Color East</option>
+							<option value="SeventyShadowWest">Seventy Shadow Color West</option>
+							<option value="SeventyShadowSouth">Seventy Shadow Color South</option>
+							<option value="SeventyShadowNorth">Seventy Shadow Color North</option>
 						</select>
 					</div>
 				</section>
