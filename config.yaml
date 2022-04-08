@@ -67,7 +67,9 @@ designs:
         order: 0 # background layer
         color: [85, 34, 0, 1]
         offset: [0, -30]
-build: build
+build: fonts
+proofs: proofs
+tests: tests
 author:
   name: Santhosh Thottingal
   email: santhosh.thottingal@gmail.com

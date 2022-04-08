@@ -1,0 +1,14 @@
+import yaml
+import sys
+from munch import DefaultMunch
+
+config = DefaultMunch.fromDict(
+    yaml.load(open('config.yaml'), Loader=yaml.FullLoader))
+
+
+if __name__ == "__main__":
+    key = sys.argv[1]
+    val = config
+    for k in key.split("."):
+        val = val[k]
+    print(val)

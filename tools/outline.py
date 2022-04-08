@@ -1,8 +1,6 @@
 import yaml
-import re
 import os
 import subprocess
-import sys
 from munch import DefaultMunch
 import xml.etree.ElementTree as etree
 import svgpathtools

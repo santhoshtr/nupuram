@@ -150,7 +150,7 @@ class MalayalamFontBuilder:
             design = self.options.designs[design_name]
             if "source" not in design:
                 continue
-            ufo_file_name = f"build/{self.options.name}-{design.style}.ufo"
+            ufo_file_name = f"{self.options.build}/{self.options.name}-{design.style}.ufo"
             font: MalayalamFont = MalayalamFont(
                 self.options, style=design.style)
             font.build(design.source)
@@ -219,7 +219,7 @@ class MalayalamFontBuilder:
             font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [
                 CPAL_palette]
 
-            ufo_file_name = f"build/{self.options.name}-{design.style}.ufo"
+            ufo_file_name = f"{self.options.build}/{self.options.name}-{design.style}.ufo"
             font.save(ufo_file_name)
             log.info(f"Color UFO font saved at {ufo_file_name}")
 
