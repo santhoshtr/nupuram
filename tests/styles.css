@@ -1,0 +1,172 @@
+@font-face {
+    font-family: 'Seventy';
+    src: url(../fonts/Seventy-Regular.woff2?v=1.100) format('woff2');
+    font-weight: 400;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+}
+
+@font-face {
+    font-family: 'SeventyShadow';
+    src: url(../fonts/Seventy-Shadow-colrv1.woff2?v=1.100) format('woff2');
+    font-weight: 400;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+0D01-0D7F, U+200C-U+200D, U+25CC;
+}
+
+@font-palette-values --shadow {
+    font-family: "SeventyShadow";
+    base-palette: 0;
+    override-colors: 0 #342128ff, 1 #ffffff00, 2 #e36751ff;
+}
+
+@font-palette-values --outline {
+    font-family: "SeventyShadow";
+    base-palette: 0;
+    override-colors: 0 #34212800, 1 #342128ff, 2 #e36751ff;
+}
+
+@font-palette-values --default {
+    font-family: "SeventyShadow";
+    base-palette: 0;
+    override-colors: 0 #34212800, 1 #34212800, 2 #e36751ff;
+}
+
+
+body {
+    font-size: 100%;
+    color: #214761;
+    background-color: #f5f5dc;
+    line-height: 1.2;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    overflow: auto;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Seventy', sans;
+    line-height: 1.2;
+    padding: 0.5em;
+    outline: none;
+}
+
+.content.color {
+    font-family: 'SeventyColor', sans;
+}
+
+
+.content.shadow {
+    font-family: 'SeventyShadow', sans;
+    font-palette: --default;
+    font-palette: --outline;
+    font-palette: --shadow;
+}
+
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    font-family: sans;
+    overflow: auto;
+    font-size: 0.75em;
+    color: #214761;
+    position: absolute;
+    right: 1em;
+}
+
+.controls {
+    margin: 0;
+    padding: 0;
+
+}
+
+.controls.testcontent li {
+    cursor: pointer;
+    text-align: left;
+    padding: 0 5px 0 0;
+}
+
+.controls.align {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.controls.align li {
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+footer {
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    color: white;
+}
+
+.outline-text {
+    color: orange;
+    line-height: 1.5;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.rows {
+    display: grid;
+    column-gap: 1px;
+    row-gap: 1em;
+    margin: 1em;
+}
+
+.rows>div {
+    display: contents;
+    margin-bottom: 1em;
+}
+
+.rows-2 {
+    grid-template-columns: 2fr 5fr;
+}
+
+.rows-3 {
+    grid-template-columns: auto 1fr auto;
+}
+
+.rows-1 {
+    grid-template-columns: auto;
+}
+
+
+.val-input {
+    width: 3rem;
+    padding: 0;
+    margin: 0;
+}
+
+#font-version:empty {
+    display: none;
+}
+
+.blurry {
+    filter: blur(2px);
+    opacity: .9;
+}
+
+.grid {
+    background-image: linear-gradient(transparent 11px, rgba(220, 220, 200, .8) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220, 220, 200, .8) 12px, transparent 12px);
+    background-size: 100% 12px, 12px 100%;
+}
+
+input[type="range"] {
+    height: 2px;
+}
+
+label {
+    white-space: nowrap;
+}

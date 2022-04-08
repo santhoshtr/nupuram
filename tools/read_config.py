@@ -1,10 +1,7 @@
-import yaml
 import sys
-from munch import DefaultMunch
+import yaml
 
-config = DefaultMunch.fromDict(
-    yaml.load(open('config.yaml'), Loader=yaml.FullLoader))
-
+config = yaml.load(open('config.yaml'), Loader=yaml.FullLoader)
 
 if __name__ == "__main__":
     key = sys.argv[1]

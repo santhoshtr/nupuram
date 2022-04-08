@@ -76,7 +76,7 @@ class TypeDevServer:
         self.observer.schedule(DesignChangeHandler(),
                                './config.yaml')
         self.observer.schedule(BuildChangeHandler(),
-                               './build', recursive=True)
+                               './fonts', recursive=True)
         self.observer.schedule(DesignChangeHandler(),
                                './sources/design/Regular', recursive=True)
 

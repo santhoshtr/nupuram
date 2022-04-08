@@ -135,8 +135,21 @@ class MalayalamFontBuilder:
                     "Glyph": layer.name,
                 })
 
+
             if len(v1_layers) == 1:
                 colrv1_map[glyph_name] = v1_layers[0]
+
+            # Special palette to follow css color
+            # fill = {
+            #     "Format": ot.PaintFormat.PaintSolid,
+            #     "PaletteIndex": 65535,
+            #     "Alpha": 1,
+            # }
+            # v1_layers.append({
+            #     "Format": ot.PaintFormat.PaintGlyph,
+            #     "Paint": fill,
+            #     "Glyph": glyph_name,
+            # })
 
         # pprint.PrettyPrinter(indent=2).pprint(colrv1_map)
 
