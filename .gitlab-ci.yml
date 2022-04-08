@@ -31,7 +31,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -rf fonts tests public
+    - cp -rf fonts tests proofs public
   artifacts:
     paths:
       - public  # instruct GitLab to keep the public folder
