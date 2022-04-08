@@ -14,7 +14,7 @@ build-branch:
     - make build
   artifacts:
     paths:
-    - build/
+    - fonts/
   except:
     - tags
 
@@ -31,7 +31,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -rf build tests public
+    - cp -rf fonts tests public
   artifacts:
     paths:
       - public  # instruct GitLab to keep the public folder
