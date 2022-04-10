@@ -4,6 +4,7 @@
 .ONESHELL:
 
 PY=python3
+FONTFORGE=/usr/bin/fontforge
 FAMILY=$(shell $(PY) tools/read_config.py name)
 VERSION=$(shell $(PY) tools/read_config.py version)
 FONTSDIR=$(shell $(PY) tools/read_config.py build)
@@ -11,7 +12,6 @@ PROOFDIR=$(shell $(PY) tools/read_config.py proofs)
 TESTSDIR=$(shell $(PY) tools/read_config.py tests)
 
 default: build
-
 
 help:
 	@echo "Build targets"
@@ -31,7 +31,17 @@ test: .venv build.stamp proof
 
 outline:
 	@mkdir -p ${FONTSDIR}
-	$(PY) tools/outline.py
+	# $(PY) tools/outline.py
+	$(FONTFORGE) tools/gen_outline_glyphs.pe fonts/Seventy-Regular.otf fonts/Seventy-Outline.otf 10
+	$(FONTFORGE) tools/otf2ttf.pe fonts/Seventy-Outline.otf fonts/Seventy-Outline.ttf
+	rm -rf fonts/Seventy-Outline.woff2
+	@fonttools ttLib.woff2 compress fonts/Seventy-Outline.ttf
+
+shadow:
+	$(FONTFORGE) tools/gen_shadow_glyphs.pe fonts/Seventy-Regular.otf fonts/Seventy-Shadow.otf -45 10 100
+	$(FONTFORGE) tools/otf2ttf.pe fonts/Seventy-Shadow.otf fonts/Seventy-Shadow.ttf
+	rm -rf fonts/Seventy-Outline.woff2
+	@fonttools ttLib.woff2 compress fonts/Seventy-Shadow.ttf
 
 build.stamp: .venv .init.stamp config.yaml
 	. .venv/bin/activate
