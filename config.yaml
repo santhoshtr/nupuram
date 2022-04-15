@@ -1,32 +1,7 @@
 name: Seventy
+styles: ["Regular", "Outline", "Shadow", "Color"]
 version: 1.0
 source: https://gitlab.com/smc/fonts/seventy
-designs:
-  regular:
-    style: Regular
-    source: sources/design/Regular
-  outline:
-    style: Outline
-    source: sources/design/Outline
-  shadow:
-    style: Shadow
-    layers:
-      default:
-        source: regular
-        order: 2  # Foreground layer
-        color: [255, 153, 85, 1]
-      outline:
-        source: outline
-        order: 1 # background layer
-        color: [85, 34, 0, 1]
-      shadow.left:
-        source: outline
-        order: 0 # background layer
-        color: [85, 34, 0, 1]
-        offset: [30, 0]
-build: fonts
-proofs: proofs
-tests: tests
 author:
   name: Santhosh Thottingal
   email: santhosh.thottingal@gmail.com
@@ -37,6 +12,10 @@ license:
 manufacturer:
   name: SMC
   url: https://smc.org.in
+sources: sources
+build: fonts
+proofs: proofs
+tests: tests
 glyphs:
   classes:
     LC_ALL: abcdefghijklmnopqrstuvwxyz

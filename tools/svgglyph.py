@@ -53,8 +53,9 @@ class SVGGlyph:
 
     def parse(self):
         svgObj = etree.parse(self.svg_file_path).getroot()
-        self.svg_width = float(svgObj.attrib['width'].replace("px", " "))
-        self.svg_height = float(svgObj.attrib['height'].replace("px", " "))
+        self.svg_width = float(svgObj.get('width', '1000').replace("px", " "))
+        self.svg_height = float(svgObj.get(
+            'height', '1000').replace("px", " "))
         self.name = os.path.splitext(os.path.basename(self.svg_file_path))[0]
         self.unicode = None
         if len(self.name) == 1:
@@ -72,7 +73,7 @@ class SVGGlyph:
             ".//sodipodi:guide/[@inkscape:label='width']", prefix_map)
         width = self.svg_width
         if widthGuide != None:
-            width = int(float(widthGuide.attrib['position'].split(',')[0]))
+            width = int(float(widthGuide.get('position').split(',')[0]))
 
         # + int(svg_config['left']) + int(svg_config['right'])
         self.glyph_width = width
@@ -86,7 +87,7 @@ class SVGGlyph:
             ".//sodipodi:guide/[@inkscape:label='base']", prefix_map)
         base = 0
         if baseGuide != None:
-            base = int(float(baseGuide.attrib['position'].split(',')[1])) * -1
+            base = int(float(baseGuide.get('position').split(',')[1])) * -1
         transform[5] += self.svg_height + base  # Y offset
         anchorEls = svgObj.findall(
             '{http://www.w3.org/2000/svg}text', prefix_map)
@@ -94,8 +95,8 @@ class SVGGlyph:
         try:
             for anchorEl in anchorEls:
                 anchors.append({
-                    "x": float(anchorEl.attrib["x"]),
-                    "y": self.svg_height + base - float(anchorEl.attrib["y"]),
+                    "x": float(anchorEl.get("x")),
+                    "y": self.svg_height + base - float(anchorEl.get("y")),
                     "name": anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
                 })
         except:
@@ -115,7 +116,7 @@ class SVGGlyph:
 
     @staticmethod
     def name_from_uc(char):
-        return unicodedata.name(char).replace('MALAYALAM', '').replace('LETTER', '').replace('VOWEL', '').lower().strip().replace(' ', '_', -1)
+        return unicodedata.name(char).replace('MALAYALAM SIGN', '').replace('MALAYALAM', '').replace('LETTER', '').replace('VOWEL', '').lower().strip().replace(' ', '_', -1)
 
     @staticmethod
     def get_glyph_name(name: str, prefix="ml_") -> str:

@@ -6,10 +6,17 @@
 PY=python3
 FONTFORGE=/usr/bin/fontforge
 FAMILY=$(shell $(PY) tools/read_config.py name)
+STYLES=$(shell $(PY) tools/read_config.py styles)
 VERSION=$(shell $(PY) tools/read_config.py version)
+SOURCEDIR=$(shell $(PY) tools/read_config.py sources)
 FONTSDIR=$(shell $(PY) tools/read_config.py build)
 PROOFDIR=$(shell $(PY) tools/read_config.py proofs)
 TESTSDIR=$(shell $(PY) tools/read_config.py tests)
+
+UFO=$(STYLES:%=$(SOURCEDIR)/$(FAMILY)-%.ufo)
+OTF=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.otf)
+TTF=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.ttf)
+WOFF2=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.woff2)
 
 default: build
 
@@ -21,58 +28,82 @@ help:
 	@echo "  make proof:  Creates HTML proof documents in the proof/ directory"
 	@echo
 
-build: build.stamp
+build: otf ttf webfonts
 
-test: .venv build.stamp proof
+test: proof
 	# fontbakery check-fontval $(FONTSDIR)/*.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
 	fontbakery check-ufo-sources $(FONTSDIR)/*.ufo
 	fontbakery check-opentype $(FONTSDIR)/*.otf
 	# fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(FONTSDIR)/*.ttf
 
-outline:
+$(SOURCEDIR)/$(FAMILY)-Regular.ufo:
+	@echo "  BUILD    $(@F)"
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/Regular --output $(SOURCEDIR)/$(FAMILY)-Regular.ufo
+
+$(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
+	@echo "  BUILD    $(@F)"
 	@mkdir -p ${FONTSDIR}
-	# $(PY) tools/outline.py
-	$(FONTFORGE) tools/gen_outline_glyphs.pe fonts/Seventy-Regular.otf fonts/Seventy-Outline.otf 10
-	$(FONTFORGE) tools/otf2ttf.pe fonts/Seventy-Outline.otf fonts/Seventy-Outline.ttf
-	rm -rf fonts/Seventy-Outline.woff2
-	@fonttools ttLib.woff2 compress fonts/Seventy-Outline.ttf
+	$(FONTFORGE) tools/ff_gen_outline_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Outline.otf 10
+	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
+	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Outline.otf $@
+	rm ${FONTSDIR}/$(FAMILY)-Outline.otf
 
-shadow:
-	$(FONTFORGE) tools/gen_shadow_glyphs.pe fonts/Seventy-Regular.otf fonts/Seventy-Shadow.otf -45 10 100
-	$(FONTFORGE) tools/otf2ttf.pe fonts/Seventy-Shadow.otf fonts/Seventy-Shadow.ttf
-	rm -rf fonts/Seventy-Outline.woff2
-	@fonttools ttLib.woff2 compress fonts/Seventy-Shadow.ttf
-
-build.stamp: .venv .init.stamp config.yaml
-	. .venv/bin/activate
-	rm -rf $(FONTSDIR)
+$(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
+	@echo "  BUILD    $(@F)"
 	@mkdir -p ${FONTSDIR}
-	$(PY) tools/builder.py
-	touch build.stamp
+	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Shadow.otf -45 10 100
+	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
+	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Shadow.otf $@
+	rm ${FONTSDIR}/$(FAMILY)-Shadow.otf
 
-.init.stamp: .venv
-	. .venv/bin/activate
-	touch .init.stamp
+$(SOURCEDIR)/$(FAMILY)-Color.ufo: $(SOURCEDIR)/$(FAMILY)-Regular.ufo $(SOURCEDIR)/$(FAMILY)-Outline.ufo $(SOURCEDIR)/$(FAMILY)-Shadow.ufo
+	@echo "  BUILD    $(@F)"
+	$(PY) tools/build_color_v0.py $@
 
-.venv: .venv/touchfile
+ufo: $(UFO)
+ttf: $(TTF) $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
+otf: $(OTF) $(FONTSDIR)/$(FAMILY)-Color-v1.otf
+webfonts: $(WOFF2) $(FONTSDIR)/$(FAMILY)-Color-v1.woff2
 
-.venv/touchfile: requirements.txt
-	$(PY) -m venv .venv
-	. .venv/bin/activate
-	pip install -Ur requirements.txt
-	touch .venv/touchfile
+$(FONTSDIR)/$(FAMILY)-Color-v0.ttf: $(FONTSDIR)/$(FAMILY)-Color.ttf
+	cp $< $@
 
-update:
-	pip install --upgrade $(dependency)
-	pip freeze > requirements.txt
+$(FONTSDIR)/$(FAMILY)-Color-v0.otf: $(FONTSDIR)/$(FAMILY)-Color.otf
+	cp $< $@
+
+$(FONTSDIR)/$(FAMILY)-Color-v0.woff2: $(FONTSDIR)/$(FAMILY)-Color.woff2
+	cp $< $@
+
+$(FONTSDIR)/$(FAMILY)-Color-v1.ttf: $(FONTSDIR)/$(FAMILY)-Color-v0.ttf
+	$(PY) tools/build_color_v1.py $< $@
+
+$(FONTSDIR)/$(FAMILY)-Color-v1.otf: $(FONTSDIR)/$(FAMILY)-Color-v0.otf
+	$(PY) tools/build_color_v1.py $< $@
+
+$(FONTSDIR)/$(FAMILY)-Color-v1.woff2: $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
+	@echo " BUILD   $(@F)"
+	@fonttools ttLib.woff2 compress  $<
+
+$(FONTSDIR)/%.otf: $(SOURCEDIR)/%.ufo
+	@echo "  BUILD    $(@F)"
+	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(FONTSDIR) -u $<
+	$(PY) tools/fix_font.py $@
+
+$(FONTSDIR)/%.ttf: $(SOURCEDIR)/%.ufo
+	@echo "  BUILD    $(@F)"
+	@fontmake --verbose=WARNING -o ttf -e 0.01 --output-dir $(FONTSDIR) -u $<
+	$(PY) tools/fix_font.py $@
+
+$(FONTSDIR)/%.woff2: $(FONTSDIR)/%.ttf
+	@echo " BUILD   $(@F)"
+	@fonttools ttLib.woff2 compress  $<
 
 clean:
-	rm -rf .venv .init.stamp
 	find -iname "*.pyc" -delete
 	@rm -rf $(FONTSDIR)
 	@rm -rf $(PROOFDIR)
 
-proof: build.stamp
+proof:
 	@mkdir -p ${PROOFDIR}
 	@hb-view  $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \

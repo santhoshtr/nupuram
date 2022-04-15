@@ -110,22 +110,6 @@
 						contentArea.classList.add('shadow');
 						document.getElementById('outlined').disabled=true
 					}
-					if (selected==='SeventyShadowEast') {
-						contentArea.classList.add('shadoweast');
-						document.getElementById('outlined').disabled=true
-					}
-					if (selected==='SeventyShadowWest') {
-						contentArea.classList.add('shadowwest');
-						document.getElementById('outlined').disabled=true
-					}
-					if (selected==='SeventyShadowSouth') {
-						contentArea.classList.add('shadowsouth');
-						document.getElementById('outlined').disabled=true
-					}
-					if (selected==='SeventyShadowNorth') {
-						contentArea.classList.add('shadownorth');
-						document.getElementById('outlined').disabled=true
-					}
 					if (selected==='Seventy') {
 						contentArea.classList.remove('color');
 						document.getElementById('font-fontColor').disabled=false
@@ -272,7 +256,9 @@
 						<label for="font-name">Font</label>
 						<select class="controls fontname" id="test-font">
 							<option value="Seventy">Seventy</option>
-							<option value="SeventyShadow">Seventy Shadow Color</option>
+							<option value="SeventyOutline">Seventy Outline</option>
+							<option value="SeventyShadow">Seventy Shadow</option>
+							<option value="SeventyColor">Seventy Color</option>
 						</select>
 					</div>
 				</section>

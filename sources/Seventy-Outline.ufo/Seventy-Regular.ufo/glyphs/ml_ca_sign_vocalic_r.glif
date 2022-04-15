@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ml_ca_sign_vocalic_r" format="2">
+  <advance width="1321"/>
+  <outline>
+    <component base="ml_ca"/>
+    <component base="ru_bottom_sign" xOffset="735"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>public.markColor</key>
+      <string>0.92, 0.93, 0.94, 1.0</string>
+    </dict>
+  </lib>
+</glyph>

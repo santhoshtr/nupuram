@@ -8,4 +8,7 @@ if __name__ == "__main__":
     val = config
     for k in key.split("."):
         val = val[k]
-    print(val)
+    if isinstance(val, list):
+        print(" ".join(val))
+    else:
+        print(val)

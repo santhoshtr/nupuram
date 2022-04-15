@@ -10,6 +10,7 @@ build-branch:
   before_script:
     - apt-get update -y
     - apt-get install -y make python3-pip python3-venv python3-yaml
+    - pip3 install -r requirements.txt
   script:
     - make build
   artifacts:
@@ -24,6 +25,7 @@ test:
   before_script:
     - apt-get update -y
     - apt-get install -y make libharfbuzz-bin python3-pip python3-venv python3-yaml
+    - pip3 install -r requirements.txt
   script:
     - make test
 
