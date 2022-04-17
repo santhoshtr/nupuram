@@ -9,14 +9,14 @@ log = logging.getLogger(__name__)
 
 config = {
     "layers": {
-        "default": {
+        "regular": {
             "source": "sources/Seventy-Regular.ufo",
-            "order": 2,  # Foreground layer
+            "order": 1,  # Foreground layer
             "color": [255, 153, 85, 1]
         },
         "outline": {
             "source": "sources/Seventy-Outline.ufo",
-            "order": 1,  # background layer
+            "order": 2,  # background layer
             "color": [85, 34, 0, 1],
         },
         "shadow": {
@@ -31,10 +31,10 @@ config = {
 layer_mapping = []
 CPAL_palette = []
 for layer_name in config["layers"]:
-    if layer_name == 'default':
+    if layer_name == 'regular':
         layer_mapping.append(
-            ['public.default', config["layers"]["default"]["order"]])
-        font = Font(config["layers"]["default"]["source"])
+            ['public.default', config["layers"]["regular"]["order"]])
+        font = Font(config["layers"]["regular"]["source"])
     else:
         if not font:
             raise ValueError(

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <glyph name="quotesingle" format="2">
-  <advance width="250"/>
+  <advance width="222"/>
   <unicode hex="0027"/>
   <outline>
     <contour>
@@ -9,15 +9,15 @@
       <point x="138.281" y="929.999"/>
       <point x="142.719" y="928.046"/>
       <point x="145.875" y="924.874" type="curve" smooth="yes"/>
-      <point x="216.594" y="854.171" type="line" smooth="yes"/>
-      <point x="219.422" y="851.343"/>
-      <point x="221.234" y="847.53"/>
-      <point x="221.719" y="843.28" type="curve" smooth="yes"/>
-      <point x="246.719" y="611.296" type="line" smooth="yes"/>
-      <point x="248.811" y="602.798"/>
-      <point x="240.252" y="595.28"/>
-      <point x="232.719" y="595.28" type="curve" smooth="yes"/>
-      <point x="156.719" y="593.28" type="line"/>
+      <point x="188.312" y="882.452" type="line" smooth="yes"/>
+      <point x="191.141" y="879.624"/>
+      <point x="192.953" y="875.812"/>
+      <point x="193.422" y="871.562" type="curve" smooth="yes"/>
+      <point x="218.438" y="639.577" type="line" smooth="yes"/>
+      <point x="220.529" y="631.078"/>
+      <point x="211.955" y="623.562"/>
+      <point x="204.438" y="623.562" type="curve" smooth="yes"/>
+      <point x="128.422" y="621.562" type="line"/>
       <point x="86" y="663.999" type="line"/>
       <point x="75.4688" y="662.943"/>
       <point x="66.8613" y="670.659"/>
@@ -56,9 +56,9 @@
         <array>
           <dict>
             <key>position</key>
-            <integer>593</integer>
+            <integer>622</integer>
             <key>width</key>
-            <integer>21</integer>
+            <integer>54</integer>
           </dict>
           <dict>
             <key>position</key>
@@ -73,7 +73,7 @@
             <key>position</key>
             <integer>6</integer>
             <key>width</key>
-            <integer>241</integer>
+            <integer>212</integer>
           </dict>
         </array>
       </dict>

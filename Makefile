@@ -51,7 +51,7 @@ $(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 $(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${FONTSDIR}
-	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Shadow.otf -45 10 100
+	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Shadow.otf -45 10 60
 	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Shadow.otf $@
 	rm ${FONTSDIR}/$(FAMILY)-Shadow.otf
@@ -66,13 +66,13 @@ otf: $(OTF) $(FONTSDIR)/$(FAMILY)-Color-v1.otf
 webfonts: $(WOFF2) $(FONTSDIR)/$(FAMILY)-Color-v1.woff2
 
 $(FONTSDIR)/$(FAMILY)-Color-v0.ttf: $(FONTSDIR)/$(FAMILY)-Color.ttf
-	cp $< $@
+	@cp $< $@
 
 $(FONTSDIR)/$(FAMILY)-Color-v0.otf: $(FONTSDIR)/$(FAMILY)-Color.otf
-	cp $< $@
+	@cp $< $@
 
 $(FONTSDIR)/$(FAMILY)-Color-v0.woff2: $(FONTSDIR)/$(FAMILY)-Color.woff2
-	cp $< $@
+	@cp $< $@
 
 $(FONTSDIR)/$(FAMILY)-Color-v1.ttf: $(FONTSDIR)/$(FAMILY)-Color-v0.ttf
 	$(PY) tools/build_color_v1.py $< $@
@@ -84,14 +84,14 @@ $(FONTSDIR)/$(FAMILY)-Color-v1.woff2: $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
 	@echo " BUILD   $(@F)"
 	@fonttools ttLib.woff2 compress  $<
 
-$(FONTSDIR)/%.otf: $(SOURCEDIR)/%.ufo
+$(FONTSDIR)/%.otf:
 	@echo "  BUILD    $(@F)"
-	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(FONTSDIR) -u $<
+	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(FONTSDIR) -u $(SOURCEDIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
-$(FONTSDIR)/%.ttf: $(SOURCEDIR)/%.ufo
+$(FONTSDIR)/%.ttf:
 	@echo "  BUILD    $(@F)"
-	@fontmake --verbose=WARNING -o ttf -e 0.01 --output-dir $(FONTSDIR) -u $<
+	@fontmake --verbose=WARNING -o ttf -e 0.01 --output-dir $(FONTSDIR) -u $(SOURCEDIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 $(FONTSDIR)/%.woff2: $(FONTSDIR)/%.ttf

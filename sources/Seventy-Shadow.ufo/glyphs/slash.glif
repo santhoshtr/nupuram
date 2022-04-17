@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <glyph name="slash" format="2">
-  <advance width="367"/>
+  <advance width="339"/>
   <unicode hex="002F"/>
   <outline>
     <contour>
@@ -8,12 +8,12 @@
       <point x="281.274" y="700"/>
       <point x="287.736" y="691.9"/>
       <point x="285.984" y="685" type="curve"/>
-      <point x="356.703" y="614.281" type="line"/>
-      <point x="195.719" y="-55.7031" type="line" smooth="yes"/>
-      <point x="192.719" y="-64.7188"/>
-      <point x="185.703" y="-70.7188"/>
-      <point x="176.703" y="-70.7188" type="curve" smooth="yes"/>
-      <point x="89.7188" y="-70.7188" type="line"/>
+      <point x="328.422" y="642.578" type="line"/>
+      <point x="167.438" y="-27.4219" type="line" smooth="yes"/>
+      <point x="164.438" y="-36.4219"/>
+      <point x="157.422" y="-42.4219"/>
+      <point x="148.422" y="-42.4219" type="curve" smooth="yes"/>
+      <point x="61.4375" y="-42.4219" type="line"/>
       <point x="19" y="0" type="line"/>
       <point x="11.5537" y="0"/>
       <point x="7" y="7.51465"/>
@@ -48,6 +48,12 @@
       <dict>
         <key>hhints</key>
         <array>
+          <dict>
+            <key>position</key>
+            <integer>-42</integer>
+            <key>width</key>
+            <integer>52</integer>
+          </dict>
           <dict>
             <key>position</key>
             <integer>690</integer>
