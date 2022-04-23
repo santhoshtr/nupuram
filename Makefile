@@ -39,6 +39,7 @@ test: proof
 $(SOURCEDIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/Regular --output $(SOURCEDIR)/$(FAMILY)-Regular.ufo
+	@ufonormalizer -m $@
 
 $(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
@@ -47,6 +48,8 @@ $(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Outline.otf $@
 	rm ${FONTSDIR}/$(FAMILY)-Outline.otf
+	$(PY) tools/fix_ufo_info.py -u  $@ -s Outline
+	@ufonormalizer -m $@
 
 $(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
@@ -55,10 +58,13 @@ $(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Shadow.otf $@
 	rm ${FONTSDIR}/$(FAMILY)-Shadow.otf
+	$(PY) tools/fix_ufo_info.py -u  $@ -s Shadow
+	@ufonormalizer -m $@
 
 $(SOURCEDIR)/$(FAMILY)-Color.ufo: $(SOURCEDIR)/$(FAMILY)-Regular.ufo $(SOURCEDIR)/$(FAMILY)-Outline.ufo $(SOURCEDIR)/$(FAMILY)-Shadow.ufo
 	@echo "  BUILD    $(@F)"
 	$(PY) tools/build_color_v0.py $@
+	@ufonormalizer -m $@
 
 ufo: $(UFO)
 ttf: $(TTF) $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
