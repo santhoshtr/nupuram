@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_ya_sign_uu" format="2">
-  <advance width="826"/>
-  <outline>
-    <component base="ml_ya"/>
-    <component base="uu_drop_sign" xOffset="572.29333" yOffset="97.41454999999996"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="826"/>
+	<outline>
+		<component base="ml_ya"/>
+		<component base="uu_drop_sign" xOffset="572.29333" yOffset="97.41455"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

@@ -1,15 +1,15 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="adieresis" format="2">
-  <advance width="502"/>
-  <unicode hex="00E4"/>
-  <outline>
-    <component base="a"/>
-    <component base="dieresis" xOffset="71.15933000000001" yOffset="-47.41867000000002"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<unicode hex="00E4"/>
+	<advance width="502"/>
+	<outline>
+		<component base="a"/>
+		<component base="dieresis" xOffset="71.15933" yOffset="-47.41867"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

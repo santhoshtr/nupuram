@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_pa_sign_u" format="2">
-  <advance width="727"/>
-  <outline>
-    <component base="ml_pa"/>
-    <component base="u_drop_sign" xOffset="473.88268999999997" yOffset="8.443910000000074"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="727"/>
+	<outline>
+		<component base="ml_pa"/>
+		<component base="u_drop_sign" xOffset="473.88269" yOffset="8.44391"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

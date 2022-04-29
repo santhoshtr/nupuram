@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_rra_sign_uu" format="2">
-  <advance width="448"/>
-  <outline>
-    <component base="ml_rra"/>
-    <component base="uu_drop_sign" xOffset="231.85363999999998" yOffset="106.64892999999995"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="448"/>
+	<outline>
+		<component base="ml_rra"/>
+		<component base="uu_drop_sign" xOffset="231.85364" yOffset="106.64893"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_nga_virama_ka_virama_ra_sign_uu" format="2">
-  <advance width="888"/>
-  <outline>
-    <component base="ml_nga_virama_ka_virama_ra"/>
-    <component base="uu_drop_sign" xOffset="624.0930800000001" yOffset="35.97571000000005"/>
-  </outline>
-  <lib>
-    <dict>
-      <key>public.markColor</key>
-      <string>0.92, 0.93, 0.94, 1.0</string>
-    </dict>
-  </lib>
+	<advance width="888"/>
+	<outline>
+		<component base="ml_nga_virama_ka_virama_ra"/>
+		<component base="uu_drop_sign" xOffset="624.09308" yOffset="35.97571"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
 </glyph>

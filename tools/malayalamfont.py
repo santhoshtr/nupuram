@@ -303,13 +303,6 @@ class MalayalamFont(Font):
         zwj.unicodes = [0x200D]
         self.insertGlyph(zwj, 'zwj')
 
-        dotaccent = Glyph()
-        dotaccent.unicodes = [0x02D9]
-        composite = dotaccent.instantiateComponent()
-        composite.baseGlyph = 'period'
-        dotaccent.appendComponent(composite)
-        self.insertGlyph(dotaccent, 'dotaccent')
-
         diacritics = "´^¸˚¯`ˇ~¨˙˜"
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
