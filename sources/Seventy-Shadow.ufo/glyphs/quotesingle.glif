@@ -27,25 +27,22 @@
 			<point x="10.5391" y="929"/>
 		</contour>
 		<contour>
-			<point x="74.6875" y="682.483" type="line" smooth="yes"/>
-			<point x="76.0576" y="677.118"/>
-			<point x="79.6602" y="673.827"/>
-			<point x="85.7344" y="673.983" type="curve" smooth="yes"/>
-			<point x="162" y="675.999" type="line" smooth="yes"/>
-			<point x="164.394" y="675.999"/>
-			<point x="165.802" y="678.051"/>
-			<point x="166.297" y="679.577" type="curve" smooth="yes"/>
-			<point x="166.188" y="680.03"/>
-			<point x="166.109" y="680.468"/>
-			<point x="166.062" y="680.921" type="curve" smooth="yes"/>
-			<point x="141.062" y="912.905" type="line" smooth="yes"/>
-			<point x="140.591" y="917.153"/>
-			<point x="137.81" y="920.054"/>
-			<point x="133" y="919.999" type="curve" smooth="yes"/>
-			<point x="19.0938" y="918.999" type="line" smooth="yes"/>
-			<point x="16.2314" y="918.999"/>
-			<point x="15.6113" y="914.781"/>
-			<point x="15.7031" y="914.421" type="curve" smooth="yes"/>
+			<point x="19.0625" y="922.999" type="line" smooth="yes"/>
+			<point x="13.7715" y="922.999"/>
+			<point x="11.0088" y="916.726"/>
+			<point x="11.8135" y="913.452" type="curve" smooth="yes"/>
+			<point x="70.8135" y="681.483" type="line" smooth="yes"/>
+			<point x="72.5977" y="674.42"/>
+			<point x="77.7627" y="669.762"/>
+			<point x="85.8447" y="669.999" type="curve" smooth="yes"/>
+			<point x="162.001" y="671.999" type="line" smooth="yes"/>
+			<point x="167.019" y="671.999"/>
+			<point x="170.482" y="677.339"/>
+			<point x="170.032" y="681.358" type="curve" smooth="yes"/>
+			<point x="145.032" y="913.343" type="line" smooth="yes"/>
+			<point x="144.348" y="919.501"/>
+			<point x="139.858" y="924.057"/>
+			<point x="133" y="923.999" type="curve" smooth="yes"/>
 		</contour>
 	</outline>
 	<lib>
@@ -58,13 +55,13 @@
 						<key>position</key>
 						<integer>622</integer>
 						<key>width</key>
-						<integer>54</integer>
+						<integer>50</integer>
 					</dict>
 					<dict>
 						<key>position</key>
-						<integer>919</integer>
+						<integer>923</integer>
 						<key>width</key>
-						<integer>10</integer>
+						<integer>6</integer>
 					</dict>
 				</array>
 				<key>vhints</key>
