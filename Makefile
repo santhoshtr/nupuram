@@ -66,7 +66,7 @@ $(SOURCEDIR)/$(FAMILY)-Color.ufo: $(SOURCEDIR)/$(FAMILY)-Regular.ufo $(SOURCEDIR
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -m $@
 
-ufo: $(UFO)
+ufo: clean $(UFO)
 ttf: $(TTF) $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
 otf: $(OTF) $(FONTSDIR)/$(FAMILY)-Color-v1.otf
 webfonts: $(WOFF2) $(FONTSDIR)/$(FAMILY)-Color-v1.woff2
