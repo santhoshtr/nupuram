@@ -379,14 +379,14 @@ class MalayalamFont(Font):
                 self.buildComposite(uu_glyph_name, None, [
                                     base_glyph_name, 'uu_drop_sign'])
 
-        for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
-            base_glyph_name = SVGGlyph.get_glyph_name(base)
-            ru_glyph_name = SVGGlyph.get_glyph_name(base+'ൃ')
-            if ru_glyph_name not in self:
-                log.debug(
-                    f"Compose {ru_glyph_name} : {base_glyph_name}+ru_bottom_sign")
-                self.buildComposite(ru_glyph_name, None, [
-                    base_glyph_name, 'ru_bottom_sign'])
+        # for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
+        #     base_glyph_name = SVGGlyph.get_glyph_name(base)
+        #     ru_glyph_name = SVGGlyph.get_glyph_name(base+'ൃ')
+        #     if ru_glyph_name not in self:
+        #         log.debug(
+        #             f"Compose {ru_glyph_name} : {base_glyph_name}+ru_bottom_sign")
+        #         self.buildComposite(ru_glyph_name, None, [
+        #             base_glyph_name, 'ru_bottom_sign'])
 
         log.info(f"Total glyph count: {len(self)}")
 
