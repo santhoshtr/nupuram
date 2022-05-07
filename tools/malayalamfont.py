@@ -177,7 +177,7 @@ class MalayalamFont(Font):
                 continue
             rules.append(
                 Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                             replacement=[[conjunct_glyph_name]])
+                            replacement=[[conjunct_glyph_name]])
             )
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
@@ -205,15 +205,13 @@ class MalayalamFont(Font):
         feature = "psts"
         name = "psts_vowel_signs"
         rules = []
-        vowel_signs = ["ു", "ൂ", "ൃ", "ൄ"]
+        vowel_signs = self.options.glyphs.classes['ML_VOWEL_SIGNS_CONJOINING']
         ligatures = sorted(
             self.get_glyphs_from_named_classes('ML_CONSONANTS') +
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS'))
-        # TODO: Check if ligature exists in design. If not skip
-        # TODO: If ligature exists, but if replacement ligature does not exist,
-        #   add conditional stacking rule
+
         for ligature in ligatures:
             for vowel_sign in vowel_signs:
                 replacement_ligature = SVGGlyph.get_glyph_name(
@@ -222,6 +220,8 @@ class MalayalamFont(Font):
                 if ligature_glyph_name not in self:
                     continue
                 if replacement_ligature not in self:
+                    # TODO: If ligature exists, but if replacement ligature does not exist,
+                    #   add conditional stacking rule
                     continue
                 sub = Substitution(
                     [[ligature_glyph_name], [
@@ -359,8 +359,12 @@ class MalayalamFont(Font):
             self.buildComposite(la_glyph_name, None, [
                                 base_glyph_name, la_sign_glyph_name])
 
-        base_for_u = self.get_glyphs_from_named_classes('ML_CONSONANTS')+self.get_glyphs_from_named_classes(
-            'ML_CONS_CONJUNCTS')+self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')+self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')
+        base_for_u = (
+            self.get_glyphs_from_named_classes('ML_CONSONANTS')+
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS')+
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')+
+            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')
+        )
         for base in base_for_u:
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             if base_glyph_name not in self:
@@ -400,7 +404,8 @@ class MalayalamFont(Font):
         return None
 
     def buildComposite(self, glyph_name: str, unicode, items: List):
-        self.newGlyph(glyph_name.strip())
+        glyph_name=glyph_name.strip()
+        self.newGlyph(glyph_name)
         composite: Glyph = self[glyph_name]
         composite.unicode = unicode
         base = items[0].strip()
@@ -422,11 +427,14 @@ class MalayalamFont(Font):
             component = composite.instantiateComponent()
             component.baseGlyph = glyphName
             if commonAnchorName is None:
+                # No common anchors. Avoid fallback. Just remove the glyph from font.
+                del self[glyph_name]
+                continue
                 # Just append to the right
-                x = baseGlyph.width
-                y = 0
-                composite.width = composite.width + currentGlyph.width
-                component.move((x, y))
+                # x = baseGlyph.width
+                # y = 0
+                # composite.width = composite.width + currentGlyph.width
+                # component.move((x, y))
             else:
                 anchor = _anchor = None
                 for a in baseAnchors:

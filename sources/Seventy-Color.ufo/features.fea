@@ -2,7 +2,7 @@ languagesystem DFLT dflt;
 languagesystem latn dflt;
 languagesystem mlm2 dflt;
 table GDEF {
-    GlyphClassDef [a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla], [Agrave Aacute Atilde Adieresis Aring Ccedilla Egrave Eacute Edieresis Igrave Iacute Idieresis Ntilde Ograve Oacute Otilde Odieresis Ugrave Uacute Udieresis Yacute agrave aacute atilde adieresis aring ccedilla egrave eacute edieresis igrave iacute idieresis ntilde ograve oacute otilde odieresis ugrave uacute udieresis yacute ydieresis Amacron amacron Cacute cacute Cdotaccent cdotaccent Ccaron ccaron Dcaron Emacron emacron Edotaccent edotaccent Ecaron ecaron Gdotaccent gdotaccent Itilde itilde Imacron imacron Nacute nacute Ncaron ncaron Omacron omacron Racute racute Rcaron rcaron Sacute sacute Scedilla scedilla Scaron scaron Utilde utilde Umacron umacron Uring uring zacute Zdotaccent zdotaccent Zcaron zcaron ml_ka_virama_ka ml_ka_virama_ka_virama_ra ml_ka_virama_ta ml_ka_virama_ta_virama_ra ml_ka_virama_ra ml_ka_virama_la ml_ka_virama_ssa ml_ka_sign_vocalic_l ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_na ml_ga_virama_ma ml_ga_virama_ra ml_ga_virama_la ml_gha_virama_ra ml_nga_virama_ka ml_nga_virama_ka_virama_ra ml_nga_virama_nga ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_ja_virama_nya ml_ja_virama_ra ml_nya_virama_ca ml_nya_virama_ja ml_nya_virama_nya ml_tta_virama_tta ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta ml_nna_virama_tta_virama_ra ml_nna_virama_dda ml_nna_virama_nna ml_ta_virama_ta ml_ta_virama_ta_virama_ra ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_ta_virama_ma ml_ta_virama_ra ml_ta_virama_sa ml_da_virama_da ml_da_virama_ra ml_na_virama_ta ml_na_virama_ta_virama_ra ml_na_virama_da ml_na_virama_da_virama_ra ml_na_virama_dha ml_na_virama_dha_virama_ra ml_na_virama_na ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_pa_virama_ra ml_pa_virama_la ml_pha_virama_ra ml_pha_virama_la ml_ba_virama_ra ml_ba_virama_la ml_ma_virama_pa ml_ma_virama_pa_virama_ra ml_ma_virama_ma ml_ma_virama_ra ml_ya_virama_ya ml_rra_virama_rra ml_rra_virama_rra_virama_ra ml_la_virama_la ml_lla_virama_lla ml_va_virama_ra ml_va_virama_va ml_sha_virama_ca ml_sha_virama_ra ml_sha_virama_sha ml_ssa_virama_ra ml_sa_virama_ra ml_sa_virama_sa ml_ha_virama_na ml_ha_virama_ma ml_ha_virama_ra ml_ha_virama_la], [ml_virama ml_dot_reph], [];
+    GlyphClassDef [a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla], [Agrave Aacute Atilde Adieresis Aring Ccedilla Egrave Eacute Edieresis Igrave Iacute Idieresis Ntilde Ograve Oacute Otilde Odieresis Ugrave Uacute Udieresis Yacute agrave aacute atilde adieresis aring ccedilla egrave eacute edieresis igrave iacute idieresis ntilde ograve oacute otilde odieresis ugrave uacute udieresis yacute ydieresis Amacron amacron Cacute cacute Cdotaccent cdotaccent Ccaron ccaron Dcaron Emacron emacron Edotaccent edotaccent Ecaron ecaron Gdotaccent gdotaccent Itilde itilde Imacron imacron Nacute nacute Ncaron ncaron Omacron omacron Racute racute Rcaron rcaron Sacute sacute Scedilla scedilla Scaron scaron Utilde utilde Umacron umacron Uring uring zacute Zdotaccent zdotaccent Zcaron zcaron ml_ka_virama_ka ml_ka_virama_ka_virama_ra ml_ka_virama_ta ml_ka_virama_ta_virama_ra ml_ka_virama_ra ml_ka_virama_la ml_ka_virama_ssa ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_da_virama_dha ml_ga_virama_na ml_ga_virama_ma ml_ga_virama_ra ml_ga_virama_la ml_gha_virama_ra ml_nga_virama_ka ml_nga_virama_ka_virama_ra ml_nga_virama_nga ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_ja_virama_nya ml_ja_virama_ra ml_nya_virama_ca ml_nya_virama_ja ml_nya_virama_nya ml_tta_virama_tta ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta ml_nna_virama_tta_virama_ra ml_nna_virama_dda ml_nna_virama_nna ml_nna_virama_ma ml_ta_virama_ta ml_ta_virama_ta_virama_ra ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_ta_virama_ma ml_ta_virama_ra ml_ta_virama_la ml_ta_virama_sa ml_ta_virama_sa_virama_ra ml_da_virama_da ml_da_virama_ra ml_na_virama_ta ml_na_virama_ta_virama_ra ml_na_virama_da ml_na_virama_da_virama_ra ml_na_virama_dha ml_na_virama_dha_virama_ra ml_na_virama_na ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_pa_virama_ra ml_pa_virama_la ml_pha_virama_ra ml_pha_virama_la ml_ba_virama_ra ml_ba_virama_la ml_bha_virama_ra ml_ma_virama_pa ml_ma_virama_pa_virama_ra ml_ma_virama_ma ml_ma_virama_ra ml_ma_virama_la ml_ya_virama_ya ml_rra_virama_rra ml_rra_virama_rra_virama_ra ml_la_virama_la ml_lla_virama_lla ml_va_virama_ra ml_va_virama_la ml_va_virama_va ml_sha_virama_ca ml_sha_virama_ra ml_sha_virama_la ml_sha_virama_sha ml_ssa_virama_ra ml_sa_virama_tha ml_sa_virama_ra ml_sa_virama_la ml_sa_virama_sa ml_ha_virama_na ml_ha_virama_ma ml_ha_virama_ra ml_ha_virama_la], [ml_virama ml_dot_reph], [];
 } GDEF;
 
 @LC_ALL = [a b c d e f g h i j k l m n o p q r s t u v w x y z];
@@ -26,10 +26,12 @@ table GDEF {
 @QUOTES = [quotesingle];
 @PARANTHESIS = [parenleft];
 @ML_CONSONANTS = [ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla];
+@ML_VOWEL_SIGNS = [ml_sign_aa ml_sign_i ml_sign_ii ml_sign_u ml_sign_uu ml_sign_vocalic_r ml_sign_vocalic_rr ml_sign_vocalic_l ml_sign_vocalic_ll ml_sign_e ml_sign_ee ml_au_length_mark];
+@ML_VOWEL_SIGNS_CONJOINING = [ml_sign_u ml_sign_uu ml_sign_vocalic_r ml_sign_vocalic_rr ml_sign_vocalic_l ml_sign_vocalic_ll];
 @ML_I_SIGNS = [ml_sign_i ml_sign_ii];
-@ML_CONS_CONJUNCTS = [ml_ka_sign_vocalic_l ml_ka_virama_ka ml_ka_virama_ssa ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_na ml_ga_virama_ma ml_nga_virama_nga ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_nya_virama_ca ml_nya_virama_ja ml_ja_virama_nya ml_nya_virama_nya ml_tta_virama_tta ml_nna_virama_nna ml_nna_virama_dda ml_ka_virama_ta ml_nga_virama_ka ml_nna_virama_tta ml_ta_virama_ta ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_da_virama_da ml_na_virama_na ml_ta_virama_sa ml_ta_virama_ma ml_na_virama_ta ml_na_virama_da ml_na_virama_dha ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_ma_virama_ma ml_ma_virama_pa ml_ya_virama_ya ml_la_virama_la ml_va_virama_va ml_sha_virama_ca ml_sa_virama_sa ml_sha_virama_sha ml_ha_virama_na ml_ha_virama_ma ml_lla_virama_lla ml_rra_virama_rra];
-@ML_REPH_CONJUNCTS = [ml_ka_virama_ra ml_ka_virama_ka_virama_ra ml_ka_virama_ta_virama_ra ml_ga_virama_ra ml_gha_virama_ra ml_nga_virama_ka_virama_ra ml_ja_virama_ra ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta_virama_ra ml_ta_virama_ra ml_ta_virama_ta_virama_ra ml_da_virama_ra ml_na_virama_ta_virama_ra ml_na_virama_da_virama_ra ml_na_virama_dha_virama_ra ml_pa_virama_ra ml_pha_virama_ra ml_ba_virama_ra ml_ma_virama_ra ml_ma_virama_pa_virama_ra ml_va_virama_ra ml_sha_virama_ra ml_sa_virama_ra ml_ha_virama_ra ml_ssa_virama_ra ml_rra_virama_rra_virama_ra];
-@ML_LA_CONJUNCTS = [ml_ka_virama_la ml_ga_virama_la ml_pa_virama_la ml_pha_virama_la ml_ba_virama_la ml_la_virama_la ml_ha_virama_la];
+@ML_CONS_CONJUNCTS = [ml_ka_virama_ka ml_ka_virama_ssa ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_da_virama_dha ml_ga_virama_na ml_ga_virama_ma ml_nga_virama_nga ml_ka_virama_ta ml_nga_virama_ka ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_nya_virama_ca ml_nya_virama_ja ml_ja_virama_nya ml_nya_virama_nya ml_tta_virama_tta ml_nna_virama_nna ml_nna_virama_dda ml_nna_virama_tta ml_nna_virama_ma ml_ta_virama_ta ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_da_virama_da ml_na_virama_na ml_ta_virama_sa ml_ta_virama_ma ml_na_virama_ta ml_na_virama_da ml_na_virama_dha ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_ma_virama_ma ml_ma_virama_pa ml_ya_virama_ya ml_la_virama_la ml_va_virama_va ml_sha_virama_ca ml_sa_virama_sa ml_sa_virama_tha ml_sha_virama_sha ml_ha_virama_na ml_ha_virama_ma ml_lla_virama_lla ml_rra_virama_rra];
+@ML_REPH_CONJUNCTS = [ml_ka_virama_ra ml_ka_virama_ka_virama_ra ml_ka_virama_ta_virama_ra ml_ga_virama_ra ml_gha_virama_ra ml_nga_virama_ka_virama_ra ml_ja_virama_ra ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta_virama_ra ml_ta_virama_ra ml_ta_virama_ta_virama_ra ml_ta_virama_sa_virama_ra ml_da_virama_ra ml_na_virama_ta_virama_ra ml_na_virama_da_virama_ra ml_na_virama_dha_virama_ra ml_pa_virama_ra ml_pha_virama_ra ml_ba_virama_ra ml_bha_virama_ra ml_ma_virama_ra ml_ma_virama_pa_virama_ra ml_va_virama_ra ml_sha_virama_ra ml_sa_virama_ra ml_ha_virama_ra ml_ssa_virama_ra ml_rra_virama_rra_virama_ra];
+@ML_LA_CONJUNCTS = [ml_ka_virama_la ml_ga_virama_la ml_ta_virama_la ml_pa_virama_la ml_pha_virama_la ml_ba_virama_la ml_ma_virama_la ml_va_virama_la ml_sa_virama_la ml_sha_virama_la ml_ha_virama_la];
 
 lookup latin_ligatures {
     lookupflag 0;
@@ -58,14 +60,16 @@ lookup zwj_chillus {
 lookup akhn_conjuncts {
     lookupflag 0;
     ;
-    sub ml_ka ml_sign_vocalic_l by ml_ka_sign_vocalic_l;
     sub ml_ka ml_virama ml_ka by ml_ka_virama_ka;
     sub ml_ka ml_virama ml_ssa by ml_ka_virama_ssa;
     sub ml_ga ml_virama ml_ga by ml_ga_virama_ga;
     sub ml_ga ml_virama ml_da by ml_ga_virama_da;
+    sub ml_ga ml_virama ml_da ml_virama ml_dha by ml_ga_virama_da_virama_dha;
     sub ml_ga ml_virama ml_na by ml_ga_virama_na;
     sub ml_ga ml_virama ml_ma by ml_ga_virama_ma;
     sub ml_nga ml_virama ml_nga by ml_nga_virama_nga;
+    sub ml_ka ml_virama ml_ta by ml_ka_virama_ta;
+    sub ml_nga ml_virama ml_ka by ml_nga_virama_ka;
     sub ml_ca ml_virama ml_ca by ml_ca_virama_ca;
     sub ml_ca ml_virama ml_cha by ml_ca_virama_cha;
     sub ml_ja ml_virama ml_ja by ml_ja_virama_ja;
@@ -76,9 +80,8 @@ lookup akhn_conjuncts {
     sub ml_tta ml_virama ml_tta by ml_tta_virama_tta;
     sub ml_nna ml_virama ml_nna by ml_nna_virama_nna;
     sub ml_nna ml_virama ml_dda by ml_nna_virama_dda;
-    sub ml_ka ml_virama ml_ta by ml_ka_virama_ta;
-    sub ml_nga ml_virama ml_ka by ml_nga_virama_ka;
     sub ml_nna ml_virama ml_tta by ml_nna_virama_tta;
+    sub ml_nna ml_virama ml_ma by ml_nna_virama_ma;
     sub ml_ta ml_virama ml_ta by ml_ta_virama_ta;
     sub ml_ta ml_virama ml_tha by ml_ta_virama_tha;
     sub ml_ta ml_virama ml_na by ml_ta_virama_na;
@@ -101,6 +104,7 @@ lookup akhn_conjuncts {
     sub ml_va ml_virama ml_va by ml_va_virama_va;
     sub ml_sha ml_virama ml_ca by ml_sha_virama_ca;
     sub ml_sa ml_virama ml_sa by ml_sa_virama_sa;
+    sub ml_sa ml_virama ml_tha by ml_sa_virama_tha;
     sub ml_sha ml_virama ml_sha by ml_sha_virama_sha;
     sub ml_ha ml_virama ml_na by ml_ha_virama_na;
     sub ml_ha ml_virama ml_ma by ml_ha_virama_ma;
@@ -113,10 +117,14 @@ lookup cons_la {
     ;
     sub ml_ka ml_virama ml_la by ml_ka_virama_la;
     sub ml_ga ml_virama ml_la by ml_ga_virama_la;
+    sub ml_ta ml_virama ml_la by ml_ta_virama_la;
     sub ml_pa ml_virama ml_la by ml_pa_virama_la;
     sub ml_pha ml_virama ml_la by ml_pha_virama_la;
     sub ml_ba ml_virama ml_la by ml_ba_virama_la;
-    sub ml_la ml_virama ml_la by ml_la_virama_la;
+    sub ml_ma ml_virama ml_la by ml_ma_virama_la;
+    sub ml_va ml_virama ml_la by ml_va_virama_la;
+    sub ml_sa ml_virama ml_la by ml_sa_virama_la;
+    sub ml_sha ml_virama ml_la by ml_sha_virama_la;
     sub ml_ha ml_virama ml_la by ml_ha_virama_la;
 } cons_la;
 
@@ -164,6 +172,7 @@ lookup pres_reph {
     sub ml_virama_ra ml_nna_virama_tta by ml_nna_virama_tta_virama_ra;
     sub ml_virama_ra ml_ta by ml_ta_virama_ra;
     sub ml_virama_ra ml_ta_virama_ta by ml_ta_virama_ta_virama_ra;
+    sub ml_virama_ra ml_ta_virama_sa by ml_ta_virama_sa_virama_ra;
     sub ml_virama_ra ml_da by ml_da_virama_ra;
     sub ml_virama_ra ml_na_virama_ta by ml_na_virama_ta_virama_ra;
     sub ml_virama_ra ml_na_virama_da by ml_na_virama_da_virama_ra;
@@ -171,6 +180,7 @@ lookup pres_reph {
     sub ml_virama_ra ml_pa by ml_pa_virama_ra;
     sub ml_virama_ra ml_pha by ml_pha_virama_ra;
     sub ml_virama_ra ml_ba by ml_ba_virama_ra;
+    sub ml_virama_ra ml_bha by ml_bha_virama_ra;
     sub ml_virama_ra ml_ma by ml_ma_virama_ra;
     sub ml_virama_ra ml_ma_virama_pa by ml_ma_virama_pa_virama_ra;
     sub ml_virama_ra ml_va by ml_va_virama_ra;
@@ -187,6 +197,7 @@ lookup psts_vowel_signs {
     sub ml_ka ml_sign_u by ml_ka_sign_u;
     sub ml_ka ml_sign_uu by ml_ka_sign_uu;
     sub ml_ka ml_sign_vocalic_r by ml_ka_sign_vocalic_r;
+    sub ml_ka ml_sign_vocalic_l by ml_ka_sign_vocalic_l;
     sub ml_ka_virama_ka ml_sign_u by ml_ka_virama_ka_sign_u;
     sub ml_ka_virama_ka ml_sign_uu by ml_ka_virama_ka_sign_uu;
     sub ml_ka_virama_ka ml_sign_vocalic_r by ml_ka_virama_ka_sign_vocalic_r;
@@ -195,16 +206,10 @@ lookup psts_vowel_signs {
     sub ml_ka_virama_ta ml_sign_u by ml_ka_virama_ta_sign_u;
     sub ml_ka_virama_ta ml_sign_uu by ml_ka_virama_ta_sign_uu;
     sub ml_ka_virama_ta ml_sign_vocalic_r by ml_ka_virama_ta_sign_vocalic_r;
-    sub ml_ka_virama_ta_virama_ra ml_sign_u by ml_ka_virama_ta_virama_ra_sign_u;
-    sub ml_ka_virama_ta_virama_ra ml_sign_uu by ml_ka_virama_ta_virama_ra_sign_uu;
     sub ml_ka_virama_ra ml_sign_u by ml_ka_virama_ra_sign_u;
     sub ml_ka_virama_ra ml_sign_uu by ml_ka_virama_ra_sign_uu;
-    sub ml_ka_virama_la ml_sign_u by ml_ka_virama_la_sign_u;
-    sub ml_ka_virama_la ml_sign_uu by ml_ka_virama_la_sign_uu;
     sub ml_ka_virama_ssa ml_sign_u by ml_ka_virama_ssa_sign_u;
     sub ml_ka_virama_ssa ml_sign_uu by ml_ka_virama_ssa_sign_uu;
-    sub ml_ka_sign_vocalic_l ml_sign_u by ml_ka_sign_vocalic_l_sign_u;
-    sub ml_ka_sign_vocalic_l ml_sign_uu by ml_ka_sign_vocalic_l_sign_uu;
     sub ml_kha ml_sign_u by ml_kha_sign_u;
     sub ml_kha ml_sign_uu by ml_kha_sign_uu;
     sub ml_kha ml_sign_vocalic_r by ml_kha_sign_vocalic_r;
@@ -216,14 +221,14 @@ lookup psts_vowel_signs {
     sub ml_ga_virama_da ml_sign_u by ml_ga_virama_da_sign_u;
     sub ml_ga_virama_da ml_sign_uu by ml_ga_virama_da_sign_uu;
     sub ml_ga_virama_da ml_sign_vocalic_r by ml_ga_virama_da_sign_vocalic_r;
+    sub ml_ga_virama_da_virama_dha ml_sign_u by ml_ga_virama_da_virama_dha_sign_u;
+    sub ml_ga_virama_da_virama_dha ml_sign_uu by ml_ga_virama_da_virama_dha_sign_uu;
     sub ml_ga_virama_na ml_sign_u by ml_ga_virama_na_sign_u;
     sub ml_ga_virama_na ml_sign_uu by ml_ga_virama_na_sign_uu;
     sub ml_ga_virama_ma ml_sign_u by ml_ga_virama_ma_sign_u;
     sub ml_ga_virama_ma ml_sign_uu by ml_ga_virama_ma_sign_uu;
     sub ml_ga_virama_ra ml_sign_u by ml_ga_virama_ra_sign_u;
     sub ml_ga_virama_ra ml_sign_uu by ml_ga_virama_ra_sign_uu;
-    sub ml_ga_virama_la ml_sign_u by ml_ga_virama_la_sign_u;
-    sub ml_ga_virama_la ml_sign_uu by ml_ga_virama_la_sign_uu;
     sub ml_gha ml_sign_u by ml_gha_sign_u;
     sub ml_gha ml_sign_uu by ml_gha_sign_uu;
     sub ml_gha_virama_ra ml_sign_u by ml_gha_virama_ra_sign_u;
@@ -241,8 +246,6 @@ lookup psts_vowel_signs {
     sub ml_ca ml_sign_uu by ml_ca_sign_uu;
     sub ml_ca_virama_ca ml_sign_u by ml_ca_virama_ca_sign_u;
     sub ml_ca_virama_ca ml_sign_uu by ml_ca_virama_ca_sign_uu;
-    sub ml_ca_virama_cha ml_sign_u by ml_ca_virama_cha_sign_u;
-    sub ml_ca_virama_cha ml_sign_uu by ml_ca_virama_cha_sign_uu;
     sub ml_cha ml_sign_u by ml_cha_sign_u;
     sub ml_cha ml_sign_uu by ml_cha_sign_uu;
     sub ml_cha ml_sign_vocalic_r by ml_cha_sign_vocalic_r;
@@ -252,8 +255,6 @@ lookup psts_vowel_signs {
     sub ml_ja_virama_ja ml_sign_u by ml_ja_virama_ja_sign_u;
     sub ml_ja_virama_ja ml_sign_uu by ml_ja_virama_ja_sign_uu;
     sub ml_ja_virama_ja ml_sign_vocalic_r by ml_ja_virama_ja_sign_vocalic_r;
-    sub ml_ja_virama_nya ml_sign_u by ml_ja_virama_nya_sign_u;
-    sub ml_ja_virama_nya ml_sign_uu by ml_ja_virama_nya_sign_uu;
     sub ml_ja_virama_ra ml_sign_u by ml_ja_virama_ra_sign_u;
     sub ml_ja_virama_ra ml_sign_uu by ml_ja_virama_ra_sign_uu;
     sub ml_jha ml_sign_u by ml_jha_sign_u;
@@ -284,8 +285,6 @@ lookup psts_vowel_signs {
     sub ml_ddha ml_sign_u by ml_ddha_sign_u;
     sub ml_ddha ml_sign_uu by ml_ddha_sign_uu;
     sub ml_ddha ml_sign_vocalic_r by ml_ddha_sign_vocalic_r;
-    sub ml_ddha_virama_ra ml_sign_u by ml_ddha_virama_ra_sign_u;
-    sub ml_ddha_virama_ra ml_sign_uu by ml_ddha_virama_ra_sign_uu;
     sub ml_nna ml_sign_u by ml_nna_sign_u;
     sub ml_nna ml_sign_uu by ml_nna_sign_uu;
     sub ml_nna_virama_tta ml_sign_u by ml_nna_virama_tta_sign_u;
@@ -297,6 +296,8 @@ lookup psts_vowel_signs {
     sub ml_nna_virama_dda ml_sign_vocalic_r by ml_nna_virama_dda_sign_vocalic_r;
     sub ml_nna_virama_nna ml_sign_u by ml_nna_virama_nna_sign_u;
     sub ml_nna_virama_nna ml_sign_uu by ml_nna_virama_nna_sign_uu;
+    sub ml_nna_virama_ma ml_sign_u by ml_nna_virama_ma_sign_u;
+    sub ml_nna_virama_ma ml_sign_uu by ml_nna_virama_ma_sign_uu;
     sub ml_ta ml_sign_u by ml_ta_sign_u;
     sub ml_ta ml_sign_uu by ml_ta_sign_uu;
     sub ml_ta ml_sign_vocalic_r by ml_ta_sign_vocalic_r;
@@ -307,10 +308,7 @@ lookup psts_vowel_signs {
     sub ml_ta_virama_ta_virama_ra ml_sign_uu by ml_ta_virama_ta_virama_ra_sign_uu;
     sub ml_ta_virama_tha ml_sign_u by ml_ta_virama_tha_sign_u;
     sub ml_ta_virama_tha ml_sign_uu by ml_ta_virama_tha_sign_uu;
-    sub ml_ta_virama_na ml_sign_u by ml_ta_virama_na_sign_u;
-    sub ml_ta_virama_na ml_sign_uu by ml_ta_virama_na_sign_uu;
     sub ml_ta_virama_bha ml_sign_u by ml_ta_virama_bha_sign_u;
-    sub ml_ta_virama_bha ml_sign_uu by ml_ta_virama_bha_sign_uu;
     sub ml_ta_virama_ma ml_sign_u by ml_ta_virama_ma_sign_u;
     sub ml_ta_virama_ma ml_sign_uu by ml_ta_virama_ma_sign_uu;
     sub ml_ta_virama_ra ml_sign_u by ml_ta_virama_ra_sign_u;
@@ -359,28 +357,22 @@ lookup psts_vowel_signs {
     sub ml_pa ml_sign_vocalic_r by ml_pa_sign_vocalic_r;
     sub ml_pa_virama_pa ml_sign_u by ml_pa_virama_pa_sign_u;
     sub ml_pa_virama_pa ml_sign_uu by ml_pa_virama_pa_sign_uu;
-    sub ml_pa_virama_pha ml_sign_u by ml_pa_virama_pha_sign_u;
-    sub ml_pa_virama_pha ml_sign_uu by ml_pa_virama_pha_sign_uu;
     sub ml_pa_virama_ra ml_sign_u by ml_pa_virama_ra_sign_u;
     sub ml_pa_virama_ra ml_sign_uu by ml_pa_virama_ra_sign_uu;
-    sub ml_pa_virama_la ml_sign_u by ml_pa_virama_la_sign_u;
-    sub ml_pa_virama_la ml_sign_uu by ml_pa_virama_la_sign_uu;
     sub ml_pha ml_sign_u by ml_pha_sign_u;
     sub ml_pha ml_sign_uu by ml_pha_sign_uu;
     sub ml_pha_virama_ra ml_sign_u by ml_pha_virama_ra_sign_u;
     sub ml_pha_virama_ra ml_sign_uu by ml_pha_virama_ra_sign_uu;
-    sub ml_pha_virama_la ml_sign_u by ml_pha_virama_la_sign_u;
-    sub ml_pha_virama_la ml_sign_uu by ml_pha_virama_la_sign_uu;
     sub ml_ba ml_sign_u by ml_ba_sign_u;
     sub ml_ba ml_sign_uu by ml_ba_sign_uu;
     sub ml_ba ml_sign_vocalic_r by ml_ba_sign_vocalic_r;
     sub ml_ba_virama_ra ml_sign_u by ml_ba_virama_ra_sign_u;
     sub ml_ba_virama_ra ml_sign_uu by ml_ba_virama_ra_sign_uu;
-    sub ml_ba_virama_la ml_sign_u by ml_ba_virama_la_sign_u;
-    sub ml_ba_virama_la ml_sign_uu by ml_ba_virama_la_sign_uu;
     sub ml_bha ml_sign_u by ml_bha_sign_u;
     sub ml_bha ml_sign_uu by ml_bha_sign_uu;
     sub ml_bha ml_sign_vocalic_r by ml_bha_sign_vocalic_r;
+    sub ml_bha_virama_ra ml_sign_u by ml_bha_virama_ra_sign_u;
+    sub ml_bha_virama_ra ml_sign_uu by ml_bha_virama_ra_sign_uu;
     sub ml_ma ml_sign_u by ml_ma_sign_u;
     sub ml_ma ml_sign_uu by ml_ma_sign_uu;
     sub ml_ma ml_sign_vocalic_r by ml_ma_sign_vocalic_r;
@@ -401,14 +393,8 @@ lookup psts_vowel_signs {
     sub ml_ra ml_sign_vocalic_r by ml_ra_sign_vocalic_r;
     sub ml_rra ml_sign_u by ml_rra_sign_u;
     sub ml_rra ml_sign_uu by ml_rra_sign_uu;
-    sub ml_rra_virama_rra ml_sign_u by ml_rra_virama_rra_sign_u;
-    sub ml_rra_virama_rra ml_sign_uu by ml_rra_virama_rra_sign_uu;
-    sub ml_rra_virama_rra_virama_ra ml_sign_u by ml_rra_virama_rra_virama_ra_sign_u;
-    sub ml_rra_virama_rra_virama_ra ml_sign_uu by ml_rra_virama_rra_virama_ra_sign_uu;
     sub ml_la ml_sign_u by ml_la_sign_u;
     sub ml_la ml_sign_uu by ml_la_sign_uu;
-    sub ml_la_virama_la ml_sign_u by ml_la_virama_la_sign_u;
-    sub ml_la_virama_la ml_sign_uu by ml_la_virama_la_sign_uu;
     sub ml_la_virama_la ml_sign_u by ml_la_virama_la_sign_u;
     sub ml_la_virama_la ml_sign_uu by ml_la_virama_la_sign_uu;
     sub ml_lla ml_sign_u by ml_lla_sign_u;
@@ -440,10 +426,10 @@ lookup psts_vowel_signs {
     sub ml_sa ml_sign_u by ml_sa_sign_u;
     sub ml_sa ml_sign_uu by ml_sa_sign_uu;
     sub ml_sa ml_sign_vocalic_r by ml_sa_sign_vocalic_r;
+    sub ml_sa_virama_tha ml_sign_u by ml_sa_virama_tha_sign_u;
+    sub ml_sa_virama_tha ml_sign_uu by ml_sa_virama_tha_sign_uu;
     sub ml_sa_virama_ra ml_sign_u by ml_sa_virama_ra_sign_u;
     sub ml_sa_virama_ra ml_sign_uu by ml_sa_virama_ra_sign_uu;
-    sub ml_sa_virama_sa ml_sign_u by ml_sa_virama_sa_sign_u;
-    sub ml_sa_virama_sa ml_sign_uu by ml_sa_virama_sa_sign_uu;
     sub ml_ha ml_sign_u by ml_ha_sign_u;
     sub ml_ha ml_sign_uu by ml_ha_sign_uu;
     sub ml_ha ml_sign_vocalic_r by ml_ha_sign_vocalic_r;
@@ -453,8 +439,6 @@ lookup psts_vowel_signs {
     sub ml_ha_virama_ma ml_sign_uu by ml_ha_virama_ma_sign_uu;
     sub ml_ha_virama_ra ml_sign_u by ml_ha_virama_ra_sign_u;
     sub ml_ha_virama_ra ml_sign_uu by ml_ha_virama_ra_sign_uu;
-    sub ml_ha_virama_la ml_sign_u by ml_ha_virama_la_sign_u;
-    sub ml_ha_virama_la ml_sign_uu by ml_ha_virama_la_sign_uu;
 } psts_vowel_signs;
 
 lookup latin_kern {

@@ -294,12 +294,14 @@
 			<string>ml_na_virama_rra_alt</string>
 			<string>ml_nnna</string>
 			<string>ml_pa</string>
+			<string>ml_pa_sign_vocalic_r</string>
 			<string>ml_pa_virama_pa</string>
 			<string>ml_pa_virama_pha</string>
 			<string>ml_pa_virama_ra</string>
 			<string>ml_pha</string>
 			<string>ml_pha_virama_ra</string>
 			<string>ml_ba</string>
+			<string>ml_ba_sign_vocalic_r</string>
 			<string>ml_ba_virama_da</string>
 			<string>ml_ba_virama_ra</string>
 			<string>ml_bha</string>
@@ -330,6 +332,7 @@
 			<string>ml_lla_virama_lla</string>
 			<string>ml_llla</string>
 			<string>ml_va</string>
+			<string>ml_va_sign_vocalic_r</string>
 			<string>ml_va_virama_ra</string>
 			<string>ml_va_virama_va</string>
 			<string>ml_sha</string>
@@ -514,21 +517,17 @@
 			<string>Ntilde</string>
 			<string>Otilde</string>
 			<string>Utilde</string>
-			<string>ml_ii</string>
-			<string>ml_uu</string>
-			<string>ml_oo</string>
-			<string>ml_au</string>
-			<string>ml_ai</string>
-			<string>ml_sign_o</string>
-			<string>ml_sign_oo</string>
-			<string>ml_sign_ai</string>
-			<string>ml_sign_au</string>
 			<string>ml_ka_sign_vocalic_l</string>
 			<string>ml_ka_virama_la</string>
 			<string>ml_ga_virama_la</string>
+			<string>ml_ta_virama_la</string>
 			<string>ml_pa_virama_la</string>
 			<string>ml_pha_virama_la</string>
 			<string>ml_ba_virama_la</string>
+			<string>ml_ma_virama_la</string>
+			<string>ml_va_virama_la</string>
+			<string>ml_sha_virama_la</string>
+			<string>ml_sa_virama_la</string>
 			<string>ml_ha_virama_la</string>
 			<string>ml_kha_sign_u</string>
 			<string>ml_kha_sign_uu</string>
@@ -580,24 +579,20 @@
 			<string>ml_lla_sign_uu</string>
 			<string>ml_llla_sign_u</string>
 			<string>ml_llla_sign_uu</string>
-			<string>ml_ka_sign_vocalic_l_sign_u</string>
-			<string>ml_ka_sign_vocalic_l_sign_uu</string>
 			<string>ml_ka_virama_ssa_sign_u</string>
 			<string>ml_ka_virama_ssa_sign_uu</string>
 			<string>ml_ga_virama_da_sign_u</string>
 			<string>ml_ga_virama_da_sign_uu</string>
+			<string>ml_ga_virama_da_virama_dha_sign_u</string>
+			<string>ml_ga_virama_da_virama_dha_sign_uu</string>
 			<string>ml_ga_virama_ma_sign_u</string>
 			<string>ml_ga_virama_ma_sign_uu</string>
 			<string>ml_nga_virama_nga_sign_u</string>
 			<string>ml_nga_virama_nga_sign_uu</string>
 			<string>ml_ca_virama_ca_sign_u</string>
 			<string>ml_ca_virama_ca_sign_uu</string>
-			<string>ml_ca_virama_cha_sign_u</string>
-			<string>ml_ca_virama_cha_sign_uu</string>
 			<string>ml_nya_virama_ca_sign_u</string>
 			<string>ml_nya_virama_ca_sign_uu</string>
-			<string>ml_ja_virama_nya_sign_u</string>
-			<string>ml_ja_virama_nya_sign_uu</string>
 			<string>ml_nya_virama_nya_sign_u</string>
 			<string>ml_nya_virama_nya_sign_uu</string>
 			<string>ml_tta_virama_tta_sign_u</string>
@@ -606,11 +601,10 @@
 			<string>ml_nna_virama_dda_sign_uu</string>
 			<string>ml_nna_virama_tta_sign_u</string>
 			<string>ml_nna_virama_tta_sign_uu</string>
+			<string>ml_nna_virama_ma_sign_u</string>
+			<string>ml_nna_virama_ma_sign_uu</string>
 			<string>ml_ta_virama_tha_sign_u</string>
 			<string>ml_ta_virama_tha_sign_uu</string>
-			<string>ml_ta_virama_na_sign_u</string>
-			<string>ml_ta_virama_na_sign_uu</string>
-			<string>ml_ta_virama_bha_sign_uu</string>
 			<string>ml_da_virama_da_sign_u</string>
 			<string>ml_da_virama_da_sign_uu</string>
 			<string>ml_ta_virama_sa_sign_u</string>
@@ -627,8 +621,6 @@
 			<string>ml_na_virama_rra_sign_uu</string>
 			<string>ml_pa_virama_pa_sign_u</string>
 			<string>ml_pa_virama_pa_sign_uu</string>
-			<string>ml_pa_virama_pha_sign_u</string>
-			<string>ml_pa_virama_pha_sign_uu</string>
 			<string>ml_ma_virama_ma_sign_u</string>
 			<string>ml_ma_virama_ma_sign_uu</string>
 			<string>ml_ma_virama_pa_sign_u</string>
@@ -641,32 +633,16 @@
 			<string>ml_va_virama_va_sign_uu</string>
 			<string>ml_sha_virama_ca_sign_u</string>
 			<string>ml_sha_virama_ca_sign_uu</string>
-			<string>ml_sa_virama_sa_sign_u</string>
-			<string>ml_sa_virama_sa_sign_uu</string>
+			<string>ml_sa_virama_tha_sign_u</string>
+			<string>ml_sa_virama_tha_sign_uu</string>
 			<string>ml_ha_virama_ma_sign_u</string>
 			<string>ml_ha_virama_ma_sign_uu</string>
 			<string>ml_lla_virama_lla_sign_u</string>
 			<string>ml_lla_virama_lla_sign_uu</string>
-			<string>ml_rra_virama_rra_sign_u</string>
-			<string>ml_rra_virama_rra_sign_uu</string>
-			<string>ml_ka_virama_la_sign_u</string>
-			<string>ml_ka_virama_la_sign_uu</string>
-			<string>ml_ga_virama_la_sign_u</string>
-			<string>ml_ga_virama_la_sign_uu</string>
-			<string>ml_pa_virama_la_sign_u</string>
-			<string>ml_pa_virama_la_sign_uu</string>
-			<string>ml_pha_virama_la_sign_u</string>
-			<string>ml_pha_virama_la_sign_uu</string>
-			<string>ml_ba_virama_la_sign_u</string>
-			<string>ml_ba_virama_la_sign_uu</string>
-			<string>ml_ha_virama_la_sign_u</string>
-			<string>ml_ha_virama_la_sign_uu</string>
 			<string>ml_ka_virama_ra_sign_u</string>
 			<string>ml_ka_virama_ra_sign_uu</string>
 			<string>ml_ka_virama_ka_virama_ra_sign_u</string>
 			<string>ml_ka_virama_ka_virama_ra_sign_uu</string>
-			<string>ml_ka_virama_ta_virama_ra_sign_u</string>
-			<string>ml_ka_virama_ta_virama_ra_sign_uu</string>
 			<string>ml_ga_virama_ra_sign_u</string>
 			<string>ml_ga_virama_ra_sign_uu</string>
 			<string>ml_gha_virama_ra_sign_u</string>
@@ -679,8 +655,6 @@
 			<string>ml_tta_virama_ra_sign_uu</string>
 			<string>ml_dda_virama_ra_sign_u</string>
 			<string>ml_dda_virama_ra_sign_uu</string>
-			<string>ml_ddha_virama_ra_sign_u</string>
-			<string>ml_ddha_virama_ra_sign_uu</string>
 			<string>ml_nna_virama_tta_virama_ra_sign_u</string>
 			<string>ml_nna_virama_tta_virama_ra_sign_uu</string>
 			<string>ml_ta_virama_ra_sign_u</string>
@@ -701,6 +675,8 @@
 			<string>ml_pha_virama_ra_sign_uu</string>
 			<string>ml_ba_virama_ra_sign_u</string>
 			<string>ml_ba_virama_ra_sign_uu</string>
+			<string>ml_bha_virama_ra_sign_u</string>
+			<string>ml_bha_virama_ra_sign_uu</string>
 			<string>ml_ma_virama_ra_sign_u</string>
 			<string>ml_ma_virama_ra_sign_uu</string>
 			<string>ml_ma_virama_pa_virama_ra_sign_u</string>
@@ -715,25 +691,6 @@
 			<string>ml_ha_virama_ra_sign_uu</string>
 			<string>ml_ssa_virama_ra_sign_u</string>
 			<string>ml_ssa_virama_ra_sign_uu</string>
-			<string>ml_rra_virama_rra_virama_ra_sign_u</string>
-			<string>ml_rra_virama_rra_virama_ra_sign_uu</string>
-			<string>ml_gha_sign_vocalic_r</string>
-			<string>ml_nga_sign_vocalic_r</string>
-			<string>ml_ca_sign_vocalic_r</string>
-			<string>ml_nya_sign_vocalic_r</string>
-			<string>ml_ttha_sign_vocalic_r</string>
-			<string>ml_nna_sign_vocalic_r</string>
-			<string>ml_tha_sign_vocalic_r</string>
-			<string>ml_pa_sign_vocalic_r</string>
-			<string>ml_pha_sign_vocalic_r</string>
-			<string>ml_ba_sign_vocalic_r</string>
-			<string>ml_ya_sign_vocalic_r</string>
-			<string>ml_la_sign_vocalic_r</string>
-			<string>ml_va_sign_vocalic_r</string>
-			<string>ml_rra_sign_vocalic_r</string>
-			<string>ml_ssa_sign_vocalic_r</string>
-			<string>ml_lla_sign_vocalic_r</string>
-			<string>ml_llla_sign_vocalic_r</string>
 		</array>
 	</dict>
 </plist>
