@@ -177,7 +177,7 @@ class MalayalamFont(Font):
                 continue
             rules.append(
                 Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                            replacement=[[conjunct_glyph_name]])
+                             replacement=[[conjunct_glyph_name]])
             )
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
@@ -231,6 +231,49 @@ class MalayalamFont(Font):
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
+    def build_conjuncts_fixup(self):
+        feature = "akhn"
+        name = "akhn_conjuncts_fixup"
+        vowel_signs = self.options.glyphs.classes['ML_VOWEL_SIGNS_CONJOINING']
+        ligatures = sorted(
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')
+        )
+        rules = []
+        split_rules = []
+        split_cons_conj = None
+        for ligature in ligatures:
+            ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
+            if ligature_glyph_name not in self:
+                continue
+            missing_vowels = []
+            for vowel_sign in vowel_signs:
+                replacement_ligature = SVGGlyph.get_glyph_name(
+                    ligature)+SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
+                ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
+                if ligature_glyph_name not in self:
+                    continue
+                if replacement_ligature not in self:
+                    missing_vowels.append(SVGGlyph.get_glyph_name(vowel_sign))
+
+            # TODO do not break up the entire ligature. May only the last virama+cons part alone
+            sub = Substitution([[ligature_glyph_name]],
+                               replacement=[[SVGGlyph.get_glyph_name(l)] for l in ligature])
+            if not split_cons_conj:
+                split_cons_conj = Routine(
+                    rules=[sub], name='split_cons_conj', languages=LANGUAGE_MALAYALAM)
+            else:
+                split_cons_conj.addRule(sub)
+            rules.append(
+                Chaining(
+                    [[SVGGlyph.get_glyph_name(ligature)]],
+                    postcontext=[missing_vowels],
+                    lookups=[[split_cons_conj]],
+                ),
+            )
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
     def build_gdef(self):
         ligatures = sorted(
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
@@ -274,6 +317,7 @@ class MalayalamFont(Font):
         self.build_cons_conj_vowel_signs()
         self.build_latin_pos()
         self.build_gdef()
+        self.build_conjuncts_fixup()
         self.features.text = self.getFeatures()
 
     def build(self, design_dir):
@@ -360,9 +404,9 @@ class MalayalamFont(Font):
                                 base_glyph_name, la_sign_glyph_name])
 
         base_for_u = (
-            self.get_glyphs_from_named_classes('ML_CONSONANTS')+
-            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS')+
-            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')+
+            self.get_glyphs_from_named_classes('ML_CONSONANTS') +
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')
         )
         for base in base_for_u:
@@ -404,7 +448,7 @@ class MalayalamFont(Font):
         return None
 
     def buildComposite(self, glyph_name: str, unicode, items: List):
-        glyph_name=glyph_name.strip()
+        glyph_name = glyph_name.strip()
         self.newGlyph(glyph_name)
         composite: Glyph = self[glyph_name]
         composite.unicode = unicode
