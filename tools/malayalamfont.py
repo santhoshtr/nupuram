@@ -471,14 +471,16 @@ class MalayalamFont(Font):
             component = composite.instantiateComponent()
             component.baseGlyph = glyphName
             if commonAnchorName is None:
-                # No common anchors. Avoid fallback. Just remove the glyph from font.
-                del self[glyph_name]
-                continue
-                # Just append to the right
-                # x = baseGlyph.width
-                # y = 0
-                # composite.width = composite.width + currentGlyph.width
-                # component.move((x, y))
+                if len(baseAnchors) == 0:
+                   # Just append to the right
+                    x = baseGlyph.width
+                    y = 0
+                    composite.width = composite.width + currentGlyph.width
+                    component.move((x, y))
+                else:
+                    # No common anchors. Avoid fallback. Just remove the glyph from font.
+                    del self[glyph_name]
+                    continue
             else:
                 anchor = _anchor = None
                 for a in baseAnchors:
