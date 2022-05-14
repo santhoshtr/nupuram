@@ -204,27 +204,67 @@ function listen(){
             document.body.style.backgroundColor = color;
         });
     });
+    debugger;
+    new Pickr({
+        el: '#font-fontOutlineColor',
+        theme: 'nano',
+        useAsButton: true,
+        components: {
+        preview: true,
+        opacity: true,
+        hue: true,
+        default: outlineColor,
+        // Input / output Options
+        interaction: {
+            hex: true,
+            input: true,
+        }
+        }
+    }).on('change', (color, source, instance) => {
+        setCustomColors(baseColor, color, outlineColor.toHEXA())
+        document.getElementById('font-fontOutlineColor').style.backgroundColor=color.toHEXA()
+    })
 
-    document.querySelectorAll("[data-id='fontBaseColor']").forEach((element) => {
-        element.addEventListener('input', function () {
-            baseColor = element.value;
-            setCustomColors(baseColor, shadowColor, outlineColor)
-        });
-    });
 
-    document.querySelectorAll("[data-id='fontOutlineColor']").forEach((element) => {
-        element.addEventListener('input', function () {
-            outlineColor = element.value;
-            setCustomColors(baseColor, shadowColor, outlineColor)
-        });
-    });
+    new Pickr({
+        el: '#font-fontBaseColor',
+        theme: 'nano',
+        useAsButton: true,
+        components: {
+        preview: true,
+        opacity: true,
+        hue: true,
+        default: baseColor,
+        // Input / output Options
+        interaction: {
+            hex: true,
+            input: true,
+        }
+        }
+    }).on('change', (color, source, instance) => {
+        setCustomColors(color.toHEXA(), shadowColor, outlineColor)
+        document.getElementById('font-fontBaseColor').style.backgroundColor=color.toHEXA()
+    })
 
-    document.querySelectorAll("[data-id='fontShadowColor']").forEach((element) => {
-        element.addEventListener('input', function () {
-            shadowColor = element.value;
-            setCustomColors(baseColor, shadowColor, outlineColor)
-        });
-    });
+    new Pickr({
+        el: '#font-fontShadowColor',
+        theme: 'nano',
+        useAsButton: true,
+        components: {
+        preview: true,
+        opacity: true,
+        hue: true,
+        default: shadowColor,
+        // Input / output Options
+        interaction: {
+            hex: true,
+            input: true,
+        }
+        }
+    }).on('change', (color, source, instance) => {
+        setCustomColors(baseColor, color.toHEXA(), outlineColor)
+        document.getElementById('font-fontShadowColor').style.backgroundColor=color.toHEXA()
+    })
 
     document.querySelectorAll("[name=opentype]").forEach((element) => {
         let otFeatures = {
@@ -253,9 +293,9 @@ function listen(){
     });
 
     document.getElementById('palette').style.display="none"
-    document.getElementById('font-fontBaseColor').value=baseColor.substring(0,7)
-    document.getElementById('font-fontOutlineColor').value=outlineColor.substring(0,7)
-    document.getElementById('font-fontShadowColor').value=shadowColor.substring(0,7)
+    document.getElementById('font-fontBaseColor').style.backgroundColor=baseColor.substring(0,7)
+    document.getElementById('font-fontOutlineColor').style.backgroundColor=outlineColor.substring(0,7)
+    document.getElementById('font-fontShadowColor').style.backgroundColor=shadowColor.substring(0,7)
     setCustomColors()
 }
 

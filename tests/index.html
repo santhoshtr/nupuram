@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="styles.css">
 		<script src="main.js" async="true" important="high"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css"/> <!-- 'nano' theme -->
 	</head>
 
 	<body>
@@ -30,15 +32,15 @@
 				<section  id="palette"  class="rows" style="grid-template-columns: 3fr 3fr 3fr;">
 					<div class="primitive-input">
 						<label for="font-fontBaseColor">Base
-						<input type="color" class="font-color val-input" data-id="fontBaseColor" id="font-fontBaseColor"></label>
+						<input type="button" class="font-color val-input" data-id="fontBaseColor" id="font-fontBaseColor"></label>
 					</div>
 					<div class="primitive-input">
 						<label for="font-fontOutlineColor">Outline
-						<input type="color" class="font-color val-input" data-id="fontOutlineColor" id="font-fontOutlineColor"></label>
+						<input type="button" class="font-color val-input" data-id="fontOutlineColor" id="font-fontOutlineColor"></label>
 					</div>
 					<div class="primitive-input">
 						<label for="font-fontOutlineColor">Shadow
-						<input type="color" class="font-color val-input" data-id="fontShadowColor" id="font-fontShadowColor"></label>
+						<input type="button" class="font-color val-input" data-id="fontShadowColor" id="font-fontShadowColor"></label>
 					</div>
 				</section>
 				<section class="rows rows-3">
