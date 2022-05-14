@@ -124,18 +124,3 @@ proof:
 	@hb-view  $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
 		--output-file  $(PROOFDIR)/latin.pdf ;
-
-	# Color pdfs
-	@hb-view  $(FONTSDIR)/*-colrv0.ttf --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \
-		--output-file $(PROOFDIR)/ligatures-colrv0.pdf;
-	@hb-view $(FONTSDIR)/*-colrv0.ttf --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(TESTSDIR)/content.txt \
-		--output-file $(PROOFDIR)/content-colrv0.pdf;
-
-	@hb-view  $(FONTSDIR)/*-colrv0.ttf --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(TESTSDIR)/kerning.txt \
-		--output-file  $(PROOFDIR)/kerning-colrv0.pdf ;
-	@hb-view  $(FONTSDIR)/*-colrv0.ttf --font-size 24 --margin 100 --line-space 2.4 \
-		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
-		--output-file  $(PROOFDIR)/latin-colrv0.pdf ;
