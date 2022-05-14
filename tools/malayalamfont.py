@@ -471,7 +471,7 @@ class MalayalamFont(Font):
             component = composite.instantiateComponent()
             component.baseGlyph = glyphName
             if commonAnchorName is None:
-                if len(baseAnchors) == 0:
+                if len(baseAnchors) == 0 and len(glyphAnchors) == 0:
                    # Just append to the right
                     x = baseGlyph.width
                     y = 0
