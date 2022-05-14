@@ -204,7 +204,7 @@ function listen(){
             document.body.style.backgroundColor = color;
         });
     });
-    debugger;
+
     new Pickr({
         el: '#font-fontOutlineColor',
         theme: 'nano',
@@ -221,7 +221,7 @@ function listen(){
         }
         }
     }).on('change', (color, source, instance) => {
-        setCustomColors(baseColor, color, outlineColor.toHEXA())
+        setCustomColors(baseColor, shadowColor, color.toHEXA())
         document.getElementById('font-fontOutlineColor').style.backgroundColor=color.toHEXA()
     })
 
