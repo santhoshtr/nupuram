@@ -9,14 +9,14 @@ log = logging.getLogger(__name__)
 
 config = {
     "layers": {
-        "regular": {
+        "public.default": {
             "source": "sources/Seventy-Regular.ufo",
             "order": 1,  # Foreground layer
             "color": [255, 153, 85, 1]
         },
         "outline": {
             "source": "sources/Seventy-Outline.ufo",
-            "order": 2,  # background layer
+            "order": 2,  # Outline layer
             "color": [85, 34, 0, 1],
         },
         "shadow": {
@@ -31,10 +31,10 @@ config = {
 layer_mapping = []
 CPAL_palette = []
 for layer_name in config["layers"]:
-    if layer_name == 'regular':
+    if layer_name == 'public.default':
         layer_mapping.append(
-            ['public.default', config["layers"]["regular"]["order"]])
-        font = Font(config["layers"]["regular"]["source"])
+            [layer_name, config["layers"][layer_name]["order"]])
+        font = Font(config["layers"][layer_name]["source"])
     else:
         if not font:
             raise ValueError(
@@ -59,14 +59,15 @@ for layer_name in config["layers"]:
 
         layer_mapping.append(
             [layer_name, config["layers"][layer_name]["order"]])
+
+
+layer_mapping = sorted(layer_mapping, key=itemgetter(1))
+for [layer_name, order] in layer_mapping:
     [r, g, b, a] = config["layers"][layer_name]["color"]
     CPAL_palette.append((r/255., g/255., b/255., 1.0))
 
-layer_mapping = sorted(layer_mapping, key=itemgetter(1))
-CPAL_palette = sorted(CPAL_palette, key=itemgetter(1))
 font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = layer_mapping
-font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [
-    CPAL_palette]
+font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [CPAL_palette]
 
 font.save(sys.argv[1])
 log.info(f"Color UFO font saved at {sys.argv[1]}")

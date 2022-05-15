@@ -19,10 +19,13 @@ if __name__ == "__main__":
         "-u", "--ufo", help="UFO sources",
         type=dir_path)
     parser.add_argument(
-        "-s", "--style", default='Regular',  help="Set style")
+        "-f", "--familyname", help="Set family name")
+    parser.add_argument(
+        "-s", "--style", default='Regular', help="Set style")
 
     options = parser.parse_args()
     ufoFont = Font(options.ufo)
+    ufoFont.info.familyName = options.familyname
     ufoFont.info.styleName = options.style
     now = datetime.utcnow()
     ufoFont.info.openTypeNameUniqueID = "%s-%s:%d" % (

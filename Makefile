@@ -48,7 +48,7 @@ $(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Outline.otf $@
 	rm ${FONTSDIR}/$(FAMILY)-Outline.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -s Outline
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Outline" -s Regular
 	@ufonormalizer -m $@
 
 $(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
@@ -58,12 +58,13 @@ $(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
 	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Shadow.otf $@
 	rm ${FONTSDIR}/$(FAMILY)-Shadow.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -s Shadow
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Shadow" -s Regular
 	@ufonormalizer -m $@
 
 $(SOURCEDIR)/$(FAMILY)-Color.ufo: $(SOURCEDIR)/$(FAMILY)-Regular.ufo $(SOURCEDIR)/$(FAMILY)-Outline.ufo $(SOURCEDIR)/$(FAMILY)-Shadow.ufo
 	@echo "  BUILD    $(@F)"
 	$(PY) tools/build_color_v0.py $@
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Color" -s Regular
 	@ufonormalizer -m $@
 
 ufo: clean $(UFO)

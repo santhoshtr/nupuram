@@ -48,7 +48,6 @@ for glyph_name, layers in colr0.ColorLayers.items():
 
 # pprint.PrettyPrinter(indent=2).pprint(colrv1_map)
 
-colr = builder.buildCOLR(colrv1_map)
-font["COLR"] = colr
+font["COLR"] = builder.buildCOLR(colrv1_map)
 font.save(sys.argv[2])
 log.info(f"Colrv1 saved at {sys.argv[2]}")
