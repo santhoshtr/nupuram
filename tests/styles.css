@@ -123,6 +123,7 @@ footer {
   column-gap: 1px;
   row-gap: 1em;
   margin: 1em;
+  align-items: center;
 }
 
 .rows > div {
@@ -179,6 +180,12 @@ input[type="range"] {
 input[type="color"] {
   width: 2em;
   border: none;
+}
+
+.font-color {
+  border-radius: 9px;
+  width: 18px;
+  border: 1px solid black;
 }
 
 label {

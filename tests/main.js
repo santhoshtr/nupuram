@@ -17,9 +17,9 @@ function shuffle(a) {
     return a;
 }
 
-let baseColor='#ffa348ff', shadowColor="#63452cff", outlineColor="#63452cff";
+let baseColor = '#ffa348ff', shadowColor = "#63452cff", outlineColor = "#63452cff";
 
-function listen(){
+function listen() {
     const contentArea = document.querySelector('.content')
     let testLines = [];
     let paragraphsMl = []
@@ -89,31 +89,31 @@ function listen(){
 
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
-            contentArea.classList.add('shadownorth');
-            contentArea.classList.remove("color", "outline", "shadow" ,"shadoweast", "shadowwest", "shadowsouth", "shadownorth");
-        if (selected==='SeventyColor') {
+        contentArea.classList.add('shadownorth');
+        contentArea.classList.remove("color", "outline", "shadow", "shadoweast", "shadowwest", "shadowsouth", "shadownorth");
+        if (selected === 'SeventyColor') {
             contentArea.classList.add('color');
-            document.getElementById('font-fontColor').disabled=true
-            document.getElementById('outlined').disabled=true
-            document.getElementById('palette').style.display="block"
+            document.getElementById('font-fontColor').disabled = true
+            document.getElementById('outlined').disabled = true
+            document.getElementById('palette').style.display = "block"
         }
-        if (selected==='SeventyOutline') {
+        if (selected === 'SeventyOutline') {
             contentArea.classList.add('outline');
-            document.getElementById('outlined').disabled=true
-            document.getElementById('font-fontColor').disabled=false
-            document.getElementById('palette').style.display="none"
+            document.getElementById('outlined').disabled = true
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('palette').style.display = "none"
         }
-        if (selected==='SeventyShadow') {
+        if (selected === 'SeventyShadow') {
             contentArea.classList.add('shadow');
-            document.getElementById('outlined').disabled=true
-            document.getElementById('font-fontColor').disabled=false
-            document.getElementById('palette').style.display="none"
+            document.getElementById('outlined').disabled = true
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('palette').style.display = "none"
         }
-        if (selected==='Seventy') {
+        if (selected === 'Seventy') {
             contentArea.classList.remove('color');
-            document.getElementById('font-fontColor').disabled=false
-            document.getElementById('outlined').disabled=false
-            document.getElementById('palette').style.display="none"
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
         }
     });
 
@@ -191,38 +191,67 @@ function listen(){
         });
     });
 
-    document.querySelectorAll("[data-id='fontColor']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const fontColor = element.value;
-            document.body.style.color = fontColor;
-        });
-    });
+    new Pickr({
+        el: '#font-fontColor',
+        theme: 'nano',
+        useAsButton: true,
+        defaultRepresentation: 'HEX',
+        default: '#000000',
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
+        }
+    }).on('change', (color, source, instance) => {
+        document.body.style.color = color.toHEXA();
+    })
 
-    document.querySelectorAll("[data-id='background-color']").forEach((element) => {
-        element.addEventListener('input', function () {
-            const color = element.value;
-            document.body.style.backgroundColor = color;
-        });
-    });
+    new Pickr({
+        el: '#background-color',
+        theme: 'nano',
+        useAsButton: true,
+        defaultRepresentation: 'HEX',
+        default: '#fff',
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
+        }
+    }).on('change', (color, source, instance) => {
+        document.body.style.backgroundColor = color.toHEXA();
+    })
+
 
     new Pickr({
         el: '#font-fontOutlineColor',
         theme: 'nano',
         useAsButton: true,
-        components: {
-        preview: true,
-        opacity: true,
-        hue: true,
         default: outlineColor,
-        // Input / output Options
-        interaction: {
-            hex: true,
-            input: true,
-        }
+        defaultRepresentation: 'HEX',
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
         }
     }).on('change', (color, source, instance) => {
         setCustomColors(baseColor, shadowColor, color.toHEXA())
-        document.getElementById('font-fontOutlineColor').style.backgroundColor=color.toHEXA()
+        document.getElementById('font-fontOutlineColor').style.backgroundColor = color.toHEXA()
     })
 
 
@@ -230,40 +259,44 @@ function listen(){
         el: '#font-fontBaseColor',
         theme: 'nano',
         useAsButton: true,
-        components: {
-        preview: true,
-        opacity: true,
-        hue: true,
         default: baseColor,
-        // Input / output Options
-        interaction: {
-            hex: true,
-            input: true,
-        }
+        defaultRepresentation: 'HEX',
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
         }
     }).on('change', (color, source, instance) => {
         setCustomColors(color.toHEXA(), shadowColor, outlineColor)
-        document.getElementById('font-fontBaseColor').style.backgroundColor=color.toHEXA()
+        document.getElementById('font-fontBaseColor').style.backgroundColor = color.toHEXA()
     })
 
     new Pickr({
         el: '#font-fontShadowColor',
         theme: 'nano',
         useAsButton: true,
-        components: {
-        preview: true,
-        opacity: true,
-        hue: true,
+        defaultRepresentation: 'HEX',
         default: shadowColor,
-        // Input / output Options
-        interaction: {
-            hex: true,
-            input: true,
-        }
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
         }
     }).on('change', (color, source, instance) => {
         setCustomColors(baseColor, color.toHEXA(), outlineColor)
-        document.getElementById('font-fontShadowColor').style.backgroundColor=color.toHEXA()
+        document.getElementById('font-fontShadowColor').style.backgroundColor = color.toHEXA()
     })
 
     document.querySelectorAll("[name=opentype]").forEach((element) => {
@@ -292,24 +325,29 @@ function listen(){
         });
     });
 
-    document.getElementById('palette').style.display="none"
-    document.getElementById('font-fontBaseColor').style.backgroundColor=baseColor.substring(0,7)
-    document.getElementById('font-fontOutlineColor').style.backgroundColor=outlineColor.substring(0,7)
-    document.getElementById('font-fontShadowColor').style.backgroundColor=shadowColor.substring(0,7)
+    document.getElementById('palette').style.display = "none"
+    document.getElementById('font-fontBaseColor').style.backgroundColor = baseColor.substring(0, 7)
+    document.getElementById('font-fontOutlineColor').style.backgroundColor = outlineColor.substring(0, 7)
+    document.getElementById('font-fontShadowColor').style.backgroundColor = shadowColor.substring(0, 7)
+    document.getElementById('font-fontColor').style.backgroundColor = '#214761'
+    document.getElementById('background-color').style.backgroundColor = '#f5f5dc'
     setCustomColors()
 }
 
-function setCustomColors(base='#ffa348ff', shadow="#63452cff", outline="#63452cff"){
+function setCustomColors(base = baseColor, shadow = shadowColor, outline = outlineColor) {
+    baseColor = base;
+    shadowColor = shadow
+    outlineColor = outline
     const colorFontName = "SeventyColor"
     const sheetId = "custompalette"
     var sheet = document.getElementById(sheetId)
-    if (!sheet){
+    if (!sheet) {
         sheet = document.createElement('style')
         sheet.id = sheetId
         document.body.appendChild(sheet);
     }
 
-    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: 0; override-colors: 0 ${shadow}, 1 ${base}, 2 ${outline};}`;
+    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: 0; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
 }
 
 window.onload = listen
