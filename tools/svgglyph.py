@@ -71,6 +71,7 @@ class SVGGlyph:
                       "inkscape": "http://www.inkscape.org/namespaces/inkscape"}
         widthGuide = svgObj.find(
             ".//sodipodi:guide/[@inkscape:label='width']", prefix_map)
+
         width = self.svg_width
         if widthGuide != None:
             width = int(float(widthGuide.get('position').split(',')[0]))
@@ -92,6 +93,16 @@ class SVGGlyph:
         anchorEls = svgObj.findall(
             '{http://www.w3.org/2000/svg}text', prefix_map)
         anchors = []
+
+        vc_guide = svgObj.find(
+            ".//sodipodi:guide/[@inkscape:label='vc']", prefix_map)
+        if vc_guide != None:
+            anchors.append({
+                "x": float( vc_guide.get('position').split(',')[0]),
+                "y": 0 ,
+                "name": "vc"
+            })
+
         try:
             for anchorEl in anchorEls:
                 anchors.append({

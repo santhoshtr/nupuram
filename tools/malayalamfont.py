@@ -5,8 +5,8 @@ import re
 from datetime import datetime
 from typing import List
 
-from defcon import Font, Glyph
-from fontFeatures import (Chaining, FontFeatures, Positioning, Routine,
+from defcon import Font, Glyph, Anchor
+from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
 
@@ -274,6 +274,35 @@ class MalayalamFont(Font):
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
+    def build_gpos(self):
+        feature = "abvm"
+        name = "abvm_topmarks"
+        top_mark_glyphs = [SVGGlyph.get_glyph_name(
+            c) for c in self.get_glyphs_from_named_classes('ML_TOP_MARKS')]
+        anchors = {}
+        visual_center_anchor_name = "vc"
+        for glyph in self:
+            for anchor in glyph.anchors:
+                if visual_center_anchor_name == anchor.name:
+                    anchors[glyph.name] = {anchor.name: (anchor.x, anchor.y)}
+
+        self.fontFeatures.anchors = anchors
+        top_bases = {}
+        top_marks = {}
+        for glyphname, anchors in self.fontFeatures.anchors.items():
+            for anchorname, position in anchors.items():
+                if anchorname == visual_center_anchor_name:
+                    if glyphname in top_mark_glyphs:
+                        top_marks[glyphname] = position
+                    else:
+                        top_bases[glyphname] = position
+
+        tops = Attachment(visual_center_anchor_name,
+                          visual_center_anchor_name, top_bases, top_marks)
+        routine = Routine(name=name, rules=[
+                          tops], languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
     def build_gdef(self):
         ligatures = sorted(
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
@@ -316,6 +345,7 @@ class MalayalamFont(Font):
         self.build_cons_ra_substitutions()
         self.build_cons_conj_vowel_signs()
         self.build_latin_pos()
+        self.build_gpos()
         self.build_gdef()
         self.build_conjuncts_fixup()
         self.features.text = self.getFeatures()

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <glyph name="ml_dot_reph" format="2">
 	<unicode hex="0D4E"/>
-	<advance height="1024" width="167"/>
+	<advance height="1024"/>
 	<outline>
 		<contour>
 			<point x="168.58007" y="797.1193085" type="line"/>
@@ -31,4 +31,5 @@
 			<point x="168.58007" y="797.1193085" type="curve"/>
 		</contour>
 	</outline>
+	<anchor name="vc" x="84.06263" y="0"/>
 </glyph>
