@@ -226,7 +226,8 @@ class MalayalamFont(Font):
                 sub = Substitution(
                     [[ligature_glyph_name], [
                         SVGGlyph.get_glyph_name(vowel_sign)]],
-                    replacement=[[replacement_ligature]])
+                    replacement=[[replacement_ligature]],
+                    flags=8)
                 rules.append(sub)
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
@@ -281,10 +282,34 @@ class MalayalamFont(Font):
             c) for c in self.get_glyphs_from_named_classes('ML_TOP_MARKS')]
         anchors = {}
         visual_center_anchor_name = "vc"
-        for glyph in self:
+        lettersWithMarks = sorted(
+            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
+            self.get_glyphs_from_named_classes('ML_TOP_MARKS')
+        )
+        vowel_signs = self.options.glyphs.classes['ML_VOWEL_SIGNS_CONJOINING']
+        for l in lettersWithMarks:
+            glyph_name = SVGGlyph.get_glyph_name(l)
+            if glyph_name not in self:
+                continue
+            glyph = self[glyph_name]
             for anchor in glyph.anchors:
                 if visual_center_anchor_name == anchor.name:
                     anchors[glyph.name] = {anchor.name: (anchor.x, anchor.y)}
+
+            if glyph.name not in anchors:
+                anchors[glyph.name] = {
+                    visual_center_anchor_name: (glyph.width/2, 0)}
+
+            for vowel_sign in vowel_signs:
+                letterWithVowel = SVGGlyph.get_glyph_name(
+                    l)+SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
+                if letterWithVowel not in self:
+                    continue
+                glyphWithVowel = self[letterWithVowel]
+                if glyphWithVowel.name not in anchors:
+                    anchors[glyphWithVowel.name] = anchors[glyph.name]
 
         self.fontFeatures.anchors = anchors
         top_bases = {}
@@ -305,6 +330,7 @@ class MalayalamFont(Font):
 
     def build_gdef(self):
         ligatures = sorted(
+            self.get_glyphs_from_named_classes('ML_CONSONANTS') +
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
