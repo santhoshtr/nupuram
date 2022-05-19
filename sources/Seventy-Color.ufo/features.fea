@@ -2,7 +2,7 @@ languagesystem DFLT dflt;
 languagesystem latn dflt;
 languagesystem mlm2 dflt;
 table GDEF {
-    GlyphClassDef [a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla], [Agrave Aacute Atilde Adieresis Aring Ccedilla Egrave Eacute Edieresis Igrave Iacute Idieresis Ntilde Ograve Oacute Otilde Odieresis Ugrave Uacute Udieresis Yacute agrave aacute atilde adieresis aring ccedilla egrave eacute edieresis igrave iacute idieresis ntilde ograve oacute otilde odieresis ugrave uacute udieresis yacute ydieresis Amacron amacron Cacute cacute Cdotaccent cdotaccent Ccaron ccaron Dcaron Emacron emacron Edotaccent edotaccent Ecaron ecaron Gdotaccent gdotaccent Itilde itilde Imacron imacron Nacute nacute Ncaron ncaron Omacron omacron Racute racute Rcaron rcaron Sacute sacute Scedilla scedilla Scaron scaron Utilde utilde Umacron umacron Uring uring zacute Zdotaccent zdotaccent Zcaron zcaron ml_ka_virama_ka ml_ka_virama_ka_virama_ra ml_ka_virama_ta ml_ka_virama_ta_virama_ra ml_ka_virama_ra ml_ka_virama_la ml_ka_virama_ssa ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_da_virama_dha ml_ga_virama_na ml_ga_virama_ma ml_ga_virama_ra ml_ga_virama_la ml_gha_virama_ra ml_nga_virama_ka ml_nga_virama_ka_virama_ra ml_nga_virama_nga ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_ja_virama_nya ml_ja_virama_ra ml_nya_virama_ca ml_nya_virama_ja ml_nya_virama_nya ml_tta_virama_tta ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta ml_nna_virama_tta_virama_ra ml_nna_virama_dda ml_nna_virama_nna ml_nna_virama_ma ml_ta_virama_ta ml_ta_virama_ta_virama_ra ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_ta_virama_ma ml_ta_virama_ra ml_ta_virama_la ml_ta_virama_sa ml_ta_virama_sa_virama_ra ml_da_virama_da ml_da_virama_dha ml_da_virama_ra ml_dha_virama_ra ml_na_virama_ta ml_na_virama_ta_virama_ra ml_na_virama_da ml_na_virama_da_virama_ra ml_na_virama_dha ml_na_virama_dha_virama_ra ml_na_virama_na ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_pa_virama_ra ml_pa_virama_la ml_pha_virama_ra ml_pha_virama_la ml_ba_virama_ba ml_ba_virama_ra ml_ba_virama_la ml_bha_virama_ra ml_ma_virama_pa ml_ma_virama_pa_virama_ra ml_ma_virama_ma ml_ma_virama_ra ml_ma_virama_la ml_ya_virama_ya ml_rra_virama_rra ml_rra_virama_rra_virama_ra ml_la_virama_la ml_lla_virama_lla ml_va_virama_ra ml_va_virama_la ml_va_virama_va ml_sha_virama_ca ml_sha_virama_ra ml_sha_virama_la ml_sha_virama_sha ml_ssa_virama_ra ml_sa_virama_tha ml_sa_virama_ra ml_sa_virama_la ml_sa_virama_sa ml_ha_virama_na ml_ha_virama_ma ml_ha_virama_ra ml_ha_virama_la], [ml_virama ml_dot_reph], [];
+    GlyphClassDef [ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_rra ml_la ml_lla ml_llla ml_va ml_sha ml_ssa ml_sa ml_ha a b c d e f g h i j k l m n o p q r s t u v w x y z A B C D E F G H I J K L M N O P Q R S T U V W X Y Z], [Agrave Aacute Atilde Adieresis Aring Ccedilla Egrave Eacute Edieresis Igrave Iacute Idieresis Ntilde Ograve Oacute Otilde Odieresis Ugrave Uacute Udieresis Yacute agrave aacute atilde adieresis aring ccedilla egrave eacute edieresis igrave iacute idieresis ntilde ograve oacute otilde odieresis ugrave uacute udieresis yacute ydieresis Amacron amacron Cacute cacute Cdotaccent cdotaccent Ccaron ccaron Dcaron Emacron emacron Edotaccent edotaccent Ecaron ecaron Gdotaccent gdotaccent Itilde itilde Imacron imacron Nacute nacute Ncaron ncaron Omacron omacron Racute racute Rcaron rcaron Sacute sacute Scedilla scedilla Scaron scaron Utilde utilde Umacron umacron Uring uring zacute Zdotaccent zdotaccent Zcaron zcaron ml_ka_virama_ka ml_ka_virama_ka_virama_ra ml_ka_virama_ta ml_ka_virama_ta_virama_ra ml_ka_virama_ra ml_ka_virama_la ml_ka_virama_ssa ml_ga_virama_ga ml_ga_virama_da ml_ga_virama_da_virama_dha ml_ga_virama_na ml_ga_virama_ma ml_ga_virama_ra ml_ga_virama_la ml_gha_virama_ra ml_nga_virama_ka ml_nga_virama_ka_virama_ra ml_nga_virama_nga ml_ca_virama_ca ml_ca_virama_cha ml_ja_virama_ja ml_ja_virama_nya ml_ja_virama_ra ml_nya_virama_ca ml_nya_virama_ja ml_nya_virama_nya ml_tta_virama_tta ml_tta_virama_ra ml_dda_virama_ra ml_ddha_virama_ra ml_nna_virama_tta ml_nna_virama_tta_virama_ra ml_nna_virama_dda ml_nna_virama_nna ml_nna_virama_ma ml_ta_virama_ta ml_ta_virama_ta_virama_ra ml_ta_virama_tha ml_ta_virama_na ml_ta_virama_bha ml_ta_virama_ma ml_ta_virama_ra ml_ta_virama_la ml_ta_virama_sa ml_ta_virama_sa_virama_ra ml_da_virama_da ml_da_virama_dha ml_da_virama_ra ml_dha_virama_ra ml_na_virama_ta ml_na_virama_ta_virama_ra ml_na_virama_da ml_na_virama_da_virama_ra ml_na_virama_dha ml_na_virama_dha_virama_ra ml_na_virama_na ml_na_virama_ma ml_na_virama_rra ml_pa_virama_pa ml_pa_virama_pha ml_pa_virama_ra ml_pa_virama_la ml_pha_virama_ra ml_pha_virama_la ml_ba_virama_ba ml_ba_virama_ra ml_ba_virama_la ml_bha_virama_ra ml_ma_virama_pa ml_ma_virama_pa_virama_ra ml_ma_virama_ma ml_ma_virama_ra ml_ma_virama_la ml_ya_virama_ya ml_rra_virama_rra ml_rra_virama_rra_virama_ra ml_la_virama_la ml_lla_virama_lla ml_va_virama_ra ml_va_virama_la ml_va_virama_va ml_sha_virama_ca ml_sha_virama_ra ml_sha_virama_la ml_sha_virama_sha ml_ssa_virama_ra ml_sa_virama_tha ml_sa_virama_ra ml_sa_virama_la ml_sa_virama_sa ml_ha_virama_na ml_ha_virama_ma ml_ha_virama_ra ml_ha_virama_la], [ml_virama ml_dot_reph], [];
 } GDEF;
 
     markClass ml_dot_reph <anchor 84 0> @vc_vc;
@@ -198,7 +198,7 @@ lookup pres_reph {
 } pres_reph;
 
 lookup psts_vowel_signs {
-    lookupflag 0;
+    lookupflag IgnoreMarks;
     ;
     sub ml_ka ml_sign_u by ml_ka_sign_u;
     sub ml_ka ml_sign_uu by ml_ka_sign_uu;
@@ -486,12 +486,172 @@ lookup malayalam_kern {
 lookup abvm_topmarks {
     lookupflag 0;
     ;
-            pos base ml_ka_virama_ka
+            pos base [ml_ka_virama_ka ml_ka_virama_ka_sign_u ml_ka_virama_ka_sign_uu ml_ka_virama_ka_sign_vocalic_r]
             <anchor 397 0> mark @vc_vc;
-        pos base ml_ya_virama_ya
-            <anchor 450 0> mark @vc_vc;
-        pos base ml_ta_virama_ta
+        pos base [ml_ka_virama_ka_virama_ra ml_ka_virama_ka_virama_ra_sign_u ml_ka_virama_ka_virama_ra_sign_uu]
+            <anchor 490 0> mark @vc_vc;
+        pos base [ml_ka_virama_ta ml_ka_virama_ta_sign_u ml_ka_virama_ta_sign_uu ml_ka_virama_ta_sign_vocalic_r]
+            <anchor 469 0> mark @vc_vc;
+        pos base ml_ka_virama_ta_virama_ra
+            <anchor 608 0> mark @vc_vc;
+        pos base [ml_ka_virama_ra ml_ka_virama_ra_sign_u ml_ka_virama_ra_sign_uu]
+            <anchor 400 0> mark @vc_vc;
+        pos base ml_ka_virama_la
+            <anchor 336 0> mark @vc_vc;
+        pos base [ml_ka_virama_ssa ml_ka_virama_ssa_sign_u ml_ka_virama_ssa_sign_uu]
+            <anchor 521 0> mark @vc_vc;
+        pos base [ml_ga_virama_ga ml_ga_virama_ga_sign_u ml_ga_virama_ga_sign_uu]
+            <anchor 358 0> mark @vc_vc;
+        pos base [ml_ga_virama_da ml_ga_virama_da_sign_u ml_ga_virama_da_sign_uu ml_ga_virama_da_sign_vocalic_r]
+            <anchor 362 0> mark @vc_vc;
+        pos base [ml_ga_virama_da_virama_dha ml_ga_virama_da_virama_dha_sign_u ml_ga_virama_da_virama_dha_sign_uu ml_ta_virama_ta_virama_ra ml_ta_virama_ta_virama_ra_sign_u ml_ta_virama_ta_virama_ra_sign_uu]
+            <anchor 641 0> mark @vc_vc;
+        pos base [ml_ga_virama_na ml_ga_virama_na_sign_u ml_ga_virama_na_sign_uu ml_da_virama_dha ml_da_virama_dha_sign_u ml_da_virama_dha_sign_uu]
+            <anchor 500 0> mark @vc_vc;
+        pos base [ml_ga_virama_ma ml_ga_virama_ma_sign_u ml_ga_virama_ma_sign_uu]
+            <anchor 448 0> mark @vc_vc;
+        pos base [ml_ga_virama_ra ml_ga_virama_ra_sign_u ml_ga_virama_ra_sign_uu]
+            <anchor 386 0> mark @vc_vc;
+        pos base ml_ga_virama_la
+            <anchor 345 0> mark @vc_vc;
+        pos base [ml_gha_virama_ra ml_gha_virama_ra_sign_u ml_gha_virama_ra_sign_uu ml_ma_virama_pa_virama_ra ml_ma_virama_pa_virama_ra_sign_u ml_ma_virama_pa_virama_ra_sign_uu]
+            <anchor 581 0> mark @vc_vc;
+        pos base [ml_nga_virama_ka ml_nga_virama_ka_sign_u ml_nga_virama_ka_sign_uu ml_nga_virama_ka_sign_vocalic_r]
+            <anchor 401 0> mark @vc_vc;
+        pos base [ml_nga_virama_ka_virama_ra ml_nga_virama_ka_virama_ra_sign_u ml_nga_virama_ka_virama_ra_sign_uu]
+            <anchor 444 0> mark @vc_vc;
+        pos base [ml_nga_virama_nga ml_nga_virama_nga_sign_u ml_nga_virama_nga_sign_uu ml_ha_virama_na ml_ha_virama_na_sign_u ml_ha_virama_na_sign_uu]
+            <anchor 560 0> mark @vc_vc;
+        pos base [ml_ca_virama_ca ml_ca_virama_ca_sign_u ml_ca_virama_ca_sign_uu]
+            <anchor 403 0> mark @vc_vc;
+        pos base ml_ca_virama_cha
+            <anchor 584 0> mark @vc_vc;
+        pos base [ml_ja_virama_ja ml_ja_virama_ja_sign_u ml_ja_virama_ja_sign_uu ml_ja_virama_ja_sign_vocalic_r]
+            <anchor 690 0> mark @vc_vc;
+        pos base ml_ja_virama_nya
+            <anchor 792 0> mark @vc_vc;
+        pos base [ml_ja_virama_ra ml_ja_virama_ra_sign_u ml_ja_virama_ra_sign_uu ml_ba_virama_ba ml_ba_virama_ba_sign_u ml_ba_virama_ba_sign_uu ml_ba_virama_la]
+            <anchor 512 0> mark @vc_vc;
+        pos base [ml_nya_virama_ca ml_nya_virama_ca_sign_u ml_nya_virama_ca_sign_uu ml_ta_virama_sa ml_ta_virama_sa_sign_u ml_ta_virama_sa_sign_uu ml_ta_virama_sa_sign_vocalic_r]
+            <anchor 579 0> mark @vc_vc;
+        pos base [ml_nya_virama_ja ml_nya_virama_ja_sign_u ml_nya_virama_ja_sign_uu]
+            <anchor 634 0> mark @vc_vc;
+        pos base [ml_nya_virama_nya ml_nya_virama_nya_sign_u ml_nya_virama_nya_sign_uu]
+            <anchor 802 0> mark @vc_vc;
+        pos base [ml_tta_virama_tta ml_tta_virama_tta_sign_u ml_tta_virama_tta_sign_uu]
+            <anchor 266 0> mark @vc_vc;
+        pos base [ml_tta_virama_ra ml_tta_virama_ra_sign_u ml_tta_virama_ra_sign_uu]
+            <anchor 321 0> mark @vc_vc;
+        pos base [ml_dda_virama_ra ml_dda_virama_ra_sign_u ml_dda_virama_ra_sign_uu ml_ta_virama_bha ml_ta_virama_bha_sign_u]
+            <anchor 517 0> mark @vc_vc;
+        pos base ml_ddha_virama_ra
+            <anchor 556 0> mark @vc_vc;
+        pos base [ml_nna_virama_tta ml_nna_virama_tta_sign_u ml_nna_virama_tta_sign_uu]
+            <anchor 564 0> mark @vc_vc;
+        pos base [ml_nna_virama_tta_virama_ra ml_nna_virama_tta_virama_ra_sign_u ml_nna_virama_tta_virama_ra_sign_uu]
+            <anchor 640 0> mark @vc_vc;
+        pos base [ml_nna_virama_dda ml_nna_virama_dda_sign_u ml_nna_virama_dda_sign_uu ml_nna_virama_dda_sign_vocalic_r]
+            <anchor 806 0> mark @vc_vc;
+        pos base [ml_nna_virama_nna ml_nna_virama_nna_sign_u ml_nna_virama_nna_sign_uu ml_na_virama_dha ml_na_virama_dha_sign_u ml_na_virama_dha_sign_uu]
+            <anchor 545 0> mark @vc_vc;
+        pos base [ml_nna_virama_ma ml_nna_virama_ma_sign_u ml_nna_virama_ma_sign_uu]
+            <anchor 627 0> mark @vc_vc;
+        pos base [ml_ta_virama_ta ml_ta_virama_ta_sign_u ml_ta_virama_ta_sign_uu ml_ta_virama_ta_sign_vocalic_r]
             <anchor 587 0> mark @vc_vc;
+        pos base [ml_ta_virama_tha ml_ta_virama_tha_sign_u ml_ta_virama_tha_sign_uu]
+            <anchor 540 0> mark @vc_vc;
+        pos base ml_ta_virama_na
+            <anchor 431 0> mark @vc_vc;
+        pos base [ml_ta_virama_ma ml_ta_virama_ma_sign_u ml_ta_virama_ma_sign_uu]
+            <anchor 502 0> mark @vc_vc;
+        pos base [ml_ta_virama_ra ml_ta_virama_ra_sign_u ml_ta_virama_ra_sign_uu]
+            <anchor 424 0> mark @vc_vc;
+        pos base ml_ta_virama_la
+            <anchor 300 0> mark @vc_vc;
+        pos base ml_ta_virama_sa_virama_ra
+            <anchor 716 0> mark @vc_vc;
+        pos base [ml_da_virama_da ml_da_virama_da_sign_u ml_da_virama_da_sign_uu]
+            <anchor 243 0> mark @vc_vc;
+        pos base [ml_da_virama_ra ml_da_virama_ra_sign_u ml_da_virama_ra_sign_uu]
+            <anchor 327 0> mark @vc_vc;
+        pos base [ml_dha_virama_ra ml_dha_virama_ra_sign_u ml_dha_virama_ra_sign_uu]
+            <anchor 474 0> mark @vc_vc;
+        pos base [ml_na_virama_ta ml_na_virama_ta_sign_u ml_na_virama_ta_sign_uu ml_na_virama_ta_sign_vocalic_r]
+            <anchor 453 0> mark @vc_vc;
+        pos base [ml_na_virama_ta_virama_ra ml_na_virama_ta_virama_ra_sign_u ml_na_virama_ta_virama_ra_sign_uu ml_ha_virama_ra ml_ha_virama_ra_sign_u ml_ha_virama_ra_sign_uu]
+            <anchor 529 0> mark @vc_vc;
+        pos base [ml_na_virama_da ml_na_virama_da_sign_u ml_na_virama_da_sign_uu ml_na_virama_da_sign_vocalic_r]
+            <anchor 435 0> mark @vc_vc;
+        pos base [ml_na_virama_da_virama_ra ml_na_virama_da_virama_ra_sign_u ml_na_virama_da_virama_ra_sign_uu]
+            <anchor 504 0> mark @vc_vc;
+        pos base [ml_na_virama_dha_virama_ra ml_na_virama_dha_virama_ra_sign_u ml_na_virama_dha_virama_ra_sign_uu]
+            <anchor 635 0> mark @vc_vc;
+        pos base [ml_na_virama_na ml_na_virama_na_sign_u ml_na_virama_na_sign_uu ml_na_virama_na_sign_vocalic_r]
+            <anchor 493 0> mark @vc_vc;
+        pos base [ml_na_virama_ma ml_na_virama_ma_sign_u ml_na_virama_ma_sign_uu]
+            <anchor 445 0> mark @vc_vc;
+        pos base [ml_na_virama_rra ml_na_virama_rra_sign_u ml_na_virama_rra_sign_uu]
+            <anchor 402 0> mark @vc_vc;
+        pos base [ml_pa_virama_pa ml_pa_virama_pa_sign_u ml_pa_virama_pa_sign_uu]
+            <anchor 367 0> mark @vc_vc;
+        pos base ml_pa_virama_pha
+            <anchor 383 0> mark @vc_vc;
+        pos base [ml_pa_virama_ra ml_pa_virama_ra_sign_u ml_pa_virama_ra_sign_uu]
+            <anchor 452 0> mark @vc_vc;
+        pos base ml_pa_virama_la
+            <anchor 363 0> mark @vc_vc;
+        pos base [ml_pha_virama_ra ml_pha_virama_ra_sign_u ml_pha_virama_ra_sign_uu]
+            <anchor 520 0> mark @vc_vc;
+        pos base ml_pha_virama_la
+            <anchor 435 0> mark @vc_vc;
+        pos base [ml_ba_virama_ra ml_ba_virama_ra_sign_u ml_ba_virama_ra_sign_uu]
+            <anchor 608 0> mark @vc_vc;
+        pos base [ml_bha_virama_ra ml_bha_virama_ra_sign_u ml_bha_virama_ra_sign_uu]
+            <anchor 368 0> mark @vc_vc;
+        pos base [ml_ma_virama_pa ml_ma_virama_pa_sign_u ml_ma_virama_pa_sign_uu]
+            <anchor 500 0> mark @vc_vc;
+        pos base [ml_ma_virama_ma ml_ma_virama_ma_sign_u ml_ma_virama_ma_sign_uu]
+            <anchor 475 0> mark @vc_vc;
+        pos base [ml_ma_virama_ra ml_ma_virama_ra_sign_u ml_ma_virama_ra_sign_uu]
+            <anchor 400 0> mark @vc_vc;
+        pos base ml_ma_virama_la
+            <anchor 333 0> mark @vc_vc;
+        pos base [ml_ya_virama_ya ml_ya_virama_ya_sign_u ml_ya_virama_ya_sign_uu]
+            <anchor 450 0> mark @vc_vc;
+        pos base ml_rra_virama_rra
+            <anchor 254 0> mark @vc_vc;
+        pos base ml_rra_virama_rra_virama_ra
+            <anchor 525 0> mark @vc_vc;
+        pos base [ml_la_virama_la ml_la_virama_la_sign_u ml_la_virama_la_sign_uu]
+            <anchor 303 0> mark @vc_vc;
+        pos base [ml_lla_virama_lla ml_lla_virama_lla_sign_u ml_lla_virama_lla_sign_uu]
+            <anchor 532 0> mark @vc_vc;
+        pos base [ml_va_virama_ra ml_va_virama_ra_sign_u ml_va_virama_ra_sign_uu]
+            <anchor 417 0> mark @vc_vc;
+        pos base ml_va_virama_la
+            <anchor 327 0> mark @vc_vc;
+        pos base [ml_va_virama_va ml_va_virama_va_sign_u ml_va_virama_va_sign_uu]
+            <anchor 322 0> mark @vc_vc;
+        pos base [ml_sha_virama_ca ml_sha_virama_ca_sign_u ml_sha_virama_ca_sign_uu]
+            <anchor 604 0> mark @vc_vc;
+        pos base [ml_sha_virama_ra ml_sha_virama_ra_sign_u ml_sha_virama_ra_sign_uu]
+            <anchor 567 0> mark @vc_vc;
+        pos base [ml_sha_virama_la ml_sha_virama_sha ml_sha_virama_sha_sign_u ml_sha_virama_sha_sign_uu]
+            <anchor 366 0> mark @vc_vc;
+        pos base [ml_ssa_virama_ra ml_ssa_virama_ra_sign_u ml_ssa_virama_ra_sign_uu]
+            <anchor 530 0> mark @vc_vc;
+        pos base [ml_sa_virama_tha ml_sa_virama_tha_sign_u ml_sa_virama_tha_sign_uu]
+            <anchor 708 0> mark @vc_vc;
+        pos base [ml_sa_virama_ra ml_sa_virama_ra_sign_u ml_sa_virama_ra_sign_uu]
+            <anchor 560 0> mark @vc_vc;
+        pos base ml_sa_virama_la
+            <anchor 475 0> mark @vc_vc;
+        pos base ml_sa_virama_sa
+            <anchor 463 0> mark @vc_vc;
+        pos base [ml_ha_virama_ma ml_ha_virama_ma_sign_u ml_ha_virama_ma_sign_uu]
+            <anchor 527 0> mark @vc_vc;
+        pos base ml_ha_virama_la
+            <anchor 450 0> mark @vc_vc;
 
 } abvm_topmarks;
 
