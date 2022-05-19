@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ml_vertical_bar_virama" format="2">
+	<unicode hex="0D3B"/>
+	<outline>
+		<contour>
+			<point x="57" y="920" type="curve" smooth="yes"/>
+			<point x="97.8662" y="920"/>
+			<point x="112" y="876.576"/>
+			<point x="112" y="837" type="curve" smooth="yes"/>
+			<point x="111" y="791"/>
+			<point x="96" y="746"/>
+			<point x="70" y="708" type="curve"/>
+			<point x="39" y="710" type="line"/>
+			<point x="15" y="748"/>
+			<point x="2" y="793"/>
+			<point x="2" y="837" type="curve" smooth="yes"/>
+			<point x="2" y="876.384"/>
+			<point x="15.4043" y="920"/>
+		</contour>
+		<contour>
+			<point x="57" y="910" type="curve" smooth="yes"/>
+			<point x="21.7402" y="910"/>
+			<point x="11.999" y="871.127"/>
+			<point x="11.999" y="837.001" type="curve" smooth="yes"/>
+			<point x="11.999" y="796.628"/>
+			<point x="23.5244" y="755.104"/>
+			<point x="44.8027" y="719.647" type="curve"/>
+			<point x="64.8828" y="718.352" type="line"/>
+			<point x="87.8613" y="753.748"/>
+			<point x="101.064" y="795.077"/>
+			<point x="102" y="837.111" type="curve" smooth="yes"/>
+			<point x="101.987" y="865.997"/>
+			<point x="95.1592" y="890.775"/>
+			<point x="77.4424" y="903.681" type="curve" smooth="yes"/>
+			<point x="70.8291" y="907.755"/>
+			<point x="58.877" y="909.42"/>
+		</contour>
+	</outline>
+	<anchor name="_Anchor-0" x="55" y="0"/>
+	<lib>
+		<dict>
+			<key>com.fontlab.hintData</key>
+			<dict>
+				<key>hhints</key>
+				<array>
+					<dict>
+						<key>position</key>
+						<integer>910</integer>
+						<key>width</key>
+						<integer>10</integer>
+					</dict>
+				</array>
+				<key>vhints</key>
+				<array>
+					<dict>
+						<key>position</key>
+						<integer>2</integer>
+						<key>width</key>
+						<integer>10</integer>
+					</dict>
+					<dict>
+						<key>position</key>
+						<integer>102</integer>
+						<key>width</key>
+						<integer>10</integer>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</lib>
+</glyph>
