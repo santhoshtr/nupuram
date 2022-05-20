@@ -186,12 +186,18 @@
 		<string>atilde.glif</string>
 		<key>b</key>
 		<string>b.glif</string>
+		<key>backslash</key>
+		<string>backslash.glif</string>
 		<key>bar</key>
 		<string>bar.glif</string>
 		<key>braceleft</key>
 		<string>braceleft.glif</string>
+		<key>braceright</key>
+		<string>braceright.glif</string>
 		<key>bracketleft</key>
 		<string>bracketleft.glif</string>
+		<key>bracketright</key>
+		<string>bracketright.glif</string>
 		<key>bullet</key>
 		<string>bullet.glif</string>
 		<key>c</key>
@@ -280,6 +286,8 @@
 		<string>germandbls.glif</string>
 		<key>grave</key>
 		<string>grave.glif</string>
+		<key>greater</key>
+		<string>greater.glif</string>
 		<key>h</key>
 		<string>h.glif</string>
 		<key>hyphen</key>
@@ -312,12 +320,8 @@
 		<string>ml_a.glif</string>
 		<key>ml_aa</key>
 		<string>ml_aa.glif</string>
-		<key>ml_ai</key>
-		<string>ml_ai.glif</string>
 		<key>ml_anusvara</key>
 		<string>ml_anusvara.glif</string>
-		<key>ml_au</key>
-		<string>ml_au.glif</string>
 		<key>ml_au_length_mark</key>
 		<string>ml_au_length_mark.glif</string>
 		<key>ml_avagraha</key>
@@ -620,8 +624,6 @@
 		<string>ml_ha_virama_ra_sign_uu.glif</string>
 		<key>ml_i</key>
 		<string>ml_i.glif</string>
-		<key>ml_ii</key>
-		<string>ml_ii.glif</string>
 		<key>ml_ja</key>
 		<string>ml_ja.glif</string>
 		<key>ml_ja_sign_u</key>
@@ -948,8 +950,6 @@
 		<string>ml_nya_virama_nya_sign_uu.glif</string>
 		<key>ml_o</key>
 		<string>ml_o.glif</string>
-		<key>ml_oo</key>
-		<string>ml_oo.glif</string>
 		<key>ml_pa</key>
 		<string>ml_pa.glif</string>
 		<key>ml_pa_sign_u</key>
@@ -1068,8 +1068,6 @@
 		<string>ml_sign_aa.glif</string>
 		<key>ml_sign_ai</key>
 		<string>ml_sign_ai.glif</string>
-		<key>ml_sign_au</key>
-		<string>ml_sign_au.glif</string>
 		<key>ml_sign_e</key>
 		<string>ml_sign_e.glif</string>
 		<key>ml_sign_ee</key>
@@ -1078,10 +1076,6 @@
 		<string>ml_sign_i.glif</string>
 		<key>ml_sign_ii</key>
 		<string>ml_sign_ii.glif</string>
-		<key>ml_sign_o</key>
-		<string>ml_sign_o.glif</string>
-		<key>ml_sign_oo</key>
-		<string>ml_sign_oo.glif</string>
 		<key>ml_sign_u</key>
 		<string>ml_sign_u.glif</string>
 		<key>ml_sign_uu</key>
@@ -1206,8 +1200,6 @@
 		<string>ml_ttta.glif</string>
 		<key>ml_u</key>
 		<string>ml_u.glif</string>
-		<key>ml_uu</key>
-		<string>ml_uu.glif</string>
 		<key>ml_va</key>
 		<string>ml_va.glif</string>
 		<key>ml_va_sign_u</key>
@@ -1308,6 +1300,8 @@
 		<string>paragraph.glif</string>
 		<key>parenleft</key>
 		<string>parenleft.glif</string>
+		<key>parenright</key>
+		<string>parenright.glif</string>
 		<key>percent</key>
 		<string>percent.glif</string>
 		<key>period</key>
@@ -1320,6 +1314,16 @@
 		<string>q.glif</string>
 		<key>question</key>
 		<string>question.glif</string>
+		<key>quotedbl</key>
+		<string>quotedbl.glif</string>
+		<key>quotedblleft</key>
+		<string>quotedblleft.glif</string>
+		<key>quotedblright</key>
+		<string>quotedblright.glif</string>
+		<key>quoteleft</key>
+		<string>quoteleft.glif</string>
+		<key>quoteright</key>
+		<string>quoteright.glif</string>
 		<key>quotesingle</key>
 		<string>quotesingle.glif</string>
 		<key>r</key>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ml_lla_sign_u" format="2">
+	<advance width="555"/>
+	<outline>
+		<component base="ml_lla"/>
+		<component base="u_drop_sign" xOffset="319.31271" yOffset="-33.55109"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
+</glyph>

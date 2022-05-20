@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ccedilla" format="2">
+	<unicode hex="00E7"/>
+	<advance width="462"/>
+	<outline>
+		<component base="c"/>
+		<component base="cedilla" xOffset="102.52246" yOffset="10.55255"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
+</glyph>

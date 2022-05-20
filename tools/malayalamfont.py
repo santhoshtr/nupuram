@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import List
 
-from defcon import Font, Glyph, Anchor
+from defcon import Font, Glyph, Anchor, Component
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
@@ -403,7 +403,59 @@ class MalayalamFont(Font):
         zwj.unicodes = [0x200D]
         self.insertGlyph(zwj, 'zwj')
 
-        diacritics = "´^¸˚¯`ˇ~¨˙˜"
+        horizontally_flippables = {
+            '<': '>',
+            '/': '\\',
+            '[': ']',
+            '{': '}',
+            '(': ')',
+            '‘': '’'
+        }
+        for b, c in horizontally_flippables.items():
+            compositename = SVGGlyph.get_glyph_name(c)
+            basename = SVGGlyph.get_glyph_name(b)
+            if not basename in self:
+                log.warn(f"{basename} glyph not found for horizontal flipping")
+                continue
+            self.newGlyph(compositename)
+            composite: Glyph = self[compositename]
+            composite.unicodes = [ord(c)]
+            component: Component = composite.instantiateComponent()
+            component.baseGlyph = basename
+            baseGlyph = self[basename]
+            composite.width = baseGlyph.width
+            # transformation = (xScale, xyScale, yxScale, yScale, xOffset, yOffset)
+            component.transformation = (-1, 0, 0, 1, baseGlyph.width, 0)
+            composite.appendComponent(component)
+            log.debug(f"Compose {compositename}: Flip {basename}")
+
+        doubles = {
+            '\'':  '"',
+            '‘': '“',
+            '’': '”',
+            'െ': 'ൈ',
+        }
+        for b, c in doubles.items():
+            basename = SVGGlyph.get_glyph_name(b)
+            compositename = SVGGlyph.get_glyph_name(c)
+            if not basename in self:
+                log.warn(f"{basename} glyph not found for doubling")
+                continue
+            self.newGlyph(compositename)
+            composite: Glyph = self[compositename]
+            composite.unicodes = [ord(c)]
+            baseGlyph = self[basename]
+            composite.width = baseGlyph.width*2
+            component_1: Component = composite.instantiateComponent()
+            component_1.baseGlyph = basename
+            composite.appendComponent(component_1)
+            component_2: Component = composite.instantiateComponent()
+            component_2.baseGlyph = basename
+            component_2.move((baseGlyph.width,0))
+            composite.appendComponent(component_2)
+            log.debug(f"Compose {compositename}: {basename} +  {basename} ")
+
+        diacritics = "´¸˚¯`ˇ~¨˙˜"
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
                 base_name = SVGGlyph.get_glyph_name(base)
@@ -439,8 +491,6 @@ class MalayalamFont(Font):
             SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ാ')])
         self.buildComposite(SVGGlyph.get_glyph_name('ോ'), ord('ോ'), [
             SVGGlyph.get_glyph_name('േ'),  SVGGlyph.get_glyph_name('ാ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ൈ'), ord('ൈ'), [
-            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('െ')])
         self.buildComposite(SVGGlyph.get_glyph_name('ൌ'), ord('ൌ'), [
             SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ൗ')])
         self.buildComposite(SVGGlyph.get_glyph_name('കൢ'), None, [
@@ -527,16 +577,9 @@ class MalayalamFont(Font):
             component = composite.instantiateComponent()
             component.baseGlyph = glyphName
             if commonAnchorName is None:
-                if len(baseAnchors) == 0 and len(glyphAnchors) == 0:
-                   # Just append to the right
-                    x = baseGlyph.width
-                    y = 0
-                    composite.width = composite.width + currentGlyph.width
-                    component.move((x, y))
-                else:
-                    # No common anchors. Avoid fallback. Just remove the glyph from font.
-                    del self[glyph_name]
-                    continue
+                # No common anchors. Avoid fallback. Just remove the glyph from font.
+                del self[glyph_name]
+                continue
             else:
                 anchor = _anchor = None
                 for a in baseAnchors:

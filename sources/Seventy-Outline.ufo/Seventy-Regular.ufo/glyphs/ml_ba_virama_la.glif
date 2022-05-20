@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ml_ba_virama_la" format="2">
+	<advance width="1025"/>
+	<outline>
+		<component base="ml_ba"/>
+		<component base="ml_virama_la" xOffset="425.13964" yOffset="0.95575"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
+</glyph>

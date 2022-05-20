@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ml_dda_virama_ra_sign_uu" format="2">
+	<advance width="1035"/>
+	<outline>
+		<component base="ml_dda_virama_ra"/>
+		<component base="uu_drop_sign" xOffset="756.8468" yOffset="-55.04937"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
+</glyph>
