@@ -484,7 +484,7 @@ class MalayalamFont(Font):
                 composite.width = composite.width + baseGlyph.width
                 composite.appendComponent(component)
 
-        diacritics = "´¸˚¯`ˇ~¨˙˜"
+        diacritics = "̂ˆ´¸˚¯`ˇ~¨˙˜"
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
                 base_name = SVGGlyph.get_glyph_name(base)
@@ -498,6 +498,7 @@ class MalayalamFont(Font):
                 if chr(composite_unicode) not in self.get_glyphs_from_named_classes('LATIN_EXTRA'):
                     continue
                 if diacritc_name not in self:
+                    log.warn(f"{diacritc_name} glyph not found")
                     continue
                 if base_name not in self:
                     continue

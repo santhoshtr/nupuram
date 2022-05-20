@@ -12,6 +12,8 @@
 		<string>A_E_.glif</string>
 		<key>Aacute</key>
 		<string>A_acute.glif</string>
+		<key>Acircumflex</key>
+		<string>A_circumflex.glif</string>
 		<key>Adieresis</key>
 		<string>A_dieresis.glif</string>
 		<key>Agrave</key>
@@ -32,6 +34,8 @@
 		<string>C_caron.glif</string>
 		<key>Ccedilla</key>
 		<string>C_cedilla.glif</string>
+		<key>Ccircumflex</key>
+		<string>C_circumflex.glif</string>
 		<key>Cdotaccent</key>
 		<string>C_dotaccent.glif</string>
 		<key>D</key>
@@ -46,6 +50,8 @@
 		<string>E_acute.glif</string>
 		<key>Ecaron</key>
 		<string>E_caron.glif</string>
+		<key>Ecircumflex</key>
+		<string>E_circumflex.glif</string>
 		<key>Edieresis</key>
 		<string>E_dieresis.glif</string>
 		<key>Edotaccent</key>
@@ -60,6 +66,8 @@
 		<string>F_.glif</string>
 		<key>G</key>
 		<string>G_.glif</string>
+		<key>Gcircumflex</key>
+		<string>G_circumflex.glif</string>
 		<key>Gdotaccent</key>
 		<string>G_dotaccent.glif</string>
 		<key>H</key>
@@ -68,6 +76,8 @@
 		<string>I_.glif</string>
 		<key>Iacute</key>
 		<string>I_acute.glif</string>
+		<key>Icircumflex</key>
+		<string>I_circumflex.glif</string>
 		<key>Idieresis</key>
 		<string>I_dieresis.glif</string>
 		<key>Igrave</key>
@@ -98,6 +108,8 @@
 		<string>O_E__capital.glif</string>
 		<key>Oacute</key>
 		<string>O_acute.glif</string>
+		<key>Ocircumflex</key>
+		<string>O_circumflex.glif</string>
 		<key>Odieresis</key>
 		<string>O_dieresis.glif</string>
 		<key>Ograve</key>
@@ -126,6 +138,8 @@
 		<string>S_caron.glif</string>
 		<key>Scedilla</key>
 		<string>S_cedilla.glif</string>
+		<key>Scircumflex</key>
+		<string>S_circumflex.glif</string>
 		<key>T</key>
 		<string>T_.glif</string>
 		<key>Thorn_capital</key>
@@ -134,6 +148,8 @@
 		<string>U_.glif</string>
 		<key>Uacute</key>
 		<string>U_acute.glif</string>
+		<key>Ucircumflex</key>
+		<string>U_circumflex.glif</string>
 		<key>Udieresis</key>
 		<string>U_dieresis.glif</string>
 		<key>Ugrave</key>
@@ -148,12 +164,16 @@
 		<string>V_.glif</string>
 		<key>W</key>
 		<string>W_.glif</string>
+		<key>Wcircumflex</key>
+		<string>W_circumflex.glif</string>
 		<key>X</key>
 		<string>X_.glif</string>
 		<key>Y</key>
 		<string>Y_.glif</string>
 		<key>Yacute</key>
 		<string>Y_acute.glif</string>
+		<key>Ycircumflex</key>
+		<string>Y_circumflex.glif</string>
 		<key>Z</key>
 		<string>Z_.glif</string>
 		<key>Zcaron</key>
@@ -164,6 +184,8 @@
 		<string>a.glif</string>
 		<key>aacute</key>
 		<string>aacute.glif</string>
+		<key>acircumflex</key>
+		<string>acircumflex.glif</string>
 		<key>acute</key>
 		<string>acute.glif</string>
 		<key>adieresis</key>
@@ -178,6 +200,8 @@
 		<string>ampersand.glif</string>
 		<key>aring</key>
 		<string>aring.glif</string>
+		<key>asciicircum</key>
+		<string>asciicircum.glif</string>
 		<key>asterisk</key>
 		<string>asterisk.glif</string>
 		<key>at</key>
@@ -212,10 +236,14 @@
 		<string>ccaron.glif</string>
 		<key>ccedilla</key>
 		<string>ccedilla.glif</string>
+		<key>ccircumflex</key>
+		<string>ccircumflex.glif</string>
 		<key>cdotaccent</key>
 		<string>cdotaccent.glif</string>
 		<key>cedilla</key>
 		<string>cedilla.glif</string>
+		<key>circumflex</key>
+		<string>circumflex.glif</string>
 		<key>colon</key>
 		<string>colon.glif</string>
 		<key>comma</key>
@@ -240,6 +268,8 @@
 		<string>eacute.glif</string>
 		<key>ecaron</key>
 		<string>ecaron.glif</string>
+		<key>ecircumflex</key>
+		<string>ecircumflex.glif</string>
 		<key>edieresis</key>
 		<string>edieresis.glif</string>
 		<key>edotaccent</key>
@@ -280,6 +310,8 @@
 		<string>ft.glif</string>
 		<key>g</key>
 		<string>g.glif</string>
+		<key>gcircumflex</key>
+		<string>gcircumflex.glif</string>
 		<key>gdotaccent</key>
 		<string>gdotaccent.glif</string>
 		<key>germandbls</key>
@@ -290,12 +322,16 @@
 		<string>greater.glif</string>
 		<key>h</key>
 		<string>h.glif</string>
+		<key>hcircumflex</key>
+		<string>hcircumflex.glif</string>
 		<key>hyphen</key>
 		<string>hyphen.glif</string>
 		<key>i</key>
 		<string>i.glif</string>
 		<key>iacute</key>
 		<string>iacute.glif</string>
+		<key>icircumflex</key>
+		<string>icircumflex.glif</string>
 		<key>idieresis</key>
 		<string>idieresis.glif</string>
 		<key>igrave</key>
@@ -1296,6 +1332,8 @@
 		<string>o.glif</string>
 		<key>oacute</key>
 		<string>oacute.glif</string>
+		<key>ocircumflex</key>
+		<string>ocircumflex.glif</string>
 		<key>odieresis</key>
 		<string>odieresis.glif</string>
 		<key>oe</key>
@@ -1362,6 +1400,8 @@
 		<string>scaron.glif</string>
 		<key>scedilla</key>
 		<string>scedilla.glif</string>
+		<key>scircumflex</key>
+		<string>scircumflex.glif</string>
 		<key>semicolon</key>
 		<string>semicolon.glif</string>
 		<key>seven</key>
@@ -1392,6 +1432,8 @@
 		<string>u_drop_sign.glif</string>
 		<key>uacute</key>
 		<string>uacute.glif</string>
+		<key>ucircumflex</key>
+		<string>ucircumflex.glif</string>
 		<key>udieresis</key>
 		<string>udieresis.glif</string>
 		<key>ugrave</key>
@@ -1420,12 +1462,16 @@
 		<string>v.glif</string>
 		<key>w</key>
 		<string>w.glif</string>
+		<key>wcircumflex</key>
+		<string>wcircumflex.glif</string>
 		<key>x</key>
 		<string>x.glif</string>
 		<key>y</key>
 		<string>y.glif</string>
 		<key>yacute</key>
 		<string>yacute.glif</string>
+		<key>ycircumflex</key>
+		<string>ycircumflex.glif</string>
 		<key>ydieresis</key>
 		<string>ydieresis.glif</string>
 		<key>yen</key>
