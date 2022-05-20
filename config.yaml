@@ -35,7 +35,7 @@ glyphs:
     UC_LEFT_LEG: ["J"]
     LC_LEFT_LEG: ["j"]
     LC_RIGHT_LEG: ["t"]
-    LC_RIGHT_MOUTHS: anmhd
+    LC_RIGHT_MOUTHS: amd
     QUOTES: ["'","\"","‘","’","“","”"]
     PARANTHESIS: "()"
     ML_CONSONANTS: കഖഗഘങചഛജഝഞടഠഡഢണതഥദധനപഫബഭമയരലവറശഷസഹളഴ
@@ -59,11 +59,12 @@ glyphs:
   kern:
     latin: # script
       - ["@UC_RIGHT_ROUND", "@UC_LEFT_SLANT", -50]
-      - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_ROUND", "@LC_LEFT_ROUND", -20]
+      - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -20]
       - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -50]
       - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
-      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -50]
-      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -50]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
+      - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]
     malayalam:
       - ['്',"@QUOTES", 100 ]
       - ['്',"@PARANTHESIS", 100 ]

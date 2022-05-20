@@ -4,17 +4,18 @@
 	<advance width="647"/>
 	<outline>
 		<contour>
-			<point x="178.438" y="-42.4219" type="curve" smooth="yes"/>
-			<point x="80.4219" y="-44.4189" type="line"/>
-			<point x="38" y="-1.99707" type="line"/>
-			<point x="28.4785" y="-1.99707"/>
-			<point x="20.8633" y="5.61621"/>
-			<point x="19" y="14.0029" type="curve" smooth="yes"/>
-			<point x="1.58691" y="141.701"/>
-			<point x="12.8496" y="271.845"/>
+			<point x="29" y="-37" type="line"/>
+			<point x="20.54" y="-40.1797"/>
+			<point x="13" y="-34.4424"/>
+			<point x="13" y="-25.998" type="curve" smooth="yes"/>
+			<point x="10" y="18.002"/>
+			<point x="9" y="62.002"/>
+			<point x="9" y="106.002" type="curve" smooth="yes"/>
+			<point x="10" y="205.002"/>
+			<point x="17" y="304.002"/>
 			<point x="22" y="403.002" type="curve" smooth="yes"/>
-			<point x="30" y="521.002"/>
-			<point x="32" y="640.002"/>
+			<point x="28" y="521.002"/>
+			<point x="30" y="640.002"/>
 			<point x="29" y="759.002" type="curve" smooth="yes"/>
 			<point x="29" y="768.002"/>
 			<point x="36" y="777.002"/>
@@ -91,12 +92,14 @@
 			<point x="162.751" y="79.1406"/>
 			<point x="190.438" y="-26.4219" type="curve" smooth="yes"/>
 			<point x="192.422" y="-35.4219"/>
-			<point x="187.422" y="-42.4219"/>
+			<point x="187.422" y="-44.4219"/>
+			<point x="179.422" y="-47.4219" type="curve"/>
+			<point x="113.859" y="-121.859" type="line"/>
 		</contour>
 		<contour>
-			<point x="135.891" y="6.00293" type="line" smooth="yes"/>
-			<point x="141.06" y="6.00293"/>
-			<point x="143.368" y="8.82129"/>
+			<point x="134.891" y="0.626953" type="line" smooth="yes"/>
+			<point x="139.854" y="2.49512"/>
+			<point x="143.416" y="8.4043"/>
 			<point x="142.202" y="14.4727" type="curve" smooth="yes"/>
 			<point x="114.401" y="120.644"/>
 			<point x="94.3887" y="249.841"/>
@@ -180,18 +183,21 @@
 			<point x="137.68" y="791.541"/>
 			<point x="131.297" y="791.143" type="curve" smooth="yes"/>
 			<point x="45.3125" y="772.158" type="line" smooth="yes"/>
-			<point x="39.9238" y="770.956"/>
-			<point x="35.083" y="765.291"/>
-			<point x="35" y="759.159" type="curve" smooth="yes"/>
-			<point x="38" y="639.987"/>
-			<point x="36" y="520.8"/>
-			<point x="27.9844" y="402.597" type="curve" smooth="yes"/>
-			<point x="18.8662" y="272.058"/>
-			<point x="7.61621" y="142.38"/>
-			<point x="24.8438" y="15.3154" type="curve" smooth="yes"/>
-			<point x="26.1445" y="9.55762"/>
-			<point x="31.6064" y="3.88086"/>
-			<point x="38" y="4.00293" type="curve" smooth="yes"/>
+			<point x="39.8916" y="770.948"/>
+			<point x="35" y="765.205"/>
+			<point x="35" y="759.002" type="curve" smooth="yes"/>
+			<point x="36" y="639.893"/>
+			<point x="34" y="520.846"/>
+			<point x="27.9844" y="402.689" type="curve" smooth="yes"/>
+			<point x="23" y="303.783"/>
+			<point x="16" y="204.705"/>
+			<point x="15" y="105.939" type="curve" smooth="yes"/>
+			<point x="15" y="62.0176"/>
+			<point x="16" y="18.2363"/>
+			<point x="18.9844" y="-25.5762" type="curve" smooth="yes"/>
+			<point x="19.3398" y="-30.5508"/>
+			<point x="21.8008" y="-32.8682"/>
+			<point x="27.2969" y="-31.248" type="curve" smooth="yes"/>
 		</contour>
 	</outline>
 	<lib>
@@ -202,19 +208,31 @@
 				<array>
 					<dict>
 						<key>position</key>
-						<integer>-44</integer>
-						<key>width</key>
-						<integer>48</integer>
-					</dict>
-					<dict>
-						<key>position</key>
-						<integer>-2</integer>
+						<integer>-37</integer>
 						<key>width</key>
 						<integer>6</integer>
 					</dict>
 				</array>
 				<key>vhints</key>
 				<array>
+					<dict>
+						<key>position</key>
+						<integer>9</integer>
+						<key>width</key>
+						<integer>6</integer>
+					</dict>
+					<dict>
+						<key>position</key>
+						<integer>13</integer>
+						<key>width</key>
+						<integer>6</integer>
+					</dict>
+					<dict>
+						<key>position</key>
+						<integer>22</integer>
+						<key>width</key>
+						<integer>6</integer>
+					</dict>
 					<dict>
 						<key>position</key>
 						<integer>29</integer>

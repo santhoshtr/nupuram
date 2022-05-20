@@ -26,7 +26,7 @@ table GDEF {
 @UC_LEFT_LEG = [J];
 @LC_LEFT_LEG = [j];
 @LC_RIGHT_LEG = [t];
-@LC_RIGHT_MOUTHS = [a n m h d];
+@LC_RIGHT_MOUTHS = [a m d];
 @QUOTES = [quotesingle quotedbl quoteleft quoteright quotedblleft quotedblright];
 @PARANTHESIS = [parenleft parenright];
 @ML_CONSONANTS = [ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla];
@@ -460,11 +460,12 @@ lookup latin_kern {
     lookupflag 0;
     ;
     pos @UC_RIGHT_ROUND @UC_LEFT_SLANT -50;
-    pos @LC_RIGHT_SLANT @LC_LEFT_ROUND -50;
+    pos @UC_RIGHT_ROUND @LC_LEFT_ROUND -20;
+    pos @LC_RIGHT_SLANT @LC_LEFT_ROUND -20;
     pos @UC_RIGHT_SLANT @LC_LEFT_ROUND -50;
     pos @UC_RIGHT_SLANT @UC_LEFT_ROUND -50;
-    pos @LC_RIGHT_MOUTHS @LC_LEFT_ROUND -50;
-    pos @LC_RIGHT_MOUTHS @LC_LEFT_SLANT -50;
+    pos @LC_RIGHT_MOUTHS @LC_LEFT_ROUND -20;
+    pos @LC_RIGHT_MOUTHS @LC_LEFT_SLANT -20;
 } latin_kern;
 
 lookup malayalam_kern {
