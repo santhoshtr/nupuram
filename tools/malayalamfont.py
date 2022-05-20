@@ -433,7 +433,6 @@ class MalayalamFont(Font):
             '\'':  '"',
             '‘': '“',
             '’': '”',
-            'െ': 'ൈ',
         }
         for b, c in doubles.items():
             basename = SVGGlyph.get_glyph_name(b)
@@ -451,9 +450,39 @@ class MalayalamFont(Font):
             composite.appendComponent(component_1)
             component_2: Component = composite.instantiateComponent()
             component_2.baseGlyph = basename
-            component_2.move((baseGlyph.width,0))
+            component_2.move((baseGlyph.width, 0))
             composite.appendComponent(component_2)
             log.debug(f"Compose {compositename}: {basename} +  {basename} ")
+
+        appendables = {
+            'ഈ': ['ഇ', 'ൗ'],
+            'ഊ': ['ഉ', 'ൗ'],
+            'ഐ': ['െ','എ'],
+            'ഓ': ['ഒ', 'ാ'],
+            'ഔ': ['ഒ', 'ൗ'],
+            'ൊ': ['െ', 'ാ'],
+            'ോ': ['േ', 'ാ'],
+            'ോ': ['േ', 'ാ'],
+            'ൈ': ['െ', 'െ'],
+            'ൌ': ['െ', 'ൗ'],
+        }
+        for c, parts in appendables.items():
+            compositename = SVGGlyph.get_glyph_name(c)
+            self.newGlyph(compositename)
+            composite: Glyph = self[compositename]
+            composite.unicodes = [ord(c)]
+            composite.width = 0
+            for part in parts:
+                basename = SVGGlyph.get_glyph_name(part)
+                if not basename in self:
+                    log.warn(f"{basename} glyph not found for doubling")
+                    continue
+                baseGlyph = self[basename]
+                component: Component = composite.instantiateComponent()
+                component.move((composite.width ,0))
+                component.baseGlyph = basename
+                composite.width = composite.width + baseGlyph.width
+                composite.appendComponent(component)
 
         diacritics = "´¸˚¯`ˇ~¨˙˜"
         for diacritic in diacritics:
@@ -477,22 +506,6 @@ class MalayalamFont(Font):
                 self.buildComposite(composite_glyph_name,
                                     composite_unicode, items)
 
-        self.buildComposite(SVGGlyph.get_glyph_name('ഈ'), ord('ഈ'), [
-            SVGGlyph.get_glyph_name('ഇ'),  SVGGlyph.get_glyph_name('ൗ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ഊ'), ord('ഊ'), [
-            SVGGlyph.get_glyph_name('ഉ'),  SVGGlyph.get_glyph_name('ൗ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ഓ'), ord('ഓ'), [
-            SVGGlyph.get_glyph_name('ഒ'),  SVGGlyph.get_glyph_name('ാ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ഔ'), ord('ഔ'), [
-            SVGGlyph.get_glyph_name('ഒ'),  SVGGlyph.get_glyph_name('ൗ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ഐ'), ord('ഐ'), [
-            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('എ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ൊ'), ord('ൊ'), [
-            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ാ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ോ'), ord('ോ'), [
-            SVGGlyph.get_glyph_name('േ'),  SVGGlyph.get_glyph_name('ാ')])
-        self.buildComposite(SVGGlyph.get_glyph_name('ൌ'), ord('ൌ'), [
-            SVGGlyph.get_glyph_name('െ'),  SVGGlyph.get_glyph_name('ൗ')])
         self.buildComposite(SVGGlyph.get_glyph_name('കൢ'), None, [
             SVGGlyph.get_glyph_name('ക'),  SVGGlyph.get_glyph_name('ൢ')])
 

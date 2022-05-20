@@ -27,8 +27,8 @@ table GDEF {
 @LC_LEFT_LEG = [j];
 @LC_RIGHT_LEG = [t];
 @LC_RIGHT_MOUTHS = [a n m h d];
-@QUOTES = [quotesingle];
-@PARANTHESIS = [parenleft];
+@QUOTES = [quotesingle quotedbl quoteleft quoteright quotedblleft quotedblright];
+@PARANTHESIS = [parenleft parenright];
 @ML_CONSONANTS = [ml_ka ml_kha ml_ga ml_gha ml_nga ml_ca ml_cha ml_ja ml_jha ml_nya ml_tta ml_ttha ml_dda ml_ddha ml_nna ml_ta ml_tha ml_da ml_dha ml_na ml_pa ml_pha ml_ba ml_bha ml_ma ml_ya ml_ra ml_la ml_va ml_rra ml_sha ml_ssa ml_sa ml_ha ml_lla ml_llla];
 @ML_VOWEL_SIGNS = [ml_sign_aa ml_sign_i ml_sign_ii ml_sign_u ml_sign_uu ml_sign_vocalic_r ml_sign_vocalic_rr ml_sign_vocalic_l ml_sign_vocalic_ll ml_sign_e ml_sign_ee ml_sign_ai ml_sign_o ml_sign_oo ml_sign_au ml_au_length_mark];
 @ML_VOWEL_SIGNS_CONJOINING = [ml_sign_u ml_sign_uu ml_sign_vocalic_r ml_sign_vocalic_rr ml_sign_vocalic_l ml_sign_vocalic_ll];

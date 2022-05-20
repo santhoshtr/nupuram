@@ -149,7 +149,6 @@
 			<string>pound</string>
 			<string>q</string>
 			<string>question</string>
-			<string>quoteleft</string>
 			<string>quotesingle</string>
 			<string>r</string>
 			<string>registered</string>
@@ -468,6 +467,7 @@
 			<string>ml_chillu_l</string>
 			<string>ml_chillu_ll</string>
 			<string>ml_chillu_k</string>
+			<string>quoteleft</string>
 			<string>uni20A9</string>
 			<string>uni20B5</string>
 			<string>uni20B9</string>
@@ -483,7 +483,15 @@
 			<string>quotedbl</string>
 			<string>quotedblleft</string>
 			<string>quotedblright</string>
+			<string>ml_ii</string>
+			<string>ml_uu</string>
+			<string>ml_ai</string>
+			<string>ml_oo</string>
+			<string>ml_au</string>
+			<string>ml_sign_o</string>
+			<string>ml_sign_oo</string>
 			<string>ml_sign_ai</string>
+			<string>ml_sign_au</string>
 			<string>aacute</string>
 			<string>cacute</string>
 			<string>eacute</string>
@@ -755,14 +763,6 @@
 			<string>ml_ha_virama_ra_sign_uu</string>
 			<string>ml_ssa_virama_ra_sign_u</string>
 			<string>ml_ssa_virama_ra_sign_uu</string>
-			<string>ml_au</string>
-			<string>ml_uu</string>
-			<string>ml_sign_au</string>
-			<string>ml_oo</string>
-			<string>ml_sign_o</string>
-			<string>ml_ii</string>
-			<string>ml_ai</string>
-			<string>ml_sign_oo</string>
 		</array>
 	</dict>
 </plist>
