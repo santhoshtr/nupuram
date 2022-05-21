@@ -507,8 +507,11 @@ class MalayalamFont(Font):
                 self.buildComposite(composite_glyph_name,
                                     composite_unicode, items)
 
-        self.buildComposite(SVGGlyph.get_glyph_name('കൢ'), None, [
-            SVGGlyph.get_glyph_name('ക'),  SVGGlyph.get_glyph_name('ൢ')])
+        for cons in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
+            self.buildComposite(SVGGlyph.get_glyph_name(cons+'ൢ'), None, [
+                SVGGlyph.get_glyph_name(cons), SVGGlyph.get_glyph_name('ൢ')])
+            self.buildComposite(SVGGlyph.get_glyph_name(cons+'ൣ'), None, [
+                SVGGlyph.get_glyph_name(cons), SVGGlyph.get_glyph_name('ൣ')])
 
         for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
             base_glyph_name = SVGGlyph.get_glyph_name(base)

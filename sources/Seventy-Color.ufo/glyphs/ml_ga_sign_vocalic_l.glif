@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="ml_ga_sign_vocalic_l" format="2">
+	<advance width="690"/>
+	<outline>
+		<component base="ml_ga"/>
+		<component base="ml_sign_vocalic_l" xOffset="127.12745" yOffset="-1.38526"/>
+	</outline>
+	<lib>
+		<dict>
+			<key>public.markColor</key>
+			<string>0.92,0.93,0.94,1</string>
+		</dict>
+	</lib>
+</glyph>

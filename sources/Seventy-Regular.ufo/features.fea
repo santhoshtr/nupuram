@@ -206,6 +206,7 @@ lookup psts_vowel_signs {
     sub ml_ka ml_sign_uu by ml_ka_sign_uu;
     sub ml_ka ml_sign_vocalic_r by ml_ka_sign_vocalic_r;
     sub ml_ka ml_sign_vocalic_l by ml_ka_sign_vocalic_l;
+    sub ml_ka ml_sign_vocalic_ll by ml_ka_sign_vocalic_ll;
     sub ml_ka_virama_ka ml_sign_u by ml_ka_virama_ka_sign_u;
     sub ml_ka_virama_ka ml_sign_uu by ml_ka_virama_ka_sign_uu;
     sub ml_ka_virama_ka ml_sign_vocalic_r by ml_ka_virama_ka_sign_vocalic_r;
@@ -224,6 +225,8 @@ lookup psts_vowel_signs {
     sub ml_ga ml_sign_u by ml_ga_sign_u;
     sub ml_ga ml_sign_uu by ml_ga_sign_uu;
     sub ml_ga ml_sign_vocalic_r by ml_ga_sign_vocalic_r;
+    sub ml_ga ml_sign_vocalic_l by ml_ga_sign_vocalic_l;
+    sub ml_ga ml_sign_vocalic_ll by ml_ga_sign_vocalic_ll;
     sub ml_ga_virama_ga ml_sign_u by ml_ga_virama_ga_sign_u;
     sub ml_ga_virama_ga ml_sign_uu by ml_ga_virama_ga_sign_uu;
     sub ml_ga_virama_da ml_sign_u by ml_ga_virama_da_sign_u;
@@ -310,6 +313,8 @@ lookup psts_vowel_signs {
     sub ml_ta ml_sign_u by ml_ta_sign_u;
     sub ml_ta ml_sign_uu by ml_ta_sign_uu;
     sub ml_ta ml_sign_vocalic_r by ml_ta_sign_vocalic_r;
+    sub ml_ta ml_sign_vocalic_l by ml_ta_sign_vocalic_l;
+    sub ml_ta ml_sign_vocalic_ll by ml_ta_sign_vocalic_ll;
     sub ml_ta_virama_ta ml_sign_u by ml_ta_virama_ta_sign_u;
     sub ml_ta_virama_ta ml_sign_uu by ml_ta_virama_ta_sign_uu;
     sub ml_ta_virama_ta ml_sign_vocalic_r by ml_ta_virama_ta_sign_vocalic_r;
@@ -368,17 +373,23 @@ lookup psts_vowel_signs {
     sub ml_pa ml_sign_u by ml_pa_sign_u;
     sub ml_pa ml_sign_uu by ml_pa_sign_uu;
     sub ml_pa ml_sign_vocalic_r by ml_pa_sign_vocalic_r;
+    sub ml_pa ml_sign_vocalic_l by ml_pa_sign_vocalic_l;
+    sub ml_pa ml_sign_vocalic_ll by ml_pa_sign_vocalic_ll;
     sub ml_pa_virama_pa ml_sign_u by ml_pa_virama_pa_sign_u;
     sub ml_pa_virama_pa ml_sign_uu by ml_pa_virama_pa_sign_uu;
     sub ml_pa_virama_ra ml_sign_u by ml_pa_virama_ra_sign_u;
     sub ml_pa_virama_ra ml_sign_uu by ml_pa_virama_ra_sign_uu;
     sub ml_pha ml_sign_u by ml_pha_sign_u;
     sub ml_pha ml_sign_uu by ml_pha_sign_uu;
+    sub ml_pha ml_sign_vocalic_l by ml_pha_sign_vocalic_l;
+    sub ml_pha ml_sign_vocalic_ll by ml_pha_sign_vocalic_ll;
     sub ml_pha_virama_ra ml_sign_u by ml_pha_virama_ra_sign_u;
     sub ml_pha_virama_ra ml_sign_uu by ml_pha_virama_ra_sign_uu;
     sub ml_ba ml_sign_u by ml_ba_sign_u;
     sub ml_ba ml_sign_uu by ml_ba_sign_uu;
     sub ml_ba ml_sign_vocalic_r by ml_ba_sign_vocalic_r;
+    sub ml_ba ml_sign_vocalic_l by ml_ba_sign_vocalic_l;
+    sub ml_ba ml_sign_vocalic_ll by ml_ba_sign_vocalic_ll;
     sub ml_ba_virama_ba ml_sign_u by ml_ba_virama_ba_sign_u;
     sub ml_ba_virama_ba ml_sign_uu by ml_ba_virama_ba_sign_uu;
     sub ml_ba_virama_ra ml_sign_u by ml_ba_virama_ra_sign_u;
@@ -391,6 +402,8 @@ lookup psts_vowel_signs {
     sub ml_ma ml_sign_u by ml_ma_sign_u;
     sub ml_ma ml_sign_uu by ml_ma_sign_uu;
     sub ml_ma ml_sign_vocalic_r by ml_ma_sign_vocalic_r;
+    sub ml_ma ml_sign_vocalic_l by ml_ma_sign_vocalic_l;
+    sub ml_ma ml_sign_vocalic_ll by ml_ma_sign_vocalic_ll;
     sub ml_ma_virama_pa ml_sign_u by ml_ma_virama_pa_sign_u;
     sub ml_ma_virama_pa ml_sign_uu by ml_ma_virama_pa_sign_uu;
     sub ml_ma_virama_pa_virama_ra ml_sign_u by ml_ma_virama_pa_virama_ra_sign_u;
@@ -410,6 +423,8 @@ lookup psts_vowel_signs {
     sub ml_rra ml_sign_uu by ml_rra_sign_uu;
     sub ml_la ml_sign_u by ml_la_sign_u;
     sub ml_la ml_sign_uu by ml_la_sign_uu;
+    sub ml_la ml_sign_vocalic_l by ml_la_sign_vocalic_l;
+    sub ml_la ml_sign_vocalic_ll by ml_la_sign_vocalic_ll;
     sub ml_la_virama_la ml_sign_u by ml_la_virama_la_sign_u;
     sub ml_la_virama_la ml_sign_uu by ml_la_virama_la_sign_uu;
     sub ml_lla ml_sign_u by ml_lla_sign_u;
@@ -421,6 +436,8 @@ lookup psts_vowel_signs {
     sub ml_va ml_sign_u by ml_va_sign_u;
     sub ml_va ml_sign_uu by ml_va_sign_uu;
     sub ml_va ml_sign_vocalic_r by ml_va_sign_vocalic_r;
+    sub ml_va ml_sign_vocalic_l by ml_va_sign_vocalic_l;
+    sub ml_va ml_sign_vocalic_ll by ml_va_sign_vocalic_ll;
     sub ml_va_virama_ra ml_sign_u by ml_va_virama_ra_sign_u;
     sub ml_va_virama_ra ml_sign_uu by ml_va_virama_ra_sign_uu;
     sub ml_va_virama_va ml_sign_u by ml_va_virama_va_sign_u;
@@ -428,6 +445,8 @@ lookup psts_vowel_signs {
     sub ml_sha ml_sign_u by ml_sha_sign_u;
     sub ml_sha ml_sign_uu by ml_sha_sign_uu;
     sub ml_sha ml_sign_vocalic_r by ml_sha_sign_vocalic_r;
+    sub ml_sha ml_sign_vocalic_l by ml_sha_sign_vocalic_l;
+    sub ml_sha ml_sign_vocalic_ll by ml_sha_sign_vocalic_ll;
     sub ml_sha_virama_ca ml_sign_u by ml_sha_virama_ca_sign_u;
     sub ml_sha_virama_ca ml_sign_uu by ml_sha_virama_ca_sign_uu;
     sub ml_sha_virama_ra ml_sign_u by ml_sha_virama_ra_sign_u;
@@ -441,6 +460,8 @@ lookup psts_vowel_signs {
     sub ml_sa ml_sign_u by ml_sa_sign_u;
     sub ml_sa ml_sign_uu by ml_sa_sign_uu;
     sub ml_sa ml_sign_vocalic_r by ml_sa_sign_vocalic_r;
+    sub ml_sa ml_sign_vocalic_l by ml_sa_sign_vocalic_l;
+    sub ml_sa ml_sign_vocalic_ll by ml_sa_sign_vocalic_ll;
     sub ml_sa_virama_tha ml_sign_u by ml_sa_virama_tha_sign_u;
     sub ml_sa_virama_tha ml_sign_uu by ml_sa_virama_tha_sign_uu;
     sub ml_sa_virama_ra ml_sign_u by ml_sa_virama_ra_sign_u;
@@ -448,6 +469,8 @@ lookup psts_vowel_signs {
     sub ml_ha ml_sign_u by ml_ha_sign_u;
     sub ml_ha ml_sign_uu by ml_ha_sign_uu;
     sub ml_ha ml_sign_vocalic_r by ml_ha_sign_vocalic_r;
+    sub ml_ha ml_sign_vocalic_l by ml_ha_sign_vocalic_l;
+    sub ml_ha ml_sign_vocalic_ll by ml_ha_sign_vocalic_ll;
     sub ml_ha_virama_na ml_sign_u by ml_ha_virama_na_sign_u;
     sub ml_ha_virama_na ml_sign_uu by ml_ha_virama_na_sign_uu;
     sub ml_ha_virama_ma ml_sign_u by ml_ha_virama_ma_sign_u;
