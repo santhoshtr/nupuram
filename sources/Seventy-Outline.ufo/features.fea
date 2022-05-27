@@ -12,6 +12,7 @@ table GDEF {
 @LC_ALL = [a b c d e f g h i j k l m n o p q r s t u v w x y z];
 @UC_ALL = [A B C D E F G H I J K L M N O P Q R S T U V W X Y Z];
 @LATIN_EXTRA = [Aacute Acircumflex Adieresis Agrave Amacron Aring Atilde Cacute Ccaron Ccedilla Ccircumflex Cdotaccent Dcaron Eacute Ecaron Ecircumflex Edieresis Edotaccent Egrave Emacron Gcircumflex Gdotaccent Iacute Icircumflex Idieresis Igrave Imacron Itilde Nacute Ncaron Ntilde Oacute Ocircumflex Odieresis Ograve Omacron Otilde Racute Rcaron Sacute Scaron Scedilla Scircumflex Uacute Ucircumflex Udieresis Ugrave Umacron Uring Utilde Wcircumflex Yacute Ycircumflex Zcaron Zdotaccent aacute acircumflex adieresis agrave amacron aring atilde cacute ccaron ccedilla ccircumflex cdotaccent eacute ecaron ecircumflex edieresis edotaccent egrave emacron gcircumflex gdotaccent hcircumflex iacute icircumflex idieresis igrave imacron itilde nacute ncaron ntilde oacute ocircumflex odieresis ograve omacron otilde racute rcaron sacute scaron scedilla scircumflex uacute ucircumflex udieresis ugrave umacron uring utilde wcircumflex yacute ycircumflex ydieresis zacute zcaron zdotaccent];
+@LATIN_LIGATURES = [ffi ff ee th ft fi tt];
 @LC_LEFT_ROUND = [e ee c a d o q g];
 @LC_RIGHT_ROUND = [b o p];
 @UC_LEFT_ROUND = [O Q];
@@ -521,9 +522,9 @@ lookup abvm_topmarks {
         pos base ml_ka_virama_ta_virama_ra
             <anchor 608 0> mark @vc_vc;
         pos base [ml_ka_virama_ra ml_ka_virama_ra_sign_u ml_ka_virama_ra_sign_uu]
-            <anchor 400 0> mark @vc_vc;
+            <anchor 410 0> mark @vc_vc;
         pos base ml_ka_virama_la
-            <anchor 336 0> mark @vc_vc;
+            <anchor 345 0> mark @vc_vc;
         pos base [ml_ka_virama_ssa ml_ka_virama_ssa_sign_u ml_ka_virama_ssa_sign_uu]
             <anchor 521 0> mark @vc_vc;
         pos base [ml_ga_virama_ga ml_ga_virama_ga_sign_u ml_ga_virama_ga_sign_uu]
@@ -544,10 +545,10 @@ lookup abvm_topmarks {
             <anchor 581 0> mark @vc_vc;
         pos base [ml_nga_virama_ka ml_nga_virama_ka_sign_u ml_nga_virama_ka_sign_uu ml_nga_virama_ka_sign_vocalic_r]
             <anchor 401 0> mark @vc_vc;
-        pos base [ml_nga_virama_ka_virama_ra ml_nga_virama_ka_virama_ra_sign_u ml_nga_virama_ka_virama_ra_sign_uu]
+        pos base [ml_nga_virama_ka_virama_ra ml_nga_virama_ka_virama_ra_sign_u ml_nga_virama_ka_virama_ra_sign_uu ml_na_virama_ta ml_na_virama_ta_sign_u ml_na_virama_ta_sign_uu ml_na_virama_ta_sign_vocalic_r]
             <anchor 444 0> mark @vc_vc;
-        pos base [ml_nga_virama_nga ml_nga_virama_nga_sign_u ml_nga_virama_nga_sign_uu ml_ha_virama_na ml_ha_virama_na_sign_u ml_ha_virama_na_sign_uu]
-            <anchor 560 0> mark @vc_vc;
+        pos base [ml_nga_virama_nga ml_nga_virama_nga_sign_u ml_nga_virama_nga_sign_uu]
+            <anchor 576 0> mark @vc_vc;
         pos base [ml_ca_virama_ca ml_ca_virama_ca_sign_u ml_ca_virama_ca_sign_uu]
             <anchor 403 0> mark @vc_vc;
         pos base ml_ca_virama_cha
@@ -593,7 +594,7 @@ lookup abvm_topmarks {
         pos base [ml_ta_virama_ra ml_ta_virama_ra_sign_u ml_ta_virama_ra_sign_uu]
             <anchor 424 0> mark @vc_vc;
         pos base ml_ta_virama_la
-            <anchor 300 0> mark @vc_vc;
+            <anchor 314 0> mark @vc_vc;
         pos base ml_ta_virama_sa_virama_ra
             <anchor 716 0> mark @vc_vc;
         pos base [ml_da_virama_da ml_da_virama_da_sign_u ml_da_virama_da_sign_uu]
@@ -602,8 +603,6 @@ lookup abvm_topmarks {
             <anchor 327 0> mark @vc_vc;
         pos base [ml_dha_virama_ra ml_dha_virama_ra_sign_u ml_dha_virama_ra_sign_uu]
             <anchor 474 0> mark @vc_vc;
-        pos base [ml_na_virama_ta ml_na_virama_ta_sign_u ml_na_virama_ta_sign_uu ml_na_virama_ta_sign_vocalic_r]
-            <anchor 453 0> mark @vc_vc;
         pos base [ml_na_virama_ta_virama_ra ml_na_virama_ta_virama_ra_sign_u ml_na_virama_ta_virama_ra_sign_uu ml_ha_virama_ra ml_ha_virama_ra_sign_u ml_ha_virama_ra_sign_uu]
             <anchor 529 0> mark @vc_vc;
         pos base [ml_na_virama_da ml_na_virama_da_sign_u ml_na_virama_da_sign_uu ml_na_virama_da_sign_vocalic_r]
@@ -635,7 +634,7 @@ lookup abvm_topmarks {
         pos base [ml_bha_virama_ra ml_bha_virama_ra_sign_u ml_bha_virama_ra_sign_uu]
             <anchor 368 0> mark @vc_vc;
         pos base [ml_ma_virama_pa ml_ma_virama_pa_sign_u ml_ma_virama_pa_sign_uu]
-            <anchor 500 0> mark @vc_vc;
+            <anchor 491 0> mark @vc_vc;
         pos base [ml_ma_virama_ma ml_ma_virama_ma_sign_u ml_ma_virama_ma_sign_uu]
             <anchor 475 0> mark @vc_vc;
         pos base [ml_ma_virama_ra ml_ma_virama_ra_sign_u ml_ma_virama_ra_sign_uu]
@@ -662,7 +661,9 @@ lookup abvm_topmarks {
             <anchor 604 0> mark @vc_vc;
         pos base [ml_sha_virama_ra ml_sha_virama_ra_sign_u ml_sha_virama_ra_sign_uu]
             <anchor 567 0> mark @vc_vc;
-        pos base [ml_sha_virama_la ml_sha_virama_sha ml_sha_virama_sha_sign_u ml_sha_virama_sha_sign_uu]
+        pos base ml_sha_virama_la
+            <anchor 360 0> mark @vc_vc;
+        pos base [ml_sha_virama_sha ml_sha_virama_sha_sign_u ml_sha_virama_sha_sign_uu]
             <anchor 366 0> mark @vc_vc;
         pos base [ml_ssa_virama_ra ml_ssa_virama_ra_sign_u ml_ssa_virama_ra_sign_uu]
             <anchor 530 0> mark @vc_vc;
@@ -674,6 +675,8 @@ lookup abvm_topmarks {
             <anchor 475 0> mark @vc_vc;
         pos base ml_sa_virama_sa
             <anchor 463 0> mark @vc_vc;
+        pos base [ml_ha_virama_na ml_ha_virama_na_sign_u ml_ha_virama_na_sign_uu]
+            <anchor 560 0> mark @vc_vc;
         pos base [ml_ha_virama_ma ml_ha_virama_ma_sign_u ml_ha_virama_ma_sign_uu]
             <anchor 527 0> mark @vc_vc;
         pos base ml_ha_virama_la
@@ -817,6 +820,19 @@ lookup akhn_conjuncts_fixup {
     sub ml_ha_virama_la' lookup split_cons_conj @ML_VOWEL_SIGNS_CONJOINING;
 } akhn_conjuncts_fixup;
 
+lookup malayalam_calt_lookup {
+    lookupflag 0;
+    ;
+    sub ml_na ml_sign_i' by ml_sign_i.wrap;
+} malayalam_calt_lookup;
+
+lookup salts_lookup {
+    lookupflag 0;
+    ;
+    sub ml_ka_sign_uu by ml_ka_sign_uu.1;
+    sub ml_sign_i by ml_sign_i.wrap;
+} salts_lookup;
+
 feature liga {
     script DFLT;
     language dflt;
@@ -921,3 +937,15 @@ feature abvm {
             lookup abvm_topmarks;
 
 } abvm;
+
+feature calt {
+    script mlm2;
+    language dflt;
+            lookup malayalam_calt_lookup;
+
+} calt;
+
+feature salt {
+            lookup salts_lookup;
+
+} salt;

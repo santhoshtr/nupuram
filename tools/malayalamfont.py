@@ -25,6 +25,7 @@ class MalayalamFont(Font):
         self.style = style
         self.fontFeatures = FontFeatures()
         self.available_svgs = []
+        self.salts={} #Stylistic Alternates
 
     def build_glyph_classes(self):
         for gclass in self.options.glyphs.classes:
@@ -46,7 +47,7 @@ class MalayalamFont(Font):
     def build_latin_ligatures(self):
         feature = "liga"
         name = "latin_ligatures"
-        ligatures = ["ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+        ligatures = self.get_glyphs_from_named_classes('LATIN_LIGATURES')
 
         rules = []
         for ligature in ligatures:
@@ -354,6 +355,29 @@ class MalayalamFont(Font):
         self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('്')] = "mark"
         self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('ൎ')] = "mark"
 
+    def build_calt(self):
+        feature = "calt"
+        for script in self.options.glyphs.calts:
+            name = f"{script}_calt_lookup"
+            languages = eval(f"LANGUAGE_{script.upper()}")
+            rules = []
+            for calt_def in self.options.glyphs.calts[script]:
+                precontext = SVGGlyph.get_glyph_name(calt_def[0])
+                base = SVGGlyph.get_glyph_name(calt_def[1])
+                replacement = base+"."+calt_def[2]
+                rules.append(Substitution([[base]], [[replacement]], precontext=[[precontext]]))
+            routine = Routine(name=name, rules=rules, languages=languages)
+            self.fontFeatures.addFeature(feature, [routine])
+
+    def build_salt(self):
+        feature = "salt"
+        name="salts_lookup"
+        rules=[]
+        for base, alts in self.salts.items():
+            rules.append(Substitution([[base]], [alts]))
+        routine = Routine(name=name, rules=rules )
+        self.fontFeatures.addFeature(feature, [routine])
+
     def getFeatures(self):
         return self.fontFeatures.asFea()
 
@@ -374,6 +398,8 @@ class MalayalamFont(Font):
         self.build_gpos()
         self.build_gdef()
         self.build_conjuncts_fixup()
+        self.build_calt()
+        self.build_salt()
         self.features.text = self.getFeatures()
 
     def build(self, design_dir):
@@ -382,7 +408,7 @@ class MalayalamFont(Font):
         self.newGlyph('.notdef')
         # Add space
         space = Glyph()
-        space.width = 200
+        space.width = 360
         space.unicodes = [0x0020]
         self.insertGlyph(space, 'space')
 
@@ -392,7 +418,12 @@ class MalayalamFont(Font):
             svg_glyph = SVGGlyph(os.path.join(design_dir, f))
             svg_glyph.parse()
             log.debug(f"{f} -> {svg_glyph.glyph_name}")
-            self.insertGlyph(svg_glyph.glif, svg_glyph.glyph_name)
+            self.insertGlyph(svg_glyph.glif, svg_glyph.glif.name)
+            if svg_glyph.alt:
+                if svg_glyph.glyph_name not in self.salts:
+                    self.salts[svg_glyph.glyph_name]=[]
+
+                self.salts[svg_glyph.glyph_name].append(svg_glyph.glif.name)
 
         # ZWJ and ZWNJ
         zwnj = Glyph()

@@ -16,6 +16,7 @@ class SVGGlyph:
         self.svg_width = 0.0
         self.svg_height = 0.0
         self.name = ""
+        self.alt = None
         self.unicode = None
         self.glyph_name = ""
         self.glyph_width = 0
@@ -56,7 +57,12 @@ class SVGGlyph:
         self.svg_width = float(svgObj.get('width', '1000').replace("px", " "))
         self.svg_height = float(svgObj.get(
             'height', '1000').replace("px", " "))
-        self.name = os.path.splitext(os.path.basename(self.svg_file_path))[0]
+        # Filename without extension
+        filename = os.path.splitext(os.path.basename(self.svg_file_path))[0]
+        self.name = filename.split(".")[0]
+        self.alt = None
+        if len( filename.split(".") ) > 1:
+            self.alt = filename.split(".")[1]
         self.unicode = None
         if len(self.name) == 1:
             self.unicode = [ord(self.name)]
@@ -65,7 +71,7 @@ class SVGGlyph:
         self.glyph_name = SVGGlyph.get_glyph_name(self.name)
         if not self.glyph_name:
             raise UFOLibError(
-                f"Could not calculate glyph name for {self.svg_file_path}")
+                f"Could not calculate glyph name for {self.name}")
 
         prefix_map = {"sodipodi": "http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd",
                       "inkscape": "http://www.inkscape.org/namespaces/inkscape"}
@@ -113,8 +119,11 @@ class SVGGlyph:
         except:
             pass
         try:
+            glif_name= self.glyph_name
+            if self.alt:
+                glif_name = self.glyph_name + "."+ self.alt
             self.glif = SVGGlyph.svg2glif(self.svg_file_path,
-                                          name=self.glyph_name,
+                                          name=glif_name,
                                           width=self.glyph_width,
                                           height=self.glyph_height,
                                           unicodes=self.unicode,
