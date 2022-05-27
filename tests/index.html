@@ -43,6 +43,15 @@
 						<input type="button" class="font-color " data-id="fontShadowColor" id="font-fontShadowColor"></label>
 					</div>
 				</section>
+				<section class="rows" style="grid-template-columns: 3fr 3fr;">
+
+					<label for="font-fontColor">Font color
+					<input type="button" class="font-color" data-id="fontColor" id="font-fontColor"></label>
+
+					<label for="background-color">Background
+					<input type="button" class="font-color background-color val-input" data-id="background-color" id="background-color"></label>
+
+			</section>
 				<section class="rows rows-3">
 					<div class="primitive-input">
 						<label for="font-fontSize">Font Size</label>
@@ -74,7 +83,7 @@
 							max="7" step="0.1" id="font-letterSpacing">
 					</div>
 					<div>
-						<label for="test-content">Test content</label>
+						<label for="test-content">Sample</label>
 						<select class="controls testcontent" id="test-content">
 							<option value="paragraphsMl">ഖണ്ഡികകൾ</option>
 							<option value="paragraphsEn">Paragraphs</option>
@@ -83,26 +92,20 @@
 							<option value="kerning">Kerning</option>
 							<option value="ligaturesMl">കൂട്ടക്ഷരങ്ങൾ</option>
 						</select>
-						<span id="next-test" style="cursor: pointer;">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">
-								<path
-									d="M 35.3,12.7 C 32.41,9.8 28.42,8 24,8 15.16,8 8.02,15.16 8.02,24 c 0,8.84 7.14,16 15.98,16 7.45,0 13.69,-5.1 15.46,-12 H 35.3 c -1.65,4.66 -6.07,8 -11.3,8 -6.63,0 -12,-5.37 -12,-12 0,-6.63 5.37,-12 12,-12 3.31,0 6.28,1.38 8.45,3.55 L 26,22 H 40 V 8 Z"
-									id="path2" />
-								<path d="M 0,0 H 48 V 48 H 0 Z" fill="none" id="path4" />
+						<span >
+						<span id="prev-test" style="cursor: pointer;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"/>
 							</svg>
+						</span>
+						<span id="next-test" style="cursor: pointer;">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/></svg>
+						</span>
 						</span>
 					</div>
 				</section>
 
-				<section class="rows" style="grid-template-columns: 3fr 3fr;">
-
-						<label for="font-fontColor">Font color
-						<input type="button" class="font-color" data-id="fontColor" id="font-fontColor"></label>
-
-						<label for="background-color">Background color
-						<input type="button" class="font-color background-color val-input" data-id="background-color" id="background-color"></label>
-
-				</section>
 
 				<section class="rows rows-2">
 					<div>

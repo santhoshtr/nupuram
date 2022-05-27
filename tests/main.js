@@ -1,10 +1,3 @@
-function loadFont(version) {
-    let font = new FontFace("Seventy", `url(../fonts/Seventy-Regular.woff2?v=${version}) format("woff2")`);
-    font.load().then(function (loadedFont) {
-        document.fonts.add(loadedFont);
-    }).catch(console.error);
-}
-
 /**
  * Shuffles array in place. ES6 version
  * @param {Array} a items An array containing the items.
@@ -95,7 +88,7 @@ function listen() {
             contentArea.classList.add('color');
             document.getElementById('font-fontColor').disabled = true
             document.getElementById('outlined').disabled = true
-            document.getElementById('palette').style.display = "block"
+            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'SeventyOutline') {
             contentArea.classList.add('outline');
@@ -123,6 +116,12 @@ function listen() {
             currentTestIndex = 0;
         }
         contentArea.innerHTML = testContents[++currentTestIndex];
+    });
+    document.getElementById('prev-test').addEventListener('click', () => {
+        if (currentTestIndex -1 <= 0 ) {
+            currentTestIndex = testContents.length;
+        }
+        contentArea.innerHTML = testContents[--currentTestIndex];
     });
 
     document.getElementById('outlined').addEventListener('change', function () {
@@ -349,11 +348,3 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
 
     sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: 0; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
 }
-
-window.onload = listen
-const source = new EventSource('/stream');
-source.onmessage = (event) => {
-    const message = JSON.parse(event.data);
-    document.getElementById("font-version").innerText = `${message.fontname}: ${message.version}-${message.build}`
-    loadFont(`${message.version}-${message.build}`)
-};
