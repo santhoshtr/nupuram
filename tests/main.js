@@ -348,3 +348,5 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
 
     sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: 0; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
 }
+
+window.onload = listen
