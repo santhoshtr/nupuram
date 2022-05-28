@@ -29,7 +29,7 @@ glyphs:
     LC_RIGHT_SLANT: ["v", "f", "ff", "k"]
     LC_LEFT_SLANT: ["v"]
     UC_LEFT_SLANT: ["A", "V", "Y", "T"]
-    UC_RIGHT_SLANT: AVTYL
+    UC_RIGHT_SLANT: TY
     UC_RIGHT_LEG: ["L"]
     UC_RIGHT_ARM: ["T"]
     LC_RIGHT_ARM: rf
@@ -66,7 +66,7 @@ glyphs:
       - ["@UC_RIGHT_ROUND", "@UC_LEFT_SLANT", -50]
       - ["@UC_RIGHT_ROUND", "@LC_LEFT_ROUND", -20]
       - ["@LC_RIGHT_SLANT", "@LC_LEFT_ROUND", -20]
-      - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_SLANT", "@LC_LEFT_ROUND", -100]
       - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]

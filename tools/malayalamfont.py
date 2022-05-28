@@ -408,7 +408,7 @@ class MalayalamFont(Font):
         self.newGlyph('.notdef')
         # Add space
         space = Glyph()
-        space.width = 360
+        space.width = 260
         space.unicodes = [0x0020]
         self.insertGlyph(space, 'space')
 

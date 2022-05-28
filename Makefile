@@ -12,11 +12,16 @@ SOURCEDIR=$(shell $(PY) tools/read_config.py sources)
 FONTSDIR=$(shell $(PY) tools/read_config.py build)
 PROOFDIR=$(shell $(PY) tools/read_config.py proofs)
 TESTSDIR=$(shell $(PY) tools/read_config.py tests)
+TTFDIR=${FONTSDIR}/ttf
+OTFDIR=${FONTSDIR}/otf
+WEBFONTSDIR=${FONTSDIR}/webfonts
+UFODIR=${FONTSDIR}/ufo
 
-UFO=$(STYLES:%=$(SOURCEDIR)/$(FAMILY)-%.ufo)
-OTF=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.otf)
-TTF=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.ttf)
-WOFF2=$(STYLES:%=$(FONTSDIR)/$(FAMILY)-%.woff2)
+UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
+OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
+TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
+WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
+
 
 default: build
 
@@ -28,100 +33,104 @@ help:
 	@echo "  make proof:  Creates HTML proof documents in the proof/ directory"
 	@echo
 
-build: otf ttf webfonts
+build: ufo otf ttf webfonts
 
-test: proof
-	# fontbakery check-fontval $(FONTSDIR)/*.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
-	fontbakery check-ufo-sources $(FONTSDIR)/*.ufo
-	fontbakery check-opentype $(FONTSDIR)/*.otf
-	# fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(FONTSDIR)/*.ttf
-
-$(SOURCEDIR)/$(FAMILY)-Regular.ufo:
+$(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/Regular --output $(SOURCEDIR)/$(FAMILY)-Regular.ufo
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/Regular --output $@
 	@ufonormalizer -m $@
 
-$(SOURCEDIR)/$(FAMILY)-Outline.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
+$(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
-	@mkdir -p ${FONTSDIR}
-	$(FONTFORGE) tools/ff_gen_outline_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Outline.otf 10
-	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
-	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Outline.otf $@
-	rm ${FONTSDIR}/$(FAMILY)-Outline.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Outline" -s Regular
+	@mkdir -p ${OTFDIR}
+	@mkdir -p ${UFODIR}
+	$(FONTFORGE) tools/ff_gen_outline_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Outline.otf 10
+	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
+	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Outline.otf $@
+	rm ${OTFDIR}/$(FAMILY)-Outline.otf
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Outline" -s Regular
 	@ufonormalizer -m $@
 
-$(SOURCEDIR)/$(FAMILY)-Shadow.ufo: ${FONTSDIR}/$(FAMILY)-Regular.otf
+$(UFODIR)/$(FAMILY)-Shadow.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
-	@mkdir -p ${FONTSDIR}
-	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${FONTSDIR}/$(FAMILY)-Regular.otf ${FONTSDIR}/$(FAMILY)-Shadow.otf -45 6 60
-	cp -rf $(SOURCEDIR)/$(FAMILY)-Regular.ufo $@
-	$(PY) tools/otf2ufo.py ${FONTSDIR}/$(FAMILY)-Shadow.otf $@
-	rm ${FONTSDIR}/$(FAMILY)-Shadow.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Shadow" -s Regular
+	@mkdir -p ${UFODIR}
+	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Shadow.otf -45 6 60
+	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
+	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Shadow.otf $@
+	rm ${OTFDIR}/$(FAMILY)-Shadow.otf
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Shadow" -s Regular
 	@ufonormalizer -m $@
 
-$(SOURCEDIR)/$(FAMILY)-Color.ufo: $(SOURCEDIR)/$(FAMILY)-Regular.ufo $(SOURCEDIR)/$(FAMILY)-Outline.ufo $(SOURCEDIR)/$(FAMILY)-Shadow.ufo
+$(UFODIR)/$(FAMILY)-Color.ufo: ${UFODIR}/$(FAMILY)-Regular.ufo ${UFODIR}/$(FAMILY)-Outline.ufo ${UFODIR}/$(FAMILY)-Shadow.ufo
 	@echo "  BUILD    $(@F)"
 	$(PY) tools/build_color_v0.py $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "Seventy Color" -s Regular
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Color" -s Regular
 	@ufonormalizer -m $@
 
 ufo: clean $(UFO)
-ttf: $(TTF) $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
-otf: $(OTF) $(FONTSDIR)/$(FAMILY)-Color-v1.otf
-webfonts: $(WOFF2) $(FONTSDIR)/$(FAMILY)-Color-v1.woff2
+ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf
+otf: $(OTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf
+webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2
 
-$(FONTSDIR)/$(FAMILY)-Color-v0.ttf: $(FONTSDIR)/$(FAMILY)-Color.ttf
+${TTFDIR}/$(FAMILY)-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Color.ttf
 	@cp $< $@
 
-$(FONTSDIR)/$(FAMILY)-Color-v0.otf: $(FONTSDIR)/$(FAMILY)-Color.otf
+$(OTFDIR)/$(FAMILY)-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Color.otf
 	@cp $< $@
 
-$(FONTSDIR)/$(FAMILY)-Color-v0.woff2: $(FONTSDIR)/$(FAMILY)-Color.woff2
+$(OTFDIR)/$(FAMILY)-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Color.woff2
 	@cp $< $@
 
-$(FONTSDIR)/$(FAMILY)-Color-v1.ttf: $(FONTSDIR)/$(FAMILY)-Color-v0.ttf
+${TTFDIR}/$(FAMILY)-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Color-v0.ttf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(FONTSDIR)/$(FAMILY)-Color-v1.otf: $(FONTSDIR)/$(FAMILY)-Color-v0.otf
+$(OTFDIR)/$(FAMILY)-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(FONTSDIR)/$(FAMILY)-Color-v1.woff2: $(FONTSDIR)/$(FAMILY)-Color-v1.ttf
+$(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
 	@echo " BUILD   $(@F)"
-	@fonttools ttLib.woff2 compress  $<
+	@mkdir -p ${WEBFONTSDIR}
+	@fonttools ttLib.woff2 compress -o  $@ $<
 
-$(FONTSDIR)/%.otf:
+$(OTFDIR)/%.otf:
 	@echo "  BUILD    $(@F)"
-	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(FONTSDIR) -u $(SOURCEDIR)/$*.ufo
+	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(OTFDIR) -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
-$(FONTSDIR)/%.ttf:
+${TTFDIR}/%.ttf:
 	@echo "  BUILD    $(@F)"
-	@fontmake --verbose=WARNING -o ttf -e 0.01 --output-dir $(FONTSDIR) -u $(SOURCEDIR)/$*.ufo
+	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter -e 0.01 --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
-$(FONTSDIR)/%.woff2: $(FONTSDIR)/%.ttf
+$(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 	@echo " BUILD   $(@F)"
-	@fonttools ttLib.woff2 compress  $<
+	@mkdir -p ${WEBFONTSDIR}
+	@fonttools ttLib.woff2 compress -o  $@ $<
 
 clean:
 	find -iname "*.pyc" -delete
 	@rm -rf $(FONTSDIR)
 	@rm -rf $(PROOFDIR)
 
-proof:
+proofs:
 	@mkdir -p ${PROOFDIR}
-	@hb-view  $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \
 		--output-file $(PROOFDIR)/ligatures.pdf;
-	@hb-view $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/content.txt \
 		--output-file $(PROOFDIR)/content.pdf;
 
-	@hb-view  $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/kerning.txt \
 		--output-file  $(PROOFDIR)/kerning.pdf ;
-	@hb-view  $(FONTSDIR)/*Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
 		--output-file  $(PROOFDIR)/latin.pdf ;
+
+test: proofs
+	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
+	fontbakery check-ufo-sources $(FONTSDIR)/ufo/$(FAMILY)-Regular.ufo
+	fontbakery check-opentype $(OTFDIR)/$(FAMILY)-Regular.otf
+	# fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(TTFDIR)/$(FAMILY)-Regular.ttf

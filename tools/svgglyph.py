@@ -97,7 +97,7 @@ class SVGGlyph:
             base = int(float(baseGuide.get('position').split(',')[1])) * -1
         transform[5] += self.svg_height + base  # Y offset
         anchorEls = svgObj.findall(
-            '{http://www.w3.org/2000/svg}text', prefix_map)
+            './/{http://www.w3.org/2000/svg}text', prefix_map)
         anchors = []
 
         vc_guide = svgObj.find(
@@ -136,7 +136,7 @@ class SVGGlyph:
 
     @staticmethod
     def name_from_uc(char):
-        return unicodedata.name(char).replace('MALAYALAM SIGN', '').replace('MALAYALAM', '').replace('LETTER', '').replace('VOWEL', '').lower().strip().replace(' ', '_', -1)
+        return unicodedata.name(char).replace('MALAYALAM SIGN', '').replace('MALAYALAM', '').replace('LETTER', '').replace('VOWEL', '').lower().strip().replace(' ', '_', -1).replace('-', '_')
 
     @staticmethod
     def get_glyph_name(name: str, prefix="ml_") -> str:

@@ -9,7 +9,7 @@ build-branch:
   stage: build
   before_script:
     - apt-get update -y
-    - apt-get install -y make python3-pip python3-venv python3-yaml
+    - apt-get install -y make python3-pip python3-venv python3-yaml fontforge python3-fontforge
     - pip3 install -r requirements.txt
   script:
     - make build
@@ -24,7 +24,7 @@ test:
   allow_failure: true
   before_script:
     - apt-get update -y
-    - apt-get install -y make libharfbuzz-bin python3-pip python3-venv python3-yaml
+    - apt-get install -y make libharfbuzz-bin python3-pip python3-venv python3-yaml fontforge python3-fontforge
     - pip3 install -r requirements.txt
   script:
     - make test
@@ -33,7 +33,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -rf fonts tests public
+    - cp -rf fonts proofs tests public
   artifacts:
     paths:
       - public  # instruct GitLab to keep the public folder

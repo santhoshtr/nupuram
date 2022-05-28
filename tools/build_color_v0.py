@@ -10,17 +10,17 @@ log = logging.getLogger(__name__)
 config = {
     "layers": {
         "public.default": {
-            "source": "sources/Seventy-Regular.ufo",
+            "source": "fonts/ufo/Seventy-Regular.ufo",
             "order": 1,  # Foreground layer
             "color": [255, 153, 85, 1]
         },
         "outline": {
-            "source": "sources/Seventy-Outline.ufo",
+            "source": "fonts/ufo/Seventy-Outline.ufo",
             "order": 2,  # Outline layer
             "color": [85, 34, 0, 1],
         },
         "shadow": {
-            "source": "sources/Seventy-Shadow.ufo",
+            "source": "fonts/ufo/Seventy-Shadow.ufo",
             "order": 0,  # background layer
             "color": [85, 34, 0, 1]
         }
