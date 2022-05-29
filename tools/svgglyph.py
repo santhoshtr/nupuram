@@ -61,7 +61,7 @@ class SVGGlyph:
         filename = os.path.splitext(os.path.basename(self.svg_file_path))[0]
         self.name = filename.split(".")[0]
         self.alt = None
-        if len( filename.split(".") ) > 1:
+        if len(filename.split(".")) > 1:
             self.alt = filename.split(".")[1]
         self.unicode = None
         if len(self.name) == 1:
@@ -104,8 +104,8 @@ class SVGGlyph:
             ".//sodipodi:guide/[@inkscape:label='vc']", prefix_map)
         if vc_guide != None:
             anchors.append({
-                "x": float( vc_guide.get('position').split(',')[0]),
-                "y": 0 ,
+                "x": float(vc_guide.get('position').split(',')[0]),
+                "y": 0,
                 "name": "vc"
             })
 
@@ -119,9 +119,9 @@ class SVGGlyph:
         except:
             pass
         try:
-            glif_name= self.glyph_name
+            glif_name = self.glyph_name
             if self.alt:
-                glif_name = self.glyph_name + "."+ self.alt
+                glif_name = self.glyph_name + "." + self.alt
             self.glif = SVGGlyph.svg2glif(self.svg_file_path,
                                           name=glif_name,
                                           width=self.glyph_width,

@@ -287,7 +287,8 @@ class MalayalamFont(Font):
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
-            self.get_glyphs_from_named_classes('ML_TOP_MARKS')
+            self.get_glyphs_from_named_classes('ML_TOP_MARKS')+
+            ['\u25cc'] # Dotted circle.
         )
         vowel_signs = self.options.glyphs.classes['ML_VOWEL_SIGNS_CONJOINING']
         for l in lettersWithMarks:
@@ -403,14 +404,27 @@ class MalayalamFont(Font):
         self.features.text = self.getFeatures()
 
     def build(self, design_dir):
-        self.newGlyph('.null')
-        self.newGlyph('nonmarkingreturn')
-        self.newGlyph('.notdef')
+        empty_glyphs = {
+            '.null': 0,
+            'nonmarkingreturn': 0,
+            '.notdef': 0,
+            'uni00A0': 0x00A0, #NBSP
+            'zwnj': 0x200C,
+            'zwj': 0x200D,
+        }
+        for g, u in empty_glyphs.items():
+            glyph = Glyph()
+            if u !=0 :
+                glyph.unicodes = [u]
+            self.insertGlyph(glyph, g)
+
         # Add space
         space = Glyph()
         space.width = 260
         space.unicodes = [0x0020]
         self.insertGlyph(space, 'space')
+        # NBSP width must be same as Space width
+        self['uni00A0'].width = space.width
 
         for f in sorted(os.listdir(design_dir)):
             if not f.endswith(".svg"):
@@ -424,15 +438,6 @@ class MalayalamFont(Font):
                     self.salts[svg_glyph.glyph_name]=[]
 
                 self.salts[svg_glyph.glyph_name].append(svg_glyph.glif.name)
-
-        # ZWJ and ZWNJ
-        zwnj = Glyph()
-        zwnj.unicodes = [0x200C]
-        self.insertGlyph(zwnj, 'zwnj')
-
-        zwj = Glyph()
-        zwj.unicodes = [0x200D]
-        self.insertGlyph(zwj, 'zwj')
 
         horizontally_flippables = {
             '<': '>',
@@ -460,31 +465,6 @@ class MalayalamFont(Font):
             composite.appendComponent(component)
             log.debug(f"Compose {compositename}: Flip {basename}")
 
-        doubles = {
-            '\'':  '"',
-            '‘': '“',
-            '’': '”',
-        }
-        for b, c in doubles.items():
-            basename = SVGGlyph.get_glyph_name(b)
-            compositename = SVGGlyph.get_glyph_name(c)
-            if not basename in self:
-                log.warn(f"{basename} glyph not found for doubling")
-                continue
-            self.newGlyph(compositename)
-            composite: Glyph = self[compositename]
-            composite.unicodes = [ord(c)]
-            baseGlyph = self[basename]
-            composite.width = baseGlyph.width*2
-            component_1: Component = composite.instantiateComponent()
-            component_1.baseGlyph = basename
-            composite.appendComponent(component_1)
-            component_2: Component = composite.instantiateComponent()
-            component_2.baseGlyph = basename
-            component_2.move((baseGlyph.width, 0))
-            composite.appendComponent(component_2)
-            log.debug(f"Compose {compositename}: {basename} +  {basename} ")
-
         appendables = {
             'ഈ': ['ഇ', 'ൗ'],
             'ഊ': ['ഉ', 'ൗ'],
@@ -496,6 +476,9 @@ class MalayalamFont(Font):
             'ോ': ['േ', 'ാ'],
             'ൈ': ['െ', 'െ'],
             'ൌ': ['െ', 'ൗ'],
+            '"':['\'', '\''],
+            '“':['‘', '‘'],
+            '”':['’', '’'],
         }
         for c, parts in appendables.items():
             compositename = SVGGlyph.get_glyph_name(c)
@@ -669,13 +652,8 @@ class MalayalamFont(Font):
         self.info.unitsPerEm = 1000
         # we just use a simple scheme that makes all sets of vertical metrics the same;
         # if one needs more fine-grained control they can fix up post build
-        self.info.ascender = (
-            self.info.openTypeHheaAscender
-        ) = self.info.openTypeOS2TypoAscender = 800
-        self.info.descender = (
-            self.info.openTypeHheaDescender
-        ) = self.info.openTypeOS2TypoDescender = 200
-        self.info.openTypeHheaLineGap = self.info.openTypeOS2TypoLineGap = 0
+        self.info.ascender = 800
+        self.info.descender = 200
 
         # Names
         self.info.familyName = name
@@ -706,13 +684,34 @@ class MalayalamFont(Font):
         self.info.openTypeOS2Selection = [7]
         self.info.openTypeOS2Type = []
         self.info.openTypeOS2TypoAscender = self.info.ascender+100
+
         self.info.openTypeOS2TypoDescender = -(self.info.descender+100)
         self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = 400
         self.info.openTypeOS2WidthClass = 5
-        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender
-        self.info.openTypeOS2WinDescent = self.info.openTypeOS2TypoDescender * -1
+
+        # A font's winAscent and winDescent values should be greater than the head
+        # table's yMax, abs(yMin) values. If they are less than these values,
+        # clipping can occur on Windows platforms
+        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender+200
+        self.info.openTypeOS2WinDescent = (self.info.openTypeOS2TypoDescender-300)*-1
+        # When the win Metrics are significantly greater than the upm, the
+        # linespacing can appear too loose. To counteract this, enabling the OS/2
+        # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
+        # typo values instead. This means the font developer can control the
+        # linespacing with the typo values, whilst avoiding clipping by setting the
+        # win values to values greater than the yMax and abs(yMin).
+
+        # HHEA table
+        # OS/2 and hhea vertical metric values should match. This will produce the
+        # same linespacing on Mac, GNU+Linux and Windows.
+
+        # - Mac OS X uses the hhea values.
+        # - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.
+        self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
+        self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
+        self.info.openTypeHheaLineGap = self.info.openTypeOS2TypoLineGap
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]
