@@ -68,6 +68,10 @@ class SVGGlyph:
             self.unicode = [ord(self.name)]
         elif self.name in agl.AGL2UV:
             self.unicode = [agl.AGL2UV.get(self.name)]
+
+        if self.alt:
+            # Alternate glyphs does not require unicode.
+            self.unicode = None
         self.glyph_name = SVGGlyph.get_glyph_name(self.name)
         if not self.glyph_name:
             raise UFOLibError(

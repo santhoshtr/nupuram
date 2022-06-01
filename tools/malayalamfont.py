@@ -375,6 +375,15 @@ class MalayalamFont(Font):
         name="salts_lookup"
         rules=[]
         for base, alts in self.salts.items():
+            rules.append(Substitution([[base]], [[base] + alts]))
+        routine = Routine(name=name, rules=rules )
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_aalt(self):
+        feature = "aalt"
+        name="aalts_lookup"
+        rules=[]
+        for base, alts in self.salts.items():
             rules.append(Substitution([[base]], [alts]))
         routine = Routine(name=name, rules=rules )
         self.fontFeatures.addFeature(feature, [routine])
@@ -400,6 +409,7 @@ class MalayalamFont(Font):
         self.build_gdef()
         self.build_conjuncts_fixup()
         self.build_calt()
+        self.build_aalt()
         self.build_salt()
         self.features.text = self.getFeatures()
 
