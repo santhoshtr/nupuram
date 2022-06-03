@@ -526,8 +526,12 @@ class MalayalamFont(Font):
                 if diacritc_name not in self:
                     log.warn(f"{diacritc_name} glyph not found")
                     continue
+                if base_name == 'i':
+                    base_name = 'dotlessi'
+                    items = [base_name, diacritc_name]
                 if base_name not in self:
                     continue
+
                 log.debug(
                     f"Compose {chr(composite_unicode)} - {composite_glyph_name} : {'+'.join(items)} : {composite_unicode}")
                 self.buildComposite(composite_glyph_name,
