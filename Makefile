@@ -113,7 +113,7 @@ clean:
 	@rm -rf $(FONTSDIR)
 	@rm -rf $(PROOFDIR)
 
-proofs:
+proofs: otf
 	@mkdir -p ${PROOFDIR}
 	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \
@@ -129,8 +129,8 @@ proofs:
 		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
 		--output-file  $(PROOFDIR)/latin.pdf ;
 
-test: proofs
+test: otf ttf proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
 	fontbakery check-ufo-sources $(FONTSDIR)/ufo/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(OTFDIR)/$(FAMILY)-Regular.otf
-	fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/glyph_coverage -x com.google.fonts/check/repo/zip_files $(TTFDIR)/$(FAMILY)-Regular.ttf
+	fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/repo/zip_files $(TTFDIR)/$(FAMILY)-Regular.ttf
