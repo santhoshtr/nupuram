@@ -23,6 +23,11 @@ class SVGGlyph:
         self.glyph_height = 1024
         self.glif = None
         self.transform = '1 0 0 -1 0 0'
+        # Fill missing AGL2UV values in agl
+        agl.AGL2UV['onesuperior'] = 0x00B9
+        agl.AGL2UV['twosuperior'] = 0x00B2
+        agl.AGL2UV['threesuperior'] = 0x00B3
+        agl.AGL2UV['foursuperior'] = 0x2074
 
     @staticmethod
     def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,

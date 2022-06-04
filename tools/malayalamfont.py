@@ -457,7 +457,9 @@ class MalayalamFont(Font):
             '[': ']',
             '{': '}',
             '(': ')',
-            '‘': '’'
+            '‘': '’',
+            '‹': '›',
+            '„': '⹂'
         }
         for b, c in horizontally_flippables.items():
             compositename = SVGGlyph.get_glyph_name(c)
