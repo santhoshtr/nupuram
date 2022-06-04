@@ -79,6 +79,10 @@ function listen() {
         contentArea.innerHTML = testContents[0];
     });
 
+    document.getElementById('salt').addEventListener('change', function () {
+        const selected = this.options[this.selectedIndex].value;
+        contentArea.style.fontFeatureSettings = "\"salt\" "  + selected
+    })
 
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
