@@ -118,15 +118,24 @@ class SVGGlyph:
                 "name": "vc"
             })
 
+        anchor_names=[]
         try:
             for anchorEl in anchorEls:
+                anchor_name=anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
+                anchor_names.append(anchor_name)
                 anchors.append({
                     "x": float(anchorEl.get("x")),
                     "y": self.svg_height + base - float(anchorEl.get("y")),
-                    "name": anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
+                    "name": anchor_name
                 })
         except:
             pass
+        if "right" not in anchor_names:
+             anchors.append({
+                "x": self.glyph_width,
+                "y": 0,
+                "name": "right"
+            })
         try:
             glif_name = self.glyph_name
             if self.alt:

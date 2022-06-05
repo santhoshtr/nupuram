@@ -276,7 +276,7 @@ class MalayalamFont(Font):
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
-    def build_gpos(self):
+    def build_abvm(self):
         feature = "abvm"
         name = "abvm_topmarks"
         top_mark_glyphs = [SVGGlyph.get_glyph_name(
@@ -284,6 +284,7 @@ class MalayalamFont(Font):
         anchors = {}
         visual_center_anchor_name = "vc"
         lettersWithMarks = sorted(
+            self.get_glyphs_from_named_classes('ML_CONSONANTS') +
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
@@ -329,6 +330,54 @@ class MalayalamFont(Font):
         routine = Routine(name=name, rules=[
                           tops], languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
+
+
+    def build_blwm(self):
+        feature = "blwm"
+        name = "blwm_bottommarks"
+        bottom_mark_glyphs = [SVGGlyph.get_glyph_name(
+            c) for c in self.get_glyphs_from_named_classes('ML_BOTTOM_MARKS')]
+        anchors = {}
+        bbvm_anchor_name = "right"
+        lettersWithMarks = sorted(
+            self.get_glyphs_from_named_classes('ML_CONSONANTS')+
+            self.get_glyphs_from_named_classes('ML_BOTTOM_MARKS')
+        )
+        for l in lettersWithMarks:
+            glyph_name = SVGGlyph.get_glyph_name(l)
+            if glyph_name not in self:
+                continue
+            glyph = self[glyph_name]
+            for anchor in glyph.anchors:
+                if bbvm_anchor_name == anchor.name:
+                    anchors[glyph.name] = {anchor.name: (anchor.x, anchor.y)}
+
+            if glyph.name not in anchors:
+                anchors[glyph.name] = {
+                    bbvm_anchor_name: (glyph.width,0)}
+
+        self.fontFeatures.anchors = anchors
+        bottom_bases = {}
+        bottom_marks = {}
+        for glyphname, anchors in self.fontFeatures.anchors.items():
+            for anchorname, position in anchors.items():
+                if anchorname == bbvm_anchor_name:
+                    if glyphname in bottom_mark_glyphs:
+                        bottom_marks[glyphname] = position
+                    else:
+                        bottom_bases[glyphname] = position
+
+        print(bottom_bases)
+        print(bottom_marks)
+        bottoms = Attachment(bbvm_anchor_name,
+                          bbvm_anchor_name, bottom_bases, bottom_marks)
+        routine = Routine(name=name, rules=[
+                          bottoms], languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
+    def build_gpos(self):
+        self.build_abvm()
+        self.build_blwm()
 
     def build_gdef(self):
         ligatures = sorted(
@@ -538,12 +587,6 @@ class MalayalamFont(Font):
                     f"Compose {chr(composite_unicode)} - {composite_glyph_name} : {'+'.join(items)} : {composite_unicode}")
                 self.buildComposite(composite_glyph_name,
                                     composite_unicode, items)
-
-        for cons in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
-            self.buildComposite(SVGGlyph.get_glyph_name(cons+'ൢ'), None, [
-                SVGGlyph.get_glyph_name(cons), SVGGlyph.get_glyph_name('ൢ')])
-            self.buildComposite(SVGGlyph.get_glyph_name(cons+'ൣ'), None, [
-                SVGGlyph.get_glyph_name(cons), SVGGlyph.get_glyph_name('ൣ')])
 
         for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
             base_glyph_name = SVGGlyph.get_glyph_name(base)
