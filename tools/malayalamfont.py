@@ -4,7 +4,7 @@ import os
 import re
 from datetime import datetime
 from typing import List
-
+from itertools import product
 from defcon import Font, Glyph, Anchor, Component
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
@@ -57,25 +57,39 @@ class MalayalamFont(Font):
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_LATIN)
         self.fontFeatures.addFeature(feature, [routine])
 
-    def build_latin_pos(self):
+    def build_kern(self):
         feature = "kern"
         for script in self.options.glyphs.kern:
             name = f"{script}_kern"
             languages = eval(f"LANGUAGE_{script.upper()}")
             rules = []
             for kern_def in self.options.glyphs.kern[script]:
-                lhs = kern_def[0]
-                if '@' not in lhs:
-                    lhs = SVGGlyph.get_glyph_name(lhs)
-                rhs = kern_def[1]
-                if '@' not in rhs:
-                    rhs = SVGGlyph.get_glyph_name(rhs)
-                xAdvance = kern_def[2]
+                lhs_def = kern_def[0]
+                if '@' in lhs_def:
+                    lhs=[lhs_def]
+                else:
+                    if isinstance(lhs_def, list):
+                        lhs = [SVGGlyph.get_glyph_name(l) for l in lhs_def]
+                    else:
+                        lhs = [SVGGlyph.get_glyph_name(lhs_def)]
 
-                rules.append(
-                    Positioning([[lhs], [rhs]],
-                                [ValueRecord(xAdvance=xAdvance), ValueRecord()])
-                )
+                rhs_def = kern_def[1]
+                if '@' in rhs_def:
+                    rhs=[rhs_def]
+                else:
+                    if isinstance(rhs_def, list):
+                        rhs = [SVGGlyph.get_glyph_name(l) for l in rhs_def]
+                    else:
+                        rhs=[SVGGlyph.get_glyph_name(rhs_def)]
+
+                xAdvance = kern_def[2]
+                # Flatten the class to avoid the issue of class overlaps and rules
+                # getting ignored
+                for l, r in product(lhs, rhs):
+                    rules.append(
+                        Positioning([[l], [r]],
+                                    [ValueRecord(xAdvance=xAdvance), ValueRecord()])
+                    )
             routine = Routine(rules=rules, name=name, languages=languages)
             self.fontFeatures.addFeature(feature, [routine])
 
@@ -367,8 +381,6 @@ class MalayalamFont(Font):
                     else:
                         bottom_bases[glyphname] = position
 
-        print(bottom_bases)
-        print(bottom_marks)
         bottoms = Attachment(bbvm_anchor_name,
                           bbvm_anchor_name, bottom_bases, bottom_marks)
         routine = Routine(name=name, rules=[
@@ -453,7 +465,7 @@ class MalayalamFont(Font):
         self.build_ra_sign()
         self.build_cons_ra_substitutions()
         self.build_cons_conj_vowel_signs()
-        self.build_latin_pos()
+        self.build_kern()
         self.build_gpos()
         self.build_gdef()
         self.build_conjuncts_fixup()

@@ -11,6 +11,20 @@ function shuffle(a) {
 }
 
 let baseColor = '#ffa348ff', shadowColor = "#63452cff", outlineColor = "#63452cff";
+const otFeatures = {
+    'kern': true,
+    'blwf': true,
+    'blwm': true,
+    'blws': true,
+    'pref': true,
+    'pres': true,
+    'akhn': true,
+    'pstf': true,
+    'psts': true,
+    'liga': true,
+    'abvm': true,
+    'calt': true,
+}
 
 function listen() {
     const contentArea = document.querySelector('.content')
@@ -303,18 +317,6 @@ function listen() {
     })
 
     document.querySelectorAll("[name=opentype]").forEach((element) => {
-        let otFeatures = {
-            'kern': true,
-            'blwf': true,
-            'blws': true,
-            'pref': true,
-            'pres': true,
-            'akhn': true,
-            'pstf': true,
-            'psts': true,
-            'liga': true
-        }
-
         element.addEventListener('change', function () {
             const checked = this.checked;
             otFeatures[element.value] = !!checked
