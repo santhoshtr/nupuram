@@ -55,7 +55,7 @@ $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
 $(UFODIR)/$(FAMILY)-Shadow.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Shadow.otf -45 6 60
+	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Shadow.otf -45 6 80
 	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Shadow.otf $@
 	rm ${OTFDIR}/$(FAMILY)-Shadow.otf
