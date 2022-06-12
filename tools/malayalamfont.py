@@ -306,6 +306,7 @@ class MalayalamFont(Font):
             ['\u25cc'] # Dotted circle.
         )
         vowel_signs = self.options.glyphs.classes['ML_VOWEL_SIGNS_CONJOINING']
+        # FIXME, should do this for alt glyphs too
         for l in lettersWithMarks:
             glyph_name = SVGGlyph.get_glyph_name(l)
             if glyph_name not in self:
@@ -631,11 +632,21 @@ class MalayalamFont(Font):
                     f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(u_glyph_name, None, [
                                     base_glyph_name, 'u_drop_sign'])
+                if base_glyph_name in self.salts:
+                    u_glyph_name_alt = u_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0] )
+                    self.buildComposite(u_glyph_name_alt, None, [
+                                    self.salts[base_glyph_name][0], 'u_drop_sign'])
+                    self.salts[u_glyph_name]=[u_glyph_name_alt]
             if uu_glyph_name not in self:
                 log.debug(
                     f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(uu_glyph_name, None, [
                                     base_glyph_name, 'uu_drop_sign'])
+                if base_glyph_name in self.salts:
+                    uu_glyph_name_alt = uu_glyph_name.replace(base_glyph_name, self.salts[base_glyph_name][0] )
+                    self.buildComposite(uu_glyph_name_alt, None, [
+                                    self.salts[base_glyph_name][0], 'u_drop_sign'])
+                    self.salts[uu_glyph_name]=[uu_glyph_name_alt]
 
         # for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
         #     base_glyph_name = SVGGlyph.get_glyph_name(base)
