@@ -11,25 +11,41 @@ config = {
     "layers": {
         "public.default": {
             "source": "fonts/ufo/Seventy-Regular.ufo",
-            "order": 1,  # Foreground layer
-            "color": [255, 153, 85, 1]
+            "order": 1  # Foreground layer
         },
         "outline": {
             "source": "fonts/ufo/Seventy-Outline.ufo",
-            "order": 2,  # Outline layer
-            "color": [85, 34, 0, 1],
+            "order": 2  # Outline layer
         },
         "shadow": {
             "source": "fonts/ufo/Seventy-Shadow.ufo",
-            "order": 0,  # background layer
-            "color": [85, 34, 0, 1]
+            "order": 0  # background layer
         }
+    },
+    "pallettes": {
+        "0": ["#E65100", "#FFCC80", "#FF9800"], # Orange
+        "1": ["#212121", "#EEEEEE", "#9E9E9E"], # Gray
+        "2": ["#263238", "#B0BEC5", "#607D8B"], # Blue Gray
+        "3": ["#F57F17", "#FFF59D", "#FFEB3B"], # Yellow
+        "4": ["#1B5E20", "#A5D6A7", "#4CAF50"], # Green
+        "5": ["#01579B", "#81D4FA", "#03A9F4"], # Light Blue
+        "6": ["#0D47A1", "#90CAF9", "#2196F3"], # Blue
+        "7": ["#B71C1C", "#EF9A9A", "#F44336"], # Red
+        "8": ["#4A148C", "#CE93D8", "#9C27B0"], # Purple
+        "9": ["#004D40", "#80CBC4", "#009688"], # Teal
+        "10": ["#3E2723", "#BCAAA4", "#795548"], # Brown
     }
 }
 
 
+def hex_to_rgba(hexcolor):
+    hexcolor=hexcolor.lstrip('#')
+    if len(hexcolor)==6:
+        hexcolor = hexcolor+"FF"
+    return tuple(int(hexcolor[i:i+2], 16) for i in (0, 2, 4, 6))
+
 layer_mapping = []
-CPAL_palette = []
+CPAL_palettes = []
 for layer_name in config["layers"]:
     if layer_name == 'public.default':
         layer_mapping.append(
@@ -62,12 +78,16 @@ for layer_name in config["layers"]:
 
 
 layer_mapping = sorted(layer_mapping, key=itemgetter(1))
-for [layer_name, order] in layer_mapping:
-    [r, g, b, a] = config["layers"][layer_name]["color"]
-    CPAL_palette.append((r/255., g/255., b/255., 1.0))
-
 font.lib[ufo2ft.constants.COLOR_LAYER_MAPPING_KEY] = layer_mapping
-font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = [CPAL_palette]
+
+for index, layer_colors in config["pallettes"].items():
+    CPAL_palette=[]
+    for color in layer_colors:
+        (r, g, b, a) = hex_to_rgba(color)
+        CPAL_palette.append((r/255., g/255., b/255., a/255.0))
+    CPAL_palettes.append(CPAL_palette)
+
+font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = CPAL_palettes
 
 font.save(sys.argv[1])
 log.info(f"Color UFO font saved at {sys.argv[1]}")

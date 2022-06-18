@@ -10,7 +10,22 @@ function shuffle(a) {
     return a;
 }
 
-let baseColor = '#ffa348ff', shadowColor = "#63452cff", outlineColor = "#63452cff";
+const pallettes = {
+    "0": ["#E65100", "#FFCC80", "#FF9800"], // Orange
+    "1": ["#212121", "#EEEEEE", "#9E9E9E"], // Gray
+    "2": ["#263238", "#B0BEC5", "#607D8B"], // Blue Gray
+    "3": ["#F57F17", "#FFF59D", "#FFEB3B"], // Yellow
+    "4": ["#1B5E20", "#A5D6A7", "#4CAF50"], // Green
+    "5": ["#01579B", "#81D4FA", "#03A9F4"], // Light Blue
+    "6": ["#0D47A1", "#90CAF9", "#2196F3"], // Blue
+    "7": ["#B71C1C", "#EF9A9A", "#F44336"], // Red
+    "8": ["#4A148C", "#CE93D8", "#9C27B0"], // Purple
+    "9": ["#004D40", "#80CBC4", "#009688"], // Teal
+    "10": ["#3E2723", "#BCAAA4", "#795548"], // Brown
+}
+
+let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF", outlineColor = "#FF9800FF";
+
 const otFeatures = {
     'kern': true,
     'blwf': true,
@@ -249,7 +264,7 @@ function listen() {
     })
 
 
-    new Pickr({
+    const outlineColorPickr = new Pickr({
         el: '#font-fontOutlineColor',
         theme: 'nano',
         useAsButton: true,
@@ -271,8 +286,16 @@ function listen() {
         document.getElementById('font-fontOutlineColor').style.backgroundColor = color.toHEXA()
     })
 
+    document.getElementById('font-fontColorPalette').addEventListener('input', function () {
+        const palette = this.value;
+        [shadowColor, baseColor, outlineColor] = pallettes[palette+""]
+        setCustomColors(baseColor, shadowColor, outlineColor, palette)
+        shadowColorPickr.setColor(shadowColor)
+        baseColorPickr.setColor(baseColor)
+        outlineColorPickr.setColor(outlineColor)
+    })
 
-    new Pickr({
+    const baseColorPickr = new Pickr({
         el: '#font-fontBaseColor',
         theme: 'nano',
         useAsButton: true,
@@ -294,7 +317,7 @@ function listen() {
         document.getElementById('font-fontBaseColor').style.backgroundColor = color.toHEXA()
     })
 
-    new Pickr({
+   const shadowColorPickr =  new Pickr({
         el: '#font-fontShadowColor',
         theme: 'nano',
         useAsButton: true,
@@ -339,7 +362,7 @@ function listen() {
     setCustomColors()
 }
 
-function setCustomColors(base = baseColor, shadow = shadowColor, outline = outlineColor) {
+function setCustomColors(base = baseColor, shadow = shadowColor, outline = outlineColor, palette=0) {
     baseColor = base;
     shadowColor = shadow
     outlineColor = outline
@@ -352,7 +375,8 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
         document.body.appendChild(sheet);
     }
 
-    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: 0; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
+    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: ${palette}; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
 }
+
 
 window.onload = listen

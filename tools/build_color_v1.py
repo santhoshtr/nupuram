@@ -20,31 +20,61 @@ for glyph_name, layers in colr0.ColorLayers.items():
 
     for layer in layers:
         # Match COLRv0 fill
-        fill = {
-            "Format": ot.PaintFormat.PaintSolid,
-            "PaletteIndex": layer.colorID,
-            "Alpha": 1,
-        }
+
+        # if layer.colorID == 2 or layer.colorID == 0:
+        #     v1_layers.append({
+        #         "Format": ot.PaintFormat.PaintGlyph,
+        #         "Paint": {
+        #             "Format": ot.PaintFormat.PaintSolid,
+        #             "PaletteIndex": layer.colorID,
+        #             "Alpha": 1,
+        #         },
+        #         "Glyph": layer.name,
+        #     })
+        # else:
+        if layer.colorID == 0: # Shadow
+            c1 = 0
+            c2 = 2
+        if layer.colorID == 1: #  Main
+            c1 = 2
+            c2 = 1
+        if layer.colorID == 2: # Outline
+            c1 = 2
+            c2 = 1
         v1_layers.append({
             "Format": ot.PaintFormat.PaintGlyph,
-            "Paint": fill,
+            "Paint":  {
+                "Format": ot.PaintFormat.PaintLinearGradient,
+                "ColorLine": {
+                    "ColorStop": [(0.0, c1), (1.0, c2)],
+                    "Extend": "reflect"
+                },
+                "x0": 0,
+                "y0": 0,
+                "x1": 0,
+                "y1": 400,
+                "x2": 100,
+                "y2": 0,
+            },
             "Glyph": layer.name,
         })
 
+
+    # If there is only one layer, simplify
     if len(v1_layers) == 1:
         colrv1_map[glyph_name] = v1_layers[0]
 
-    # Special palette to follow css color
-    # fill = {
-    #     "Format": ot.PaintFormat.PaintSolid,
-    #     "PaletteIndex": 65535,
-    #     "Alpha": 1,
-    # }
+    # Special palette with index 65535(0xFFFF) to follow css color
     # v1_layers.append({
     #     "Format": ot.PaintFormat.PaintGlyph,
-    #     "Paint": fill,
+    #     "Paint":  {
+    #         "Format": ot.PaintFormat.PaintSolid,
+    #         "PaletteIndex": 0xFFFF,
+    #         "Alpha": 1,
+    #     },
     #     "Glyph": glyph_name,
     # })
+
 
 # pprint.PrettyPrinter(indent=2).pprint(colrv1_map)
 

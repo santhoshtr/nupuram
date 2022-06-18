@@ -29,7 +29,15 @@
 						</select>
 					</div>
 				</section>
-				<section  id="palette"  class="rows" style="grid-template-columns: 3fr 3fr 3fr;">
+				<section id="palette" class="rows" style="grid-template-columns: 3fr 2fr 2fr 2fr;">
+					<div class="primitive-input">
+						<label for="font-fontColorPalette">Palette
+						<input type="number" value="0" min="0" max="10" class="font-color-palette" data-id="fontColorPalette" id="font-fontColorPalette"></label>
+					</div>
+					<div class="primitive-input">
+						<label for="font-fontOutlineColor">Shadow
+						<input type="button" class="font-color " data-id="fontShadowColor" id="font-fontShadowColor"></label>
+					</div>
 					<div class="primitive-input">
 						<label for="font-fontBaseColor">Base
 						<input type="button" class="font-color " data-id="fontBaseColor" id="font-fontBaseColor"></label>
@@ -37,10 +45,6 @@
 					<div class="primitive-input">
 						<label for="font-fontOutlineColor">Outline
 						<input type="button" class="font-color" data-id="fontOutlineColor" id="font-fontOutlineColor"></label>
-					</div>
-					<div class="primitive-input">
-						<label for="font-fontOutlineColor">Shadow
-						<input type="button" class="font-color " data-id="fontShadowColor" id="font-fontShadowColor"></label>
 					</div>
 				</section>
 				<section class="rows" style="grid-template-columns: 3fr 3fr;">
