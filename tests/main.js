@@ -22,6 +22,14 @@ const pallettes = {
     "8": ["#4A148C", "#CE93D8", "#9C27B0"], // Purple
     "9": ["#004D40", "#80CBC4", "#009688"], // Teal
     "10": ["#3E2723", "#BCAAA4", "#795548"], // Brown
+    "11": ["#880E4F", "#F48FB1", "#E91E63"], // Pink
+    "12": ["#311B92", "#B39DDB", "#673AB7"], // Deep Purple
+    "13": ["#1A237E", "#9FA8DA", "#3F51B5"], // Indigo
+    "14": ["#006064", "#80DEEA", "#00BCD4"], // Cyan
+    "15": ["#33691E", "#C5E1A5", "#8BC34A"], // Light Green
+    "16": ["#827717", "#E6EE9C", "#CDDC39"], // Lime
+    "17": ["#FF6F00", "#FFE082", "#FFC107"], // Amber
+    "18": ["#BF360C", "#FFAB91", "#FF5722"], // Deep Orange
 }
 
 let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF", outlineColor = "#FF9800FF";
@@ -268,6 +276,7 @@ function listen() {
         default: '#fff',
         swatches:[
             'rgba(46, 52, 64, 1)',
+            'rgba(0, 30, 60, 1)',
             'rgba(244, 67, 54, 1)',
             'rgba(233, 30, 99, 0.95)',
             'rgba(156, 39, 176, 0.9)',
