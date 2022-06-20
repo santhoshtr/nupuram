@@ -225,7 +225,9 @@ class MalayalamFont(Font):
             self.get_glyphs_from_named_classes('ML_CONSONANTS') +
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
-            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS'))
+            self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')+
+            ["്യ"]
+        )
 
         for ligature in ligatures:
             for vowel_sign in vowel_signs:
@@ -618,7 +620,8 @@ class MalayalamFont(Font):
             self.get_glyphs_from_named_classes('ML_CONSONANTS') +
             self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS') +
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS') +
-            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')
+            self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')+
+            ["്യ"]
         )
         for base in base_for_u:
             base_glyph_name = SVGGlyph.get_glyph_name(base)
