@@ -645,7 +645,7 @@ class MalayalamFont(Font):
                     self.buildComposite(u_glyph_name_alt, None, [
                                     self.salts[base_glyph_name][0], 'u_drop_sign'])
                     self.salts[u_glyph_name]=[u_glyph_name_alt]
-            if uu_glyph_name not in self and u_glyph_name not in self.get_glyph_names_from_named_classes('ML_PREVENT_CONJUNCTS'):
+            if uu_glyph_name not in self and uu_glyph_name not in self.get_glyph_names_from_named_classes('ML_PREVENT_CONJUNCTS'):
                 log.debug(
                     f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(uu_glyph_name, None, [
