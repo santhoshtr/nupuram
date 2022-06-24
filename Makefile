@@ -68,7 +68,7 @@ $(UFODIR)/$(FAMILY)-Color.ufo: ${UFODIR}/$(FAMILY)-Regular.ufo ${UFODIR}/$(FAMIL
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Color" -s Regular
 	@ufonormalizer -m $@
 
-ufo: clean $(UFO)
+ufo: $(UFO)
 ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf
 otf: $(OTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf
 webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2
@@ -93,12 +93,12 @@ $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
 	@mkdir -p ${WEBFONTSDIR}
 	@fonttools ttLib.woff2 compress -o  $@ $<
 
-$(OTFDIR)/%.otf:
+$(OTFDIR)/%.otf: ${UFODIR}/%.ufo
 	@echo "  BUILD    $(@F)"
 	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(OTFDIR) -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
-${TTFDIR}/%.ttf:
+${TTFDIR}/%.ttf: ${UFODIR}/%.ufo
 	@echo "  BUILD    $(@F)"
 	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter -e 0.01 --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
