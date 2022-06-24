@@ -44,6 +44,10 @@ class MalayalamFont(Font):
                 all_glyphs = all_glyphs + [g for g in glyphs]
         return all_glyphs
 
+    def get_glyph_names_from_named_classes(self, class_name):
+        all_glyphs = self.get_glyphs_from_named_classes(class_name)
+        return [SVGGlyph.get_glyph_name(l) for l in all_glyphs]
+
     def build_latin_ligatures(self):
         feature = "liga"
         name = "latin_ligatures"
@@ -623,6 +627,7 @@ class MalayalamFont(Font):
             self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS')+
             ["്യ"]
         )
+
         for base in base_for_u:
             base_glyph_name = SVGGlyph.get_glyph_name(base)
             if base_glyph_name not in self:
@@ -630,7 +635,7 @@ class MalayalamFont(Font):
             u_glyph_name = SVGGlyph.get_glyph_name(base+'ു')
             uu_glyph_name = SVGGlyph.get_glyph_name(base+'ൂ')
 
-            if u_glyph_name not in self:
+            if u_glyph_name not in self and u_glyph_name not in self.get_glyph_names_from_named_classes('ML_PREVENT_CONJUNCTS'):
                 log.debug(
                     f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(u_glyph_name, None, [
@@ -640,7 +645,7 @@ class MalayalamFont(Font):
                     self.buildComposite(u_glyph_name_alt, None, [
                                     self.salts[base_glyph_name][0], 'u_drop_sign'])
                     self.salts[u_glyph_name]=[u_glyph_name_alt]
-            if uu_glyph_name not in self:
+            if uu_glyph_name not in self and u_glyph_name not in self.get_glyph_names_from_named_classes('ML_PREVENT_CONJUNCTS'):
                 log.debug(
                     f"Compose {u_glyph_name} : {base_glyph_name}+uu_drop_sign")
                 self.buildComposite(uu_glyph_name, None, [
@@ -650,15 +655,6 @@ class MalayalamFont(Font):
                     self.buildComposite(uu_glyph_name_alt, None, [
                                     self.salts[base_glyph_name][0], 'u_drop_sign'])
                     self.salts[uu_glyph_name]=[uu_glyph_name_alt]
-
-        # for base in self.get_glyphs_from_named_classes('ML_CONSONANTS'):
-        #     base_glyph_name = SVGGlyph.get_glyph_name(base)
-        #     ru_glyph_name = SVGGlyph.get_glyph_name(base+'ൃ')
-        #     if ru_glyph_name not in self:
-        #         log.debug(
-        #             f"Compose {ru_glyph_name} : {base_glyph_name}+ru_bottom_sign")
-        #         self.buildComposite(ru_glyph_name, None, [
-        #             base_glyph_name, 'ru_bottom_sign'])
 
         log.info(f"Total glyph count: {len(self)}")
 
