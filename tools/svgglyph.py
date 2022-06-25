@@ -123,12 +123,22 @@ class SVGGlyph:
             for anchorEl in anchorEls:
                 anchor_name=anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
                 anchor_names.append(anchor_name)
-                anchors.append({
+                anchor={
                     "x": float(anchorEl.get("x")),
                     "y": self.svg_height + base - float(anchorEl.get("y")),
                     "name": anchor_name
-                })
+                }
+
+                if anchor_name=='top':
+                    # Fix the y axis irregularities
+                    if anchor['y'] > 780 and anchor['y'] < 820:
+                        anchor['y']=800
+                    if anchor['y'] > 600 and anchor['y'] < 720:
+                        anchor['y']=650
+                anchors.append(anchor)
         except:
+            print(f"Error while processing {self.__dict__}")
+            traceback.print_exc()
             pass
         if "right" not in anchor_names:
              anchors.append({
