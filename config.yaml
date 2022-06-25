@@ -59,7 +59,7 @@ glyphs:
                      "വ്ര", "ശ്ര", "സ്ര", "ഹ്ര", "ഷ്ര", "റ്റ്ര"]
     ML_PREVENT_CONJUNCTS: ["ഗ്ഗു", "ഗ്ഗൂ", "ത്ഭൂ"]
     ML_LA_CONJUNCTS: ["ക്ല", "ഗ്ല", "ത്ല", "പ്ല", "ഫ്ല", "ബ്ല", "മ്ല", "വ്ല", "സ്ല", "ശ്ല", "ഹ്ല"]
-    ML_TOP_MARKS: ["ൎ", "ഀ", "഻"]
+    ML_TOP_MARKS: ["ൎ", "ഀ"]
     ML_BOTTOM_MARKS: [ "ൢ", "ൣ"]
 
   # Kern pairs
@@ -72,11 +72,14 @@ glyphs:
       - ["@UC_RIGHT_SLANT", "@UC_LEFT_ROUND", -50]
       - ["@UC_RIGHT_MOUTH", "@LC_LEFT_SLANT", -50]
       - ["@UC_RIGHT_MOUTH", "@LC_LEFT_ROUND", -50]
+      - ["@UC_RIGHT_LEG", "@UC_RIGHT_SLANT", -80]
+      - ["@UC_RIGHT_LEG", "@LC_LEFT_SLANT", -80]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]
       - ["@LC_BOTTOM_GAP", "@LC_LEFT_LEG", -50]
       - ["A", ["V", "Y", "T", "v"], -80 ]
       - ["Y", ["A"], -80 ]
+      - ["L", ["V"], -80 ]
     malayalam:
       - ['്',"@QUOTES", 100 ]
       - ['്',"@PARANTHESIS", 100 ]
