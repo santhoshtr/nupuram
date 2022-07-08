@@ -1,0 +1,36 @@
+input glyph;
+
+beginglyph;
+path pa, pb, qa, qb, r;
+
+z0=(3u, 0.6m);
+z1=(x0 + 0.3m, y0 + 0.4m);
+z2=(x1 + 0.3m, y1 - 0.5m);
+z3=(x2 - 0.3m, y2 - 0.5m);
+z4=(x3 - 0.3m, y3 + 0.4m);
+z5=(x4 - 0.2m, y4 - 0.4m);
+z6=(x5 - 0.2m, y5 + 0.2m);
+z7=(x6 + 0.2m, y6 + 0.3m);
+z8=(x7 + m*0.9 , y7 +  0.2m );
+z9=(x8   , y8 - 0.35m);
+z10=(x9 + 0.3m, y9 - 0.17m);
+z11=(x9 , y9 - 0.35m);
+
+pickup nib;
+
+pa:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8{right}..{left}z9{right}..z10..{dir 135}z11 ;
+
+pen_stroke(
+    nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
+    nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 4, 6, 9, 10)
+    nib(default_nib xyscaled(1,.1) rotated 45)(4) % Sharp cut
+    nib(default_nib xyscaled(1,.1) rotated 45)(9) % Sharp cut
+    nib(default_nib xyscaled(1,.1) rotated 45)(infinity) % Sharp cut
+)(pa)(qa);
+
+
+fill qa  withcolor glyphcolor;
+
+
+endglyph;
+end
