@@ -22,8 +22,9 @@ outline :=      0;            % Whether font is outline font or not. 1 means out
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
 
-outputtemplate := "svgs/%j.svg";
 outputformat :=   "svg";
+
+varstroke := 1;
 
 % Pens
 input ./pens
@@ -34,10 +35,11 @@ pen nib; nib := finenib; % roundedwidenib
 color glyphcolor; glyphcolor := (.1, .37,.71);
 color debugcolor; debugcolor := (.90, .38,.0);
 color gridcolor; gridcolor := (.47, .46,.48);
+color arrowcolor; arrowcolor := (.90, .38,.0);
 
-debug := 1; % Set to 1 to draw coordinates and direction arrows in images.
+debug := 0; % Set to 1 to draw coordinates and direction arrows in images.
 show_arrows := 0; % Set to 1 to draw arrow showing drawing path
-
+show_paths := 0;
 % Aliases
 m := mheight;
 s := xheight; % x is a special symbol. So let us use s

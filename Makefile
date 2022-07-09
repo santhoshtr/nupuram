@@ -35,10 +35,17 @@ help:
 
 build: ufo otf ttf webfonts
 
+glyphs:
+	VARIANT=kids make -C sources/design
+	VARIANT=regular make -C sources/design
+	VARIANT=calligraphy make -C sources/design
+	VARIANT=bold make -C sources/design
+	VARIANT=debug make -C sources/design
+
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/Regular --output $@
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/regular --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf

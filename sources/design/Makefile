@@ -1,9 +1,7 @@
-filename=stencil
-
-SRCDIR := ./glyphs
-SVGDIR    := ./svgs
+SRCDIR    := ./glyphs
+VARIANT   ?= debug
 GLYPHS    := $(wildcard $(SRCDIR)/*.mp)
-SVGS      := $(patsubst $(SRCDIR)/%.mp,$(SVGDIR)/%.svg,$(GLYPHS))
+SVGS      := $(patsubst $(SRCDIR)/%.mp,$(VARIANT)/%.svg,$(GLYPHS))
 
 .PHONY: all clean
 
@@ -11,11 +9,14 @@ default: all
 
 all: $(SVGS)
 
-$(SVGDIR)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp
+$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp
 	@echo " BUILD   $(@F)"
-	mkdir -p $(SVGDIR)
+	mkdir -p $(VARIANT)
+	@cp $(VARIANT).mp font.mp
 	# Can be mpost "\generating:=0; \input $<"
-	mpost --mem=metafun.mem -s 'outputtemplate="$(SVGDIR)/%j.svg"' --interaction=nonstopmode $<
+	mpost --mem=metafun.mem -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $<
+	# remove svg comments which fonttools svglib does not like
+	sed -i 's/<!--.*$\//g' $@
 	@rm -rf *.log *.mpo *.mpt
 
 %.tex: %.mp
@@ -28,4 +29,4 @@ $(SVGDIR)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp
 	echo "\endproof" >> $@
 
 clean:
-	@rm -rf *.tmp *.dvi *.svg *.log svgs/*.svg *.mpt
+	@rm -rf *.tmp *.dvi *.svg *.log $(VARIANT)/*.svg *.mpt

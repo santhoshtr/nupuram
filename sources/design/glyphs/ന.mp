@@ -1,7 +1,7 @@
 input glyph;
 
 beginglyph;
-    path pa,pb, qa, qb, r;
+    path paths[], strokes[], r;
     z0=(2.5u, 0);
     z1=(x0 -2u, y0  + 0.5m);
     z2=(x1 + 1.5u, y1 + 0.4m);
@@ -14,27 +14,27 @@ beginglyph;
 
     pickup nib;
 
-    pa:= z0..z1..{right}z2.. z3---z4 ;
-    pb:= z4---z5..z6..z7..z8;
+    paths[0]:= z0..z1..{right}z2.. z3---z4 ;
+    paths[1]:= z4---z5..z6..z7..{dir 200}z8;
 
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
         nib(default_nib xyscaled(1,.11) rotated 45)(0)
         nib(default_nib xyscaled(1,.11) rotated 10)(4 )
-    )(pa)(qa);
+    )(paths[0])(strokes[0]);
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
         nib(default_nib xyscaled(1,.11) rotated 0)(0)
-        nib(default_nib xyscaled(1,.11) rotated 135)(infinity)
-    )(pb)(qb);
+        nib(default_nib xyscaled(1,.11) rotated 120)(infinity)
+    )(paths[1])(strokes[1]);
 
-    find_outlines(soften_path(qa, 10),soften_path(qb, 10) )(r);
+    find_outlines(soften_path(strokes[0], 10),soften_path(strokes[1], 10) )(r);
 
-    fill r1 withcolor glyphcolor;
-    draw pa withpen finenib withcolor 0.5white;
-    draw pb withpen finenib withcolor 0.5white;
+
+
+
 
 
 

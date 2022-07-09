@@ -1,7 +1,7 @@
 input glyph;
 
 beginglyph;
-path pa, pb, qa, qb, r;
+path paths[], strokes[], r;
 
 z0=(3u, 0.6m);
 z1=(x0 + 0.3m, y0 + 0.4m);
@@ -17,18 +17,14 @@ z10=(x9 - 0.2m , y9 - 0.2m);
 
 pickup nib;
 
-pa:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9..z10 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9..z10 ;
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 4, 6, 9)
     nib(default_nib xyscaled(1,.1) rotated 45)(4) % Sharp cut
     nib(default_nib xyscaled(1,.1) rotated 135)(infinity) % Sharp cut
-)(pa)(qa);
-
-
-fill soften_path(qa, 10)  withcolor glyphcolor;
-
+)(paths[0])(strokes[0]);
 
 endglyph;
 end

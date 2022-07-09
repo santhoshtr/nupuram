@@ -10,17 +10,15 @@ enddef;
 vardef show_coordinates (expr p ) =
     % Debug points are hard to see. Change the fontsize
     defaultscale :=2;
-    if debug = 1:
-        for i=0 upto length(p)-1:
-            pair a;a:=point i of p;
-            pair b;b:=point i+1 of p;
-            string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
-            dotlabel.bot(pointlabel, a) withcolor debugcolor;
-            if show_arrows = 1:
-                drawarrow subpath(i, 0.9(i+1)) of p withpen pencircle scaled 0.05u withcolor debugcolor;
-            fi;
-        endfor;
-    fi;
+
+    for i=0 upto length(p):
+        pair a;a:=point i of p;
+        pair b;b:=point i+1 of p;
+        string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
+        dotlabel.bot(pointlabel, a) withcolor debugcolor;
+
+    endfor;
+
 enddef;
 
 vardef shadowpath(expr p, d, offset) =
@@ -46,18 +44,33 @@ def beginglyph=
 enddef;
 
 def endglyph =
-    if known p:
-        draw p withpen finenib withcolor 0.5white;
-        show_coordinates(p);
-    fi;
-    if known pa:
-        draw pa withpen finenib withcolor 0.5white;
-        show_coordinates(pa);
-    fi;
-    if known pb:
-        draw pb withpen finenib withcolor 0.5white;
-        show_coordinates(pb);
-    fi;
+    path softpath;
+    for i=0 upto 10:
+        if varstroke = 1:
+            if known strokes[i]:
+                softpath := soften_path(strokes[i], 10);
+                if known donotsoften:
+                    fill strokes[i] withcolor glyphcolor;
+                else:
+                    fill softpath withcolor glyphcolor;
+                fi;
+            fi;
+        fi;
+
+        if known paths[i]:
+            if show_paths = 1:
+                draw paths[i] withpen nib withcolor 0.5white;
+            fi;
+            if show_arrows = 1:
+                for j=0 upto length(paths[i]):
+                    drawarrow subpath(j, 0.9(j+1)) of paths[i] withpen pencircle scaled thick withcolor arrowcolor;
+                endfor;
+            fi;
+            if debug = 1:
+                show_coordinates(paths[i]);
+            fi;
+        fi;
+    endfor;
 
     currentpicture := currentpicture
         shifted (lbearing, descent)
