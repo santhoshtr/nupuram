@@ -13,15 +13,15 @@ z6=(x5 + m, y5);
 z7=(x6, y6 + m*0.5);
 z8=(x7, y7 + m*0.5);
 
-z9 := z8;
-z10 := (x9 - 0.3m, y9-0.5m);
-z11 := (x10 - 0.3m, y10 + 0.5m);
-z12 := (x11 + 0.3m, y11 - 0.4m);
-z13 := (x12, y12- 0.6m);
+z9 = z8;
+z10 = (x9 - 0.3m, y9-0.5m);
+z11 = (x10 - 0.3m, y10 + 0.5m);
+z12 = (x11 + 0.3m, y11 - 0.4m);
+z13 = (x12, y12- 0.6m);
 
-paths[0]:= z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
-paths[1] := z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 60}z8;
-paths[2] := z9{dir 240}..z10 ..z11 ..{down}z12..z13;
+paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
+paths[1] = z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 60}z8;
+paths[2] = z9{dir 240}..z10 ..z11 ..{down}z12..z13;
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5, 6 )

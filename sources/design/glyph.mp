@@ -93,7 +93,7 @@ def endglyph =
 
         if known paths[i]:
             if known calligraphic:
-                draw paths[i] withpen widenib withcolor 0.5white;
+                draw paths[i] withpen widenib withcolor glyphcolor;
             fi;
             if show_paths = 1:
                 draw paths[i] withpen nib withcolor 0.5white;
