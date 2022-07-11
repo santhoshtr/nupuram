@@ -1,7 +1,7 @@
 input glyph;
 
 beginglyph;
-path paths[], strokes[], r;
+path paths[], strokes;
 donotsoften := 1;
 
 z0=(1u, 0.5m);
@@ -10,7 +10,7 @@ z2=(x1 + 0.4m, y1 - 0.5m);
 z3=(x2 - 0.4m, y2 - 0.5m);
 z4=z0;
 
-pickup nib;
+
 
 paths[0]:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4;
 paths[0]:=paths[0] crotated -18;

@@ -1,7 +1,7 @@
 input glyph;
 
 beginglyph;
-    path paths[], strokes[], r;
+    path paths[], strokes;
     z0=(0.3m, 0); % bottom of piller
     z1=(x0 - 0.3m, y0 + 0.5m);
     z2=(x1 + 0.5m, y1 + 0.5m); % Top of second arch
@@ -10,8 +10,6 @@ beginglyph;
     z5=(x4 - m/4, y4 + m/3);
     z6=(x5 + m/2, y5 + m/3);
 
-
-    pickup nib;
 
     paths[0]:= z0..z1..z2..z3..z4..z5...z6 ;
 

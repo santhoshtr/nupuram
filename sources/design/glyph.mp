@@ -62,6 +62,7 @@ enddef;
 
 def beginglyph=
     beginfig(1);
+    path paths[], strokes[];
 enddef;
 
 def endglyph =
@@ -70,7 +71,7 @@ def endglyph =
         for i=0 upto 10:
             if known strokes[i]:
                 if known strokes[i]b:
-                    shadowpath(strokes[i], strokes[i]b, strokes[i]e, 100, -45);
+                    shadowpath(strokes[i], strokes[i]b, strokes[i]e, 45, 50);
                 fi;
             fi;
         endfor;
@@ -91,12 +92,15 @@ def endglyph =
 
 
         if known paths[i]:
+            if known calligraphic:
+                draw paths[i] withpen widenib withcolor 0.5white;
+            fi;
             if show_paths = 1:
                 draw paths[i] withpen nib withcolor 0.5white;
             fi;
             if show_arrows = 1:
                 for j=0 upto length(paths[i]):
-                    drawarrow subpath(j, 0.9(j+1)) of paths[i] withpen pencircle scaled thick withcolor arrowcolor;
+                    drawarrow subpath(j, 0.9(j+1)) of paths[i] withpen pencircle scaled 4 withcolor arrowcolor;
                 endfor;
             fi;
             if debug = 1:
@@ -120,7 +124,7 @@ def endglyph =
         defaultscale := 2;
         pair w; w:=urcorner currentpicture;
         draw (0, 0) -- (xpart w, 0) withpen pencircle scaled 1 withcolor gridcolor;
-        draw (0, descent) -- (xpart w, descent) withpen pencircle scaled 1 withcolor debugcolor;
+        draw (0, descent) -- (xpart w, descent) withpen pencircle scaled 1 withcolor gridcolor;
         dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         draw (0, mheight+descent) -- (xpart w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;

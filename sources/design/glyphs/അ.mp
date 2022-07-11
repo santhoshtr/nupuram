@@ -1,7 +1,7 @@
 input glyph;
 
 beginglyph;
-path paths[], strokes[], r;
+path paths[], strokes;
 
 z0 = ( 0.3m , 0);
 z1 = ( x0 - 0.3m , y0 + m/2);
@@ -23,7 +23,7 @@ z14= ( x13 - m/4, y13 + m/3);
 z15= ( x14 + m/2, y14 + m/3);
 
 
-pickup nib;
+
 
 paths[0]:= z0..z1..z2..{left}z3{right}..z4..z5..{up}z6..z7..{down}z8---z9;
 paths[1]:=z9---z10{up}..z11..z12..{left}z13{left}..z14..z15 ;
