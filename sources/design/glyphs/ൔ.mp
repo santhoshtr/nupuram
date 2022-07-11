@@ -20,7 +20,7 @@ paths[0]:= z0{dir 135}..z1..{right}z2..z3{dir 260}..tension 2.. {dir 240}z4{dir 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5 )
     nib(default_nib xyscaled(thin, 1) rotated 0 )(1,3,6)
-    nib(default_nib xyscaled(1.25,.1) rotated 45)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,.1) rotated 45)(0) % Sharp cut
     nib(default_nib xyscaled(1,.1) rotated 120)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 

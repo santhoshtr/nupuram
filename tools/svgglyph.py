@@ -20,7 +20,7 @@ class SVGGlyph:
         self.unicode = None
         self.glyph_name = ""
         self.glyph_width = 0
-        self.glyph_height = 1024
+        self.glyph_height = 1000
         self.glif = None
         self.transform = '1 0 0 -1 0 0'
         # Fill missing AGL2UV values in agl
@@ -101,7 +101,7 @@ class SVGGlyph:
 
         baseGuide = svgObj.find(
             ".//sodipodi:guide/[@inkscape:label='base']", prefix_map)
-        base = 0
+        base = -200
         if baseGuide != None:
             base = int(float(baseGuide.get('position').split(',')[1])) * -1
         transform[5] += self.svg_height + base  # Y offset

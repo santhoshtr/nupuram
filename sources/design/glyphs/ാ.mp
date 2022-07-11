@@ -17,8 +17,8 @@ paths[0]:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2, 4 )
-    nib(default_nib xyscaled(1,.1) rotated 160)(0) % Sharp cut
-    nib(default_nib xyscaled(1,.1) rotated 30)(infinity) % Sharp cut
+    nib(default_nib xyscaled(xthick,.1) rotated 160)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,.1) rotated 30)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 endglyph;

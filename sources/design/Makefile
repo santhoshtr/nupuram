@@ -9,7 +9,7 @@ default: all
 
 all: $(SVGS)
 
-$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp
+$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp $(VARIANT).mp
 	@echo " BUILD   $(@F)"
 	mkdir -p $(VARIANT)
 	@cp $(VARIANT).mp font.mp

@@ -3,6 +3,17 @@ input config;
 
 maybeinput font.mp; % Customization for a font variant. If file does not exist, skips.
 
+% Pens
+input ./pens
+
+pen nib; nib := finenib; % roundedwidenib
+
+
+% Aliases
+m := mheight;
+s := xheight; % x is a special symbol. So let us use s
+X := Xheight;
+
 vardef outline (expr p ) =
     draw envelope nib of p
 enddef;
@@ -21,41 +32,63 @@ vardef show_coordinates (expr p ) =
 
 enddef;
 
-vardef shadowpath(expr p, d, offset) =
-    save q; path s, q, r;
-    find_outlines(p)(s);
-    q:= s1;
-    if not cycle q:
-        errmessage "Path is not cyclic";
-    fi;
-    for i=1 upto offset-1:
-        find_outlines(q, s1 shifted (i*cosd(d), i*sind(d)) ) (r);
-        if known r1:
-            q:=r1;
-        fi;
-    endfor;
-    q
+vardef shadowpath(expr p, b, e, d, offset) =
+    save len, bs, es;
+    path s[], bs, es;
+    numeric len;
+    len := length(b);
+    bs := b shifted((offset * cosd(d), offset * sind(d)) );
+    s[0] := point 0 of b -- point len of b -- point len of bs -- point 0 of bs -- cycle;
+
+    len := length(b);
+    es := e shifted((offset*cosd(d), offset*sind(d)) );
+    s[1] := point 0 of e -- point len of e -- point len of es -- point 0 of es -- cycle;
+
+    fill p shifted((offset*cosd(d), offset*sind(d)) ) withcolor black;
+    fill s[0] withcolor black;
+    fill s[1] withcolor black;
+enddef;
+
+vardef round_node_values(expr p) =
+    for t_=0 upto length(p)-1:
+        round(point t_ of p)
+        ..
+        controls round(postcontrol t_ of p) and round(precontrol t_+1 of p)
+        ..
+
+    endfor
+    round(point length(p) of p) \\ if cycle p: & cycle fi
 enddef;
 
 def beginglyph=
     beginfig(1);
-    lbearing:= 0.5u;
-    rbearing:= 0.5u;
 enddef;
 
 def endglyph =
     path softpath;
+    if known drawshadow:
+        for i=0 upto 10:
+            if known strokes[i]:
+                if known strokes[i]b:
+                    shadowpath(strokes[i], strokes[i]b, strokes[i]e, 100, -45);
+                fi;
+            fi;
+        endfor;
+    fi;
+
     for i=0 upto 10:
         if varstroke = 1:
             if known strokes[i]:
-                softpath := soften_path(strokes[i], 10);
                 if known donotsoften:
                     fill strokes[i] withcolor glyphcolor;
                 else:
+                    softpath := soften_path(strokes[i], 10);
                     fill softpath withcolor glyphcolor;
                 fi;
+
             fi;
         fi;
+
 
         if known paths[i]:
             if show_paths = 1:
@@ -91,7 +124,6 @@ def endglyph =
         dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         draw (0, mheight+descent) -- (xpart w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
-        draw (0, Xheight+descent) -- (xpart w, Xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
         dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw ( xpart ur, 0) -- (xpart ur, em) withpen pencircle scaled 1 withcolor gridcolor;

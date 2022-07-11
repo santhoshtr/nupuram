@@ -41,6 +41,9 @@ glyphs:
 	VARIANT=calligraphy make -C sources/design
 	VARIANT=bold make -C sources/design
 	VARIANT=debug make -C sources/design
+	VARIANT=display make -C sources/design
+	VARIANT=shadow make -C sources/design
+
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
