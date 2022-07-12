@@ -60,6 +60,13 @@ vardef round_node_values(expr p) =
     round(point length(p) of p) \\ if cycle p: & cycle fi
 enddef;
 
+
+vardef boundingbox(expr p, lbearing, rbearing) =
+  llcorner p-(lbearing,0) -- lrcorner p+(lbearing,-0)
+  -- urcorner p+(rbearing,0) -- ulcorner p+(-rbearing,0)
+  -- cycle
+enddef;
+
 def beginglyph=
     beginfig(1);
     path paths[], strokes[];
@@ -116,7 +123,7 @@ def endglyph =
 
     % Place the drawing at the svg canvas.
     pair ur; ur:=urcorner currentpicture;
-    path bbox; bbox = llcorner currentpicture -- lrcorner currentpicture -- urcorner currentpicture -- (xpart ur+rbearing,em) -- cycle;
+    path bbox; bbox = boundingbox(currentpicture, lbearing, rbearing);
     setbounds currentpicture to bbox;
 
     if debug = 1:
@@ -130,6 +137,8 @@ def endglyph =
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
         dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
+        dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
+        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur + rbearing,  descent))  withcolor debugcolor;
         draw ( xpart ur, 0) -- (xpart ur, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
     fi;

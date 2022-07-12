@@ -43,12 +43,51 @@ glyphs:
 	VARIANT=debug make -C sources/design
 	VARIANT=display make -C sources/design
 	VARIANT=shadow make -C sources/design
+	VARIANT=slanted make -C sources/design
+	VARIANT=condense make -C sources/design
+	VARIANT=sans make -C sources/design
 
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/regular --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Display.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/display --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Kids.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/kids --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Calligraphy.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/calligraphy --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Slanted.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/slanted --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Condense.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/condense --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Sans.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/sans --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
@@ -78,7 +117,7 @@ $(UFODIR)/$(FAMILY)-Color.ufo: ${UFODIR}/$(FAMILY)-Regular.ufo ${UFODIR}/$(FAMIL
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Color" -s Regular
 	@ufonormalizer -m $@
 
-ufo: $(UFO)
+ufo: glyphs $(UFO)
 ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf
 otf: $(OTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf
 webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2

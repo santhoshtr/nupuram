@@ -1,6 +1,7 @@
 input glyph;
 
 beginglyph;
+
     path paths[], strokes;
     z0=(2.5u, 0);
     z1=(x0 -2u, y0  + 0.5m);
@@ -11,11 +12,10 @@ beginglyph;
     z6=(x5 + m/2, y5 + .6m); % Top of second arch
     z7=(x6 + m/3, y6 - m/2);
     z8= ( x7 - m/3, y7 - m/2);
-    z9= ( x8 - m/4, y8 + m/3);
-    z10= ( x9 + m/2, y9 + m/3);
-    z11= ( x10 + m/2, y10 - m/2 );
+    z9= ( x8 - m/4, y8 + .3m);
+    z10= ( x9 + m/2, y9 + .3m);
+    z11= ( x10 + m/3, y10 - m/3 );
     z12= ( x11 - 0.7m, y11 - m/2 );
-
 
 
     paths[0]:= z0..z1..{right}z2.. z3---z4 ;
@@ -33,16 +33,6 @@ beginglyph;
         nib(default_nib xyscaled(thin,.11) rotated 0)(0)
         nib(default_nib xyscaled(xthick,.11) rotated 90)(infinity)
     )(paths[1])(strokes[1]);
-
-    find_outlines(soften_path(strokes[0], 10),soften_path(strokes[1], 10) )(r);
-
-
-
-
-
-
-
-
 
 endglyph;
 end

@@ -25,7 +25,6 @@ z16= ( x15 + m/2, y15 - m/2 );
 z17= ( x16 - 0.7m, y16 - m/2 );
 
 
-
 paths[0]:= z0..z1..z2..{left}z3{right}..z4..z5..{up}z6..z7..{down}z8---z9;
 paths[1]:=z9---z10{up}..z11..z12..{left}z13{left}..z14..z15.. z16.. z17;
 
