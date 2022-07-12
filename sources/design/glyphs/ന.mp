@@ -20,19 +20,15 @@ beginglyph;
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
-        nib(default_nib xyscaled(xthick,.11) rotated 45)(0)
-        nib(default_nib xyscaled(1,.11) rotated 10)(4 )
+        nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0)
+        nib(default_nib xyscaled(1,terminalround) rotated 10)(4 )
     )(paths[0])(strokes[0]);
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3, 5, 7)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2, 4, 6)
-        nib(default_nib xyscaled(thin,.11) rotated 0)(0)
-        nib(default_nib xyscaled(xthick,.11) rotated 120)(infinity)
+        nib(default_nib xyscaled(thin,terminalround) rotated 0)(0)
+        nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity)
     )(paths[1])(strokes[1]);
-
-    find_outlines(soften_path(strokes[0], 10),soften_path(strokes[1], 10) )(r);
-
-
 
 
 

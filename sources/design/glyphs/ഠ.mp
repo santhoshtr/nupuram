@@ -2,7 +2,7 @@ input glyph;
 
 beginglyph;
 path paths[], strokes;
-donotsoften := 1;
+soften := 0;
 
 z0=(1u, 0.5m);
 z1=(x0 + 0.4m, y0 + 0.5m);

@@ -16,8 +16,8 @@ beginglyph;
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 6)
-        nib(default_nib xyscaled(xthick,.11) rotated 45)(0)
-        nib(default_nib xyscaled(xthick,.11) rotated 90)(infinity)
+        nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0)
+        nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity)
     )(paths[0])(strokes[0]);
 
 endglyph;

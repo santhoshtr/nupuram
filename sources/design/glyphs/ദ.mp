@@ -15,9 +15,9 @@ paths[0]:= z0..z1..z2..{left}z3{right}..z4..z5;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 4)
-    nib(default_nib xyscaled(1 ,.1) rotated 60)(3) % Sharp cut
-    nib(default_nib xyscaled(xthick ,.1) rotated 60)( 0) % Sharp cut
-    nib(default_nib xyscaled(xthick,.1) rotated 45)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1 ,terminalround) rotated 60)(3) % Sharp cut
+    nib(default_nib xyscaled(xthick ,terminalround) rotated 60)( 0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 

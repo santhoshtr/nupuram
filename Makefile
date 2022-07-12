@@ -46,6 +46,8 @@ glyphs:
 	VARIANT=slanted make -C sources/design
 	VARIANT=condense make -C sources/design
 	VARIANT=sans make -C sources/design
+	VARIANT=script make -C sources/design
+
 
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
@@ -88,6 +90,12 @@ $(UFODIR)/$(FAMILY)-Sans.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/sans --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Script.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/script --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf

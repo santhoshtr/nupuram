@@ -17,12 +17,13 @@ condense :=     1;            % Condense factor. Less than for condense, Greater
 lbearing :=     0.25u;         % Default left bearing
 rbearing :=     0.25u;         % Default right bearing
 
-outline :=      0;            % Whether font is outline font or not. 1 means outline. This will not work with strokepens
-
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
+soften :=       1;            % Whether sharp corners need to be softened using cornerradius
+cornerradius := 10;           % Corner radius. Used when soften=1.
+terminalround:= 0.1;          % Terminal roundness. Give 1 for round terminals. 0.1 for razor cuts
 
-outputformat :=   "svg";
+outputformat := "svg";
 
 varstroke := 1;
 

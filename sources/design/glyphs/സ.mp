@@ -22,15 +22,15 @@ paths[1]:=  z5{up}..z6..{dir 245}z7{dir 245}...z8..z9 ..{dir 135}z10;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
-    nib(default_nib xyscaled(xthick,.11) rotated 45)(0)
-    nib(default_nib xyscaled(1,.11) rotated 10)(4 )
+    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0)
+    nib(default_nib xyscaled(1,terminalround) rotated 10)(4 )
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3, 5, 7)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(2, 4)
-    nib(default_nib xyscaled(thin,.11) rotated 0)(0)
+    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0)
 
-    nib(default_nib xyscaled(xthick,.11) rotated 45)(infinity)
+    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(infinity)
 )(paths[1])(strokes[1]);
 
 

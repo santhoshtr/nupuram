@@ -1,8 +1,8 @@
 input glyph;
 
 beginglyph;
-path paths[], strokes;
-donotsoften := 1;
+
+soften := 0;
 
 z0=(0.2m,  0);
 z1=(x0 + 0.2m, y0 - 0.2m);
@@ -19,7 +19,7 @@ paths[0]:= z0..z1{down}...z2{left}..{up}z3..z4..z5..z6 ;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(2 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 1, 3, 4, 5)
-    nib(default_nib xyscaled(1,.1) rotated 60)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1, terminalround) rotated 60)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 

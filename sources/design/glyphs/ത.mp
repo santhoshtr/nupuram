@@ -20,8 +20,8 @@ paths[0]:= z0  ..z1..z2{right}.. z3..z4..z5 ..z6{right}..z7..z8;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4,6, )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
-    nib(default_nib xyscaled(xthick,.1) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,.1) rotated 90)(infinity) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 

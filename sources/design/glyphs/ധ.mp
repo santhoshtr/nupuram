@@ -20,14 +20,14 @@ beginglyph;
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
-        nib(default_nib xyscaled(1,.11) rotated 90)(0)
-        nib(default_nib xyscaled(1,.11) rotated 10)(4 )
+        nib(default_nib xyscaled(1,terminalround) rotated 90)(0)
+        nib(default_nib xyscaled(1,terminalround) rotated 10)(4 )
     )(paths[0])(strokes[0]);
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
-        nib(default_nib xyscaled(1,.11) rotated 0)(0)
-        nib(default_nib xyscaled(1,.11) rotated 90)(infinity)
+        nib(default_nib xyscaled(1,terminalround) rotated 0)(0)
+        nib(default_nib xyscaled(1,terminalround) rotated 90)(infinity)
     )(paths[1])(strokes[1]);
 
 endglyph;

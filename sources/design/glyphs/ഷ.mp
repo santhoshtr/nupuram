@@ -26,33 +26,23 @@ paths[2] = z9{dir 240}..z10 ..z11 ..{down}z12..z13;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5, 6 )
     nib(default_nib xyscaled(thin, 1) rotated 0 )(1,3)
-    nib(default_nib xyscaled(xthick,.1) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(1,.1) rotated 120)(infinity) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
+    nib(default_nib xyscaled(1,terminalround) rotated 120)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(2)
-    nib(default_nib xyscaled(1 ,.1) rotated 115)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,.1) rotated 170)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1 ,terminalround) rotated 115)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 170)(infinity) % Sharp cut
 )(paths[1])(strokes[1]);
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1,2)
     nib(default_nib xyscaled(thin, thin) rotated 0 )( 3)
-    nib(default_nib xyscaled(1 ,.1) rotated 170)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,.1) rotated 0)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1 ,terminalround) rotated 170)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
-
-find_outlines(soften_path(strokes[0], 10), soften_path(strokes[1],10))(r);
-
-
-
-% draw strokes[1];
-
-
-% draw strokes[0] withpen finenib withcolor 0.5green;
-% draw strokes[1] withpen finenib withcolor 0.5green;
 
 
 endglyph;

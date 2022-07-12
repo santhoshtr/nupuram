@@ -67,6 +67,19 @@ vardef boundingbox(expr p, lbearing, rbearing) =
   -- cycle
 enddef;
 
+boolean importing;
+importing:=false;
+def import text name =
+ if (readfrom maybename(name))=EOF:
+  message "PX: file " & maybename(name) & " cannot be read";
+  maybeinput_ok:=false;
+ else:
+  importing:=true;
+  closefrom maybename(name); scantokens ("input " & maybename(name));
+  importing:=false;
+ fi
+enddef;
+
 def beginglyph=
     beginfig(1);
     path paths[], strokes[];
@@ -87,11 +100,11 @@ def endglyph =
     for i=0 upto 10:
         if varstroke = 1:
             if known strokes[i]:
-                if known donotsoften:
-                    fill strokes[i] withcolor glyphcolor;
-                else:
-                    softpath := soften_path(strokes[i], 10);
+                if soften > 0:
+                    softpath := soften_path(strokes[i], cornerradius);
                     fill softpath withcolor glyphcolor;
+                else:
+                    fill strokes[i] withcolor glyphcolor;
                 fi;
 
             fi;
@@ -143,4 +156,5 @@ def endglyph =
         draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
     fi;
     endfig;
+    end
 enddef;

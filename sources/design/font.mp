@@ -1,4 +1,10 @@
-% No stroke modulation
-thick:= .8u;
-thin := 1;
-xthick  :=      1;         % Extra thickness for terminals
+debug := 1;
+thick:= 1u;
+thin := 2/3;
+show_paths := 1;
+xheight :=      6u;           % Height of English small letters
+mheight :=      7u;           % Height of Malayalam letters
+descent :=      2u;           % Descender Height
+ascent  :=      8u;           % Ascender Height
+Xheight :=      8u;           % Height of English capital letters
+xthick  :=      1.25;         % Extra thickness for terminals
