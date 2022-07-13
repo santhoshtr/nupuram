@@ -11,12 +11,11 @@ all: $(SVGS)
 
 $(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp $(VARIANT).mp
 	@echo " BUILD   $(@F)"
-	mkdir -p $(VARIANT)
+	@mkdir -p $(VARIANT)
 	@cp $(VARIANT).mp font.mp
-	# Can be mpost "\generating:=0; \input $<"
-	mpost --mem=metafun.mem -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $<
-	# remove svg comments which fonttools svglib does not like
-	sed -i 's/<!--.*$\//g' $@
+	mpost -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $< end
+	@# remove svg comments which fonttools svglib does not like
+	@sed -i 's/<!--.*$\//g' $@
 	@rm -rf *.log *.mpo *.mpt
 
 %.tex: %.mp

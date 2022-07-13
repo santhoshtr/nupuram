@@ -3,7 +3,7 @@ input glyph;
 beginglyph;
 path paths[], strokes;
 
-z0=(-2u, ascent-1u);
+z0=(-7u, ascent-1u);
 z1=(x0 + 2u, y0 + 2u );
 z2=(x1 + 2u, y1 - 0.2m);
 z3=(x2 + 0.5u  , y2 - 0.5m);
@@ -20,4 +20,3 @@ pen_stroke(
 
 
 endglyph;
-end

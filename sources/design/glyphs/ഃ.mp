@@ -24,4 +24,3 @@ pen_stroke(
 strokes[1]:= strokes[0] shifted (0, 0.5m)  ;
 
 endglyph;
-end

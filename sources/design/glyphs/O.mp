@@ -10,8 +10,6 @@ z2=(x1 + 0.4X, y1 - 0.5X);
 z3=(x2 - 0.4X, y2 - 0.5X);
 z4=(x3 - 0.4X, y3 + 0.5X);
 
-
-
 paths[0]:= z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
 
 pen_stroke(
@@ -19,7 +17,4 @@ pen_stroke(
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2, 4)
 )(paths[0])(strokes[0]);
 
-% FIXME: Do not soften
-
 endglyph;
-end

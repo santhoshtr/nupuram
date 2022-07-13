@@ -21,4 +21,3 @@ beginglyph;
     )(paths[0])(strokes[0]);
 
 endglyph;
-end

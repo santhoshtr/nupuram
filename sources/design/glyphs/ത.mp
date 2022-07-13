@@ -11,7 +11,7 @@ z4 = ( x3 - 0.15m, 0); % bottom middle
 z5 = ( x4 - 0.15m, y3);
 z6 = ( x5 + m/2, y2); % second top
 z7 = ( x6 + m/3, y1);
-z8 = ( x7 - m/3, y0); % end
+z8 = ( x7 - m/3, y0); %
 
 
 
@@ -26,4 +26,3 @@ pen_stroke(
 
 
 endglyph;
-end

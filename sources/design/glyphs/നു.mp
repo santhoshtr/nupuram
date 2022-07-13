@@ -29,4 +29,3 @@ beginglyph;
     )(paths[1])(strokes[1]);
 
 endglyph;
-end

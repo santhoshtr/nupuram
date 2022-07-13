@@ -37,4 +37,3 @@ beginglyph;
 
 
 endglyph;
-end

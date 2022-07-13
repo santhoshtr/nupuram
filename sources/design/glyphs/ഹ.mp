@@ -46,4 +46,3 @@ find_outlines(soften_path(strokes[0], 10), soften_path(strokes[1],10))(r);
 
 
 endglyph;
-end

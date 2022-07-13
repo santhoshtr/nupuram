@@ -37,4 +37,3 @@ pen_stroke(
 
 
 endglyph;
-end

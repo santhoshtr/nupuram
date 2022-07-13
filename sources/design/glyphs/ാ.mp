@@ -19,4 +19,3 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 endglyph;
-end
