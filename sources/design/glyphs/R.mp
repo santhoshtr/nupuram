@@ -2,14 +2,14 @@ input glyph;
 
 beginglyph;
 
-w := 0.6s;
+w := 0.7s;
 z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 
 z3 = (x0, X - 0.2X);
-z4 = (x3 + w, y0);
-z5 = (x4 + w/3, y4 - 0.2X );
+z4 = (x3 + w/2, y0);
+z5 = (x4 + 0.8w, y4 - 0.2X );
 z6 = (x3, y5 - 0.4X );
 
 % Leg
@@ -17,7 +17,7 @@ z7 = (x6 + w/3, y6);
 z8 = (x7 + w, y2);
 
 paths[0] = z0{dir -60}..z1..  z2 ;
-paths[1] = z3{dir 60}..z4..z5..z6;
+paths[1] = z3{dir 60}..z4..z5..{left}z6;
 paths[2] = z7{dir -10}.. {dir -10}z8;
 
 
