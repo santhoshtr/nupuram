@@ -2,15 +2,15 @@ input glyph;
 
 beginglyph;
     path paths[], strokes;
-    z0=(2.5u, m);
-    z1=(x0 -2u, y0 - 0.5m);
-    z2=(x1 + 1.5u, y1 - 0.4m);
-    z3=(x2 + 2u, y2+ m*0.5);
-    z4=(x3, m-1u); % bottom of piller
+    z0=( m/3, m);
+    z1=(x0 -  m/3, y0 - m/2);
+    z2=(x1 +  m/3, y1 - m/2);
+    z3=(x2 +  m/3, y2+ m/2);
+    z4=(x3, y3+m/3); % bottom of piller
     z5=(x3, y3);
-    z6=(x5 + 2.5u, y5 - 0.6m); % Top of second arch
-    z7=(x6 + 2u, y6 + 0.5m);
-    z8=(x7 - 2u, m);
+    z6=(x5 +  m/3, y5 - m/2); % Top of second arch
+    z7=(x6 +  m/3, y6 + m/2);
+    z8=(x7 -  m/3, y7 + m/2);
 
 
 
@@ -20,14 +20,14 @@ beginglyph;
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
-        nib(default_nib xyscaled(1,terminalround) rotated 90)(0)
-        nib(default_nib xyscaled(1,terminalround) rotated 10)(4 )
+        nib(default_nib xyscaled(1,terminalround) rotated 135)(0)
+        nib(default_nib xyscaled(1,terminalround) rotated 0)(4 )
     )(paths[0])(strokes[0]);
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
         nib(default_nib xyscaled(1,terminalround) rotated 0)(0)
-        nib(default_nib xyscaled(1,terminalround) rotated 90)(infinity)
+        nib(default_nib xyscaled(1,terminalround) rotated 45)(infinity)
     )(paths[1])(strokes[1]);
 
 endglyph;

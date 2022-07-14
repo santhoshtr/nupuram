@@ -14,14 +14,14 @@ beginglyph;
     z9= ( x8 - m/4, y8 + .3m);
     z10= ( x9 + 0.55m, y7);
 
-    paths[0]:= z0..z1..{right}z2.. z3---z4 ;
-    paths[1]:= z5{up}..z6..z7..{left}z8{left}..z9.. z10;
+    paths[0]:= z0..z1..z2.. z3---z4 ;
+    paths[1]:= z5{up}..z6..z7..z8..z9.. z10;
 
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
         nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
         nib(default_nib xyscaled(1,terminalround) rotated 45)(0)
-        nib(default_nib xyscaled(1,terminalround) rotated 10)(4 )
+        nib(default_nib xyscaled(1,terminalround) rotated 0)(4 )
     )(paths[0])(strokes[0]);
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3, 5)

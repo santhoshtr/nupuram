@@ -21,7 +21,7 @@ glyphs:
     LC_ALL: abcdefghijklmnopqrstuvwxyz
     UC_ALL: ABCDEFGHIJKLMNOPQRSTUVWXYZ
     LATIN_EXTRA: ÁǼÂÄÀĀÅÃĆČÇĈĊĎÉĚÊËĖÈĒĜĠĤÍÎÏÌĪĨŃŇÑÓÔÖÒŌÕŔŘŚŠŞŜÚǓÛÜÙŪŮŨŴÝŶŽŻáǽâäàāåãćčçĉċéěêëėèēĝġĥíîïìīĩńňñóǒôöòōõŕřśšşŝúǔûüùūůũŵýŷÿźžż
-    LATIN_LIGATURES:  ["ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+    LATIN_LIGATURES:  [ "ff", "ft", "tt"] # ["ffi", "ff", "ee", "th", "ft", "fi", "tt"]
     LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
     LC_RIGHT_ROUND: bop
     UC_LEFT_ROUND: OQ

@@ -1,8 +1,4 @@
-varstroke := 1;
-show_paths := 0;
-thick:=0.5u;
-thin:=1;
-xthick:=1;
-soften:=0;
-terminalround:=1;
-
+debug := 1;
+thick:= 1u;
+thin := 2/3;
+show_paths := 1;
