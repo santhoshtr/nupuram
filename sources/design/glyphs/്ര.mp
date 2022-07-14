@@ -1,0 +1,16 @@
+input glyph;
+beginglyph;
+
+z0 = (m/4, m);
+z1 = ( x0, 0 );
+z3 = ( x1 + m/3, y1-m/3);
+
+paths[0] = z0..z1..z3;
+
+pen_stroke(
+    nib(default_nib xyscaled(thin, thin) rotated 0 )(1 )
+    nib(default_nib xyscaled(xthick ,terminalround) rotated 0)( 0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 60)(infinity) % Sharp cut
+)(paths[0])(strokes[0]);
+
+endglyph;

@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
-path paths[], strokes;
+
 z0 = ( m/3 , 0);
-z1 = ( x0 - m/3 , y0 + m/2 );
+z1 = ( x0 - m/4 , y0 + m/2 );
 z2 = ( x1 + m/2  , y1 + m/2); % top
 z3 = ( x2 + 0.2m, y2-m/2); % <
 z4 = ( x3 + .3m, y3-.2m);
