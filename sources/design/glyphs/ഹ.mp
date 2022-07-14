@@ -23,7 +23,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3, 5)
-    nib(default_nib xyscaled(thin, 1.6) rotated 0 )(2, 4)
+    nib(default_nib xyscaled(thin, thin) rotated 0 )(2, 4)
     nib(default_nib xyscaled(1 ,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
 )(paths[1])(strokes[1]);

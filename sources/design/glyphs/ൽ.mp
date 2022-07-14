@@ -13,6 +13,7 @@ z9 = ( x8 - m/4, y8 + m/2);
 z10 = ( x9 + m/4, y9 + m/2);
 z11 = ( x10 - m/2, y10 + m/3);
 paths[0] = z0  ..z1..z2 .. z3..z4..z5 ..z6{right} ..z7..z8..z9..{up}z10{up}..z11;
+
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4,6, )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7, 9, 10)
