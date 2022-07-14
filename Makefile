@@ -49,7 +49,6 @@ glyphs:
 	VARIANT=script make -C sources/design
 
 
-
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}

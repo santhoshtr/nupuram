@@ -1,7 +1,5 @@
 input glyph;
-
 beginglyph;
-
 z0=(2.3u, m);
 z1=(x0 - 0.3m, y0 - 0.5m);
 z2=(x1 + 0.3m, y1 - 0.5m);
@@ -12,13 +10,10 @@ z6=(x5 - 0.3m, y5 - 0.5m);
 z7=(x6 - 0.2m, y6 + 0.25m);
 z8=(x7 + 0.2m, y7 + 0.25m);
 z9=(x8 + 0.3m, y8);
-
-paths[0]:= z0{dir 215}..z1..z2..z3..z4..z5..z6..z7..z8.. z9;
-
+paths[0] = z0{dir 215}..z1..z2..z3..z4..z5..z6..z7..z8.. z9;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6, 8 )
     nib(default_nib xyscaled(thin, 1) rotated 0 )(1,3,5,7, 9)
     nib(default_nib xyscaled(xthick,terminalround) rotated 135)(0) % Sharp cut
 )(paths[0])(strokes[0]);
-
 endglyph;
