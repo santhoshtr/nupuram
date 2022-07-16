@@ -6,17 +6,17 @@ z2=(x0 + m/6, y1 + m/4);
 z3=(x2 + m/4, y2-m/4);
 z4=(x2, 0);
 z5=(x4, 0);
-z6=(x5 + 0.6m, y5);
+z6=(x5 + 3/4m, y5);
 z7=(x6, y6 + m/2);
 z8=(x7, y7 + m/2);
 
-z10= (x1, 0.8s);
-z11= (x10+m/2, y10);
+z10= (x1, 0.9s);
+z11= (x10 + m/2, y10);
 z12= (x6, y11);
 
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
 paths[1] := z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 60}z8;
-paths[2] := z10{dir 60}..z11..{dir60}z12;
+paths[2] := z10{dir 60}..{dir -60}z11{dir -60}..{dir 60}z12;
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5, 6 )

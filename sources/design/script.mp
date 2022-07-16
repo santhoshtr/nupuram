@@ -1,5 +1,4 @@
-varstroke := 1;
-show_paths := 0;
+
 thick:=0.7u;
 thin:=1;
 xthick:=1;

@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 path paths[],strokes;
-donotsoften:=1;
+soften:=0;
 z0 = (u, 0.3m);
 z1 = (x0  + 0.2m, y0 + 0.25m );
 z2 = (x1 + m/4, y1 - 0.2m);
@@ -50,4 +50,5 @@ strokes[4] = strokes[0]  shifted (shift, 0);
 strokes[5] = strokes[1]  shifted (shift, 0);
 strokes[6] = strokes[2]  shifted (shift, 0);
 strokes[7] = strokes[3]  shifted (shift, 0);
+rbearing:=-m/4;
 endglyph;

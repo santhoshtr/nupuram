@@ -124,7 +124,7 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
-        contentArea.classList.remove("color", "outline", "shadow", "shadoweast", "shadowwest", "shadowsouth", "shadownorth");
+        contentArea.classList.remove("color", "display", "outline", "shadow", "bold", "script", "bold", "thin", "sans", "condensed","calligraphy","slanted");
         if (selected === 'SeventyColor') {
             contentArea.classList.add('color');
             document.getElementById('font-fontColor').disabled = true
@@ -145,6 +145,62 @@ function listen() {
         }
         if (selected === 'Seventy') {
             contentArea.classList.remove('color');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyBold') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('bold');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyThin') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('thin');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyDisplay') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('display');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyScript') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('script');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyCalligraphy') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('calligraphy');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventySlanted') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('slanted');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventySans') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('sans');
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('outlined').disabled = false
+            document.getElementById('palette').style.display = "none"
+        }
+        if (selected === 'SeventyCondensed') {
+            contentArea.classList.remove('color');
+            contentArea.classList.add('condensed');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"

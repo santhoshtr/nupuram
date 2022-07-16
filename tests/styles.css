@@ -15,6 +15,73 @@
 }
 
 @font-face {
+  font-family: "SeventyBold";
+  src: url(../fonts/webfonts/Seventy-Bold.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Bold.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "SeventyThin";
+  src: url(../fonts/webfonts/Seventy-Thin.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Thin.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+@font-face {
+  font-family: "SeventyDisplay";
+  src: url(../fonts/webfonts/Seventy-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Display.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "SeventySans";
+  src: url(../fonts/webfonts/Seventy-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Sans.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "SeventyScript";
+  src: url(../fonts/webfonts/Seventy-Script.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Script.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "SeventySlanted";
+  src: url(../fonts/webfonts/Seventy-Slanted.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Slanted.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+@font-face {
+  font-family: "SeventyCondensed";
+  src: url(../fonts/webfonts/Seventy-Condensed.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Condensed.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+@font-face {
+  font-family: "SeventyCalligraphy";
+  src: url(../fonts/webfonts/Seventy-Calligraphy.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Calligraphy.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
   font-family: "SeventyShadow";
   src: url(../fonts/webfonts/Seventy-Shadow.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Shadow.otf?v=1.100) format("opentype");
   font-weight: 400;
@@ -66,6 +133,30 @@ main {
 
 .content.outline {
   font-family: "SeventyOutline", sans;
+}
+.content.display {
+  font-family: "SeventyDisplay", sans;
+}
+.content.bold {
+  font-family: "SeventyBold", sans;
+}
+.content.thin {
+  font-family: "SeventyThin", sans;
+}
+.content.script {
+  font-family: "SeventyScript", sans;
+}
+.content.sans {
+  font-family: "SeventySans", sans;
+}
+.content.condensed {
+  font-family: "SeventyCondensed", sans;
+}
+.content.calligraphy {
+  font-family: "SeventyCalligraphy", sans;
+}
+.content.slanted{
+  font-family: "SeventySlanted", sans;
 }
 
 .tools {

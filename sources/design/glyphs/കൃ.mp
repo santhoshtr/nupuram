@@ -1,0 +1,27 @@
+input glyph;
+beginglyph;
+soften:=0;
+z0=(3u, 0.6m);
+z1=(x0 + 0.3m, y0 + 0.4m);
+z2=(x1 + 0.3m, y1 - 0.5m);
+z3=(x2 - 0.3m, y2 - 0.5m);
+z4=(x3 - 0.3m, y3 + 0.4m);
+z5=(x4 - 0.2m, y4 - 0.4m);
+z6=(x5 - 0.2m, y5 + 0.2m);
+z7=(x6 + 0.2m, y6 + 0.3m);
+z8=(x7 + m*0.9 , y7  );
+z9=(x8 + 0.2m , y8 - 0.3m);
+z10=(x9 -  m/2 , y9 - 0.6m);
+z11=(x10 - m/3 , y10 + m/6);
+z12=(x11 + m/3 , y11 + m/6);
+z13=(x12 + m/3 , y12 - m/8);
+
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9 ..z10{left} ..z11{up}..z12{right}..z13;
+
+pen_stroke(
+    nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
+    nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 4, 6, 9, 12, 13)
+    nib(default_nib xyscaled(1,terminalround) rotated 45)(4) % Sharp cut
+    nib(default_nib xyscaled(thin,terminalround) rotated 45)(infinity) % Sharp cut
+)(paths[0])(strokes[0]);
+endglyph;

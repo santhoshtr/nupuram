@@ -27,7 +27,6 @@ vardef show_coordinates (expr p ) =
         pair b;b:=point i+1 of p;
         string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
         dotlabel.bot(pointlabel, a) withcolor debugcolor;
-
     endfor;
 
 enddef;
@@ -62,9 +61,7 @@ enddef;
 
 
 vardef boundingbox(expr p, lbearing, rbearing) =
-  llcorner p-(lbearing,0) -- lrcorner p+(lbearing,-0)
-  -- urcorner p+(rbearing,0) -- ulcorner p+(-rbearing,0)
-  -- cycle
+    (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
 enddef;
 
 def beginglyph=
@@ -111,14 +108,14 @@ def endglyph =
                     drawarrow subpath(j, 0.9(j+1)) of paths[i] withpen pencircle scaled 4 withcolor arrowcolor;
                 endfor;
             fi;
-            if debug = 1:
+            if showcoords = 1:
                 show_coordinates(paths[i]);
             fi;
         fi;
     endfor;
 
     currentpicture := currentpicture
-        shifted (lbearing, descent)
+        shifted (0, descent)
         xscaled condense
         slanted slant;
 
@@ -126,22 +123,28 @@ def endglyph =
     pair ur; ur:=urcorner currentpicture;
     path bbox; bbox = boundingbox(currentpicture, lbearing, rbearing);
     setbounds currentpicture to bbox;
-
-    if debug = 1:
+    currentpicture := currentpicture shifted (lbearing, 0);
+    if showgrids = 1:
         % Debug points are hard to see. Change the fontsize
         defaultscale := 2;
         pair w; w:=urcorner currentpicture;
         draw (0, 0) -- (xpart w, 0) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, descent) -- (xpart w, descent) withpen pencircle scaled 1 withcolor gridcolor;
-        dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         draw (0, mheight+descent) -- (xpart w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
-        dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
-        dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
-        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur + rbearing,  descent))  withcolor debugcolor;
         draw ( xpart ur, 0) -- (xpart ur, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
+    fi;
+
+    if showcoords = 1:
+        % Debug points are hard to see. Change the fontsize
+        defaultscale := 2;
+        pair w; w:=urcorner currentpicture;
+        dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
+        dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
+        dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
+        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur + rbearing,  descent))  withcolor debugcolor;
     fi;
     endfig;
 enddef;

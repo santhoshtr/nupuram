@@ -33,7 +33,8 @@ color debugcolor; debugcolor := (.90, .38,.0);
 color gridcolor; gridcolor := (.47, .46,.48);
 color arrowcolor; arrowcolor := (.90, .38,.0);
 
-debug := 0; % Set to 1 to draw coordinates and direction arrows in images.
+showgrids := 0;
+showcoords := 0;
 show_arrows := 0; % Set to 1 to draw arrow showing drawing path
 show_paths := 0;
 

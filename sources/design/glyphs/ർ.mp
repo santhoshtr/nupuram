@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-    z0=(0.3m, 0);
+    z0=(0.3m + .5thick, 0);
     z1=(x0 - 0.3m, y0 + 0.5m);
     z2=(x1 + 0.5m, y1 + 0.5m);
     z3=(x2 + 0.5m, y2 - 0.5m);

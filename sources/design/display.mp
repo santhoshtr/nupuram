@@ -7,3 +7,7 @@ descent :=      2u;           % Descender Height
 ascent  :=      9u;           % Ascender Height
 Xheight :=      9u;           % Height of English capital letters
 xthick  :=      1.25;         % Extra thickness for terminals
+soften := 0;
+thick:= 1.2u;
+lbearing :=     0.1u;         % Default left bearing
+rbearing :=     0.1u;

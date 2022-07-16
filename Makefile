@@ -40,11 +40,12 @@ glyphs:
 	VARIANT=regular make -C sources/design
 	VARIANT=calligraphy make -C sources/design
 	VARIANT=bold make -C sources/design
+	VARIANT=thin make -C sources/design
 	VARIANT=debug make -C sources/design
 	VARIANT=display make -C sources/design
 	VARIANT=shadow make -C sources/design
 	VARIANT=slanted make -C sources/design
-	VARIANT=condense make -C sources/design
+	VARIANT=condensed make -C sources/design
 	VARIANT=sans make -C sources/design
 	VARIANT=script make -C sources/design
 
@@ -55,10 +56,22 @@ $(UFODIR)/$(FAMILY)-Regular.ufo:
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/regular --output $@
 	@ufonormalizer -m $@
 
+$(UFODIR)/$(FAMILY)-Bold.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Bold --source $(SOURCEDIR)/design/bold --output $@
+	@ufonormalizer -m $@
+
+$(UFODIR)/$(FAMILY)-Thin.ufo:
+	@echo "  BUILD    $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Thin --source $(SOURCEDIR)/design/thin --output $@
+	@ufonormalizer -m $@
+
 $(UFODIR)/$(FAMILY)-Display.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/display --output $@
+	$(PY) tools/builder.py --style Display --source $(SOURCEDIR)/design/display --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Kids.ufo:
@@ -70,25 +83,25 @@ $(UFODIR)/$(FAMILY)-Kids.ufo:
 $(UFODIR)/$(FAMILY)-Calligraphy.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/calligraphy --output $@
+	$(PY) tools/builder.py --style Calligraphy --source $(SOURCEDIR)/design/calligraphy --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Slanted.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/slanted --output $@
+	$(PY) tools/builder.py --style Slanted --source $(SOURCEDIR)/design/slanted --output $@
 	@ufonormalizer -m $@
 
-$(UFODIR)/$(FAMILY)-Condense.ufo:
+$(UFODIR)/$(FAMILY)-Condensed.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/condense --output $@
+	$(PY) tools/builder.py --style Condensed --source $(SOURCEDIR)/design/condensed --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Sans.ufo:
 	@echo "  BUILD    $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/sans --output $@
+	$(PY) tools/builder.py --style Sans --source $(SOURCEDIR)/design/sans --output $@
 	@ufonormalizer -m $@
 
 $(UFODIR)/$(FAMILY)-Script.ufo:

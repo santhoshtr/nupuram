@@ -12,5 +12,5 @@ pen_stroke(
     nib(default_nib xyscaled(xthick ,terminalround) rotated 120)( 0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 60)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
-
+rbearing:=-x1;
 endglyph;

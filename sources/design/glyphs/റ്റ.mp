@@ -1,12 +1,12 @@
 input glyph;
 beginglyph;
-z0=(2u, 0.2m);
-z1=(x0 - m/3, y0 + m/2);
-z2=(x1 + m/2, y1 + m/3);
-z3=(x2 + m/2, y2 - m/3);
-z4=(x3 - m/3, y3 - m/2);
+z0=(m/4+thick/2, 0);
+z1=(x0- m/4, m/2);
+z2=(x0 + m/3, y1 + m/2);
+z3=(x2 + m/3, y2-m/2);
+z4=(x2, 0);
 paths[0] = z0 ..z1..{right}z2..z3 ..z4;
-paths[1] = paths[0] shifted (0.1m, -y2 + 0.2m) xscaled 0.9 yscaled 0.9;
+paths[1] = paths[0] shifted (0.1m, -y2  ) xscaled 0.8 yscaled 0.8;
 
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 5, 6 )
