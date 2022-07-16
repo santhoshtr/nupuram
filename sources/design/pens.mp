@@ -10,7 +10,7 @@ pen finenib; finenib := pencircle scaled 1;
 % Create an ellipse from 32 step polygon instead of circle so that we get
 % a) Rounded terminals depending on thick, thin values
 % b) The svg has paths and not strokes
-numeric L; L:=32;
+numeric L; L:=16;
 path penpath;
 path sub_penpath;
 penpath:=( (thick*cosd(0),thin*u*sind(0)) for i=1 upto L-1: -- (thick*cosd(i/L*360), thin*u*sind(i/L*360)) endfor -- cycle ) rotated rotation;

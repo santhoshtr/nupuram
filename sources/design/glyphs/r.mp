@@ -6,7 +6,7 @@ z1=(x0, y0 - 0.6s);
 z2=(x1, 0);
 
 z3= z1;
-z4=(x2 + s/2, y0);
+z4=(x2 + sw/2, y0);
 
 paths[0] = z0{dir -60}..z1..z2;
 paths[1] = z3{dir 80}..{dir 20}z4;

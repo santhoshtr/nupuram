@@ -8,8 +8,8 @@ z4=(x3, y3 - m/3); % bottom of piller
 z5=(x3, y3);
 z6=(x5 + m/2.5, y5 + m/2); % Top of second arch
 z7=(x6 + m/2.5, y6 - m/2);
-z8=(x7 - m/4, y7 - m/2.5);
-z9=(x8 - m/4, y8 + m/2);
+z8=(x7 - mw/4, y7 - m/2.5);
+z9=(x8 - mw/4, y8 + m/2);
 z10=(x9 + m/3, y9 + m/2);
 z11=(x10-m/3, y10 + 0.3m);
 

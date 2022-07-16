@@ -1,19 +1,19 @@
 input glyph;
 beginglyph;
-soften:=0;
+
 
 z0 =(u, m/3.5);
-z1 =(x0 + m/4, y0 + m/4);
-z2 = (x1 + m/4, y1 - m/4);
-z3 = ( x2- m/4, y2 - m/4);
+z1 =(x0 + mw/4, y0 + m/4);
+z2 = (x1 + mw/4, y1 - m/4);
+z3 = ( x2- mw/4, y2 - m/4);
 z4 = ( x3 - m/4 , y3 + m/2);
 z5 = ( x4 + 0.75m  , y4 + m/2); % top
-z6 = ( x5 + 0.2m, y5 - m/2); % <
-z7 = ( x6 + 0.25m, y6-m/4);
-z8 = ( x7 - 0.25m, y7-m/4);
+z6 = ( x5 + 0.2mw, y5 - m/2); % <
+z7 = ( x6 + 0.25mw, y6-m/4);
+z8 = ( x7 - 0.25mw, y7-m/4);
 z9 = ( x8 - m/3, y8 + m/2.5);
 z10 = ( x9 + m/3, y9 + m/2);   % top
-z11 = ( x10 + m/2, y10-m/2.5);
+z11 = ( x10 + mw/2, y10-m/2.5);
 z12 = ( x11, y11 - m/2);
 
 z20 = ( x11, y11 );
@@ -44,8 +44,8 @@ pen_stroke(
 
 
 z30 = z23;
-z31 = (x30 + m/2, y30 - m/4);
-z32 = (x31 - m/2, y31 - m/4);
+z31 = (x30 + mw/2, y30 - m/4);
+z32 = (x31 - mw/2, y31 - m/4);
 paths[2] = z30{right}..z31..z32 ;
 pen_stroke(
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1)

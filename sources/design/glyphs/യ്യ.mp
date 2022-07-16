@@ -4,16 +4,16 @@ beginglyph;
 
 soften := 0;
 z0 = (m/2+ thick/2, m- m/3);
-z1 = (x0 + m/4, y0 + m/3);
-z2 = (x1 + m/4, y1 - m/2);
-z3 = (x2 - 0.4m, 0);
-z4 = (x3 - 0.6m, y3 + 0.45m);
-z5 = (x4 + m/4, y4 + 0.4m);
+z1 = (x0 + mw/4, y0 + m/3);
+z2 = (x1 + mw/4, y1 - m/2);
+z3 = (x2 - 0.4mw, 0);
+z4 = (x3 - 0.6mw, y3 + 0.45m);
+z5 = (x4 + mw/4, y4 + 0.4m);
 z6 = (x0, y0);
 z7 = (x6 + m/6, y6 - m/2);
-z8 = (x7 + m/2, y3);
-z9 = (x8 + m/4, y8+ m/2);
-z10 = (x9 - m/4, y9 + m/2);
+z8 = (x7 + mw/2, y3);
+z9 = (x8 + mw/4, y8+ m/2);
+z10 = (x9 - mw/4, y9 + m/2);
 paths[0] = z0{up} ..z1..z2..z3..z4..z5..z6..z7..z8..z9.. z10;
 
 pen_stroke(
@@ -26,7 +26,7 @@ pen_stroke(
 z11 = z9;
 z12 = (x11 , y11-m/2);
 z13 = (x12, y12 - m/3 );
-z14 = (x13 - m/2, y13);
+z14 = (x13 - mw/2, y13);
 z15 = (x8, y8);
 paths[1] = z11{dir -60}..z12..z13{left}..{left}z14{dir 30}.. z15;
 pen_stroke(

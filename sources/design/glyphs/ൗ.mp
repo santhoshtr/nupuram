@@ -1,13 +1,13 @@
 input glyph;
 beginglyph;
 z0 = (thick/2, 0.6m);
-z1 = (x0 + 0.25m, y0 + 0.35m);
-z2 = (x1 + 0.25m, y1 - 0.45m);
+z1 = (x0 + 0.25mw, y0 + 0.35m);
+z2 = (x1 + 0.25mw, y1 - 0.45m);
 z3 = (x2, y2 - .35m);
 z4 = (x2, y2);
-z5 = (x4 + 0.25m, y4 + .45m);
-z6 = (x5 + 0.25m, y5 - .3m);
-z7 = (x6 - 0.5m, y6 -.6m);
+z5 = (x4 + 0.25mw, y4 + .45m);
+z6 = (x5 + 0.25mw, y5 - .3m);
+z7 = (x6 - 0.5mw, y6 -.6m);
 
 paths[0] = z0{dir 100}..{right}z1..{down}z2 ;
 paths[1] = z4{up}..z5{right}..{down}z6{down}..{left}z7{left};

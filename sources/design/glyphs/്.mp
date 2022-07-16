@@ -2,8 +2,8 @@ input glyph;
 beginglyph;
 
 z0 = (0, m + m/3+thick/2);
-z1=(x0 + 0.3m, y0 - m/3);
-z2=(x1 + 0.3m, y1 + m/3);
+z1=(x0 + 0.3mw, y0 - m/3);
+z2=(x1 + 0.3mw, y1 + m/3);
 
 paths[0] = z0{down}..{right}z1..{up}z2;
 paths[0] := paths[0] shifted (-x1, 0);

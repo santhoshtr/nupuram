@@ -24,9 +24,9 @@ pen_stroke(
 z11 = z3;
 z12 = ( x11 + m/2.4, y11 + m/2.5); % top
 z13 = ( x12 + m/3, y12 - m/2);
-z14 = ( x13 - m/4, y13 - m/3); % bottom middle
-z15 = ( x14 - m/4, y14 + m/2.5);
-z16 = ( x15 + m/2, y15 + m/2); % second top
+z14 = ( x13 - mw/4, y13 - m/3); % bottom middle
+z15 = ( x14 - mw/4, y14 + m/2.5);
+z16 = ( x15 + mw/2, y15 + m/2); % second top
 z17 = ( x16 + m/2.5, y16 - m/2);
 z18 = ( x17 - m/3, y0);
 

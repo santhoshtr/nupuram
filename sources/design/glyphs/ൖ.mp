@@ -1,17 +1,17 @@
 input glyph;
 beginglyph;
-z0 = (0.2m, m);
-z1 = (x0 - .2m, y0 - m/3);
-z2 = (x1 + .6m, y1 - m/3);
-z3 = (x2 + .6m, y2 + m/3);
-z4 = (x3 - .3m, y3 + m/3);
-z5 = (x4 - .3m, y4 - .3m);
-z6 = (x5 + .2m, y5 - .3m);
-z7 = (x6 + .2m, y6 - .2m);
-z8 = (x7 - .4m, y7 - .2m);
-z9 = (x8 - .3m, y8 + .5m);
-z10 = (x9 + .3m, y9 + .5m);
-z11 = (x10 - .4m, y10 + .3m);
+z0 = (0.2mw, m);
+z1 = (x0 - .2mw, y0 - m/3);
+z2 = (x1 + .6mw, y1 - m/3);
+z3 = (x2 + .6mw, y2 + m/3);
+z4 = (x3 - .3mw, y3 + m/3);
+z5 = (x4 - .3mw, y4 - .3m);
+z6 = (x5 + .2mw, y5 - .3m);
+z7 = (x6 + .2mw, y6 - .2m);
+z8 = (x7 - .4mw, y7 - .2m);
+z9 = (x8 - .3mw, y8 + .5m);
+z10 = (x9 + .3mw, y9 + .5m);
+z11 = (x10 - .4mw, y10 + .3m);
 paths[0] = z0..z1..z2..z3..z4..z5..z6 ..z7..z8..z9..z10{up}..z11;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6, 8 )

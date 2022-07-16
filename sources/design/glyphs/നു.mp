@@ -7,11 +7,11 @@ z2=(x1 + 1.5u, y1 + 0.4m);
 z3=(x2 + 2u, y2 - m*0.5);
 z4=(x3, 1u); % bottom of piller
 z5=(x3, y3);
-z6=(x5 + m/2, y5 + .6m); % Top of second arch
+z6=(x5 + mw/2, y5 + .6m); % Top of second arch
 z7=(x6 + m/3, y6 - m/2);
 z8= ( x7 - m/3, y7 - m/2);
-z9= ( x8 - m/4, y8 + .3m);
-z10= ( x9 + 0.55m, y7);
+z9= ( x8 - mw/4, y8 + .3m);
+z10= ( x9 + 0.55mw, y7);
 paths[0] = z0..z1..z2.. z3---z4 ;
 paths[1] = z5{up}..z6..z7..z8..z9.. z10;
 pen_stroke(

@@ -2,9 +2,9 @@ input glyph;
 beginglyph;
 z0=(m/5 + thick/2, 0.5m);
 z1=(x0 - m/5, y0 + m/4);
-z2=(x1 + m/4, y1 + m/5);
+z2=(x1 + mw/4, y1 + m/5);
 z3=(x2 + m/3, y2 - 0.5m);
-z4=(x3 - m/4, y3 - 0.4m);
+z4=(x3 - mw/4, y3 - 0.4m);
 z5=(x4 - m/3, y4 + m/4);
 paths[0] = z0{dir 160} .. z1.. z2 .. z3 ..  z4 .. z5;
 

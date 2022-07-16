@@ -1,16 +1,16 @@
 input glyph;
 beginglyph;
-soften:=0;
+
 z0=(m/4 + thick/2, m);
-z1=(x0 - m/4, y0 - m/2);
+z1=(x0 - mw/4, y0 - m/2);
 z2=(x1 + m/3, y1 - m/2);
-z3=(x2 + m/4, y2 + m/2);
-z4=(x3 + m/4, y3 + m/2.5);
-z5=(x4 + m/2, y4 - m/2.5);
-z6=(x5 - m/4, y5 - m/2);
-z7=(x6 - m/4, y6 + m/2);
-z8=(x7 + m/4, y7 + m/2);
-z9=( x8 - m/2, y8 + m/4);
+z3=(x2 + mw/4, y2 + m/2);
+z4=(x3 + mw/4, y3 + m/2.5);
+z5=(x4 + mw/2, y4 - m/2.5);
+z6=(x5 - mw/4, y5 - m/2);
+z7=(x6 - mw/4, y6 + m/2);
+z8=(x7 + mw/4, y7 + m/2);
+z9=( x8 - mw/2, y8 + m/4);
 
 paths[0] = z0..z1..z2..z3..z4..z5..z6..z7..z8..z9 ;
 

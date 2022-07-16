@@ -1,7 +1,6 @@
 varstroke := 0;
 show_paths := 0;
-thick:= 1u;
-thin:= 0.6;
-nib:= widenib;
+thick:= 0.6u;
+thin:= 0.1;
 calligraphic:=1;
-xthick:= 1.25;
+soften:=0;

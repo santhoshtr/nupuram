@@ -1,10 +1,10 @@
 input glyph;
 beginglyph;
-soften:=0;
+
 z0 =(u, m/3.5);
-z1 =(x0 + m/4, y0 + m/4);
-z2=(x1 + m/4, y1 - m/4);
-z3=(x2 - m/4, y2 - m/4);
+z1 =(x0 + mw/4, y0 + m/4);
+z2=(x1 + mw/4, y1 - m/4);
+z3=(x2 - mw/4, y2 - m/4);
 z4=(x3 - m/3 , y3 + m/2.5);
 z5=(x4 + m/2.8, y4 + m/2);
 z6=(x5 + m/2.4, y5-m/2);
@@ -12,7 +12,7 @@ z7=(x6, y6 - m/3);
 % Second arch
 z11 = z6;
 z12 = (x11 + m/3, y11 + m/2.5);
-z13 = (x12 + m/4, y12 - m/3);
+z13 = (x12 + mw/4, y12 - m/3);
 z14 = (x13 , y13 - m/2.5);
 z15=z13;
 z16=(x15 + m/3, y15+m/2);
@@ -40,10 +40,10 @@ pen_stroke(
     nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 
-paths[3] = paths[0] shifted (m/2,  -.8m  ) xscaled 0.75 yscaled 0.75;
-paths[4] = paths[1] shifted (m/2, -.8m  ) xscaled 0.75 yscaled 0.75;
-paths[5] = paths[2] shifted (m/2, -.8m  ) xscaled 0.75 yscaled 0.75;
-strokes[3] = strokes[0] shifted (m/2,  -.8m  ) xscaled 0.75 yscaled 0.75;
-strokes[4] = strokes[1] shifted (m/2, -.8m  ) xscaled 0.75 yscaled 0.75;
-strokes[5] = strokes[2] shifted (m/2, -.8m  ) xscaled 0.75 yscaled 0.75;
+paths[3] = paths[0] shifted (mw/2,  -.8m  ) xscaled 0.75 yscaled 0.75;
+paths[4] = paths[1] shifted (mw/2, -.8m  ) xscaled 0.75 yscaled 0.75;
+paths[5] = paths[2] shifted (mw/2, -.8m  ) xscaled 0.75 yscaled 0.75;
+strokes[3] = strokes[0] shifted (mw/2,  -.8m  ) xscaled 0.75 yscaled 0.75;
+strokes[4] = strokes[1] shifted (mw/2, -.8m  ) xscaled 0.75 yscaled 0.75;
+strokes[5] = strokes[2] shifted (mw/2, -.8m  ) xscaled 0.75 yscaled 0.75;
 endglyph;

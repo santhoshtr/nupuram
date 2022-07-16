@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-paths[0] = (0, X){dir 10} .. {dir 10}(s/2, X);
+paths[0] = (0, X){dir 10} .. {dir 10}(sw/2, X);
 
 
 pen_stroke(

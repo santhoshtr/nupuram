@@ -8,12 +8,6 @@ input ./pens
 
 pen nib; nib := finenib; % roundedwidenib
 
-
-% Aliases
-m := mheight;
-s := xheight; % x is a special symbol. So let us use s
-X := Xheight;
-
 vardef outline (expr p ) =
     draw envelope nib of p
 enddef;
@@ -66,7 +60,19 @@ enddef;
 
 def beginglyph=
     beginfig(1);
+    save m,s,X;
     path paths[], strokes[];
+
+    % Aliases
+    m   := mheight;
+    s   := xheight;      % x is a special symbol. So let us use s
+    X   := Xheight;
+
+    sw  := s * condense; % Width of Latin small letters
+    mw  := m * condense; % Width of Malayalm letters
+    Xw  := X * condense; % Width of Latin capital letters
+    lbearing := lbearing * condense;
+    rbearing := rbearing * condense;
 
 enddef;
 
@@ -86,19 +92,23 @@ def endglyph =
         if varstroke = 1:
             if known strokes[i]:
                 if (soften > 0) and (cycle paths[i] = false):
-                    softpath := soften_path(strokes[i], cornerradius);
+                    softpath := soften_nodes(strokes[i], cornerradius)(
+                        0,
+                        length(paths[i]),
+                        length(paths[i])+2,
+                        2*length(paths[i])+2
+                    );
                     fill softpath withcolor glyphcolor;
                 else:
                     fill strokes[i] withcolor glyphcolor;
                 fi;
-
             fi;
         fi;
 
 
         if known paths[i]:
             if known calligraphic:
-                draw paths[i] withpen widenib withcolor glyphcolor;
+                draw paths[i] withpen roundedwidenib withcolor glyphcolor;
             fi;
             if show_paths = 1:
                 draw paths[i] withpen nib withcolor 0.5white;
@@ -116,7 +126,6 @@ def endglyph =
 
     currentpicture := currentpicture
         shifted (0, descent)
-        xscaled condense
         slanted slant;
 
     % Place the drawing at the svg canvas.

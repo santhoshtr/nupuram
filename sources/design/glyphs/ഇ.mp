@@ -1,22 +1,22 @@
 input glyph;
 beginglyph;
 path paths[],strokes;
-soften:=0;
+
 z0 = (u, 0.3m);
-z1 = (x0  + 0.2m, y0 + 0.25m );
-z2 = (x1 + m/4, y1 - 0.2m);
-z3 = (x2 - m/4, y2 - 0.2m);
+z1 = (x0  + 0.2mw, y0 + 0.25m );
+z2 = (x1 + mw/4, y1 - 0.2m);
+z3 = (x2 - mw/4, y2 - 0.2m);
 z4 = (x3 - m/3, y3 + 0.4m);
-z5 = (x4 + 0.35m, y4 + 0.4m);
-z6 = (x5 + 0.4m, y5 - 0.5m);
+z5 = (x4 + 0.35mw, y4 + 0.4m);
+z6 = (x5 + 0.4mw, y5 - 0.5m);
 z7 = (x6, y6 - .3m);
 z8 = (x6, 0.45m);
-z9 = (x8 + 0.35m, y8 + 0.5m);
-z10 = (x9 + 0.35m, y9 - 0.4m);
-z11 = (x10 - 0.7m, y10 - 0.6m); % <
-z12 = (x11 - 0.7m, y11 - 0.1m);
-z13 = (x12 + 0.7m, y12 - 0.05m);
-z14 = (x13 + 0.7m, y12);
+z9 = (x8 + 0.35mw, y8 + 0.5m);
+z10 = (x9 + 0.35mw, y9 - 0.4m);
+z11 = (x10 - 0.7mw, y10 - 0.6m); % <
+z12 = (x11 - 0.7mw, y11 - 0.1m);
+z13 = (x12 + 0.7mw, y12 - 0.05m);
+z14 = (x13 + 0.7mw, y12);
 paths[0] = z0{up} .. z1..  z2..{left}z3 ;
 paths[1] = z3{left}..z4{up}..{right}z5..{down}z6..z7;
 paths[2]:= z8{up}..z9{right}..{down}z10{down}..{left}z11{left}..{dir 200}z12;

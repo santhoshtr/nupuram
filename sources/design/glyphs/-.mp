@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-paths[0] = (0, s/2){dir 10} .. {dir 10}(s/2, s/2);
+paths[0] = (0, s/2){dir 10} .. {dir 10}(sw/2, s/2);
 pen_stroke(
     nib(default_nib xyscaled(xthick,terminalround) rotated 90)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut

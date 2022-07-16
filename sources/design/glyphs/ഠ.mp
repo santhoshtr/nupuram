@@ -3,9 +3,9 @@ beginglyph;
 path paths[], strokes;
 soften := 0;
 z0=(1u, 0.5m);
-z1=(x0 + 0.4m, y0 + 0.5m);
-z2=(x1 + 0.4m, y1 - 0.5m);
-z3=(x2 - 0.4m, y2 - 0.5m);
+z1=(x0 + 0.4mw, y0 + 0.5m);
+z2=(x1 + 0.4mw, y1 - 0.5m);
+z3=(x2 - 0.4mw, y2 - 0.5m);
 z4=z0;
 
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4;
