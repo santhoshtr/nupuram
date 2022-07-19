@@ -4,7 +4,7 @@ path paths[], strokes;
 z0=(1u, X);
 z1=(x0, y0- .5X);
 z2=(x1, y1- .5X);
-z3=(x0+0.5X , X);
+z3=(x0+0.5X, X);
 z4=(x3, y3 - .5X);
 z5=(x4, y4 - .5X);
 z6 = (x1 - 0.1Xw, y1 - u/3) ;

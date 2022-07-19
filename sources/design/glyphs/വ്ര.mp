@@ -6,7 +6,7 @@ z1=(x0-1.5u, 0.4m);
 z2=(x0+1u, y1 + 0.4m);
 z3=(x2+2u, y2-m*0.4);
 z4=(x2, 0);
-z5=(x4 , 0);
+z5=(x4, 0);
 z6=(x5 + 0.6mw, y5);
 z7=(x6, y6 + m*0.5);
 z8=(x7, y7 + m*0.5);
@@ -34,7 +34,7 @@ pen_stroke(
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 3)
-    % nib(default_nib xyscaled(thin ,terminalround) rotated 115)(0) % Sharp cut
+    % nib(default_nib xyscaled(thin,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 135)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 endglyph;

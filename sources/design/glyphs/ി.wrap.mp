@@ -4,7 +4,7 @@ path paths[], strokes;
 z0=(0, m+m/3);
 z1=(x0 + 2u, y0 + 2u );
 z2=(x1 + 2u, y1 - 0.2m);
-z3=(x2 + 0.5u  , y2 - 0.5m);
+z3=(x2 + 0.5u, y2 - 0.5m);
 z4=(x1 + 1u, 0);
 paths[0] = z0{up} ..z1{right}.. z2..z3.. z4;
 paths[0] := paths[0] shifted (-x2+thick/2,0);

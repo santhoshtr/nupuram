@@ -7,7 +7,7 @@ beginglyph;
     z4=(x3 - 0.3mw, y3 - 0.5m);
     z5=(x4 - 0.3mw, y4 + 0.5m);
     z6=(x5 + 0.2mw, y5 + 0.5m);
-    z7=(x5-0.2m , y6 + 0.3m);
+    z7=(x5-0.2m, y6 + 0.3m);
     paths[0] = z0..z1..z2..z3..z4..z5..z6{up}..{left}z7;
     pen_stroke(
         nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4)

@@ -28,13 +28,13 @@ pen_stroke(
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(2)
-    nib(default_nib xyscaled(1 ,terminalround) rotated 115)(0) % Sharp cut
+    nib(default_nib xyscaled(1,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 170)(infinity) % Sharp cut
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 3)
-    % nib(default_nib xyscaled(thin ,terminalround) rotated 115)(0) % Sharp cut
+    % nib(default_nib xyscaled(thin,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 135)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 endglyph;

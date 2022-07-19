@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 w := 0.7s;
-z0= (0, X);
+z0= (thick/2, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 z3 = (x0, X - 0.2X);

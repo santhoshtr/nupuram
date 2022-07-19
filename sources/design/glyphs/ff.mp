@@ -1,9 +1,9 @@
 input glyph;
 beginglyph;
 z0=(0.5sw, X);
-z1=(x0-0.3s , 0.9X);
-z2=(x1 , 0.5s);
-z3=(x2 , 0);
+z1=(x0-0.3s, 0.9X);
+z2=(x1, 0.5s);
+z3=(x2, 0);
 %bar
 z4 = (x2 -0.25sw,s);
 z5 = (x4 + sw,y4);

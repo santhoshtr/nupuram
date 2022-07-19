@@ -17,7 +17,6 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0, )
     nib(default_nib xyscaled(1,terminalround) rotated 90)(1)
 )(paths[1])(strokes[1]);

@@ -12,12 +12,12 @@ paths[0] = z10{dir 120} ..z11.. {down}z12 ;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(2)
-    nib(default_nib xyscaled(1 ,terminalround) rotated 45)(0) % Sharp cut
+    nib(default_nib xyscaled(1,terminalround) rotated 45)(0) % Sharp cut
     nib(default_nib xyscaled(thin,terminalround) rotated 0)(infinity) % Sharp cut
 )(paths[0])(strokes[0]);
 
 z0=(x12, m/3);
-z1=(x0 , y0 + 0.2m);
+z1=(x0, y0 + 0.2m);
 z2=(x1 + 0.2mw, y1 + 0.2m);
 z3=(x2 + 0.2mw, y2 - 0.2m);
 z4=(x0, 0);
@@ -38,7 +38,7 @@ pen_stroke(
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(2)
-    nib(default_nib xyscaled(xthick ,terminalround) rotated 115)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 170)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 

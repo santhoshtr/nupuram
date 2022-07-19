@@ -2,10 +2,10 @@ input glyph;
 beginglyph;
 path paths[], strokes;
 z0=(1u, X);
-z1=(x0 , 0.5X);
+z1=(x0, 0.5X);
 z2=(x1, 0);
 
-paths[0] = z0{dir -60}..z1..  z2 ;
+paths[0] = z0{dir -80}..z1..  {dir -80}z2 ;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2 )
     nib(default_nib xyscaled(thin, 1) rotated 0 )(1)
