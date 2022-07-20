@@ -27,4 +27,11 @@ pen_stroke(
     nib(default_nib xyscaled(xthick,terminalround) rotated 45)(infinity)
 )(paths[1])(strokes[1]);
 
+
+paths[2] := paths[0] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.6 ;
+paths[3] := paths[1] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.6 ;
+
+strokes[2] := strokes[0] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.6 ;
+strokes[3] := strokes[1] shifted (0.6mw, -0.9m) xscaled 0.8 yscaled 0.6 ;
+
 endglyph;

@@ -7,7 +7,7 @@ descent :=      2u;           % Descender Height
 ascent  :=      8u;           % Ascender Height
 Xheight :=      8u;           % Height of English capital letters
 
-rotation :=     45;           % Angle of pen
+rotation :=     45;           % Angle of calligraphic pen
 thick :=        1u;           % Thickness of thickest lines
 thin :=         2/3;          % Thickness of thinnest lines (same as thick when no modulation)
 subthick :=     0.666u;       % Thickness of thickest lines in subscribed characters

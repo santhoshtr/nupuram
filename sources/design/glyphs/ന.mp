@@ -1,15 +1,15 @@
 input glyph;
 beginglyph;
     path paths[], strokes;
-    z0=(m/3+.5thick, 0);
-    z1=(x0 - m/3, y0 + m/2);
-    z2=(x1 + m/3, y1 + m/2);
-    z3=(x2 + m/3, y2 - m/2);
+    z0=(mw/3+.5thick, 0);
+    z1=(x0 - mw/3, y0 + m/2);
+    z2=(x1 + mw/3, y1 + m/2);
+    z3=(x2 + mw/3, y2 - m/2);
     z4=(x3, y3 - m/3); % bottom of piller
     z5=(x3, y3);
-    z6=(x5 + m/3, y5 + m/2); % Top of second arch
-    z7=(x6 + m/3, y6 - m/2);
-    z8=(x7 - m/3, y7 - m/2);
+    z6=(x5 + mw/3, y5 + m/2); % Top of second arch
+    z7=(x6 + mw/3, y6 - m/2);
+    z8=(x7 - mw/3, y7 - m/2);
     paths[0] = z0..z1.. z2.. z3---z4 ;
     paths[1] =  z5{up}..z6..z7.. z8;
     pen_stroke(

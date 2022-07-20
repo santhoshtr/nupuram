@@ -1,10 +1,10 @@
 input glyph;
 beginglyph;
 path paths[], strokes;
-z0=(1.5u, -1u);
-z1=(x0- 1u, 0.25m);
-z2=(x0 + 1u, y1 + 0.25m);
-z3=(x2 + 1.5u, y2-m*0.25);
+z0=(mw/4, -thick/4);
+z1=(x0 - mw/6, y0 + m/3);
+z2=(x0 + mw/6, y1 + m/4);
+z3=(x2 + mw/4, y2 - m/4);
 z4=(x2, 0);
 z5=(x4, 0);
 z6=(x5 + 0.6mw, y5);
