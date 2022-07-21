@@ -1,7 +1,6 @@
 input glyph;
 beginglyph;
-path paths[], strokes;
-soften := 0;
+
 z0=(1u, 0.5m);
 z1=(x0 + 0.4mw, y0 + 0.5m);
 z2=(x1 + 0.4mw, y1 - 0.5m);

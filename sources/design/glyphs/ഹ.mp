@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-path paths[], strokes;
+
 z0=(mw/4, -thick/4);
 z1=(x0 - mw/6, y0 + m/3);
 z2=(x0 + mw/6, y1 + m/4);
@@ -27,11 +27,5 @@ pen_stroke(
     nib(default_nib xyscaled(1,terminalround) rotated 115)(0) % Sharp cut
     nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
 )(paths[1])(strokes[1]);
-find_outlines(soften_path(strokes[0], 10), soften_path(strokes[1],10))(r);
-
-% draw strokes[1];
-
-% draw strokes[0] withpen finenib withcolor 0.5green;
-% draw strokes[1] withpen finenib withcolor 0.5green;
 
 endglyph;
