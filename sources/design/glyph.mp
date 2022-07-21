@@ -42,18 +42,6 @@ vardef shadowpath(expr p, b, e, d, offset) =
     fill s[1] withcolor black;
 enddef;
 
-vardef round_node_values(expr p) =
-    for t_=0 upto length(p)-1:
-        round(point t_ of p)
-        ..
-        controls round(postcontrol t_ of p) and round(precontrol t_+1 of p)
-        ..
-
-    endfor
-    round(point length(p) of p) \\ if cycle p: & cycle fi
-enddef;
-
-
 vardef boundingbox(expr p, lbearing, rbearing) =
     (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
 enddef;
@@ -91,14 +79,16 @@ def endglyph =
     for i=0 upto 10:
         if varstroke = 1:
             if known strokes[i]:
-                if (soften > 0) and (cycle paths[i] = false):
-                    softpath := soften_nodes(strokes[i], cornerradius)(
-                        0,
-                        length(paths[i]),
-                        length(paths[i])+2,
-                        2*length(paths[i])+2
-                    );
-                    fill softpath withcolor glyphcolor;
+                if (soften > 0):
+                    if known strokes[i]b:
+                        softpath := soften_nodes(strokes[i], cornerradius)(
+                            0,
+                            length(strokes[i]l),
+                            length(strokes[i]l) + length(strokes[i]e),
+                            length(strokes[i]l) + length(strokes[i]r) + length(strokes[i]e)
+                        );
+                        fill softpath withcolor glyphcolor;
+                    fi;
                 else:
                     fill strokes[i] withcolor glyphcolor;
                 fi;
