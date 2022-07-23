@@ -11,3 +11,4 @@ soften := 1;
 thick:= 1.2u;
 lbearing :=     0.1u;         % Default left bearing
 rbearing :=     0.1u;
+condense :=  0.9;

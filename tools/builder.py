@@ -31,6 +31,8 @@ if __name__ == "__main__":
         "-o", "--output", help="Output UFO File")
     parser.add_argument('-t', '--style', default='Regular',
                         required=False, help="Set style")
+    parser.add_argument('-w', '--weight', default=400,
+            required=False, help="Set weight")
     parser.add_argument('-l', '--log-level', default='INFO',
                         required=False, help="Set log level")
 
@@ -45,7 +47,7 @@ if __name__ == "__main__":
         yaml.load(options.config, Loader=yaml.FullLoader))
 
     font: MalayalamFont = MalayalamFont(
-            config, style=options.style)
+            config, style=options.style, weight=options.weight)
     font.build(options.source)
     font.buildFeatures()
     font.setFontInfo()

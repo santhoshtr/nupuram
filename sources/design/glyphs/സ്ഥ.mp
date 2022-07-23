@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0=(m/3 + 0.5thick, 0);
+z0=(mw/3 + 0.5thick, 0);
 z1=(x0 - mw/3, y0 + m/2);
 z2=(x1 + mw/3, y1 + m/2);
 z3=(x2 + mw/3, y2 - m/2);
@@ -14,17 +14,6 @@ z10=(x9 - mw/3, y9 + m/2);
 
 paths[0] = z0..z1.. z2.. z3---z4 ;
 paths[1] =  z5{up}..z6 ..z7...z8..z9 .. z10;
-
-% Ra
-z20=(0, 0);
-z21=(x20- mw/4, m/2);
-z22=(x20 + mw/3, y21 + m/2);
-z23=(x22 + mw/3, y22-m/2);
-z24=(x22, 0);
-paths[2] = z20{dir 135} ..z21..{right}z22..z23{dir 260} ..z24;
-paths[2] := paths[2] shifted (mw/3, -y2  ) xscaled 0.8 yscaled 0.8;
-paths[3] := paths[2] shifted (mw, 0 );
-
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
@@ -37,17 +26,20 @@ pen_stroke(
     nib(default_nib xyscaled(thin,terminalround) rotated 0)(0)
     nib(default_nib xyscaled(xthick,terminalround) rotated 45)(infinity)
 )(paths[1])(strokes[1]);
+
+z12=(x9, y8);
+z13=(x9 + mw, y8);
+z14=(x13, y13 + m*0.5);
+z15=(x14 - mw/3, y14 + m/2);
+z16=(x15 - mw/3, y15 - m/2);
+z17=(x16, y8 );
+
+paths[2] = z12{dir 20}..  z13..z14 .. z15..z16..z17;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2,5, 6 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1,3)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 3, 5 )
+    nib(default_nib xyscaled(thin, 1) rotated 0 )( 2,4)
+    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(0) % Sharp cut
+    nib(default_nib xyscaled(xthick,terminalround) rotated 30)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 
-pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2,5, 6 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1,3)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(infinity) % Sharp cut
-)(paths[3])(strokes[3]);
 endglyph;

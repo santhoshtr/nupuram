@@ -19,10 +19,11 @@ LANGUAGE_LATIN = [('DFLT', 'dflt'), ('latn', 'dflt')]
 
 
 class MalayalamFont(Font):
-    def __init__(self, options, style=""):
+    def __init__(self, options, style="", weight=400):
         Font.__init__(self)
         self.options = options
         self.style = style
+        self.weight = weight
         self.fontFeatures = FontFeatures()
         self.available_svgs = []
         self.salts={} #Stylistic Alternates
@@ -740,7 +741,6 @@ class MalayalamFont(Font):
 
         # Names
         self.info.familyName = name
-        self.info.styleMapFamilyName = self.info.familyName
         self.info.styleName = style
         self.info.copyright = f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
         self.info.openTypeNameDesigner = f"{self.options.author.name} &lt;{self.options.author.email}&gt"
@@ -771,7 +771,7 @@ class MalayalamFont(Font):
         self.info.openTypeOS2TypoDescender = -(self.info.descender+100)
         self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
-        self.info.openTypeOS2WeightClass = 400
+        self.info.openTypeOS2WeightClass = int(self.weight)
         self.info.openTypeOS2WidthClass = 5
 
         # A font's winAscent and winDescent values should be greater than the head

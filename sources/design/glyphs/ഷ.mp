@@ -16,7 +16,7 @@ z11 = (x10 - 0.3mw, y10 + 0.5m);
 z12 = (x11 + 0.3mw, y11 - 0.4m);
 z13 = (x12, y12- 0.6m);
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
-paths[1] = z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 80}z8;
+paths[1] = z5{dir 30}..{dir 30}z6{dir 30}..z7...{dir 80}z8;
 paths[2] = z9{dir 260}..z10 ..z11 ..{down}z12..z13;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5, 6 )

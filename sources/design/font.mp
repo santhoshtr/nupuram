@@ -1,6 +1,7 @@
-showgrids := 1;
-showcoords := 1;
-thick:= 1u;
-thin := 2/3;
-show_paths := 1;
-soften:=1;
+
+thick:=0.7u;
+thin:=1;
+xthick:=1;
+soften:=0;
+terminalround:=1;
+

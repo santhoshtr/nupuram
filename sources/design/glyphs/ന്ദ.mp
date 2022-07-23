@@ -1,24 +1,20 @@
 input glyph;
 beginglyph;
 
-z0 =(u, m/3.5);
-z1 =(x0 + mw/4, y0 + m/4);
-z2=(x1 + mw/4, y1 - m/4);
-z3=(x2 - mw/4, y2 - m/4);
-z4=(x3 - m/3, y3 + m/2.5);
-z5=(x4 + m/2.8, y4 + m/2);
-z6=(x5 + m/2.4, y5-m/2.25);
-z7=(x6, y6 - m/2.5);
-
-paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4.. z5..z6 ---z7;
+z0=(mw/4+.5thick, 0);
+z1=(x0 - mw/4, y0 + m/2);
+z2=(x1 + mw/4, y1 + m/2);
+z3=(x2 + mw/3, y2 - m/2);
+z4=(x3, y3 - m/3); % bottom of piller
+paths[0] = z0..z1.. z2.. z3---z4 ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1,3, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(0, 2, 4, 6)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
+    nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
+    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0)
+    nib(default_nib xyscaled(1,terminalround) rotated 0)(4 )
 )(paths[0])(strokes[0]);
 
-z20 = ( x6, y6 );
+z20 = ( x3, y3 );
 z21 = ( x20 + m/3, y20 + m/2);
 z22 = ( x21 + m/3, y21 - m/4);
 z23 = ( x22 - m/3, y22 - m/4);
@@ -40,5 +36,6 @@ pen_stroke(
     nib(default_nib xyscaled(1,terminalround) rotated 120)(0)
     nib(default_nib xyscaled(1,terminalround) rotated 60)(infinity)
 )(paths[2])(strokes[2]);
+
 
 endglyph;

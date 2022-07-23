@@ -24,8 +24,8 @@ z22 = (x21 + 0.3mw, y21 - 0.4m);
 z23 = (x22, y22- 0.6m);
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9..{dir 210}z10 ;
-paths[1] = z15{dir 30}..{dir30}z16{dir 30}..z17...{dir 60}z18;
-paths[2] = z19{dir 240}..z20 ..z21 ..{down}z22..z23;
+paths[1] = z15{dir 30}..{dir 30}z16{dir 30}..z17...{dir 80}z18;
+paths[2] = z19{dir 260}..z20 ..z21 ..{down}z22..z23;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 4, 6, 9)

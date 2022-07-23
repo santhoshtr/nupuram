@@ -10,10 +10,11 @@ z5=(x3, y3);
 z6=(x5 + mw/2, y5 + .6m); % Top of second arch
 z7=(x6 + mw/3, y6 - m/2);
 z8= ( x7 - mw/3, y7 - m/2);
-z9= ( x8 - mw/4, y8 + .3m);
-z10= ( x9 + 0.55mw, y7);
-paths[0] = z0..tension 1.25 ..z1..z2.. tension 1.25 ..z3---z4 ;
-paths[1] = z5{up}..tension 1 ..z6..z7..z8..z9.. z10;
+z9= ( x8 - mw/4, y8 + m/4);
+z10= ( x9 + mw, y9+ m/4);
+
+paths[0] = z0..  z1..z2.. z3---z4 ;
+paths[1] = z5{up}..tension 1 ..z6..z7..z8..z9{up}.. {dir -20} z10;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
     nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
