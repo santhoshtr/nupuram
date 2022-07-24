@@ -8,8 +8,20 @@ input ./pens
 
 pen nib; nib := finenib; % roundedwidenib
 
-vardef outline (expr p ) =
-    draw envelope nib of p
+vardef outlinepath (expr p, thickness ) =
+    numeric L;
+    path penpath;
+    L:=32;
+    penpath:=( (thickness*cosd(0),thickness*sind(0)) for i=1 upto L-1: -- (thickness*cosd(i/L*360), thickness*sind(i/L*360)) endfor -- cycle ) rotated rotation;
+    pen outlinenib ; outlinenib := makepen(penpath) ;
+    fill envelope outlinenib of p withcolor black;;
+enddef;
+
+vardef shadowpath(expr p, d, offset) =
+    save shadownpen;
+    pen shadowpen ;
+    shadowpen := makepen ((0,0)--(offset, 0) rotated d) ;
+    fill envelope shadowpen of p withcolor black;
 enddef;
 
 vardef show_coordinates (expr p ) =
@@ -23,23 +35,6 @@ vardef show_coordinates (expr p ) =
         dotlabel.bot(pointlabel, a) withcolor debugcolor;
     endfor;
 
-enddef;
-
-vardef shadowpath(expr p, b, e, d, offset) =
-    save len, bs, es;
-    path s[], bs, es;
-    numeric len;
-    len := length(b);
-    bs := b shifted((offset * cosd(d), offset * sind(d)) );
-    s[0] := point 0 of b -- point len of b -- point len of bs -- point 0 of bs -- cycle;
-
-    len := length(b);
-    es := e shifted((offset*cosd(d), offset*sind(d)) );
-    s[1] := point 0 of e -- point len of e -- point len of es -- point 0 of es -- cycle;
-
-    fill p shifted((offset*cosd(d), offset*sind(d)) ) withcolor black;
-    fill s[0] withcolor black;
-    fill s[1] withcolor black;
 enddef;
 
 def anchor = label enddef;
@@ -71,9 +66,15 @@ def endglyph =
     if known drawshadow:
         for i=0 upto 10:
             if known strokes[i]:
-                if known strokes[i]b:
-                    shadowpath(strokes[i], strokes[i]b, strokes[i]e, 45, 50);
-                fi;
+                shadowpath(strokes[i], shadowdirection, shadowoffset);
+            fi;
+        endfor;
+    fi;
+
+    if known drawoutline:
+        for i=0 upto 10:
+            if known strokes[i]:
+                outlinepath(strokes[i], outlinethickness);
             fi;
         endfor;
     fi;

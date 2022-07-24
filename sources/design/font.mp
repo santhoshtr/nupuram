@@ -1,7 +1,3 @@
-
-thick:=0.7u;
-thin:=1;
-xthick:=1;
-soften:=0;
-terminalround:=1;
-
+drawoutline := 1;
+outlinethickness := 0.1u;
+varstroke := 1;

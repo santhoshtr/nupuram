@@ -36,7 +36,6 @@ help:
 build: ufo otf ttf webfonts
 
 glyphs:
-	VARIANT=kids make -C sources/design
 	VARIANT=regular make -C sources/design
 	VARIANT=calligraphy make -C sources/design
 	VARIANT=bold make -C sources/design
@@ -48,7 +47,8 @@ glyphs:
 	VARIANT=condensed make -C sources/design
 	VARIANT=sans make -C sources/design
 	VARIANT=script make -C sources/design
-
+	VARIANT=outline make -C sources/design
+	VARIANT=kids make -C sources/design
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
