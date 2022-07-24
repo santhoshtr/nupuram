@@ -42,6 +42,8 @@ vardef shadowpath(expr p, b, e, d, offset) =
     fill s[1] withcolor black;
 enddef;
 
+def anchor = label enddef;
+
 vardef boundingbox(expr p, lbearing, rbearing) =
     (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
 enddef;

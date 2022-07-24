@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-z0=(3u, 0.6m);
+z0=(0.5mw, 0.6m);
 z1=(x0 + 0.3mw, y0 + 0.4m);
 z2=(x1 + 0.3mw, y1 - 0.5m);
 z3=(x2 - 0.3mw, y2 - 0.5m);
@@ -23,7 +23,7 @@ pen_stroke(
 
 z20 = (x6, m/2);
 z21 = (x20+ mw/4, y20 + m/2);
-z22 = z0;
+z22 = (x21 + mw/6, y0);
 paths[1] := z20{dir 110}.. z21..{down}z22;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(1 )

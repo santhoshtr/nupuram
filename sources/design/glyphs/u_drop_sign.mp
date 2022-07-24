@@ -7,10 +7,14 @@ z2=(x1 - 0.2mw, y1 - 0.25m);
 z3=(x2 - 0.2mw, y2 + 0.25m);
 z4=(x3 + 0.2mw, y3 + 0.25m);
 
-paths[0] = z0...z1{down}...z2{left}..{up}z3...z4 ;
+paths[0] = z0..tension 1.2..z1 ..z2{left}.. z3..tension 1.2..z4 ;
 pen_stroke(
     nib(default_nib xyscaled(1, 1) rotated 0 )(2 )
     nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 1, 3, 4)
+    nib(default_nib xyscaled(1,terminalround) rotated 0)(0)
+    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity )
 )(paths[0])(strokes[0]);
+
+anchor( "right", z0);
 
 endglyph;

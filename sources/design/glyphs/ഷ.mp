@@ -37,4 +37,9 @@ pen_stroke(
     nib(default_nib xyscaled(xthick,terminalround) rotated 0)(infinity) % Sharp cut
 )(paths[2])(strokes[2]);
 
+
+anchor( "vc", (x11,0));
+anchor( "bottom", (x7,0));
+anchor( "right", (x7,0));
+
 endglyph;

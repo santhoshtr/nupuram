@@ -44,4 +44,7 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 
+anchor( "vc", z3);
+anchor( "bottom", z6);
+anchor( "right", z6);
 endglyph;

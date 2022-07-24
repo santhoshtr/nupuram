@@ -59,6 +59,7 @@ class SVGGlyph:
 
     def parse(self):
         svgObj = etree.parse(self.svg_file_path).getroot()
+        parent_map = {c: p for p in svgObj.iter() for c in p}
         self.svg_width = float(svgObj.get('width', '1000').replace("px", " "))
         self.svg_height = float(svgObj.get(
             'height', '1000').replace("px", " "))
@@ -121,20 +122,43 @@ class SVGGlyph:
         anchor_names=[]
         try:
             for anchorEl in anchorEls:
-                anchor_name=anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
-                anchor_names.append(anchor_name)
-                anchor={
-                    "x": float(anchorEl.get("x")),
-                    "y": self.svg_height + base - float(anchorEl.get("y")),
-                    "name": anchor_name
-                }
+                x=0
+                y=0
+                name=""
+                parentEl = parent_map.get(anchorEl)
+                if parentEl and "transform" in parentEl.attrib:
+                    transformstr = parentEl.get("transform")
+                    if "translate" in transformstr:
+                        [x, y] = transformstr.strip().replace("translate(","").replace(")","").split(" ")
+                    if "matrix" in transformstr:
+                        [lhs, y] = transformstr.strip().replace("matrix(","").replace(")","").split(" ")
+                        x = lhs.split(",")[-1]
+                    x = float(x)
+                    y = float(y)
+                if 'x' in anchorEl.attrib:
+                    x = float(anchorEl.get("x"))
+                if 'y' in anchorEl.attrib:
+                    y = float(anchorEl.get("y"))
+                if "{http://www.inkscape.org/namespaces/inkscape}label" in anchorEl.attrib:
+                    name = anchorEl.attrib["{http://www.inkscape.org/namespaces/inkscape}label"]
+                else:
+                    name = anchorEl.text
 
-                if anchor_name=='top':
+                anchor={
+                    "x": x,
+                    "y": self.svg_height + base - y,
+                    "name": name
+                }
+                # print(anchor)
+                anchor_names.append(name)
+                if name=='top':
                     # Fix the y axis irregularities
                     if anchor['y'] > 780 and anchor['y'] < 820:
                         anchor['y']=800
                     if anchor['y'] > 600 and anchor['y'] < 720:
                         anchor['y']=650
+                if name=='vc':
+                    anchor['y']=0
                 anchors.append(anchor)
         except:
             print(f"Error while processing {self.__dict__}")

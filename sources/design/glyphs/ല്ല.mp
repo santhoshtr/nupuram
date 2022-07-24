@@ -34,4 +34,8 @@ pen_stroke(
     nib(default_nib xyscaled(1, terminalround) rotated 30 )(infinity)
 )(paths[1])(strokes[1]);
 
+anchor( "vc", (x2,0));
+anchor( "bottom", z17);
+anchor( "right", z17);
+
 endglyph;
