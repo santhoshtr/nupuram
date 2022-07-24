@@ -22,6 +22,6 @@ pen sub_roundedwidenib ; sub_roundedwidenib := makepen(sub_penpath) ;
 % a) Sharp line terminals
 % b) 0 width at rotation angles
 % c) The svg has paths and not strokes
-pen widenib ; widenib := makepen ((0,0)--(thick,0) rotated rotation) ;
+pen widenib ; widenib := makepen ((0,0)--(thick,0) rotated 45) ;
 
 default_nib:=fix_nib(thick,thick,0);
