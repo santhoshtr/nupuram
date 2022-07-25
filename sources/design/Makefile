@@ -18,14 +18,5 @@ $(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp $(VARIANT).mp
 	@sed -i 's/<!--.*$\//g' $@
 	@rm -rf ./*.log ./*.mpo ./*.mpt
 
-%.tex: %.mp
-	mpost $<
-	cp $< _t_m_p.mp
-	mft _t_m_p.mp -style=mplain.mft
-	echo "\input mplain.sty" > $@
-	test -f piclist.tex && cat piclist.tex >> $@
-	test -f _t_m_p.tex && cat _t_m_p.tex >> $@
-	echo "\endproof" >> $@
-
 clean:
 	@rm -rf *.tmp *.dvi *.svg *.log $(VARIANT)/*.svg *.mpt

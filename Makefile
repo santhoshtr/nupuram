@@ -21,7 +21,9 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
+VARIANTS = regular calligraphy bold thin display shadow outline slanted condensed sans script kids
 
+.PHONY: variants $(VARIANTS) ufo otf ttf webfonts clean
 
 default: build
 
@@ -35,20 +37,9 @@ help:
 
 build: ufo otf ttf webfonts
 
-glyphs:
-	VARIANT=regular make -C sources/design
-	VARIANT=calligraphy make -C sources/design
-	VARIANT=bold make -C sources/design
-	VARIANT=thin make -C sources/design
-	VARIANT=debug make -C sources/design
-	VARIANT=display make -C sources/design
-	VARIANT=shadow make -C sources/design
-	VARIANT=slanted make -C sources/design
-	VARIANT=condensed make -C sources/design
-	VARIANT=sans make -C sources/design
-	VARIANT=script make -C sources/design
-	VARIANT=outline make -C sources/design
-	VARIANT=kids make -C sources/design
+glyphs: $(VARIANTS)
+$(VARIANTS):
+	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)/design
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD    $(@F)"
