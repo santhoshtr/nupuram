@@ -12,10 +12,10 @@ z7=(x6, y6 - m/2.5);
 
 paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4.. z5..z6 ---z7;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1,3, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(0, 2, 4, 6)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1,3, 5 )
+    nib(thinnib rotated 0 )(0, 2, 4, 6)
+    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 
 z20 = ( x6, y6 );
@@ -24,10 +24,10 @@ z22 = ( x21 + m/3, y21 - m/4);
 z23 = ( x22 - m/3, y22 - m/4);
 paths[1] = z20{up}..z21..z22..{left}z23{left} ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )( 3, 6 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2,4,6 )
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )( 3, 6 )
+    nib(thinnib rotated 0 )(0, 2,4,6 )
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[1])(strokes[1]);
 
 
@@ -36,9 +36,9 @@ z31 = (x30 + mw/2.5, y30 - m/4);
 z32 = (x31 - mw/2.5, y31 - m/4);
 paths[2] = z30{right}..z31..z32 ;
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1)
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 60)(infinity)
+    nib(thinnib rotated 0 )(1)
+    nib(terminalnib rotated 120)(0)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[2])(strokes[2]);
 
 endglyph;

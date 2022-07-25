@@ -21,22 +21,22 @@ paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13..z14;
 paths[2] = z15{dir 30}..{dir 30}z16{dir 30}..z17...{dir 60}z18;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1,3, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(0, 2, 4, 6)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1,3, 5 )
+    nib(thinnib rotated 0 )(0, 2, 4, 6)
+    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(2)
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )( 1, 3)
+    nib(thinnib rotated 0 )(2)
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )( 1, 3)
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(2)
-    nib(default_nib xyscaled(1,terminalround) rotated 115)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 170)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )( 1, 3)
+    nib(thinnib rotated 0 )(2)
+    nib(terminalnib rotated 115)(0)
+    nib(terminalnib rotated 170)(infinity)
 )(paths[2])(strokes[2]);
 
 
@@ -48,11 +48,11 @@ z23 = (x22 - mw/2, y22);
 z24 = (x23 + mw/4, y14);
 paths[3] = z20{dir -60}..z21..z22{left}..{left}z23{dir 30}.. z24;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(  3)
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1,2)
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(3) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 115)(0) % Sharp cut
-    nib(default_nib xyscaled(thin,terminalround) rotated 170)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(  3)
+    nib(thinnib rotated 0 )(1,2)
+    nib(terminalnib rotated 120)(3)
+    nib(terminalnib rotated 115)(0)
+    nib(thinterminalnib rotated 170)(infinity)
 )(paths[3])(strokes[3]);
 
 endglyph;

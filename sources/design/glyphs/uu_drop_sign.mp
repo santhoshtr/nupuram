@@ -11,10 +11,10 @@ z6=(x5 - 0.45mw, y5 - 0.3m);
 
 paths[0] = z0..tension 1.2..z1 ..z2{left}..z3..tension 1.2..z4..tension 1.2..z5..z6 ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(2 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 1, 3, 4, 5)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(0)
-    nib(default_nib xyscaled(1, terminalround) rotated 60)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(2 )
+    nib(thinnib rotated 0 )(0, 1, 3, 4, 5)
+    nib(terminalnib rotated 0)(0)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[0])(strokes[0]);
 
 anchor( "right", z0);

@@ -16,11 +16,11 @@ z10=(x9 - mw/4, y7);
 paths[0] = z0  ..z1 .. z2 .. {dir -60}z3 .. z4..z5..z6{right}..z7..z8..z9..z10 ;
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 9)
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5,7, 8, 10)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 90)(4 )
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(infinity )
+    nib(thicknib rotated 0 )(0, 2, 9)
+    nib(thinnib rotated 0 )(1, 3, 5,7, 8, 10)
+    nib(terminalnib rotated 0)(0)
+    nib(terminalnib rotated 90)(4 )
+    nib(thinterminalnib rotated 0)(infinity )
 )(paths[0])(strokes[0]);
 
 endglyph;

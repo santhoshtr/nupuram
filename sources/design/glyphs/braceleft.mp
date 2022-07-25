@@ -9,13 +9,13 @@ paths[0] = z0..z1..{left}z2;
 paths[1] = z2{right}..z3.. z4;
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1)
-    nib(default_nib xyscaled(thin,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut
+    nib(thinnib rotated 0 )(1)
+    nib(thinterminalnib rotated 90)(0)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1)
-    nib(default_nib xyscaled(thin,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut
+    nib(thinnib rotated 0 )(1)
+    nib(thinterminalnib rotated 90)(0)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[1])(strokes[1]);
 endglyph;

@@ -10,9 +10,9 @@ z5=( x4 - 0.8w, y4 - 0.1X);
 paths[0] = z0{up}..z1..  z2..z3..{up}z4{left}..{dir 215}z5 ;
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(  2, 4)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 30)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thinnib rotated 0 )(  2, 4)
+    nib(terminalnib rotated 30)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

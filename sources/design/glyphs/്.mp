@@ -10,9 +10,9 @@ paths[0] := paths[0] shifted (-x1, 0);
 rbearing:= -x1 - thick;
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1)
-    nib(default_nib xyscaled(1,terminalround) rotated 30)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(2)
+    nib(thicknib rotated 0 )(1)
+    nib(terminalnib rotated 30)(0)
+    nib(terminalnib rotated 0)(2)
 )(paths[0])(strokes[0]);
 
 endglyph;

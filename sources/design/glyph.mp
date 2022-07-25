@@ -8,12 +8,31 @@ input ./pens
 
 pen nib; nib := finenib; % roundedwidenib
 
+vardef thicknib = fix_nib(thick, thick, 0) enddef;
+vardef thinnib = fix_nib(thick, thick, 0) xyscaled(thin, thin) enddef;
+vardef terminalnib =
+    if terminalround = 0:
+        fix_nib(thick, terminalround, 0) xyscaled(xthick, terminalround)
+    else:
+        fix_nib(thick, thick, 0) xyscaled(xthick, terminalround)
+    fi
+enddef;
+
+vardef thinterminalnib =
+    if terminalround = 0:
+        fix_nib(thick, 0, 0) xyscaled(thin, 0)
+    else:
+        fix_nib(thick, thick, 0) xyscaled(thin, terminalround)
+    fi
+enddef;
+
 vardef outlinepath (expr p, thickness ) =
     numeric L;
     path penpath;
     L:=32;
     penpath:=( (thickness*cosd(0),thickness*sind(0)) for i=1 upto L-1: -- (thickness*cosd(i/L*360), thickness*sind(i/L*360)) endfor -- cycle ) rotated rotation;
     pen outlinenib ; outlinenib := makepen(penpath) ;
+    % FIXME, since stroke is a cycle, work on l,r,b,e individually
     fill envelope outlinenib of p withcolor black;;
 enddef;
 

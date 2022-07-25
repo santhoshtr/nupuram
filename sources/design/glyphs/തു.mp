@@ -18,14 +18,14 @@ z13 = (x12 + 0.6mw, y12 - 0.05m);
 z14 = (x7, y12);
 paths[2]:= z12{dir 20}..z13{dir -20}..z14;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4,6, )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 115)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 2, 4,6, )
+    nib(thinnib rotated 0 )(1, 3, 5, 7)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 115)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1 )
-    nib(default_nib xyscaled(xthick*xthick, terminalround) rotated 115)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick*xthick, terminalround) rotated 115)(infinity) % Sharp cut
+    nib(thinnib rotated 0 )(1 )
+    nib(terminalnib rotated 115)(0)
+    nib(terminalnib rotated 115)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

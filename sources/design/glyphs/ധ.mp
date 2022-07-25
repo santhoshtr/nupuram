@@ -14,15 +14,15 @@ beginglyph;
     paths[0] = z0..z1..{right}z2.. z3---z4;
     paths[1] = z4---z5..z6..z7..z8;
     pen_stroke(
-        nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2)
-        nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3)
-        nib(default_nib xyscaled(1,terminalround) rotated 135)(0)
-        nib(default_nib xyscaled(1,terminalround) rotated 0)(4 )
+        nib(thicknib rotated 0 )(0, 2)
+        nib(thinnib rotated 0 )(1, 3)
+        nib(terminalnib rotated 135)(0)
+        nib(terminalnib rotated 0)(4 )
     )(paths[0])(strokes[0]);
     pen_stroke(
-        nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 6)
-        nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5, 7)
-        nib(default_nib xyscaled(1,terminalround) rotated 0)(0)
-        nib(default_nib xyscaled(1,terminalround) rotated 45)(infinity)
+        nib(thicknib rotated 0 )(0, 2, 4, 6)
+        nib(thinnib rotated 0 )(1, 3, 5, 7)
+        nib(terminalnib rotated 0)(0)
+        nib(terminalnib rotated 45)(infinity)
     )(paths[1])(strokes[1]);
 endglyph;

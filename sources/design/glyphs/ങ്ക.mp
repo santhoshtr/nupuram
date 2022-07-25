@@ -15,10 +15,10 @@ z10=(x9 - 0.2mw, y9 - 0.2m);
 
 paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9..z10 ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1, 3 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0,2, 4, 6, 9)
-    nib(default_nib xyscaled(1,terminalround) rotated 45)(4) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1, 3 )
+    nib(thinnib rotated 0 )(0,2, 4, 6, 9)
+    nib(terminalnib rotated 45)(4)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);
 
 z20 = (x6, m/2);
@@ -26,9 +26,9 @@ z21 = (x20+ mw/4, y20 + m/2);
 z22 = (x21 + mw/6, y0);
 paths[1] := z20{dir 110}.. z21..{down}z22;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1 )
-    nib(default_nib xyscaled(1,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1 )
+    nib(terminalnib rotated 45)(0)
+    nib(thinterminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 
 

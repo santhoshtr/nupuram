@@ -23,21 +23,21 @@ paths[1] = z3{dir 80}..{dir 20}z4..z5..{dir -60}z6;
 paths[2] = z7{dir 80}..{dir 20}z8..z9..{dir -60}z10;
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1)
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(0,2)
+    nib(thinnib rotated 0 )(1)
+    nib(terminalnib rotated 0)(0,2)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
 
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2 )
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity)
+    nib(thinnib rotated 0 )(0, 2 )
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 2 )
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity)
+    nib(thinnib rotated 0 )(0, 2 )
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[2])(strokes[2]);
 
 endglyph;

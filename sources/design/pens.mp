@@ -13,8 +13,8 @@ pen finenib; finenib := pencircle scaled 1;
 numeric L; L:=16;
 path penpath;
 path sub_penpath;
-penpath:=( (thick*cosd(0),thin*u*sind(0)) for i=1 upto L-1: -- (thick*cosd(i/L*360), thin*u*sind(i/L*360)) endfor -- cycle ) rotated rotation;
-sub_penpath:=( (subthick*cosd(0),thin*u*sind(0)) for i=1 upto L-1: -- (subthick*cosd(i/L*360), thin*u*sind(i/L*360)) endfor -- cycle ) rotated rotation;
+penpath:=( (thick*cosd(0),thin*thick*sind(0)) for i=1 upto L-1: -- (thick*cosd(i/L*360), thin*thick*sind(i/L*360)) endfor -- cycle ) rotated rotation;
+sub_penpath:=( (subthick*cosd(0),thin*thick*sind(0)) for i=1 upto L-1: -- (subthick*cosd(i/L*360), thin*thick*sind(i/L*360)) endfor -- cycle ) rotated rotation;
 pen roundedwidenib ; roundedwidenib := makepen(penpath) ;
 pen sub_roundedwidenib ; sub_roundedwidenib := makepen(sub_penpath) ;
 

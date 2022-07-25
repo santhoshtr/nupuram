@@ -15,33 +15,33 @@ paths[0] = z0..z1{up}..{right}z2{right}..z3{down}.. {dir 240}z4;
 paths[1] = z5{dir 20}..{dir 20}z6 ;
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(1,3,6)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 2, 4, 5 )
+    nib(thinnib rotated 0 )(1,3,6)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 4, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(2)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 4, 5 )
+    nib(thinnib rotated 0 )(2)
+    nib(terminalnib rotated 120)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[1])(strokes[1]);
 
 paths[2] := paths[0] shifted (.8mw,0);
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(1,3,6)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 2, 4, 5 )
+    nib(thinnib rotated 0 )(1,3,6)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[2])(strokes[2]);
 
 paths[3] = z5{dir 20}..{dir 20}z6{dir 20}..z7..z8;
 paths[3]:= paths[3] shifted (0.8mw,0);
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 4, 5 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(2)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 120)(0) % Sharp cut
-    nib(default_nib xyscaled(1,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 4, 5 )
+    nib(thinnib rotated 0 )(2)
+    nib(terminalnib rotated 120)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[3])(strokes[3]);
 endglyph;

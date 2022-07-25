@@ -4,8 +4,8 @@ paths[0] = (0, X){dir 10} .. {dir 10}(sw/2, X);
 
 
 pen_stroke(
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut
+    nib(terminalnib rotated 90)(0)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

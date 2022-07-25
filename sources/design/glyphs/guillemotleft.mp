@@ -7,12 +7,12 @@ paths[0] = z0--z1;
 paths[1] = z0--z2;
 
 pen_stroke(
-    nib(default_nib xyscaled(thin,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity) % Sharp cut
+    nib(thinterminalnib rotated 90)(0)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(default_nib xyscaled(thin,terminalround) rotated 90)( 0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(infinity ) % Sharp cut
+    nib(thinterminalnib rotated 90)( 0)
+    nib(terminalnib rotated 90)(infinity )
 )(paths[1])(strokes[1]);
 paths[2] := paths[0] shifted(s/3, 0);
 paths[3] := paths[1] shifted(s/3, 0);;

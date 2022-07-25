@@ -15,10 +15,10 @@ z10 = (x9 - mw/4, y9 + m/2);
 paths[0] = z0{up} ..z1..z2..z3..z4..z5 ..z7..z8..z9.. z10;
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1,3,5,7 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(2,4,6, 8)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 30)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1,3,5,7 )
+    nib(thinnib rotated 0 )(2,4,6, 8)
+    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 30)(infinity)
 )(paths[0])(strokes[0]);
 
 % Shoe
@@ -28,10 +28,10 @@ z13 = (x1, y12);
 z14 = (x8, y8);
 paths[1] = z11-- z12{left}..{left}z13{dir 45} .. z14;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(1,2)
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(3) % Sharp cut
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(1,2)
+    nib(terminalnib rotated 120)(3)
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 
 

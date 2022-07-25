@@ -22,16 +22,16 @@ paths[1] = z10..z11..z12 ;
 
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 4)
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 3, 5,7)
-    nib(default_nib xyscaled(1,terminalround) rotated 45)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(infinity)
+    nib(thicknib rotated 0 )(0, 2, 4)
+    nib(thinnib rotated 0 )(1, 3, 5,7)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1)
-    nib(default_nib xyscaled(1,terminalround) rotated 120)(0)
-    nib(default_nib xyscaled(1,terminalround) rotated 60)(infinity)
+    nib(thinnib rotated 0 )(1)
+    nib(terminalnib rotated 120)(0)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[1])(strokes[1]);
 
 endglyph;

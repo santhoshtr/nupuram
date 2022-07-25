@@ -16,16 +16,16 @@ z16=(x15 - 0.45mw, y15 - 0.3m);
 paths[0] = z0 ..z1..  z2..z3;
 paths[1] = z10..z11{down}...z12{left}..{up}z13..z14..z15..z16 ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0 )
-    nib(default_nib xyscaled(thin, 1) rotated 0 )(1, 2)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0 )
+    nib(thinnib rotated 0 )(1, 2)
+    nib(terminalnib rotated 90)(0)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(2 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 1, 3, 4, 5)
-    nib(default_nib xyscaled(1, terminalround) rotated 60)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(2 )
+    nib(thinnib rotated 0 )(0, 1, 3, 4, 5)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[1])(strokes[1]);
 
 endglyph;

@@ -12,9 +12,9 @@ z7=(x6 + 0.2mw, y6 + 0.25m);
 z8=(x7 - 0.2mw, y7 + 0.25m);
 paths[0] = z0...z1{down}...z2{left}..{up}z3..z4..z5..z6..z7..z8 ;
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(2,4 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(0, 1, 3,   5, 7)
-    nib(default_nib xyscaled(1, terminalround) rotated 45 )(infinity)
+    nib(thicknib rotated 0 )(2,4 )
+    nib(thinnib rotated 0 )(0, 1, 3,   5, 7)
+    nib(terminalnib rotated 45 )(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

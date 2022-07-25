@@ -10,10 +10,10 @@ paths[0] =  z0{dir 40} .. z1.. z2{dir 260}..{dir -60}z3;
 paths[0] := paths[0] shifted (-x1+thick/2,0);
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0,1,    )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1, 2,3)
-    nib(default_nib xyscaled(1,terminalround) rotated 90)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 30)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0,1,    )
+    nib(thinnib rotated 0 )(1, 2,3)
+    nib(terminalnib rotated 90)(0)
+    nib(terminalnib rotated 30)(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

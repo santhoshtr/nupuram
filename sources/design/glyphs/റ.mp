@@ -8,10 +8,10 @@ z4=(x2, 0);
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
 
 pen_stroke(
-    nib(default_nib xyscaled(1, 1) rotated 0 )(0, 2, 5, 6 )
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1,3)
-    nib(default_nib xyscaled(xthick,terminalround) rotated 45)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 135)(infinity) % Sharp cut
+    nib(thicknib rotated 0 )(0, 2, 5, 6 )
+    nib(thinnib rotated 0 )(1,3)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 135)(infinity)
 )(paths[0])(strokes[0]);
 
 anchor( "vc", (x2,0));

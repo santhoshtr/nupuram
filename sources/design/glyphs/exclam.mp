@@ -9,8 +9,8 @@ paths[1] = fullcircle scaled (thick*1.2) shifted(0, 0);
 
 pen_stroke(
 
-    nib(default_nib xyscaled(xthick,terminalround) rotated 0)(0) % Sharp cut
-    nib(default_nib xyscaled(thin,terminalround) rotated 0)(infinity) % Sharp cut
+    nib(terminalnib rotated 0)(0)
+    nib(thinterminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 strokes[1] = paths[1];
 

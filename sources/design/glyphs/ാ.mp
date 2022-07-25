@@ -9,8 +9,8 @@ z5=(x4 - mw/3, y4 + m/4);
 paths[0] = z0 .. z1.. z2 .. tension 1.25 ..z3 ..  z4 .. z5;
 
 pen_stroke(
-    nib(default_nib xyscaled(thin, thin) rotated 0 )(1,3 )
-    nib(default_nib xyscaled(xthick,terminalround) rotated 60)(0) % Sharp cut
-    nib(default_nib xyscaled(xthick,terminalround) rotated 30)(infinity) % Sharp cut
+    nib(thinnib rotated 0 )(1,3 )
+    nib(terminalnib rotated 60)(0)
+    nib(terminalnib rotated 30)(infinity)
 )(paths[0])(strokes[0]);
 endglyph;
