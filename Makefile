@@ -42,73 +42,73 @@ $(VARIANTS):
 	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)/design
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --weight 400 --source $(SOURCEDIR)/design/regular --output $@
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Bold.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Bold --weight 600 --source $(SOURCEDIR)/design/bold --output $@
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Thin.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Thin --weight 200  --source $(SOURCEDIR)/design/thin --output $@
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Display.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Display --source $(SOURCEDIR)/design/display --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Display" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Kids.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/kids --output $@
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Calligraphy.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Calligraphy --source $(SOURCEDIR)/design/calligraphy --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Calligraphy" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Slanted.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/slanted --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Slanted" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Condensed.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/condensed --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Condensed" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Sans.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Sans --source $(SOURCEDIR)/design/sans --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Sans" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Script.ufo:
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/script --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Handwriting" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${OTFDIR}
 	@mkdir -p ${UFODIR}
 	$(FONTFORGE) tools/ff_gen_outline_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Outline.otf 10
@@ -116,23 +116,23 @@ $(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
 	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Outline.otf $@
 	rm ${OTFDIR}/$(FAMILY)-Outline.otf
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Outline" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Shadow.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Shadow.otf -45 6 80
 	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
 	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Shadow.otf $@
 	rm ${OTFDIR}/$(FAMILY)-Shadow.otf
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Shadow" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Color.ufo: ${UFODIR}/$(FAMILY)-Regular.ufo ${UFODIR}/$(FAMILY)-Outline.ufo ${UFODIR}/$(FAMILY)-Shadow.ufo
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD UFO $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Color" -s Regular
-	@ufonormalizer -m $@
+	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
 ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf

@@ -1,3 +1,4 @@
-varstroke := 1;
-show_arrows := 1;
-thick := 1u;
+input regular;
+drawshadow :=       1;
+shadowoffset :=     1u;
+shadowdirection :=  45;

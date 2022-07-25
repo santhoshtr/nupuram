@@ -10,10 +10,10 @@ default: all
 all: $(SVGS)
 
 $(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp $(VARIANT).mp
-	@echo " BUILD   $(@F)"
+	@echo " BUILD GLYPH   $@"
 	@mkdir -p $(VARIANT)
 	@cp $(VARIANT).mp font.mp
-	mpost -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $< end
+	@mpost -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $< end > /dev/null
 	@# remove svg comments which fonttools svglib does not like
 	@sed -i 's/<!--.*$\//g' $@
 	@rm -rf ./*.log ./*.mpo ./*.mpt
