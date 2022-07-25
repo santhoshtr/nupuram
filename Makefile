@@ -7,7 +7,7 @@ PY=python3
 FONTFORGE=/usr/bin/fontforge
 FAMILY=$(shell $(PY) tools/read_config.py name)
 STYLES=$(shell $(PY) tools/read_config.py styles)
-VERSION=$(shell $(PY) tools/read_config.py version)
+# VERSION=$(shell $(PY) tools/read_config.py version)
 SOURCEDIR=$(shell $(PY) tools/read_config.py sources)
 FONTSDIR=$(shell $(PY) tools/read_config.py build)
 PROOFDIR=$(shell $(PY) tools/read_config.py proofs)
@@ -39,71 +39,71 @@ build: ufo otf ttf webfonts
 
 glyphs: $(VARIANTS)
 $(VARIANTS):
-	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)/design
+	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)
 
 $(UFODIR)/$(FAMILY)-Regular.ufo:
 	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --weight 400 --source $(SOURCEDIR)/design/regular --output $@
+	$(PY) tools/builder.py --style Regular --weight 400 --source $(SOURCEDIR)/regular --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Bold.ufo:
 	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Bold --weight 600 --source $(SOURCEDIR)/design/bold --output $@
+	$(PY) tools/builder.py --style Bold --weight 600 --source $(SOURCEDIR)/bold --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Thin.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Thin --weight 200  --source $(SOURCEDIR)/design/thin --output $@
+	$(PY) tools/builder.py --style Thin --weight 200  --source $(SOURCEDIR)/thin --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Display.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Display --source $(SOURCEDIR)/design/display --output $@
+	$(PY) tools/builder.py --style Display --source $(SOURCEDIR)/display --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Display" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Kids.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/kids --output $@
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/kids --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Calligraphy.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Calligraphy --source $(SOURCEDIR)/design/calligraphy --output $@
+	$(PY) tools/builder.py --style Calligraphy --source $(SOURCEDIR)/calligraphy --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Calligraphy" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Slanted.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/slanted --output $@
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/slanted --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Slanted" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Condensed.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/condensed --output $@
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/condensed --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Condensed" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Sans.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Sans --source $(SOURCEDIR)/design/sans --output $@
+	$(PY) tools/builder.py --style Sans --source $(SOURCEDIR)/sans --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Sans" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Script.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/design/script --output $@
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/script --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Handwriting" -s Regular
 	@ufonormalizer -q -m $@
 
