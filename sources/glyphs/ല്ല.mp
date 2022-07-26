@@ -31,6 +31,7 @@ paths[1] = z10...z11{down}...z12{left}..{up}z13..z14..z15..z16..z17..z18 ;
 pen_stroke(
     nib(thicknib rotated 0 )(2,4 )
     nib(thinnib rotated 0 )(0, 1, 3,   5, 7)
+    nib(terminalnib rotated 30 )(0)
     nib(terminalnib rotated 30 )(infinity)
 )(paths[1])(strokes[1]);
 

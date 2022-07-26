@@ -21,7 +21,7 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
-VARIANTS = regular calligraphy bold thin light black display shadow outline slanted condensed sans script kids
+VARIANTS = regular calligraphy bold thin light black display shadow outline slanted condensed expanded sans script kids
 
 .PHONY: variants $(VARIANTS) ufo otf ttf webfonts clean
 
@@ -103,6 +103,13 @@ $(UFODIR)/$(FAMILY)-Condensed.ufo:
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/condensed --output $@
 	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Condensed" -s Regular
+	@ufonormalizer -q -m $@
+
+$(UFODIR)/$(FAMILY)-Expanded.ufo:
+	@echo "  BUILD UFO $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/expanded --output $@
+	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Expanded" -s Regular
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Sans.ufo:

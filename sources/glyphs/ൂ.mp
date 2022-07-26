@@ -25,6 +25,7 @@ pen_stroke(
 pen_stroke(
     nib(thicknib rotated 0 )(2 )
     nib(thinnib rotated 0 )(0, 1, 3, 4, 5)
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 60)(infinity)
 )(paths[1])(strokes[1]);
 
