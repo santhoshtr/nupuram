@@ -31,7 +31,7 @@ z11 = (x10 + m/6, y10-m/2);
 z12 = (x10, y11 - m/3 );
 z13 = (x12 - mw/2, y12);
 z14 = (x13 + mw/4, y6);
-paths[2] = z10{dir -60}..z11..z12{left}..{left}z13{dir 30}.. z14;
+paths[2] = z10--z11--z12{left}..{left}z13{dir 30}.. z14;
 pen_stroke(
     nib(thicknib rotated 0 )(  3)
     nib(thinnib rotated 0 )(1,2)

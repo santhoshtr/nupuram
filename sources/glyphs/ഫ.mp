@@ -13,7 +13,7 @@ z9=(x8-mw/3, y8 - m/2);
 z10=(x9, y9 - m/2);
 
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
-paths[1] := z5{dir 30}..z6..z7..z8..z9..z10;
+paths[1] := z5{dir 30}..z6..z7..z8..z9.. {dir -85}z10;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )
     nib(thinnib rotated 0 )(1,3)

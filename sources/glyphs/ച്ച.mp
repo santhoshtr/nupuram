@@ -27,7 +27,7 @@ z6=(x5 + 1.3mw, y5);
 z7=(x6, y6 + m*0.5);
 z8=(x7, y7 + m*0.5);
 
-paths[1] = z0{up}..z1..{right}z2..z3 .. z4;
+paths[1] = z0{dir 95}..z1..{right}z2..z3 .. z4;
 paths[2] := z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 60}z8;
 
 pen_stroke(

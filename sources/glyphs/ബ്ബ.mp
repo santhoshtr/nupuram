@@ -46,7 +46,7 @@ z21 = (x20 + mw/6, y20-m/2);
 z22 = (x20, y21 - m/3 );
 z23 = (x22 - mw/2, y22);
 z24 = (x23 + mw/4, y14);
-paths[3] = z20{dir -60}..z21..z22{left}..{left}z23{dir 30}.. z24;
+paths[3] = z20--z21--z22{left}..{left}z23{dir 30}.. z24;
 pen_stroke(
     nib(thicknib rotated 0 )(  3)
     nib(thinnib rotated 0 )(1,2)

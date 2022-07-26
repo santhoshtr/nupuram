@@ -2,8 +2,8 @@ input glyph;
 beginglyph;
 path paths[], strokes;
 z0=(0.15X, X);
-z1=(x0, y0-0.8X);
-z2=(x1 + 0.4sw, 0);
+z1=(x0, y0-0.6666X);
+z2=(x1 + 0.4sw, thick/4);
 
 % bar
 z4 = (x0-0.25sw,s);

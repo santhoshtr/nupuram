@@ -14,7 +14,7 @@ paths[0] := paths[0] crotated -10 shifted(-thick/4, 0);
 z5 = (x2, s+thick/4);
 z6 = (x2, y5 - s/2 - thick/4);
 z7 = (x5, y6 - s/2 );
-paths[1] = z5{dir 260}..z6..z7;
+paths[1] = z5--z6--z7;
 
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )

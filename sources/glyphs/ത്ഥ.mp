@@ -24,7 +24,7 @@ z15=(x14 - mw/3, y14 + m/2);
 z16=(x15 - mw/3, y15 - m/2);
 z17=(x16, y8 );
 
-paths[1] = z12{dir 30} ..  z13 .. z14 .. z15..z16..z17;
+paths[1] = z12{dir 30} ..  z13 .. z14 .. z15..z16..{dir -85}z17;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 3, 5 )
     nib(thinnib rotated 0 )( 2,4)

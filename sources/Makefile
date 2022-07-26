@@ -1,7 +1,7 @@
 SRCDIR    := ./glyphs
 VARIANT   ?= debug
 GLYPHS    := $(wildcard $(SRCDIR)/*.mp)
-SVGS      := $(patsubst $(SRCDIR)/%.mp,$(VARIANT)/%.svg,$(GLYPHS))
+SVGS      := $(patsubst $(SRCDIR)/%.mp,svgs/$(VARIANT)/%.svg,$(GLYPHS))
 
 .PHONY: all clean
 
@@ -9,14 +9,14 @@ default: all
 
 all: $(SVGS)
 
-$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp $(VARIANT).mp
+svgs/$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp config/$(VARIANT).mp
 	@echo " BUILD GLYPH   $@"
-	@mkdir -p $(VARIANT)
-	@cp $(VARIANT).mp font.mp
-	@mpost -s 'outputtemplate="$(VARIANT)/%j.svg"' --interaction=nonstopmode $< end > /dev/null
+	@mkdir -p svgs/$(VARIANT)
+	@cp config/$(VARIANT).mp font.mp
+	@mpost -s 'outputtemplate="svgs/$(VARIANT)/%j.svg"' --interaction=nonstopmode $< end
 	@# remove svg comments which fonttools svglib does not like
 	@sed -i 's/<!--.*$\//g' $@
 	@rm -rf ./*.log ./*.mpo ./*.mpt
 
 clean:
-	@rm -rf *.tmp *.dvi *.svg *.log $(VARIANT)/*.svg *.mpt
+	@rm -rf *.tmp *.dvi *.svg *.log svgs/$(VARIANT)/*.svg *.mpt
