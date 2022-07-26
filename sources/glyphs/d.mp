@@ -12,7 +12,7 @@ paths[0] := paths[0] crotated -10 shifted (-thick/4, 0);
 
 z5 = (x2, X);
 z6 = (x5, y2);
-z7 = (x6, y3 - thick/4 );
+z7 = (x6, y3 );
 paths[1] = z5{dir 280}..z6..{dir 280}z7 ;
 
 pen_stroke(

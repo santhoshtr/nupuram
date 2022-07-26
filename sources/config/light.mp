@@ -1,3 +1,3 @@
 varstroke :=  1;
-thick     :=  0.56u;
+thick     :=  0.75u;
 soften    :=  0;

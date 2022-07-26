@@ -21,7 +21,7 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
-VARIANTS = regular calligraphy bold thin display shadow outline slanted condensed sans script kids
+VARIANTS = regular calligraphy bold thin light black display shadow outline slanted condensed sans script kids
 
 .PHONY: variants $(VARIANTS) ufo otf ttf webfonts clean
 
@@ -53,10 +53,22 @@ $(UFODIR)/$(FAMILY)-Bold.ufo:
 	$(PY) tools/builder.py --style Bold --weight 600 --source $(SOURCEDIR)/svgs/bold --output $@
 	@ufonormalizer -q -m $@
 
+$(UFODIR)/$(FAMILY)-Black.ufo:
+	@echo "  BUILD UFO   $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Black --weight 900 --source $(SOURCEDIR)/svgs/black --output $@
+	@ufonormalizer -q -m $@
+
 $(UFODIR)/$(FAMILY)-Thin.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Thin --weight 200  --source $(SOURCEDIR)/svgs/thin --output $@
+	$(PY) tools/builder.py --style Thin --weight 100  --source $(SOURCEDIR)/svgs/thin --output $@
+	@ufonormalizer -q -m $@
+
+$(UFODIR)/$(FAMILY)-Light.ufo:
+	@echo "  BUILD UFO $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Light --weight 200  --source $(SOURCEDIR)/svgs/light --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Display.ufo:

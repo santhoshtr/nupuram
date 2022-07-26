@@ -8,7 +8,7 @@ z3=(x0 -  0.1Xw, y0  );
 z4=(x0  + 0.1Xw, y0  );
 z5=(x0 - 0.1Xw, y2  );
 z6=(x0 + 0.1Xw, y2  );
-paths[0] = z0{dir -80}..z1..z2 ;
+paths[0] = z0..z1..z2 ;
 paths[1] = z3{dir 10}..{dir 10}z4 ;
 paths[2] = z5{dir 10}..{dir 10}z6 ;
 pen_stroke(
