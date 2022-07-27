@@ -1,1 +1,2 @@
-slant :=        tand(10);
+slant := 20; % Degree of slanting
+soften:=0;

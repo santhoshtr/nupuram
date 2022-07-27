@@ -12,10 +12,10 @@ thick :=        1u;           % Thickness of thickest lines
 thin :=         2/3;          % Thickness of thinnest lines (same as thick when no modulation)
 subthick :=     0.666u;       % Thickness of thickest lines in subscribed characters
 xthick :=       1;            % Extra thickness for terminals
-slant :=        tand(0);      % Slant of characters. A value like 0.2 will give forward slant. Negative values give backward slant
+slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
-lbearing :=     0.25u;         % Default left bearing
-rbearing :=     0.25u;         % Default right bearing
+lbearing :=     0.25u;        % Default left bearing
+rbearing :=     0.25u;        % Default right bearing
 
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled

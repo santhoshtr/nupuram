@@ -3,9 +3,15 @@
   <axes>
     <axis name="weight" tag="wght" minimum="1" maximum="1000" default="400">
       <labelname xml:lang="en">Weight</labelname>
+      <labelname xml:lang="ml">കട്ടി</labelname>
     </axis>
     <axis maximum="120" tag="wdth" minimum="80" default="100" name="width">
       <labelname xml:lang="en">Width</labelname>
+      <labelname xml:lang="ml">വീതി</labelname>
+    </axis>
+    <axis maximum="20" tag="slnt" minimum="0" default="0" name="slant">
+      <labelname xml:lang="en">Slant</labelname>
+      <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
   </axes>
   <sources>
@@ -16,42 +22,56 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Black.ufo" name="Black">
       <location>
         <dimension name="weight" xvalue="1000"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Bold.ufo" name="Bold">
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Light.ufo" name="Light">
       <location>
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Thin.ufo" name="Thin">
       <location>
         <dimension name="weight" xvalue="1"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Condensed.ufo" name="CondensedRegular">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="80"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Expanded.ufo" name="ExpandedRegular">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="120"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </source>
+    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Slanted.ufo" name="Slanted">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="20"/>
       </location>
     </source>
   </sources>
@@ -61,6 +81,16 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="1"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Seventy" filename="./instances/Seventy-Slanted-Thin.ufo" stylename="Slanted Thin">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="1"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="20"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Condensed-Thin.ufo" stylename="Condensed Thin">
@@ -69,6 +99,7 @@
       <location>
         <dimension name="weight" xvalue="1"/>
         <dimension name="width" xvalue="80"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Expanded-Thin.ufo" stylename="Expanded Thin">
@@ -77,6 +108,7 @@
       <location>
         <dimension name="weight" xvalue="1"/>
         <dimension name="width" xvalue="120"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Extra-Light.ufo" stylename="Extra-Light">
@@ -84,6 +116,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="200"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Light.ufo" stylename="Light">
@@ -91,6 +124,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="300"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Regular.ufo" stylename="Regular">
@@ -99,6 +133,16 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Seventy" filename="./instances/Seventy-Slanted.ufo" stylename="Slanted">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="20"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Condensed.ufo" stylename="Condensed Regular">
@@ -107,6 +151,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="80"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Expanded.ufo" stylename="Expanded Regular">
@@ -115,6 +160,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="120"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Medium.ufo" stylename="Medium">
@@ -122,6 +168,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="500"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Semi-Bold.ufo" stylename="Semi-Bold">
@@ -129,6 +176,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="600"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Bold.ufo" stylename="Bold">
@@ -136,6 +184,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="700"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Condensed-Bold.ufo" stylename="Condensed Bold">
@@ -144,6 +193,7 @@
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="80"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Expanded-Bold.ufo" stylename="Expanded Bold">
@@ -152,6 +202,7 @@
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="120"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Extra-Bold.ufo" stylename="Extra-Bold">
@@ -159,6 +210,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="800"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
     <instance familyname="Seventy" filename="./instances/Seventy-Black.ufo" stylename="Black">
@@ -166,6 +218,7 @@
       <kerning />
       <location>
         <dimension name="weight" xvalue="1000"/>
+        <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
   </instances>
