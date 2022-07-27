@@ -657,7 +657,7 @@ class MalayalamFont(Font):
                                     self.salts[base_glyph_name][0], 'u_drop_sign'])
                     self.salts[uu_glyph_name]=[uu_glyph_name_alt]
 
-        log.info(f"Total glyph count: {len(self)}")
+        log.debug(f"Total glyph count: {len(self)}")
 
     @staticmethod
     def commonAnchor(setA, setB) -> str:
@@ -743,7 +743,7 @@ class MalayalamFont(Font):
         self.info.familyName = name
         self.info.styleName = style
         self.info.copyright = f"Copyright {datetime.utcnow().year} The {name} Project Authors ({repo})"
-        self.info.openTypeNameDesigner = f"{self.options.author.name} &lt;{self.options.author.email}&gt"
+        self.info.openTypeNameDesigner = f"{self.options.author.name} ({self.options.author.email})"
         self.info.openTypeNameDesignerURL = self.options.author.url
         self.info.openTypeNameLicense = self.options.license.text
         self.info.openTypeNameLicenseURL = self.options.license.url

@@ -1,17 +1,12 @@
 #!/usr/bin/make -f
 
-# https://www.gnu.org/software/make/manual/html_node/One-Shell.html
-.ONESHELL:
-
 PY=python3
-FONTFORGE=/usr/bin/fontforge
 FAMILY=$(shell $(PY) tools/read_config.py name)
 STYLES=$(shell $(PY) tools/read_config.py styles)
-# VERSION=$(shell $(PY) tools/read_config.py version)
-SOURCEDIR=$(shell $(PY) tools/read_config.py sources)
-FONTSDIR=$(shell $(PY) tools/read_config.py build)
-PROOFDIR=$(shell $(PY) tools/read_config.py proofs)
-TESTSDIR=$(shell $(PY) tools/read_config.py tests)
+SOURCEDIR=sources
+FONTSDIR=fonts
+PROOFDIR=proofs
+TESTSDIR=tests
 TTFDIR=${FONTSDIR}/ttf
 OTFDIR=${FONTSDIR}/otf
 WEBFONTSDIR=${FONTSDIR}/webfonts
@@ -21,9 +16,8 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
-VARIANTS = regular calligraphy bold thin light black display shadow outline slanted slanted-thin condensed expanded sans script kids
 
-.PHONY: variants $(VARIANTS) ufo otf ttf webfonts clean
+.PHONY: variants $(STYLES) ufo otf ttf webfonts clean
 
 default: build
 
@@ -37,132 +31,21 @@ help:
 
 build: ufo otf ttf webfonts
 
-glyphs: $(VARIANTS)
-$(VARIANTS):
+glyphs: $(STYLES)
+
+$(STYLES):
 	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)
 
-$(UFODIR)/$(FAMILY)-Regular.ufo:
+$(UFODIR)/$(FAMILY)-%.ufo:
 	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --weight 400 --source $(SOURCEDIR)/svgs/regular --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Bold.ufo:
-	@echo "  BUILD UFO   $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Bold --weight 600 --source $(SOURCEDIR)/svgs/bold --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Black.ufo:
-	@echo "  BUILD UFO   $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Black --weight 900 --source $(SOURCEDIR)/svgs/black --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Thin.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Thin --weight 100  --source $(SOURCEDIR)/svgs/thin --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Slanted-Thin.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Slanted-Thin --weight 100  --source $(SOURCEDIR)/svgs/slanted-thin --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Light.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Light --weight 200  --source $(SOURCEDIR)/svgs/light --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Display.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Display --source $(SOURCEDIR)/svgs/display --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Display" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Kids.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/kids --output $@
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Calligraphy.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Calligraphy --source $(SOURCEDIR)/svgs/calligraphy --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Calligraphy" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Slanted.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/slanted --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Slanted" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Condensed.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/condensed --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Condensed" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Expanded.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/expanded --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Expanded" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Sans.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Sans --source $(SOURCEDIR)/svgs/sans --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Sans" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Script.ufo:
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style Regular --source $(SOURCEDIR)/svgs/script --output $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Handwriting" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Outline.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${OTFDIR}
-	@mkdir -p ${UFODIR}
-	$(FONTFORGE) tools/ff_gen_outline_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Outline.otf 10
-	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
-	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Outline.otf $@
-	rm ${OTFDIR}/$(FAMILY)-Outline.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Outline" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Shadow.ufo: ${OTFDIR}/$(FAMILY)-Regular.otf
-	@echo "  BUILD UFO $(@F)"
-	@mkdir -p ${UFODIR}
-	$(FONTFORGE) tools/ff_gen_shadow_font.pe ${OTFDIR}/$(FAMILY)-Regular.otf ${OTFDIR}/$(FAMILY)-Shadow.otf -45 6 80
-	cp -rf $(UFODIR)/$(FAMILY)-Regular.ufo $@
-	$(PY) tools/otf2ufo.py ${OTFDIR}/$(FAMILY)-Shadow.otf $@
-	rm ${OTFDIR}/$(FAMILY)-Shadow.otf
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Shadow" -s Regular
-	@ufonormalizer -q -m $@
-
-$(UFODIR)/$(FAMILY)-Color.ufo: ${UFODIR}/$(FAMILY)-Regular.ufo ${UFODIR}/$(FAMILY)-Outline.ufo ${UFODIR}/$(FAMILY)-Shadow.ufo
-	@echo "  BUILD UFO $(@F)"
-	$(PY) tools/build_color_v0.py $@
-	$(PY) tools/fix_ufo_info.py -u  $@ -f "$(FAMILY) Color" -s Regular
+	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
-ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf
-otf: $(OTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf
-webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2
+ttf: $(TTF) # $(TTFDIR)/$(FAMILY)-Color-v1.ttf
+otf: $(OTF) # $(OTFDIR)/$(FAMILY)-Color-v1.otf
+webfonts: $(WOFF2) # $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2
 
 ${TTFDIR}/$(FAMILY)-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Color.ttf
 	@cp $< $@
@@ -180,33 +63,36 @@ $(OTFDIR)/$(FAMILY)-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
 $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
-	@echo " BUILD   $(@F)"
+	@echo " BUILD  WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
 	@fonttools ttLib.woff2 compress -o  $@ $<
 
 $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD  OTF  $(@F)"
 	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(OTFDIR) -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 ${TTFDIR}/%.ttf: ${UFODIR}/%.ufo
-	@echo "  BUILD    $(@F)"
+	@echo "  BUILD  TTF  $(@F)"
 	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter -e 0.01 --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
-	@echo " BUILD   $(@F)"
+	@echo " BUILD WEBFONT  $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -o  $@ $<
+	@fonttools ttLib.woff2 compress -q -o  $@ $<
 
 vf: variablefont
 variablefont:
-	fontmake -o variable -m font.designspace
+	fontmake -o variable --output-dir $(FONTSDIR)/variable-ttf -m $(FAMILY).designspace
+	fontmake -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2 -m $(FAMILY).designspace
+
+variableinstances:
+	fontmake -i --output-dir $(FONTSDIR)/instances -m $(FAMILY).designspace
 
 clean:
-	find -iname "*.pyc" -delete
-	@rm -rf $(FONTSDIR)
-	@rm -rf $(PROOFDIR)
+	@find -iname "*.pyc" -delete
+	@rm -rf $(FONTSDIR) $(PROOFDIR)
 
 proofs: otf
 	@mkdir -p ${PROOFDIR}
