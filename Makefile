@@ -21,7 +21,7 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
-VARIANTS = regular calligraphy bold thin light black display shadow outline slanted condensed expanded sans script kids
+VARIANTS = regular calligraphy bold thin light black display shadow outline slanted slanted-thin condensed expanded sans script kids
 
 .PHONY: variants $(VARIANTS) ufo otf ttf webfonts clean
 
@@ -63,6 +63,12 @@ $(UFODIR)/$(FAMILY)-Thin.ufo:
 	@echo "  BUILD UFO $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style Thin --weight 100  --source $(SOURCEDIR)/svgs/thin --output $@
+	@ufonormalizer -q -m $@
+
+$(UFODIR)/$(FAMILY)-Slanted-Thin.ufo:
+	@echo "  BUILD UFO $(@F)"
+	@mkdir -p ${UFODIR}
+	$(PY) tools/builder.py --style Slanted-Thin --weight 100  --source $(SOURCEDIR)/svgs/slanted-thin --output $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Light.ufo:
@@ -192,6 +198,10 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 	@echo " BUILD   $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
 	@fonttools ttLib.woff2 compress -o  $@ $<
+
+vf: variablefont
+variablefont:
+	fontmake -o variable -m font.designspace
 
 clean:
 	find -iname "*.pyc" -delete

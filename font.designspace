@@ -53,6 +53,13 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
+    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Slanted-Thin.ufo" name="Thin">
+      <location>
+        <dimension name="weight" xvalue="1"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="20"/>
+      </location>
+    </source>
     <source familyname="Seventy" filename="./fonts/ufo/Seventy-Condensed.ufo" name="CondensedRegular">
       <location>
         <dimension name="weight" xvalue="400"/>

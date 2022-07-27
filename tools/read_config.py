@@ -1,7 +1,7 @@
 import sys
 import yaml
 
-config = yaml.load(open('config.yaml'), Loader=yaml.FullLoader)
+config = yaml.load(open('config.yaml'), Loader=yaml.BaseLoader)
 
 if __name__ == "__main__":
     key = sys.argv[1]
