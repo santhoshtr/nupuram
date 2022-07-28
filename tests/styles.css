@@ -1,63 +1,30 @@
 @font-face {
-  font-family: "Seventy";
-  src: url(../fonts/webfonts/Seventy-Regular.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Regular.otf?v=1.100) format("opentype");
+  font-family: "Nupuram";
+  src: url(../fonts/webfonts/Nupuram-Regular.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Regular.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "SeventyOutline";
-  src: url(../fonts/webfonts/Seventy-Outline.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Outline.otf?v=1.100) format("opentype");
+  font-family: "NupuramOutline";
+  src: url(../fonts/webfonts/Nupuram-Outline.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Outline.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "SeventyBold";
-  src: url(../fonts/webfonts/Seventy-Bold.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Bold.otf?v=1.100) format("opentype");
+  font-family: "NupuramBold";
+  src: url(../fonts/webfonts/Nupuram-Bold.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Bold.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "SeventyThin";
-  src: url(../fonts/webfonts/Seventy-Thin.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Thin.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-
-@font-face {
-  font-family: "SeventyDisplay";
-  src: url(../fonts/webfonts/Seventy-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Display.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "SeventySans";
-  src: url(../fonts/webfonts/Seventy-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Sans.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "SeventyScript";
-  src: url(../fonts/webfonts/Seventy-Script.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Script.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "SeventySlanted";
-  src: url(../fonts/webfonts/Seventy-Slanted.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Slanted.otf?v=1.100) format("opentype");
+  font-family: "NupuramThin";
+  src: url(../fonts/webfonts/Nupuram-Thin.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Thin.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
@@ -65,8 +32,32 @@
 
 
 @font-face {
-  font-family: "SeventyCondensed";
-  src: url(../fonts/webfonts/Seventy-Condensed.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Condensed.otf?v=1.100) format("opentype");
+  font-family: "NupuramDisplay";
+  src: url(../fonts/webfonts/Nupuram-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Display.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "NupuramSans";
+  src: url(../fonts/webfonts/Nupuram-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Sans.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "NupuramScript";
+  src: url(../fonts/webfonts/Nupuram-Script.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Script.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+@font-face {
+  font-family: "NupuramSlanted";
+  src: url(../fonts/webfonts/Nupuram-Slanted.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Slanted.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
@@ -74,24 +65,33 @@
 
 
 @font-face {
-  font-family: "SeventyCalligraphy";
-  src: url(../fonts/webfonts/Seventy-Calligraphy.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Calligraphy.otf?v=1.100) format("opentype");
+  font-family: "NupuramCondensed";
+  src: url(../fonts/webfonts/Nupuram-Condensed.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Condensed.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+@font-face {
+  font-family: "NupuramCalligraphy";
+  src: url(../fonts/webfonts/Nupuram-Calligraphy.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Calligraphy.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "SeventyShadow";
-  src: url(../fonts/webfonts/Seventy-Shadow.woff2?v=1.100) format("woff2"), url(../fonts/otf/Seventy-Shadow.otf?v=1.100) format("opentype");
+  font-family: "NupuramShadow";
+  src: url(../fonts/webfonts/Nupuram-Shadow.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Shadow.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "SeventyColor";
-  src: url(../fonts/webfonts/Seventy-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Seventy-Color-v0.woff2?v=1.100) format("woff2");
+  font-family: "NupuramColor";
+  src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Color-v0.woff2?v=1.100) format("woff2");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
@@ -116,47 +116,47 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-family: "Seventy", sans;
+  font-family: "Nupuram", sans;
   line-height: 1.2;
   padding: 0.5em;
   outline: none;
 }
 
 .content.color {
-  font-family: "SeventyColor", sans;
+  font-family: "NupuramColor", sans;
   font-palette: --custom;
 }
 
 .content.shadow {
-  font-family: "SeventyShadow", sans;
+  font-family: "NupuramShadow", sans;
 }
 
 .content.outline {
-  font-family: "SeventyOutline", sans;
+  font-family: "NupuramOutline", sans;
 }
 .content.display {
-  font-family: "SeventyDisplay", sans;
+  font-family: "NupuramDisplay", sans;
 }
 .content.bold {
-  font-family: "SeventyBold", sans;
+  font-family: "NupuramBold", sans;
 }
 .content.thin {
-  font-family: "SeventyThin", sans;
+  font-family: "NupuramThin", sans;
 }
 .content.script {
-  font-family: "SeventyScript", sans;
+  font-family: "NupuramScript", sans;
 }
 .content.sans {
-  font-family: "SeventySans", sans;
+  font-family: "NupuramSans", sans;
 }
 .content.condensed {
-  font-family: "SeventyCondensed", sans;
+  font-family: "NupuramCondensed", sans;
 }
 .content.calligraphy {
-  font-family: "SeventyCalligraphy", sans;
+  font-family: "NupuramCalligraphy", sans;
 }
 .content.slanted{
-  font-family: "SeventySlanted", sans;
+  font-family: "NupuramSlanted", sans;
 }
 
 .tools {

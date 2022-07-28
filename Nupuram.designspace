@@ -15,7 +15,7 @@
     </axis>
   </axes>
   <sources>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Regular.ufo" name="Regular">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Regular.ufo" name="Regular">
       <lib copy="1"/>
       <info copy="1"/>
       <kerning copy="1"/>
@@ -25,56 +25,56 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Black.ufo" name="Black">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Black.ufo" name="Black">
       <location>
         <dimension name="weight" xvalue="1000"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Bold.ufo" name="Bold">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Bold.ufo" name="Bold">
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Light.ufo" name="Light">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Light.ufo" name="Light">
       <location>
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Thin.ufo" name="Thin">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Thin.ufo" name="Thin">
       <location>
         <dimension name="weight" xvalue="1"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Slanted-Thin.ufo" name="Thin">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Slanted-Thin.ufo" name="Thin">
       <location>
         <dimension name="weight" xvalue="1"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="20"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Condensed.ufo" name="CondensedRegular">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Condensed.ufo" name="CondensedRegular">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="80"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Expanded.ufo" name="ExpandedRegular">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Expanded.ufo" name="ExpandedRegular">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="120"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Seventy" filename="./fonts/ufo/Seventy-Slanted.ufo" name="Slanted">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Slanted.ufo" name="Slanted">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
@@ -83,7 +83,7 @@
     </source>
   </sources>
   <instances>
-    <instance familyname="Seventy" filename="./instances/Seventy-Thin.ufo" stylename="Thin">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Thin.ufo" stylename="Thin">
       <info />
       <kerning />
       <location>
@@ -91,7 +91,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Slanted-Thin.ufo" stylename="Slanted Thin">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Slanted-Thin.ufo" stylename="Slanted Thin">
       <info />
       <kerning />
       <location>
@@ -100,7 +100,7 @@
         <dimension name="slant" xvalue="20"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Condensed-Thin.ufo" stylename="Condensed Thin">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Thin.ufo" stylename="Condensed Thin">
       <info />
       <kerning />
       <location>
@@ -109,7 +109,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Expanded-Thin.ufo" stylename="Expanded Thin">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Thin.ufo" stylename="Expanded Thin">
       <info />
       <kerning />
       <location>
@@ -118,7 +118,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Extra-Light.ufo" stylename="Extra-Light">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Extra-Light.ufo" stylename="Extra-Light">
       <info />
       <kerning />
       <location>
@@ -126,7 +126,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Light.ufo" stylename="Light">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Light.ufo" stylename="Light">
       <info />
       <kerning />
       <location>
@@ -134,7 +134,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Regular.ufo" stylename="Regular">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Regular.ufo" stylename="Regular">
       <info />
       <kerning />
       <location>
@@ -143,7 +143,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Slanted.ufo" stylename="Slanted">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Slanted.ufo" stylename="Slanted">
       <info />
       <kerning />
       <location>
@@ -152,7 +152,7 @@
         <dimension name="slant" xvalue="20"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Condensed.ufo" stylename="Condensed Regular">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed.ufo" stylename="Condensed Regular">
       <info />
       <kerning />
       <location>
@@ -161,7 +161,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Expanded.ufo" stylename="Expanded Regular">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded.ufo" stylename="Expanded Regular">
       <info />
       <kerning />
       <location>
@@ -170,7 +170,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Medium.ufo" stylename="Medium">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Medium.ufo" stylename="Medium">
       <info />
       <kerning />
       <location>
@@ -178,7 +178,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Semi-Bold.ufo" stylename="Semi-Bold">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Semi-Bold.ufo" stylename="Semi-Bold">
       <info />
       <kerning />
       <location>
@@ -186,7 +186,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Bold.ufo" stylename="Bold">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Bold.ufo" stylename="Bold">
       <info />
       <kerning />
       <location>
@@ -194,7 +194,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Condensed-Bold.ufo" stylename="Condensed Bold">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Bold.ufo" stylename="Condensed Bold">
       <info />
       <kerning />
       <location>
@@ -203,7 +203,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Expanded-Bold.ufo" stylename="Expanded Bold">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Bold.ufo" stylename="Expanded Bold">
       <info />
       <kerning />
       <location>
@@ -212,7 +212,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Extra-Bold.ufo" stylename="Extra-Bold">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Extra-Bold.ufo" stylename="Extra-Bold">
       <info />
       <kerning />
       <location>
@@ -220,7 +220,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Seventy" filename="./instances/Seventy-Black.ufo" stylename="Black">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Black.ufo" stylename="Black">
       <info />
       <kerning />
       <location>

@@ -29,6 +29,6 @@ def glif2svg(font: Font, glyph_name: str) -> str:
     return etree.tostring(root, encoding="utf8", xml_declaration=True).decode("utf8")
 
 if __name__ == "__main__":
-    f=Font("build/Seventy-Regular.ufo")
+    f=Font("build/Nupuram-Regular.ufo")
     svg = glif2svg(f, "A")
     print(svg)

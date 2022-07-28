@@ -1,4 +1,4 @@
-Malayalam Typeface
+Nupuram Malayalam Typeface
 ===========================
 
 A display typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive,

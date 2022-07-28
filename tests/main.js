@@ -125,80 +125,80 @@ function listen() {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
         contentArea.classList.remove("color", "display", "outline", "shadow", "bold", "script", "bold", "thin", "sans", "condensed","calligraphy","slanted");
-        if (selected === 'SeventyColor') {
+        if (selected === 'NupuramColor') {
             contentArea.classList.add('color');
             document.getElementById('font-fontColor').disabled = true
             document.getElementById('outlined').disabled = true
             document.getElementById('palette').style.display = "grid"
         }
-        if (selected === 'SeventyOutline') {
+        if (selected === 'NupuramOutline') {
             contentArea.classList.add('outline');
             document.getElementById('outlined').disabled = true
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyShadow') {
+        if (selected === 'NupuramShadow') {
             contentArea.classList.add('shadow');
             document.getElementById('outlined').disabled = true
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'Seventy') {
+        if (selected === 'Nupuram') {
             contentArea.classList.remove('color');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyBold') {
+        if (selected === 'NupuramBold') {
             contentArea.classList.remove('color');
             contentArea.classList.add('bold');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyThin') {
+        if (selected === 'NupuramThin') {
             contentArea.classList.remove('color');
             contentArea.classList.add('thin');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyDisplay') {
+        if (selected === 'NupuramDisplay') {
             contentArea.classList.remove('color');
             contentArea.classList.add('display');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyScript') {
+        if (selected === 'NupuramScript') {
             contentArea.classList.remove('color');
             contentArea.classList.add('script');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyCalligraphy') {
+        if (selected === 'NupuramCalligraphy') {
             contentArea.classList.remove('color');
             contentArea.classList.add('calligraphy');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventySlanted') {
+        if (selected === 'NupuramSlanted') {
             contentArea.classList.remove('color');
             contentArea.classList.add('slanted');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventySans') {
+        if (selected === 'NupuramSans') {
             contentArea.classList.remove('color');
             contentArea.classList.add('sans');
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'SeventyCondensed') {
+        if (selected === 'NupuramCondensed') {
             contentArea.classList.remove('color');
             contentArea.classList.add('condensed');
             document.getElementById('font-fontColor').disabled = false
@@ -465,7 +465,7 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
     baseColor = base;
     shadowColor = shadow
     outlineColor = outline
-    const colorFontName = "SeventyColor"
+    const colorFontName = "NupuramColor"
     const sheetId = "custompalette"
     var sheet = document.getElementById(sheetId)
     if (!sheet) {

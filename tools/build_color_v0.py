@@ -10,15 +10,15 @@ log = logging.getLogger(__name__)
 config = {
     "layers": {
         "public.default": {
-            "source": "fonts/ufo/Seventy-Regular.ufo",
+            "source": "fonts/ufo/Nupuram-Regular.ufo",
             "order": 1  # Foreground layer
         },
         "outline": {
-            "source": "fonts/ufo/Seventy-Outline.ufo",
+            "source": "fonts/ufo/Nupuram-Outline.ufo",
             "order": 2  # Outline layer
         },
         "shadow": {
-            "source": "fonts/ufo/Seventy-Shadow.ufo",
+            "source": "fonts/ufo/Nupuram-Shadow.ufo",
             "order": 0  # background layer
         }
     },
