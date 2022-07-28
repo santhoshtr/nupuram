@@ -43,6 +43,23 @@ vardef shadowpath(expr p, d, offset) =
     fill envelope shadowpen of p withcolor black;
 enddef;
 
+vardef pointarrow (expr pat, loc, len, off) =
+    save l, r, s, t ; path l, r ; numeric s ; pair t ;
+    t := if pair loc : loc else : point loc along pat fi ;
+    s := len/2 - off ; if s<=0 : s := 0 elseif s>len : s := len fi ;
+    r := pat cutbefore t ;
+    r := (r cutafter point (arctime s of r) of r) ;
+    s := len/2 + off ; if s<=0 : s := 0 elseif s>len : s := len fi ;
+    l := reverse (pat cutafter t) ;
+    l := (reverse (l cutafter point (arctime s of l) of l)) ;
+    (l..r)
+enddef ;
+
+
+def centerarrow(expr p,t,l) = pointarrow(p,t,l, 0) enddef ;
+def rightarrow (expr p,t,l) = pointarrow(p,t,l,-l) enddef ;
+def leftarrow (expr p,t,l) = pointarrow(p,t,l,+l) enddef ;
+
 vardef show_coordinates (expr p ) =
     % Debug points are hard to see. Change the fontsize
     defaultscale :=2;
@@ -126,9 +143,17 @@ def endglyph =
                 draw paths[i] withpen nib withcolor 0.5white;
             fi;
             if show_arrows = 1:
+                pen arrowpen; arrowpen = makepen(fix_nib(u/30,u/30,0));
+                ahlength := 30;
                 for j=0 upto length(paths[i]):
-                    drawarrow subpath(j, 0.9(j+1)) of paths[i] withpen pencircle scaled 4 withcolor arrowcolor;
+                    drawarrow rightarrow (paths[i], point j of paths[i], arclength subpath(j,j+1) of paths[i]*3/4)  withpen arrowpen withcolor arrowcolor;
                 endfor;
+                if i=0:
+                    fill fullcircle scaled (u/5) shifted (point 0 of paths[i]) withcolor arrowcolor;
+                fi;
+                if i=length(paths[i]):
+                    fill fullcircle scaled (u/5) shifted (point infinity of paths[i]) withcolor arrowcolor;
+                fi;
             fi;
             if showcoords = 1:
                 show_coordinates(paths[i]);
