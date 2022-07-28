@@ -1,7 +1,4 @@
-
-thick:=0.7u;
-thin:=1;
-xthick:=1;
-soften:=0;
+thin:=1; % No thick - thin variation.
+xthick:=1; % No extra thikcness at terminals
+soften:=0; % No need to soften as terminals are round
 terminalround:=1;
-

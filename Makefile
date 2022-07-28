@@ -83,9 +83,10 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 	@fonttools ttLib.woff2 compress -q -o  $@ $<
 
 vf: variablefont
+
 variablefont:
-	fontmake -o variable --output-dir $(FONTSDIR)/variable-ttf -m $(FAMILY).designspace
-	fontmake -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2 -m $(FAMILY).designspace
+	fontmake -m $(FAMILY).designspace -o variable --output-dir $(FONTSDIR)/variable-ttf
+	fontmake -m $(FAMILY).designspace -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2
 
 variableinstances:
 	fontmake -i --output-dir $(FONTSDIR)/instances -m $(FAMILY).designspace
