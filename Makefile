@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 PY=python3
-FAMILY=$(shell $(PY) tools/read_config.py name)
+FAMILY=Nupuram
 STYLES=$(shell $(PY) tools/read_config.py styles)
 SOURCEDIR=sources
 FONTSDIR=fonts
@@ -12,7 +12,7 @@ OTFDIR=${FONTSDIR}/otf
 WEBFONTSDIR=${FONTSDIR}/webfonts
 UFODIR=${FONTSDIR}/ufo
 
-UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo)
+UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) $(FONTSDIR)/ufo/$(FAMILY)-Shadow-Color.ufo $(FONTSDIR)/ufo/$(FAMILY)-Arrows-Color.ufo
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
@@ -42,30 +42,60 @@ $(UFODIR)/$(FAMILY)-%.ufo:
 	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
 
+$(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Regular.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
+	@echo "  BUILD UFO   $(@F)"
+	$(PY) tools/build_color_v0.py $@
+	@ufonormalizer -q -m $@
+
+$(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$(FAMILY)-Regular.ufo
+	@echo "  BUILD UFO   $(@F)"
+	$(PY) tools/build_color_v0.py $@
+	@ufonormalizer -q -m $@
+
 ufo: glyphs $(UFO)
-ttf: $(TTF) # $(TTFDIR)/$(FAMILY)-Color-v1.ttf
-otf: $(OTF) # $(OTFDIR)/$(FAMILY)-Color-v1.otf
-webfonts: $(WOFF2) # $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2
+ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
+otf: $(OTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf  $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
+webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
 
-${TTFDIR}/$(FAMILY)-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Color.ttf
+${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color.ttf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Color.otf
+$(OTFDIR)/$(FAMILY)-Shadow-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Shadow-Color.otf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Color.woff2
+$(OTFDIR)/$(FAMILY)-Shadow-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color.woff2
 	@cp $< $@
 
-${TTFDIR}/$(FAMILY)-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Color-v0.ttf
+${TTFDIR}/$(FAMILY)-Shadow-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Color-v0.otf
+$(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Shadow-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
+$(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Shadow-Color-v1.ttf
 	@echo " BUILD  WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -o  $@ $<
+	@fonttools ttLib.woff2 compress -q -o  $@ $<
+
+${TTFDIR}/$(FAMILY)-Arrows-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Arrows-Color.ttf
+	@cp $< $@
+
+$(OTFDIR)/$(FAMILY)-Arrows-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Arrows-Color.otf
+	@cp $< $@
+
+$(OTFDIR)/$(FAMILY)-Arrows-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color.woff2
+	@cp $< $@
+
+${TTFDIR}/$(FAMILY)-Arrows-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Arrows-Color-v0.ttf
+	$(PY) tools/build_color_v1.py $< $@
+
+$(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Arrows-Color-v0.otf
+	$(PY) tools/build_color_v1.py $< $@
+
+$(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Arrows-Color-v1.ttf
+	@echo " BUILD  WEBFONT $(@F)"
+	@mkdir -p ${WEBFONTSDIR}
+	@fonttools ttLib.woff2 compress -q -o  $@ $<
 
 $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
 	@echo "  BUILD  OTF  $(@F)"

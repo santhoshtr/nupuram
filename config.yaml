@@ -23,8 +23,8 @@ styles: [
   "Sans",
   "Outline",
   "Shadow",
-  # "Color",
-  "Kids"
+  "Arrows",
+  "Dotted"
 ]
 version: 1.0
 source: https://gitlab.com/smc/fonts/nupuram
@@ -124,4 +124,60 @@ glyphs:
   calts:
     malayalam:
       - ['ന', "ി", 'wrap' ]
-
+colorfonts:
+  fonts/ufo/Nupuram-Shadow-Color.ufo:
+    layers:
+      "public.default":
+        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "order": 1  # Foreground layer
+      "shadow":
+        "source": "fonts/ufo/Nupuram-Shadow.ufo"
+        "order": 0  # background layer
+    pallettes:
+      - ["#E65100", "#FFCC80"] # Orange
+      - ["#212121", "#EEEEEE"] # Gray
+      - ["#263238", "#B0BEC5"] # Blue Gray
+      - ["#F57F17", "#FFF59D"] # Yellow
+      - ["#1B5E20", "#A5D6A7"] # Green
+      - ["#01579B", "#81D4FA"] # Light Blue
+      - ["#0D47A1", "#90CAF9"] # Blue
+      - ["#B71C1C", "#EF9A9A"] # Red
+      - ["#4A148C", "#CE93D8"] # Purple
+      - ["#004D40", "#80CBC4"] # Teal
+      - ["#3E2723", "#BCAAA4"] # Brown
+      - ["#880E4F", "#F48FB1"] # Pink
+      - ["#311B92", "#B39DDB"] # Deep Purple
+      - ["#1A237E", "#9FA8DA"] # Indigo
+      - ["#006064", "#80DEEA"] # Cyan
+      - ["#33691E", "#C5E1A5"] # Light Green
+      - ["#827717", "#E6EE9C"] # Lime
+      - ["#FF6F00", "#FFE082"] # Amber
+      - ["#BF360C", "#FFAB91"] # Deep Orange
+  fonts/ufo/Nupuram-Arrows-Color.ufo:
+    layers:
+      "public.default":
+        "source": "fonts/ufo/Nupuram-Arrows.ufo"
+        "order": 1  # Foreground layer
+      "shadow":
+        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "order": 0  # background layer
+    pallettes:
+      - ["#E65100", "#FFCC80"] # Orange
+      - ["#212121", "#EEEEEE"] # Gray
+      - ["#263238", "#B0BEC5"] # Blue Gray
+      - ["#F57F17", "#FFF59D"] # Yellow
+      - ["#1B5E20", "#A5D6A7"] # Green
+      - ["#01579B", "#81D4FA"] # Light Blue
+      - ["#0D47A1", "#90CAF9"] # Blue
+      - ["#B71C1C", "#EF9A9A"] # Red
+      - ["#4A148C", "#CE93D8"] # Purple
+      - ["#004D40", "#80CBC4"] # Teal
+      - ["#3E2723", "#BCAAA4"] # Brown
+      - ["#880E4F", "#F48FB1"] # Pink
+      - ["#311B92", "#B39DDB"] # Deep Purple
+      - ["#1A237E", "#9FA8DA"] # Indigo
+      - ["#006064", "#80DEEA"] # Cyan
+      - ["#33691E", "#C5E1A5"] # Light Green
+      - ["#827717", "#E6EE9C"] # Lime
+      - ["#FF6F00", "#FFE082"] # Amber
+      - ["#BF360C", "#FFAB91"] # Deep Orange

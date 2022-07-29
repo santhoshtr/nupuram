@@ -37,4 +37,5 @@ showgrids := 0;
 showcoords := 0;
 show_arrows := 0; % Set to 1 to draw arrow showing drawing path
 show_paths := 0;
+show_dots := 0;
 

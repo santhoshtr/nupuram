@@ -43,6 +43,32 @@ vardef shadowpath(expr p, d, offset) =
     fill envelope shadowpen of p withcolor black;
 enddef;
 
+primarydef pct along pat = (arctime (pct * (arclength pat)) of pat) of pat enddef ;
+primarydef len on pat = (arctime len of pat) of pat enddef ;
+
+vardef dottedpath(expr p) =
+    l:=(arclength p)/100;
+    % Division by 100 to avoid value of l going beyong "infinity(4095)
+    for j = 0 step u/300 until l :
+        fill fullcircle scaled (u/5) shifted (point j*100 on p) withcolor glyphcolor;
+    endfor;
+enddef;
+
+vardef arrowpath(expr p, i) =
+    pen arrowpen; arrowpen = makepen(fix_nib(u/10,u/10,0));
+    % Override internal arrow head size
+    ahlength := 30;
+    for j=0 upto length(p):
+        drawarrow rightarrow (p, point j of p, arclength subpath(j,j+1) of p*3/4)  withpen arrowpen withcolor arrowcolor;
+    endfor;
+    if i=0:
+        fill fullcircle scaled (u/5) shifted (point 0 of p) withcolor arrowcolor;
+    fi;
+    if i=length(p):
+        fill fullcircle scaled (u/5) shifted (point infinity of p) withcolor arrowcolor;
+    fi;
+enddef;
+
 vardef pointarrow (expr pat, loc, len, off) =
     save l, r, s, t ; path l, r ; numeric s ; pair t ;
     t := if pair loc : loc else : point loc along pat fi ;
@@ -143,17 +169,10 @@ def endglyph =
                 draw paths[i] withpen nib withcolor 0.5white;
             fi;
             if show_arrows = 1:
-                pen arrowpen; arrowpen = makepen(fix_nib(u/30,u/30,0));
-                ahlength := 30;
-                for j=0 upto length(paths[i]):
-                    drawarrow rightarrow (paths[i], point j of paths[i], arclength subpath(j,j+1) of paths[i]*3/4)  withpen arrowpen withcolor arrowcolor;
-                endfor;
-                if i=0:
-                    fill fullcircle scaled (u/5) shifted (point 0 of paths[i]) withcolor arrowcolor;
-                fi;
-                if i=length(paths[i]):
-                    fill fullcircle scaled (u/5) shifted (point infinity of paths[i]) withcolor arrowcolor;
-                fi;
+                arrowpath(paths[i],i);
+            fi;
+            if show_dots = 1:
+                dottedpath(paths[i]);
             fi;
             if showcoords = 1:
                 show_coordinates(paths[i]);

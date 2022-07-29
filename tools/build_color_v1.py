@@ -64,17 +64,6 @@ for glyph_name, layers in colr0.ColorLayers.items():
     if len(v1_layers) == 1:
         colrv1_map[glyph_name] = v1_layers[0]
 
-    # Special palette with index 65535(0xFFFF) to follow css color
-    # v1_layers.append({
-    #     "Format": ot.PaintFormat.PaintGlyph,
-    #     "Paint":  {
-    #         "Format": ot.PaintFormat.PaintSolid,
-    #         "PaletteIndex": 0xFFFF,
-    #         "Alpha": 1,
-    #     },
-    #     "Glyph": glyph_name,
-    # })
-
 
 # pprint.PrettyPrinter(indent=2).pprint(colrv1_map)
 
