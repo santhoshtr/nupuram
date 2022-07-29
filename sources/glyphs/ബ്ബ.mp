@@ -41,18 +41,17 @@ pen_stroke(
 
 
 % Shoe
-z20 = z17;
-z21 = (x20 + mw/6, y20-m/2);
-z22 = (x20, y21 - m/3 );
-z23 = (x22 - mw/2, y22);
-z24 = (x23 + mw/4, y14);
-paths[3] = z20--z21--z22{left}..{left}z23{dir 30}.. z24;
+z20 = (x16 + thick/2, y16);
+z21 = (x20, y20 - m/3 );
+z22 = (x15, y21);
+z23 = (x22 + mw/4, y14);
+paths[3] = z20--z21--z22{dir 30}.. z23;
 pen_stroke(
     nib(thicknib rotated 0 )(  3)
     nib(thinnib rotated 0 )(1,2)
     nib(terminalnib rotated 120)(3)
-    nib(terminalnib rotated 115)(0)
-    nib(thinterminalnib rotated 170)(infinity)
+    nib(terminalnib rotated 0)(0)
+    nib(thinterminalnib rotated 0)(infinity)
 )(paths[3])(strokes[3]);
 
 endglyph;

@@ -149,20 +149,7 @@ function listen() {
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'NupuramBold') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('bold');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
-        }
-        if (selected === 'NupuramThin') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('thin');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
-        }
+
         if (selected === 'NupuramDisplay') {
             contentArea.classList.remove('color');
             contentArea.classList.add('display');
@@ -184,13 +171,7 @@ function listen() {
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'NupuramSlanted') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('slanted');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
-        }
+
         if (selected === 'NupuramSans') {
             contentArea.classList.remove('color');
             contentArea.classList.add('sans');
@@ -198,13 +179,7 @@ function listen() {
             document.getElementById('outlined').disabled = false
             document.getElementById('palette').style.display = "none"
         }
-        if (selected === 'NupuramCondensed') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('condensed');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
-        }
+
     });
 
 
