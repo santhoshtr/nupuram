@@ -144,6 +144,9 @@ def endglyph =
     for i=0 upto 10:
         if varstroke = 1:
             if known strokes[i]:
+                if (thin = 1) and (terminalround = 1):
+                    pen_stroke()(paths[i])(strokes[i]);
+                fi;
                 if (soften > 0):
                     if known strokes[i]b:
                         softpath := soften_nodes(strokes[i], cornerradius)(
