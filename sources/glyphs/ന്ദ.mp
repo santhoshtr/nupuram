@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 
-z0=(mw/4+.5thick, 0);
-z1=(x0 - mw/4, y0 + m/2);
-z2=(x1 + mw/4, y1 + m/2);
-z3=(x2 + mw/3, y2 - m/2);
-z4=(x3, y3 - m/3); % bottom of piller
+z0=(mw/3+.5thick, 0);
+z1=(x0 - mw/3, y0 + m/2);
+z2=(x1 + mw/4, y1 + 0.4m);
+z3=(x2 + mw/3, m/3);
+z4=(x3, y3 - m/4); % bottom of piller
 paths[0] = z0..z1.. z2.. z3---z4 ;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
@@ -15,7 +15,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 z20 = ( x3, y3 );
-z21 = ( x20 + m/3, y20 + m/2);
+z21 = ( x20 + m/3, m);
 z22 = ( x21 + m/3, y21 - m/4);
 z23 = ( x22 - m/3, y22 - m/4);
 paths[1] = z20{up}..z21..z22..{left}z23{left} ;

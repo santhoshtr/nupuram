@@ -19,7 +19,7 @@ z16 = (x15 + mw/2, y15 - 0.5m);
 z17 = (x16 - m/9, y16 - 0.6m);
 
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
-paths[1] := z5{dir 30}..{dir30}z6{dir 30}..z7...{dir 60}z8;
+paths[1] := z5{dir 20}..{dir 20}z6{dir 20}..z7...{dir 70}z8;
 paths[2] = z11{dir -60}..z12...z13..z14 .. z15 ..z16..z17;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )

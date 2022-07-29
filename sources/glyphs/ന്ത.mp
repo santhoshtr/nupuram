@@ -1,18 +1,13 @@
 input glyph;
 beginglyph;
 
-z0=(m/3+.5thick, 0);
-z1=(x0 - m/3, y0 + m/2);
-z2=(x1 + m/3, y1 + m/2);
-z3=(x2 + m/3, y2 - m/2);
-z4=(x3, y3 - m/3); % bottom of piller
-z5=(x3, y3);
-z6=(x5 + m/3, y5 + m/2); % Top of second arch
-z7=(x6 + m/3, y6 - m/2);
-z8=(x7 - m/3, y7 - m/2);
+z0=(mw/3+.5thick, 0);
+z1=(x0 - mw/3, y0 + m/2);
+z2=(x1 + mw/4, y1 +  0.4m);
+z3=(x2 + mw/3, m/3);
+z4=(x3, y3 - m/4); % bottom of piller
 
 paths[0] = z0..z1.. z2.. z3---z4 ;
-
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
@@ -22,13 +17,13 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 z11 = z3;
-z12 = ( x11 + m/2.4, y11 + m/2.5); % top
-z13 = ( x12 + m/3, y12 - m/2);
-z14 = ( x13 - mw/4, y13 - m/3); % bottom middle
+z12 = ( x11 + mw/2.4, m-thick); % top
+z13 = ( x12 + mw/3, y12 - m/2);
+z14 = ( x13 - mw/4, y13 -  0.3m); % bottom middle
 z15 = ( x14 - mw/4, y14 + m/2.5);
-z16 = ( x15 + mw/2, y15 + m/2); % second top
-z17 = ( x16 + m/2.5, y16 - m/2);
-z18 = ( x17 - m/3, y0);
+z16 = ( x15 + mw/2, m ); % second top
+z17 = ( x16 + mw/2.8, y16 - m/2);
+z18 = ( x17 - mw/4, y0);
 
 paths[1] =z11{up}..z12{right}.. z13..z14..z15 ..z16{right}..z17..z18;
 

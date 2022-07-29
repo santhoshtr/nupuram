@@ -1,13 +1,13 @@
 input glyph;
 beginglyph;
-z0=(2u, 0);
-z1=(x0 - m/3, m/2);
+z0=(mw/3+.5thick, 0);
+z1=(x0 - mw/3, m/2);
 z2=(x1 + mw/4, y1 + m/2);
-z3=(x2 + mw/3, y2-m/2);
-z4=(x3, y3-m/3);
+z3=(x2 + mw/3, m/3);
+z4=(x3, y3-m/4);
 % Second arch
 z5 = z3;
-z6 = (x5 + mw/3, y5 + m/3);
+z6 = (x5 + mw/3, y2- thick);
 z7 = (x6 + mw/4, y6 - m/3);
 z8 = (x7 - mw/3, y7 - m/2);
 z15=(x8, 0);

@@ -1,17 +1,17 @@
 input glyph;
 beginglyph;
-z0=(m/3, 0);
-z1=(x0 - m/3, y0 + m/2);
-z2=(x1 + m/3, y1 + m/2);
-z3=(x2 + m/3, y2 - m/2);
-z4=(x3, y3 - m/3); % bottom of piller
+z0=(mw/3+.5thick, 0);
+z1=(x0 - mw/3, y0 + m/2);
+z2=(x1 + mw/4, y1 +  0.4m);
+z3=(x2 + mw/3, m/3);
+z4=(x3, y3 - m/4); % bottom of piller
 z5=(x3, y3);
-z6=(x5 + m/2.5, y5 + m/2); % Top of second arch
-z7=(x6 + m/2.5, y6 - m/2);
+z6=(x5 + mw/2.5, m-thick/2); % Top of second arch
+z7=(x6 + mw/2.5, y6 - m/2);
 z8=(x7 - mw/4, y7 - m/3);
 z9=(x8 - mw/4, y8 + m/3);
-z10=(x9 + m/3, y9 + m/2);
-z11=(x10-m/3, y10 + 0.3m);
+z10=(x9 + mw/4, y9 + m/2);
+z11=(x10 - mw/4, y10 + 0.3m);
 
 % Ra
 z20=(x6, y0 - m/2);
