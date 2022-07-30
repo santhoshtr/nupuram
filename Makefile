@@ -36,7 +36,7 @@ glyphs: $(STYLES)
 $(STYLES):
 	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)
 
-$(UFODIR)/$(FAMILY)-%.ufo: $(SOURCEDIR)/svgs/%
+$(UFODIR)/$(FAMILY)-%.ufo: %
 	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
@@ -117,6 +117,10 @@ vf: variablefont
 variablefont: ufo
 	fontmake -m $(FAMILY).designspace -o variable --output-dir $(FONTSDIR)/variable-ttf
 	fontmake -m $(FAMILY).designspace -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2
+
+variablehandwritingfont: $(UFODIR)/$(FAMILY)-Handwriting-*.ufo
+	fontmake -m $(FAMILY)-Handwriting.designspace -o variable --output-dir $(FONTSDIR)/variable-ttf
+	fontmake -m $(FAMILY)-Handwriting.designspace -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2
 
 variableinstances:
 	fontmake -i --output-dir $(FONTSDIR)/instances -m $(FAMILY).designspace

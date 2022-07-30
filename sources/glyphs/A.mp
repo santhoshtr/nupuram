@@ -17,7 +17,7 @@ z8 = (x0 - thick/2, y7 + 0.15X ) ;
 
 
 paths[0] = z0..z1..z2;
-paths[1] = z3{dir -80}..z4..z5;
+paths[1] = z3..z4..z5;
 paths[2]:= z6{dir 120}..z7..{left}z8;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2 )

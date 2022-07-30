@@ -18,15 +18,15 @@ pen_stroke(
     nib(terminalnib rotated 60)(infinity)
 )(paths[0])(strokes[0]);
 
-z10=(m/3,  0);
-z11=(x10 + mw/4, y10 - 0.25m);
-z12=(x11 - mw/4, y11 - 0.25m);
-z13=(x12 - mw/4, y12 + 0.25m);
-z14=(x13 + mw/4, y13 + 0.25m);
+z10=(mw/3,  0);
+z11=(x10 + 0.2mw, y10 - 0.25m);
+z12=(x11 - 0.2mw, y11 - 0.25m);
+z13=(x12 - 0.2mw, y12 + 0.25m);
+z14=(x13 + 0.2mw, y13 + 0.25m);
 z15=(x14 + 0.3mw, y14 - 0.25m);
 z16=(x15 + 0.3mw, y15 - 0.25m);
-z17=(x16 + mw/4, y16 + 0.25m);
-z18=(x17 - mw/4, y17 + 0.25m);
+z17=(x16 + 0.2mw, y16 + 0.25m);
+z18=(x17 - 0.2mw, y17 + 0.25m);
 paths[1] = z10...z11{down}...z12{left}..{up}z13..z14..z15..z16..z17..z18 ;
 pen_stroke(
     nib(thicknib rotated 0 )(2,4 )

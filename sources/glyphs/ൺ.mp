@@ -22,7 +22,7 @@ z20=(x19 + mw/4, y19 + m/2);
 z21=(x20 - mw/3, y20 + m/3);
 paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13---z14;
-paths[2] = z15{up}..z16..z17...z18..z19..z20..z21;
+paths[2] = z15{up}..z16..z17...z18..z19..z20..{left}z21;
 pen_stroke(
     nib(thicknib rotated 0 )(1,3, 5 )
     nib(thinnib rotated 0 )(0, 2, 4, 6)
