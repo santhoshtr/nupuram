@@ -16,6 +16,9 @@ UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) $(FONTSDIR)/ufo/$(FAMILY)-Shadow
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
+VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf ${TTFDIR}/$(FAMILY)-Handwriting-VF.ttf
+VARTTF=$(OTFDIR)/$(FAMILY)-VF.ttf $(OTFDIR)/$(FAMILY)-Handwriting-VF.ttf
+VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 $(FONTSDIR)/webfonts/$(FAMILY)-Handwriting-VF.woff2
 
 .PHONY: variants $(STYLES) ufo otf ttf webfonts clean
 
@@ -53,9 +56,9 @@ $(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$
 	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
-ttf: $(TTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
-otf: $(OTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf  $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
-webfonts: $(WOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
+ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
+otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf  $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
+webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
 
 ${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color.ttf
 	@cp $< $@
@@ -112,15 +115,11 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 	@mkdir -p ${WEBFONTSDIR}
 	@fonttools ttLib.woff2 compress -q -o  $@ $<
 
-vf: variablefont
+${TTFDIR}/%-VF.ttf: %.designspace
+	fontmake -m $*.designspace -o variable --output-dir ${TTFDIR}
 
-variablefont: ufo
-	fontmake -m $(FAMILY).designspace -o variable --output-dir $(FONTSDIR)/variable-ttf
-	fontmake -m $(FAMILY).designspace -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2
-
-variablehandwritingfont: $(UFODIR)/$(FAMILY)-Handwriting-*.ufo
-	fontmake -m $(FAMILY)-Handwriting.designspace -o variable --output-dir $(FONTSDIR)/variable-ttf
-	fontmake -m $(FAMILY)-Handwriting.designspace -o variable-cff2 --output-dir $(FONTSDIR)/variable-cff2
+${OTFDIR}/%-VF.ttf: %.designspace
+	fontmake -m $*.designspace -o variable-cff2 --output-dir ${OTFDIR}
 
 variableinstances:
 	fontmake -i --output-dir $(FONTSDIR)/instances -m $(FAMILY).designspace
