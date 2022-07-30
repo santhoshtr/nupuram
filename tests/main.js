@@ -10,6 +10,8 @@ function shuffle(a) {
     return a;
 }
 
+let root = document.documentElement;
+
 const pallettes = {
     "0": ["#E65100", "#FFCC80", "#FF9800"], // Orange
     "1": ["#212121", "#EEEEEE", "#9E9E9E"], // Gray
@@ -32,7 +34,7 @@ const pallettes = {
     "18": ["#BF360C", "#FFAB91", "#FF5722"], // Deep Orange
 }
 
-let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF", outlineColor = "#FF9800FF";
+let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF";
 
 const otFeatures = {
     'kern': true,
@@ -124,62 +126,35 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
-        contentArea.classList.remove("color", "display", "outline", "shadow", "bold", "script", "bold", "thin", "sans", "condensed","calligraphy","slanted");
-        if (selected === 'NupuramColor') {
-            contentArea.classList.add('color');
+        contentArea.classList.remove("shadowcolor", "arrowscolor", "handwritingscript", "sans", "calligraphy","dots");
+        document.getElementById('palette').style.display = "none"
+        document.getElementById('font-fontColor').disabled = false
+        if (selected === 'NupuramShadowColor') {
+            contentArea.classList.add('shadowcolor');
             document.getElementById('font-fontColor').disabled = true
-            document.getElementById('outlined').disabled = true
             document.getElementById('palette').style.display = "grid"
         }
-        if (selected === 'NupuramOutline') {
-            contentArea.classList.add('outline');
-            document.getElementById('outlined').disabled = true
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('palette').style.display = "none"
-        }
-        if (selected === 'NupuramShadow') {
-            contentArea.classList.add('shadow');
-            document.getElementById('outlined').disabled = true
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('palette').style.display = "none"
+        if (selected === 'NupuramArrowsColor') {
+            contentArea.classList.add('arrowscolor');
+            document.getElementById('font-fontColor').disabled = true
+            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'Nupuram') {
-            contentArea.classList.remove('color');
             document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
         }
 
-        if (selected === 'NupuramDisplay') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('display');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
+        if (selected === 'NupuramDots') {
+            contentArea.classList.add('dots');
         }
-        if (selected === 'NupuramScript') {
-            contentArea.classList.remove('color');
-            contentArea.classList.add('script');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
+        if (selected === 'NupuramHandwriting') {
+            contentArea.classList.add('handwriting');
         }
         if (selected === 'NupuramCalligraphy') {
-            contentArea.classList.remove('color');
             contentArea.classList.add('calligraphy');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
         }
-
         if (selected === 'NupuramSans') {
-            contentArea.classList.remove('color');
             contentArea.classList.add('sans');
-            document.getElementById('font-fontColor').disabled = false
-            document.getElementById('outlined').disabled = false
-            document.getElementById('palette').style.display = "none"
         }
-
     });
 
 
@@ -194,31 +169,6 @@ function listen() {
             currentTestIndex = testContents.length;
         }
         contentArea.innerHTML = testContents[--currentTestIndex];
-    });
-
-    document.getElementById('outlined').addEventListener('change', function () {
-        const outlined = this.checked;
-        if (outlined) {
-            contentArea.classList.add('outline-text');
-        } else {
-            contentArea.classList.remove('outline-text');
-        }
-    });
-    document.getElementById('squint').addEventListener('change', function () {
-        const squint = this.checked;
-        if (squint) {
-            contentArea.classList.add('blurry');
-        } else {
-            contentArea.classList.remove('blurry');
-        }
-    });
-    document.getElementById('grid').addEventListener('change', function () {
-        const squint = this.checked;
-        if (squint) {
-            contentArea.classList.add('grid');
-        } else {
-            contentArea.classList.remove('grid');
-        }
     });
     document.querySelectorAll('.controls.align > li').forEach((element) => {
         element.addEventListener('click', () => {
@@ -237,6 +187,57 @@ function listen() {
             contentArea.style.fontSize = fontSize;
         });
     });
+
+
+    document.querySelectorAll("[data-id='fontWeight']").forEach((element) => {
+        element.addEventListener('input', function () {
+            const fontWeight = element.value;
+            if (element.type == 'range') {
+                document.querySelector('#font-fontWeight').value = fontWeight;
+            } else {
+                document.querySelector('#font-weight > input[type="range"]').value = fontWeight;
+            }
+            root.style.setProperty('--weight', fontWeight);
+        });
+    });
+
+    document.querySelectorAll("[data-id='fontWidth']").forEach((element) => {
+        element.addEventListener('input', function () {
+            const fontWidth = element.value;
+            if (element.type == 'range') {
+                document.querySelector('#font-fontWidth').value = fontWidth;
+            } else {
+                document.querySelector('#font-width > input[type="range"]').value = fontWidth;
+            }
+            root.style.setProperty('--width', fontWidth);
+        });
+    });
+
+    document.querySelectorAll("[data-id='fontSlant']").forEach((element) => {
+        element.addEventListener('input', function () {
+            const fontSlant = element.value;
+            if (element.type == 'range') {
+                document.querySelector('#font-fontSlant').value = fontSlant;
+            } else {
+                document.querySelector('#font-slant > input[type="range"]').value = fontSlant;
+            }
+            root.style.setProperty('--slant', fontSlant);
+        });
+    });
+
+    document.querySelectorAll("[data-id='fontOpsz']").forEach((element) => {
+        element.addEventListener('input', function () {
+            const fontOpsz = element.value;
+            if (element.type == 'range') {
+                document.querySelector('#font-fontOpsz').value = fontOpsz;
+            } else {
+                document.querySelector('#font-opsz > input[type="range"]').value = fontOpsz;
+            }
+            root.style.setProperty('--opsz', fontOpsz);
+        });
+    });
+
+
     document.querySelectorAll("[data-id='lineHeight']").forEach((element) => {
         element.addEventListener('input', () => {
             const lineHeight = element.value;
@@ -338,35 +339,12 @@ function listen() {
     })
 
 
-    const outlineColorPickr = new Pickr({
-        el: '#font-fontOutlineColor',
-        theme: 'nano',
-        useAsButton: true,
-        default: outlineColor,
-        defaultRepresentation: 'HEX',
-        components: {
-            preview: true,
-            opacity: true,
-            hue: true,
-
-            // Input / output Options
-            interaction: {
-                hex: true,
-                input: true,
-            }
-        }
-    }).on('change', (color, source, instance) => {
-        setCustomColors(baseColor, shadowColor, color.toHEXA())
-        document.getElementById('font-fontOutlineColor').style.backgroundColor = color.toHEXA()
-    })
-
     document.getElementById('font-fontColorPalette').addEventListener('input', function () {
         const palette = this.value;
         [shadowColor, baseColor, outlineColor] = pallettes[palette+""]
         setCustomColors(baseColor, shadowColor, outlineColor, palette)
         shadowColorPickr.setColor(shadowColor)
         baseColorPickr.setColor(baseColor)
-        outlineColorPickr.setColor(outlineColor)
     })
 
     const baseColorPickr = new Pickr({
@@ -436,11 +414,10 @@ function listen() {
     setCustomColors()
 }
 
-function setCustomColors(base = baseColor, shadow = shadowColor, outline = outlineColor, palette=0) {
+function setCustomColors(base = baseColor, shadow = shadowColor, palette=0) {
     baseColor = base;
     shadowColor = shadow
-    outlineColor = outline
-    const colorFontName = "NupuramColor"
+    const colorFontName = "NupuramShadowColor"
     const sheetId = "custompalette"
     var sheet = document.getElementById(sheetId)
     if (!sheet) {
@@ -449,7 +426,7 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
         document.body.appendChild(sheet);
     }
 
-    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: ${palette}; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
+    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: ${palette}; override-colors: 0 ${shadowColor}, 1 ${baseColor};}`;
 }
 
 

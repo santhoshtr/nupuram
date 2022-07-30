@@ -23,13 +23,12 @@
 						<label for="font-name">Font</label>
 						<select class="controls fontname" id="test-font">
 							<option value="Nupuram">Nupuram</option>
-							<option value="NupuramScript">Nupuram Handwriting</option>
-							<option value="NupuramDisplay">Nupuram Display</option>
+							<option value="NupuramHandwriting">Nupuram Handwriting</option>
 							<option value="NupuramCalligraphy">Nupuram Calligraphy</option>
 							<option value="NupuramSans">Nupuram Sans</option>
-							<option value="NupuramShadow">Nupuram Shadow Color</option>
-							<option value="NupuramShadow">Nupuram Arrow Color</option>
-							<option value="NupuramColor">Nupuram Dotted</option>
+							<option value="NupuramShadowColor">Nupuram Shadow Color</option>
+							<option value="NupuramArrowsColor">Nupuram Arrow Color</option>
+							<option value="NupuramDots">Nupuram Dots</option>
 						</select>
 					</div>
 				</section>
@@ -46,10 +45,6 @@
 						<label for="font-fontBaseColor">Base
 						<input type="button" class="font-color " data-id="fontBaseColor" id="font-fontBaseColor"></label>
 					</div>
-					<div class="primitive-input">
-						<label for="font-fontOutlineColor">Outline
-						<input type="button" class="font-color" data-id="fontOutlineColor" id="font-fontOutlineColor"></label>
-					</div>
 				</section>
 				<section class="rows" style="grid-template-columns: 3fr 3fr;">
 
@@ -65,12 +60,45 @@
 						<label for="font-fontSize">Font Size</label>
 						<div id="font-size" class="slider">
 							<input type="range" data-id="fontSize" value="90" min="8" step="1" max="512">
-							<div class="progress" style="width: 21.4285714286%"></div>
 						</div>
 						<input type="number" class="font-size val-input" data-id="fontSize" value="90" min="8" step="1"
 							max="120" id="font-fontSize">
 					</div>
+					<div class="primitive-input">
+						<label for="font-fontSize">Weight</label>
+						<div id="font-weight" class="slider">
+							<input type="range" data-id="fontWeight" value="400" min="1" step="1" max="1000">
 
+						</div>
+						<input type="number" class="font-weight val-input" data-id="fontWeight" value="400" min="1" step="1"
+							max="1000" id="font-fontWeight">
+					</div>
+					<div class="primitive-input">
+						<label for="font-fontWidth">Width</label>
+						<div id="font-width" class="slider">
+							<input type="range" data-id="fontWidth" value="100" min="80" step="1" max="120">
+
+						</div>
+						<input type="number" class="font-width val-input" data-id="fontWidth" value="100" min="1" step="1"
+							max="120" id="font-fontWidth">
+					</div>
+					<div class="primitive-input">
+						<label for="font-fontSlant">Slant</label>
+						<div id="font-slant" class="slider">
+							<input type="range" data-id="fontSlant" value="0" min="0" step="1" max="20">
+
+						</div>
+						<input type="number" class="font-slant val-input" data-id="fontSlant" value="0" min="0" step="1"
+							max="20" id="font-fontSlant">
+					</div>
+					<div class="primitive-input">
+						<label for="font-fontOpsz">Optical Size</label>
+						<div id="font-opsz" class="slider">
+							<input type="range" data-id="fontOpsz" value="16" min="8" step="1" max="144">
+						</div>
+						<input type="number" class="font-opsz val-input" data-id="fontOpsz" value="16" min="0" step="1"
+							max="144" id="font-fontOpsz">
+					</div>
 					<div class="primitive-input">
 						<label for="font-lineHeight">Line Height</label>
 						<div id="line-height" class="slider">
@@ -149,16 +177,6 @@
 					</div>
 
 				</section>
-				<section class="rows" style="grid-template-columns: 3fr 3fr 3fr;">
-					<label for="outlined"><input type="checkbox" id="outlined" name="fntstyle" value="outlined">
-						⋒ Outline</label>
-
-					<label for="squint"><input type="checkbox" id="squint" name="squint" value="squint">
-						😉 Squint</label>
-					<label for="grid"><input type="checkbox" id="grid" name="grid" value="grid">
-						▦ grid</label>
-				</section>
-
 				<h5>Opentype features</h5>
 				<section class="rows" style="grid-template-columns: 3fr auto;">
 					<div>

@@ -58,7 +58,7 @@ $(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$
 ufo: glyphs $(UFO)
 ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
 otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf  $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
-webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
+webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2   $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
 
 ${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color.ttf
 	@cp $< $@

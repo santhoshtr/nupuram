@@ -1,77 +1,18 @@
 @font-face {
   font-family: "Nupuram";
-  src: url(../fonts/webfonts/Nupuram-Regular.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Regular.otf?v=1.100) format("opentype");
+  src: url(../fonts/webfonts/Nupuram-VF.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-VF.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "NupuramOutline";
-  src: url(../fonts/webfonts/Nupuram-Outline.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Outline.otf?v=1.100) format("opentype");
+  font-family: "NupuramHandwriting";
+  src: url(../fonts/webfonts/Nupuram-Handwriting-VF.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Handwriting-VF.otf?v=1.100) format("opentype");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
-
-@font-face {
-  font-family: "NupuramBold";
-  src: url(../fonts/webfonts/Nupuram-Bold.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Bold.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "NupuramThin";
-  src: url(../fonts/webfonts/Nupuram-Thin.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Thin.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-
-@font-face {
-  font-family: "NupuramDisplay";
-  src: url(../fonts/webfonts/Nupuram-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Display.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "NupuramSans";
-  src: url(../fonts/webfonts/Nupuram-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Sans.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "NupuramScript";
-  src: url(../fonts/webfonts/Nupuram-Script.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Script.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-@font-face {
-  font-family: "NupuramSlanted";
-  src: url(../fonts/webfonts/Nupuram-Slanted.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Slanted.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
-
-@font-face {
-  font-family: "NupuramCondensed";
-  src: url(../fonts/webfonts/Nupuram-Condensed.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Condensed.otf?v=1.100) format("opentype");
-  font-weight: 400;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
-    U+0D01-0D7F, U+200C- U+200D, U+25CC;
-}
-
 
 @font-face {
   font-family: "NupuramCalligraphy";
@@ -82,19 +23,44 @@
 }
 
 @font-face {
-  font-family: "NupuramShadow";
-  src: url(../fonts/webfonts/Nupuram-Shadow.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Shadow.otf?v=1.100) format("opentype");
+  font-family: "NupuramShadowColor";
+  src: url(../fonts/webfonts/Nupuram-Shadow-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Shadow-Color-v0.woff2?v=1.100) format("woff2");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+@font-face {
+  font-family: "NupuramArrowsColor";
+  src: url(../fonts/webfonts/Nupuram-Arrows-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Arrows-Color-v0.woff2?v=1.100) format("woff2");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
 }
 
 @font-face {
-  font-family: "NupuramColor";
-  src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Color-v0.woff2?v=1.100) format("woff2");
+  font-family: "NupuramDots";
+  src: url(../fonts/webfonts/Nupuram-Dots.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Dots.woff2?v=1.100) format("woff2");
   font-weight: 400;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
     U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+
+
+
+@font-face {
+  font-family: "NupuramSans";
+  src: url(../fonts/webfonts/Nupuram-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Sans.otf?v=1.100) format("opentype");
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC,
+    U+0D01-0D7F, U+200C- U+200D, U+25CC;
+}
+:root {
+  --weight: 400;
+  --slant: 0;
+  --opsz: 16;
+  --width: 100;
 }
 
 body {
@@ -120,43 +86,32 @@ main {
   line-height: 1.2;
   padding: 0.5em;
   outline: none;
+  font-variation-settings: 'wght' var(--weight), 'opsz' var(--opsz), 'wdth' var(--width), 'slnt' var(--slant);
 }
 
-.content.color {
-  font-family: "NupuramColor", sans;
+.content.shadowcolor {
+  font-family: "NupuramShadowColor", sans;
   font-palette: --custom;
 }
 
-.content.shadow {
-  font-family: "NupuramShadow", sans;
+.content.arrowscolor {
+  font-family: "NupuramArrowsColor", sans;
+  font-palette: --custom;
 }
 
-.content.outline {
-  font-family: "NupuramOutline", sans;
-}
-.content.display {
-  font-family: "NupuramDisplay", sans;
-}
-.content.bold {
-  font-family: "NupuramBold", sans;
-}
-.content.thin {
-  font-family: "NupuramThin", sans;
-}
-.content.script {
-  font-family: "NupuramScript", sans;
+.content.handwriting {
+  font-family: "NupuramHandwriting", sans;
 }
 .content.sans {
   font-family: "NupuramSans", sans;
 }
-.content.condensed {
-  font-family: "NupuramCondensed", sans;
-}
+
 .content.calligraphy {
   font-family: "NupuramCalligraphy", sans;
 }
-.content.slanted{
-  font-family: "NupuramSlanted", sans;
+
+.content.dots {
+  font-family: "NupuramDots", sans;
 }
 
 .tools {
