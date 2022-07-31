@@ -8,6 +8,8 @@ input ./pens
 
 pen nib; nib := finenib; % roundedwidenib
 
+phi=1.618; % Golden ratio
+
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick, thick, 0) xyscaled(thin, thin) enddef;
 vardef terminalnib =

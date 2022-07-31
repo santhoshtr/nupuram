@@ -10,7 +10,7 @@ z6=(x5 - mw/4, y5 - 0.3m);
 z7=(x6 - mw/4, y6 + 0.3m);
 z8=(x7 + mw/3  + thick/2, y7 + 0.4m);
 
-paths[0] = z0..z1 ..z2 ..z3..z4..z5 ..z6..z7..z8 ;
+paths[0] = z0..z1 ..z2 ..z3..z4..z5 ..z6..z7..{right}z8 ;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6, 8 )

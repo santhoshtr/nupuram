@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
-path paths[], strokes;
-z0=(1u, X);
-z1=(x0, 0.5X);
+
+z0=(thick/2, X);
+z1=(x0,  y0 - (phi-1)*X);
 z2=(x1, 0);
 
 paths[0] = z0{dir -80}..z1..  {dir -80}z2 ;
