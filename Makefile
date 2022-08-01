@@ -17,7 +17,7 @@ OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
 VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf ${TTFDIR}/$(FAMILY)-Handwriting-VF.ttf
-VARTTF=$(OTFDIR)/$(FAMILY)-VF.ttf $(OTFDIR)/$(FAMILY)-Handwriting-VF.ttf
+VAROTF=$(OTFDIR)/$(FAMILY)-VF.otf $(OTFDIR)/$(FAMILY)-Handwriting-VF.otf
 VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 $(FONTSDIR)/webfonts/$(FAMILY)-Handwriting-VF.woff2
 
 .PHONY: variants $(STYLES) ufo otf ttf webfonts clean
@@ -118,7 +118,7 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 ${TTFDIR}/%-VF.ttf: %.designspace
 	fontmake -m $*.designspace -o variable --output-dir ${TTFDIR}
 
-${OTFDIR}/%-VF.ttf: %.designspace
+${OTFDIR}/%-VF.otf: %.designspace
 	fontmake -m $*.designspace -o variable-cff2 --output-dir ${OTFDIR}
 
 variableinstances:
