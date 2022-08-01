@@ -9,13 +9,14 @@ z4 = (x2 + (phi-1)*sw, y0+thick);
 
 paths[1] = z0{dir 90} ..z1.. z2 ..z3..{dir 80}z4;
 
-z5 = (thick/2   , X );
-z6 = (x5   , y2);
-z7 = (x6 , 0);
+z5 = (x0 + thick/4, X );
+z6 = (x0, y2);
+z7 = (x0, 0);
+
 
 paths[0] = z5{dir -80}  ..z6 ..  {dir -80}z7;
-
-paths[1] := paths[1] xyscaled(-1, 1) shifted(s- thick/2, 0);
+paths[0] := paths[0] xyscaled(-1, 1) shifted(s-thick, 0);
+paths[1] := paths[1] xyscaled(-1, 1) shifted(s-thick, 0);
 pen_stroke(
     nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated 0 )(0 )

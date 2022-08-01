@@ -1,7 +1,7 @@
 em :=           1000;         % Height of characters - Em square
 u :=            em/10;        % Unit width. Em square divisions. This is the base for all strokes
 
-xheight :=      5u;           % Height of English small letters
+xheight :=      6u;           % Height of English small letters
 mheight :=      6u;           % Height of Malayalam letters
 descent :=      2u;           % Descender Height
 ascent  :=      8u;           % Ascender Height
