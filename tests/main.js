@@ -407,10 +407,9 @@ function listen() {
 
     document.getElementById('palette').style.display = "none"
     document.getElementById('font-fontBaseColor').style.backgroundColor = baseColor.substring(0, 7)
-    document.getElementById('font-fontOutlineColor').style.backgroundColor = outlineColor.substring(0, 7)
-    document.getElementById('font-fontShadowColor').style.backgroundColor = shadowColor.substring(0, 7)
-    document.getElementById('font-fontColor').style.backgroundColor = '#214761'
-    document.getElementById('background-color').style.backgroundColor = '#f5f5dc'
+     document.getElementById('font-fontShadowColor').style.backgroundColor = shadowColor.substring(0, 7)
+    document.getElementById('font-fontColor').style.backgroundColor = '#FFFFFF'
+    document.getElementById('background-color').style.backgroundColor = '#2E3440'
     setCustomColors()
 }
 
