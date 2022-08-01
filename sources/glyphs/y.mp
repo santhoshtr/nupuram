@@ -2,9 +2,9 @@ input glyph;
 beginglyph;
 
 z0 = (3/4thick , s);
-z1 = (x0 - thick/4 , y0 - (phi-1)*s);
+z1 = (x0 - thick/4 , y0 - s/2);
 z2 = (x1 + sw/4, thick/4);
-z3 = (x0 + 3/4*sw,s );
+z3 = (x0 + 3/4*sw, y1 );
 
 paths[0] = z0 ..z1.. z2 ..{dir 80}z3;
 
