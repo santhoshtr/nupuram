@@ -2,14 +2,14 @@ input glyph;
 beginglyph;
 
 z0 = (3/4thick , s);
-z1 = (x0 - thick/4 , y0 - (phi-1)*s);
+z1 = (x0 - thick/4 , s/2);
 z2 = (x1 + sw/4, thick/4);
-z3 = (x0 + (phi-1)*sw,s );
+z3 = (x0 + .75*sw,s );
 
 paths[1] = z0 ..z1.. z2 ..{dir 80}z3;
 
 z4 = (x3 , X );
-z5 = (x4, y4 - (phi-1)*X);
+z5 = (x4, y4 - .75*X);
 z6 = (x5, 0);
 
 paths[0] = z4{dir -80} ..z5 .. {dir -80} z6;
