@@ -1,3 +1,7 @@
+% This file various utility functions for drawing a glyph
+% Copyright 2022 Santhosh Thottingal
+% Licensed under MIT License
+
 input plain_ex;
 input config;
 
@@ -8,7 +12,17 @@ input ./pens
 
 pen nib; nib := finenib; % roundedwidenib
 
-phi=1.618; % Golden ratio
+phi := 1.618; % Golden ratio
+% Aliases
+m   := mheight;
+s   := xheight;      % x is a special symbol. So let us use s
+X   := Xheight;
+
+sw  := s * condense; % Width of Latin small letters
+mw  := m * condense; % Width of Malayalm letters
+Xw  := X * condense; % Width of Latin capital letters
+lbearing := lbearing * condense;
+rbearing := rbearing * condense;
 
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick, thick, 0) xyscaled(thin, thin) enddef;
@@ -102,22 +116,15 @@ vardef boundingbox(expr p, lbearing, rbearing) =
     (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
 enddef;
 
-def beginglyph=
-    beginfig(1);
-    save m,s,X;
+def beginglyph =
+    begingroup
+    % Resets
+    clearxy; clearit; clearpen;
+    pickup defaultpen;
+    drawoptions();
+
+    save paths, strokes;
     path paths[], strokes[];
-
-    % Aliases
-    m   := mheight;
-    s   := xheight;      % x is a special symbol. So let us use s
-    X   := Xheight;
-
-    sw  := s * condense; % Width of Latin small letters
-    mw  := m * condense; % Width of Malayalm letters
-    Xw  := X * condense; % Width of Latin capital letters
-    lbearing := lbearing * condense;
-    rbearing := rbearing * condense;
-
 enddef;
 
 def endglyph =
@@ -215,5 +222,6 @@ def endglyph =
         dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
         dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur + rbearing,  descent))  withcolor debugcolor;
     fi;
-    endfig;
+    shipit;
+    endgroup
 enddef;
