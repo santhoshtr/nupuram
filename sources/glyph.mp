@@ -29,13 +29,8 @@ vardef thinterminalnib =
 enddef;
 
 vardef outlinepath (expr p, thickness ) =
-    numeric L;
-    path penpath;
-    L:=32;
-    penpath:=( (thickness*cosd(0),thickness*sind(0)) for i=1 upto L-1: -- (thickness*cosd(i/L*360), thickness*sind(i/L*360)) endfor -- cycle ) rotated rotation;
-    pen outlinenib ; outlinenib := makepen(penpath) ;
-    % FIXME, since stroke is a cycle, work on l,r,b,e individually
-    fill envelope outlinenib of p withcolor black;;
+    pen outlinenib;  outlinenib := makepen(unitsquare scaled thickness) ;
+    draw p withpen outlinenib withcolor glyphcolor;
 enddef;
 
 vardef shadowpath(expr p, d, offset) =
