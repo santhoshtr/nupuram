@@ -34,7 +34,7 @@ const pallettes = {
     "18": ["#BF360C", "#FFAB91", "#FF5722"], // Deep Orange
 }
 
-let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF";
+let baseColor = '#FFF3E0FF', shadowColor = "#E65100FF", outlineColor = "#FF9800FF";
 
 const otFeatures = {
     'kern': true,
@@ -345,6 +345,7 @@ function listen() {
         setCustomColors(baseColor, shadowColor, outlineColor, palette)
         shadowColorPickr.setColor(shadowColor)
         baseColorPickr.setColor(baseColor)
+        outlineColorPickr.setColor(outlineColor)
     })
 
     const baseColorPickr = new Pickr({
@@ -391,6 +392,28 @@ function listen() {
         document.getElementById('font-fontShadowColor').style.backgroundColor = color.toHEXA()
     })
 
+    const outlineColorPickr = new Pickr({
+        el: '#font-fontOutlineColor',
+        theme: 'nano',
+        useAsButton: true,
+        default: outlineColor,
+        defaultRepresentation: 'HEX',
+        components: {
+            preview: true,
+            opacity: true,
+            hue: true,
+
+            // Input / output Options
+            interaction: {
+                hex: true,
+                input: true,
+            }
+        }
+    }).on('change', (color, source, instance) => {
+        setCustomColors(baseColor, shadowColor, color.toHEXA())
+        document.getElementById('font-fontOutlineColor').style.backgroundColor = color.toHEXA()
+    })
+
     document.querySelectorAll("[name=opentype]").forEach((element) => {
         element.addEventListener('change', function () {
             const checked = this.checked;
@@ -407,15 +430,17 @@ function listen() {
 
     document.getElementById('palette').style.display = "none"
     document.getElementById('font-fontBaseColor').style.backgroundColor = baseColor.substring(0, 7)
-     document.getElementById('font-fontShadowColor').style.backgroundColor = shadowColor.substring(0, 7)
+    document.getElementById('font-fontOutlineColor').style.backgroundColor = outlineColor.substring(0, 7)
+    document.getElementById('font-fontShadowColor').style.backgroundColor = shadowColor.substring(0, 7)
     document.getElementById('font-fontColor').style.backgroundColor = '#FFFFFF'
     document.getElementById('background-color').style.backgroundColor = '#2E3440'
     setCustomColors()
 }
 
-function setCustomColors(base = baseColor, shadow = shadowColor, palette=0) {
+function setCustomColors(base = baseColor, shadow = shadowColor, outline = outlineColor, palette=0) {
     baseColor = base;
     shadowColor = shadow
+    outlineColor = outline
     const colorFontName = "NupuramShadowColor"
     const sheetId = "custompalette"
     var sheet = document.getElementById(sheetId)
@@ -425,7 +450,7 @@ function setCustomColors(base = baseColor, shadow = shadowColor, palette=0) {
         document.body.appendChild(sheet);
     }
 
-    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: ${palette}; override-colors: 0 ${shadowColor}, 1 ${baseColor};}`;
+    sheet.innerHTML = `@font-palette-values --custom  {font-family: '${colorFontName}'; base-palette: ${palette}; override-colors: 0 ${shadowColor}, 1 ${baseColor}, 2 ${outlineColor};}`;
 }
 
 

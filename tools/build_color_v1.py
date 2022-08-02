@@ -34,10 +34,13 @@ for glyph_name, layers in colr0.ColorLayers.items():
         # else:
         if layer.colorID == 0: # Shadow
             c1 = 0
-            c2 = 1
+            c2 = 2
         if layer.colorID == 1: #  Main
-            c1 = 1
-            c2 = 0
+            c1 = 2
+            c2 = 1
+        if layer.colorID == 2: # Outline
+            c1 = 2
+            c2 = 1
         v1_layers.append({
             "Format": ot.PaintFormat.PaintGlyph,
             "Paint":  {
@@ -55,6 +58,7 @@ for glyph_name, layers in colr0.ColorLayers.items():
             },
             "Glyph": layer.name,
         })
+
 
 
     # If there is only one layer, simplify
