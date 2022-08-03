@@ -1,5 +1,4 @@
 input glyph;
-input malayalam;
 beginglyph;
 
 paths[0] = la;

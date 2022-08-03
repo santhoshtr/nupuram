@@ -225,3 +225,6 @@ def endglyph =
     shipit;
     endgroup
 enddef;
+
+input malayalam;
+input latin;

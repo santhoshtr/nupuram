@@ -29,6 +29,7 @@ paths[2] = z19{dir 260}..z20 ..z21 ..{down}z22..z23;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0,2, 4, 6, 9)
+     nib(thinterminalnib rotated 0)(0)
     nib(terminalnib rotated 45)(4)
     nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);

@@ -1,17 +1,12 @@
 input glyph;
 beginglyph;
 
-z0 = (3/4thick , s);
-z1 = (x0 - thick/4 , y0 - s/2);
-z2 = (x1 + sw/4, thick/4);
-z3 = (x0 + 3/4*sw, y1 );
+paths[0] := u_arch;
 
-paths[0] = z0 ..z1.. z2 ..{dir 80}z3;
-
-z4 = (x3 , s );
-z5 = (x4  , y1);
+z4 = (xpart(point 3 of u_arch) , s );
+z5 = (x4, ypart(point 3 of u_arch));
 z6 = (x5 - sw/6 , y5 - 0.9s);
-z7 = (x1, y6 + s/4);
+z7 = (xpart(point 1 of u_arch), y6 + s/4);
 
 paths[1] = z4 ..z5 ..  z6..z7;
 

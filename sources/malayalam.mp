@@ -3,8 +3,6 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
-input glyph;
-
 vardef la_sign =
     clearxy;
     z0=(0.2mw,  0);

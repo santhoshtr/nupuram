@@ -9,7 +9,7 @@ default: all
 
 all: $(SVGS)
 
-svgs/$(VARIANT)/%.svg: $(SRCDIR)/%.mp config.mp glyph.mp pens.mp config/$(VARIANT).mp
+svgs/$(VARIANT)/%.svg: $(SRCDIR)/%.mp glyph.mp  pens.mp config/$(VARIANT).mp malayalam.mp latin.mp config.mp
 	@echo " BUILD GLYPH   $@"
 	@mkdir -p svgs/$(VARIANT)
 	@cp config/$(VARIANT).mp font.mp

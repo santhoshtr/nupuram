@@ -1,13 +1,17 @@
 input glyph;
 beginglyph;
-z0=(0.5sw, X);
-z1=(x0-0.3s, 0.9X);
-z2=(x1, 0.5s);
-z3=(x2, 0);
+z0=(sw/2 , X);
+z1=(x0 - sw/3, X-s/4);
+z2=(x1, 3/4s);
+z3=(x2 , 0);
+path head;
+head = z0{left} ..z1{down};
+head := head slanted .16;
+head := head shifted (-sw/6, 0);
 %bar
 z4 = (x2 -0.25sw,s);
 z5 = (x4 + sw,y4);
-paths[0] = z0 ..z1..  z2..z3;
+paths[0] = head.. z2{down}..  {down}z3;
 paths[1] = paths[0] shifted (sw/2, 0);
 paths[2]:= z4{dir 20}..{dir 20}z5;
 pen_stroke(

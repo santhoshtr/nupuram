@@ -16,12 +16,19 @@ z11=(x10 - mw/4, y10 + m/2);
 z12=(x11 + mw/4, y1);
 z13=(x12 - mw/3, y12+m/4);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 2..z8..z9..z10..z11 ..  z12..z13;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8;
+paths[1] := z8{right} ..{down}z9..z10..z11 ..  z12..z13;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0,2, 4, 6, 9,11,12)
-    nib(terminalnib rotated 0)(0)
+    nib(thinterminalnib rotated 0)(0)
     nib(terminalnib rotated 45)(4)
     nib(terminalnib rotated 90)(infinity)
 )(paths[0])(strokes[0]);
+pen_stroke(
+    nib(thicknib rotated 0 )(2, 4 )
+    nib(thinnib rotated 0 )(1,3 )
+    nib(terminalnib rotated 90)(0)
+    nib(terminalnib rotated 90)(infinity)
+)(paths[1])(strokes[1]);
 endglyph;

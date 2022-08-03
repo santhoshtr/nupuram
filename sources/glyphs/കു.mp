@@ -18,6 +18,7 @@ paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tens
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0,2, 4, 6, 9, 10)
+     nib(thinterminalnib rotated 0)(0)
     nib(terminalnib rotated 45)(4)
     nib(terminalnib rotated 60)(9)
     nib(terminalnib rotated 45)(infinity)
