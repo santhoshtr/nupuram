@@ -11,8 +11,8 @@ z6 = (x3, y5 - 0.3X );
 z7 = (x6 + 1.5w, y6 - 0.3X );
 z8 = (x7 - 0.7w, y7 - 0.2X );
 z9 = (x2, y2 + 0.1X );
-paths[0] = z0{dir -60}..z1..  z2 ;
-paths[1] = z3{dir 60}..z4..z5..{left}z6{right}..z7..z8..z9;
+paths[0] = z0{dir -80}..z1..  z2 ;
+paths[1] = z3{dir 80}..z4..z5..{left}z6{right}..z7..z8..z9;
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
     nib(terminalnib rotated 0)(0)

@@ -5,36 +5,32 @@ path paths[], strokes;
 z0=(thick/2, 0);
 z1=(x0 + 0.1Xw, y0 + .5X);
 z2=(x1 + 0.2Xw, y1 + .5X);
+
+paths[0] = z0..z1..z2;
 % Right slant
 z3=z2;
 z4=(x3 + 0.2Xw, y3 - .5X);
 z5=(x4 + 0.1Xw, y4 - .5X);
-
-% bar
-z6 = z5 ;
-z7 = (x6 - 0.3Xw, y6 + 0.4X) ;
-z8 = (x0 - thick/2, y7 + 0.15X ) ;
-
-
-paths[0] = z0..z1..z2;
 paths[1] = z3..z4..z5;
-paths[2]:= z6{dir 120}..z7..{left}z8;
+% bar
+z6 = point 0.8 of paths[0] ;
+z7 = point 1.2 of paths[1] ;
+
+paths[2]:= z6 ..z7 ;
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2 )
+
     nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated 0)(0)
-    nib(terminalnib rotated -20)(infinity)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2 )
     nib(thinnib rotated 0 )(1)
-    nib(terminalnib rotated -20)(0)
+    nib(terminalnib rotated 0)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1)
-    nib(terminalnib rotated 0)(0)
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 90)(infinity)
 )(paths[2])(strokes[2]);
 

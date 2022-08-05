@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 soften:=0;
-slant:= .16;
+slant:= .1;
 z0 = (0, s/2);
 z1 = (x0 + sw/3, s );
 z2 = (x1 + sw/3, y0 );

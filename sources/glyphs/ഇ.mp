@@ -20,8 +20,11 @@ z13 = (x12 + 0.6mw, y12 - 0.05m);
 z14 = (x13 + 0.6mw, y12);
 paths[0] = z0{up} .. z1..  z2..{left}z3 ;
 paths[1] = z3{left}..z4{up}..{right}z5..{down}z6..z7;
+
 paths[2]:= z8{up}..z9{right}.. z10 ..z11..{dir 220}z12;
-paths[3]:= z12{dir 20}..z13{dir -20}..z14;
+paths[2]:= paths[2] slanted tand(10);
+paths[2]:= paths[2] shifted (-tand(10)*mw/3, 0);
+paths[3]:= (point 4 of paths[2]){dir 20}..z13{dir -20}..z14;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0, 2 )
@@ -34,6 +37,7 @@ pen_stroke(
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3)
     nib(thinnib rotated 0 )(0,2,4 )
+    nib(thinterminalnib rotated 135)(0)
     nib(terminalnib rotated 115)(4)
 )(paths[2])(strokes[2]);
 pen_stroke(

@@ -12,6 +12,8 @@ z7=(x6 + mw/3, y6 - m/2);
 z8=(x7 - mw/3, y7 - m/2);
 paths[0] = z0..z1.. z2.. z3---z4 ;
 paths[1] =  z5{up}..z6..z7.. z8;
+paths[1]:= paths[1] slanted tand(8);
+paths[1]:= paths[1] shifted (-tand(8)*mw/3, 0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
     nib(thinnib rotated 0 )(1, 3)

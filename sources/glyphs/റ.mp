@@ -1,11 +1,7 @@
 input glyph;
 beginglyph;
-z0=(mw/4+thick/2, 0);
-z1=(x0- mw/4, m/2);
-z2=(x0 + mw/3, y1 + m/2);
-z3=(x2 + mw/3, y2-m/2);
-z4=(x2, 0);
-paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
+
+paths[0] := ra;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 5, 6 )
@@ -14,8 +10,8 @@ pen_stroke(
     nib(terminalnib rotated 135)(infinity)
 )(paths[0])(strokes[0]);
 
-anchor( "vc", (x2,0));
-anchor( "bottom", (x4,0));
-anchor( "right", (x4,0));
+anchor( "vc", (xpart(point 2 of paths[0]),0));
+anchor( "bottom", (xpart(point 4 of paths[0]),0));
+anchor( "right", (xpart(point 4 of paths[0]),0));
 
 endglyph;

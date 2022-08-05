@@ -3,6 +3,121 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
+% Anticlockwise loop
+vardef ml_base_loop_ac =
+    save hr, vr;
+    hr = mw/3; % Horizontal radius
+    vr = m/2; % Vertical radius
+    z0 = (0, m - vr);
+    z1 = (x0 + hr, y0 + vr );
+    z2 = (x1 +  hr,  y0 );
+    z3 = (x1,  y2 - vr);
+    z0..z1..z2..z3..cycle
+enddef;
+
+% Clockwise loop
+vardef ml_base_loop_c =
+    clearxy;
+    save hr, vr;
+    hr = mw/3; % Horizontal radius
+    vr = m/2; % Vertical radius
+    z0 = (hr, 0);
+    z1 = (x0 - hr, y0 + vr );
+    z2 = (x1 +  hr,  y1 + vr );
+    z3 = (x2 + hr,  y2 - vr);
+    z0{left}..z1{up}..z2{right}..z3{down}..{left}z0
+enddef;
+
+% Clockwise loop
+vardef ml_base_loop_short_c =
+    clearxy;
+    save hr, vr;
+    hr = mw/3; % Horizontal radius
+    vr = 0.9*m/2; % Vertical radius
+    z0 = (hr, 0);
+    z1 = (x0 - hr, y0 + vr );
+    z2 = (x1 +  hr,  y1 + vr );
+    z3 = (x2 + hr,  y2 - vr);
+    z0{left}..z1{up}..z2{right}..z3{down}..{left}z0
+enddef;
+
+vardef left_arch =
+    clearxy;
+    save l;
+    path l;
+    slant := tand(-8);
+    l:= ml_base_loop_c;
+    l:=l slanted slant;
+    l:=l shifted (-slant*mw/2, 0);
+    l
+enddef;
+
+vardef right_arch =
+    clearxy;
+    save l;
+    path l;
+    slant:= tand(8);
+    l:= ml_base_loop_c;
+    l:=l slanted slant;
+    l:=l shifted (-slant*m/2, 0);
+    l
+enddef;
+
+vardef right_arch_short =
+    clearxy;
+    save l;
+    path l;
+    slant:= tand(8);
+    l:= ml_base_loop_short_c;
+    l:=l slanted slant;
+    l:=l shifted (-slant*m/2, 0);
+    l
+enddef;
+
+% Clockwise top loop sits on top of mid horizontal line
+vardef top_arch_c =
+    clearxy;
+    save l,hr,vr;
+    path l;
+    hr = mw/3 * 0.8; % Horizontal radius
+    vr = m/4; % Vertical radius
+    z0 = (mw/3*0.25, vr + m/2);
+    z1 = (x0 + hr, y0 + vr );
+    z2 = (x1 +  hr,  y1 - vr );
+    z3 = (x2 - hr,  y2 - vr);
+
+    z0{up}..{left}z1..{down}z2..{right}z3..{up}z0
+enddef;
+
+% Anti clockwise top loop sits on top of mid horizontal line
+vardef top_arch_ac =
+    clearxy;
+    save l,hr,vr;
+    path l;
+    hr = mw/3 * 0.9; % Horizontal radius
+    vr = m/4; % Vertical radius
+    z0 = (2*mw/3, vr + m/2);
+    z1 = (x0 - hr, y0 + vr );
+    z2 = (x1  - hr,  y1 - vr );
+    z3 = (x2 + hr,  y2 - vr);
+
+    z0{up}..{left}z1..{down}z2..{right}z3..{up}z0
+enddef;
+
+% Clockwise
+vardef bottom_arch =
+    clearxy;
+    save l,hr,vr;
+    path l;
+    hr = mw/3; % Horizontal radius
+    vr = m/4; % Vertical radius
+    z0 = (0, vr);
+    z1 = (x0 + hr, y0 + vr );
+    z2 = (x1 + hr,  y1 - vr );
+    z3 = (x2 - hr,  y2 - vr);
+    z0{up}..z1..z2..z3..{up}z0
+enddef;
+
 vardef la_sign =
     clearxy;
     z0=(0.2mw,  0);
@@ -28,4 +143,18 @@ vardef la =
     z5=(x4 + 2/3mw, y3);
     z6=(x5 - mw/8, y2);
     z0 ..z1.. z2..z3 .. z4 ..z5.. z6
+enddef;
+
+vardef ra =
+   clearxy;
+   (mw/4,0) .. subpath(1, 3.8) of (right_arch xyscaled (1.25,1))
+enddef;
+
+vardef va_tail =
+   clearxy;
+   z0=(0, 0);
+   z1=(x0 + 0.7mw, y0);
+   z2= (x1, y1 + m/2);
+   z3=(x2, y2 + m/2);
+   z0{dir 20}..{dir 20}z1{dir 30}..z2...{dir 60}z3
 enddef;

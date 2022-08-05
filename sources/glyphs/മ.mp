@@ -1,34 +1,32 @@
 input glyph;
 beginglyph;
-z0=(mw/4 + thick/2,  m/3);
-z1=(x0 - mw/4, y0 + m/3);
-z2=(x1 + mw/2.5, y1 + m/3);
-z3=(x2 + mw/2.5, y2 - 0.35m);
-z4=(x1, 0);
 
-z5=(x4, 0);
-z6=(x5 + 0.85mw, y5);
-z7=(x6, y6 + 0.2m);
-z8=(x7, y7 + m/3);
+paths[0] = subpath (1.25, 2.6) of right_arch xyscaled(1.25, 1) shifted(thick/2, 0)  ;
 
-paths[0] = z0..z1{up}..{right}z2{right}..z3{down}.. {dir 240}z4;
-paths[1] = z5{dir 20}..{dir 20}z6{dir 20}..z7... z8;
+paths[0] := (mw/5, m/5).. paths[0];
+z5=(xpart(point 1 of paths[0]) - thick/2, 0);
+paths[0] :=  paths[0]..{dir 200}z5;
+z6=( (xpart(point 3 of paths[0]) ) + thick/2, y5);
+z7=(x6, y6 + m/4);
+z8=(x7, y7 + m/2);
+
+paths[1] = z5{dir 10}..{dir 10}z6{dir 60}..z7... z8;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5 )
-    nib(thinnib rotated 0 )(1,3,6)
-    nib(terminalnib rotated 45)(0)
+    nib(thinnib rotated 0 )(1,3,4)
+    nib(terminalnib rotated 20)(0)
     nib(terminalnib rotated 120)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 4, 5 )
+    nib(thicknib rotated 0 )(0, 4 )
     nib(thinnib rotated 0 )(2)
     nib(terminalnib rotated 120)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 
 
-anchor( "vc", (x2,0));
+anchor( "vc", (xpart(point 2 of paths[0]),0));
 anchor( "bottom", z6);
 anchor( "right", z6);
 
