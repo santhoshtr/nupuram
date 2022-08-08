@@ -113,7 +113,12 @@ enddef;
 def anchor = label enddef;
 
 vardef boundingbox(expr p, lbearing, rbearing) =
+    % In debug mode, show more vertical and horizontal regions
+    if showgrids > 0:
+    (-.1em, 0 - 0.1em) -- (-.1em,em+.1em) -- (xpart(urcorner p)+lbearing+rbearing + .1em, em+.1em) -- (xpart(urcorner p)+lbearing+rbearing + .1em,0 - .1em) -- cycle
+    else:
     (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
+    fi
 enddef;
 
 def beginglyph =

@@ -16,7 +16,7 @@ z17=(x16 + mw/3, y16 - m/2);
 z18=(x17 - mw/3, y17 - m/2);
 paths[0] =  z3 ..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13---z14;
-paths[2] = z15{up}.. z16..z17...z18;
+paths[2] :=  subpath(.8, 4) of right_arch shifted(x14, 0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2,4,6 )
     nib(thinnib rotated 0 )(1,3)
@@ -30,9 +30,9 @@ pen_stroke(
     nib(terminalnib rotated 0)(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(thicknib rotated 0 )( 1, 3)
-    nib(thinnib rotated 0 )(2)
-    nib(thinterminalnib rotated 0)(0)
+    nib(thicknib rotated 0 )( 2)
+    nib(thinnib rotated 0 )(1,3)
+    nib(thinterminalnib rotated 45)(0)
     nib(terminalnib rotated 120)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

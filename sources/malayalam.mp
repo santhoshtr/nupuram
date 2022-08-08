@@ -25,7 +25,7 @@ vardef ml_base_loop_c =
     z1 = (x0 - hr, y0 + vr );
     z2 = (x1 +  hr,  y1 + vr );
     z3 = (x2 + hr,  y2 - vr);
-    z0{left}..z1{up}..z2{right}..z3{down}..{left}z0
+    z0..z1..z2 ..z3..z0
 enddef;
 
 % Clockwise loop
