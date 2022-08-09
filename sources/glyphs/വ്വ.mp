@@ -16,16 +16,16 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 % Shoe
-z10 = (point 1 of paths[1]) + (thick/2,thick/2);
-z11 = (x10, -descent)  ;
+z10 = (point 1 of paths[1]) + (thick/2,thick);
+z11 = (x10, -descent- thick/2)  ;
 z12 = (xpart(point 0 of paths[1]), y11 );
-z13 = (x12 + mw/4, ypart(point 1 of paths[1]));
-paths[2] = z10--z11--z12{dir 30}.. z13;
+z13 = (x12 + mw/3, ypart(point 1 of paths[1]));
+paths[2] = z10{dir 250}..{dir -70}z11{left}..{left}z12{dir 30}..{dir 60}z13;
 pen_stroke(
-    nib(thicknib rotated 0 )(  3)
-    nib(thinnib rotated 0 )(1,2)
-    nib(terminalnib rotated 120)(2)
-    nib(terminalnib rotated 0)(0)
-    nib(thinterminalnib rotated 0)(infinity)
+    nib(thicknib rotated 0 )( 3)
+    nib(terminalnib rotated 135)(2)
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 45)(1)
+    nib(terminalnib rotated 0)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

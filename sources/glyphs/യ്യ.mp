@@ -23,7 +23,7 @@ pen_stroke(
 
 % Shoe
 z11 = (x9, y9 - m/3);
-z12 = (x11, y11 - m/2 );
+z12 = (x11, -descent );
 z13 = (x1, y12);
 z14 = (x8, y8);
 paths[1] = z11-- z12{left}..{left}z13{dir 45} .. z14;

@@ -5,11 +5,11 @@ paths[0] = l_vstem ;
 z0= (xpart(point 1 of l_vstem), s/3);
 z1= ( x0 + sw/2, s);
 
-paths[1] = z0--z1;
+paths[1] = z0 .. {dir 45}z1;
 z2 = point .3 of paths[1];
 z3 = (x1 + thick/2, 0);
 
-paths[2] = z2--z3;
+paths[2] = z2 .. {dir -45}z3;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
@@ -23,6 +23,6 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(thinterminalnib rotated 60)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated 30)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

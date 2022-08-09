@@ -44,7 +44,7 @@ enddef;
 
 vardef left_arch =
     clearxy;
-    save l;
+    save l,slant;
     path l;
     slant := tand(-8);
     l:= ml_base_loop_c;
@@ -55,7 +55,7 @@ enddef;
 
 vardef right_arch =
     clearxy;
-    save l;
+    save l,slant;
     path l;
     slant:= tand(8);
     l:= ml_base_loop_c;
@@ -66,7 +66,7 @@ enddef;
 
 vardef right_arch_short =
     clearxy;
-    save l;
+    save l,slant;
     path l;
     slant:= tand(8);
     l:= ml_base_loop_short_c;
