@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
 
-z0=(mw/3+.5thick, 0);
-z1=(x0 - mw/3, y0  + 0.5m);
+z0=(x1+mw/3, 0);
+z1=(0, y0 + m/2);
 z2=(x1 + mw/4, y1 + 0.4m);
 z3=(x2 + mw/3, y2 - m*0.5);
 z4=(x3, y3-m/4); % bottom of piller

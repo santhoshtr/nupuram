@@ -115,9 +115,9 @@ def anchor = label enddef;
 vardef boundingbox(expr p, lbearing, rbearing) =
     % In debug mode, show more vertical and horizontal regions
     if showgrids > 0:
-    (-.1em, 0 - 0.1em) -- (-.1em,em+.1em) -- (xpart(urcorner p)+lbearing+rbearing + .1em, em+.1em) -- (xpart(urcorner p)+lbearing+rbearing + .1em,0 - .1em) -- cycle
+    (-.1em, 0 - 0.1em) -- (-.1em,em+.1em) -- (xpart(urcorner p)+rbearing + .1em, em+.1em) -- (xpart(urcorner p)+rbearing + .1em,0 - .1em) -- cycle
     else:
-    (0, 0) -- (0,em) -- (xpart(urcorner p)+lbearing+rbearing, em) -- (xpart(urcorner p)+lbearing+rbearing,0) -- cycle
+    (0, 0) -- (0,em) -- (xpart(urcorner p)+rbearing, em) -- (xpart(urcorner p)+rbearing,0) -- cycle
     fi
 enddef;
 
@@ -193,7 +193,7 @@ def endglyph =
     endfor;
 
     currentpicture := currentpicture
-        shifted (0, descent);
+        shifted (lbearing, descent);
 
     if slant <> 0:
         currentpicture := currentpicture
@@ -213,8 +213,10 @@ def endglyph =
         draw (0, descent) -- (xpart w, descent) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, mheight+descent) -- (xpart w, mheight+descent) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
+        draw (0, 0) -- (0, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
-        draw ( xpart ur, 0) -- (xpart ur, em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw ( xpart ur + rbearing, 0) -- (xpart ur  + rbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw ( xpart ur , 0) -- (xpart ur  , em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
     fi;
 
