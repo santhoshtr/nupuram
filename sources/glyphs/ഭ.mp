@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
 
-z0 = ( mw/3, 0);
-z1 = ( x0 - mw/4, y0 + m/2 );
+z0 = ( x1 +mw/4, 0);
+z1 = ( 0, y0 + m/2 );
 z2 = ( x1 + mw/2, y1 + m/2); % top
 z3 = ( x2 + mw/3, y2 - m/3);
 z4 = ( x3 - mw/3, y3 -.166m);

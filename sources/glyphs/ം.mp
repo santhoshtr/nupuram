@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
-path paths[], strokes;
+
 soften := 0;
-z0=(thick/2, m/4);
+z0=(0, m/4);
 z1=(x0 + 0.2mw, y0 + m/4);
 z2=(x1 + 0.2mw, y1 - m/4);
 z3=(x2 - 0.2mw, y2 - m/4);
