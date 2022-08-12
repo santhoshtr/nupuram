@@ -13,8 +13,8 @@ paths[2] = z2 .. {dir -45}z3;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
-    nib(terminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated 10)(0)
+    nib(terminalnib rotated 10)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
 
