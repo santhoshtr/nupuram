@@ -182,3 +182,22 @@ vardef da =
     p:=p shifted (-loop_slant*m/2,0);
     p
 enddef;
+
+vardef left_arch_with_eye =
+    clearxy;
+    save p,loop_slant;
+    path p;
+    loop_slant=tand(-4);
+    z0 =(x3, y3);
+    z1=(x4 + 2/3* mw/3, y3 - m/4 + thick/4);
+    z2=(x4,  thick/2);
+    z3=(0, m/2);
+    z4=(x3 + m/3, m);
+    z5=(x4 + m/2, m/2);
+    z6=(x5, m/6);
+    p:=z0 .. z1{down}..z2{left}..z3.. z4..{down}z5;
+    p:=p slanted loop_slant;
+    p:=p shifted (-loop_slant*m/2,0);
+    p:=p ---z6;
+    p
+enddef;

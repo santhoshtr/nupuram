@@ -1,29 +1,18 @@
 input glyph;
 beginglyph;
-z0 =(mw/6, m/3.5);
-z1 =(x0 + mw/4, y0 + m/4);
-z2=(x1 + mw/4, y1 - m/4);
-z3=(x2 - mw/4, y2 - m/4);
-z4=(x3 - m/3, y3 + m/2.5);
-z5=(x4 + m/2.8, y4 + m/2);
-z6=(x5 + m/2.4, m/3);
-z7=(x6, y6 - m/4);
+
+paths[0] :=left_arch_with_eye;
 % Second arch
-z11 = z6;
+z11 = point 5 of paths[0];
 z12 = (x11 + m/3, m-thick);
 z13 = (x12 + mw/4, y12 - m/3);
 z14 = (x13 - m/3, y13 - m/2);
-z15=z14;
-z16=(x15 + 0.6mw, y15);
-z17=(x16, y16 + m/2);
-z18=(x17, y17 + m/2);
-paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13..z14;
-paths[2] = z15{dir 30}..{dir 30}z16{dir 30}..z17...{dir 60}z18;
+paths[2] = va_tail shifted (point 4 of paths[1]) ;
 pen_stroke(
-    nib(thicknib rotated 0 )(1,3, 5 )
-    nib(thinnib rotated 0 )(0, 2, 4, 6)
-    nib(terminalnib rotated 135)(0)
+    nib(thicknib rotated 0 )(0, 2, 4, 6)
+    nib(thinnib rotated 0 )(1,3, 5 )
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
@@ -38,7 +27,8 @@ pen_stroke(
     nib(terminalnib rotated 115)(0)
     nib(terminalnib rotated 170)(infinity)
 )(paths[2])(strokes[2]);
-anchor( "vc", (x5,0));
-anchor( "bottom", (x16,0));
-anchor( "right", (x16,0));
+
+anchor( "vc", (xpart(point 5 of paths[0]),0));
+anchor( "bottom", (xpart(point 1 of paths[2]),0));
+anchor( "right", (xpart(point 1 of paths[2]),0));
 endglyph;
