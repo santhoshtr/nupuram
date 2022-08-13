@@ -163,3 +163,22 @@ vardef va_tail =
    z3=(x2, y2 + m/2);
    z0{dir 20}..{dir 20}z1{dir 30}..z2...{dir 60}z3
 enddef;
+
+vardef da =
+   clearxy;
+    save p,loop_slant;
+    path p;
+    loop_slant=tand(8);
+    z0 = (x1 + mw/8, 0);
+    z1 = (0,  m/2);
+    z2 = ( x1 + m/3, y1 + m/2);
+    z3 = ( x2 + m/3, y2 - m/4);
+    z4 = ( x3 - m/3, y3 - m/4);
+    z5 = (x4 + mw/2, y4 - m/3);
+    z6 = (x5 - mw/2, 0);
+
+    p = z0..z1{up}..z2..z3..{left}z4{right}..z5 ..{dir 160}z6 ;
+    p:=p slanted loop_slant;
+    p:=p shifted (-loop_slant*m/2,0);
+    p
+enddef;

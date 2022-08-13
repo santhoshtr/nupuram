@@ -1,19 +1,25 @@
 input glyph;
 beginglyph;
-z0=(0.5sw, X);
-z1=(x0-0.3s, 0.9X);
-z2=(x1, 0.5s);
-z3=(x2, 0);
+z0=(sw/2 , X);
+z1=(x0 - sw/3, X-s/4);
+z2=(x1, 3/4s);
+z3=(x2 , 0);
+path head;
+head = z0{left} ..z1{down};
+head := head slanted .16;
+head := head shifted (-sw/6, 0);
+paths[0] = head.. z2{down}..  {down}z3;
 % t
 z10=(x2 + sw/2, X);
-z11=(x10, y10-0.6666X);
-z12=(x11 + 0.4sw, thick/4);
+z11=(x10, s/2);
+z12=(x11 , s/2);
+z13=(x12 + sw/4, thick/4);
 %bar
 z4 = (x2 -0.25sw,s);
-z5 = (x4 + sw,y4);
-paths[0] = z0 ..z1..  z2..z3;
-paths[1] = z10..tension 4..z11{down}..{dir 20}z12;
-paths[2]:= z4{dir 20}..{dir 20}z5;
+z5 = (x10 + sw/4,y4);
+
+paths[1] = z10..z11..z12{down}..{dir 10}z13;
+paths[2]:= z4{dir 10}..{dir 10}z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0 )
     nib(thinnib rotated 0 )(1, 2)
@@ -22,14 +28,14 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2 )
-    nib(thinnib rotated 0 )(1)
+    nib(thicknib rotated 0 )(0 )
+    nib(thinnib rotated 0 )(1,2)
     nib(terminalnib rotated 0)
     (0)
     nib(terminalnib rotated 90)(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(terminalnib rotated 90)(0)
-    nib(thinterminalnib rotated 90)(infinity)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

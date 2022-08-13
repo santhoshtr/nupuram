@@ -25,7 +25,17 @@ z23 = ( x22 - mw/3, y22 - m/4);
 
 paths[0] = z0{up}..z1{right}..z2{down}..z3{left}..z4{dir 80}..z5..{left}z6;
 paths[1] = z6{right}..z7..z8..{up}z9..z10..{down}z11---z12;
-paths[2] = z20{up}..z21..z22..{left}z23{left} ;
+
+paths[2] := subpath(1, 6) of da;
+paths[2]:= paths[2] shifted (xpart(point 6 of paths[1]), 0 );
+pen_stroke(
+    nib(thicknib rotated 0 )( 3, 6 )
+    nib(thinnib rotated 0 )(0, 2,4,6 )
+    nib(thinterminalnib rotated 0)(0)
+    nib(terminalnib rotated 60)(3)
+    nib(terminalnib rotated 60)(infinity)
+)(paths[1])(strokes[1]);
+
 
 pen_stroke(
     nib(thicknib rotated 0 )(2, 3, 5 )
@@ -42,20 +52,12 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 pen_stroke(
-    nib(thicknib rotated 0 )( 3, 6 )
-    nib(thinnib rotated 0 )(0, 2,4,6 )
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(thicknib rotated 0 )( 1, 3, 5 )
+    nib(thinnib rotated 0 )( 0, 2,4,6)
+    nib(thinterminalnib rotated 10)(0)
+    nib(terminalnib rotated 60)(3)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[2])(strokes[2]);
 
 
-z30 = z23;
-z31 = (x30 + mw/2, y30 - m/4);
-z32 = (x31 - mw/2, y31 - m/4);
-paths[3] = z30{right}..z31..z32 ;
-pen_stroke(
-    nib(thinnib rotated 0 )(1)
-    nib(terminalnib rotated 120)(0)
-    nib(terminalnib rotated 60)(infinity)
-)(paths[3])(strokes[3]);
 endglyph;

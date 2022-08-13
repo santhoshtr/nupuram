@@ -8,11 +8,12 @@ path head;
 head = z0{left} ..z1{down};
 head := head slanted .16;
 head := head shifted (-sw/6, 0);
+paths[0] = head.. z2{down}..  {down}z3;
 
 %bar
 z4 = (x2 -0.25sw, s-thick/2);
 z5 = (x4 + 0.5sw, y4);
-paths[0] = head.. z2{down}..  {down}z3;
+
 paths[1] = z4{dir 10}..{dir 10}z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0 )

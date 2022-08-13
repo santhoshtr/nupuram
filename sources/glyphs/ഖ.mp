@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 path paths[],strokes;
 
-z0 = (0.2mw, 0.15m);
+z0 = (0.1mw, 0.15m);
 z1 = (x0  + 0.2mw, y0 + 0.25m );
 z2 = (x1 + mw/4, y1 - 0.2m);
 z3 = (x2 - mw/4, y2 - 0.2m);
