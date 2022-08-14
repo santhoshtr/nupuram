@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-paths[0] :=left_arch_with_eye;
+paths[0] := left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
@@ -25,5 +25,9 @@ pen_stroke(
     nib(thinterminalnib rotated 0)(0)
     nib(terminalnib rotated 135)(infinity)
 )(paths[1])(strokes[1]);
+
+
+anchor( "right", point 6.8 of paths[1]);
+anchor( "bottom", point 6.8 of paths[1]);
 
 endglyph;

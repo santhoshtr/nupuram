@@ -1,8 +1,7 @@
 input glyph;
 beginglyph;
 
-paths[0] = subpath (1.25, 2.6) of right_arch xyscaled(1.25, 1) shifted(thick/2, 0)  ;
-
+paths[0] = subpath (1.25, 2.6) of right_arch;
 paths[0] := (mw/5, m/5).. paths[0];
 z5=(xpart(point 1 of paths[0]) - thick/2, 0);
 paths[0] :=  paths[0]..{dir 200}z5;

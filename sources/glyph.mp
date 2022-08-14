@@ -215,8 +215,8 @@ def endglyph =
         draw (0, xheight+descent) -- (xpart w, xheight+descent) withpen pencircle scaled 0.5 withcolor gridcolor;
         draw (0, 0) -- (0, em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (lbearing, 0) -- (lbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
-        draw ( xpart ur + rbearing, 0) -- (xpart ur  + rbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
-        draw ( xpart ur , 0) -- (xpart ur  , em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw ( xpart ur + lbearing+ rbearing, 0) -- (xpart ur  + lbearing + rbearing, em) withpen pencircle scaled 1 withcolor gridcolor;
+        draw ( xpart ur  + lbearing , 0) -- (xpart ur  + lbearing , em) withpen pencircle scaled 1 withcolor gridcolor;
         draw (0, em) -- (xpart w, em) withpen pencircle scaled 1 withcolor gridcolor;
     fi;
 
@@ -227,7 +227,7 @@ def endglyph =
         dotlabel.urt( "(0, " & decimal(0) & ")", (0, descent))  withcolor debugcolor;
         dotlabel.urt( "(0, " & decimal(mheight) & ")", (0, mheight+descent))  withcolor debugcolor;
         dotlabel.lrt( "(" & decimal(lbearing) & ",0  )", (lbearing,  descent))  withcolor debugcolor;
-        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur + rbearing,  descent))  withcolor debugcolor;
+        dotlabel.lft( "(" & decimal(round(xpart ur) - rbearing) & ",0  )", (xpart ur +  lbearing + rbearing,  descent))  withcolor debugcolor;
     fi;
     shipit;
     endgroup

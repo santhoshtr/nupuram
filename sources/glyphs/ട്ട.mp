@@ -28,9 +28,8 @@ pen_stroke(
     nib(terminalnib rotated 60)(0)
     nib(terminalnib rotated 60)(infinity )
 )(paths[1])(strokes[1]);
-% strokes[0]:=strokes[0] shifted(0, m/3);
-% strokes[1]:=strokes[1] shifted(0, m/3);
-anchor( "right", z11);
-anchor( "bottom", z12);
+
+anchor( "right", point 1.5 of paths[1]);
+anchor( "bottom", point 1.5 of paths[1]);
 
 endglyph;

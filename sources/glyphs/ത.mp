@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
-z0=(x1+mw/3, 0);
-z1=(0, y0 + mw/2);
+z0= (x1 + mw/3, 0);
+z1= (0, y0 + mw/2);
 z2 = ( x1 + mw/2, y1 + m/2); % top
 z3 = ( x2 + mw/2, y2 - m/2);
 z4 = ( x3 - mw/3, y3 - m/2 + thick/2); % bottom middle
@@ -11,6 +11,8 @@ z7 = ( x6 + mw/2, y1);
 z8 = ( x7 - mw/3, y0); %
 paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
 paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}..z7..z8) slanted tand(8);
+paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
+
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4,6, )
     nib(thinnib rotated 0 )(1, 3, 5, 7)
