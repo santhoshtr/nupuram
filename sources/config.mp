@@ -19,8 +19,8 @@ subthick :=     0.666u;       % Thickness of thickest lines in subscribed charac
 xthick :=       1;            % Extra thickness for terminals
 slant :=        0;            % Slant of characters.Give angle values
 condense :=     1;            % Condense factor. Less than for condense, Greater than one for expand
-lbearing :=     0.33u;        % Default left bearing
-rbearing :=     0.33u;        % Default right bearing
+lbearing :=     0.4u;        % Default left bearing
+rbearing :=     0.4u;        % Default right bearing
 
 linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
