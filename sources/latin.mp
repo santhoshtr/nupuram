@@ -3,14 +3,13 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
-latin_loop_slant := tand(12);
+latin_loop_slant := tand(8);
 
 vardef base_loop =
     z0 = (0, s/2);
-    z1 = (x0 + sw/3, s );
-    z2 = (x1 + sw/3,  y1 - s/2 );
-    z3 = (x2 - sw/3,  0);
-    z4 = (x2 - thick/4, 0);
+    z1 = (x0 + sw/3, s - thick/4 );
+    z2 = (x1 + sw/3, y1 - s/2 );
+    z3 = (x2 - sw/3, thick/4);
     z0..z1..z2..z3..cycle
 enddef;
 
@@ -51,7 +50,8 @@ vardef n_arch =
     n:=n slanted latin_loop_slant;
     n:=n shifted (-latin_loop_slant*s/2, 0);
     n:= n cutafter point 1.8 of n;
-    n:= n..z4;
+    z4 = (xpart point 2 of n - thick/4, 0);
+    n:= n..{dir -80}z4;
     n
 enddef;
 
@@ -83,11 +83,10 @@ enddef;
 vardef e_loop =
     clearxy;
     path e;
-    slant:= .16;
     z3 = (2sw/3, s/2);
-    z4 = (x3 - sw/3, s );
+    z4 = (x3 - sw/3, s - thick/4 );
     z5 = (x4 - sw/3,  y4 - s/2 );
-    z6 = (x5+sw/3,  0 );
+    z6 = (x5+sw/3,  thick/4 );
     z7 = (x6+sw/2, s/2 );
     e = z3..z4..z5..z6..z7;
     e:=e slanted latin_loop_slant;
@@ -102,9 +101,9 @@ vardef c_loop =
     clearxy;
     path c;
     z3 = (2sw/3, s/2);
-    z4 = (x3 - sw/3, s );
+    z4 = (x3 - sw/3, s - thick/4 );
     z5 = (x4 - sw/3,  y4 - s/2 );
-    z6 = (x5 + sw/3,  0 );
+    z6 = (x5 + sw/3,  thick/4);
     z7 = (x6 + sw/2, s/2 );
     c = z3..z4..z5..z6..z7;
     c:=c slanted latin_loop_slant;

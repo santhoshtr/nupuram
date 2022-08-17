@@ -12,6 +12,6 @@ pen_stroke(
 pen_stroke(
     nib(thinnib rotated 0 )(2)
     nib(thinterminalnib rotated 0 )(0 )
-    nib(terminalnib rotated 0 )(infinity )
+    nib(terminalnib rotated 20 )(infinity )
 )(paths[1])(strokes[1]);
 endglyph;
