@@ -2,10 +2,16 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
+% Macros from MetaType1
 input plain_ex;
+% Base configuration
 input config;
-
-maybeinput font.mp; % Customization for a font variant. If file does not exist, skips.
+% Customization for a font variant. If file does not exist, skips.
+% jobname is an internal variable set by Makefile.
+% The purpose of this variable is different, but Metapost allows setting
+% values for internal variables only. So using jobname which is relatively
+% better choice for possing current style variant name
+maybeinput jobname;
 
 % Pens
 input ./pens

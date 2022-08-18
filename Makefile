@@ -37,6 +37,7 @@ build: ufo otf ttf webfonts
 glyphs: $(STYLES)
 
 $(STYLES):
+	@mkdir -p $(SOURCEDIR)/svgs/$@
 	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)
 
 $(UFODIR)/$(FAMILY)-%.ufo: %
