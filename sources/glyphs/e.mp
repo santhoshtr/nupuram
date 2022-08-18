@@ -6,7 +6,7 @@ paths[0] = e_loop;
 pen_stroke(
     nib(thicknib rotated 0 )(2,4)
     nib(thinnib rotated 0 )(1,3)
-    nib(terminalnib rotated 90 )(0 )
+    nib(terminalnib rotated 60 )(0 )
     nib(thinterminalnib rotated 135 )(infinity )
 )(paths[0])(strokes[0]);
 

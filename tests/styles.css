@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "NupuramHandwriting";
-  src: url(../fonts/webfonts/Nupuram-Handwriting-VF.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Handwriting-VF.otf?v=1.100) format("opentype");
+  src: url(../fonts/webfonts/Nupuram-Handwriting-VF.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Handwriting-VF.otf?v=1.100) format("opentype"),  url(../fonts/otf/Nupuram-Handwriting-Regular.otf) format("opentype");
 }
 
 @font-face {

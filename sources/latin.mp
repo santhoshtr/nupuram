@@ -93,7 +93,7 @@ vardef e_loop =
     e:=e shifted (-latin_loop_slant*s/2 , 0);
     e:=e cutbefore point .4 of e;
     e:=e cutafter point 3.6 of e;
-    e:=point 2 of e{dir -30}..e;
+    e:=point 1.8 of e{dir -45}..e;
     e
 enddef;
 

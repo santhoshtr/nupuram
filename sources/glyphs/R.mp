@@ -1,19 +1,19 @@
 input glyph;
 beginglyph;
-w := 0.7s;
-z0= (thick/2, X);
+z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
-z3 = (x0, X - 0.2X);
-z4 = (x3 + w/2, y0);
-z5 = (x4 + 0.8w, y4 - 0.2X );
-z6 = (x3, y5 - 0.4X );
-% Leg
-z7 = (x6 + w/3, y6);
-z8 = (x7 + w, y2);
-paths[0] = z0{dir -60}..z1..  z2 ;
-paths[1] = z3{dir 60}..z4..z5..{left}z6;
-paths[2] = z7{dir -10}.. {dir -10}z8;
+
+paths[0] = z0{dir -80}..z1..  {dir -80}z2 ;
+
+z3 = (x0 -thick/2, 0.85X);
+z4 = (x3 + Xw/3, y0 - thick/4);
+z5 = (x4 + Xw/4, m );
+z6 = point 1.25 of paths[0];
+paths[1] = z3{dir 30} ..z4{right}..z5{down}..{dir 190}z6;
+z7 =  point 2.8 of paths[1];
+z8 = (x5,0);
+paths[2] = z7{dir -60}.. {dir -30}z8;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
@@ -22,12 +22,12 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 0 )(2)
-    nib(terminalnib rotated 90)(0)
+    nib(terminalnib rotated 120)(0)
     nib(terminalnib rotated 90)(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(terminalnib rotated 30)(0)
-    nib(terminalnib rotated 30)(infinity)
+    nib(terminalnib rotated 60)(0)
+    nib(terminalnib rotated 60)(infinity)
 )(paths[2])(strokes[2]);
 
 endglyph;
