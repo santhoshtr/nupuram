@@ -148,11 +148,12 @@ enddef;
 
 vardef ra =
    clearxy;
-    save r;
-    path r;
-    r :=(mw/4,0) .. subpath(1, 3) of (right_arch xyscaled (1.25,1));
-    r:=r  ..   (xpart(point 2 of r) ,0);
-    r
+    z0=(mw/4 , 0);
+    z1=(x0- mw/4, m/2);
+    z2=(x0 + mw/3, y1 + m/2);
+    z3=(x2 + mw/3, y2-m/2);
+    z4=(x2, 0);
+    z0{dir 135}..z1.. z2{right}..z3{dir 260}..z4
 enddef;
 
 vardef va_tail =
@@ -198,6 +199,6 @@ vardef left_arch_with_eye =
     p:=z0 .. z1{down}..z2{left}..z3.. z4..{down}z5;
     p:=p slanted loop_slant;
     p:=p shifted (-loop_slant*m/2,0);
-    p:=p ---z6;
+    p:=p{down} ---z6;
     p
 enddef;

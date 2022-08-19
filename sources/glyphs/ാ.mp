@@ -9,7 +9,7 @@ z3=(x2 - mw/3,  height_correction);
 paths[0] = z0 .. z1.. z2 .. z3 ..  cycle;
 paths[0] := paths[0] xyscaled(1,1) slanted slant_;
 paths[0]:= paths[0] shifted (-slant_*m/2, 0);
-paths[0]:= subpath(.3, 2.9) of paths[0]   ..  (x0, y0 - m/4);
+paths[0]:= subpath(.3, 2.9) of paths[0]   ..  {dir 120}(x0, y0 - m/4);
 
 pen_stroke(
     nib(thinnib rotated 0 )(2 )

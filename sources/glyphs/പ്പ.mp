@@ -10,12 +10,13 @@ z6=(x5 + 3/4mw, y5);
 z7=(x6, y6 + m/2);
 z8=(x7, y7 + m/2);
 
-z10= (x1, m - m/6);
-z11= (x3, y10);
-z12= (x6, y11 - m/4);
+
 
 paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
 paths[1] := z5{dir 30}..{dir 30}z6{dir 30}..z7...{dir 60}z8;
+z10= (x1, m - m/6);
+z11= (x3, y10);
+z12= point 2.25 of paths[1];
 paths[2] := z10 .. z11{dir -60}.. z12;
 
 pen_stroke(

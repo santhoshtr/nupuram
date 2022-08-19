@@ -34,7 +34,7 @@ vardef thicknib = fix_nib(thick, thick, 0) enddef;
 vardef thinnib = fix_nib(thick, thick, 0) xyscaled(thin, thin) enddef;
 vardef terminalnib =
     if terminalround = 0:
-        fix_nib(thick, terminalround, 0) xyscaled(xthick, terminalround)
+        fix_nib(thick, 0, 0) xyscaled(xthick, terminalround)
     else:
         fix_nib(thick, thick, 0) xyscaled(xthick, terminalround)
     fi

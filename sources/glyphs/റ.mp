@@ -1,8 +1,7 @@
 input glyph;
 beginglyph;
 
-paths[0] := ra;
-
+paths[0] = ra;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 5, 6 )
     nib(thinnib rotated 0 )(1,3)

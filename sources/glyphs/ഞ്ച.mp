@@ -4,7 +4,7 @@ paths[0] :=left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 
@@ -22,7 +22,7 @@ pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7, )
     nib(thinnib rotated 0 )(0, 2, 4,6)
     nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 135)(infinity)
+    nib(terminalnib rotated 150)(infinity)
 )(paths[1])(strokes[1]);
 
 z24=(x18, 0);
@@ -38,5 +38,9 @@ pen_stroke(
     nib(terminalnib rotated 115)(0)
     nib(terminalnib rotated 170)(infinity)
 )(paths[2])(strokes[2]);
+
+anchor( "vc", z12);
+anchor( "bottom", z26);
+anchor( "right", z26);
 
 endglyph;

@@ -5,7 +5,7 @@ paths[0] :=left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 % Second arch

@@ -2,17 +2,17 @@ input glyph;
 beginglyph;
 z0=(x1 + mw/3, 0);
 z1=(0, m/2);
-z2=(x1 + mw/4, y1 + m/2);
+z2=(x1 + mw/3, y1 + m/2);
 z3=(x2 + mw/3, m/3);
 z4=(x3, y3-m/4);
 % Second arch
 z5 = z3;
 z6 = (x5 + mw/3, y2- thick);
-z7 = (x6 + mw/4, y6 - m/3);
+z7 = (x6 + mw/3, y6 - m/3);
 z8 = (x7 - mw/3, y7 - m/2);
 
-paths[0] = z0 ..z1..{right}z2..z3 ---z4;
-paths[1] = z5{up}..z6..z7..z8;
+paths[0] = z0  ..z1..{right}z2..z3 ---z4;
+paths[1] = z5{up}..z6..z7..{dir 200}z8;
 paths[2] = va_tail shifted(z8);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )

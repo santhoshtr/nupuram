@@ -40,7 +40,7 @@ pen_stroke(
 pen_stroke(
     nib(thicknib rotated 0 )(2)
     nib(thinnib rotated 0 )(1,3)
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(terminalnib rotated 45)(0)
+    nib(terminalnib rotated 135)(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

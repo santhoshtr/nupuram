@@ -4,7 +4,7 @@ paths[0] :=left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 135)(0)
+    nib(terminalnib rotated 90)(0)
     nib(terminalnib rotated 0)(infinity)
 )(paths[0])(strokes[0]);
 
@@ -21,11 +21,11 @@ pen_stroke(
 )(paths[1])(strokes[1]);
 
 
-z20 = (x12 , y12);
+z20 = (x12   , y12);
 z21 = (x20 + mw/5, y20 - m/4);
-z22 = (x21 - mw/5, y21 - m/4);
+z22 = (x21 - mw/5, y21 - m/3);
 z23 = (x22 - mw/5, y22 + m/4);
-z24 = (x23 + mw/4, y23 + m/4);
+z24 = (x23 + mw/4, m);
 z25 = (x24 + mw/2.4, y24 - m/3);
 z26 = (x25, y25 - m/5);
 
@@ -34,7 +34,7 @@ z28 = (x27 + mw/3, y27 + m/3 + m/12);
 z29 = (x28 + mw/3, y28 - m/3);
 z30 = (x29 - mw/2, y29 - m/3);
 z31 = (x30 - mw/2, y30 - m/12);
-z32 = (x31 - mw/3, y31 - m/4);
+z32 = (x31 - mw/3, 0);
 
 
 z35 = (x32 + mw, y32 + m/3);

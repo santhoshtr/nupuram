@@ -14,10 +14,6 @@ pen_stroke(
     nib(terminalnib rotated 0)(4 )
 )(paths[0])(strokes[0]);
 
-z20 = ( x3, y3 );
-z21 = ( x20 + m/3, m);
-z22 = ( x21 + m/3, y21 - m/4);
-z23 = ( x22 - m/3, y22 - m/4);
 paths[1] = subpath(1, 6) of da shifted (xpart(z4), 0) ;
 pen_stroke(
     nib(thicknib rotated 0 )( 3, 6 )

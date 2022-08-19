@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 
-z0 = (mw/5+thick/2 , m);
+z0 = (mw/5 , m);
 z1 = (x0 + mw/5, y0 - m/4);
-z2 = (x1 - mw/5, y1 - m/4);
+z2 = (x1 - mw/5, y1 - m/3);
 z3 = (x2 - mw/5, y2 + m/4);
-z4 = (x3 + mw/4, y3 + m/4);
+z4 = (x3 + mw/4, m);
 z5 = (x4 + mw/2.4, y4 - m/3);
 z6 = (x5, y5 - m/5);
 
@@ -14,7 +14,7 @@ z8 = (x7 + mw/3, y7 + m/3  );
 z9 = (x8 + mw/3, y8 - m/3);
 z10 = (x9 - mw/2, y9 - m/3);
 z11 = (x10 - mw/2, y10 - m/12);
-z12 = (x11 - mw/3, y11 - m/4);
+z12 = (x11 - mw/3, 0);
 
 z15 = (x12 + mw, y12 + m/3);
 z16 = (x15 + mw/3, y15 - m/4);

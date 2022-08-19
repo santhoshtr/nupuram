@@ -10,7 +10,7 @@ z4=  (x0, y3 + .25(s-thick/2));
 z5=  (x1, s - thick/4);
 z6=  (x5 + .15w_, y5 - .1s);
 
-paths[0] =z0..z1..z2..z3..z4..z5..z6 ;
+paths[0] = z0{dir -30}..z1..z2..{dir 160}z3..z4..z5..{dir -30}z6 ;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0,1, 3)
