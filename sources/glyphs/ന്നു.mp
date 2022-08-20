@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-z3=(mw/4+thick/2, 0);
+z3=(mw/3, 0);
 z4=(x3 - mw/3, y3 + m/2);
 z5=(x4 + mw/3, y4 +0.4m);
 z6=(x5 + mw/3, y5 - m/2);
@@ -18,7 +18,7 @@ z18=(x17 - mw/3, y17 - m/2);
 z19= ( x18 - mw/4, y18 + .3m);
 z20= ( x19 + 0.55mw, y17);
 
-paths[0] =  z3 ..z4.. z5..z6 ---z7;
+paths[0] =  z3{dir 150} ..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13---z14;
 paths[2] = z15{up}..z16..z17...z18..z19..z20;
 

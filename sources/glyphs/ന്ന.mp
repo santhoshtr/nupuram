@@ -10,7 +10,7 @@ z11 = z6;
 z12 = (x11 + mw/4, y11 + m/3);
 z13 = (x12 + mw/4, m/2);
 z14 = (x13, y7);
-paths[0] =  z3 ..z4.. z5..z6 ---z7;
+paths[0] =  z3{dir 150} ..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13---z14;
 paths[2] :=  subpath(1, 4) of right_arch shifted(x13, 0);
 pen_stroke(

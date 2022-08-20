@@ -20,10 +20,10 @@ z18=(x17 - m/3, y17 - m/2);
 z19= ( x18 - mw/4, y18 + .3m);
 z20= ( x19 + mw/2, y19 +  m/3);
 z21= ( x20 + m/3, y20 - m/3 );
-z22= ( x21 - 0.7mw, y21 - m/2 );
+z22= ( x21 - 0.7mw, y18 - m/4 );
 
 paths[1] = z11{up}..z12..z13---z14;
-paths[2] = z15{up}..z16..z17...z18..z19..z20..z21..z22;
+paths[2] = z15{up}..z16..z17...z18..z19..z20..z21..{dir 160}z22;
 
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)

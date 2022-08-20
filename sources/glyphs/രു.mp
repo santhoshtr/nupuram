@@ -11,28 +11,15 @@ z6=(x5 + 3/4mw, y5 + m/2);
 z7=(x6 + mw/4, y6 - m/4);
 z8=(x7 - mw/4, y7 - m/4);
 
-
 paths[0] = z0..z1..z2..z3..z4..{dir 60}z5;
-paths[0] := paths[0]{dir 60}..(point 2.55 of paths[0]);
-
-paths[1] := da;
-paths[1] := paths[1] shifted(xpart(point infinity of paths[0]),0);
-paths[1] := subpath(2, 6) of paths[1];
-paths[1] := (point 6 of paths[0]) .. paths[1];
+paths[0] := paths[0]{dir 60}..subpath(2, 6) of da shifted(xpart(point 2.5 of paths[0]),0);
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4)
-    nib(thinnib rotated 0 )(1, 3, 5,7)
+    nib(thinnib rotated 0 )(1, 3, 5,7, 9)
     nib(terminalnib rotated 45)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(terminalnib rotated 60)(8)
+    nib(terminalnib rotated 90)(infinity)
 )(paths[0])(strokes[0]);
 
-
-pen_stroke(
-    nib(thicknib rotated 0 )( 1, 3, 5 )
-    nib(thinnib rotated 0 )( 0, 2,4,6)
-    nib(terminalnib rotated 120)(0)
-    nib(terminalnib rotated 60)(3)
-    nib(terminalnib rotated 60)(infinity)
-)(paths[1])(strokes[1]);
 endglyph;

@@ -21,7 +21,7 @@ z13 = (x12 + 0.6mw, y12 );
 z14 = (xpart (point 7 of paths[0]) + .1mw, y13);
 paths[1] = z12{dir 20}..z13{dir -20}..z14;
 pen_stroke(
-     nib(thicknib rotated 0 )( 2, 4)
+    nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
     nib(terminalnib rotated 90 )( 0 )
     nib(terminalnib rotated 60 )( 6 )

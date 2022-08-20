@@ -13,12 +13,12 @@ z9=(x8 - mw/4, y8 + m/2);
 z10=(x9 + mw/4, y9 + m/2);
 z11=( x9, ascent + .1m);
 paths[0] = z0..z1..{right}z2.. z3---z4 ;
-paths[1] = z5{up}..z6..z7..z8 .. z9..z10{up}..z11;
+paths[1] = z5{up}..z6..z7..z8 .. z9..{up}z10{up}..{dir 150}z11;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
     nib(thinnib rotated 0 )(1, 3)
     nib(terminalnib rotated 45)(0)
-    nib(terminalnib rotated 10)(4 )
+    nib(terminalnib rotated 0)(4 )
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3)

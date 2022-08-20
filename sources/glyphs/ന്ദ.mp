@@ -23,6 +23,9 @@ pen_stroke(
     nib(terminalnib rotated 90)(infinity)
 )(paths[1])(strokes[1]);
 
+anchor( "vc", point 4 of paths[0]);
+anchor( "bottom", point 4.25 of paths[1]);
+anchor( "right", point 4.25 of paths[1]);
 
 
 endglyph;

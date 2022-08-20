@@ -22,10 +22,10 @@ z13 = ( x12 + mw/3, y12 - m/2);
 z14 = ( x13 - mw/4, y13 -  0.3m); % bottom middle
 z15 = ( x14 - mw/4, y14 + m/2.5);
 z16 = ( x15 + mw/2, m ); % second top
-z17 = ( x16 + mw/2.8, y16 - m/2);
+z17 = ( x16 + mw/2.5, y16 - m/2);
 z18 = ( x17 - mw/4, y0);
 
-paths[1] =z11{up}..z12{right}.. z13..z14..z15 ..z16{right}..z17..z18;
+paths[1] =z11{up}..z12{dir 10}.. z13..z14..z15 ..z16{dir 10}..z17..{dir 220}z18;
 
 pen_stroke(
     nib(thinnib rotated 0 )(2, 4, 6, 8)
