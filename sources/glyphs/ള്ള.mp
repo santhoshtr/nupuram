@@ -23,17 +23,17 @@ z13 = (x12 + 0.6mw, y12 );
 z14 = (xpart (point 7 of paths[0]) + .18mw, y13);
 paths[1] = z12{dir 20}..z13{dir -20}..z14;
 pen_stroke(
-     nib(thicknib rotated 0 )( 2, 4)
+    nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
     nib(terminalnib rotated 90 )( 0 )
-    nib(terminalnib rotated 60 )( 6 )
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 6 of paths[0])(6)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1 )
-    nib(terminalnib rotated 115)(0)
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 shift = xpart(point 2 of paths[1]);
@@ -41,17 +41,17 @@ paths[2] = paths[0] shifted (shift, 0);
 % We need to cut the extra elongation we gave for first ള
 paths[3] = subpath(0, 1.9) of paths[1] shifted (shift, 0);
 pen_stroke(
-     nib(thicknib rotated 0 )( 2, 4)
+    nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
     nib(terminalnib rotated 90 )( 0 )
-    nib(terminalnib rotated 60 )( 6 )
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 6 of paths[2])(6)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1 )
-    nib(terminalnib rotated 115)(0)
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[3])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
 anchor( "vc", (x14,0));

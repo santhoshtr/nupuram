@@ -24,14 +24,14 @@ pen_stroke(
     nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
     nib(terminalnib rotated 90 )( 0 )
-    nib(terminalnib rotated 60 )( 6 )
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 6 of paths[0])(6)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1 )
-    nib(terminalnib rotated 115)(0)
-    nib(terminalnib rotated 115)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 anchor( "vc", (xpart (point 4 of paths[0]),0));

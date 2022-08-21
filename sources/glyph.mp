@@ -115,6 +115,10 @@ vardef show_coordinates (expr p ) =
     endfor;
 
 enddef;
+% For the given point t of path p, calculate the terminal angle. That is
+% the direction of cut at that point. It is perpendicular to the direction
+% of path.
+vardef terminalangle expr t of p = angle(direction t of p)+90 enddef;
 
 def anchor = label enddef;
 

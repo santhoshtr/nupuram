@@ -16,26 +16,25 @@ z16=(x15 + mw/2, m);
 z17=(x16 + mw/3, y16 - m/2);
 z18=(x17 - mw/3, y17 - m/2);
 z19= ( x18 - mw/4, y18 + .3m);
-z20= ( x19 + 0.55mw, y17);
 
 paths[0] =  z3{dir 150} ..z4.. z5..z6 ---z7;
 paths[1] = z11{up}..z12..z13---z14;
-paths[2] = z15{up}..z16..z17...z18..z19..z20;
-
+paths[2] = z15{up}..z16..z17...z18..z19..{dir -30}z17;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2,4,6 )
     nib(thinnib rotated 0 )(1,3)
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)
     nib(thinnib rotated 0 )(2)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)
     nib(thinnib rotated 0 )(0, 2,4, 6)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
  )(paths[2])(strokes[2]);
 endglyph;

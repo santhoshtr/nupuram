@@ -13,6 +13,10 @@
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
+    <axis tag="soft" name="Softness" minimum="10" maximum="100" default="50">
+      <labelname xml:lang="en">Softness</labelname>
+      <labelname xml:lang="ml">മൃദുത്വം</labelname>
+    </axis>
   </axes>
   <sources>
     <source familyname="Nupuram Handwriting" filename="./fonts/ufo/Nupuram-Handwriting-Regular.ufo" name="Regular">
@@ -23,6 +27,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="50"/>
       </location>
     </source>
     <source familyname="Nupuram Handwriting" filename="./fonts/ufo/Nupuram-Handwriting-Black.ufo" name="Black">
@@ -79,6 +84,22 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="20"/>
+      </location>
+    </source>
+    <source familyname="Nupuram Handwriting" filename="./fonts/ufo/Nupuram-Handwriting-Regular-ExtraSoft.ufo" name="RegularExtraSoft">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="100"/>
+      </location>
+    </source>
+      <source familyname="Nupuram Handwriting" filename="./fonts/ufo/Nupuram-Handwriting-Regular-Sharp.ufo" name="RegularSharp">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="40"/>
       </location>
     </source>
   </sources>

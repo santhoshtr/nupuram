@@ -4,8 +4,8 @@ paths[0] :=left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 
@@ -16,8 +16,8 @@ paths[1] = z10{up} ..z12{right} ;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7, )
     nib(thinnib rotated 0 )(0, 2, 4,6)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 135)(infinity)
+    nib(thinterminalnib rotated  terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 
@@ -48,20 +48,20 @@ paths[4] = z32.. tension 1.5..z35..z36..z37..z38;
 pen_stroke(
     nib(thicknib rotated 0 )(0,   3 )
     nib(thinnib rotated 0 )(1,3,5)
-    nib(thinterminalnib rotated 90 )(0 )
-    nib(terminalnib rotated 0 )(infinity )
+    nib(thinterminalnib rotated  terminalangle 0 of paths[2] )(0 )
+    nib(terminalnib rotated terminalangle infinity of paths[2] )(infinity )
 )(paths[2])(strokes[2]);
 pen_stroke(
     nib(thicknib rotated 0 )(1, 4)
     nib(thinnib rotated 0 )( 2,3,4,5,7,9,11)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(thinterminalnib rotated  terminalangle 0 of paths[3])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 pen_stroke(
     nib(thicknib rotated 0 )(1, 4)
     nib(thinnib rotated 0 )(1, 2)
-    nib(terminalnib rotated 120)(0)
-    nib(thinterminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[4])(0)
+    nib(thinterminalnib rotated terminalangle infinity of paths[4])(infinity)
 )(paths[4])(strokes[4]);
 
 endglyph;

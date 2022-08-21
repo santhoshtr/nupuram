@@ -4,8 +4,8 @@ paths[0] :=left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 
@@ -18,12 +18,12 @@ z16 = ( x15 + mw/2, y15 +  m/2); % second top
 z17 = ( x16 + m/3, y16-m/2);
 z18 = ( x17, y17-m/3); %
 
-paths[1] = z10{up} ..z12 .. z13..z14..z15 ..z16 ..z17..z18;
+paths[1] = z10{up} ..z12 .. z13..z14..z15 ..z16 ..z17..{down}z18;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7, )
     nib(thinnib rotated 0 )(0, 2, 4,6)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 
@@ -40,8 +40,8 @@ paths[2] = z20{up} ..z22 .. z23..z24..z25 ..z26 ..z27..z28;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7, )
     nib(thinnib rotated 0 )(0, 2, 4,6)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 135)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
 

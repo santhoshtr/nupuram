@@ -23,9 +23,9 @@ paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..ten
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0,2, 4, 6, 9,11,13)
-    nib(thinterminalnib rotated 0)(0)
+    nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated 45)(4)
-    nib(terminalnib rotated 120)(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 anchor( "vc", (x1,0));

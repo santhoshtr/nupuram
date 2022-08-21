@@ -12,13 +12,16 @@ OTFDIR=${FONTSDIR}/otf
 WEBFONTSDIR=${FONTSDIR}/webfonts
 UFODIR=${FONTSDIR}/ufo
 
-UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) $(FONTSDIR)/ufo/$(FAMILY)-Shadow-Color.ufo $(FONTSDIR)/ufo/$(FAMILY)-Arrows-Color.ufo
+UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) \
+	$(FONTSDIR)/ufo/$(FAMILY)-Shadow-Color.ufo \
+	$(FONTSDIR)/ufo/$(FAMILY)-Arrows-Color.ufo
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
 VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf ${TTFDIR}/$(FAMILY)-Handwriting-VF.ttf
 VAROTF=$(OTFDIR)/$(FAMILY)-VF.otf $(OTFDIR)/$(FAMILY)-Handwriting-VF.otf
-VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 $(FONTSDIR)/webfonts/$(FAMILY)-Handwriting-VF.woff2
+VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 \
+	$(FONTSDIR)/webfonts/$(FAMILY)-Handwriting-VF.woff2
 
 .PHONY: variants $(STYLES) ufo otf ttf webfonts clean
 

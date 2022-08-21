@@ -16,8 +16,8 @@ paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4,6, )
     nib(thinnib rotated 0 )(1, 3, 5, 7)
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

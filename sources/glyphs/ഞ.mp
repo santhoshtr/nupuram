@@ -5,8 +5,8 @@ paths[0] := left_arch_with_eye;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 z10 = point 5 of paths[0];
@@ -22,8 +22,8 @@ paths[1] = z10{up} ..z12{right}.. z13..z14..z15 ..z16{right}..z17..z18;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7, )
     nib(thinnib rotated 0 )(0, 2, 4,6)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 135)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 
