@@ -13,10 +13,9 @@
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
-    <axis tag="opsz" minimum="8" maximum="144" default="16" name="opsz">
-      <labelname xml:lang="en">Optical Size</labelname>
-      <labelname xml:lang="ml">എടുപ്പ്</labelname>
-
+    <axis tag="soft" name="Softness" minimum="10" maximum="100" default="50">
+      <labelname xml:lang="en">Softness</labelname>
+      <labelname xml:lang="ml">മൃദുത്വം</labelname>
     </axis>
   </axes>
   <sources>
@@ -28,7 +27,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="opsz" xvalue="16"/>
+        <dimension name="Softness" xvalue="50"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Black.ufo" name="Black">
@@ -87,12 +86,20 @@
         <dimension name="slant" xvalue="20"/>
       </location>
     </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Display.ufo" name="Display">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-ExtraSoft.ufo" name="ExtraSoft">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="opsz" xvalue="144"/>
+        <dimension name="Softness" xvalue="100"/>
+      </location>
+    </source>
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Sharp.ufo" name="Sharp">
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="40"/>
       </location>
     </source>
   </sources>
@@ -240,26 +247,6 @@
       <location>
         <dimension name="weight" xvalue="1000"/>
         <dimension name="slant" xvalue="0"/>
-      </location>
-    </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Display.ufo" stylename="Display">
-      <info />
-      <kerning />
-      <location>
-       <dimension name="weight" xvalue="400"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="0"/>
-        <dimension name="opsz" xvalue="144"/>
-      </location>
-    </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Display-Thin.ufo" stylename="Display-Thin">
-      <info />
-      <kerning />
-      <location>
-        <dimension name="weight" xvalue="1"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="0"/>
-        <dimension name="opsz" xvalue="144"/>
       </location>
     </instance>
   </instances>

@@ -26,7 +26,7 @@ linecap :=      butt;         % butt or rounded or square
 linejoin :=     rounded;      % rounded or mitered or beveled
 soften :=       1;            % Whether sharp corners need to be softened using cornerradius
 cornerradius := 10;           % Corner radius. Used when soften=1.
-terminalround:= 0;            % Terminal roundness. Give 1 for round terminals. 0 for razor cuts
+terminalround:= 0.50;            % Terminal roundness. Give 1 for round terminals. 0 for razor cuts
 
 outputformat := "svg";
 

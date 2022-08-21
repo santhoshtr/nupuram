@@ -126,7 +126,7 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
-        contentArea.classList.remove("shadowcolor", "arrowscolor", "handwriting", "sans", "calligraphy","dots");
+        contentArea.classList.remove("shadowcolor", "arrowscolor", "sans", "calligraphy","dots");
         document.getElementById('palette').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
         if (selected === 'NupuramShadowColor') {
@@ -145,9 +145,6 @@ function listen() {
 
         if (selected === 'NupuramDots') {
             contentArea.classList.add('dots');
-        }
-        if (selected === 'NupuramHandwriting') {
-            contentArea.classList.add('handwriting');
         }
         if (selected === 'NupuramCalligraphy') {
             contentArea.classList.add('calligraphy');
