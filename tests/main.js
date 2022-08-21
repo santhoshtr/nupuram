@@ -222,15 +222,15 @@ function listen() {
         });
     });
 
-    document.querySelectorAll("[data-id='fontOpsz']").forEach((element) => {
+    document.querySelectorAll("[data-id='fontSoft']").forEach((element) => {
         element.addEventListener('input', function () {
-            const fontOpsz = element.value;
+            const fontSoft = element.value;
             if (element.type == 'range') {
-                document.querySelector('#font-fontOpsz').value = fontOpsz;
+                document.querySelector('#font-fontSoft').value = fontSoft;
             } else {
-                document.querySelector('#font-opsz > input[type="range"]').value = fontOpsz;
+                document.querySelector('#font-soft > input[type="range"]').value = fontSoft;
             }
-            root.style.setProperty('--opsz', fontOpsz);
+            root.style.setProperty('--soft', fontSoft);
         });
     });
 

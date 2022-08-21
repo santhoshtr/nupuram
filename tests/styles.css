@@ -38,7 +38,7 @@
 :root {
   --weight: 400;
   --slant: 0;
-  --opsz: 16;
+  --soft: 50;
   --width: 100;
 }
 
@@ -65,7 +65,7 @@ main {
   line-height: 1.5;
   padding: 0.5em;
   outline: none;
-  font-variation-settings: 'wght' var(--weight), 'opsz' var(--opsz), 'wdth' var(--width), 'slnt' var(--slant);
+  font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width), 'slnt' var(--slant);
 }
 
 .content.shadowcolor {
