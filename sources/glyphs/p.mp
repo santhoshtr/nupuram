@@ -1,8 +1,12 @@
 input glyph;
 beginglyph;
 
-paths[0] := p_vstem;
-paths[1] := p_loop shifted(xpart(point 1 of p_vstem),0);
+z0=(x1- thick/4, s);
+z1=(0, y0-X/2);
+z2=(x0, -descent);
+
+paths[0] := z0{dir -60}..z1..{dir -120}z2;
+paths[1] := p_loop shifted ( xpart(point 1 of paths[0]), 0);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1)
@@ -12,6 +16,6 @@ pen_stroke(
 pen_stroke(
     nib(thinnib rotated 0 )(2)
     nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 endglyph;

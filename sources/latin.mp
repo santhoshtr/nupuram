@@ -23,16 +23,6 @@ vardef l_vstem =
     stem
 enddef;
 
-vardef p_vstem =
-    clearxy;
-    path stem;
-    z0=(0,s);
-    z1=(x0 + thick/2,s - X/2);
-    z2=(x1,s-X);
-    stem:=z0{dir -60}..{down}z1{down}..z2;
-    stem
-enddef;
-
 vardef r_vstem =
     clearxy;
     path stem;
@@ -45,70 +35,75 @@ enddef;
 
 vardef n_arch =
     clearxy;
-    path n;
-    n:= base_loop;
-    n:=n slanted latin_loop_slant;
-    n:=n shifted (-latin_loop_slant*s/2, 0);
-    n:= n cutafter point 1.8 of n;
-    z4 = (xpart point 2 of n - thick/4, 0);
-    n:= n..{dir -80}z4;
-    n
+    save r;
+    r=0.7;
+    z0=(0, 0);
+    z1=(r*sw/6, 0.6s);
+    z2=(r*sw, s - thick/4);
+    z3=(x2, s/2);
+    z4=(x3+0.1sw*r, 0);
+    z0{dir 90}.. z1{dir 60}..{dir -45}z2{dir -60}..  z3..{dir -60}z4
 enddef;
 
 vardef u_arch =
-    reverse n_arch xyscaled(-1, -1) shifted(2/3s + thick/2, s)
+    reverse n_arch xyscaled(-1, -1) shifted(2/3s + thick, s)
 enddef;
 
 vardef r_arch =
     clearxy;
-    n_arch cutafter point 1 of n_arch
+    (n_arch cutafter point 2 of n_arch) xyscaled(0.8, 1)
 enddef;
 
+% For the loops of p and b
 vardef p_loop =
     clearxy;
     path p;
-    p:= base_loop;
-    p:= p slanted latin_loop_slant;
-    p:= p shifted (-latin_loop_slant*s/2, 0);
-    p:= p cutbefore point .05 of p;
-    p:= p cutafter point 3.6 of p;
-    p
+    r=0.7;
+    z0=(0, 0);
+    z1=(r*2/3sw, s);
+    z2=(r*sw, 2/3s);
+    z3=(0.5*r*sw, 0);
+    z4=(x0+r*sw/5, y0 + s/10);
+    z0{dir 80}..z1..{dir -80}z2{dir -80}..{dir 190}z3 ..z4
 enddef;
 
 vardef a_loop =
     clearxy;
-    p_loop xyscaled(-1,-1) shifted(xpart(point 2 of p_loop), s)
+    save r;
+    r=0.7;
+    z0=(sw*r,  0.9s);
+    z1=(0.5*sw*r, s);
+    z2=(0, s/3);
+    z3=(r*sw/3, 0);
+    z4=(x0, y0);
+    z0..z1{dir 190}..{dir -80}z2{dir -80}..z3 ..{dir 80}z4
 enddef;
 
 vardef e_loop =
     clearxy;
+    save r,e;
     path e;
-    z3 = (2sw/3, s/2);
-    z4 = (x3 - sw/3, s - thick/4 );
-    z5 = (x4 - sw/3,  y4 - s/2 );
-    z6 = (x5+sw/3,  thick/4 );
-    z7 = (x6+sw/2, s/2 );
-    e = z3..z4..z5..z6..z7;
-    e:=e slanted latin_loop_slant;
-    e:=e shifted (-latin_loop_slant*s/2 , 0);
-    e:=e cutbefore point .4 of e;
-    e:=e cutafter point 3.6 of e;
-    e:=point 1.8 of e{dir -45}..e;
-    e
+    r=0.7;
+    z0=(sw*r, 0.8s);
+    z1=(0.5sw*r,s);
+    z2=(0, s/3);
+    z3=( sw/3*r, 0);
+    z4= (sw*r, s/5);
+    z5 = z2;
+    z5{right}..{dir 100}z0..z1{dir 200}..{dir -80}z2{dir -80}..z3 ..{dir 60}z4
+
 enddef;
 
 vardef c_loop =
     clearxy;
-    path c;
-    z3 = (2sw/3, s/2);
-    z4 = (x3 - sw/3, s - thick/4 );
-    z5 = (x4 - sw/3,  y4 - s/2 );
-    z6 = (x5 + sw/3,  thick/4);
-    z7 = (x6 + sw/2, s/2 );
-    c = z3..z4..z5..z6..z7;
-    c:=c slanted latin_loop_slant;
-    c:=c shifted (-latin_loop_slant*sw/2, 0);
-    c:=c cutbefore point .4 of c;
-    c:=c cutafter point 3.6 of c;
-    c
+    save r,e;
+    path e;
+    r=0.7;
+    z0=(sw*r, 0.8s);
+    z1=(0.5sw*r,s);
+    z2=(0, s/3);
+    z3=( sw/3*r, 0);
+    z4= (sw*r, s/5);
+
+    z0..z1{dir 200}..{dir -80}z2{dir -80}..z3 ..{dir 60}z4
 enddef;

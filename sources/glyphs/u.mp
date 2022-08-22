@@ -2,12 +2,12 @@ input glyph;
 beginglyph;
 
 paths[0] := u_arch ;
-paths[1] := r_vstem xyscaled(-1, -1) shifted(xpart(point 3 of paths[0]) + xpart(point 1 of r_vstem), s);
+paths[1] := r_vstem xyscaled(-1, -1) shifted(xpart(point 4 of paths[0]) + xpart(point 1 of r_vstem), s);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1,3)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 0 )(1)

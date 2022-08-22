@@ -1,7 +1,11 @@
 input glyph;
 beginglyph;
 paths[1] := a_loop;
-paths[0] := p_vstem xyscaled(-1, 1) shifted(xpart(point 0 of paths[1]) + xpart(point 1 of p_vstem),0);
+z0=(x1 +  thick/4, s);
+z1=(0, y0-X/2);
+z2=(x0, -descent);
+paths[0] := z0{dir 250}..z1..{dir -60}z2;
+paths[0] := paths[0] shifted(xpart(point 0 of paths[1]),0);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1)
