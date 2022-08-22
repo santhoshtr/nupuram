@@ -25,7 +25,7 @@ paths[1] = z12{dir 20}..z13{dir -20}..z14;
 pen_stroke(
     nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
-    nib(terminalnib rotated 90 )( 0 )
+    nib(terminalnib rotated terminalangle 0 of paths[0] )( 0 )
     nib(terminalnib rotated terminalangle 6 of paths[0])(6)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
@@ -43,7 +43,7 @@ paths[3] = subpath(0, 1.9) of paths[1] shifted (shift, 0);
 pen_stroke(
     nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
-    nib(terminalnib rotated 90 )( 0 )
+    nib(terminalnib rotated terminalangle 0 of paths[2] )( 0 )
     nib(terminalnib rotated terminalangle 6 of paths[2])(6)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);

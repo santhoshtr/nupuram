@@ -40,16 +40,15 @@ pen_stroke(
     nib(thicknib rotated 0 )(0,2,4 )
     nib(thinnib rotated 0 )(1,3,5)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(terminalnib rotated  terminalangle infinity of paths[1])(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3, 5 )
     nib(thinnib rotated 0 )( 0, 2,4,6)
     nib(thinterminalnib rotated  terminalangle 0 of paths[2])(0)
-    nib(terminalnib rotated  terminalangle 3 of paths[2])(3)
-    nib(terminalnib rotated  terminalangle infinity of paths[2])(infinity)
+    nib(terminalnib rotated terminalangle 3 of paths[2])(3)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
-
 
 endglyph;

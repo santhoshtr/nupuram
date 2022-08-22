@@ -29,9 +29,9 @@ z14 = (x8, y8);
 paths[1] = z11-- z12{left}..{left}z13{dir 45} .. z14;
 pen_stroke(
     nib(thicknib rotated 0 )(1,2)
-    nib(terminalnib rotated 120)(3)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 3 of paths[1])(3)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 

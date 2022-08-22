@@ -39,10 +39,9 @@ z11 = (xpart(point 1.4 of paths[1]), y10) ;
 z12 = point 1.4 of paths[1];
 paths[2] := z9{down}..{dir 200}z10{dir 10}..{dir -10}z11{dir 80}..{dir 100}z12;
 pen_stroke(
-    nib(thicknib rotated 0 )(   3)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 135)(1)
-    nib(thinterminalnib rotated 170)(infinity)
+    nib(thicknib rotated 0 )(3)
+    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
 anchor( "vc", z2);

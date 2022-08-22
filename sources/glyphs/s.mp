@@ -15,8 +15,8 @@ paths[0] = z0{dir -30}..z1..z2..{dir 160}z3..z4..z5..{dir -30}z6 ;
 pen_stroke(
     nib(thicknib rotated 0 )(0,1, 3)
     nib(thinnib rotated 0 )(2, 4)
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 60)(infinity )
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 

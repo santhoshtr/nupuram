@@ -14,9 +14,9 @@ paths[0] = z0  ..z1 .. z2 .. {dir -60}z3 .. z4..z5---z6 ;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
     nib(thinnib rotated 0 )(1, 3,5)
-    nib(terminalnib rotated 0)(0)
-    nib(terminalnib rotated 90)(4 )
-    nib(terminalnib rotated 0)(6 )
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle 4 of paths[0])(4 )
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

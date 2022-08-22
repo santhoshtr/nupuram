@@ -19,16 +19,16 @@ paths[2] = z7--z8;
 pen_stroke(
     nib(thicknib rotated 0 )(0,2,4 )
     nib(thinnib rotated 0 )(1,3)
-    nib(terminalnib rotated 60)(0)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated 90)(2)
-    nib(terminalnib rotated 60)(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 60)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(terminalnib rotated 60)(0)
-    nib(terminalnib rotated 60)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

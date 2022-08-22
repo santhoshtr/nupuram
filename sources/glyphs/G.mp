@@ -10,8 +10,8 @@ paths[0] = z0{up}..z1{left}..  z2..z3..{up}z4{left}.. z5 ;
 paths[0] := paths[0] cutbefore point 0.3 of paths[0];
 pen_stroke(
     nib(thinnib rotated 0 )(  2, 4)
-    nib(terminalnib rotated 30)(0)
-    nib(terminalnib rotated 120)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

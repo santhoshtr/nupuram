@@ -14,12 +14,12 @@ paths[0] := paths[0] shifted(-x2 + thick, 0);
 paths[1] := paths[1] shifted(-x2 + thick ,0);
 
 pen_stroke(
-    nib(terminalnib rotated 120)( 0)
-    nib(terminalnib rotated 45)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])( 0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 45)(1)
-    nib(terminalnib rotated 45)( 0)
-    nib(terminalnib rotated 135)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])( 0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 endglyph;

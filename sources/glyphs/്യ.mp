@@ -12,8 +12,8 @@ paths[0] := paths[0]..z3..z4;
 paths[0] := paths[0] shifted(-x3,0);
 pen_stroke(
     nib(thinnib rotated 0 )(2, 3)
-    nib(terminalnib rotated 10)(0)
-    nib(terminalnib rotated 150)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

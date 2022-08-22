@@ -18,14 +18,14 @@ z13 = (x5, -descent);
 z14 = (0, y4);
 z15 = (x6, m );
 
-paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7 .. z8 ..z9{down}..{left}z10{dir -10}..z11..z12..z13.. z14{up}.. {dir 45}z15 ;
+paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7 .. z8 ..z9{down}..{left}z10{right}..z11..z12..z13.. z14{up}.. {dir 45}z15 ;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )
     nib(thinnib rotated 0 )(0,2, 4, 6, 9, 11, 14,15)
-    nib(thinterminalnib rotated 0)(0)
+    nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated 45)(4)
-    nib(terminalnib rotated 60)(10)
-    nib(terminalnib rotated 135)(infinity)
+    nib(terminalnib rotated terminalangle 10 of paths[0])(10)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 

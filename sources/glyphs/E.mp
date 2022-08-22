@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 w := s;
-z0= (thick/2, X);
+z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 z3 = (x0, y0 - 0.05X);
@@ -18,22 +18,22 @@ z8 = (x4, y7);
 paths[3] = z7{dir 10}..{dir 10}z8;
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
-    nib(terminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 0 )(2)
-    nib(thinterminalnib rotated 90)(0)
-    nib(terminalnib rotated 90)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(thinnib rotated 0 )(2)
-    nib(thinterminalnib rotated 90)(0)
-    nib(terminalnib rotated 90)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 pen_stroke(
     nib(thinnib rotated 0 )(2)
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 90)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[3])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 endglyph;

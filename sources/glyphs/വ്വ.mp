@@ -23,9 +23,7 @@ z13 = (x12 + mw/3, ypart(point 1 of paths[1]));
 paths[2] = z10{dir 250}..{dir -70}z11{left}..{left}z12{dir 30}..{dir 60}z13;
 pen_stroke(
     nib(thicknib rotated 0 )( 3)
-    nib(terminalnib rotated 135)(2)
-    nib(thinterminalnib rotated 0)(0)
-    nib(terminalnib rotated 45)(1)
-    nib(terminalnib rotated 0)(infinity)
+    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 endglyph;

@@ -9,8 +9,8 @@ paths[0] = z0..z1..z3;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1 )
-    nib(terminalnib rotated 120)( 0)
-    nib(terminalnib rotated 60)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

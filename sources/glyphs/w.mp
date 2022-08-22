@@ -15,12 +15,12 @@ pen_stroke(
     nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
-    nib(thinterminalnib rotated 0)(0)
+    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(thinterminalnib rotated 0)(infinity)
+    nib(thinterminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)

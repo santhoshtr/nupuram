@@ -7,7 +7,7 @@ z9 = (x8 + mw/3, m);
 z10 = (x9 + mw/3, y9 - 0.5m);
 z11 = (x10 - mw/2, y10 - 0.5m);
 z12 = (xpart(point 4 of paths[0]), -descent);
-paths[1]:= z8{up}..z9{right}.. z10 ..z11..{dir 210}z12;
+paths[1]:= z8{up}..z9{right}.. z10{dir -90} ..{dir 200}z11..{dir 210}z12;
 paths[1]:= paths[1] slanted tand(8);
 paths[1]:= paths[1] shifted (-tand(8)*m/2,0);
 

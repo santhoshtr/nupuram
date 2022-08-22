@@ -11,8 +11,8 @@ paths[0] := paths[0] shifted (-x1+thick/2, 0);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2,3)
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 % lbearing:=m;
 endglyph;

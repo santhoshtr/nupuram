@@ -10,12 +10,12 @@ paths[1] = z2{right}..z3{down}.. {right}z4;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1)
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 90)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 0 )(1)
-    nib(terminalnib rotated 90)(0)
-    nib(terminalnib rotated 90)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 endglyph;

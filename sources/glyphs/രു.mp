@@ -17,9 +17,9 @@ paths[0] := paths[0]{dir 60}..subpath(2, 6) of da shifted(xpart(point 2.5 of pat
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4)
     nib(thinnib rotated 0 )(1, 3, 5,7, 9)
-    nib(terminalnib rotated 45)(0)
-    nib(terminalnib rotated 60)(8)
-    nib(terminalnib rotated 90)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle 8 of paths[0])(8)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 endglyph;

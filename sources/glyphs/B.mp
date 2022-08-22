@@ -15,13 +15,13 @@ paths[0] = l_vstem ;
 paths[1] = z3{dir 80}..z4..z5..{left}z6{right}..z7..z8..z9;
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)
-    nib(terminalnib rotated 0)(0)
-    nib(terminalnib rotated 0)(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 pen_stroke(
     nib(thinnib rotated 0 )(2)
     nib(terminalnib rotated 90)(0,3)
-    nib(thinterminalnib rotated 90)(infinity)
+    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 endglyph;
