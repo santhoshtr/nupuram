@@ -1,19 +1,19 @@
 input glyph;
 beginglyph;
 
-w_ = phi*sw;
+r = 0.75;
 z0 = (0, .15s);
-z1 = (x0 + .2w_,   thick/4);
-z2 = (x1 + .2w_, y1 + .2s);
-z3 = (x1, y2 + .35(s-thick/2));
-z4=  (x0, y3 + .25(s-thick/2));
-z5=  (x1, s - thick/4);
-z6=  (x5 + .15w_, y5 - .1s);
+z1 = (x0 + sw/2*r, 0);
+z2 = (x1 + sw/2*r, y1 + .2s);
+z3 = (x1, y2 + .3s);
+z4=  (x0, y3 + .2s);
+z5=  (x1, s);
+z6=  (x5 + .4sw*r, y5 - .1s);
 
-paths[0] = z0{dir -30}..z1..z2..{dir 160}z3..z4..z5..{dir -30}z6 ;
+paths[0] = z0 ..z1..z2.. z3..z4..z5.. z6 ;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0,1, 3)
+    nib(thicknib rotated 0 )(0, 1, 3)
     nib(thinnib rotated 0 )(2, 4)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)

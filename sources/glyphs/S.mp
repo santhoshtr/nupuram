@@ -1,16 +1,16 @@
 input glyph;
 beginglyph;
 
-w_ = phi*Xw;
-z0 = (0, .1X);
-z1 = (x0 + .2w_, y0 - .1X);
-z2 = (x1 + .2w_, y1 + .2X);
-z3 = (x1, y2 + .35X);
-z4=  (x0, y3 + .25X);
+r = 0.75;
+z0 = (0, .15X);
+z1 = (x0 + Xw/2*r, 0);
+z2 = (x1 + Xw/2*r, y1 + .2X);
+z3 = (x1, y2 + .3X);
+z4=  (x0, y3 + .2X);
 z5=  (x1, X);
-z6=  (x5 + .15w_, y5 - .1X);
+z6=  (x5 + .4Xw*r, y5 - .1X);
 
-paths[0] = z0{dir -30}..z1..z2..{dir 160}z3..z4..z5..{dir -30}z6 ;
+paths[0] = z0 ..z1..z2.. z3..z4..z5.. z6 ;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0,1, 3)

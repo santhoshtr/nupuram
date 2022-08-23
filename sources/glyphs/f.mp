@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
-z0=(0.66sw, 0.8X);
-z1=(x0 - 0.4sw, 0.95X);
+z0=(0.66sw, 0.85X);
+z1=(x0 - 0.5sw, 0.9X);
 z2=(x1, 3/4s);
 z3=(x2-thick/4, 0);
 path head;
@@ -12,7 +12,7 @@ paths[0] = head.. z2{down}..  {dir 250}z3;
 
 %bar
 z4 = (x2 -0.25sw, s-thick/2);
-z5 = (x0, y4);
+z5 = (x4 + sw/2, y4);
 
 paths[1] = z4{dir 20}..{dir 20}z5;
 pen_stroke(

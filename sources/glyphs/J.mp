@@ -1,14 +1,14 @@
 input glyph;
 beginglyph;
-z0= (Xw/3, X);
-z1=( x0 , X/3);
-z2=( x1 - Xw/6, 0);
+z0= (x1 + thick/2, X);
+z1=( Xw/3 , X/3);
+z2=( x1 - Xw/5, 0);
 z3=( x2 - Xw/6, y2 + X/4);
 
-z5 = (x0 - Xw/3, y0 - thick*thin/2);
-z6 = (x0 , y5);
+z5 = (x3, y0 );
+z6 = (x0 , y0);
 
-paths[0] = z0..  z1{down}..z2{left}..{dir 80}z3;
+paths[0] = z0{dir -120}..  z1{down}..z2{left}..{dir 80}z3;
 paths[1] = z5 ..{dir -10} z6;
 pen_stroke(
     nib(thinnib rotated 0 )(1)

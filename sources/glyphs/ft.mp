@@ -1,24 +1,24 @@
 input glyph;
 beginglyph;
-z0=(sw/2 , X);
-z1=(x0 - sw/3, X-s/4);
+z0=(0.66sw, 0.85X);
+z1=(x0 - 0.45sw, 0.9X);
 z2=(x1, 3/4s);
-z3=(x2 , 0);
+z3=(x2-thick/4, 0);
 path head;
-head = z0{left} ..z1{down};
+head = z0{dir 120} ..{dir 250}z1;
 head := head slanted .16;
 head := head shifted (-sw/6, 0);
-paths[0] = head.. z2{down}..  {down}z3;
-% t
-z10=(x2 + sw/2, X);
-z11=(x10, s/2);
-z12=(x11 , s/2);
-z13=(x12 + sw/4, thick/4);
+paths[0] = head.. z2{down}..  {dir 250}z3;
+
+z10=(x0 , 0.9X);
+z11=(x10, s/3);
+z12=(x11  + thick/4, thick/2);
+z13=(x12 + 0.4sw, s/4);
 %bar
-z4 = (x2 -0.25sw,s);
+z4 = (x2 -0.25sw,s-thick/2);
 z5 = (x10 + sw/4,y4);
 
-paths[1] = z10..z11..z12{down}..{dir 10}z13;
+paths[1] = z10{dir -90}..z11{down}..z12{dir -60}..{dir 60}z13;
 paths[2]:= z4{dir 10}..{dir 10}z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0 )

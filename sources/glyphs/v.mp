@@ -1,12 +1,12 @@
 input glyph;
 beginglyph;
 z0=(0, s);
-z1=(x0 + thick, s/2);
-z2 =(x1, 0);
-z3 =(x2 + sw/2 , 0.6s);
+z1=(x0 + 0.75*sw/3, s/2);
+z2 =(x1 + 0.75*sw/6, 0);
+z3 =(x2 + 0.75*sw/2 , 0.6s);
 z4=(x3, y0);
-paths[0] = z0{dir -45}..z1..{dir 270}z2 ;
-paths[1] = z2{dir 50}..z3..{dir 120}z4 ;
+paths[0] = z0{dir -45}..z1..{dir -85}z2 ;
+paths[1] = z2{dir 60}..z3..{dir 110}z4 ;
 pen_stroke(
     nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
