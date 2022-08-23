@@ -3,13 +3,13 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
-em :=           1000;         % Height of characters - Em square
+em :=           1024;         % Height of characters - Em square
 u :=            em/10;        % Unit width. Em square divisions. This is the base for all strokes
 
 ascent  :=      8u;           % Ascender Height
 descent :=      2u;           % Descender Height
-xheight :=      7/10*ascent;  % Height of English small letters
-mheight :=      3/4*ascent;   % Height of Malayalam letters
+xheight :=      .7*ascent;    % Height of English small letters
+mheight :=      .75*ascent;   % Height of Malayalam letters
 Xheight :=      8u;           % Height of English capital letters
 
 rotation :=     45;           % Angle of calligraphic pen
