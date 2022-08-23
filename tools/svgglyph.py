@@ -20,7 +20,7 @@ class SVGGlyph:
         self.unicode = None
         self.glyph_name = ""
         self.glyph_width = 0
-        self.glyph_height = 1000
+        self.glyph_height = 1024
         self.glif = None
         self.transform = '1 0 0 -1 0 0'
         # Fill missing AGL2UV values in agl
@@ -60,9 +60,9 @@ class SVGGlyph:
     def parse(self):
         svgObj = etree.parse(self.svg_file_path).getroot()
         parent_map = {c: p for p in svgObj.iter() for c in p}
-        self.svg_width = float(svgObj.get('width', '1000').replace("px", " "))
+        self.svg_width = float(svgObj.get('width', '1024').replace("px", " "))
         self.svg_height = float(svgObj.get(
-            'height', '1000').replace("px", " "))
+            'height', '1024').replace("px", " "))
         # Filename without extension
         filename = os.path.splitext(os.path.basename(self.svg_file_path))[0]
         self.name = filename.split(".")[0]

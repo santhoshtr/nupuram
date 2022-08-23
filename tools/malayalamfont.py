@@ -733,11 +733,11 @@ class MalayalamFont(Font):
 
         # set various font metadata; see the full list of fontinfo attributes at
         # https://unifiedfontobject.org/versions/ufo3/fontinfo.plist/#generic-dimension-information
-        self.info.unitsPerEm = 1000
+        self.info.unitsPerEm = 1024
         # we just use a simple scheme that makes all sets of vertical metrics the same;
         # if one needs more fine-grained control they can fix up post build
-        self.info.ascender = 800
-        self.info.descender = 200
+        self.info.ascender = 819
+        self.info.descender = 205
 
         # Names
         self.info.familyName = name
@@ -752,8 +752,8 @@ class MalayalamFont(Font):
         self.info.openTypeNameManufacturerURL = self.options.manufacturer.url
 
         # Metrics
-        self.info.xHeight = 700
-        self.info.capHeight = 800
+        self.info.xHeight = 614
+        self.info.capHeight = self.info.ascender
         self.info.guidelines = []
         self.info.italicAngle = 0
 
@@ -804,6 +804,6 @@ class MalayalamFont(Font):
         self.info.postscriptSlantAngle = 0
         self.info.postscriptStemSnapH = []
         self.info.postscriptStemSnapV = []
-        self.info.postscriptUnderlinePosition = -603
+        self.info.postscriptUnderlinePosition = -653
         self.info.postscriptUnderlineThickness = 100
         self.info.postscriptUniqueID = 0
