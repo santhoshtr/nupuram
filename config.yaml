@@ -40,7 +40,7 @@ glyphs:
     LC_ALL: abcdefghijklmnopqrstuvwxyz
     UC_ALL: ABCDEFGHIJKLMNOPQRSTUVWXYZ
     LATIN_EXTRA: ÁǼÂÄÀĀÅÃĆČÇĈĊĎÉĚÊËĖÈĒĜĠĤÍÎÏÌĪĨŃŇÑÓÔÖÒŌÕŔŘŚŠŞŜÚǓÛÜÙŪŮŨŴÝŶŽŻáǽâäàāåãćčçĉċéěêëėèēĝġĥíîïìīĩńňñóǒôöòōõŕřśšşŝúǔûüùūůũŵýŷÿźžż
-    LATIN_LIGATURES:  [ "ff", "ft", "tt"] # ["ffi", "ff", "ee", "th", "ft", "fi", "tt"]
+    LATIN_LIGATURES:  ["ff"] # [ "ff", "ft", "tt", "ffi", "ff", "ee", "th", "ft", "fi", "tt"]
     LC_LEFT_ROUND: ["e", "ee", "c", "a", "d", "o", "q", "g"]
     LC_RIGHT_ROUND: bop
     UC_LEFT_ROUND: OQ
@@ -49,7 +49,7 @@ glyphs:
     LC_RIGHT_SLANT: ["v", "f", "ff", "k"]
     LC_LEFT_SLANT: ["v"]
     UC_LEFT_SLANT: ["A", "V", "Y", "T"]
-    UC_RIGHT_SLANT: TY
+    UC_RIGHT_SLANT: TYV
     UC_RIGHT_LEG: ["L"]
     UC_RIGHT_ARM: ["T"]
     LC_RIGHT_ARM: rf
@@ -95,6 +95,7 @@ glyphs:
       - ["@UC_RIGHT_LEG", "@LC_LEFT_SLANT", -80]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_ROUND", -20]
       - ["@LC_RIGHT_MOUTHS", "@LC_LEFT_SLANT", -20]
+      - ["@LC_RIGHT_ARM", "@LC_LEFT_ROUND", -80]
       - ["@LC_BOTTOM_GAP", "@LC_LEFT_LEG", -50]
       - ["A", ["V", "Y", "T", "v"], -80 ]
       - ["Y", ["A"], -80 ]
