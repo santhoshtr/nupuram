@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <designspace format="3">
   <axes>
-    <axis name="weight" tag="wght" minimum="1" maximum="1000" default="400">
+    <axis name="weight" tag="wght" minimum="100" maximum="1000" default="400">
       <labelname xml:lang="en">Weight</labelname>
       <labelname xml:lang="ml">കട്ടി</labelname>
     </axis>
@@ -9,7 +9,7 @@
       <labelname xml:lang="en">Width</labelname>
       <labelname xml:lang="ml">വീതി</labelname>
     </axis>
-    <axis tag="slnt" minimum="0"  maximum="20"  default="0" name="slant">
+    <axis tag="slnt" minimum="0" maximum="20" default="0" name="slant">
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
@@ -53,14 +53,14 @@
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Thin.ufo" name="Thin">
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Slanted-Thin.ufo" name="Thin">
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="20"/>
       </location>
@@ -108,7 +108,7 @@
       <info />
       <kerning />
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
@@ -116,7 +116,7 @@
       <info />
       <kerning />
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="20"/>
       </location>
@@ -125,7 +125,7 @@
       <info />
       <kerning />
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="80"/>
         <dimension name="slant" xvalue="0"/>
       </location>
@@ -134,7 +134,7 @@
       <info />
       <kerning />
       <location>
-        <dimension name="weight" xvalue="1"/>
+        <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="120"/>
         <dimension name="slant" xvalue="0"/>
       </location>
