@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 
-z0=(x1- thick/4, s);
+z0=(x1 - thick/4, s);
 z1=(0, y0-X/2);
 z2=(x0, -descent);
 
-paths[0] := z0{dir -60}..z1..{dir -120}z2;
+paths[0] := z0{dir -60}..{down}z1{down}..{dir -120}z2;
 paths[1] := p_loop shifted ( xpart(point 1 of paths[0]), 0);
 
 pen_stroke(
