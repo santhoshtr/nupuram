@@ -122,10 +122,7 @@ colorfonts:
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
-        "order": 2  # Foreground layer
-      "outline":
-        "source": "fonts/ufo/Nupuram-Regular.ufo"
-        "order": 1  # Outline layer
+        "order": 1  # Foreground layer
       "shadow":
         "source": "fonts/ufo/Nupuram-Shadow.ufo"
         "order": 0  # background layer

@@ -804,6 +804,6 @@ class MalayalamFont(Font):
         self.info.postscriptSlantAngle = 0
         self.info.postscriptStemSnapH = []
         self.info.postscriptStemSnapV = []
-        self.info.postscriptUnderlinePosition = -653
+        self.info.postscriptUnderlinePosition = -700
         self.info.postscriptUnderlineThickness = 100
         self.info.postscriptUniqueID = 0
