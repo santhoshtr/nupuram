@@ -36,7 +36,7 @@ enddef;
 vardef n_arch =
     clearxy;
     save r;
-    r=0.75;
+    r=0.8;
     z0=(0, 0);
     z1=(r*sw/6, 0.6s);
     z2=(r*sw, s - thick/4);
@@ -58,7 +58,7 @@ enddef;
 vardef p_loop =
     clearxy;
     path p;
-    r=0.75;
+    r=0.8;
     z0=(0, 0);
     z1=(r*2/3sw, s);
     z2=(r*sw, 2/3s);
@@ -70,7 +70,7 @@ enddef;
 vardef a_loop =
     clearxy;
     save r;
-    r=0.75;
+    r=0.8;
     z0=(sw*r,  0.9s);
     z1=(0.5*sw*r, s);
     z2=(0, s/3);
@@ -83,7 +83,7 @@ vardef e_loop =
     clearxy;
     save r,e;
     path e;
-    r=0.75;
+    r=0.8;
     z0=(sw*r, 0.8s);
     z1=(0.5sw*r,s);
     z2=(0, s/3);
@@ -98,7 +98,7 @@ vardef c_loop =
     clearxy;
     save r,e;
     path e;
-    r=0.75;
+    r=0.8;
     z0=(sw*r, 0.8s);
     z1=(0.5sw*r,s);
     z2=(0, s/3);

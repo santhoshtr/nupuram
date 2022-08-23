@@ -1,11 +1,11 @@
 input glyph;
 beginglyph;
 z0=(0, s);
-z1=(x0 + 0.75*sw/3, s/2);
-z2 =(x1 + 0.75*sw/6, 0);
-z3 =(x2 + 0.75*sw/2 , 0.6s);
+z1=(x0 + 0.8*sw/3, s/2);
+z2 =(x1 + 0.8*sw/6, 0);
+z3 =(x2 + 0.8*sw/2 , 0.6s);
 z4=(x3, y0);
-paths[0] = z0{dir -45}..z1..{dir -85}z2 ;
+paths[0] = z0{dir -45}..z1..{down}z2 ;
 
 paths[2] = paths[0] shifted (0.6sw, 0);
 paths[3] = ( z2{dir 60}..z3..{dir 110}z4) shifted (xpart(point 0 of paths[2]), 0);
