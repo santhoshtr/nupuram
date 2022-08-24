@@ -126,18 +126,16 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
-        contentArea.classList.remove("shadowcolor", "display", "arrowscolor", "sans", "calligraphy","dots");
+        contentArea.classList.remove("shadowcolor", "display", "arrowscolor", "calligraphy","dots");
         document.getElementById('palette').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
         if (selected === 'NupuramShadowColor') {
             contentArea.classList.add('shadowcolor');
             document.getElementById('font-fontColor').disabled = true
-            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'NupuramArrowsColor') {
             contentArea.classList.add('arrowscolor');
             document.getElementById('font-fontColor').disabled = true
-            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'Nupuram') {
             document.getElementById('font-fontColor').disabled = false
@@ -148,9 +146,6 @@ function listen() {
         }
         if (selected === 'NupuramCalligraphy') {
             contentArea.classList.add('calligraphy');
-        }
-        if (selected === 'NupuramSans') {
-            contentArea.classList.add('sans');
         }
         if (selected === 'NupuramDisplay') {
             contentArea.classList.add('display');

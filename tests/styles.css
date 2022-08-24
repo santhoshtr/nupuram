@@ -33,10 +33,6 @@
   src: url(../fonts/webfonts/Nupuram-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Display.otf?v=1.100) format("opentype");
 }
 
-@font-face {
-  font-family: "NupuramSans";
-  src: url(../fonts/webfonts/Nupuram-Sans.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Sans.otf?v=1.100) format("opentype");
-}
 :root {
   --weight: 400;
   --slant: 0;
@@ -80,9 +76,6 @@ main {
   font-palette: --custom;
 }
 
-.content.sans {
-  font-family: "NupuramSans", sans;
-}
 .content.display {
   font-family: "NupuramDisplay", sans;
 }
