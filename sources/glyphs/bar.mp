@@ -5,7 +5,7 @@ z0= (0, X);
 z1=( x0, y0 - 0.6X);
 z2=( x1, y1 - 0.6X);
 
-paths[0] = z0..z1..z2 ;
+paths[0] = z0{dir -80}..z1..{dir -80}z2 ;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)

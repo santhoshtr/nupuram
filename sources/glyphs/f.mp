@@ -14,7 +14,7 @@ paths[0] = head.. z2{down}..  {dir 250}z3;
 z4 = (x2 -0.25sw, s-thick/2);
 z5 = (x4 + sw/2, y4);
 
-paths[1] = z4{dir 20}..{dir 20}z5;
+paths[1] = z4{dir 10}..z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0 )
     nib(thinnib rotated 0 )(1, 2)

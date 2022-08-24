@@ -1,14 +1,13 @@
 input glyph;
 beginglyph;
-w := s/2;
-z0= (w, X);
-z1=( w/2, y0 - 0.6X);
+z0= (s/2, X);
+z1=( s/4, y0 - 0.6X);
 z2=( 0, y1 - 0.6X);
 
-paths[0] = z0..z1..z2 ;
+paths[0] = z0{dir 250}..z1..{dir 250}z2 ;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 2)
+    nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

@@ -8,7 +8,7 @@ z4 = ( x3 - mw/4, y3 - m/3); % bottom middle
 z5 = ( x4 - mw/4, y4 +  m/3);
 z6 = ( x5 + mw/2.4, y5+ m/3); % second top
 z7 = ( x6 + mw/3,  y6 - m/2);
-z8 = ( x7,  y7 - m/4); %
+z8 = ( x7,  0); %
 paths[0] = z0  ..z1..z2 .. z3..z4..z5 ..z6 .. z7 --- z8;
 paths[1] =  reverse( paths[0] reflectedabout((.5,-1),(.5,+1)) shifted (x7*2,0) );
 pen_stroke(
@@ -20,8 +20,8 @@ pen_stroke(
 
 
 z9 = point 8 of paths[1];
-z10 = (x8, -descent );
-paths[1] := paths[1]   .. {dir 210}z10;
+z10 = (xpart(point 5 of paths[1]), -descent );
+paths[1] := paths[1]  ..  z10;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4,6  )
     nib(thinnib rotated 0 )(1, 3, 5, 7, 8 )
