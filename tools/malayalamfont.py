@@ -757,19 +757,24 @@ class MalayalamFont(Font):
         self.info.guidelines = []
         self.info.italicAngle = 0
 
-        # OpenType OS/2 Table
+        # OpenType OS/2 Table - glyph metrics used historically by OS/2 and Windows platforms
         self.info.openTypeOS2CodePageRanges = [0, 1]
         self.info.openTypeOS2FamilyClass = [0, 0]
         self.info.openTypeOS2Panose = [0, 0, 8, 3, 0, 0, 0, 0, 0, 0]
         # set USE_TYPO_METRICS flag (OS/2.fsSelection bit 7) to make sure OS/2 Typo* metrics
         # are preferred to define Windows line spacing over legacy WinAscent/WinDescent:
         # https://docs.microsoft.com/en-us/typography/opentype/spec/os2#fsselection
+        # The description of bit 7 in the OpenType standard reads
+        # “if set, it is strongly recommended to use OS/2.sTypoAscender - OS/2.sTypoDescender + OS/2.sTypoLineGap
+        # as a value for default line spacing for this font.”
         self.info.openTypeOS2Selection = [7]
         self.info.openTypeOS2Type = []
-        self.info.openTypeOS2TypoAscender = self.info.ascender+100
-
-        self.info.openTypeOS2TypoDescender = -(self.info.descender+100)
-        self.info.openTypeOS2TypoLineGap = 0
+        # The TypoAscender minus the TypoDescender should equal the unit square.
+        # the height of the ascenders in units
+        self.info.openTypeOS2TypoAscender = self.info.ascender + 100
+        # the depth of the descenders in units (negative value)
+        self.info.openTypeOS2TypoDescender = -(self.info.descender + 100)
+        self.info.openTypeOS2TypoLineGap = 200
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
         self.info.openTypeOS2WidthClass = 5
@@ -777,8 +782,10 @@ class MalayalamFont(Font):
         # A font's winAscent and winDescent values should be greater than the head
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
-        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender+200
-        self.info.openTypeOS2WinDescent = (self.info.openTypeOS2TypoDescender-300)*-1
+        # the top extremum of the font rendering box
+        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender+self.info.openTypeOS2TypoLineGap
+        # the bottom extremum of the font rendering box (positive value)
+        self.info.openTypeOS2WinDescent = -1*(self.info.openTypeOS2TypoDescender-self.info.openTypeOS2TypoLineGap)
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
@@ -792,7 +799,9 @@ class MalayalamFont(Font):
 
         # - Mac OS X uses the hhea values.
         # - Windows uses OS/2 or Win, depending on the OS or fsSelection bit value.
+        # The height of the ascenders in units
         self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
+        # The depth of the descenders in units (negative value)
         self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
         self.info.openTypeHheaLineGap = self.info.openTypeOS2TypoLineGap
 
