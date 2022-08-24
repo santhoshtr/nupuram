@@ -48,7 +48,7 @@ $(UFODIR)/$(FAMILY)-%.ufo: %
 	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
 
-$(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Regular.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo $(UFODIR)/$(FAMILY)-Outline.ufo
+$(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Display.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
 	@echo "  BUILD UFO   $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -q -m $@

@@ -1,4 +1,4 @@
-input ./config/Regular;
+input ./config/Display;
 varstroke := 0;
 drawshadow :=       1;
 shadowoffset :=     1u;
