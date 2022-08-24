@@ -26,7 +26,7 @@ z11 = (x9, y9 - m/3);
 z12 = (x11, -descent );
 z13 = (x1, y12);
 z14 = (x8, y8);
-paths[1] = z11-- z12{left}..{left}z13{dir 45} .. z14;
+paths[1] = z11 .. {down}z12{left}..{left}z13{dir 30} .. {dir 45}z14;
 pen_stroke(
     nib(thicknib rotated 0 )(1,2)
     nib(terminalnib rotated terminalangle 3 of paths[1])(3)
