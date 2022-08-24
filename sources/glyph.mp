@@ -31,20 +31,20 @@ lbearing := lbearing * condense;
 rbearing := rbearing * condense;
 
 vardef thicknib = fix_nib(thick, thick, 0) enddef;
-vardef thinnib = fix_nib(thick, thick, 0) xyscaled(thin, thin) enddef;
+vardef thinnib = fix_nib(thick*thin, thick*thin, 0) enddef;
 vardef terminalnib =
     if terminalround = 0:
-        fix_nib(thick, 0, 0) xyscaled(xthick, terminalround)
+        fix_nib(thick*xthick, 0, 0)
     else:
-        fix_nib(thick, thick, 0) xyscaled(xthick, terminalround)
+        fix_nib(thick*xthick, thick*terminalround, 0) xyscaled(xthick, terminalround)
     fi
 enddef;
 
 vardef thinterminalnib =
     if terminalround = 0:
-        fix_nib(thick, 0, 0) xyscaled(thin, 0)
+        fix_nib(thick*thin, 0, 0)
     else:
-        fix_nib(thick, thick, 0) xyscaled(thin, terminalround)
+        fix_nib(thick*thin, thick*terminalround, 0)
     fi
 enddef;
 
