@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <designspace format="3">
   <axes>
-    <axis name="weight" tag="wght" minimum="100" maximum="1000" default="400">
+    <axis name="weight" tag="wght" minimum="100" maximum="900" default="400">
       <labelname xml:lang="en">Weight</labelname>
       <labelname xml:lang="ml">കട്ടി</labelname>
     </axis>
@@ -32,7 +32,7 @@
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Black.ufo" name="Black">
       <location>
-        <dimension name="weight" xvalue="1000"/>
+        <dimension name="weight" xvalue="900"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
       </location>
@@ -245,7 +245,7 @@
       <info />
       <kerning />
       <location>
-        <dimension name="weight" xvalue="1000"/>
+        <dimension name="weight" xvalue="900"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>

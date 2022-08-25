@@ -1,2 +1,2 @@
-thick := 1u;
+thick := 0.90u;
 soften := 0;

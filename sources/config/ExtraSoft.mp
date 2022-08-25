@@ -1,2 +1,2 @@
 input ./config/Regular;
-terminalround:=1;
+terminalround:=0.9;
