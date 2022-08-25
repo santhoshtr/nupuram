@@ -12,8 +12,8 @@ paths[1]:= paths[1] slanted tand(8);
 paths[1]:= paths[1] shifted (-tand(8)*m/2,0);
 
 z13 = (x12 + 0.6mw, y12);
-z14 = (xpart(point 2 of paths[1]), y12);
-paths[2]:= (point 4 of paths[1]){dir 30}..z13{dir -20}..z14;
+z14 = (xpart(point 2 of paths[1]) + thick/2, y12);
+paths[2]:= (point 4 of paths[1]){dir 20}..z13..{dir 20}z14;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
@@ -32,4 +32,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
+rbearing := rbearing-thick;
 endglyph;

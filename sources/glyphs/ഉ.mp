@@ -14,8 +14,8 @@ z7 = (x3, -descent);
 paths[0] = z0 .. z1{down}..z2{left}..z3.. z4..{down}z5 .. z6 ..{dir 210}z7;
 z12 = z7;
 z13 = (x12 + 0.5mw, y12 );
-z14 = (x13 + 0.5mw, y12);
-paths[1]:= z12{dir 30}..z13{dir -20}..z14;
+z14 = (x5  + thick/2, y12);
+paths[1]:= z12{dir 20}..z13{dir -20}..z14;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0,4)
@@ -29,4 +29,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
+rbearing := rbearing-thick;
 endglyph;

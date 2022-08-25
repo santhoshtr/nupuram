@@ -17,11 +17,11 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
-z10=(mw/4, -0.6m-thick/4);
+z10=(mw/4, -0.6m );
 z11=(x10 - mw/6, y10 + m/3);
 z12=(x10 + mw/6, y11 + m/4);
 z13=(x12 + mw/4, y12 - m/4);
-z14=(x12, y10+thick/4);
+z14=(x13- mw/5, y10 );
 z15=(x14, y10);
 z16=(x15 + 3/4mw, y15);
 z17=(x16, y16 + m/2);

@@ -1,10 +1,10 @@
 input glyph;
 beginglyph;
-z0=(x1 + mw/6, -thick/4);
+z0=(x1 + mw/6, 0);
 z1=(0, y0 + m/3);
 z2=(x0 + mw/6, y1 + m/4);
 z3=(x2 + mw/4, y2 - m/4);
-z4=(x2, 0);
+z4=(x3 - mw/5, 0);
 z5=(x4, 0);
 z6=(x5 + mw, y5);
 z7=(x6+0.2mw, y6 + m/2);
