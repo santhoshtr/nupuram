@@ -41,7 +41,7 @@ vardef n_arch =
     z2=(r*sw, s - thick/4);
     z3=(x2, s/2);
     z4=(x3+0.1sw*r, 0);
-    z0{dir 90}.. z1{dir 60}..{dir -45}z2{dir -60}..  z3..{dir -60}z4
+    z0{dir 90}.. z1{dir 60}..{dir -45}z2{dir -60}.. z3..{dir -60}z4
 enddef;
 
 vardef u_arch =
