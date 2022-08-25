@@ -25,7 +25,7 @@ enddef;
 vardef r_vstem =
     clearxy;
     path stem;
-    z0=(0,s);
+    z0=(0, s+thick/4);
     z1=(x0 + thick/2,s/2);
     z2=(x1,0);
     stem:=z0{dir -60}..{down}z1{down}..z2;
@@ -58,7 +58,7 @@ vardef p_loop =
     clearxy;
     path p;
     r=0.8;
-    z0=(0, 0);
+    z0=(0, thick/2);
     z1=(r*2/3sw, s);
     z2=(r*sw, 2/3s);
     z3=(0.5*r*sw, 0);

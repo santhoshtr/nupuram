@@ -1,7 +1,12 @@
 input glyph;
 beginglyph;
 
-paths[0] := l_vstem;
+
+z0=(thick/2, X);
+z1=(x0,  y0 - X/2);
+z2=(x1, 0);
+
+paths[0] = z0{dir -80}..z1..  {dir -80}z2 ;
 paths[1] := n_arch shifted(xpart(point 1 of l_vstem),0);
 
 pen_stroke(

@@ -3,10 +3,10 @@ beginglyph;
 
 paths[0] := u_arch;
 
-z4 = (xpart(point 4 of u_arch) , s );
+z4 = (xpart(point 4 of u_arch) , s + thick/4 );
 z5 = (x4, ypart(point 3 of u_arch));
-z6 = (x5 - sw/6 , y5 - 0.9s);
-z7 = (xpart(point 1 of u_arch), y6 + s/4);
+z6 = (x5 - sw/6 , -descent);
+z7 = (xpart(point 0 of u_arch), -descent + thick/2);
 
 paths[1] = z4 ..z5 ..  z6..z7;
 

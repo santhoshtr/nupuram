@@ -3,10 +3,10 @@ beginglyph;
 
 paths[0] = a_loop;
 
-z5 = (xpart(point 4 of a_loop) , s );
-z6 = (x5  , ypart(point 2 of a_loop));
-z7 = (x6 - sw/6, y6 - 0.9s);
-z8 = (xpart(point 2 of a_loop), y7 + s/4);
+z5 = (xpart(point 4 of a_loop), s);
+z6 = (x5, s/2);
+z7 = (x5 - sw/6 , -descent);
+z8 = (xpart(point 2 of a_loop), -descent + thick/2);
 
 paths[1] = z5 .. z6 ..  z7 .. z8;
 pen_stroke(
