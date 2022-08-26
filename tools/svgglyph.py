@@ -151,12 +151,6 @@ class SVGGlyph:
                 }
                 # print(anchor)
                 anchor_names.append(name)
-                if name=='top':
-                    # Fix the y axis irregularities
-                    if anchor['y'] > 780 and anchor['y'] < 820:
-                        anchor['y']=800
-                    if anchor['y'] > 600 and anchor['y'] < 720:
-                        anchor['y']=650
                 if name=='vc':
                     anchor['y']=0
                 anchors.append(anchor)

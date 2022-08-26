@@ -36,8 +36,8 @@ pen_stroke(
 
 
 anchor( "vc", (x1,0));
-anchor( "bottom", (x8,0));
-anchor( "right", (x8,0));
+anchor( "bottom", z12);
+anchor( "right", z12);
 
 endglyph;
 

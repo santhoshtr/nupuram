@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0 = (sw/3, m);
+z0 = (sw/3, 0);
 z1 = (x0 , y0 - m/4 - thick/2);
 
 z2 = (x1-thick/2 , y1 + thick/2);
@@ -22,5 +22,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
-
+anchor( "bottom", (xpart(point 0 of paths[0]), 0) );
 endglyph;

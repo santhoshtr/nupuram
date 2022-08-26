@@ -33,7 +33,7 @@ pen_stroke(
 
 
 anchor( "vc", (x3,0));
-anchor( "bottom", (x9,0));
-anchor( "right", (x9,0));
+anchor( "bottom", point 3.3 of paths[1]);
+anchor( "right", point 3.3 of paths[1]);
 
 endglyph;

@@ -18,7 +18,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 anchor( "vc", (xpart( point 2.5 of paths[0]),0));
-anchor( "bottom", point 3.3 of paths[0]);
-anchor( "right", point 3.3 of paths[0]);
+anchor( "bottom", point 3.6 of paths[0]);
+anchor( "right", point 3.6 of paths[0]);
 
 endglyph;

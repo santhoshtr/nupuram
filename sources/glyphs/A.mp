@@ -33,5 +33,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-
+anchor( "top", (xpart(point 2 of paths[0]), 1.2X) );
 endglyph;
