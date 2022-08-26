@@ -31,26 +31,21 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
-
-z12=(x9, y8);
-z13=(x9 + 0.8mw, y8);
-z14=(x13 + 0.2mw, y13 + m*0.5);
-z15=(x14 - mw/3, y14 + m/2);
-z16=(x15 - mw/3, y15 - m/2);
-z17=(x16, y8 );
-
-paths[2] = z12{dir 20}..  z13..z14 .. z15..z16..{dir -85}z17;
+clearxy;
+% ഋ sign
+z0 = point 4 of paths[1];
+z1 = (x0 - mw/2, -descent - thick);
+z2 = (x1 - mw/3, -descent * .8);
+z3 = (x0 - mw/4, -descent);
+paths[2] = z0{down}..z1..z2{dir 75}..{dir -45}z3;
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 3, 5 )
-    nib(thinnib rotated 0 )( 2,4)
-    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(thinnib rotated 0 )(2, 4)
+    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-
-anchor( "vc",  point 4 of paths[0]);
-anchor( "bottom", point 1 of paths[2]);
-anchor( "right", point 1 of paths[2]);
-
+anchor( "vc", point 3 of paths[0]);
+anchor( "bottom", point 3.3 of paths[1]);
+anchor( "right", point 3.3 of paths[1]);
 
 endglyph;
