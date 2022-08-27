@@ -47,6 +47,8 @@ $(UFODIR)/$(FAMILY)-%.ufo: %
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
+	@# remove dangling semicolons in features.fea which font editors cannot handle
+	@sed -i 's/ ;$\//g' $@/features.fea
 
 $(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Display.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
 	@echo "  BUILD UFO   $(@F)"
