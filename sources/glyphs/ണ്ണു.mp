@@ -36,10 +36,30 @@ pen_stroke(
 
 xshift := 0.6mw;
 yshift := -.85m;
+
 paths[3] = paths[0] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
 paths[4] = paths[1] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
-paths[5] = paths[2] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
+
 strokes[3] = strokes[0] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
 strokes[4] = strokes[1] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
-strokes[5] = strokes[2] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
+
+clearxy;
+z0=point 2 of paths[1];
+z1=(x0 + mw/2, y0 + m/2); % Top of third arch
+z2=(x1 + mw/3, y1 - m/2);
+z3=(x2 - mw/3, y2 - m/2);
+z4= ( x3 - mw/4, y3 + .3m);
+
+paths[5] = (z0{up}..z1..z2...z3..z4..z2 );
+pen_stroke(
+    nib(thicknib rotated 0 )( 1, 3)
+    nib(thinnib rotated 0 )(0, 2, 4,6)
+    nib(thinterminalnib rotated terminalangle 0 of paths[5])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[5])(infinity)
+)(paths[5])(strokes[5]);
+
+
+paths[5] := paths[5] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
+strokes[5] := strokes[5] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
+rbearing:=-0.5rbearing;
 endglyph;

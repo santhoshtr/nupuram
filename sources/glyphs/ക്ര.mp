@@ -11,7 +11,7 @@ z6=(x5 - mw/4, y5 + 0.2m);
 z7=(x6 + mw/4, y6 + 0.3m);
 z8=(x7 + mw, y7  );
 z9=(x8 + 0.2mw, y8 - 0.3m);
-z10=(x3, -descent);
+z10=(x3, -descent-thick);
 z11=(x6 - mw/4, m/3);
 z12=(x11 + mw/4, m);
 

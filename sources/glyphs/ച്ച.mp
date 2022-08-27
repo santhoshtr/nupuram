@@ -34,7 +34,7 @@ pen_stroke(
 
 % Shoe
 z9 = point .5 of paths[1];
-z10 = (x9 -mw/4, -descent) ;
+z10 = (x9 -mw/4, -descent*1.1) ;
 z11 = (xpart(point 1.4 of paths[1]), y10) ;
 z12 = point 1.4 of paths[1];
 paths[2] := z9{down}..{dir 200}z10{dir 10}..{dir -10}z11{dir 80}..{dir 100}z12;

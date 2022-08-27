@@ -12,17 +12,19 @@ z11 = point 5 of paths[0];
 z12 = (x11 + mw/4, y11 + m/2.5);
 z13 = (x12 + mw/4, y12 - m/3);
 z14 = (x13, y13 - m/2.5);
-z15=z13;
-% Third arch
-z16=(x15 + mw/3, y15+m/2);
-z17=(x16 + mw/3, y16 - m/3);
-z18 = ( x17 - mw/3, y17-.15m);
-z19 = ( x18 + mw/3, y18-.15m);
-z20 = ( x19 + mw/6, y19-.15m);
-z21 = ( x16, 0);
 
 paths[1] = z11{up}..z12..z13---z14;
-paths[2] = z15{up}..z16..z17...z18..z19..z20..{dir 160}z21;
+
+% Third arch
+z0=point 2 of paths[1];
+z1=(x0 + mw/3, m);
+z2=(x1 + mw/3, y1 - m/3);
+z3= ( x2 - mw/3, m/2);
+z4= ( x3 + mw/3, y3 - .2m);
+z5 = ( x4 + mw/6, y4 - .15m);
+z6 = ( x1, 0);
+
+paths[2] = z0{up}..z1..z2...z3..z4{right}..z5..{dir 160}z6;
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)
     nib(thinnib rotated 0 )(2)
