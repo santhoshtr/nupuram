@@ -191,9 +191,9 @@ vardef da =
     loop_slant=tand(8);
     z0 = (x1 + mw/8, 0);
     z1 = (0,  m/2);
-    z2 = ( x1 + m/3, y1 + m/2);
-    z3 = ( x2 + m/3, y2 - m/4);
-    z4 = ( x3 - m/3, y3 - m/4);
+    z2 = ( x1 + mw/3, y1 + m/2);
+    z3 = ( x2 + mw/3, y2 - m/4);
+    z4 = ( x3 - mw/3, y3 - m/4);
     z5 = (x4 + mw/2, y4 - m/3);
     z6 = (x5 - mw/2, 0);
 

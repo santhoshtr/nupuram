@@ -5,7 +5,7 @@ z1 = (0, 2/3m);
 z2 = (mw/2, m);
 z3 = (x2 + mw/3, y1);
 z4=  (x1 + mw/8, 0);
-paths[0] = z0..z1..z2..z3..{dir 200}z4;
+paths[0] = z0..z1..z2..z3{dir -100}..{dir 210}z4;
 
 z5=(x4, 0);
 z6=( xpart(point 3 of paths[0])  + thick/2, 0);
