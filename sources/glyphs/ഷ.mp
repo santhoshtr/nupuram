@@ -1,23 +1,18 @@
 input glyph;
 beginglyph;
 
-z0=(x1 + mw/6, 0);
-z1=(0, y0 + m/3);
-z2=(x0 + mw/6, y1 + m/4);
-z3=(x2 + mw/4, y2 - m/4);
-z4=(x3 - mw/5, 0);
-z5=(x4, 0);
-z6=(x5 + mw, y5);
-z7=(x6, y6 + m*0.5);
-z8=(x7, y7 + m*0.5);
-z9 = z8;
-z10 = (x9 - 0.3mw, y9-0.5m);
-z11 = (x10 - 0.3mw, y10 + 0.5m);
-z12 = (x11 + 0.3mw, y11 - 0.4m);
-z13 = (x12, y12- 0.6m);
-paths[0] = z0{dir 135}..z1..{right}z2..z3{dir 260}..z4;
-paths[1] = z5{dir 30}..{dir 30}z6{dir 30}..z7...{dir 80}z8;
-paths[2] = z9{dir 260}..z10 ..z11 ..{down}z12..z13;
+paths[0] := pa_mouth;
+z0 = point infinity of paths[0];
+z1=(x0 + 1.1mw, y0);
+z2=(x1, y1 + m*0.5);
+z3=(x2, y2 + m*0.5);
+z4 = z3;
+z5 = (x4 - 0.35mw, y4-0.5m);
+z6 = (x5 - 0.35mw, y5 + 0.5m);
+z7 = (x6 + 0.3mw, y6 - 0.4m);
+z8 = (x7, y7- 0.6m);
+paths[1] = z0{dir 30}..{dir 30}z1{dir 30}..z2...{dir 80}z3;
+paths[2] = z4{dir 260}..z5 ..z6 ..{down}z7..z8;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )
     nib(thinnib rotated 0 )(1,3)
@@ -38,8 +33,8 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 
-anchor( "vc", (x11,0));
-anchor( "bottom", (x7,0));
-anchor( "right", (x7,0));
+anchor( "vc", point 0.5 of paths[1]);
+anchor( "bottom",  point 1 of paths[1]);
+anchor( "right", point 1 of paths[1]);
 
 endglyph;

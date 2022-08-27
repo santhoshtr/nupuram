@@ -148,12 +148,31 @@ enddef;
 
 vardef ra =
    clearxy;
-    z0=(mw/4 , 0);
-    z1=(x0- mw/4, m/2);
+    z0=(x1 + mw/4 , 0);
+    z1=(0, m/2);
     z2=(x0 + mw/3, y1 + m/2);
     z3=(x2 + mw/3, y2-m/2);
     z4=(x2, 0);
     z0{dir 135}..z1.. z2{right}..z3{dir 260}..z4
+enddef;
+
+vardef pa_mouth =
+    clearxy;
+    z0=(x1 + mw/8, 0);
+    z1=(0,  m/3);
+    z2=(x0 + mw/5, y1 + m/4);
+    z3=(x2 + mw/4, y2 - m/4);
+    z4=(x2, 0);
+    z0{dir 135}..z1.. z2{right}..z3{dir 260}..z4
+enddef;
+
+vardef pa_tail =
+    clearxy;
+    z0=(0, 0);
+    z1=(x0 + 0.8mw, y0);
+    z2=(x1, y1 + m/2);
+    z3=(x2, y2 + m/2);
+    z0{dir 30}..{dir 30}z1{dir 30}..z2...{dir 60}z3
 enddef;
 
 vardef va_tail =

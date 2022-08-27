@@ -12,7 +12,7 @@ paths[0] := paths[0] slanted tand(8);
 paths[0] := paths[0] shifted (mw/8, 0);
 
 z5=(0, 0);
-z6=(x5 + mw, y5);
+z6=(x5 + 1.2mw, y5);
 z7=(x6, y6 + m/2);
 z8=(x7, y7 + m/2);
 paths[1] := z5{dir 20}..{dir 20}z6{dir 20}..z7...{dir 60}z8;
