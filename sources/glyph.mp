@@ -105,13 +105,15 @@ def leftarrow (expr p,t,l) = pointarrow(p,t,l,+l) enddef ;
 
 vardef show_coordinates (expr p ) =
     % Debug points are hard to see. Change the fontsize
-    defaultscale :=2;
+    defaultscale := 2;
 
     for i=0 upto length(p):
         pair a;a:=point i of p;
         pair b;b:=point i+1 of p;
         string pointlabel; pointlabel := decimal(i) & "(" & decimal(round(xpart(a))) & "," & decimal(round(ypart(a))) & ")";
-        dotlabel.bot(pointlabel, a) withcolor debugcolor;
+        dotlabel.bot(pointlabel, a) withpen pencircle scaled 10 withcolor debugcolor;
+        draw (point i of p -- precontrol i of p)  withpen pencircle scaled 2 withcolor debugcolor;
+        draw (point i of p -- postcontrol i of p)  withpen pencircle scaled 2 withcolor debugcolor;
     endfor;
 
 enddef;
@@ -188,7 +190,7 @@ def endglyph =
                 draw paths[i] withpen roundedwidenib withcolor glyphcolor;
             fi;
             if show_paths = 1:
-                draw paths[i] withpen nib withcolor 0.5white;
+                draw paths[i] withpen nib scaled 2 withcolor 0.8white;
             fi;
             if show_arrows = 1:
                 arrowpath(paths[i],i);
