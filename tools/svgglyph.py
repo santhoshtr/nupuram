@@ -151,6 +151,7 @@ class SVGGlyph:
                 }
                 # print(anchor)
                 anchor_names.append(name)
+
                 if name=='vc':
                     anchor['y']=0
                 anchors.append(anchor)

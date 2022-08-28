@@ -3,8 +3,8 @@ beginglyph;
 paths[1] := a_loop;
 z0=(x1 +  thick/4, s);
 z1=(0, y0-X/2);
-z2=(x0, -descent);
-paths[0] := z0{dir -120}..{down}z1{down}..{dir -60}z2;
+z2=(x0, -descent*1.2);
+paths[0] := z0{dir -110}..z1.. {dir -100}z2;
 paths[0] := paths[0] shifted(xpart(point 0 of paths[1]),0);
 
 pen_stroke(

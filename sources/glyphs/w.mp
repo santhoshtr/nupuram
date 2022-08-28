@@ -2,9 +2,9 @@ input glyph;
 beginglyph;
 z0=(0, s);
 z1=(x0 + 0.8*sw/3, s/2);
-z2 =(x1 + 0.8*sw/6, 0);
+z2 =(x0 + 0.8*sw/2, 0);
 z3 =(x2 + 0.8*sw/2 , 0.6s);
-z4=(x3, y0);
+z4=(x3, y0 + 0.05s);
 paths[0] = z0{dir -45}..z1..{down}z2 ;
 
 paths[2] = paths[0] shifted (0.6sw, 0);
