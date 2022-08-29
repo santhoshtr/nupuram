@@ -3,7 +3,7 @@ beginglyph;
 
 paths[1] := a_loop;
 paths[0] := r_vstem xyscaled(-1, -1) shifted(xpart(point 0 of paths[1]) + xpart(point 1 of r_vstem), s);
-paths[0] := subpath(0, 2) of paths[0];
+
 pen_stroke(
     nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)

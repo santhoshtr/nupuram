@@ -1,8 +1,8 @@
 input glyph;
 beginglyph;
 z0=(sw/6, 0.95X);
-z1=(x0 , 0.6s);
-z2=(x1 + sw/4, 0);
+z1=(x0 , 0.66s);
+z2=(x1 + sw/4, thick/4);
 z3=(x2 + sw/4, s/4);
 paths[0] = z0{dir -80}..z1{dir -95}..z2{right}..{dir 75}z3;
 %bar

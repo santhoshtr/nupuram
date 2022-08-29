@@ -1,7 +1,14 @@
 input glyph;
 beginglyph;
+save r;
+r=0.8;
+z0=(0.9*sw*r, 0.8s);
+z1=(0.4sw*r,s-thick/4);
+z2=(0, s/3);
+z3=( 0.4*sw*r, thick/4 );
+z4= (sw*r, s/4);
 
-paths[0] = c_loop;
+paths[0] = z0{dir 120}..z1{dir 195}.. z2{dir -75}..z3 ..{dir 60}z4;
 
 pen_stroke(
     nib(thicknib rotated 0 )(1,3)

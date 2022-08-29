@@ -8,7 +8,7 @@ z3=( x4 + r*sw/3, -descent);
 z4=( 0, -descent/3);
 
 paths[0] = z0{dir -110}..  z1..  z2..z3{left}.. z4;
-paths[1] = fullcircle scaled (thick*1.2) shifted(x0, 1.33s);
+paths[1] = fullcircle scaled (thick*1.5) shifted(x0, 1.33s);
 strokes[1] = paths[1];
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)

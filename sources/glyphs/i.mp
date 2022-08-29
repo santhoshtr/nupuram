@@ -5,7 +5,7 @@ z1=(x0, y0 - s/2);
 z2=(x1, y1 - s/2);
 
 paths[0] = z0{dir -80}..z1..{dir -80}z2;
-paths[1] = fullcircle scaled (thick*1.2) shifted(x0, 1.33s);
+paths[1] = fullcircle scaled (thick*1.5) shifted(x0, 1.33s);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1)
