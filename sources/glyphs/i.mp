@@ -1,10 +1,10 @@
 input glyph;
 beginglyph;
-z0=(mw/10, s);
-z1=(x0, y0 - s/2);
-z2=(x1, y1 - s/2);
+z0= (0.05sw, s);
+z1=(0,  s/2);
+z2=(x0 + 0.05sw, 0);
 
-paths[0] = z0{dir -80}..z1..{dir -80}z2;
+paths[0] = z0..z1{down}..{dir -60}z2;
 paths[1] = fullcircle scaled (thick*1.5) shifted(x0, 1.33s);
 
 pen_stroke(

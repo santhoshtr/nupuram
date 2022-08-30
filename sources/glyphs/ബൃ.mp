@@ -3,11 +3,12 @@ beginglyph;
 
 paths[0] :=left_arch_with_eye;
 % Second arch
-z11 = point 5 of paths[0];
-z12 = (x11 + m/3, m-thick);
-z13 = (x12 + mw/4, y12 - m/3);
-z14 = (x13 - m/3, y13 - m/2);
-paths[1] = z11{up}..z12..z13..z14;
+clearxy;
+z0 = point 5 of paths[0];
+z1 = (x0 + mw/3, 0.9m);
+z2 = (x1 + mw/4, y1 - m/3);
+z3 = (x2 - mw/3, y2 - m/2);
+paths[1] = z0{up}..z1..z2..z3;
 paths[2] = va_tail shifted (point 4 of paths[1]) ;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)

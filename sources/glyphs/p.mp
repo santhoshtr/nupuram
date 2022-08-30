@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 z0=(x1 - thick/2, s);
-z1=(0,  y0 - X/2);
+z1=(thick/2,  y0 - X/2);
 z2=(x1, -descent*1.2);
 
 paths[0] := z0{dir -60}..{down}z1{down}..{dir -85}z2;

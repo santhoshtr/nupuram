@@ -1,14 +1,14 @@
 input glyph;
 beginglyph;
 
-paths[0] := u_arch;
+paths[0] := subpath(0, 3.75) of u_arch;
 
-z4 = (xpart(point 4 of u_arch) , s + thick/4 );
-z5 = (x4, ypart(point 3 of u_arch));
-z6 = (x5 - sw/6 , -descent);
-z7 = (xpart(point 0 of u_arch), -descent + thick/2);
-
-paths[1] = z4 ..z5 ..  z6..z7;
+clearxy;
+z0 = (xpart(point 4 of u_arch) , s );
+z1 = (x0, ypart(point 3 of u_arch));
+z2 = (x1 - sw/6 , -descent - thick/2);
+z3 = (xpart(point 0 of u_arch), -descent );
+paths[1] = z0{dir -100} ..z1  ..  {dir 225}z2.. {dir 120}z3;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1,3)

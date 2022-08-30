@@ -10,10 +10,10 @@ head := head slanted .16;
 head := head shifted (-sw/6, 0);
 paths[0] = head.. z2{down}..  {dir 250}z3;
 
-paths[1] = paths[0] shifted (sw/2, 0);
+paths[1] = paths[0] shifted (0.66sw, 0);
 %bar
 z4 = (x2 -0.25sw, s - thick/2);
-z5 = (x4 +sw,y4);
+z5 = (x4 + 1.2sw ,y4);
 paths[2]:= z4{dir 20}..{dir 20}z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0 )

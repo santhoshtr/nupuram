@@ -2,13 +2,12 @@ input glyph;
 beginglyph;
 
 paths[0] = a_loop;
-
-z5 = (xpart(point 4 of a_loop), s);
-z6 = (x5, s/2);
-z7 = (x5 - sw/6 , -descent);
-z8 = (xpart(point 2 of a_loop), -descent + thick/2);
-
-paths[1] = z5 .. z6 ..  z7 .. z8;
+clearxy;
+z0 = (xpart(point 0 of paths[0]) , s );
+z1 = (x0, ypart(point 3 of paths[0]));
+z2 = (x1 - sw/6 , -descent - thick/2);
+z3 = (xpart(point 2 of paths[0]), -descent );
+paths[1] = z0{dir -100} ..z1  ..  {dir 225}z2.. {dir 120}z3;
 pen_stroke(
     nib(thicknib rotated 0 )(1,3)
     nib(thinnib rotated 0 )(2)
