@@ -5,11 +5,11 @@ paths[1] := pa_tail shifted(xpart(point infinity of paths[0]), 0);
 
 z11 = point 1.5 of paths[1];
 z12 = (x11 - 0.4mw, -descent - thick/2  );
-z13 = (xpart(point 2 of paths[0]), -descent - thick/4);
+z13 = (xpart(point 2 of paths[0]), y12);
 z14 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z15 = (x14 + 0.2mw, m);
 
-paths[2] = z11 ..{left}z12 ..z13 ..z14..z15;
+paths[2] = z11 ..{left}z12 ..z13{left} ..z14..z15;
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )

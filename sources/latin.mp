@@ -35,7 +35,7 @@ enddef;
 vardef n_arch =
     clearxy;
     save r;
-    r=0.8;
+    r=0.75;
     z0=(0, 0);
     z1=(r*sw/6, 0.6s);
     z2=(r*sw*0.9, s-thick/4 );
@@ -48,11 +48,10 @@ vardef n_arch =
 enddef;
 
 vardef u_arch =
-    reverse n_arch xyscaled(-1, -1) shifted(0.8s + thick/2, s)
+    reverse n_arch xyscaled(-1, -1) shifted(xpart(point 4 of n_arch), s)
 enddef;
 
 vardef r_arch =
-    clearxy;
     (n_arch cutafter point 2 of n_arch) xyscaled(0.8, 1)
 enddef;
 

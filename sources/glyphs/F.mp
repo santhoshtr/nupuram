@@ -9,7 +9,7 @@ z4 = (x3 + Xw/phi, y3);
 z5 = (x0, y1);
 z6 = (x5 + 3/4x4, y5);
 
-paths[0] = z0{dir -80}..z1..{dir -80}z2 ;
+paths[0] = z0{dir -90}..z1..{dir -90}z2 ;
 paths[1] = z3{dir 10}..{dir 10}z4;
 paths[2] = z5{dir 10}..{dir 10}z6;
 pen_stroke(

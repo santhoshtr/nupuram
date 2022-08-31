@@ -2,30 +2,17 @@ input glyph;
 beginglyph;
 
 z0=(thick/2, X);
-z1=(x0,y0 - (phi-1)*X);
+z1=(x0,y0 - X/2);
 z2=(x1, 0);
 
-z3=(x0 -  0.1Xw, y0  );
-z4=(x0  + 0.1Xw, y0  );
-z5=(x0 - 0.1Xw, y2  );
-z6=(x0 + 0.1Xw, y2  );
-paths[0] = z0{dir -80}..z1..  {dir -80}z2  ;
-paths[1] = z3{dir 10}..{dir 10}z4 ;
-paths[2] = z5{dir 10}..{dir 10}z6 ;
+paths[0] = z0{dir -90}..z1..  {dir -90}z2  ;
+
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2 )
     nib(thinnib rotated 0 )(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
-pen_stroke(
-    nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
-)(paths[1])(strokes[1]);
 
-pen_stroke(
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[2])(infinity)
-)(paths[2])(strokes[2]);
-anchor( "top", (xpart(point 0.5 of paths[1]), 1.2X) );
+anchor( "top", (xpart(point 0 of paths[0]), 1.2X) );
 endglyph;

@@ -7,9 +7,9 @@ z2=((x1-x0)/2, s/2);
 z3=(x0, 0);
 z4=(x1, 0);
 
-paths[0] = z0{dir 20}..{dir 20}z1;
-paths[1] = z1{dir -110}..z2..{dir 260}z3;
-paths[2] = z3{dir 20}..{dir 20}z4 ;
+paths[0] = z0{dir 10}..{dir 10}z1;
+paths[1] = z1{dir -120}..z2..{dir 250}z3;
+paths[2] = z3{dir 10}..{dir 10}z4 ;
 pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)

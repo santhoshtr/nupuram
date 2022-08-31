@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-w := s;
+
 z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
@@ -10,7 +10,7 @@ z5 = (x0, y1);
 z6 = (x5 +  Xw/2, y5);
 
 
-paths[0] = z0{dir -80} ..z1..{dir -80}z2; ;
+paths[0] = z0{dir -90} ..z1..{dir -90}z2; ;
 paths[1] = z3{dir 10}..{dir 10}z4;
 paths[2] = z5{dir 10}..{dir 10}z6;
 z7 = (xpart(point 2 of paths[0]), thick/2);

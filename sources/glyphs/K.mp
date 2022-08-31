@@ -1,8 +1,13 @@
 input glyph;
 beginglyph;
+z0=(0, X);
+z1=(x0, y0- .5X);
+z2=(x1, 0);
 
-paths[0] = l_vstem ;
-z0= (xpart(point 1 of l_vstem), X/3);
+paths[0] = z0{down}..z1..{down}z2;
+
+clearxy;
+z0= (xpart(point 1 of paths[0]), X/3);
 z1= ( x0 + Xw/2, X);
 
 paths[1] = z0..{dir 45}z1;

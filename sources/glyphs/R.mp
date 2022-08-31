@@ -1,17 +1,18 @@
 input glyph;
 beginglyph;
+
 z0= (0, X);
 z1=( x0, y0 - 0.5X);
 z2=( x1, y1 - 0.5X);
 
-paths[0] = z0{dir -80}..z1..  {dir -80}z2 ;
+paths[0] = z0{dir -90}..z1..  {dir -90}z2 ;
 
 z3 = (x0 -thick/2, 0.85X);
 z4 = (x3 + Xw/3, y0 - thick/4);
 z5 = (x4 + Xw/4, m );
 z6 = point 1.25 of paths[0];
-paths[1] = z3{dir 30} ..z4{right}..z5{down}..{dir 190}z6;
-z7 =  point 2.8 of paths[1];
+paths[1] = z3  ..z4{right}..z5{down}..{left}z6;
+z7 =  point 2.75 of paths[1];
 z8 = (x5,0);
 paths[2] = z7{dir -60}.. {dir -30}z8;
 
