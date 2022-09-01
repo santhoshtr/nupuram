@@ -29,9 +29,9 @@ default: build
 help:
 	@echo "Build targets"
 	@echo
-	@echo "  make build:  Builds the fonts and places them in the fonts/ directory"
-	@echo "  make test:   Tests the fonts with fontbakery"
-	@echo "  make proof:  Creates HTML proof documents in the proof/ directory"
+	@echo " make build: Builds the fonts and places them in the fonts/ directory"
+	@echo " make test:  Tests the fonts with fontbakery"
+	@echo " make proof: Creates HTML proof documents in the proof/ directory"
 	@echo
 
 build: ufo otf ttf webfonts
@@ -49,7 +49,7 @@ autobuild:
 	while inotifywait -r -e MODIFY $(SOURCEDIR)/glyphs/; do $(MAKE) -C $(SOURCEDIR); done;
 
 $(UFODIR)/$(FAMILY)-%.ufo: %
-	@echo "  BUILD UFO   $(@F)"
+	@echo " BUILD UFO  $(@F)"
 	@mkdir -p ${UFODIR}
 	$(PY) tools/builder.py --style $* --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
@@ -57,19 +57,19 @@ $(UFODIR)/$(FAMILY)-%.ufo: %
 	@sed -i 's/ ;$\//g' $@/features.fea
 
 $(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Display.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
-	@echo "  BUILD UFO   $(@F)"
+	@echo " BUILD UFO  $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -q -m $@
 
 $(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$(FAMILY)-Regular.ufo
-	@echo "  BUILD UFO   $(@F)"
+	@echo " BUILD UFO  $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
 ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
-otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf  $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
-webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2   $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
+otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
+webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
 
 ${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color.ttf
 	@cp $< $@
@@ -87,9 +87,9 @@ $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Shadow-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
 $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Shadow-Color-v1.ttf
-	@echo " BUILD  WEBFONT $(@F)"
+	@echo " BUILD WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -q -o  $@ $<
+	@fonttools ttLib.woff2 compress -q -o $@ $<
 
 ${TTFDIR}/$(FAMILY)-Arrows-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Arrows-Color.ttf
 	@cp $< $@
@@ -107,24 +107,24 @@ $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Arrows-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Arrows-Color-v1.ttf
-	@echo " BUILD  WEBFONT $(@F)"
+	@echo " BUILD WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -q -o  $@ $<
+	@fonttools ttLib.woff2 compress -q -o $@ $<
 
 $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
-	@echo "  BUILD  OTF  $(@F)"
+	@echo " BUILD OTF $(@F)"
 	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(OTFDIR) -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 ${TTFDIR}/%.ttf: ${UFODIR}/%.ufo
-	@echo "  BUILD  TTF  $(@F)"
+	@echo " BUILD TTF $(@F)"
 	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter -e 0.01 --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
-	@echo " BUILD WEBFONT  $(@F)"
+	@echo " BUILD WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -q -o  $@ $<
+	@fonttools ttLib.woff2 compress -q -o $@ $<
 
 ${TTFDIR}/%-VF.ttf: %.designspace
 	fontmake -m $*.designspace -o variable --output-dir ${TTFDIR}
@@ -141,19 +141,19 @@ clean:
 
 proofs: otf
 	@mkdir -p ${PROOFDIR}
-	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \
 		--output-file $(PROOFDIR)/ligatures.pdf;
 	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/content.txt \
 		--output-file $(PROOFDIR)/content.pdf;
 
-	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/kerning.txt \
-		--output-file  $(PROOFDIR)/kerning.pdf ;
-	@hb-view  $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
+		--output-file $(PROOFDIR)/kerning.pdf ;
+	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
-		--output-file  $(PROOFDIR)/latin.pdf ;
+		--output-file $(PROOFDIR)/latin.pdf ;
 
 test: otf ttf proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
