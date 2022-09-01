@@ -22,7 +22,7 @@ VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf
 VAROTF=$(OTFDIR)/$(FAMILY)-VF.otf
 VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2
 
-.PHONY: variants $(STYLES) ufo otf ttf webfonts clean
+.PHONY: variants $(STYLES) ufo otf ttf webfonts clean glyphs build proofs autobuild
 
 default: build
 
@@ -42,10 +42,16 @@ $(STYLES):
 	@mkdir -p $(SOURCEDIR)/svgs/$@
 	VARIANT=$@ $(MAKE) -C $(SOURCEDIR)
 
+# Recursively watch the file changes and make the (debug) svgs.
+# Useful in design workflow.
+# Package inotify-tools are available in linux distros
+autobuild:
+	while inotifywait -r -e MODIFY $(SOURCEDIR)/glyphs/; do $(MAKE) -C $(SOURCEDIR); done;
+
 $(UFODIR)/$(FAMILY)-%.ufo: %
 	@echo "  BUILD UFO   $(@F)"
 	@mkdir -p ${UFODIR}
-	$(PY) tools/builder.py --style $* --weight 400 --source $(SOURCEDIR)/svgs/$* --output $@
+	$(PY) tools/builder.py --style $* --source $(SOURCEDIR)/svgs/$* --output $@
 	@ufonormalizer -q -m $@
 	@# remove dangling semicolons in features.fea which font editors cannot handle
 	@sed -i 's/ ;$\//g' $@/features.fea
