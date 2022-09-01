@@ -1,7 +1,7 @@
 input glyph;
 beginglyph;
 
-r = 0.9;
+r = 0.95;
 z0 = (Xw*r/3, 0);
 z1 = (x0 + Xw*r/3, .25X);
 z2 = (x0, y1 + .25X);

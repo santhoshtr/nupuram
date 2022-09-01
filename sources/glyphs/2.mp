@@ -1,12 +1,12 @@
 input glyph;
 beginglyph;
-z0 = (0, 0.6X);
+z0 = (0, 3/4X);
 z1 = (x0+ Xw/3, X);
-z2 = (x1+ Xw/4, 3/4X);
-z3 = (0,0);
-paths[0] := z0{dir 80}  .. {right}z1..z2..{dir 210}z3;
-z4 = (0, 0) ;
-z5 = (x2 + thick/2, 0) ;
+z2 = (x1+ Xw/4, y0);
+z3 = (0, thick/2);
+paths[0] := z0   ..  z1..z2..{dir 210}z3;
+z4 = z3 ;
+z5 = (x2 + thick/2, y4) ;
 paths[1] = z4{dir 20}..{dir 30}z5 ;
 
 pen_stroke(
