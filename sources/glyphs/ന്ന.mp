@@ -17,8 +17,6 @@ z15=z13;
 z16=(x15 + mw/2, m);
 z17=(x16 + mw/3, y16 - m/2);
 z18=(x17 - mw/3, y17 - m/2);
-z19= ( x18 - mw/4, y18 + .3m);
-
 
 paths[2] = z15{up}..z16..z17...z18;
 paths[2] := paths[2] slanted tand(8) shifted (-tand(8)*mw/3, 0);

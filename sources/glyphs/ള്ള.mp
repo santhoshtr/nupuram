@@ -21,7 +21,7 @@ z13 = (x12 + 0.6mw, y12 );
 % Add an extra elongation for tail so that it touches
 % the tail of second ള
 z14 = (xpart (point 7 of paths[0]) + .18mw, y13);
-paths[1] = z12{dir 20}..z13..{dir -20}z14;
+paths[1] = z12{dir 20}..z13..{dir 20}z14;
 pen_stroke(
     nib(thicknib rotated 0 )( 2, 4)
     nib(thinnib rotated 0 )( 1,3,5,7,8 )
