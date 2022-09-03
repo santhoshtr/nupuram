@@ -4,4 +4,4 @@ thick:= 0.6u;
 thin:= 0.1;
 calligraphic:=1;
 soften:=0;
-rotation:=30;
+rotation:=40;

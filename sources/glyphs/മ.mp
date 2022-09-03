@@ -1,10 +1,9 @@
 input glyph;
 beginglyph;
 
-
 clearxy;
 z0=(0, 0);
-z1=( mw - thick/2, 0);
+z1=( x0 + mw - thick/2, 0);
 z2= (x1, y1 + m/3);
 z3= (x2, y2 + m/2);
 

@@ -1,16 +1,14 @@
 input glyph;
 beginglyph;
 
-z0 = ( x1 + mw/8, 0);
-z1 = ( 0, y0 + m/2 );
-z2 = ( x1 + mw/2, m); % top
-z3 = ( x2 + mw/3, y2 - m/3);
+
+paths[0] = subpath(0,2) of da;
+z3 = ( xpart(point infinity of paths[0]) + mw/3, ypart(point infinity of paths[0]) - m/3);
 z4= ( x3 - mw/3, m/2);
 z5= ( x4 + mw/3, y4 - .2m);
 z6 = ( x5 + mw/6, y5 - .15m);
-z7 = ( x2 - mw/6, 0);
+z7 = ( xpart(point infinity of paths[0]) - mw/6, 0);
 
-paths[0] = subpath(0,2) of da;
 paths[0] := paths[0].. z3 ..z4  .. z5{right} ..z6..{dir 160}z7;
 
 pen_stroke(

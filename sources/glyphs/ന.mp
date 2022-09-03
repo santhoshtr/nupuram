@@ -8,12 +8,13 @@ z3=(x2 + mw/3, m/3);
 z4=(x3,  y3 -m/4); % bottom of piller
 paths[0] = z0..z1.. z2.. {down}z3---z4 ;
 
-z5=(x3, y3);
-z6=(x5 + mw/2, m); % Top of second arch
-z7=(x6 + mw/3, y6 - m/2);
-z8= ( x7 - mw/3, y7 - m/2);
+clearxy;
+z0=point 3 of paths[0];
+z1=(x0 + mw/2, m); % Top of second arch
+z2=(x1 + mw/3, y1 - m/2);
+z3= ( x2 - mw/3, y2 - m/2);
 
-paths[1] = z5{up}..z6..z7..z8;
+paths[1] = z0{up}..z1..z2..z3;
 paths[1]:= paths[1] slanted tand(8) shifted (-tand(8)*mw/3, 0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
