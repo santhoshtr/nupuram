@@ -66,7 +66,8 @@ primarydef len on pat = (arctime len of pat) of pat enddef ;
 vardef dottedpath(expr p) =
     l:=(arclength p)/100;
     % Division by 100 to avoid value of l going beyong "infinity(4095)
-    for j = 0 step u/300 until l :
+    % Reduce 200 to have more dots. Increase it for spaced dots
+    for j = 0 step u/200 until l :
         fill fullcircle scaled (u/5) shifted (point j*100 on p) withcolor glyphcolor;
     endfor;
 enddef;
