@@ -45,7 +45,10 @@ if __name__ == "__main__":
 
     config = DefaultMunch.fromDict(
         yaml.load(options.config, Loader=yaml.FullLoader))
-
+    # This is not the best way to do it, anyway..
+    if options.style in  ["Arrows", "Color", "Shadow", "Calligraphy", "Dots", "Outline"]:
+        config.name = f"{config.name} {options.style}"
+        options.style = "Regular"
     font: MalayalamFont = MalayalamFont(
             config, style=options.style, weight=options.weight)
     font.build(options.source)

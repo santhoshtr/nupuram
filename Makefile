@@ -163,4 +163,8 @@ test: otf ttf proofs
 
 install: $(OTFDIR)/$(FAMILY)-VF.otf
 	@cp ${OTFDIR}/$(FAMILY)-VF.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Calligraphy.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Dots.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Arrows.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Shadow-Color-v1.otf ~/.fonts;
 	@fc-cache -fr

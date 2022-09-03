@@ -58,21 +58,14 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Slanted-Thin.ufo" name="Thin">
-      <location>
-        <dimension name="weight" xvalue="100"/>
-        <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="20"/>
-      </location>
-    </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Condensed.ufo" name="CondensedRegular">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Condensed.ufo" name="Condensed">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="80"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Expanded.ufo" name="ExpandedRegular">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Expanded.ufo" name="Expanded">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="120"/>
