@@ -121,7 +121,7 @@ colorfonts:
   fonts/ufo/Nupuram-Shadow-Color.ufo:
     layers:
       "public.default":
-        "source": "fonts/ufo/Nupuram-Display.ufo"
+        "source": "fonts/ufo/Nupuram-Regular.ufo"
         "order": 1  # Foreground layer
       "shadow":
         "source": "fonts/ufo/Nupuram-Shadow.ufo"
