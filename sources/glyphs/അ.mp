@@ -20,7 +20,7 @@ z14= ( x13 - mw/4, y13 + m/3);
 
 paths[0] = z0..z1..z2..{left}z3{right}..z4..z5..{up}z6..z7..{down}z8---z9;
 paths[1] =z9---z10{up}..z11..z12..{left}z13{left}..{dir 80}z14;
-z15 = point 2.75 of paths[1];
+z15 = point 2.75 of paths[1] - (thick*0.15, 0);
 paths[1] := paths[1] ..  z15 ;
 pen_stroke(
     nib(thicknib rotated 0 )(2, 3, 5 )

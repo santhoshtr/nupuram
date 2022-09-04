@@ -5,7 +5,8 @@ z1 = (0, y4/2);
 z2 = (x1 + Xw/3, 0);
 z3 = (x2 + Xw/4, y1);
 z4 = (x2, 0.6X);
-paths[0] := z0..z1..z2..z3..z4..z1;
+z5 = (thick*0.11, y4/2);
+paths[0] := z0..z1..z2..z3..z4..{dir -95}z5;
 
 pen_stroke(
     nib(thicknib rotated 0 )(1 )

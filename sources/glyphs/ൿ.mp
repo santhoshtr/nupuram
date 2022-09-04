@@ -10,7 +10,7 @@ z5=(x4 - mw/4, y4 - 0.4m);
 z6=(x5 - mw/4, y5 + 0.2m);
 z7=(x6 + mw/4, y6 + 0.3m);
 % Right loop starts here
-z8=(x7 + mw, y7  );
+z8=(x7 + mw, y7   + thick*0.2);
 z9=(x8 + mw/2, y6);
 z10=(x9 - mw/4, y5);
 z11=(x10 - mw/4, y10 + m/2);

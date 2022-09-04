@@ -6,7 +6,7 @@ z13=(x12 + 3/4mw, y12 );
 z14=(x13 + thick, y13 + m/2 );
 z15=(x14 - mw/3, m);
 z16=(x15 - mw/3, y15 - m/2);
-z17=(x16 + thick, y12 );
+z17=(x16, y12 );
 
 paths[0] = z11{up}..z12{dir 20} .. z13{dir 20}..z14  .. z15..z16.. z17;
 pen_stroke(

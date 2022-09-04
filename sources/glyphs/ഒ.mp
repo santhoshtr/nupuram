@@ -2,10 +2,10 @@ input glyph;
 beginglyph;
 
 loop_slant=tand(10);
-z0 =(x3, y3);
+z0 =(0, m/2);
 z1=(x4 + 2/3* mw/3, y3 - m/4 + thick/4);
 z2=(x4,  0);
-z3=(0, m/2);
+z3=(0, m/2) - (thick*0.15, 0);
 z4=(x3 + m/3, m);
 
 paths[0] = z0  .. z1..  z2.. {up}z3 ..z4  ;

@@ -39,9 +39,18 @@ yshift := -.85m;
 
 paths[3] = paths[0] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
 paths[4] = paths[1] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
-
-strokes[3] = strokes[0] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
-strokes[4] = strokes[1] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
+pen_stroke(
+    nib(thicknib rotated 0 )(0, 2, 4, 6)
+    nib(thinnib rotated 0 )(1,3, 5 )
+    nib(terminalnib rotated terminalangle 0 of paths[3])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
+)(paths[3])(strokes[3]);
+pen_stroke(
+    nib(thicknib rotated 0 )( 1, 3)
+    nib(thinnib rotated 0 )(2)
+    nib(thinterminalnib rotated terminalangle 0 of paths[4])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[4])(infinity)
+)(paths[4])(strokes[4]);
 
 clearxy;
 z0=point 2 of paths[1];
@@ -51,6 +60,9 @@ z3=(x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);
 
 paths[5] = (z0{up}..z1..z2...z3..z4..z2 );
+
+
+paths[5] := paths[5] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)
     nib(thinnib rotated 0 )(0, 2, 4,6)
@@ -58,8 +70,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[5])(infinity)
 )(paths[5])(strokes[5]);
 
-
-paths[5] := paths[5] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
-strokes[5] := strokes[5] shifted (xshift , yshift ) xscaled 0.8 yscaled 0.8;
 rbearing:=-0.5rbearing;
 endglyph;

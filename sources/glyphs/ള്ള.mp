@@ -2,7 +2,7 @@ input glyph;
 beginglyph;
 
 loop_slant=tand(10);
-z0 =(x3, y3);
+z0 =(x3 + thick*0.15, y3);
 z1=(x4 + 2/3* mw/3, y3 - m/4 + thick/4);
 z2=(x4,  0);
 z3=(0, m/2);

@@ -1,18 +1,17 @@
 input glyph;
 beginglyph;
 
-z0=(0.5mw, 0.6m);
+z0=(mw/2, 0.6m);
 z1=(x0 + mw/3, y0 + 0.4m);
-z2=(x1 + mw/3, y1 - 0.5m);
-z3=(x2 - mw/3, y2 - 0.5m);
+z2=(x1 + mw/3, y1 - m/2);
+z3=(x2 - mw/3, y2 - m/2);
 z4=(x3 - mw/3, y3 + 0.4m);
 z5=(x4 - mw/4, y4 - 0.4m);
 z6=(x5 - mw/4, y5 + 0.2m);
 z7=(x6 + mw/4, y6 + 0.3m);
-z8=(x7 + mw, y7  );
-z9=(x8 + 0.2m, y8 - 0.3m);
-z10=(x9 - 0.2m, y9 - 0.2m);
-
+z8=(x7 + mw, y7);
+z9=(x8 + mw/3, y8 - 0.3m);
+z10=(x9 - mw/3, 0);
 
 z15=(x10, 0);
 z16=(x15 + mw, y15);
@@ -24,7 +23,7 @@ z21 = (x20 - mw/3, y20 + 0.5m);
 z22 = (x21 + mw/3, y21 - 0.4m);
 z23 = (x22, y22- 0.6m);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9..{dir 210}z10 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..z8..z9..{dir 185}z10 ;
 paths[1] = z15{dir 20}..{dir 20}z16{dir 20}..z17...{dir 60}z18;
 paths[2] = z19{dir 250}..z20 ..z21 ..{down}z22..z23;
 pen_stroke(

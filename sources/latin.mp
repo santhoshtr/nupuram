@@ -64,7 +64,7 @@ vardef p_loop =
     z1=(r*2/3sw, s-thick/4);
     z2=(r*sw, 2/3s);
     z3=(0.5*r*sw, thick/4);
-    z4=(x0 , y0 + s/10);
+    z4=(x0 + thick*0.15, y0 + s/10);
     z0{dir 80}..z1..{dir -80}z2{dir -80}..{dir 180}z3 ..z4
 enddef;
 

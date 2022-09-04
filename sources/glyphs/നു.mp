@@ -10,9 +10,10 @@ z6=(x5 + mw/2, y5 + .6m); % Top of second arch
 z7=(x6 + mw/3, y6 - m/2);
 z8= ( x7 - mw/3, y7 - m/2);
 z9= ( x8 - mw/4, y8 + .3m);
+z10= ( x7 - thick*0.13, y7);
 
 paths[0] = z0..z1..z2..z3---z4 ;
-paths[1] = z5{up}..z6..z7..z8..z9.. z7;
+paths[1] = z5{up}..z6..z7..z8..z9.. z10;
 paths[1]:= paths[1] slanted tand(8)  shifted (-tand(8)*mw/3, 0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)

@@ -26,8 +26,9 @@ z2=(x1 +  mw/3, y1 - m/2); % Top of second arch
 z3=(x2 +  mw/2, y2 + m/2);
 z4=(x3 -  mw/3, m);
 z5=(x4 -  mw/4, y4 - m/3);
+z6=(x3 - thick*0.13, y3);
 
-paths[1] = z0---z1..z2{dir -10}..z3{dir 90}..{left}z4..z5..z3;
+paths[1] = z0---z1..z2{dir -10}..z3{dir 90}..{left}z4..z5..z6;
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5, 7)
     nib(thinnib rotated 0 )(1,3,5)
