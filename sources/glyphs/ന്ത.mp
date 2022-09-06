@@ -16,16 +16,18 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
-z11 = z3;
-z12 = ( x11 + mw/2.4, m-thick/2); % top
-z13 = ( x12 + mw/3, y12 - m/2);
-z14 = ( x13 - mw/4, thick/2); % bottom middle
-z15 = ( x14 - mw/4, y14 + m/2.5);
-z16 = ( x15 + mw/2, m ); % second top
-z17 = ( x16 + mw/2.5, y16 - m/2);
-z18 = ( x17 - mw/4, y0);
 
-paths[1] =z11{up}..z12{dir 10}.. z13..z14..z15 ..z16{dir 10}..z17..{dir 220}z18;
+clearxy;
+z0 = point 3 of paths[0];
+z1 = ( x0 + mw/2.4, m-thick/2); % top
+z2 = ( x1 + mw/3, y1 - m/2);
+z3 = ( x2 - mw/4, thick/2); % bottom middle
+z4 = ( x3 - mw/4, y3 + m/2.5);
+z5 = ( x4 + mw/2, m ); % second top
+z6= ( x5 + mw/2.5, y5 - m/2);
+z7 = ( x6- mw/3, 0);
+
+paths[1] =z0{up}..z1{dir 10}.. z2..z3..z4 ..z5{dir 10}..z6..{dir 200}z7;
 
 pen_stroke(
     nib(thinnib rotated 0 )(2, 4, 6, 8)

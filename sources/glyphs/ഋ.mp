@@ -20,7 +20,7 @@ paths[0] = z0{right} .. z1..z2..z3..z4..{down}z5{down}..{left}z6{left}..{up}z7{u
 pen_stroke(
     nib(thicknib rotated 0 )(2,6)
     nib(thinnib rotated 0 )(1,3,4,5,7,8,9,11 )
-    nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 endglyph;

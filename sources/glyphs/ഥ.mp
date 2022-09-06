@@ -7,7 +7,9 @@ z3=(x2 + 0.3mw, 0);
 z4=(x3 + 0.5mw, m/2);
 z5=(x4 - mw/3, m);
 z6=(x5 - mw/3, m/4);
-z7=(x6 + mw/6, y2);
+% Could be y2, but that will create a self intersection and hence will
+% confuse outline calculation.
+z7=(x6 + mw/6, y2+thick/4);
 
 paths[0] = z0 ..z1..{dir -10}z2..z3{dir 10}..z3..z4..z5..z6..z7;
 pen_stroke(

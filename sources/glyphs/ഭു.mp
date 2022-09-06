@@ -29,10 +29,11 @@ pen_stroke(
 
 
 % tail
-z12 = (xpart (point 1.5 of paths[0]), -descent );
-z13 = (x12 + 0.5mw, y12 );
-z14 = (xpart (point 7 of paths[0]) + thick/2, y13);
-paths[1]:= z12{dir 20}..z13..{dir 20}z14;
+clearxy;
+z0 = (xpart (point infinity of paths[0]), -descent );
+z1 = (x0 + 0.5mw, y0 );
+z2 = (xpart (point 7 of paths[0]) + thick/2, y0);
+paths[1]:= z0{dir 20}..z1..{dir 20}z2;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1 )

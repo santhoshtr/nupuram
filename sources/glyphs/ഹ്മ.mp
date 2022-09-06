@@ -43,12 +43,11 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 4 )
-    nib(thinnib rotated 0 )(2)
+    nib(thinnib rotated 0 )(1,3)
     nib(terminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
 anchor( "vc", point 0.5 of paths[1]);
-anchor( "bottom", point 1 of paths[2]);
 anchor( "right", point 1 of paths[2]);
 endglyph;

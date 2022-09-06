@@ -161,7 +161,7 @@ test: otf ttf proofs
 	fontbakery check-opentype $(OTFDIR)/$(FAMILY)-Regular.otf
 	fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/repo/zip_files $(TTFDIR)/$(FAMILY)-Regular.ttf
 
-install: $(OTFDIR)/$(FAMILY)-VF.otf
+install: otf
 	@cp ${OTFDIR}/$(FAMILY)-VF.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Calligraphy.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Dots.otf ~/.fonts;
