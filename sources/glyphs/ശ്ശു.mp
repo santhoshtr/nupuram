@@ -38,8 +38,8 @@ paths[1] := paths[1]  xscaled 0.8 yscaled 0.75 shifted (0.25mw, -.666m);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6, 8 )
     nib(thinnib rotated 0 )(1,3,5,7, 9)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
+    nib(terminalnib rotated terminalangle 0 of paths[1])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
 % tail
