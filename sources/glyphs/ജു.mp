@@ -19,13 +19,16 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[0] )(infinity )
 )(paths[0])(strokes[0]);
 
-z7 = (x5, y5); % Second arch
-z8 = (x7 + mw/3, y7 + m/3  );
-z9 = (x8 + mw/3, y8 - m/3);
-z10 = (x9 - mw/2, y9 - m/3);
-z11 = (x10 - mw/2, y10 - m/12);
-z12 = (x11 - mw/3, 0);
-paths[1] = z7{dir 85}..z8 ..z9..z10.. z12;
+clearxy;
+z0 =  point 5 of paths[0]; % Second arch
+z1 = (x0+ mw/3, y0 + m/3 + m/12);
+z2 = (x1 + mw/3, y1 - m/3);
+z3 = (x2 - mw/2, y2 - m/3);
+z4 = (x3 - mw/2, y3 - m/12);
+z5 = (x4 - mw/3, 0);
+
+paths[1] = z0{dir 85}..z1 ..z2..z3..z5 ;
+
 pen_stroke(
     nib(thicknib rotated 0 )(1, 4)
     nib(thinnib rotated 0 )( 2,3,4,5,7,9,11)

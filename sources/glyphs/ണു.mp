@@ -18,11 +18,12 @@ paths[1] = z11{up}..z12..z13---z14;
 clearxy;
 z0=point 2 of paths[1];
 z1=(x0 + mw/2, y0 + m/2); % Top of third arch
-z2=(x1 + mw/3, y1 - m/2);
+z2=(x1 + mw/2.5, y1 - m/2);
 z3=(x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);
+z5= ( x2 - thick*0.2, y2);
 
-paths[2] = z0{up}..z1..z2...z3..z4..z2;
+paths[2] = z0{up}..z1..z2...z3..z4..z5;
 
 pen_stroke(
     nib(thicknib rotated 0 )( 1, 3)

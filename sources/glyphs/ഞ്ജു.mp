@@ -54,18 +54,40 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
+
 clearxy;
-z0 = ( xpart(point infinity of paths[3]) + mw, ypart(point infinity of paths[3]) + m/3);
-z1 = (x0 + mw/3, y0 - m/4);
-z2 = (x1 - mw/4, y1 - m/4);
-z3 = (x2 - mw/4, y2 + m/3+ m/6 - thick*0.12);
-paths[4] = point infinity of paths[3]..tension 1.5..z0..z1..z2..z3;
+z0 = point infinity of paths[3];
+z1 = (x0 + mw, y0 + m/3);
+z2 = (x1 + mw/3, y1 - m/4);
+z3 = (x2 - mw/4, y2 - m/4);
+z4 = (x3 - mw/4, y3 + m/4);
+z5 = (x1, y1);
+z6 = (x5 + 0.6mw, 0);
+z7 = (x5, -descent*1.2);
+
+paths[4] = z0.. tension 1.5..z1..z2..z3..z4 ..z5..z6..{dir 200}z7;
+
 
 pen_stroke(
     nib(thicknib rotated 0 )(1, 4)
-    nib(thinnib rotated 0 )(1, 2)
+    nib(thinnib rotated 0 )(1, 2, 4, 6)
     nib(terminalnib rotated terminalangle 0 of paths[4])(0)
-    nib(thinterminalnib rotated terminalangle infinity of paths[4])(infinity)
+    nib(terminalnib rotated terminalangle infinity of paths[4])(infinity)
 )(paths[4])(strokes[4]);
+
+
+% tail
+clearxy;
+z0 =  point infinity of paths[4] ;
+z1 = ((x0 + x2)/2, y0 );
+z2 = (xpart (point 6 of paths[4]) + thick/2, y0);
+
+paths[5]:= z0{dir 20}..z1..{dir 20}z2;
+pen_stroke(
+    nib(thinnib rotated 0 )(1 )
+    nib(terminalnib rotated terminalangle 0 of paths[5])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[5])(infinity)
+)(paths[5])(strokes[5]);
+rbearing:=rbearing - thick;
 
 endglyph;
