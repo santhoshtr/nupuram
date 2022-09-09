@@ -36,7 +36,7 @@ z2 = (xpart(point 2 of paths[0]), -descent - thick/4);
 z3 = (xpart(point 0 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
 
-paths[3] = z0{dir -75} ..{left}z1{left} ..z2{left} ..z3..z4;
+paths[3] = z0{dir -75} ..{dir 190}z1 ..z2{dir 170} ..z3..z4;
 pen_stroke(
     nib(thinnib rotated 0 )(3)
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)

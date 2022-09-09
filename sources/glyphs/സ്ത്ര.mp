@@ -34,24 +34,32 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 
-
-
 clearxy;
-z0 = point 4 of paths[1];
-z1 = (xpart(point 1 of paths[1]), -descent - thick/2  );
-z2 = (xpart(point 2.25 of paths[0]), -descent - thick/2);
-z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
-z4 = (x3 + mw/10, m);
-paths[2] =  z0{dir -80} ..{dir 190}z1  ..z2{dir 170} ..z3..z4;
+z0= (x1 + mw/3, 0);
+z1= (0, y0 + mw/2);
+z2 = ( x1 + mw/2, y1 + m/2); % top
+z3 = ( x2 + mw/2, y2 - m/2);
+z4 = ( x3 - mw/3, y3 - m/2 + thick/2); % bottom middle
+z5 = ( x4 - mw/3, y4 + m/2 - thick/2);
+z6 = ( x5 + mw/2, y2); % second top
+z7 = ( x6 + mw/2, y1);
+z8 = ( x7 - mw/3, y0); %
+paths[2] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
+paths[2] := paths[2] && (z4{left}.. z5 ..z6{right}..{dir -80}z7) slanted tand(8);
+
+z9 = ( x4,  -descent); % ra sign starts
+z10 = (x1 - mw*1.2, y1 + m);
+z11 = (x10 + mw/4, y10 + m);
+
+paths[2] := paths[2] ..z9{dir 190}..z10.. {dir 60}z11  ;
+paths[2] := paths[2] shifted(m*1.2,-m*0.975) xscaled 0.8 yscaled 0.66;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(3)
-    nib(thinterminalnib rotated terminalangle 0 of paths[2])(0)
+    nib(thinnib rotated 0 )(1, 2, 3, 5,6, 7, 9)
+    nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-
 anchor( "vc", (x3,0));
-anchor( "right", point .6 of paths[2]);
 
 endglyph;

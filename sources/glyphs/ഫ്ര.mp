@@ -15,7 +15,7 @@ z14 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z15 = (x14 + 0.2mw, m);
 
 
-paths[2] = z11{down} ..{left}z12 ..z13 ..z14..z15;
+paths[2] = z11{down} ..{dir 190}z12 ..{dir 170}z13 ..z14..z15;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )
     nib(thinnib rotated 0 )(1,3)
