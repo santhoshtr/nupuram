@@ -3,7 +3,6 @@ beginglyph;
 
 
 paths[0] := left_arch_with_eye;
-paths[0] := paths[0] shifted(0, -m);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )

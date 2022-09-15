@@ -3,7 +3,6 @@ beginglyph;
 
 
 paths[0] := left_arch_with_eye;
-paths[0] := paths[0] shifted(0, -m);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 6)
     nib(thinnib rotated 0 )(1,3, 5 )
@@ -14,14 +13,12 @@ pen_stroke(
 clearxy;
 z0=point 5 of paths[0];
 z1=(x0 + mw/2, y0 + m/2); % Top of third arch
-z2=(x1 + mw/3, y1 - m/2);
+z2=(x1 + mw/2.5, y1 - m/2);
 z3=(x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);
-z5= ( x4 + mw/2, y4 +  m/3);
-z6= ( x5 + m/3, y5 - m/3 );
-z7= ( x6 - 0.7mw, y3 - m/4 );
+z5= ( x2 - thick*0.2, y2);
 
-paths[1] = z0{up}..z1..z2...z3..z4..z5..z6..{dir 160}z7;
+paths[1] = z0{up}..z1..z2...z3..z4..z5;
 
 pen_stroke(
     nib(thicknib rotated 0 )( 3, 6 )
