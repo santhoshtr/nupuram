@@ -581,7 +581,7 @@ class MalayalamFont(Font):
                 composite.width = composite.width + baseGlyph.width
                 composite.appendComponent(component)
 
-        diacritics = "̂ˆ´¸˚¯`ˇ~¨˙˜"
+        diacritics = "̂ˆ´¸˚¯`ˇ~¨˙˜̆"
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
                 base_name = SVGGlyph.get_glyph_name(base)

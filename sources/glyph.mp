@@ -171,7 +171,14 @@ def endglyph =
                 if (thin = 1) and (terminalround = 1):
                     pen_stroke()(paths[i])(strokes[i]);
                 fi;
-                if (soften > 0):
+                save soft_; boolean soft_;
+                % If the path is cycle, no need to soften. Infact, attempting to soften
+                % will create wrong outlines.
+                % We could use 'cycle p' of metapost here.
+                % But for some reason it is not returning true when it should.
+                % So here we are checking if first point is same as last point.
+                soft_:=(soften>0) and (point 0 of paths[i] <> point infinity of paths[i] );
+                if soft_:
                     if known strokes[i]b:
                         softpath := soften_nodes(strokes[i], cornerradius)(
                             0,

@@ -1,3 +1,4 @@
+% Same as ring
 input glyph;
 beginglyph;
 radius:=0.2sw;

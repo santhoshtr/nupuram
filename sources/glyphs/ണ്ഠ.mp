@@ -34,7 +34,6 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-soften:=0;
 z0=(0, m/2);
 z1=(x0 + 0.4mw, y0 + m/2);
 z2=(x1 + 0.4mw, y1 - m/2);

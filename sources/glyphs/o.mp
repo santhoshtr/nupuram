@@ -1,6 +1,5 @@
 input glyph;
 beginglyph;
-soften:=0;
 save r;
 r=0.8;
 z0 = (0, s/2);
