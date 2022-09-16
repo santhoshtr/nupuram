@@ -118,7 +118,7 @@ $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
 
 ${TTFDIR}/%.ttf: ${UFODIR}/%.ufo
 	@echo " BUILD TTF $(@F)"
-	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter -e 0.01 --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
+	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
 $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
@@ -127,7 +127,8 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 	@fonttools ttLib.woff2 compress -q -o $@ $<
 
 ${TTFDIR}/%-VF.ttf: %.designspace
-	fontmake -m $*.designspace -o variable --output-dir ${TTFDIR}
+	fontmake --filter DecomposeTransformedComponentsFilter -m $*.designspace -o variable --output-dir ${TTFDIR}
+	$(PY) tools/fix_font.py $@
 
 ${OTFDIR}/%-VF.otf: %.designspace
 	fontmake -m $*.designspace -o variable-cff2 --output-dir ${OTFDIR}
@@ -139,7 +140,7 @@ clean:
 	@find -iname "*.pyc" -delete
 	@rm -rf $(FONTSDIR) $(PROOFDIR)
 
-proofs: otf
+proofs: $(OTFDIR)/$(FAMILY)-Regular.otf
 	@mkdir -p ${PROOFDIR}
 	@hb-view $(OTFDIR)/$(FAMILY)-Regular.otf --font-size 24 --margin 100 --line-space 2.4 \
 		--foreground=333333 --text-file $(TESTSDIR)/ligatures.txt \
@@ -155,11 +156,11 @@ proofs: otf
 		--foreground=333333 --text-file $(TESTSDIR)/latin.txt \
 		--output-file $(PROOFDIR)/latin.pdf ;
 
-test: otf ttf proofs
+test: proofs ${TTFDIR}/$(FAMILY)-VF.ttf
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
 	fontbakery check-ufo-sources $(FONTSDIR)/ufo/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(OTFDIR)/$(FAMILY)-Regular.otf
-	fontbakery check-googlefonts -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/repo/zip_files $(TTFDIR)/$(FAMILY)-Regular.ttf
+	fontbakery check-googlefonts --full-lists -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/repo/zip_files ${TTFDIR}/$(FAMILY)-VF.ttf
 
 install: otf
 	@cp ${OTFDIR}/$(FAMILY)-VF.otf ~/.fonts;
