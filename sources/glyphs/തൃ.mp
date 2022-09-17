@@ -13,7 +13,6 @@ paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
 paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}.. {dir -82}z7 ) slanted tand(8);
 paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 
-
 z8 = (x7 - mw/2, -descent - thick);
 z9 = (x8 - mw/3, -descent * .8);
 z10 = (x9 + 0.66mw, -descent*.8);
