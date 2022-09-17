@@ -21,14 +21,14 @@ pen_stroke(
 paths[1] =  reverse( paths[0] reflectedabout((.5,-1),(.5,+1)) shifted (xpart(point 7 of paths[0]) *2,0) );
 paths[1] := subpath(0,7) of paths[1];
 clearxy;
-z0 = (xpart(point 7 of paths[1]) - mw/2, -descent - thick);
-z1 = (x0 - mw/3, -descent * .8);
+z0 = (xpart(point 7 of paths[1]) - mw/2, -descent*1.2);
+z1 = (x0 - mw/2, -descent * .8);
 z2 = (x1 + 0.66mw, -descent*.8);
-paths[1] := paths[1]{dir -90}..z0..z1{dir 75}..{dir -45}z2;
+paths[1] := paths[1] .. z0..z1{dir 75}..{dir -45}z2;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4,6  )
-    nib(thinnib rotated 0 )(1, 3, 5, 7)
+    nib(thicknib rotated 0 )(0, 2, 4, 6  )
+    nib(thinnib rotated 0 )(1, 3, 5, 7, 9)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
