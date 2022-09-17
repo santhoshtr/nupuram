@@ -27,6 +27,7 @@ class MalayalamFont(Font):
         self.fontFeatures = FontFeatures()
         self.available_svgs = []
         self.salts={} #Stylistic Alternates
+        logging.basicConfig(level='WARN')
 
     def build_glyph_classes(self):
         for gclass in self.options.glyphs.classes:
@@ -581,7 +582,19 @@ class MalayalamFont(Font):
                 composite.width = composite.width + baseGlyph.width
                 composite.appendComponent(component)
 
-        diacritics = "̂ˆ´¸˚¯`ˇ~¨˙˜̆"
+        diacritics = [
+            '\u02c6', # 02c6 Circumflex accent
+            '\u00b4', # 00b4 Acute accent
+            '\u00b8', # 00b8 cedilla
+            '˚', # 02da Ring above
+            '¯', # 00af macron
+            '`', # 0060 grave accent
+            'ˇ', # 02c7 caron
+            '¨', # 00a8 Diaeresis
+            '˙', # 02d9 dot above
+            '\u02dc', # 02dc Small tilde
+            '\u02d8', # 02d8 Breve
+        ]
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
                 base_name = SVGGlyph.get_glyph_name(base)
@@ -594,15 +607,11 @@ class MalayalamFont(Font):
                     continue
                 if chr(composite_unicode) not in self.get_glyphs_from_named_classes('LATIN_EXTRA'):
                     continue
-                if diacritc_name not in self:
-                    log.warn(f"{diacritc_name} glyph not found")
-                    continue
-                if base_name == 'i':
-                    base_name = 'dotlessi'
+                assert diacritc_name in self
+                if base_name in ['i', 'j']:
+                    base_name = 'dotless' + base_name
                     items = [base_name, diacritc_name]
-                if base_name not in self:
-                    continue
-
+                assert base_name in self
                 log.debug(
                     f"Compose {chr(composite_unicode)} - {composite_glyph_name} : {'+'.join(items)} : {composite_unicode}")
                 self.buildComposite(composite_glyph_name,

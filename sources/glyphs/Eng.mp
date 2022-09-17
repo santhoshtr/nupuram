@@ -28,6 +28,12 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
-anchor( "top", (xpart(point 1 of paths[1]), 1.2X) );
-anchor( "bottom", (xpart(point 1 of paths[1]), 0) );
+clearxy;
+z0=point 0 of paths[2];
+z1=(x0-X/3, -descent);
+paths[3]=z0{down}..{left}z1;
+pen_stroke(
+    nib(terminalnib rotated terminalangle 0 of paths[3])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
+)(paths[3])(strokes[3]);
 endglyph;

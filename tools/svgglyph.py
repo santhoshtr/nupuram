@@ -28,6 +28,17 @@ class SVGGlyph:
         agl.AGL2UV['twosuperior'] = 0x00B2
         agl.AGL2UV['threesuperior'] = 0x00B3
         agl.AGL2UV['foursuperior'] = 0x2074
+        agl.AGL2UV['Lcedilla'] = 0x013B
+        agl.AGL2UV['lcedilla'] = 0x013C
+        agl.AGL2UV['Kcedilla'] = 0x0136
+        agl.AGL2UV['kcedilla'] = 0x0137
+        agl.AGL2UV['Ncedilla'] = 0x0145
+        agl.AGL2UV['Gcedilla'] = 0x0122
+        agl.AGL2UV['gcedilla'] = 0x0123
+        agl.AGL2UV['ncedilla'] = 0x0146
+        agl.AGL2UV['Rcedilla'] = 0x0156
+        agl.AGL2UV['rcedilla'] = 0x0157
+        agl.AGL2UV['ringcmb'] = 0x030A
 
     @staticmethod
     def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
