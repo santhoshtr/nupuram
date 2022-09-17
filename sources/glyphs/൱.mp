@@ -13,7 +13,7 @@ z6=(x5 + mw/2, m); % Top of second arch
 z7=(x6 + mw/3, y6 - m/2);
 z8= ( x7 - mw/2, -descent);
 
-paths[1] = z5{up}..z6..z7..z8;
+paths[1] = z5{up}..z6..z7..{left}z8;
 paths[1]:= paths[1] slanted tand(8) shifted (-tand(8)*mw/3, 0);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
