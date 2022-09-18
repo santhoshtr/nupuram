@@ -4,9 +4,9 @@ beginglyph;
 z0= (x1 + mw/3, 0);
 z1= (0, y0 + mw/2);
 z2 = ( x1 + mw/2, y1 + m/2); % top
-z3 = ( x2 + mw/2, y2 - m/2);
-z4 = ( x3 - mw/3, y3 - m/2 + thick/2); % bottom middle
-z5 = ( x4 - mw/3, y4 + m/2 - thick/2);
+z3 = ( x2 + mw/2, y1);
+z4 = ( x3 - mw/3, 0.1m); % bottom middle
+z5 = ( x4 - mw/3, y3);
 z6 = ( x5 + mw/2, y2); % second top
 z7 = ( x6 + mw/2, y1);
 z8 = ( x7-mw/10 , y0); %
@@ -28,7 +28,6 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 anchor( "vc", point 4 of paths[0]);
-anchor( "bottom", point 8 of paths[0]);
 anchor( "right", point 8 of paths[0]);
 
 
