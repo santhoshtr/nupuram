@@ -37,11 +37,11 @@ pen_stroke(
 
 clearxy;
 z0 = point 6 of paths[1];
-z1 = (xpart(point 1 of paths[1]), -descent - thick/2  );
-z2 = (xpart(point 2.25 of paths[0]), -descent - thick/2);
+z1 = (xpart(point 1 of paths[1]), -descent*1.2 );
+z2 = (xpart(point 2.25 of paths[0]), y1);
 z3 = (xpart(point 1 of paths[0]) - mw/3, ypart(point 1 of paths[0]));
 z4 = (x3 + mw/10, m);
-paths[2] =  z0{dir -90} ..{left}z1{left} ..z2{left} ..z3..z4;
+paths[2] =  z0{dir -90} ..{dir 190}z1  ..{dir 170}z2  ..z3..z4;
 
 pen_stroke(
     nib(thinnib rotated 0 )(3)

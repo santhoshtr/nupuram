@@ -9,15 +9,15 @@ z4=(x3 - mw/3, y3 + 0.4m);
 z5=(x4 - mw/4, y4 - 0.4m);
 z6=(x5 - mw/4, y5 + 0.2m);
 z7=(x6 + mw/4, y6 + 0.3m);
-z8=(x7 + mw, y7 + thick*0.2);
-z9=(x8 + mw/2, y8 - 0.3m);
+z8=(x2 + mw/4, y7);
+z9=(x8 + mw/4, y8 - 0.3m);
 z10=(x9 - mw/4, 0);
 z11=(x10 - mw/4, y10 + m/2);
 z12=(x11 + mw/2, y11 + m/2);
 z13=(x12 + mw/3, y12 - m/4);
 z14=(x13 - mw/6, y13 - m/4);
 
-paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 20}..z8..z9..z10..z11..z12..z13 ..z14 ;
+paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 18} .. z8{dir -18}..z9..z10..z11..z12..z13 ..z14 ;
 
 
 pen_stroke(
