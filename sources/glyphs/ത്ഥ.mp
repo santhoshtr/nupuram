@@ -26,9 +26,9 @@ z1=(x0 + 1.2mw, y0);
 z2=(x1+0.2mw, y1 + m/2);
 z3=(x2 - mw/3, y2 + m/2);
 z4=(x3 - mw/3, y3 - m/2);
-z5=(x4, y0+0.05m );
+z5=(x4+0.05m, y0+0.05m );
 
-paths[1] = z0{dir 20} ..  z1 .. z2 .. z3..z4..{dir -85}z5;
+paths[1] = z0{dir 20} ..  z1 .. z2 .. z3..z4.. z5;
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 3, 5 )
     nib(thinnib rotated 0 )( 2,4)
