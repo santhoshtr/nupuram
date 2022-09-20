@@ -594,6 +594,7 @@ class MalayalamFont(Font):
             '˙', # 02d9 dot above
             '\u02dc', # 02dc Small tilde
             '\u02d8', # 02d8 Breve
+            '\u02db', # 02db Ogonek
         ]
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
@@ -610,6 +611,9 @@ class MalayalamFont(Font):
                 assert diacritc_name in self
                 if base_name in ['i', 'j']:
                     base_name = 'dotless' + base_name
+                    items = [base_name, diacritc_name]
+                if base_name == 't' and diacritc_name == 'caron':
+                    diacritc_name = 'quotesingle'
                     items = [base_name, diacritc_name]
                 assert base_name in self
                 log.debug(
