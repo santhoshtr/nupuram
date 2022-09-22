@@ -595,6 +595,7 @@ class MalayalamFont(Font):
             '\u02dc', # 02dc Small tilde
             '\u02d8', # 02d8 Breve
             '\u02db', # 02db Ogonek
+            '\u02dd', # 02dd Double acute accent
         ]
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
