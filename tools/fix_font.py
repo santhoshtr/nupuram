@@ -9,7 +9,7 @@ log = logging.getLogger(__name__)
 def fix_font(fontFile):
     log.debug(f"Fixing {fontFile}")
     ttFont = ttLib.TTFont(fontFile)
-    add_dummy_dsig(ttFont)
+    # add_dummy_dsig(ttFont)
     fix_unhinted_font(ttFont)
     fix_fs_type(ttFont)
     remove_aat(ttFont)

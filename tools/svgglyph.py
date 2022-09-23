@@ -28,6 +28,8 @@ class SVGGlyph:
         agl.AGL2UV['twosuperior'] = 0x00B2
         agl.AGL2UV['threesuperior'] = 0x00B3
         agl.AGL2UV['foursuperior'] = 0x2074
+        agl.AGL2UV['Acaron'] = 0x01CD
+        agl.AGL2UV['acaron'] = 0x01CE
         agl.AGL2UV['Lcedilla'] = 0x013B
         agl.AGL2UV['lcedilla'] = 0x013C
         agl.AGL2UV['Kcedilla'] = 0x0136
@@ -41,13 +43,26 @@ class SVGGlyph:
         agl.AGL2UV['ringcmb'] = 0x030A
         agl.AGL2UV['tildecmb'] = 0x0303
         agl.AGL2UV['hungarumlautcmb'] = 0x030B
+        agl.AGL2UV['cedillacmb'] = 0x0327
+        agl.AGL2UV['acutecmb'] = 0x0301
+        agl.AGL2UV['ogonekcmb'] = 0x0328
+        agl.AGL2UV['dieresiscmb'] = 0x0308
+        agl.AGL2UV['dotaccentcmb'] = 0x0307
+        agl.AGL2UV['circumflexcmb'] = 0x0302
+        agl.AGL2UV['commaturnedabovecmb'] = 0x0312
+        agl.AGL2UV['caroncmb'] = 0x030C
+        agl.AGL2UV['brevecmb'] = 0x0306
+        agl.AGL2UV['macroncmb'] = 0x0304
+        agl.AGL2UV['gravecmb'] = 0x0300
         agl.AGL2UV['commaturnedmod'] = 0x02BB
         agl.AGL2UV['commaaccent'] = 0x0326
         agl.UV2AGL[0x0326] = 'commaaccent'
+        agl.UV2AGL[0x0328] = 'ogonekcmb'
         agl.AGL2UV['scommaaccent'] = 0x0219
         agl.AGL2UV['Scommaaccent'] = 0x0218
         agl.AGL2UV['Tcommaaccent'] = 0x021A
         agl.AGL2UV['tcommaaccent'] = 0x021B
+        agl.AGL2UV['dotlessj'] = 0x0237
 
     @staticmethod
     def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
