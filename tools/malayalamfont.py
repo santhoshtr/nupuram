@@ -527,7 +527,6 @@ class MalayalamFont(Font):
             '[': ']',
             '{': '}',
             '(': ')',
-            '‘': '’',
             '‹': '›',
             '„': '⹂'
         }
@@ -560,9 +559,9 @@ class MalayalamFont(Font):
             'ോ': ['േ', 'ാ'],
             'ൈ': ['െ', 'െ'],
             'ൌ': ['െ', 'ൗ'],
-            '"':['\'', '\''],
-            '“':['‘', '‘'],
-            '”':['’', '’'],
+            # '"':['\'', '\''],
+            #'“':['‘', '‘'],
+            # '”':['’', '’'],
         }
         for c, parts in appendables.items():
             compositename = SVGGlyph.get_glyph_name(c)
@@ -596,6 +595,7 @@ class MalayalamFont(Font):
             '\u02d8', # 02d8 Breve
             '\u02db', # 02db Ogonek
             '\u02dd', # 02dd Double acute accent
+            '\u0326', # 0326 COMBINING COMMA BELOW
         ]
         for diacritic in diacritics:
             for base in self.get_glyphs_from_named_classes('LC_ALL')+self.get_glyphs_from_named_classes('UC_ALL'):
@@ -612,10 +612,19 @@ class MalayalamFont(Font):
                 assert diacritc_name in self
                 if base_name in ['i', 'j']:
                     base_name = 'dotless' + base_name
-                    items = [base_name, diacritc_name]
                 if base_name == 't' and diacritc_name == 'caron':
                     diacritc_name = 'quotesingle'
-                    items = [base_name, diacritc_name]
+                if base_name == 'L' and diacritc_name == 'cedilla':
+                    diacritc_name = 'commaaccent'
+                if base_name == 'L' and diacritc_name == 'caron':
+                    diacritc_name = 'quoteright'
+                if base_name == 'l' and diacritc_name == 'caron':
+                    diacritc_name = 'quoteright'
+                if base_name == 'n' and diacritc_name == 'cedilla':
+                    diacritc_name = 'commaaccent'
+                if base_name == 'g' and diacritc_name == 'cedilla':
+                    diacritc_name = 'commaturnedmod'
+                items = [base_name, diacritc_name]
                 assert base_name in self
                 log.debug(
                     f"Compose {chr(composite_unicode)} - {composite_glyph_name} : {'+'.join(items)} : {composite_unicode}")

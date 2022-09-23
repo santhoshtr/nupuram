@@ -5,16 +5,7 @@ z1=(0,  s/2);
 z2=(x0 + 0.05sw, 0);
 
 paths[0] = z0..z1{down}..{dir -60}z2;
-
-clearxy;
-save r;
-r:=0.15;
-z0 = (0, r);
-z1 = (x0 + r*sw, y0 + r*s);
-z2 = (x1 + r*sw, y1 -r*s );
-z3 = (x2 - r*sw, y2 -r*s);
-paths[1]:= z0{dir 86}..z1{dir 4}..z2{dir 266}..z3{dir 184}..cycle;
-paths[1] := paths[1] shifted(x0-thick/2, s + 2*r*s);
+paths[1] := fullcircle scaled (thick*1.5) shifted(x0, 1.33s);
 
 pen_stroke(
     nib(thinnib rotated 0 )(1)
@@ -22,6 +13,9 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 strokes[1] = paths[1];
+
+% j
+
 clearxy;
 r := 0.8;
 z0= (x1 , s);

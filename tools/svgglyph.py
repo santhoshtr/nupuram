@@ -23,7 +23,7 @@ class SVGGlyph:
         self.glyph_height = 1024
         self.glif = None
         self.transform = '1 0 0 -1 0 0'
-        # Fill missing AGL2UV values in agl
+        # Fill missing AGL2UV, UV2AGL values in agl
         agl.AGL2UV['onesuperior'] = 0x00B9
         agl.AGL2UV['twosuperior'] = 0x00B2
         agl.AGL2UV['threesuperior'] = 0x00B3
@@ -39,6 +39,15 @@ class SVGGlyph:
         agl.AGL2UV['Rcedilla'] = 0x0156
         agl.AGL2UV['rcedilla'] = 0x0157
         agl.AGL2UV['ringcmb'] = 0x030A
+        agl.AGL2UV['tildecmb'] = 0x0303
+        agl.AGL2UV['hungarumlautcmb'] = 0x030B
+        agl.AGL2UV['commaturnedmod'] = 0x02BB
+        agl.AGL2UV['commaaccent'] = 0x0326
+        agl.UV2AGL[0x0326] = 'commaaccent'
+        agl.AGL2UV['scommaaccent'] = 0x0219
+        agl.AGL2UV['Scommaaccent'] = 0x0218
+        agl.AGL2UV['Tcommaaccent'] = 0x021A
+        agl.AGL2UV['tcommaaccent'] = 0x021B
 
     @staticmethod
     def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,

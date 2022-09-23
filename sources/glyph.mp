@@ -178,16 +178,14 @@ def endglyph =
                 % But for some reason it is not returning true when it should.
                 % So here we are checking if first point is same as last point.
                 soft_:=(soften>0) and (point 0 of paths[i] <> point infinity of paths[i] );
-                if soft_:
-                    if known strokes[i]b:
-                        softpath := soften_nodes(strokes[i], cornerradius)(
-                            0,
-                            length(strokes[i]l),
-                            length(strokes[i]l) + length(strokes[i]e),
-                            length(strokes[i]l) + length(strokes[i]r) + length(strokes[i]e)
-                        );
-                        fill softpath withcolor glyphcolor;
-                    fi;
+                if soft_ and known strokes[i]b:
+                    softpath := soften_nodes(strokes[i], cornerradius)(
+                        0,
+                        length(strokes[i]l),
+                        length(strokes[i]l) + length(strokes[i]e),
+                        length(strokes[i]l) + length(strokes[i]r) + length(strokes[i]e)
+                    );
+                    fill softpath withcolor glyphcolor;
                 else:
                     fill strokes[i] withcolor glyphcolor;
                 fi;
