@@ -63,6 +63,7 @@ class SVGGlyph:
         agl.AGL2UV['Tcommaaccent'] = 0x021A
         agl.AGL2UV['tcommaaccent'] = 0x021B
         agl.AGL2UV['dotlessj'] = 0x0237
+        agl.AGL2UV['notdef'] = 0
 
     @staticmethod
     def svg2glif(svg_file, name, width=0, height=0, unicodes=None, transform=None,
@@ -231,6 +232,8 @@ class SVGGlyph:
         codepoint = ord(name[0])
         if codepoint == 8205:
             return 'zwj'
+        if name == 'notdef':
+            return '.notdef'
         if codepoint >= 3328 and codepoint <= 3455:
             if len(name) > 1:
                 chillu_normalize_map = {

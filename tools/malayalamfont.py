@@ -422,9 +422,41 @@ class MalayalamFont(Font):
             cons_glyph_name = SVGGlyph.get_glyph_name(cons)
             if cons_glyph_name in self:
                 self.fontFeatures.glyphclasses[cons_glyph_name] = "base"
+        # Mark characters should be in the GDEF mark glyph class.
+        # FIXME: Use unicode instead of glyph names so that glyph names are always
+        # calculated
+        marks = [
+            'acutecmb', # U+0301
+            'brevecmb', # U+0306
+            'caroncmb', # U+030C
+            'cedillacmb', # U+0327
+            'circumflexcmb', # U+0302
+            'commaaccent', # U+0326
+            'commaturnedabovecmb', # U+0312
+            'dieresiscmb', # U+0308
+            'dotaccentcmb', # U+0307
+            'gravecmb', # U+0300
+            'hungarumlautcmb', # U+030B
+            'macroncmb', # U+0304
+            'ml_virama', # U+0D4D
+            'ml_candrabindu', # U+0D01
+            'ml_circular_virama', # U+0D3C
+            'ml_combining_anusvara_above', # U+0D00
+            # 'ml_sign_u', # U+0D41
+            # 'ml_sign_uu', # U+0D42
+            # 'ml_sign_vocalic_l', # U+0D62
+            # 'ml_sign_vocalic_ll', # U+0D63
+            # 'ml_sign_vocalic_r', # U+0D43
+            # 'ml_sign_vocalic_rr', # U+0D44
+            'ml_vertical_bar_virama', # U+0D3B
+            'ml_dot_reph', # U+0D4E
+            'ogonekcmb', # U+0328
+            'ringcmb', # U+030A
+            'tildecmb', # U+0303
+        ]
+        for mark in marks:
+            self.fontFeatures.glyphclasses[mark] = "mark"
 
-        self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('്')] = "mark"
-        self.fontFeatures.glyphclasses[SVGGlyph.get_glyph_name('ൎ')] = "mark"
 
     def build_calt(self):
         feature = "calt"
@@ -487,7 +519,6 @@ class MalayalamFont(Font):
         empty_glyphs = {
             '.null': 0,
             'nonmarkingreturn': 0,
-            '.notdef': 0,
             'uni00A0': 0x00A0, # NBSP
             'uni00AD': 0x00AD, # Soft hyphen
             'zwnj': 0x200C,
@@ -794,10 +825,10 @@ class MalayalamFont(Font):
         self.info.openTypeOS2Type = []
         # The TypoAscender minus the TypoDescender should equal the unit square.
         # the height of the ascenders in units
-        self.info.openTypeOS2TypoAscender = self.info.ascender + 100
+        self.info.openTypeOS2TypoAscender = round(self.info.ascender*1.2)
         # the depth of the descenders in units (negative value)
-        self.info.openTypeOS2TypoDescender = -(self.info.descender + 100)
-        self.info.openTypeOS2TypoLineGap = 200
+        self.info.openTypeOS2TypoDescender = -round(self.info.descender*1.2)
+        self.info.openTypeOS2TypoLineGap = 0
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
         self.info.openTypeOS2WidthClass = 5
@@ -806,9 +837,9 @@ class MalayalamFont(Font):
         # table's yMax, abs(yMin) values. If they are less than these values,
         # clipping can occur on Windows platforms
         # the top extremum of the font rendering box
-        self.info.openTypeOS2WinAscent = self.info.openTypeOS2TypoAscender+self.info.openTypeOS2TypoLineGap
+        self.info.openTypeOS2WinAscent = 1223 # As calculated by Fontbakery
         # the bottom extremum of the font rendering box (positive value)
-        self.info.openTypeOS2WinDescent = -1*(self.info.openTypeOS2TypoDescender-self.info.openTypeOS2TypoLineGap)
+        self.info.openTypeOS2WinDescent = 919 # As calculated by Fontbakery
         # When the win Metrics are significantly greater than the upm, the
         # linespacing can appear too loose. To counteract this, enabling the OS/2
         # fsSelection bit 7 (Use_Typo_Metrics), will force Windows to use the OS/2
@@ -826,7 +857,7 @@ class MalayalamFont(Font):
         self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
         # The depth of the descenders in units (negative value)
         self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
-        self.info.openTypeHheaLineGap = self.info.openTypeOS2TypoLineGap
+        self.info.openTypeHheaLineGap = 0
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]

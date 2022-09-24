@@ -1,7 +1,7 @@
 fontmake>=3.4.0
 fontFeatures>=1.5.0
 pyyaml>=6.0.0
-fontbakery>=0.8.9
+fontbakery[freetype]>=0.8.10
 munch==2.5.0
 svgpathtools>=1.5.1
 ufonormalizer>=0.6.1
