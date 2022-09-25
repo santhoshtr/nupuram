@@ -67,7 +67,6 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
-anchor( "vc", z3);
 
 anchor( "vc", point 2 of paths[0]);
 anchor( "bottom", point 1 of paths[1]);
