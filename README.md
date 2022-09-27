@@ -1,7 +1,7 @@
 Nupuram Malayalam Typeface
 ===========================
 
-A display typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive,
+A Malayalam typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive,
 
 Nupuram is a variable font with Weight, Width, Slant and Softness axis.
 
@@ -30,6 +30,11 @@ Agian, for educational purposes, to practice in worksheets, Nupuram comes with a
 
 ![Nupuram dots font](docs/nupuram-dots.png "Nupuram dots font")
 
+# Nupuram Display
+
+Nupuram Display is a Display typeface to use with large point sizes. Its terminals are flat with rounded corners and has optimized xheight for large sizes.
+
+![Nupuram display font](docs/nupuram-display.png "Nupuram display font")
 
 # License
 
