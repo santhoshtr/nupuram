@@ -9,7 +9,7 @@
       <labelname xml:lang="en">Width</labelname>
       <labelname xml:lang="ml">വീതി</labelname>
     </axis>
-    <axis tag="slnt" minimum="0" maximum="20" default="0" name="slant">
+    <axis tag="slnt" minimum="-20" maximum="0" default="0" name="slant">
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
@@ -76,7 +76,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="20"/>
+        <dimension name="slant" xvalue="-20"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-ExtraSoft.ufo" name="ExtraSoft">
@@ -111,7 +111,7 @@
       <location>
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="20"/>
+        <dimension name="slant" xvalue="-20"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Thin.ufo" stylename="Condensed Thin">
@@ -163,7 +163,7 @@
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="20"/>
+        <dimension name="slant" xvalue="-20"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed.ufo" stylename="Condensed Regular">
