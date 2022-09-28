@@ -23,7 +23,7 @@ z4= ( x3 - mw/4, y3 + .3m);
 z5= ( x2 - thick*0.13, y2);
 
 paths[1] = z0{up}..z1..z2..z3..z4.. z5;
-paths[1]:= paths[1] slanted tand(8) shifted (-tand(8)*mw/3, 0);
+paths[1]:= paths[1] slanted tand(8) shifted (-tand(8)*ypart(z0), 0);
 
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3, 5)
