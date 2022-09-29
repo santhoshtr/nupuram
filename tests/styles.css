@@ -1,35 +1,45 @@
 @font-face {
   font-family: "Nupuram";
-  src: url(../fonts/webfonts/Nupuram-VF.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-VF.otf?v=1.100) format("opentype"), url(../fonts/otf/Nupuram-Regular.otf) format("opentype");
+  src: url(../fonts/webfonts/Nupuram-VF.woff2?v=1.100) format("woff2"),
+    url(../fonts/otf/Nupuram-VF.otf?v=1.100) format("opentype"),
+    url(../fonts/otf/Nupuram-Regular.otf) format("opentype");
 }
 
 @font-face {
   font-family: "NupuramCalligraphy";
-  src: url(../fonts/webfonts/Nupuram-Calligraphy.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Calligraphy.otf?v=1.100) format("opentype");
+  src: url(../fonts/webfonts/Nupuram-Calligraphy.woff2?v=1.100) format("woff2"),
+    url(../fonts/otf/Nupuram-Calligraphy.otf?v=1.100) format("opentype");
 
 }
 
 @font-face {
-  src: url(../fonts/webfonts/Nupuram-Shadow-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Shadow-Color-v0.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Shadow-Color-v1.otf?v=1.100) format("opentype"), url(../fonts/otf/Nupuram-Shadow-Color-v0.otf?v=1.100) format("opentype");
+  font-family: "NupuramShadowColor";
+  src: url(../fonts/webfonts/Nupuram-Shadow-Color-v1.woff2?v=1.100) format("woff2"),
+      url(../fonts/webfonts/Nupuram-Shadow-Color-v0.woff2?v=1.100) format("woff2"),
+      url(../fonts/otf/Nupuram-Shadow-Color-v1.otf?v=1.100) format("opentype"),
+      url(../fonts/otf/Nupuram-Shadow-Color-v0.otf?v=1.100) format("opentype");
 
 }
 
 
 @font-face {
   font-family: "NupuramArrowsColor";
-  src: url(../fonts/webfonts/Nupuram-Arrows-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Arrows-Color-v0.woff2?v=1.100) format("woff2");
+  src: url(../fonts/webfonts/Nupuram-Arrows-Color-v1.woff2?v=1.100) format("woff2"),
+    url(../fonts/webfonts/Nupuram-Arrows-Color-v0.woff2?v=1.100) format("woff2");
 
 }
 
 @font-face {
   font-family: "NupuramDots";
-  src: url(../fonts/webfonts/Nupuram-Dots.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Dots.woff2?v=1.100) format("woff2");
+  src: url(../fonts/webfonts/Nupuram-Dots.woff2?v=1.100) format("woff2"),
+    url(../fonts/webfonts/Nupuram-Dots.otf?v=1.100) format("opentype");
 
 }
 
 @font-face {
   font-family: "NupuramDisplay";
-  src: url(../fonts/webfonts/Nupuram-Display.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Display.otf?v=1.100) format("opentype");
+  src: url(../fonts/webfonts/Nupuram-Display.woff2?v=1.100) format("woff2"),
+    url(../fonts/otf/Nupuram-Display.otf?v=1.100) format("opentype");
 }
 
 :root {
@@ -41,6 +51,7 @@
   --font-size: 90px;
   --font-letter-spacing: 0;
   --font-line-height: 1.5;
+  color-scheme: light dark;
 }
 
 body {
@@ -194,4 +205,10 @@ input[type="color"] {
 
 label {
   white-space: nowrap;
+}
+select {
+  color: inherit;
+}
+option {
+  color: initial;
 }

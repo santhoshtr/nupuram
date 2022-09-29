@@ -40,6 +40,10 @@ Nupuram Calligraphy simulates a wide nib Calligraphy pen.
 
 ![Nupuram Calligraphy font](docs/nupuram-calligraphy.png "Nupuram Calligraphy font")
 
+## Language support
+
+39 languages: Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu
+
 ## License
 
-Licensed under the SIL Open Font License, Version 1.1. https://scripts.sil.org/OFL
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This licens is available with a FAQ at: https://scripts.sil.org/OFL
