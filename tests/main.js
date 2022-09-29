@@ -66,9 +66,6 @@ function listen() {
         testLines = testLines.filter(testLine => !!testLine.trim())
         testContents = testLines;
         contentArea.innerHTML = testLines[currentTestIndex];
-
-        contentArea.style.fontSize = document.querySelector('#font-fontSize').value;
-        contentArea.style.lineHeight = document.querySelector('#font-lineHeight').value;
     })
 
     fetch('./paragraphs.malayalam.txt').then(response => response.text()).then((content) => {
@@ -129,27 +126,20 @@ function listen() {
         contentArea.classList.remove("shadowcolor", "display", "arrowscolor", "calligraphy","dots");
         document.getElementById('palette').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
+        root.style.setProperty('--font', selected);
         if (selected === 'NupuramShadowColor') {
-            contentArea.classList.add('shadowcolor');
             document.getElementById('font-fontColor').disabled = true
+            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'NupuramArrowsColor') {
-            contentArea.classList.add('arrowscolor');
             document.getElementById('font-fontColor').disabled = true
+            document.getElementById('palette').style.display = "grid"
         }
         if (selected === 'Nupuram') {
             document.getElementById('font-fontColor').disabled = false
         }
 
-        if (selected === 'NupuramDots') {
-            contentArea.classList.add('dots');
-        }
-        if (selected === 'NupuramCalligraphy') {
-            contentArea.classList.add('calligraphy');
-        }
-        if (selected === 'NupuramDisplay') {
-            contentArea.classList.add('display');
-        }
+
     });
 
 
@@ -179,7 +169,7 @@ function listen() {
             } else {
                 document.querySelector('#font-size > input[type="range"]').value = fontSize;
             }
-            contentArea.style.fontSize = fontSize;
+            root.style.setProperty('--font-size', fontSize);
         });
     });
 
@@ -242,6 +232,7 @@ function listen() {
                 document.querySelector('#line-height > input[type="range"]').value = lineHeight;
             }
             contentArea.style.lineHeight = lineHeight;
+            root.style.setProperty('--font-line-height', lineHeight);
         });
     });
 
@@ -254,7 +245,7 @@ function listen() {
                 document.querySelector('#letter-spacing > input[type="range"]').value =
                     letterSpacing;
             }
-            contentArea.style.letterSpacing = letterSpacing;
+            root.style.setProperty('--font-letter-spacing', letterSpacing);
         });
     });
 
@@ -436,7 +427,7 @@ function setCustomColors(base = baseColor, shadow = shadowColor, outline = outli
     baseColor = base;
     shadowColor = shadow
     outlineColor = outline
-    const colorFontName = "NupuramShadowColor"
+    const colorFontName = root.style.getPropertyValue('--font');
     const sheetId = "custompalette"
     var sheet = document.getElementById(sheetId)
     if (!sheet) {

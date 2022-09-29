@@ -10,7 +10,6 @@
 }
 
 @font-face {
-  font-family: "NupuramShadowColor";
   src: url(../fonts/webfonts/Nupuram-Shadow-Color-v1.woff2?v=1.100) format("woff2"), url(../fonts/webfonts/Nupuram-Shadow-Color-v0.woff2?v=1.100) format("woff2"), url(../fonts/otf/Nupuram-Shadow-Color-v1.otf?v=1.100) format("opentype"), url(../fonts/otf/Nupuram-Shadow-Color-v0.otf?v=1.100) format("opentype");
 
 }
@@ -38,6 +37,10 @@
   --slant: 0;
   --soft: 50;
   --width: 100;
+  --font: 'Nupuram';
+  --font-size: 90px;
+  --font-letter-spacing: 0;
+  --font-line-height: 1.5;
 }
 
 body {
@@ -59,34 +62,16 @@ main {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-family: "Nupuram", sans;
-  line-height: 1.5;
+  font-family: var(--font), sans;
+  line-height: var(--font-line-height);
+  letter-spacing: var(--font-letter-spacing);
+  font-size: var(--font-size);
   padding: 0.5em;
   outline: none;
   font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width), 'slnt' var(--slant);
-}
-
-.content.shadowcolor {
-  font-family: "NupuramShadowColor", sans;
   font-palette: --custom;
 }
 
-.content.arrowscolor {
-  font-family: "NupuramArrowsColor", sans;
-  font-palette: --custom;
-}
-
-.content.display {
-  font-family: "NupuramDisplay", sans;
-}
-
-.content.calligraphy {
-  font-family: "NupuramCalligraphy", sans;
-}
-
-.content.dots {
-  font-family: "NupuramDots", sans;
-}
 
 .tools {
   display: flex;
