@@ -13,15 +13,15 @@ axes = [
         tag="slnt",
         name="Slant",
         values=[
-            dict(value=0, name="Default", flags=0x2),
-            dict(value=20, name="Oblique"),
+            dict(value=0, name="Upright", flags=0x2),
+            dict(value=-15, name="Oblique"),
         ],
     ),
     dict(
         tag="soft",
         name="Soft",
         values=[
-            dict(value=0, name="Sharp"),
+            dict(value=15, name="Sharp"),
             dict(value=50, name="Soft", flags=0x2),
             dict(value=100, name="SuperSoft"),
         ],
@@ -54,15 +54,10 @@ axes = [
     ),
 ]
 
-locations = [
-    # dict(name='Regular C', location=dict(wght=300, ABCD=100)),
-    # dict(name='Bold ABCD XYZ', location=dict(wght=600, ABCD=200)),
-]
-
 def make_stat(fontFile):
     log.debug(f"Creating STAT table in {fontFile}")
     ttFont = ttLib.TTFont(fontFile)
-    buildStatTable(ttFont, axes, locations)
+    buildStatTable(ttFont, axes)
     ttFont.save(fontFile)
 
 

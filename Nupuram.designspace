@@ -9,7 +9,7 @@
       <labelname xml:lang="en">Width</labelname>
       <labelname xml:lang="ml">വീതി</labelname>
     </axis>
-    <axis tag="slnt" minimum="-20" maximum="0" default="0" name="slant">
+    <axis tag="slnt" minimum="-15" maximum="0" default="0" name="slant">
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
@@ -72,14 +72,14 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Slanted.ufo" name="Slanted">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Oblique.ufo" name="Oblique">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
-        <dimension name="slant" xvalue="-20"/>
+        <dimension name="slant" xvalue="-15"/>
       </location>
     </source>
-    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-ExtraSoft.ufo" name="ExtraSoft">
+    <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-SuperSoft.ufo" name="SuperSoft">
       <location>
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
@@ -105,7 +105,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Slanted-Thin.ufo" stylename="Slanted Thin">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Italic-Thin.ufo" stylename="Thin Italic">
       <info />
       <kerning />
       <location>
@@ -140,11 +140,45 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraLight-Oblique.ufo" stylename="ExtraLight Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="200"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Light.ufo" stylename="Light">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="300"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Light-Oblique.ufo" stylename="Light Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="300"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Light.ufo" stylename="Condensed Light">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="300"/>
+        <dimension name="width" xvalue="75"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Light.ufo" stylename="Expanded Light">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="300"/>
+        <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
@@ -157,7 +191,7 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Slanted.ufo" stylename="Slanted">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Oblique.ufo" stylename="Oblique">
       <info />
       <kerning />
       <location>
@@ -166,7 +200,7 @@
         <dimension name="slant" xvalue="-15"/>
       </location>
     </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed.ufo" stylename="Condensed Regular">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed.ufo" stylename="Condensed">
       <info />
       <kerning />
       <location>
@@ -175,7 +209,16 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
-    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded.ufo" stylename="Expanded Regular">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Oblique.ufo" stylename="Condensed Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="75"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded.ufo" stylename="Expanded">
       <info />
       <kerning />
       <location>
@@ -184,11 +227,46 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Oblique.ufo" stylename="Expanded Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="125"/>
+        <dimension name="slant" xvalue="15"/>
+      </location>
+    </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Medium.ufo" stylename="Medium">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="500"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Medium-Oblique.ufo" stylename="Medium Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
+      <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Medium.ufo" stylename="Condensed Medium">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="width" xvalue="75"/>
+        <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Medium.ufo" stylename="Expanded Medium">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="500"/>
+        <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
@@ -200,12 +278,28 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-SemiBold-Oblique.ufo" stylename="SemiBold Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="600"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Bold.ufo" stylename="Bold">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Bold-Oblique.ufo" stylename="Bold Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="700"/>
+        <dimension name="slant" xvalue="-15"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Bold.ufo" stylename="Condensed Bold">
@@ -234,12 +328,28 @@
         <dimension name="slant" xvalue="0"/>
       </location>
     </instance>
+      <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraBold-Oblique.ufo" stylename="ExtraBold Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="800"/>
+        <dimension name="slant" xvalue="-15"/>
+      </location>
+    </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Black.ufo" stylename="Black">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="900"/>
         <dimension name="slant" xvalue="0"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Black.ufo" stylename="Black Oblique">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="900"/>
+        <dimension name="slant" xvalue="-15"/>
       </location>
     </instance>
   </instances>

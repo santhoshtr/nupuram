@@ -1,8 +1,14 @@
 # Nupuram Malayalam Typeface
 
-A Malayalam typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive,
+A Malayalam typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive.
 
-Nupuram is a variable font with Weight, Width, Slant and Softness axis.
+Taking full advantage of variable font technology, Nupuram offers an unprecedented level of flexibility, all from a single font file. Nupuram has 4 variable axes: `Weight`, `Width`, `Slant` and `Softness`.
+
+As a variable font, Nupuram gives you fine-grained control over each one of its styles. However, it also comes with 64 predefined styles that are easy to access through your font menu. Called *named instances¹*, these work just like regular static fonts do.
+
+¹ *Named instance*: a predetermined location in the designspace of a variable font, similar to the "static instances" that are familiar in traditional digital fonts.
+
+The Variable font capability makes Nupuram stylistically flexible and warmly energetic.
 
 ![Nupuram variable font - animated demo](docs/nupuram-var.gif "Nupuram variable font - animated demo showing all 4 axis")
 
