@@ -49,9 +49,6 @@ release:
   artifacts:
     paths:
     - fonts/
-  needs:
-    - job: build-branch
-      artifacts: true
   release:
     name: 'Release $CI_COMMIT_SHORT_SHA of $CI_PROJECT_NAME'
     description: 'Created using the release-cli' # Need to replace with 'CHANGELOG.md'
