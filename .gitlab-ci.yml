@@ -60,6 +60,3 @@ release:
       links:
         - name: 'Binary fonts'
           url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=build-tag'
-
-  only:
-    - master
