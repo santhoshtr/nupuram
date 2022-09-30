@@ -1,4 +1,4 @@
-from defcon import Font, Glyph, Layer
+from defcon import Font, Layer
 from munch import DefaultMunch
 from operator import itemgetter
 import copy
@@ -53,6 +53,7 @@ for layer_colors in config["pallettes"]:
     CPAL_palettes.append(CPAL_palette)
 
 font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = CPAL_palettes
+font.info.familyName =config['familyname']
 
 font.save(sys.argv[1])
 log.info(f"Color UFO font saved at {sys.argv[1]}")

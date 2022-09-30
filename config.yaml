@@ -172,7 +172,8 @@ glyphs:
     malayalam:
       - ['ന', "ി", 'wrap' ]
 colorfonts:
-  fonts/ufo/Nupuram-Shadow-Color.ufo:
+  fonts/ufo/Nupuram-Color.ufo:
+    familyname: Nupuram Color
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
@@ -201,6 +202,7 @@ colorfonts:
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
   fonts/ufo/Nupuram-Arrows-Color.ufo:
+    familyname: Nupuram Arrows Color
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Arrows.ufo"
