@@ -11,15 +11,13 @@ stages:
   - deploy
   - release
 
-build-branch:
+build:
   stage: build
   script:
     - make build
   artifacts:
     paths:
     - fonts/
-  except:
-    - tags
 
 test:
   stage: test
@@ -43,12 +41,13 @@ release:
   image: registry.gitlab.com/gitlab-org/release-cli:latest
   rules:
     - if: $CI_COMMIT_TAG                 # Run this job when a tag is created
+  before_script:
+    - echo "Pass. Just overriding"
   script:
-    - echo 'running release_job'
-    - make build
-  artifacts:
-    paths:
-    - fonts/
+    - echo "Running release_job"
+  needs:
+    - job: build
+      artifacts: true
   release:
     name: 'Release $CI_COMMIT_SHORT_SHA of $CI_PROJECT_NAME'
     description: 'Created using the release-cli' # Need to replace with 'CHANGELOG.md'
@@ -58,4 +57,4 @@ release:
     assets:
       links:
         - name: 'Binary fonts'
-          url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=release'
+          url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=build'
