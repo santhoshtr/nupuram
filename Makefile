@@ -13,7 +13,7 @@ WEBFONTSDIR=${FONTSDIR}/webfonts
 UFODIR=${FONTSDIR}/ufo
 
 UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) \
-	$(FONTSDIR)/ufo/$(FAMILY)-Shadow-Color.ufo \
+	$(FONTSDIR)/ufo/$(FAMILY)-Color.ufo \
 	$(FONTSDIR)/ufo/$(FAMILY)-Arrows-Color.ufo
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
@@ -56,7 +56,7 @@ $(UFODIR)/$(FAMILY)-%.ufo: %
 	@# remove dangling semicolons in features.fea which font editors cannot handle
 	@sed -i 's/ ;$\//g' $@/features.fea
 
-$(UFODIR)/$(FAMILY)-Shadow-Color.ufo: $(UFODIR)/$(FAMILY)-Display.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
+$(UFODIR)/$(FAMILY)-Color.ufo: $(UFODIR)/$(FAMILY)-Regular.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
 	@echo " BUILD UFO  $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -q -m $@
@@ -67,26 +67,26 @@ $(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$
 	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
-ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Shadow-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
-otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
-webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
+ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
+otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
+webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
 
-${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color.ttf
+${TTFDIR}/$(FAMILY)-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Color.ttf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Shadow-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Shadow-Color.otf
+$(OTFDIR)/$(FAMILY)-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Color.otf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Shadow-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Shadow-Color.woff2
+$(OTFDIR)/$(FAMILY)-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Color.woff2
 	@cp $< $@
 
-${TTFDIR}/$(FAMILY)-Shadow-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Shadow-Color-v0.ttf
+${TTFDIR}/$(FAMILY)-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Color-v0.ttf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(OTFDIR)/$(FAMILY)-Shadow-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Shadow-Color-v0.otf
+$(OTFDIR)/$(FAMILY)-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Color-v0.otf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(WEBFONTSDIR)/$(FAMILY)-Shadow-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Shadow-Color-v1.ttf
+$(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
 	@echo " BUILD WEBFONT $(@F)"
 	@mkdir -p ${WEBFONTSDIR}
 	@fonttools ttLib.woff2 compress -q -o $@ $<
@@ -171,5 +171,6 @@ install: otf
 	@cp ${OTFDIR}/$(FAMILY)-Calligraphy.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Dots.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Arrows.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Shadow-Color-v1.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Color-v0.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Arrows-Color-v0.otf ~/.fonts;
 	@fc-cache -fr
