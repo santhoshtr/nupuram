@@ -1,4 +1,4 @@
-image: "debian:bullseye"
+image: "debian:bullseye-slim"
 
 before_script:
   - apt-get update -y
@@ -47,9 +47,10 @@ release:
     - echo "Overriding default before_script. Pass"
   script:
     - echo 'running release_job'
-  needs:
-    - job: build-branch
-      artifacts: true
+    - make build
+  artifacts:
+    paths:
+    - fonts/
   release:
     name: 'Release $CI_COMMIT_SHORT_SHA of $CI_PROJECT_NAME'
     description: 'Created using the release-cli' # Need to replace with 'CHANGELOG.md'
@@ -59,4 +60,4 @@ release:
     assets:
       links:
         - name: 'Binary fonts'
-          url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=build-tag'
+          url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=release'
