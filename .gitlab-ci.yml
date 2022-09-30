@@ -1,16 +1,18 @@
-image: "registry.gitlab.com/smc/dockerfiles:font-builder"
+image: "debian:bullseye"
+
+before_script:
+  - apt-get update -y
+  - apt-get install -y make python3-pip python3-venv python3-yaml texlive-metapost libharfbuzz-bin
+  - pip3 install -r requirements.txt
 
 stages:
   - build
   - test
   - deploy
+  - release
 
 build-branch:
   stage: build
-  before_script:
-    - apt-get update -y
-    - apt-get install -y make python3-pip python3-venv python3-yaml texlive-metapost
-    - pip3 install -r requirements.txt
   script:
     - make build
   artifacts:
@@ -22,10 +24,6 @@ build-branch:
 test:
   stage: test
   allow_failure: true
-  before_script:
-    - apt-get update -y
-    - apt-get install -y make libharfbuzz-bin python3-pip python3-venv python3-yaml
-    - pip3 install -r requirements.txt
   script:
     - make test
 
@@ -40,3 +38,28 @@ pages:
   only:
     - master
 
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG                 # Run this job when a tag is created
+  before_script:
+    - echo "Overriding default before_script. Pass"
+  script:
+    - echo 'running release_job'
+  needs:
+    - job: build-branch
+      artifacts: true
+  release:
+    name: 'Release $CI_COMMIT_SHORT_SHA of $CI_PROJECT_NAME'
+    description: 'Created using the release-cli' # Need to replace with 'CHANGELOG.md'
+    # tag_name is a mandatory field and can not be an empty string
+    tag_name: '$CI_COMMIT_TAG'
+    ref: $CI_COMMIT_TAG
+    assets:
+      links:
+        - name: 'Binary fonts'
+          url: 'https://gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/-/jobs/artifacts/$CI_COMMIT_TAG/download?job=build-tag'
+
+  only:
+    - master
