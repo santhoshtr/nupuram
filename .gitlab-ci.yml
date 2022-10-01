@@ -49,8 +49,8 @@ release:
     - job: build
       artifacts: true
   release:
-    name: 'Release $CI_COMMIT_SHORT_SHA of $CI_PROJECT_NAME'
-    description: 'Created using the release-cli' # Need to replace with 'CHANGELOG.md'
+    name: 'Release $CI_COMMIT_TAG of $CI_PROJECT_NAME'
+    description: 'Rlease $CI_COMMIT_TAG' # Need to replace with 'CHANGELOG.md'
     # tag_name is a mandatory field and can not be an empty string
     tag_name: '$CI_COMMIT_TAG'
     ref: $CI_COMMIT_TAG

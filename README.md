@@ -95,13 +95,79 @@ In general, you should link in the font with @font-face
  font-style: oblique 0deg -15deg;
 }
 ```
+
 Then, you can use the font with both `font-weight` and `font-variation-settings`. Using CSS [custom properties will help](https://pixelambacht.nl/2019/fixing-variable-font-inheritance/) to avoid some caveats of property inheritance.
+
+### Using Color fonts in web
+
+Since chrome based browsers support COLRv1 spec which allows customization of pallettes and color gradients and all other browser does not support it, we need to use some feature support testing in CSS.
+
+```css
+/* Firefox and old browsers - use ColrV0 */
+@supports not (font-palette: --custom) {
+  @font-face {
+    font-family: "NupuramShadowColor";
+    src: url(../fonts/webfonts/Nupuram-Color-v0.woff2) format("woff2");
+  }
+}
+/*Chromium based browsers - Use colrv1 */
+@supports (font-palette: --custom) {
+  @font-face {
+    font-family: "NupuramShadowColor";
+    src: url(../path/to/Nupuram-Color-v1.woff2) format("woff2");
+  }
+}
+```
+
+## Building the fonts
+
+Install the required software packages, assuming a debian based GNU/Linux Operating system
+
+```bash
+apt-get update -y
+apt-get install -y make python3-pip python3-venv python3-yaml texlive-metapost libharfbuzz-bin
+```
+
+To build, set up the virtual environment and activate it.
+
+```bash
+virtualenv -p python3 venv
+source venv/bin/activate
+```
+
+Then install requirements:
+
+```bash
+pip install -U -r requirements.txt
+```
+
+Then run make to build everything
+
+```bash
+make
+```
+
+This will take more than 15 minutes to build everything. But if you have a multi core processor, you can speed up this by using parallel build. Assuming you have 8 core system(8 CPUs)
+
+```
+make -j8
+```
+
+A directory name d riable fonts, UFO sources generated there.
 
 ## Language support
 
 Nupuram is primarily a Malayalam font. All the Malayalam characters defined in Unicode version 15 are present in the font. Nupuram also has latin script support. So Nupuram supports 39 languages:
 
 Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu.
+
+## Credits
+
+See [FONTLOG.md](FONTLOG.md) for details on contributions.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for policies around contributing to the project.
 
 ## License
 

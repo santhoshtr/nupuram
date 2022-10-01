@@ -141,11 +141,11 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.add('shadownorth');
-        contentArea.classList.remove("shadowcolor", "display", "arrowscolor", "calligraphy","dots");
+        contentArea.classList.remove("color", "display", "arrowscolor", "calligraphy","dots");
         document.getElementById('palette').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
         root.style.setProperty('--font', selected);
-        if (selected === 'NupuramShadowColor') {
+        if (selected === 'NupuramColor') {
             document.getElementById('font-fontColor').disabled = true
             document.getElementById('palette').style.display = "grid"
         }

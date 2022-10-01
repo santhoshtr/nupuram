@@ -1,8 +1,11 @@
 @font-face {
   font-family: "Nupuram";
-  src: url(../fonts/webfonts/Nupuram-VF.woff2?v=1.100) format("woff2"),
-    url(../fonts/otf/Nupuram-VF.otf?v=1.100) format("opentype"),
+  src: url(../fonts/webfonts/Nupuram-VF.woff2?v=1.100) format("woff2-variations"),
+    url(../fonts/otf/Nupuram-VF.otf?v=1.100) format("opentype-variations"),
     url(../fonts/otf/Nupuram-Regular.otf) format("opentype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg -15deg;
 }
 
 @font-face {
@@ -15,8 +18,8 @@
 @supports not (font-palette: --custom) {
   @font-face {
     font-family: "NupuramShadowColor";
-    src: url(../fonts/webfonts/Nupuram-Shadow-Color-v0.woff2?v=1.100) format("woff2"),
-        url(../fonts/otf/Nupuram-Shadow-Color-v0.otf?v=1.100) format("opentype");
+    src: url(../fonts/webfonts/Nupuram-Color-v0.woff2?v=1.100) format("woff2"),
+        url(../fonts/otf/Nupuram-Color-v0.otf?v=1.100) format("opentype");
 
   }
 
@@ -31,9 +34,9 @@
 
 @supports (font-palette: --custom) {
   @font-face {
-    font-family: "NupuramShadowColor";
-    src: url(../fonts/webfonts/Nupuram-Shadow-Color-v1.woff2?v=1.100) format("woff2"),
-        url(../fonts/otf/Nupuram-Shadow-Color-v1.otf?v=1.100) format("opentype");
+    font-family: "NupuramColor";
+    src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"),
+        url(../fonts/otf/Nupuram-Color-v1.otf?v=1.100) format("opentype");
 
   }
 
