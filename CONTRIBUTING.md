@@ -12,7 +12,7 @@ If you find a typo or something that seems out of date in the Readme, etc, pleas
 
 **Type design fixes/changes**
 
-Type design is a bit of a special case for open source projects, because type tends to benefit from a central, strong creative & technical direction. There are probably exceptions to this, but Recursive is not really one of them.
+Type design is a bit of a special case for open source projects, because type tends to benefit from a central, strong creative & technical direction.
 
 That said, type design contributions are very highly valued here, but they require a connection and personal communication to go well.
 
