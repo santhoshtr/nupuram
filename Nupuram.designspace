@@ -13,7 +13,7 @@
       <labelname xml:lang="en">Slant</labelname>
       <labelname xml:lang="ml">ചെരിവ്</labelname>
     </axis>
-    <axis tag="soft" name="Softness" minimum="15" maximum="100" default="50">
+    <axis tag="soft" name="Softness" minimum="15" maximum="100" default="56">
       <labelname xml:lang="en">Softness</labelname>
       <labelname xml:lang="ml">മൃദുത്വം</labelname>
     </axis>
@@ -27,7 +27,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="Softness" xvalue="50"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Black.ufo" name="Black">
@@ -35,6 +35,7 @@
         <dimension name="weight" xvalue="900"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Bold.ufo" name="Bold">
@@ -42,6 +43,7 @@
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Light.ufo" name="Light">
@@ -49,6 +51,7 @@
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Thin.ufo" name="Thin">
@@ -56,6 +59,7 @@
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Condensed.ufo" name="Condensed">
@@ -63,6 +67,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Expanded.ufo" name="Expanded">
@@ -70,6 +75,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Oblique.ufo" name="Oblique">
@@ -77,6 +83,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </source>
     <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-SuperSoft.ufo" name="SuperSoft">
@@ -92,7 +99,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
-        <dimension name="Softness" xvalue="0"/>
+        <dimension name="Softness" xvalue="15"/>
       </location>
     </source>
   </sources>
@@ -103,6 +110,8 @@
       <location>
         <dimension name="weight" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Italic-Thin.ufo" stylename="Thin Italic">
@@ -112,6 +121,7 @@
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Thin.ufo" stylename="Condensed Thin">
@@ -121,6 +131,7 @@
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Thin.ufo" stylename="Expanded Thin">
@@ -130,6 +141,7 @@
         <dimension name="weight" xvalue="100"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraLight.ufo" stylename="ExtraLight">
@@ -138,6 +150,8 @@
       <location>
         <dimension name="weight" xvalue="200"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraLight-Oblique.ufo" stylename="ExtraLight Oblique">
@@ -146,6 +160,8 @@
       <location>
         <dimension name="weight" xvalue="200"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Light.ufo" stylename="Light">
@@ -154,6 +170,8 @@
       <location>
         <dimension name="weight" xvalue="300"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Light-Oblique.ufo" stylename="Light Oblique">
@@ -162,6 +180,8 @@
       <location>
         <dimension name="weight" xvalue="300"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Light.ufo" stylename="Condensed Light">
@@ -171,6 +191,7 @@
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Light.ufo" stylename="Expanded Light">
@@ -180,6 +201,7 @@
         <dimension name="weight" xvalue="300"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Regular.ufo" stylename="Regular">
@@ -189,6 +211,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Oblique.ufo" stylename="Oblique">
@@ -198,6 +221,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="100"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed.ufo" stylename="Condensed">
@@ -207,6 +231,17 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-SemiCondensed.ufo" stylename="SemiCondensed">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="87.5"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Oblique.ufo" stylename="Condensed Oblique">
@@ -216,6 +251,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded.ufo" stylename="Expanded">
@@ -225,6 +261,17 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-SemiExpanded.ufo" stylename="SemiExpanded">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="width" xvalue="112.5"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Oblique.ufo" stylename="Expanded Oblique">
@@ -234,6 +281,7 @@
         <dimension name="weight" xvalue="400"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="15"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Medium.ufo" stylename="Medium">
@@ -242,6 +290,8 @@
       <location>
         <dimension name="weight" xvalue="500"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Medium-Oblique.ufo" stylename="Medium Oblique">
@@ -250,15 +300,18 @@
       <location>
         <dimension name="weight" xvalue="500"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
-      <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Medium.ufo" stylename="Condensed Medium">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Medium.ufo" stylename="Condensed Medium">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="500"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Medium.ufo" stylename="Expanded Medium">
@@ -268,6 +321,7 @@
         <dimension name="weight" xvalue="500"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-SemiBold.ufo" stylename="SemiBold">
@@ -276,6 +330,8 @@
       <location>
         <dimension name="weight" xvalue="600"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-SemiBold-Oblique.ufo" stylename="SemiBold Oblique">
@@ -284,6 +340,8 @@
       <location>
         <dimension name="weight" xvalue="600"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Bold.ufo" stylename="Bold">
@@ -292,6 +350,8 @@
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Bold-Oblique.ufo" stylename="Bold Oblique">
@@ -300,6 +360,8 @@
       <location>
         <dimension name="weight" xvalue="700"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Condensed-Bold.ufo" stylename="Condensed Bold">
@@ -309,8 +371,10 @@
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="75"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
+
     <instance familyname="Nupuram" filename="./instances/Nupuram-Expanded-Bold.ufo" stylename="Expanded Bold">
       <info />
       <kerning />
@@ -318,6 +382,7 @@
         <dimension name="weight" xvalue="700"/>
         <dimension name="width" xvalue="125"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraBold.ufo" stylename="ExtraBold">
@@ -326,14 +391,18 @@
       <location>
         <dimension name="weight" xvalue="800"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
-      <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraBold-Oblique.ufo" stylename="ExtraBold Oblique">
+    <instance familyname="Nupuram" filename="./instances/Nupuram-ExtraBold-Oblique.ufo" stylename="ExtraBold Oblique">
       <info />
       <kerning />
       <location>
         <dimension name="weight" xvalue="800"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Black.ufo" stylename="Black">
@@ -342,6 +411,8 @@
       <location>
         <dimension name="weight" xvalue="900"/>
         <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
       </location>
     </instance>
     <instance familyname="Nupuram" filename="./instances/Nupuram-Black.ufo" stylename="Black Oblique">
@@ -350,6 +421,28 @@
       <location>
         <dimension name="weight" xvalue="900"/>
         <dimension name="slant" xvalue="-15"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="56"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-Sharp.ufo" stylename="Sharp">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="15"/>
+      </location>
+    </instance>
+    <instance familyname="Nupuram" filename="./instances/Nupuram-SuperSoft.ufo" stylename="SuperSoft">
+      <info />
+      <kerning />
+      <location>
+        <dimension name="weight" xvalue="400"/>
+        <dimension name="slant" xvalue="0"/>
+        <dimension name="width" xvalue="100"/>
+        <dimension name="Softness" xvalue="100"/>
       </location>
     </instance>
   </instances>

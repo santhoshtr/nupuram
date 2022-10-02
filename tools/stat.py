@@ -22,7 +22,7 @@ axes = [
         name="Soft",
         values=[
             dict(value=15, name="Sharp"),
-            dict(value=50, name="Soft", flags=0x2),
+            dict(value=56, name="Soft", flags=0x2),
             dict(value=100, name="SuperSoft"),
         ],
     ),

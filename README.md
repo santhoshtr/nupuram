@@ -14,7 +14,7 @@ The Variable font capability makes Nupuram stylistically flexible and warmly ene
 
 Nupuram is also available as multiple fonts with different weights.
 
-![Nupuram weights](docs/nupuram-weight.png "Nupuram weights")
+![Nupuram weights](docs/width-weight-grid.jpg "Nupuram weights")
 
 ## Variation axes
 
@@ -25,7 +25,7 @@ Nupuram has the following axes:
 | Weight  | `wdth` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 | Slant     | `slnt` | -15 to 0       | 0       | Upright (0°) to Slanted (about 15°)                                                |
 | Width     | `wght` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
-| Soft      | `soft` | 15 to 100     | 50       | Sharp to normal to SuperSoft terminals                           |
+| Soft      | `soft` | 15 to 100     | 56       | Sharp to normal to SuperSoft terminals                           |
 
 ### Axis Definitions
 
