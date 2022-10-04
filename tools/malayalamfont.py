@@ -264,34 +264,47 @@ class MalayalamFont(Font):
             self.get_glyphs_from_named_classes('ML_LA_CONJUNCTS')
         )
         rules = []
-        split_rules = []
         split_cons_conj = None
         for ligature in ligatures:
             ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
             if ligature_glyph_name not in self:
                 continue
             missing_vowels = []
+            missing_vowels_glyph_names = []
             for vowel_sign in vowel_signs:
-                replacement_ligature = SVGGlyph.get_glyph_name(
-                    ligature)+SVGGlyph.get_glyph_name(vowel_sign, prefix="_")
-                ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
-                if ligature_glyph_name not in self:
+                ligature_vowel = ligature+vowel_sign
+                replacement_ligature_glyphname = SVGGlyph.get_glyph_name(ligature_vowel)
+                if replacement_ligature_glyphname in self:
                     continue
-                if replacement_ligature not in self:
-                    missing_vowels.append(SVGGlyph.get_glyph_name(vowel_sign))
-
-            # TODO do not break up the entire ligature. May only the last virama+cons part alone
-            sub = Substitution([[ligature_glyph_name]],
-                               replacement=[[SVGGlyph.get_glyph_name(l)] for l in ligature])
-            if not split_cons_conj:
+                missing_vowels.append(vowel_sign)
+                missing_vowels_glyph_names.append(SVGGlyph.get_glyph_name(vowel_sign))
+            parts=[]
+            seq=""
+            largest_seq=seq
+            for char in reversed(ligature):
+                seq = char+seq
+                # FIXME We are basing missing_vowels[0] here to find largest available ligature
+                # with that vowel. But this is not flexible to accommodate the nature of other vowel
+                # conjoining. If we are doing that for each missing vowel, we cannot group this splitting
+                # under split_cons_conj lookup. We will lookups for each vowelsign.
+                # But this is rare; Having a -uu glyph without _u glyph is rare.
+                if SVGGlyph.get_glyph_name(seq+missing_vowels[0]) in self:
+                    largest_seq = seq
+            # Split everything from the starting part of ligature_vowel.
+            for l in ligature[0:len(ligature)-len(largest_seq)]:
+                parts.append(l)
+            if len(largest_seq):
+                parts.append(largest_seq)
+            sub = Substitution([[ligature_glyph_name]],replacement=[[SVGGlyph.get_glyph_name(l)] for l in parts])
+            if split_cons_conj:
+                split_cons_conj.addRule(sub)
+            else:
                 split_cons_conj = Routine(
                     rules=[sub], name='split_cons_conj', languages=LANGUAGE_MALAYALAM)
-            else:
-                split_cons_conj.addRule(sub)
             rules.append(
                 Chaining(
                     [[SVGGlyph.get_glyph_name(ligature)]],
-                    postcontext=[missing_vowels],
+                    postcontext=[missing_vowels_glyph_names],
                     lookups=[[split_cons_conj]],
                 ),
             )
