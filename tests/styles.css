@@ -15,38 +15,19 @@
 
 }
 
-@supports not (font-palette: --custom) {
-  @font-face {
-    font-family: "NupuramShadowColor";
-    src: url(../fonts/webfonts/Nupuram-Color-v0.woff2?v=1.100) format("woff2"),
-        url(../fonts/otf/Nupuram-Color-v0.otf?v=1.100) format("opentype");
 
-  }
-
-
-  @font-face {
-    font-family: "NupuramArrowsColor";
-    src: url(../fonts/webfonts/Nupuram-Arrows-Color-v0.woff2?v=1.100) format("woff2"),
-        url(../fonts/otf/Nupuram-Arrows-Color-v0.otf?v=1.100) format("opentype");
-  }
+@font-face {
+  font-family: "NupuramColor";
+  src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"),
+      url(../fonts/otf/Nupuram-Color-v1.otf?v=1.100) format("opentype");
 
 }
 
-@supports (font-palette: --custom) {
-  @font-face {
-    font-family: "NupuramColor";
-    src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"),
-        url(../fonts/otf/Nupuram-Color-v1.otf?v=1.100) format("opentype");
 
-  }
-
-
-  @font-face {
-    font-family: "NupuramArrowsColor";
-    src: url(../fonts/webfonts/Nupuram-Arrows-Color-v1.woff2?v=1.100) format("woff2"),
-       url(../fonts/otf/Nupuram-Arrows-Color-v1.otf?v=1.100) format("opentype");
-  }
-
+@font-face {
+  font-family: "NupuramArrowsColor";
+  src: url(../fonts/webfonts/Nupuram-Arrows-Color-v1.woff2?v=1.100) format("woff2"),
+      url(../fonts/otf/Nupuram-Arrows-Color-v1.otf?v=1.100) format("opentype");
 }
 
 @font-face {
@@ -107,9 +88,9 @@ main {
 .tools {
   display: flex;
   flex-direction: column;
-  font-family: sans;
+  font-family: monospace;
   overflow: auto;
-  font-size: 0.75em;
+  font-size: 1em;
   position: absolute;
   right: 1em;
 }
@@ -130,6 +111,7 @@ main {
   list-style: none;
   display: flex;
   flex-direction: row;
+  fill: #fff;
 }
 
 .controls.align li {
@@ -218,9 +200,8 @@ input[type="color"] {
 }
 
 .font-color {
-  border-radius: 9px;
   width: 18px;
-  border: 1px solid black;
+  border: 0;
 }
 
 label {

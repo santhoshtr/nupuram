@@ -140,7 +140,6 @@ function listen() {
 
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
-        contentArea.classList.add('shadownorth');
         contentArea.classList.remove("color", "display", "arrowscolor", "calligraphy","dots");
         document.getElementById('palette').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
@@ -310,15 +309,6 @@ function listen() {
     })
 
 
-    document.getElementById('font-fontColorPalette').addEventListener('input', function () {
-        const palette = this.value;
-        [shadowColor, baseColor, outlineColor] = pallettes[palette+""]
-        setCustomColors(baseColor, shadowColor, outlineColor, palette)
-        shadowColorPickr.setColor(shadowColor)
-        baseColorPickr.setColor(baseColor)
-        outlineColorPickr.setColor(outlineColor)
-    })
-
     const baseColorPickr = new Pickr({
         el: '#font-fontBaseColor',
         theme: 'nano',
@@ -383,6 +373,17 @@ function listen() {
     }).on('change', (color, source, instance) => {
         setCustomColors(baseColor, shadowColor, color.toHEXA())
         document.getElementById('font-fontOutlineColor').style.backgroundColor = color.toHEXA()
+    })
+
+
+
+    document.getElementById('font-fontColorPalette').addEventListener('input', function () {
+        const palette = this.value;
+        [shadowColor, baseColor, outlineColor] = pallettes[palette+""]
+        setCustomColors(baseColor, shadowColor, outlineColor, palette)
+        shadowColorPickr.setColor(shadowColor)
+        baseColorPickr.setColor(baseColor)
+        outlineColorPickr.setColor(outlineColor)
     })
 
     document.querySelectorAll("[name=opentype]").forEach((element) => {
