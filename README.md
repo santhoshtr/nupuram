@@ -51,6 +51,32 @@ Nupuram also has a Color font version with COLRv1 specification. The colors can 
 
 ![Nupuram color font](docs/nupuram-color.png "Nupuram color font")
 
+Nupuram Color font gives 18 predefined pallettes that can be selected by users. Or a user can specify the colors using CSS for example.
+
+This color font uses 3 colors for its shadow-ish look. They are Dark, Light, Base colors. Base is the facing color, Light is the central glowing area color. Dark is the color for the shadow part. The colors are used to create a gradient internally.
+
+The following CSS customizes the pallette to give a rendering given below:
+
+```css
+.content {
+  font-family: 'NupuramColor';
+  font-palette: --custom;
+}
+
+@font-palette-values --custom  {
+  font-family: 'NupuramColor';
+  /* Change this to a value between 0 and 18 to chose a supplied palette. */
+  base-palette: 0;
+  /* Or provide the colors directly to override palette */
+  override-colors: 0 #FFD700, 1 #FFD700, 2 #1E0303;
+}
+```
+
+![Nupuram Custom color font](docs/color-font-custom.jpg "Nupuram Custom Color font")
+
+You may try the color selector provided in the [Nupuram font playground](https://smc.gitlab.io/fonts/Nupuram/tests/).
+If you want to create a new font with the provided colors, there is a tool called [DJR's Color Font Customizer](https://tools.djr.com/color-font-customizer/).
+
 ## Nupuram Arrows
 
 For educational purposes, to learn the pen movement for writing a letter, Nupuram comes with a variant named Nupuram Arrows. This is a Color font.
