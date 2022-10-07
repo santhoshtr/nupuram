@@ -16,7 +16,7 @@ maybeinput jobname;
 % Pens
 input ./pens
 
-pen nib; nib := finenib; % roundedwidenib
+pen nib; nib := finenib;
 
 phi := 1.618; % Golden ratio
 % Aliases
@@ -195,7 +195,7 @@ def endglyph =
 
         if known paths[i]:
             if known calligraphic:
-                draw paths[i] withpen roundedwidenib withcolor glyphcolor;
+                draw paths[i] withpen calligraphicpen withcolor glyphcolor;
             fi;
             if show_paths = 1:
                 draw paths[i] withpen nib scaled 2 withcolor 0.8white;
