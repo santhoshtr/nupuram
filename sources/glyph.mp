@@ -218,7 +218,7 @@ def endglyph =
     if slant <> 0:
         currentpicture := currentpicture
             slanted tand(slant)
-            shifted(-ascent*tand(slant),0);
+            shifted(-m*tand(slant),0);
     fi;
     % Place the drawing at the svg canvas.
     pair ur; ur:=urcorner currentpicture;
