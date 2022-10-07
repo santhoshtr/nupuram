@@ -10,11 +10,11 @@ As a variable font, Nupuram gives you fine-grained control over each one of its 
 
 The Variable font capability makes Nupuram stylistically flexible and warmly energetic.
 
-![Nupuram variable font - animated demo](docs/nupuram-var.gif "Nupuram variable font - animated demo showing all 4 axis")
+![Nupuram variable font - animated demo](docs/images/nupuram-var.gif "Nupuram variable font - animated demo showing all 4 axis")
 
 Nupuram is also available as multiple fonts with different weights.
 
-![Nupuram weights](docs/width-weight-grid.jpg "Nupuram weights")
+![Nupuram weights](docs/images/width-weight-grid.jpg "Nupuram weights")
 
 ## Variation axes
 
@@ -49,7 +49,7 @@ Nupuram has the following axes:
 
 Nupuram also has a Color font version with COLRv1 specification. The colors can be customized, for example using CSS. For applications that does not support COLRv1 spec, there is a COLRv0 variant as well. Support for Color fonts vary a lot across applications, please [refer this site](https://www.colorfonts.wtf/) for a detailed reading. Google Chrome and related browsers [support COLRv1 in their latest versions](https://developer.chrome.com/blog/colrv1-fonts/).
 
-![Nupuram color font](docs/nupuram-color.png "Nupuram color font")
+![Nupuram color font](docs/images/nupuram-color.png "Nupuram color font")
 
 Nupuram Color font gives 18 predefined pallettes that can be selected by users. Or a user can specify the colors using CSS for example.
 
@@ -72,7 +72,7 @@ The following CSS customizes the pallette to give a rendering given below:
 }
 ```
 
-![Nupuram Custom color font](docs/color-font-custom.jpg "Nupuram Custom Color font")
+![Nupuram Custom color font](docs/images/color-font-custom.jpg "Nupuram Custom Color font")
 
 You may try the color selector provided in the [Nupuram font playground](https://smc.gitlab.io/fonts/Nupuram/tests/).
 If you want to create a new font with the provided colors, there is a tool called [DJR's Color Font Customizer](https://tools.djr.com/color-font-customizer/).
@@ -81,25 +81,25 @@ If you want to create a new font with the provided colors, there is a tool calle
 
 For educational purposes, to learn the pen movement for writing a letter, Nupuram comes with a variant named Nupuram Arrows. This is a Color font.
 
-![Nupuram arrows font](docs/nupuram-arrows.png "Nupuram Arrows font")
+![Nupuram arrows font](docs/images/nupuram-arrows.png "Nupuram Arrows font")
 
 ## Nupuram Dots
 
 Again, for educational purposes, to practice in worksheets, Nupuram comes with a variant named Nupuram Dots.
 
-![Nupuram dots font](docs/nupuram-dots.png "Nupuram dots font")
+![Nupuram dots font](docs/images/nupuram-dots.png "Nupuram dots font")
 
 ## Nupuram Display
 
 Nupuram Display is a Display typeface to use with large point sizes. Its terminals are flat with rounded corners and has optimized xheight for large sizes.
 
-![Nupuram display font](docs/nupuram-display.png "Nupuram display font")
+![Nupuram display font](docs/images/nupuram-display.png "Nupuram display font")
 
 ## Nupuram Calligraphy
 
 Nupuram Calligraphy simulates a wide nib Calligraphy pen with nib rotation at 40°.
 
-![Nupuram Calligraphy font](docs/nupuram-calligraphy.png "Nupuram Calligraphy font")
+![Nupuram Calligraphy font](docs/images/nupuram-calligraphy.png "Nupuram Calligraphy font")
 
 ## Using the fonts
 
@@ -108,7 +108,7 @@ Nupuram Calligraphy simulates a wide nib Calligraphy pen with nib rotation at 40
 
 ### Using Variable font in web pages
 
-Varibale fonts save bandwith in web pages by having a single font to download, while providing all style variations. Using them on webpages is a big topic. Please use a [good tutorial like MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)
+Varibale fonts save bandwith in web pages by having a single font to download, while providing all style variations. Using them on webpages is a big topic. Please use a [good tutorial like MDN](https://developer.mozilla.org/en-US/docs/images/Web/CSS/CSS_Fonts/Variable_Fonts_Guide)
 
 In general, you should link in the font with @font-face
 
@@ -187,7 +187,7 @@ Nupuram is primarily a Malayalam font. All the Malayalam characters defined in U
 
 Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu.
 
-![Nupuram sample rendering](docs/nupuram-sample.jpg "Nupuram sample rendering")
+![Nupuram sample rendering](docs/images/nupuram-sample.jpg "Nupuram sample rendering")
 
 ## Credits
 
