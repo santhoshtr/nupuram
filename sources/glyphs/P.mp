@@ -7,11 +7,13 @@ z2=( x1, y1 - 0.5X);
 
 paths[0] = z0{dir -90}..z1..  {dir -90}z2 ;
 
-z3 = (x0 -thick/2, 0.85X);
-z4 = (x3 + Xw/3, y0 - thick/4);
-z5 = (x4 + Xw/4, m );
-z6 = point 1.25 of paths[0];
-paths[1] = z3 ..z4{right}..z5{down}..{left}z6;
+clearxy;
+
+z0 = (xpart (point 0 of paths[0]) - X/10, 0.9X);
+z1 = (x0 + Xw/3, ypart (point 0 of paths[0]) - thick/4);
+z2 = (x1 + Xw/4, m );
+z3 = point 1.25 of paths[0];
+paths[1] = z0..z1{right}..z2{down}..{left}z3;
 
 pen_stroke(
     nib(thinnib rotated 0 )(1, 2)

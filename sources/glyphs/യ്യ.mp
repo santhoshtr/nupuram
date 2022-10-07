@@ -24,7 +24,7 @@ pen_stroke(
 % Shoe
 clearxy;
 z0 = point 7 of paths[0];
-z1 = (xpart(point 5 of paths[0]), -descent-thick/2) ;
+z1 = (xpart(point 5 of paths[0]), -descent*1.2) ;
 z2 = (xpart(point 7.75 of paths[0]), y1) ;
 z3 = point 7.75 of paths[0];
 paths[1] := z0 ..{dir 200}z1{dir 20}..{dir 20}z2{dir 110}..z3;

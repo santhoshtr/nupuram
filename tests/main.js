@@ -141,7 +141,10 @@ function listen() {
     document.getElementById('test-font').addEventListener('change', function () {
         const selected = this.options[this.selectedIndex].value;
         contentArea.classList.remove("color", "display", "arrowscolor", "calligraphy","dots");
-        document.getElementById('var-values').style.display = "none"
+        document.getElementById('var-weight').style.display = "none"
+        document.getElementById('var-width').style.display = "none"
+        document.getElementById('var-slant').style.display = "none"
+        document.getElementById('var-soft').style.display = "none"
         document.getElementById('font-fontColor').disabled = false
         root.style.setProperty('--font', selected);
         if (selected === 'NupuramColor') {
@@ -155,8 +158,19 @@ function listen() {
         if (selected === 'Nupuram') {
             document.getElementById('font-fontColor').disabled = false
             document.getElementById('var-values').style.display = "grid"
+            document.getElementById('var-weight').style.display = "contents"
+            document.getElementById('var-width').style.display = "contents"
+            document.getElementById('var-slant').style.display = "contents"
+            document.getElementById('var-soft').style.display = "contents"
         }
+        if (selected === 'NupuramCalligraphy') {
+            document.getElementById('font-fontColor').disabled = false
+            document.getElementById('var-weight').style.display = "contents"
+            document.getElementById('var-width').style.display = "none"
+            document.getElementById('var-slant').style.display = "none"
+            document.getElementById('var-soft').style.display = "none"
 
+        }
 
     });
 
