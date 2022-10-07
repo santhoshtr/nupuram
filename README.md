@@ -99,7 +99,7 @@ Nupuram Display is a Display typeface to use with large point sizes. Its termina
 
 Nupuram Calligraphy simulates a wide nib Calligraphy pen with nib rotation at 40°. This is a variable font with weight axis. The width of the calligraphy pen can be varied for getting different weights.
 
-![Nupuram Calligraphy font](docs/images/nupuram-calligraphy.png "Nupuram Calligraphy font")
+![Nupuram Calligraphy font](docs/images/nupuram-calligraphy-var.gif "Nupuram Calligraphy font")
 
 | Axis       | Tag    | Range        | Default | Description                                                     |
 | ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
