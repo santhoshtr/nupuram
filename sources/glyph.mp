@@ -212,14 +212,19 @@ def endglyph =
         fi;
     endfor;
 
-    currentpicture := currentpicture
-        shifted (lbearing, descent);
-
     if slant <> 0:
-        currentpicture := currentpicture
-            slanted tand(slant)
-            shifted(-m*tand(slant),0);
+        % Find out current x-maximum
+        xmax := xpart (urcorner currentpicture);
+        currentpicture := currentpicture slanted tand(slant);
+        % After slanting the width of currentpicture will increase. Find current x-maximum
+        % The difference in width change is the slant shift
+        slant_xshift := ( xpart (urcorner currentpicture) ) - xmax;
+        % Cancel the slant shift
+        rbearing := rbearing - slant_xshift;
     fi;
+
+    currentpicture := currentpicture shifted (lbearing, descent);
+
     % Place the drawing at the svg canvas.
     pair ur; ur:=urcorner currentpicture;
     path bbox; bbox = boundingbox(currentpicture, lbearing, rbearing);
