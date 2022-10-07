@@ -22,9 +22,9 @@ Nupuram has the following axes:
 
 | Axis       | Tag    | Range        | Default | Description                                                     |
 | ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
-| Weight  | `wdth` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
+| Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 | Slant     | `slnt` | -15 to 0       | 0       | Upright (0°) to Slanted (about 15°)                                                |
-| Width     | `wght` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
+| Width     | `wdth` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
 | Soft      | `soft` | 15 to 100     | 56       | Sharp to normal to SuperSoft terminals                           |
 
 ### Axis Definitions
@@ -97,9 +97,13 @@ Nupuram Display is a Display typeface to use with large point sizes. Its termina
 
 ## Nupuram Calligraphy
 
-Nupuram Calligraphy simulates a wide nib Calligraphy pen with nib rotation at 40°.
+Nupuram Calligraphy simulates a wide nib Calligraphy pen with nib rotation at 40°. This is a variable font with weight axis. The width of the calligraphy pen can be varied for getting different weights.
 
 ![Nupuram Calligraphy font](docs/images/nupuram-calligraphy.png "Nupuram Calligraphy font")
+
+| Axis       | Tag    | Range        | Default | Description                                                     |
+| ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
+| Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 
 ## Using the fonts
 
