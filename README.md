@@ -187,6 +187,8 @@ Nupuram is primarily a Malayalam font. All the Malayalam characters defined in U
 
 Afrikaans, Albanian, Basque, Bosnian, Catalan, Croatian, Czech, Danish, Dutch, English, Estonian, Faroese, Filipino, Finnish, French, Galician, German, Hungarian, Icelandic, Indonesian, Irish, Italian, Latvian, Lithuanian, Malay, Malayalam, Norwegian Bokmål, Polish, Portuguese, Romanian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tongan, Turkish, Welsh and Zulu.
 
+![Nupuram sample rendering](docs/nupuram-sample.jpg "Nupuram sample rendering")
+
 ## Credits
 
 See [FONTLOG.md](FONTLOG.md) for details on contributions.
