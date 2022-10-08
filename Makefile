@@ -174,3 +174,32 @@ install: otf
 	@cp ${OTFDIR}/$(FAMILY)-Color-v0.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Arrows-Color-v0.otf ~/.fonts;
 	@fc-cache -fr
+
+release:
+	# Tar files - OTF, TTF, WEBFONTS
+	tar czvf $(FONTSDIR)/$(FAMILY).tar.gz *.conf OFL.txt README.md ${TTFDIR} ${OTFDIR} ${WEBFONTSDIR}
+	sha256sum $(FONTSDIR)/$(FAMILY).tar.gz > $(FONTSDIR)/$(FAMILY).tar.gz.sha256
+	md5sum $(FONTSDIR)/$(FAMILY).tar.gz > $(FONTSDIR)/$(FAMILY).tar.gz.md5
+	# Zip files
+	zip -r $(FONTSDIR)/$(FAMILY).zip README.md OFL.txt ${TTFDIR} ${OTFDIR} ${WEBFONTSDIR}
+	sha256sum $(FONTSDIR)/$(FAMILY).zip > $(FONTSDIR)/$(FAMILY).zip.sha256
+	md5sum $(FONTSDIR)/$(FAMILY).zip > $(FONTSDIR)/$(FAMILY).zip.md5
+
+	# Webfonts Tar files
+	tar czvf $(FONTSDIR)/$(FAMILY)-webfonts.tar.gz *.conf OFL.txt README.md ${WEBFONTSDIR}
+	sha256sum $(FONTSDIR)/$(FAMILY)-webfonts.tar.gz > $(FONTSDIR)/$(FAMILY)-webfonts.tar.gz.sha256
+	md5sum $(FONTSDIR)/$(FAMILY)-webfonts.tar.gz > $(FONTSDIR)/$(FAMILY).tar.gz.md5
+	# Webfonts Zip files
+	zip -r $(FONTSDIR)/$(FAMILY)-webfonts.zip README.md OFL.txt ${WEBFONTSDIR}
+	sha256sum $(FONTSDIR)/$(FAMILY)-webfonts.zip > $(FONTSDIR)/$(FAMILY)-webfonts.zip.sha256
+	md5sum $(FONTSDIR)/$(FAMILY)-webfonts.zip > $(FONTSDIR)/$(FAMILY)-webfonts.zip.md5
+
+	# UFO Tar files
+	tar czvf $(FONTSDIR)/$(FAMILY)-ufo.tar.gz *.conf OFL.txt README.md ${UFODIR}
+	sha256sum $(FONTSDIR)/$(FAMILY)-ufo.tar.gz > $(FONTSDIR)/$(FAMILY)-ufo.tar.gz.sha256
+	md5sum $(FONTSDIR)/$(FAMILY)-ufo.tar.gz > $(FONTSDIR)/$(FAMILY).tar.gz.md5
+	# UFO Zip files
+	zip -r $(FONTSDIR)/$(FAMILY)-ufo.zip README.md OFL.txt ${UFODIR}
+	sha256sum $(FONTSDIR)/$(FAMILY)-ufo.zip > $(FONTSDIR)/$(FAMILY)-ufo.zip.sha256
+	md5sum $(FONTSDIR)/$(FAMILY)-ufo.zip > $(FONTSDIR)/$(FAMILY)-ufo.zip.md5
+
