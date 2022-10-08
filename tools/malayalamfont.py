@@ -564,15 +564,18 @@ class MalayalamFont(Font):
 
                 self.salts[svg_glyph.glyph_name].append(svg_glyph.glif.name)
 
+        # Even though we can flip the glyphs using transformation,
+        # it is always better to design a glyph for that.
+        # Flipping here won't work nicely with slanting for example.
         horizontally_flippables = {
-            '<': '>',
-            '«': '»',
-            '/': '\\',
-            '[': ']',
-            '{': '}',
-            '(': ')',
-            '‹': '›',
-            '„': '⹂'
+            # '<': '>',
+            # '«': '»',
+            # '/': '\\',
+            # '[': ']',
+            # '{': '}',
+            # '(': ')',
+            # '‹': '›',
+            # '„': '⹂'
         }
         for b, c in horizontally_flippables.items():
             compositename = SVGGlyph.get_glyph_name(c)
@@ -592,6 +595,9 @@ class MalayalamFont(Font):
             composite.appendComponent(component)
             log.debug(f"Compose {compositename}: Flip {basename}")
 
+        # Even though we can append the glyphs, tt is always better
+        # to design a glyph for that. Appending won't take the bearing values
+        # into consideration
         appendables = {
             'ഈ': ['ഇ', 'ൗ'],
             'ഊ': ['ഉ', 'ൗ'],

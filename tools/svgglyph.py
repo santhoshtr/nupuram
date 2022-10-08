@@ -28,6 +28,7 @@ class SVGGlyph:
         agl.AGL2UV['twosuperior'] = 0x00B2
         agl.AGL2UV['threesuperior'] = 0x00B3
         agl.AGL2UV['foursuperior'] = 0x2074
+        agl.AGL2UV['quotedblbasereversed'] = 0x2E42
         agl.AGL2UV['Acaron'] = 0x01CD
         agl.AGL2UV['acaron'] = 0x01CE
         agl.AGL2UV['Lcedilla'] = 0x013B

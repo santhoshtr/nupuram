@@ -2,8 +2,8 @@ input glyph;
 beginglyph;
 
 z0 = ( X/4, X);
-z1 = ( x0-X/5, X/2 );
-z3 = ( x1 + X/5, y1-X/2);
+z1 = ( x0 - X/5, y0-X/2 );
+z3 = ( x0, y1-X/2);
 
 paths[0] = z0..z1..z3;
 
