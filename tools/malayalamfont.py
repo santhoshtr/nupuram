@@ -800,11 +800,11 @@ class MalayalamFont(Font):
 
         # set various font metadata; see the full list of fontinfo attributes at
         # https://unifiedfontobject.org/versions/ufo3/fontinfo.plist/#generic-dimension-information
-        self.info.unitsPerEm = 1024
+        self.info.unitsPerEm = int(self.options.unitsPerEm)
         # we just use a simple scheme that makes all sets of vertical metrics the same;
         # if one needs more fine-grained control they can fix up post build
-        self.info.ascender = 819
-        self.info.descender = 205
+        self.info.ascender = int(self.options.ascender)
+        self.info.descender = int(self.options.descender)
 
         # Names
         self.info.familyName = name
