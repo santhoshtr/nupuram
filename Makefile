@@ -168,7 +168,7 @@ test: proofs ${TTFDIR}/$(FAMILY)-VF.ttf
 
 install: otf
 	@cp ${OTFDIR}/$(FAMILY)-VF.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Calligraphy.otf ~/.fonts;
+	@cp ${OTFDIR}/$(FAMILY)-Calligraphy-VF.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Dots.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Arrows.otf ~/.fonts;
 	@cp ${OTFDIR}/$(FAMILY)-Color-v0.otf ~/.fonts;
