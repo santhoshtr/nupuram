@@ -129,12 +129,12 @@ $(FONTSDIR)/webfonts/%.woff2: ${TTFDIR}/%.ttf
 ${TTFDIR}/%-VF.ttf: %.designspace
 	fontmake --filter DecomposeTransformedComponentsFilter -m $*.designspace -o variable --output-dir ${TTFDIR}
 	$(PY) tools/fix_font.py $@
-	$(PY) tools/stat.py $@
+	$(PY) tools/stat.py $* $@
 
 ${OTFDIR}/%-VF.otf: %.designspace
 	fontmake -m $*.designspace -o variable-cff2 --output-dir ${OTFDIR}
 	$(PY) tools/fix_font.py $@
-	$(PY) tools/stat.py $@
+	$(PY) tools/stat.py $* $@
 
 variableinstances:
 	fontmake -i --output-dir $(FONTSDIR)/instances -m $(FAMILY).designspace

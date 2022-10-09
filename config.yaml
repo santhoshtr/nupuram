@@ -235,3 +235,90 @@ colorfonts:
       - ["#827717", "#E6EE9C"] # Lime
       - ["#FF6F00", "#FFE082"] # Amber
       - ["#BF360C", "#FFAB91"] # Deep Orange
+variablefonts:
+  Nupuram:
+    designspace: Nupuram.designspace
+    stat:
+      axes:
+        - tag: slnt
+          name: Slant
+          values:
+            - value: 0
+              name: Upright
+              flags: 2
+            - value: -15
+              name: Oblique
+        - tag: soft
+          name: Soft
+          values:
+            - value: 15
+              name: Sharp
+            - value: 56
+              name: Soft
+              flags: 2
+            - value: 100
+              name: SuperSoft
+        - tag: wght
+          name: Weight
+          values:
+            - value: 100
+              name: Thin
+            - value: 200
+              name: ExtraLight
+            - value: 300
+              name: Light
+            - value: 400
+              name: Regular
+              flags: 2
+              linkedValue: 700
+            - value: 500
+              name: Medium
+            - value: 600
+              name: SemiBold
+            - value: 700
+              name: Bold
+            - value: 800
+              name: ExtraBold
+            - value: 900
+              name: Black
+        - tag: wdth
+          name: Width
+          values:
+            - value: 75
+              name: Condensed
+            - value: 87.5
+              name: SemiCondensed
+              flags: 2
+            - value: 100
+              name: Normal
+            - value: 112.5
+              name: SemiExpanded
+            - value: 125
+              name: Expanded
+  Nupuram-Calligraphy:
+    designspace: Nupuram-Calligraphy.designspace
+    stat:
+      axes:
+        - tag: wght
+          name: Weight
+          values:
+            - value: 100
+              name: Thin
+            - value: 200
+              name: ExtraLight
+            - value: 300
+              name: Light
+            - value: 400
+              name: Regular
+              flags: 2
+              linkedValue: 700
+            - value: 500
+              name: Medium
+            - value: 600
+              name: SemiBold
+            - value: 700
+              name: Bold
+            - value: 800
+              name: ExtraBold
+            - value: 900
+              name: Black
