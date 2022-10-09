@@ -101,7 +101,10 @@ $(OTFDIR)/$(FAMILY)-%-Color.colrv0.otf: $(OTFDIR)/$(FAMILY)-%-Color.otf
 $(OTFDIR)/$(FAMILY)-%-Color.colrv0.woff2: $(WEBFONTSDIR)/$(FAMILY)-%-Color.woff2
 	@cp $< $@
 
-${TTFDIR}/$(FAMILY)-Color-VF.colrv0.%: ${TTFDIR}/$(FAMILY)-Color-VF.%
+${TTFDIR}/$(FAMILY)-Color-VF.colrv0.ttf: ${TTFDIR}/$(FAMILY)-Color-VF.ttf
+	@cp $< $@
+
+${OTFDIR}/$(FAMILY)-Color-VF.colrv0.otf: ${OTFDIR}/$(FAMILY)-Color-VF.otf
 	@cp $< $@
 
 # Build a Colrv1 ttf file from colrv0 ttf
@@ -110,7 +113,7 @@ ${TTFDIR}/$(FAMILY)-%.colrv1.ttf: ${TTFDIR}/$(FAMILY)-%.colrv0.ttf
 
 # Build a Colrv1 otf file from colrv0 otf
 $(OTFDIR)/$(FAMILY)-%.colrv1.otf: $(OTFDIR)/$(FAMILY)-%.colrv0.otf
-	$(PY) tools/build_color.colrv1.py $< $@
+	$(PY) tools/build_color_v1.py $< $@
 
 # Build TTF from UFO
 $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
