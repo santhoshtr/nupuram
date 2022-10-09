@@ -180,7 +180,7 @@ glyphs:
       - ['ന', "ി", 'wrap' ]
 colorfonts:
   fonts/ufo/Nupuram-Color-Regular.ufo:
-    familyname: Nupuram Color Regular
+    familyname: Nupuram Color
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
@@ -209,7 +209,7 @@ colorfonts:
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
   fonts/ufo/Nupuram-Color-Thin.ufo:
-    familyname: Nupuram Color Thin
+    familyname: Nupuram Color
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
@@ -238,7 +238,7 @@ colorfonts:
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
   fonts/ufo/Nupuram-Color-Black.ufo:
-    familyname: Nupuram Color Black
+    familyname: Nupuram Color
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
