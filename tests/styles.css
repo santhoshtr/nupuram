@@ -10,19 +10,17 @@
 
 @font-face {
   font-family: "NupuramCalligraphy";
-  src: url(../fonts/webfonts/Nupuram-Calligraphy-VF.woff2?v=1.100) format("woff2"),
-    url(../fonts/otf/Nupuram-Calligraphy-VF.otf?v=1.100) format("opentype");
-
+  src: url(../fonts/webfonts/Nupuram-Calligraphy-VF.woff2?v=1.100) format("woff2-variations"),
+    url(../fonts/otf/Nupuram-Calligraphy-VF.otf?v=1.100) format("opentype-variations");
+  font-weight: 100 900;
 }
-
 
 @font-face {
   font-family: "NupuramColor";
-  src: url(../fonts/webfonts/Nupuram-Color-v1.woff2?v=1.100) format("woff2"),
-      url(../fonts/otf/Nupuram-Color-v1.otf?v=1.100) format("opentype");
-
+  src: url(../fonts/webfonts/Nupuram-Color-VF.colrv1.woff2?v=1.100) format("woff2-variations"),
+      url(../fonts/otf/Nupuram-Color-VF.colrv1.otf?v=1.100) format("opentype-variations");
+  font-weight: 100 900;
 }
-
 
 @font-face {
   font-family: "NupuramArrowsColor";

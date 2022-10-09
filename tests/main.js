@@ -150,6 +150,10 @@ function listen() {
         if (selected === 'NupuramColor') {
             document.getElementById('font-fontColor').disabled = true
             document.getElementById('palette').style.display = "grid"
+            document.getElementById('var-weight').style.display = "contents"
+            document.getElementById('var-width').style.display = "none"
+            document.getElementById('var-slant').style.display = "none"
+            document.getElementById('var-soft').style.display = "none"
         }
         if (selected === 'NupuramArrowsColor') {
             document.getElementById('font-fontColor').disabled = true
@@ -169,7 +173,6 @@ function listen() {
             document.getElementById('var-width').style.display = "none"
             document.getElementById('var-slant').style.display = "none"
             document.getElementById('var-soft').style.display = "none"
-
         }
 
     });

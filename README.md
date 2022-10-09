@@ -49,6 +49,12 @@ Nupuram has the following axes:
 
 Nupuram also has a Color font version with COLRv1 specification. The colors can be customized, for example using CSS. For applications that does not support COLRv1 spec, there is a COLRv0 variant as well. Support for Color fonts vary a lot across applications, please [refer this site](https://www.colorfonts.wtf/) for a detailed reading. Google Chrome and related browsers [support COLRv1 in their latest versions](https://developer.chrome.com/blog/colrv1-fonts/).
 
+Nupuram Color is also a variable font. The weight axis changes the offset in z-axis.
+
+| Axis       | Tag    | Range        | Default | Description                                                     |
+| ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
+| Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
+
 ![Nupuram color font](docs/images/nupuram-color.png "Nupuram color font")
 
 Nupuram Color font gives 18 predefined pallettes that can be selected by users. Or a user can specify the colors using CSS for example.

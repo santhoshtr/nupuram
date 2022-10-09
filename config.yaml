@@ -16,11 +16,13 @@ styles: [
   "Calligraphy-Thin",
   "Calligraphy-Black",
   "Outline",
-  "Shadow",
+  "Shadow-Regular",
+  "Shadow-Thin",
+  "Shadow-Black",
   "Arrows",
   "Dots"
 ]
-version: 0.1
+version: 0.160
 unitsPerEm: 1024
 ascender: 819
 descender: 205
@@ -177,14 +179,72 @@ glyphs:
     malayalam:
       - ['ന', "ി", 'wrap' ]
 colorfonts:
-  fonts/ufo/Nupuram-Color.ufo:
-    familyname: Nupuram Color
+  fonts/ufo/Nupuram-Color-Regular.ufo:
+    familyname: Nupuram Color Regular
     layers:
       "public.default":
         "source": "fonts/ufo/Nupuram-Regular.ufo"
         "order": 1  # Foreground layer
       "shadow":
-        "source": "fonts/ufo/Nupuram-Shadow.ufo"
+        "source": "fonts/ufo/Nupuram-Shadow-Regular.ufo"
+        "order": 0  # background layer
+    pallettes:
+      - ["#E65100", "#FFCC80", "#FF9800"] # Orange
+      - ["#212121", "#EEEEEE", "#9E9E9E"] # Gray
+      - ["#263238", "#B0BEC5", "#607D8B"] # Blue Gray
+      - ["#F57F17", "#FFF59D", "#FFEB3B"] # Yellow
+      - ["#1B5E20", "#A5D6A7", "#4CAF50"] # Green
+      - ["#01579B", "#81D4FA", "#03A9F4"] # Light Blue
+      - ["#0D47A1", "#90CAF9", "#2196F3"] # Blue
+      - ["#B71C1C", "#EF9A9A", "#F44336"] # Red
+      - ["#4A148C", "#CE93D8", "#9C27B0"] # Purple
+      - ["#004D40", "#80CBC4", "#009688"] # Teal
+      - ["#3E2723", "#BCAAA4", "#795548"] # Brown
+      - ["#880E4F", "#F48FB1", "#E91E63"] # Pink
+      - ["#311B92", "#B39DDB", "#673AB7"] # Deep Purple
+      - ["#1A237E", "#9FA8DA", "#3F51B5"] # Indigo
+      - ["#006064", "#80DEEA", "#00BCD4"] # Cyan
+      - ["#33691E", "#C5E1A5", "#8BC34A"] # Light Green
+      - ["#827717", "#E6EE9C", "#CDDC39"] # Lime
+      - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
+      - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
+  fonts/ufo/Nupuram-Color-Thin.ufo:
+    familyname: Nupuram Color Thin
+    layers:
+      "public.default":
+        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "order": 1  # Foreground layer
+      "shadow":
+        "source": "fonts/ufo/Nupuram-Shadow-Thin.ufo"
+        "order": 0  # background layer
+    pallettes:
+      - ["#E65100", "#FFCC80", "#FF9800"] # Orange
+      - ["#212121", "#EEEEEE", "#9E9E9E"] # Gray
+      - ["#263238", "#B0BEC5", "#607D8B"] # Blue Gray
+      - ["#F57F17", "#FFF59D", "#FFEB3B"] # Yellow
+      - ["#1B5E20", "#A5D6A7", "#4CAF50"] # Green
+      - ["#01579B", "#81D4FA", "#03A9F4"] # Light Blue
+      - ["#0D47A1", "#90CAF9", "#2196F3"] # Blue
+      - ["#B71C1C", "#EF9A9A", "#F44336"] # Red
+      - ["#4A148C", "#CE93D8", "#9C27B0"] # Purple
+      - ["#004D40", "#80CBC4", "#009688"] # Teal
+      - ["#3E2723", "#BCAAA4", "#795548"] # Brown
+      - ["#880E4F", "#F48FB1", "#E91E63"] # Pink
+      - ["#311B92", "#B39DDB", "#673AB7"] # Deep Purple
+      - ["#1A237E", "#9FA8DA", "#3F51B5"] # Indigo
+      - ["#006064", "#80DEEA", "#00BCD4"] # Cyan
+      - ["#33691E", "#C5E1A5", "#8BC34A"] # Light Green
+      - ["#827717", "#E6EE9C", "#CDDC39"] # Lime
+      - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
+      - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
+  fonts/ufo/Nupuram-Color-Black.ufo:
+    familyname: Nupuram Color Black
+    layers:
+      "public.default":
+        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "order": 1  # Foreground layer
+      "shadow":
+        "source": "fonts/ufo/Nupuram-Shadow-Black.ufo"
         "order": 0  # background layer
     pallettes:
       - ["#E65100", "#FFCC80", "#FF9800"] # Orange
@@ -297,6 +357,33 @@ variablefonts:
               name: Expanded
   Nupuram-Calligraphy:
     designspace: Nupuram-Calligraphy.designspace
+    stat:
+      axes:
+        - tag: wght
+          name: Weight
+          values:
+            - value: 100
+              name: Thin
+            - value: 200
+              name: ExtraLight
+            - value: 300
+              name: Light
+            - value: 400
+              name: Regular
+              flags: 2
+              linkedValue: 700
+            - value: 500
+              name: Medium
+            - value: 600
+              name: SemiBold
+            - value: 700
+              name: Bold
+            - value: 800
+              name: ExtraBold
+            - value: 900
+              name: Black
+  Nupuram-Color:
+    designspace: Nupuram-Color.designspace
     stat:
       axes:
         - tag: wght

@@ -11,16 +11,31 @@ TTFDIR=${FONTSDIR}/ttf
 OTFDIR=${FONTSDIR}/otf
 WEBFONTSDIR=${FONTSDIR}/webfonts
 UFODIR=${FONTSDIR}/ufo
+INSTALLDIR=~/.fonts/$(FAMILY)
 
 UFO=$(STYLES:%=$(FONTSDIR)/ufo/$(FAMILY)-%.ufo) \
-	$(FONTSDIR)/ufo/$(FAMILY)-Color.ufo \
+	$(FONTSDIR)/ufo/$(FAMILY)-Color-Regular.ufo \
+	$(FONTSDIR)/ufo/$(FAMILY)-Color-Thin.ufo \
+	$(FONTSDIR)/ufo/$(FAMILY)-Color-Black.ufo \
 	$(FONTSDIR)/ufo/$(FAMILY)-Arrows-Color.ufo
 OTF=$(STYLES:%=$(OTFDIR)/$(FAMILY)-%.otf)
 TTF=$(STYLES:%=${TTFDIR}/$(FAMILY)-%.ttf)
 WOFF2=$(STYLES:%=$(FONTSDIR)/webfonts/$(FAMILY)-%.woff2)
-VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf ${TTFDIR}/$(FAMILY)-Calligraphy-VF.ttf
-VAROTF=$(OTFDIR)/$(FAMILY)-VF.otf $(OTFDIR)/$(FAMILY)-Calligraphy-VF.otf
-VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 $(FONTSDIR)/webfonts/$(FAMILY)-Calligraphy-VF.woff2
+VARTTF=${TTFDIR}/$(FAMILY)-VF.ttf \
+	${TTFDIR}/$(FAMILY)-Calligraphy-VF.ttf \
+	${TTFDIR}/$(FAMILY)-Color-VF.ttf \
+	${TTFDIR}/$(FAMILY)-Color-VF.colrv0.ttf \
+	${TTFDIR}/$(FAMILY)-Color-VF.colrv1.ttf
+VAROTF=$(OTFDIR)/$(FAMILY)-VF.otf \
+	$(OTFDIR)/$(FAMILY)-Calligraphy-VF.otf \
+	$(OTFDIR)/$(FAMILY)-Color-VF.otf \
+	$(OTFDIR)/$(FAMILY)-Color-VF.colrv0.otf \
+	$(OTFDIR)/$(FAMILY)-Color-VF.colrv1.otf
+VARWOFF2=$(FONTSDIR)/webfonts/$(FAMILY)-VF.woff2 \
+	$(FONTSDIR)/webfonts/$(FAMILY)-Calligraphy-VF.woff2 \
+	$(FONTSDIR)/webfonts/$(FAMILY)-Color-VF.woff2 \
+	$(FONTSDIR)/webfonts/$(FAMILY)-Color-VF.colrv0.woff2 \
+	$(FONTSDIR)/webfonts/$(FAMILY)-Color-VF.colrv1.woff2
 
 .PHONY: variants $(STYLES) ufo otf ttf webfonts clean glyphs build proofs autobuild
 
@@ -56,7 +71,7 @@ $(UFODIR)/$(FAMILY)-%.ufo: %
 	@# remove dangling semicolons in features.fea which font editors cannot handle
 	@sed -i 's/ ;$\//g' $@/features.fea
 
-$(UFODIR)/$(FAMILY)-Color.ufo: $(UFODIR)/$(FAMILY)-Regular.ufo $(UFODIR)/$(FAMILY)-Shadow.ufo
+$(UFODIR)/$(FAMILY)-Color-%.ufo: $(UFODIR)/$(FAMILY)-Regular.ufo $(UFODIR)/$(FAMILY)-Shadow-%.ufo
 	@echo " BUILD UFO  $(@F)"
 	$(PY) tools/build_color_v0.py $@
 	@ufonormalizer -q -m $@
@@ -67,55 +82,43 @@ $(UFODIR)/$(FAMILY)-Arrows-Color.ufo: $(UFODIR)/$(FAMILY)-Arrows.ufo $(UFODIR)/$
 	@ufonormalizer -q -m $@
 
 ufo: glyphs $(UFO)
-ttf: $(TTF) $(VARTTF) $(TTFDIR)/$(FAMILY)-Color-v1.ttf $(TTFDIR)/$(FAMILY)-Arrows-Color-v1.ttf
-otf: $(OTF) $(VAROTF) $(OTFDIR)/$(FAMILY)-Color-v1.otf $(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf
-webfonts: $(WOFF2) $(VARWOFF2) $(WEBFONTSDIR)/$(FAMILY)-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2  $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v0.woff2 $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2
+ttf: $(TTF) \
+	$(VARTTF) \
+	$(TTFDIR)/$(FAMILY)-Arrows-Color.colrv1.ttf
+otf: $(OTF) \
+	$(VAROTF) \
+	$(OTFDIR)/$(FAMILY)-Arrows-Color.colrv1.otf
+webfonts: $(WOFF2) \
+	$(VARWOFF2) \
+	$(WEBFONTSDIR)/$(FAMILY)-Arrows-Color.colrv1.woff2
 
-${TTFDIR}/$(FAMILY)-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Color.ttf
+${TTFDIR}/$(FAMILY)-%-Color.colrv0.ttf: ${TTFDIR}/$(FAMILY)-%-Color.ttf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Color.otf
+$(OTFDIR)/$(FAMILY)-%-Color.colrv0.otf: $(OTFDIR)/$(FAMILY)-%-Color.otf
 	@cp $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Color.woff2
+$(OTFDIR)/$(FAMILY)-%-Color.colrv0.woff2: $(WEBFONTSDIR)/$(FAMILY)-%-Color.woff2
 	@cp $< $@
 
-${TTFDIR}/$(FAMILY)-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Color-v0.ttf
+${TTFDIR}/$(FAMILY)-Color-VF.colrv0.%: ${TTFDIR}/$(FAMILY)-Color-VF.%
+	@cp $< $@
+
+# Build a Colrv1 ttf file from colrv0 ttf
+${TTFDIR}/$(FAMILY)-%.colrv1.ttf: ${TTFDIR}/$(FAMILY)-%.colrv0.ttf
 	$(PY) tools/build_color_v1.py $< $@
 
-$(OTFDIR)/$(FAMILY)-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Color-v0.otf
-	$(PY) tools/build_color_v1.py $< $@
+# Build a Colrv1 otf file from colrv0 otf
+$(OTFDIR)/$(FAMILY)-%.colrv1.otf: $(OTFDIR)/$(FAMILY)-%.colrv0.otf
+	$(PY) tools/build_color.colrv1.py $< $@
 
-$(WEBFONTSDIR)/$(FAMILY)-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Color-v1.ttf
-	@echo " BUILD WEBFONT $(@F)"
-	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -q -o $@ $<
-
-${TTFDIR}/$(FAMILY)-Arrows-Color-v0.ttf: ${TTFDIR}/$(FAMILY)-Arrows-Color.ttf
-	@cp $< $@
-
-$(OTFDIR)/$(FAMILY)-Arrows-Color-v0.otf: $(OTFDIR)/$(FAMILY)-Arrows-Color.otf
-	@cp $< $@
-
-$(OTFDIR)/$(FAMILY)-Arrows-Color-v0.woff2: $(WEBFONTSDIR)/$(FAMILY)-Arrows-Color.woff2
-	@cp $< $@
-
-${TTFDIR}/$(FAMILY)-Arrows-Color-v1.ttf: ${TTFDIR}/$(FAMILY)-Arrows-Color-v0.ttf
-	$(PY) tools/build_color_v1.py $< $@
-
-$(OTFDIR)/$(FAMILY)-Arrows-Color-v1.otf: $(OTFDIR)/$(FAMILY)-Arrows-Color-v0.otf
-	$(PY) tools/build_color_v1.py $< $@
-
-$(WEBFONTSDIR)/$(FAMILY)-Arrows-Color-v1.woff2: ${TTFDIR}/$(FAMILY)-Arrows-Color-v1.ttf
-	@echo " BUILD WEBFONT $(@F)"
-	@mkdir -p ${WEBFONTSDIR}
-	@fonttools ttLib.woff2 compress -q -o $@ $<
-
+# Build TTF from UFO
 $(OTFDIR)/%.otf: ${UFODIR}/%.ufo
 	@echo " BUILD OTF $(@F)"
 	@fontmake --validate-ufo --verbose=WARNING -o otf --output-dir $(OTFDIR) -u $(UFODIR)/$*.ufo
 	$(PY) tools/fix_font.py $@
 
+# Build TTF from UFO
 ${TTFDIR}/%.ttf: ${UFODIR}/%.ufo
 	@echo " BUILD TTF $(@F)"
 	@fontmake --verbose=WARNING -o ttf --flatten-components --filter DecomposeTransformedComponentsFilter --output-dir ${TTFDIR} -u $(UFODIR)/$*.ufo
@@ -167,12 +170,13 @@ test: proofs ${TTFDIR}/$(FAMILY)-VF.ttf
 	fontbakery check-googlefonts --full-lists -x com.google.fonts/check/name/license -x com.google.fonts/check/license/OFL_body_text -x com.google.fonts/check/version_bump -x com.google.fonts/check/repo/zip_files ${TTFDIR}/$(FAMILY)[slnt,soft,wdth,wght].ttf
 
 install: otf
-	@cp ${OTFDIR}/$(FAMILY)-VF.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Calligraphy-VF.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Dots.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Arrows.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Color-v0.otf ~/.fonts;
-	@cp ${OTFDIR}/$(FAMILY)-Arrows-Color-v0.otf ~/.fonts;
+	@mkdir -p $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-VF.ttf $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-Calligraphy-VF.ttf $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-Dots.otf $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-Arrows.otf $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-Color-VF.colrv0.ttf $(INSTALLDIR);
+	@cp ${OTFDIR}/$(FAMILY)-Arrows-Color.colrv0.ttf $(INSTALLDIR);
 	@fc-cache -fr
 
 release:
