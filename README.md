@@ -55,7 +55,7 @@ Nupuram Color is also a variable font. The weight axis changes the offset in z-a
 | ---------- | ------ | ------------ | ------- | --------------------------------------------------------------- |
 | Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 
-![Nupuram color font](docs/images/nupuram-color.png "Nupuram color font")
+![Nupuram color font](docs/images/nupuram-color-var.gif "Nupuram color font")
 
 Nupuram Color font gives 18 predefined pallettes that can be selected by users. Or a user can specify the colors using CSS for example.
 
