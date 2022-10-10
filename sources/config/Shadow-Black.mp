@@ -1,2 +1,2 @@
 input ./config/Shadow-Regular;
-shadowoffset :=     1.5u;
+shadowoffset := 2u;
