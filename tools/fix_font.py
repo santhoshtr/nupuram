@@ -75,4 +75,5 @@ def add_dummy_dsig(ttFont: ttLib.TTFont) -> None:
     ttFont.tables["DSIG"] = newDSIG
 
 if __name__ == "__main__":
-    fix_font(sys.argv[1])
+    for arg in sys.argv[1:]:
+        fix_font(arg)

@@ -179,14 +179,14 @@ glyphs:
     malayalam:
       - ['ന', "ി", 'wrap' ]
 colorfonts:
-  fonts/ufo/Nupuram-Color-Regular.ufo:
+  sources/ufo/Nupuram-Color-Regular.ufo:
     familyname: Nupuram Color
     layers:
       "public.default":
-        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "source": "sources/ufo/Nupuram-Regular.ufo"
         "order": 1  # Foreground layer
       "shadow":
-        "source": "fonts/ufo/Nupuram-Shadow-Regular.ufo"
+        "source": "sources/ufo/Nupuram-Shadow-Regular.ufo"
         "order": 0  # background layer
     pallettes:
       - ["#E65100", "#FFCC80", "#FF9800"] # Orange
@@ -208,14 +208,14 @@ colorfonts:
       - ["#827717", "#E6EE9C", "#CDDC39"] # Lime
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
-  fonts/ufo/Nupuram-Color-Thin.ufo:
+  sources/ufo/Nupuram-Color-Thin.ufo:
     familyname: Nupuram Color
     layers:
       "public.default":
-        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "source": "sources/ufo/Nupuram-Regular.ufo"
         "order": 1  # Foreground layer
       "shadow":
-        "source": "fonts/ufo/Nupuram-Shadow-Thin.ufo"
+        "source": "sources/ufo/Nupuram-Shadow-Thin.ufo"
         "order": 0  # background layer
     pallettes:
       - ["#E65100", "#FFCC80", "#FF9800"] # Orange
@@ -237,14 +237,14 @@ colorfonts:
       - ["#827717", "#E6EE9C", "#CDDC39"] # Lime
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
-  fonts/ufo/Nupuram-Color-Black.ufo:
+  sources/ufo/Nupuram-Color-Black.ufo:
     familyname: Nupuram Color
     layers:
       "public.default":
-        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "source": "sources/ufo/Nupuram-Regular.ufo"
         "order": 1  # Foreground layer
       "shadow":
-        "source": "fonts/ufo/Nupuram-Shadow-Black.ufo"
+        "source": "sources/ufo/Nupuram-Shadow-Black.ufo"
         "order": 0  # background layer
     pallettes:
       - ["#E65100", "#FFCC80", "#FF9800"] # Orange
@@ -266,14 +266,14 @@ colorfonts:
       - ["#827717", "#E6EE9C", "#CDDC39"] # Lime
       - ["#FF6F00", "#FFE082", "#FFC107"] # Amber
       - ["#BF360C", "#FFAB91", "#FF5722"] # Deep Orange
-  fonts/ufo/Nupuram-Arrows-Color.ufo:
+  sources/ufo/Nupuram-Arrows-Color.ufo:
     familyname: Nupuram Arrows Color
     layers:
       "public.default":
-        "source": "fonts/ufo/Nupuram-Arrows.ufo"
+        "source": "sources/ufo/Nupuram-Arrows.ufo"
         "order": 1  # Foreground layer
       "shadow":
-        "source": "fonts/ufo/Nupuram-Regular.ufo"
+        "source": "sources/ufo/Nupuram-Regular.ufo"
         "order": 0  # background layer
     pallettes:
       - ["#E65100", "#FFCC80"] # Orange

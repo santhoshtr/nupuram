@@ -7,7 +7,7 @@
         </axis>
     </axes>
     <sources>
-        <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Color-Regular.ufo" name="Regular">
+        <source familyname="Nupuram Color" filename="./sources/ufo/Nupuram-Color-Regular.ufo" name="Regular">
             <lib copy="1"/>
             <info copy="1"/>
             <kerning copy="1"/>
@@ -15,75 +15,75 @@
                 <dimension name="weight" xvalue="400"/>
             </location>
         </source>
-        <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Color-Thin.ufo" name="Thin">
+        <source familyname="Nupuram Color" filename="./sources/ufo/Nupuram-Color-Thin.ufo" name="Thin">
             <location>
                 <dimension name="weight" xvalue="100"/>
             </location>
         </source>
-        <source familyname="Nupuram" filename="./fonts/ufo/Nupuram-Color-Black.ufo" name="Black">
+        <source familyname="Nupuram Color" filename="./sources/ufo/Nupuram-Color-Black.ufo" name="Black">
             <location>
                 <dimension name="weight" xvalue="900"/>
             </location>
         </source>
     </sources>
     <instances>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Thin.ufo" stylename="Thin">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Thin.ufo" stylename="Thin">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="100"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-ExtraLight.ufo" stylename="ExtraLight">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-ExtraLight.ufo" stylename="ExtraLight">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="200"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Light.ufo" stylename="Light">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Light.ufo" stylename="Light">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="300"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Regular.ufo" stylename="Regular">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Regular.ufo" stylename="Regular">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="400"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Medium.ufo" stylename="Medium">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Medium.ufo" stylename="Medium">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="500"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-SemiBold.ufo" stylename="SemiBold">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-SemiBold.ufo" stylename="SemiBold">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="600"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Bold.ufo" stylename="Bold">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Bold.ufo" stylename="Bold">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="700"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-ExtraBold.ufo" stylename="ExtraBold">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-ExtraBold.ufo" stylename="ExtraBold">
             <info />
             <kerning />
             <location>
                 <dimension name="weight" xvalue="800"/>
             </location>
         </instance>
-        <instance familyname="Nupuram" filename="./instances/Nupuram-Color-Black.ufo" stylename="Black">
+        <instance familyname="Nupuram Color" filename="./fonts/Nupuram-Color/ufo/Nupuram-Color-Black.ufo" stylename="Black">
             <info />
             <kerning />
             <location>
