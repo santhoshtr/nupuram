@@ -213,7 +213,7 @@ $(FONTSDIR)/%/ufo: ${UFODIR}/%.ufo
 # Create woff2 formatted webfonts for all the ttfs available
 # Could be done using fonttools but using a python script to avoid hassles of loop
 # and filename mangling in Makefile
-$(FONTSDIR)/%/webfonts: $(FONTSDIR)/%/ttf
+$(FONTSDIR)/%/webfonts:
 	@mkdir -p  $@
 	$(PY) tools/gen_webfonts.py $(FONTSDIR)/$*/**/*.ttf
 
