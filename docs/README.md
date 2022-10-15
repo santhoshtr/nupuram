@@ -45,13 +45,24 @@ To get started with, let me give you a very simple code to render letter റ usi
 ```metapost
 outputtemplate := "%j.svg";
 outputformat   := "svg";
-z1 = (40, 0);
-z2 = (25, 25);
-z3 = (50, 50);
-z4 = (75, 25);
-z5 = (50, 0);
-pickup pensquare scaled 10 yscaled .02 rotated 45;
-draw z1..z2..z3..z4..z5;
+width:=10;
+rotation:=45;
+
+pen calligraphicpen ;
+calligraphicpen := makepen ((0, 0)--(width,0 ) rotated rotation) ;
+
+z0 = (x1+15, 0);
+z1 = (0, y0+25);
+z2 = (x1+25, y1+25);
+z3 = (x2+25, y1);
+z4 = (x2, y0);
+
+pickup defaultpen;
+draw z0..z1..z2..z3..z4 withcolor red;
+
+pickup calligraphicpen;
+draw z0..z1..z2..z3..z4 withcolor blue;
+end
 ```
 
 Save this as `ra.mp` and compile using metapost as follows:
@@ -60,11 +71,110 @@ Save this as `ra.mp` and compile using metapost as follows:
 mpost ra.mp
 ```
 
-You will see a file named `ra.svg` is created.
+You will see a file named `ra.svg` is created. Please open that file using an SVG editor like inkscape and observe the SVG nodes, paths and their location.
+
+![Ra rendered from example code](/docs/images/ra.svg)
+
+<details><summary>
+Excercises
+</summary>
+
+As an exercise to get familiar with the code, try modifying the code and run again to see the effect. For example
+
+1. Change the width to a small value like 5 and high value like 20 and see what happens to the SVG generated
+2. Try changing the value `25` in the code to different value and see what happens.
+3. In the last line, instead of `z0..z1..z2..z3..z4`, use `z0--z1..z2..z3..z4` and see what happens.
+4. What happens if you change the pen rotation value to a different value?
+5. Try adding another point to the path. That is, `z5`
+6. Change the calligraphic pen to a pencircle and observe the change in glyph outline. That is, change `pickup calligraphicpen;` to `pickup pencircle scaled 2mm;`
+
+</details>
+
+In the above example, we defined a special pen "Calligraphic pen" to draw a glyph using a wide nib calligraphy pen held at a specific angle. We will use that pen when build Nupuram Calligraphy. But this pen won't help with the unique thick-thin contrast design Nupuram has.
+
+Nupuram has thick strokes at horizontal paths and thin at vertical paths. The terminals are thick. Such stroke modulation cannot be easily achieved using a pen defined using plain metapost. In Nupuram, we use a set of drawing macros defined on top of MetaPost. The MetaType project had written macros for the stroke modulation and we owe them for the stroke modulation code.
 
 ## Variation Configurations
 
+The glyphs and their variations are fully controlled by simple configurations files. The based configuration file is named as [`config.mp` ](/sources/config.mp). That file is self documented. So, please take a moment to read the variables, default values and their explanation.
+
+On top of this configuration, we define font specific variations in simple configuration files. For example, let us look at [Bold.mp](/sources/config/Bold.mp) - the configuration for creating Nupuram-Bold font.
+
+```metapost
+input ./config/Regular;
+thick:= 1.25u;
+```
+
+It imports(includes) the Regular configuration and set the `thick` value to `1.25u`. You will quickly see that it is an increase on the `thick` value set in [Regular.mp](/sources/config/Regular.mp). It is defined as
+
+```metapost
+thick := 0.90u;
+soften := 0;
+```
+
+This is an override on default values set in  [`config.mp` ](/sources/config.mp). We are saying `thick` is `0.90u` and avoid softening the sharp corners of glyph outline.
+
+Let us look at  [`Thin.mp` ](/sources/config/Thin.mp) which defines the configuration for Nupuram Thin.
+
+```metapost
+input ./config/Regular;
+thick     :=  0.5u;
+```
+This does not much explanation, for thin glyphs we use same configuration of Regular, but with thick value `0.5u`.
+
+Similarly the configuration for Nupuram Condensed is defined as follows in [`Condensed.mp`](/sources/config/Condensed.mp)
+
+```metapost
+input ./config/Regular;
+condense :=  0.8;
+```
+
+These configurations are used while compiling glyphs using metapost using Makefile. To see this in action, from the root directory of Nupuram, run:
+
+```bash
+make Bold
+```
+
+You will see a folder named sources/svgs/Bold is created with SVGs matching the configuration.
+
+<details><summary>
+Excercises
+</summary>
+
+1. Try changing the `thick` value to different values and observe the glyph outline changes by inspecing SVG in an editor like Inkscape
+2. Along with `thick` try changing `thin` value too. It is ratio of this strokes to the `thick` value. For example `thin:=0.5` means thin strokes are half width of thick strokes
+3. Try changing the value of `thin` to a value greater than 1. Will you get reverse contrast for the glyphs?
+4. Most of the units are derived from the value of `em`. What happens if we change the value of `em`? Try to find more information about the meaning of `em` in type design. What are the em values for your favorite fonts?
+
+</details>
+
+### Debug mode
+
+Usually the SVGs generated are just the glyph outlines. But when designing glyphs, it is important to see the grids, ascent, descent lines, bearings, nodes in paths, paths etc. This is achieved by a special configuration called ['debug'](/sources/config/debug.mp). A sample content of this configuration is given below
+
+```
+input ./config/Regular;
+showgrids := 1;
+showcoords := 1;
+show_paths := 1;
+soften := 1;
+```
+
+In the sources folder, if you just run `make`, it is the debug configuration that would be used.
+
+There is a make target `autobuild` for Nupuram. While designing glyphs, the first step is to run `make autobuild`. It will listen for file changes, will recompile the changed files to update SVGs. If you open SVG in an image viewer that can autorefresh when file changed, you get a very decent auto-preview sytem for the metapost code you write. I used VS Code for writing metapost definition of glyphs and gnome image viewer(aka, eog) to open and preview the svgs. Placing that imageviewer in one monitor and VS Code in another monitor makes your design setup.
+
+![EOG showing glyphs in debug mode](/docs/images/eog.jpg)
+
 ## Glyph concepts
+
+So far, we familiarized with the configurations per font variant. Now, let us discuss how a glyph is defined in Nupuram. Eventhough, glyphs are defined in metapost, it is radically different from the code we saw in the beginning of this guide(The റ glyph). We need to use several macros to achieve the required glyph outlines.
+
+Let us take one simple example and familiarize with the concepts and macros.
+
+Following is a video illustrating construction of glyph ഗ using metapost
+
+[![How a glyph is defined using MetaPost in Nupuram font](https://img.youtube.com/vi/1NhCcXXLvEg/0.jpg)](http://www.youtube.com/watch?v=1NhCcXXLvEg "How a glyph is defined using MetaPost in Nupuram font")
 
 ## Rounded corners
 

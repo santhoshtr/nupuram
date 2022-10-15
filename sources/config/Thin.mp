@@ -1,3 +1,3 @@
-varstroke :=  1;
+input ./config/Regular;
+
 thick     :=  0.5u;
-soften    :=  0;
