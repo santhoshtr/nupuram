@@ -174,15 +174,55 @@ Let us take one simple example and familiarize with the concepts and macros.
 
 Following is a video illustrating construction of glyph ഗ using metapost
 
-[![How a glyph is defined using MetaPost in Nupuram font](https://img.youtube.com/vi/1NhCcXXLvEg/0.jpg)](http://www.youtube.com/watch?v=1NhCcXXLvEg "How a glyph is defined using MetaPost in Nupuram font")
+[![How a glyph is defined using MetaPost in Nupuram font](/docs/images/ga-video-thumbnail.jpg)](http://www.youtube.com/watch?v=1NhCcXXLvEg "How a glyph is defined using MetaPost in Nupuram font")
 
 ## Rounded corners
 
 ## Calligraphy
 
-## Shadow
+When we define the glyphs, we defined the path of the glyph using the `z` values first. For example, the letter വ, without any pen strokes will look like this.
 
-## Color
+![va stroke](/docs/images/va-stroke.jpg) ![va calligraphic](/docs/images/va-calligraphic.jpg)
+
+If we define a pen as a calligraphic wide nib pen with a rotation of say, 40 degree, and move that pen along the path above, we get the following calligraphic outline.
+
+
+
+The width of the nib can be varied as required. So by defining 3 widths, narrow, medium, wide, we can get 3 variants of this glyph. Using these master glyphs, we can interpolate to any nib size using the variable font technology. That is how we made Nupurum Calligrapy variable font.
+
+Before moving to next section, please take a close look at this calligraphic outline. Can you see 3D perspective towards top - right side? Put it in different way? Can you imagine a ribbon or thin metal or paper sheet with certain width along the വ path? You may feel this as silly question, but we will use this calligraphic technique to construct 3D glyph shape which is the basis of Nupuram Color Font.
+
+## Color font
+
+In the calligraphy variant, we moved a calligraphic pen through the glyph path. But if use pen strokes with thick and thin strokes as explained earlier, we get a modulated glyph outline as below.
+
+![va stroke](/docs/images/va-stroke.jpg)![stroke and outline](/docs/images/va-stroke-outline.jpg)
+
+What if move the same calligraphic pen we used for Nupuram Calligraphy through the outline? Just to repeat, outline is the outline of the glyph path - it surrounds the path - it has outer and inner lines and terminals. In the above image, it is given in blue color.
+
+Moving a calligraphic wide nib pen along the outlines will result the following drawing:
+
+![Calligraphi pen on the outline](/docs/images/va-shadow-calligraphy.jpg)
+
+It is slightly confusing drawing, but we start to see a 3D shape in it.
+Let us fill this with color blue to get a better picture.
+
+![Filled calligraphic drawing](/docs/images/va-shadow-filled-hollow.jpg)
+
+Now we can relate this with the calligraphy glyph we constructed earlier. Same stroke modulation, but two times - for outer and inner lines.
+
+If you look carefully, this is a 3D structure, but a hollow one. The facing size and backside is void, creating a hollow structure. To get a solid 3d shape, let us take the envelope of the whole drawing. What I mean by that is, to take the outline of this structure.
+
+![Envelope](/docs/images/va-envelope.jpg)
+
+Now it is not hollow. If you look carefully, you will see it is a 3D letter വ. But to help your eyes for the 3D perspective it need colors, or lighting to get the depth perspective.
+To start with let us place our original വ outline on top of it in a ligher color.
+
+![va layers](/docs/images/va-shadow-color.jpg)
+
+Now we are seeing something. Let us make the lighting and coloring a bit more realistic by using color gradients.
+
+![Gradient colors വ](/docs/images/va-gradient.jpg)
 
 ## Arrows
 
