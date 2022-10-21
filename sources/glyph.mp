@@ -10,7 +10,7 @@ input config;
 % jobname is an internal variable set by Makefile.
 % The purpose of this variable is different, but Metapost allows setting
 % values for internal variables only. So using jobname which is relatively
-% better choice for possing current style variant name
+% better choice for passing current style variant name
 maybeinput jobname;
 
 % Pens
@@ -18,7 +18,6 @@ input ./pens
 
 pen nib; nib := finenib;
 
-phi := 1.618; % Golden ratio
 % Aliases
 m   := mheight;
 s   := xheight;      % x is a special symbol. So let us use s

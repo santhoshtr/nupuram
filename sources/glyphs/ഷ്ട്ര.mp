@@ -32,21 +32,20 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
 
-% ട
+% ട്ര
 clearxy;
-w_ = phi*mw;
-z7 = (x0 + mw/4, m);
-z0 = (0, mw/2);
-z1 = (x0 + .28w_, -thick);
-z2 = (x1 + .4w_, .2m);
-z3 = (x2 - 0.3w_, y2 + .30m);
-z4=  (x3 - 0.2w_ + mw/20, y3 + .30m);
-z5=  (x4+ 0.2w_, m);
-z6=  (x5 + .2w_, y5 - .15m);
+z0 = (x4, 0.8m);
+z1 = (x5, m);
+z2 = (0, y3 + .275m);
+z3 = (x5, y4 + .3m);
+z4 = (x5 + mw/3, y5 + .2m);
+z5 = (x2 + mw/3, 0);
+z6 = (x2-mw/4, y3);
+z7 = (x6 + mw/8, m);
 
-paths[3] = z7{dir -140} ..z0{down}..z1..z2..z3..z4..z5..z6 ;
+paths[3] = z0..z1..z2..z3..z4..z5..z6..z7;
 
-paths[3] := subpath(0.25, 5.25) of paths[3] shifted(m*0.75, -m*0.9) xscaled 0.8 yscaled 0.7;
+paths[3] := subpath(1.75, 6.75) of paths[3] shifted(m*1.25, -m*0.9) xscaled 0.8 yscaled 0.7;
 pen_stroke(
     nib(thicknib rotated 0 )(1,3,5)
     nib(thinnib rotated 0 )(2,4)
