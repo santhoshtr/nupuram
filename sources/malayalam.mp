@@ -122,7 +122,7 @@ enddef;
 vardef la_sign =
     clearxy;
 
-    z1=(0.45mw, -m/7);
+    z1=(0.45mw, -m/8);
     z2=(x1 - 0.2mw, -m/2);
     z3=(0, y2 + m/4);
     z4=(x3 + 0.2mw, 0);
