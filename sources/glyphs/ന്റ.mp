@@ -23,7 +23,7 @@ z24=(x22, y20);
 paths[0] = z0..z1..{right}z2.. z3---z4 ;
 paths[1] = z5{up}..z6..z7..z8 .. z9..z10{up}..{left}z11;
 paths[2] = z20 ..z21..z22..z23 ..z24;
-paths[2] := paths[2] xscaled 0.75 yscaled 0.75 shifted (mw/4, -m/3);
+paths[2] := paths[2] xscaled 0.75 yscaled 0.75 shifted (mw/8, -m/3);
 
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2)
