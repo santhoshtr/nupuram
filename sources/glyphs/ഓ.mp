@@ -33,7 +33,7 @@ paths[1] := paths[1] slanted slant_;
 paths[1] := paths[1] shifted (-slant_*m/2, 0);
 paths[1] := subpath(.3, 2.9) of paths[1]   ..  {dir 120}(x0, y0 - m/4);
 
-paths[1] := paths[1] shifted (xpart(point 7 of paths[0]) + 2rbearing, 0);
+paths[1] := paths[1] shifted (xpart(point 7 of paths[0]) + thick, 0);
 
 pen_stroke(
     nib(thinnib rotated 0 )(2 )

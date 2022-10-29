@@ -16,7 +16,7 @@ z11=(x10 - mw/3, -descent);
 z12=(x11 + mw/3, y13 + m/5);
 z13=(x12 + mw/3, -descent);
 
-paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9 ..z10{left} ..z11{up}..z12{right}..z13;
+paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7..tension 1.5..z8..z9 ..z10{dir 190} ..z11{up}..z12{right}..z13;
 
 pen_stroke(
     nib(thicknib rotated 0 )(1, 3 )

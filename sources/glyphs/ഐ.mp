@@ -15,11 +15,9 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
 
-
-
 % എ
 clearxy;
-paths[0] = pa_mouth shifted (xpart(point 5 of paths[3]) + 2rbearing, 0);
+paths[0] = pa_mouth shifted (xpart(point 5 of paths[3]) + thick, 0);
 z5= point infinity of paths[0];
 z6=(x5 + mw, y5);
 z7=(x6, y6 + m/3);
