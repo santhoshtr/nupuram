@@ -23,6 +23,6 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 anchor( "vc", z1);
-anchor( "bottom", point 9.25 of paths[0]);
+anchor( "bottom", (xpart(point 9.5 of paths[0]), 0 ) );
 
 endglyph;
