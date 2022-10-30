@@ -275,7 +275,7 @@ test: proofs
 		-x com.google.fonts/check/repo/zip_files \
 		$(FONTSDIR)/Nupuram/ttf-variable/Nupuram[slnt,soft,wdth,wght].ttf
 
-install: otf
+install: build
 	@mkdir -p $(INSTALLDIR);
 	@cp $(FONTSDIR)/Nupuram/otf-variable/Nupuram-VF.otf $(INSTALLDIR);
 	@cp $(FONTSDIR)/Nupuram-Color/otf-color/Nupuram-Color.colrv1.otf $(INSTALLDIR);
