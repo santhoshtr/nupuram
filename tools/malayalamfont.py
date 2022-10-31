@@ -192,14 +192,41 @@ class MalayalamFont(Font):
         feature = "akhn"
         name = "akhn_conjuncts"
         rules = []
+        # Prevent stacking and prefer ligating with following letters
+        # Key is stack, value is letters after the stack that prevents stacking.
+        # Example, ഷ് + ട്ട -> Avoid stacked shta, prefer sh + virama + tta
+        prevent_stack_contexts = {
+            "ഷ്ട": "്ട",
+            "ഷ്പ": "്ര",
+            "സ്ത": "്ത",
+            "ല്പ": "്പ",
+        }
+        #TODO Can this dictionary be moved to config?
         for conjunct in self.get_glyphs_from_named_classes('ML_CONS_CONJUNCTS'):
             conjunct_glyph_name = SVGGlyph.get_glyph_name(conjunct)
             if conjunct_glyph_name not in self:
                 continue
-            rules.append(
-                Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
-                             replacement=[[conjunct_glyph_name]])
-            )
+            sub =  Substitution([[SVGGlyph.get_glyph_name(l)] for l in conjunct],
+                                replacement=[[conjunct_glyph_name]])
+            if conjunct in prevent_stack_contexts.keys():
+                # FIXME: This creates Routine_1,Routine_2 etc for each conjunct.
+                # But we can use a single Routine (with optional name) by keep adding sub to the rules array.
+                # as we do in akhn_conjuncts_fixup
+                r0 = Routine(rules=[sub])
+                rules.extend([
+                   Chaining(
+                        [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
+                        postcontext=[[SVGGlyph.get_glyph_name(l)] for l in prevent_stack_contexts.get(conjunct)],
+                        lookups=[]
+                    ), # Produces ignore sub rule.
+                    Chaining(
+                        [[SVGGlyph.get_glyph_name(l)] for l in conjunct],
+                        lookups=[[ self.fontFeatures.referenceRoutine(r0)], None, None ]
+                    )
+                ])
+                # THANKS to https://github.com/simoncozens/fontFeatures/issues/58 for the above method
+            else:
+                rules.append(sub)
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
