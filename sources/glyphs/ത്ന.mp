@@ -13,7 +13,7 @@ paths[0] = (z0  ..z1 ..z2{right}.. z3..{left}z4) slanted tand(-8);
 paths[0] := paths[0] && (z4{left}.. z5 ..z6{right}..z7..z8) slanted tand(8);
 paths[0] := paths[0] shifted(-tand(-8)*m/2,0);
 paths[0] := subpath(0, 7) of paths[0];
-paths[0] := paths[0]{down} .. (xpart(point 7 of paths[0]), mw/6);
+paths[0] := paths[0]{dir -100} .. (xpart(point 7 of paths[0] ), mw/6);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4,6, )
     nib(thinnib rotated 0 )(1, 3, 5, 7)
