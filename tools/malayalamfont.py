@@ -406,7 +406,7 @@ class MalayalamFont(Font):
         bottom_mark_glyphs = [SVGGlyph.get_glyph_name(
             c) for c in self.get_glyphs_from_named_classes('ML_BOTTOM_MARKS')]
         anchors = {}
-        bbvm_anchor_name = "right"
+        bbvm_anchor_name = "bottom"
         lettersWithMarks = sorted(
             self.get_glyphs_from_named_classes('ML_CONSONANTS')+
             self.get_glyphs_from_named_classes('ML_BOTTOM_MARKS')
