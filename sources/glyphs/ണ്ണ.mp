@@ -57,4 +57,5 @@ pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[5])(0)
     nib(terminalnib rotated terminalangle infinity of paths[5])(infinity)
 )(paths[5])(strokes[5]);
+rbearing:=0;
 endglyph;

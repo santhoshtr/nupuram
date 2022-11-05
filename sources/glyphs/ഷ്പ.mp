@@ -40,8 +40,8 @@ pen_stroke(
 )(paths[2])(strokes[2]);
 
 % Below base
-paths[3] = paths[0] shifted (xpart(point 2 of paths[0]), -m/1.5) scaled 0.95;
-paths[4] = paths[1] shifted (xpart(point 2 of paths[0]), -m/1.5) xyscaled (0.85, 0.95);
+paths[3] = paths[0] shifted (xpart(point 3 of paths[0]), -m/1.5) xyscaled (0.8, 0.8);
+paths[4] = paths[1] shifted (xpart(point 3 of paths[0]), -m/1.5) xyscaled (0.75, 0.8);
 pen_stroke(
     nib(thicknib rotated 0 )(0, 2, 4, 5, 6 )
     nib(thinnib rotated 0 )(1,3)

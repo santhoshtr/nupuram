@@ -54,7 +54,7 @@ pen_stroke(
 
 clearxy;
 z0=point 2 of paths[1];
-z1=(x0 + mw/2, y0 + m/2); % Top of third arch
+z1=(x0 + mw/2, y0 + m/2.5); % Top of third arch
 z2=(x1 + mw/3, y1 - m/2);
 z3=(x2 - mw/3, y2 - m/2);
 z4= ( x3 - mw/4, y3 + .3m);
@@ -70,5 +70,5 @@ pen_stroke(
     nib(terminalnib rotated terminalangle infinity of paths[5])(infinity)
 )(paths[5])(strokes[5]);
 
-rbearing:=-0.5rbearing;
+rbearing:=-2rbearing;
 endglyph;

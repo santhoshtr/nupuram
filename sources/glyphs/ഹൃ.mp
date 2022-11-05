@@ -22,9 +22,9 @@ pen_stroke(
 clearxy;
 % ഋ sign
 z0 = point 4 of paths[1];
-z1 = ( xpart(point 0.6 of paths[1]), -descent*1.66);
-z2 = (x1 - mw/3, -descent );
-z3 = (x0 - mw/2, y2);
+z1 = ( xpart(point 1 of paths[1]), -descent*1.5);
+z2 = (x1 - mw/3, -descent);
+z3 = (x2 + mw*0.7 , y2);
 paths[2] = z0{dir -95}..z1{left}..z2{dir 90}..{dir -30}z3;
 pen_stroke(
     nib(thinnib rotated 0 )(2, 4)
