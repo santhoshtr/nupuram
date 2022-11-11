@@ -16,10 +16,9 @@ build:
   script:
     - make build release
   artifacts:
+    expire_in: 1000 yrs
     paths:
     - fonts/
-  except:
-    - tags
 
 test:
   stage: test
@@ -33,6 +32,7 @@ pages:
     - mkdir public
     - cp -rf fonts tests public
   artifacts:
+    expire_in: 1000 yrs
     paths:
       - public  # instruct GitLab to keep the public folder
   only:
@@ -49,7 +49,7 @@ release:
     - echo "Running release_job"
   release:
     name: 'Release $CI_COMMIT_TAG of $CI_PROJECT_NAME'
-    description: 'Rlease $CI_COMMIT_TAG' # Need to replace with 'CHANGELOG.md'
+    description: 'Release $CI_COMMIT_TAG' # Need to replace with 'CHANGELOG.md'
     # tag_name is a mandatory field and can not be an empty string
     tag_name: '$CI_COMMIT_TAG'
     ref: $CI_COMMIT_TAG
