@@ -16,15 +16,15 @@ z16=(x15 - 0.45mw, y15 - 0.3m);
 paths[0] = z0 ..z1..  z2..z3;
 paths[1] = z10{right}..z11{down}...z12{left}..{up}z13..z14..z15..z16 ;
 pen_stroke(
-    nib(thicknib rotated 0 )(0 )
-    nib(thinnib rotated 0 )(1, 2)
+    nib(thicknib)(0)
+    nib(thinnib)(1, 2)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(2 )
-    nib(thinnib rotated 0 )(0, 1, 3, 4, 5)
+    nib(thicknib)(2)
+    nib(thinnib)(0, 1, 3, 4, 5)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);

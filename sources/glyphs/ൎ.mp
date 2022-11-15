@@ -9,5 +9,5 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 rbearing:= 0;
 lbearing:= 0;
-anchor( "vc", point 0 of paths[0]);
+anchor("vc", point 0 of paths[0]);
 endglyph;

@@ -3,7 +3,7 @@ beginglyph;
 path paths[],strokes;
 
 z0 = (0.25mw, 0.6m);
-z1 = (x0 +  0.2mw, y0 + 0.2m );
+z1 = (x0 +  0.2mw, y0 + 0.2m);
 z2 = (x1 -  0.2mw, y1 + 0.2m);
 z3 = (x2 -  0.2mw, y2 - m/4);
 z4 = (x3 + mw/2, y3 - m/3);
@@ -18,8 +18,8 @@ z12 = (x11 + 0.2mw, y11 - 0.2m);
 paths[0] = z0{right} .. z1..z2..z3..z4..{down}z5{down}..{left}z6{left}..{up}z7{up}..z8..z9..z10..z11..{right}z12 ;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(2,6)
-    nib(thinnib rotated 0 )(1,3,4,5,7,8,9,11 )
+    nib(thicknib)(2,6)
+    nib(thinnib)(1,3,4,5,7,8,9,11)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

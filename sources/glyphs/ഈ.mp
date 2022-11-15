@@ -15,20 +15,20 @@ z13 = (x12 + 0.6mw, y12);
 z14 = (xpart(point 2 of paths[1]) + thick/2, y12);
 paths[2]:= (point 4 of paths[1]){dir 20}..z13..{dir 20}z14;
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4, 6)
-    nib(thinnib rotated 0 )(1,3, 5 )
+    nib(thicknib)(0, 2, 4, 6)
+    nib(thinnib)(1,3, 5)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1, 3)
-    nib(thinnib rotated 0 )(0,2,4 )
+    nib(thicknib)(1, 3)
+    nib(thinnib)(0,2,4)
     nib(thinterminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
 pen_stroke(
-    nib(thinnib rotated 0 )(1 )
+    nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[2])(0)
     nib(terminalnib rotated terminalangle infinity of paths[2])(infinity)
 )(paths[2])(strokes[2]);
@@ -43,7 +43,7 @@ z4 = (x3, .45m);
 paths[3] = z0.. z1..z2{dir -8}..{down}z3---z4 ;
 paths[3]:= paths[3] shifted(xpart(point infinity of paths[2]) + 2rbearing, 0);
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 3 )
+    nib(thinnib)(1, 3)
     nib(terminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
@@ -57,8 +57,8 @@ z3 = (x2 - 0.6mw, 0);
 paths[4] = z0{dir 80}..z1{dir -10}..z2.. z3;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1)
-    nib(thinnib rotated 0 )(2)
+    nib(thicknib)(1)
+    nib(thinnib)(2)
     nib(thinterminalnib rotated terminalangle 0 of paths[4])(0)
     nib(terminalnib rotated terminalangle infinity of paths[4])(infinity)
 )(paths[4])(strokes[4]);

@@ -13,8 +13,8 @@ paths[0] = z0{right}..z1..z2.. z3..z4..z5..{dir 210}z6 ;
 paths[0]:=paths[0] slanted loop_slant shifted (-loop_slant*m/2,0);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2)
-    nib(thinnib rotated 0 )(1, 3, 5)
+    nib(thicknib)(0, 2)
+    nib(thinnib)(1, 3, 5)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

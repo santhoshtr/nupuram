@@ -19,13 +19,13 @@ z13=(x12 + mw/3, m/2);
 z14 = (x11, 0);
 paths[0] = z0..z1..z2;
 pen_stroke(
-    nib(thinnib rotated 0 )(1)
+    nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 paths[1] = z2..z3..z4..z5..z6..z7..z8..z9..z10..{down}z11{up}..z12..z13..{dir 235}z14 ;
 pen_stroke(
-    nib(thinnib rotated 0 )(1, 3,5,7,9, 13)
+    nib(thinnib)(1, 3,5,7,9, 13)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle 11 of paths[1])(11)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)

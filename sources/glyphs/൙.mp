@@ -16,10 +16,10 @@ z10=(x9 - mw/4, y6 - m/6.6);
 paths[0] = z0  ..z1 .. z2 .. {dir -60}z3 .. z4..z5..z6...z7..z8..z9..z10 ;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 9)
-    nib(thinnib rotated 0 )(1, 3, 5,7, 8, 10)
+    nib(thicknib)(0, 2, 9)
+    nib(thinnib)(1, 3, 5,7, 8, 10)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
-    nib(terminalnib rotated terminalangle 4 of paths[0])(4 )
+    nib(terminalnib rotated terminalangle 4 of paths[0])(4)
     nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 

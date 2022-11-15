@@ -11,9 +11,9 @@ z2=(0,0);
 l=z0--z1--z2;
 
 z3 = z1;
-z4 = (x3 + h/3, h );
-z5 = (x4+ h/3,  y4 - h/2 );
-z6 = (x5-h/3,   0 );
+z4 = (x3 + h/3, h);
+z5 = (x4+ h/3,  y4 - h/2);
+z6 = (x5-h/3,   0);
 
 s = z3..z4..z5..z6..cycle;
 s:=s slanted slant;
@@ -37,9 +37,9 @@ z2=(0,0);
 l=z0--z1--z2;
 
 z3 = z1;
-z4 = (x3 + h/3, h );
-z5 = (x4+ h/3,  y4 - h/2 );
-z6 = (x5-h/3,   0 );
+z4 = (x3 + h/3, h);
+z5 = (x4+ h/3,  y4 - h/2);
+z6 = (x5-h/3,   0);
 
 s = z3..z4..z5..z6..cycle;
 s:=s slanted .2;
@@ -63,9 +63,9 @@ z2=(0,-h/3);
 l=z0--z1--z2;
 
 z3 = z1;
-z4 = (x3 + h/3, h );
-z5 = (x4+ h/3,  y4 - h/2 );
-z6 = (x5-h/3,   0 );
+z4 = (x3 + h/3, h);
+z5 = (x4+ h/3,  y4 - h/2);
+z6 = (x5-h/3,   0);
 
 s = z3..z4..z5..z6..cycle;
 s:=s slanted .2;
@@ -90,9 +90,9 @@ z2=(x0,0);
 l=z0--z1--z2;
 
 z3 = z1;
-z4 = (x3 - h/3, h );
-z5 = (x4 - h/3,  y4 - h/2 );
-z6 = (x5 + h/3,   0 );
+z4 = (x3 - h/3, h);
+z5 = (x4 - h/3,  y4 - h/2);
+z6 = (x5 + h/3,   0);
 
 s = z3..z4..z5..z6..cycle;
 s:=s slanted .2 shifted (-1, 0);
@@ -111,9 +111,9 @@ pickup pencircle scaled 1;
 slant = .16;
 
 z3 = (0,h/2);
-z4 = (x3 - h/3, h );
-z5 = (x4-h/3,  y4 - h/2 );
-z6 = (x5+h/3,   0 );
+z4 = (x3 - h/3, h);
+z5 = (x4-h/3,  y4 - h/2);
+z6 = (x5+h/3,   0);
 
 s = z3..z4..z5..z6..cycle;
 s:=s slanted slant;
@@ -132,10 +132,10 @@ pickup pencircle scaled 1;
 slant = .16;
 
 z3 = (0,h/2);
-z4 = (x3 - h/3, h );
-z5 = (x4-h/3,  y4 - h/2 );
-z6 = (x5+h/3,   0 );
-z7 = (x6+h/2,  h/2 );
+z4 = (x3 - h/3, h);
+z5 = (x4-h/3,  y4 - h/2);
+z6 = (x5+h/3,   0);
+z7 = (x6+h/2,  h/2);
 s = z3..z4..z5..z6..z7;
 s:=s slanted slant;
 s:=s shifted (-slant*h/2, 0);
@@ -155,9 +155,9 @@ pickup pencircle scaled .1;
 slant = -0.05;
 
 z0 = (0, h/2);
-z1 = (x0 - h/3, y0 + h/2 );
-z2 = (x1 - h/3, y1 - h/2 );
-z3 = (x2 + h/3, 0 );
+z1 = (x0 - h/3, y0 + h/2);
+z2 = (x1 - h/3, y1 - h/2);
+z3 = (x2 + h/3, 0);
 x0:=x3+h/3;
 s = z0..z1..z2..z3..cycle;
 s:=s slanted slant;

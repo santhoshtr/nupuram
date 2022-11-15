@@ -12,8 +12,8 @@ paths[0] = z0{right}..z1..z2.. z3..z4..z5..{dir 210}z6 ;
 paths[0]:=paths[0] slanted loop_slant shifted (-loop_slant*m/2,0);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2)
-    nib(thinnib rotated 0 )(1, 3, 5)
+    nib(thicknib)(0, 2)
+    nib(thinnib)(1, 3, 5)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
@@ -31,7 +31,7 @@ paths[1]:= paths[1] shifted (-slant_*m/2, 0);
 paths[1]:= subpath(.3, 2.9) of paths[1]   ..  {dir 120}(x0, y0 - m/4);
 paths[1]:= paths[1] shifted (xpart(point 5 of paths[0]) + 2thick,0);
 pen_stroke(
-    nib(thinnib rotated 0 )(2 )
+    nib(thinnib)(2)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);

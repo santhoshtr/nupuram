@@ -12,12 +12,12 @@ paths[0] = z0..z1..z2..z3..z4..z5..{up}z6;
 paths[0] := paths[0]..{dir -40}(point 4.25 of paths[0]  - (thick*0.12,0));
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1,3,5)
-    nib(thinnib rotated 0 )(2,4, 6)
-    nib(terminalnib rotated terminalangle 0 of paths[0])(0 )
-    nib(terminalnib rotated terminalangle infinity of paths[0] )(infinity )
+    nib(thicknib)(1,3,5)
+    nib(thinnib)(2,4, 6)
+    nib(terminalnib rotated terminalangle 0 of paths[0])(0)
+    nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
-anchor( "vc", z1);
+anchor("vc", z1);
 
 endglyph;

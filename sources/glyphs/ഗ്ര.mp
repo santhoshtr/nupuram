@@ -13,14 +13,14 @@ z8=(x7 + thick/2, m);
 paths[0] := paths[0] .. z6..z7..{dir 60}z8;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2)
-    nib(thinnib rotated 0 )(1,3, 5,7)
+    nib(thicknib)(0, 2)
+    nib(thinnib)(1,3, 5,7)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
-)(paths[0])( strokes[0]);
+)(paths[0])(strokes[0]);
 
-anchor( "vc", point 4 of paths[0]);
-anchor( "bottom", point 5.4 of paths[0]);
-anchor( "right", point 5.4 of paths[0]);
+anchor("vc", point 4 of paths[0]);
+anchor("bottom", point 5.4 of paths[0]);
+anchor("right", point 5.4 of paths[0]);
 
 endglyph;

@@ -21,8 +21,8 @@ paths[0] := z0{up}..{right}z1..{down}z2..z3{left}..{up}z4{down}..z5..z6..z7{dir 
 
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1, 3 )
-    nib(thinnib rotated 0 )(0,2, 4, 6, 9,11,13)
+    nib(thicknib)(1, 3)
+    nib(thinnib)(0,2, 4, 6, 9,11,13)
     nib(thinterminalnib rotated terminalangle 0 of paths[0])(0)
     nib(thinterminalnib rotated terminalangle 4 of paths[0])(4)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
@@ -35,7 +35,7 @@ z22 = (x21 - m/3, y21 - m/4);
 paths[1] = z20..z21..z22 ;
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1)
+    nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);

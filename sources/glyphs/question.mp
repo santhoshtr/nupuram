@@ -11,8 +11,8 @@ soften:=0;
 paths[1] = fullcircle scaled (thick*1.5)  shifted(x1, -m/4);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1 )
-    nib(thinnib rotated 0 )(2,3)
+    nib(thicknib)(1)
+    nib(thinnib)(2,3)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

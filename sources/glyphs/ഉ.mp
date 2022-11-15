@@ -15,19 +15,19 @@ z0 = point 2 of paths[0] + (thick*0.15, 0);
 paths[0] := z0 .. paths[0];
 
 z12 = z7;
-z13 = (x12 + 0.5mw, y12 );
+z13 = (x12 + 0.5mw, y12);
 z14 = (x5  + thick/2, y12);
 paths[1]:= z12{dir 20}..z13{dir -20}..z14;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0,4)
-    nib(thinnib rotated 0 )(1,3,5,6,7)
+    nib(thicknib)(0,4)
+    nib(thinnib)(1,3,5,6,7)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
 
 pen_stroke(
-    nib(thinnib rotated 0 )(1 )
+    nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(terminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);

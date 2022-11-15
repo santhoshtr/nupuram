@@ -1,6 +1,6 @@
 input glyph;
 beginglyph;
-z0 = (0.5sw, s/2 );
+z0 = (0.5sw, s/2);
 z1 = (x0 - 0.5sw, y0 + s/3);
 z2 = (x0 - 0.5sw, y0 - s/3);
 paths[0] = z0--z1;

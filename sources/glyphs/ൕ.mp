@@ -17,8 +17,8 @@ z11 = (x9, ascent + .1m);
 paths[0] = z0  ..z1..z2..z3..z4..z5 ..z7..z8..z9.. z10..z11;
 
 pen_stroke(
-    nib(thicknib rotated 0 )(1,3,5,7 )
-    nib(thinnib rotated 0 )(2,4,6, 8, 9)
+    nib(thicknib)(1,3,5,7)
+    nib(thinnib)(2,4,6, 8, 9)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);

@@ -11,8 +11,8 @@ z5 = (x2 + sw/4, y4);
 
 paths[1] = z4{dir 10}.. z5;
 pen_stroke(
-    nib(thicknib rotated 0 )(0  )
-    nib(thinnib rotated 0 )(1)
+    nib(thicknib)(0 )
+    nib(thinnib)(1)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)
 )(paths[0])(strokes[0]);
@@ -20,7 +20,7 @@ pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[1])(0)
     nib(thinterminalnib rotated terminalangle infinity of paths[1])(infinity)
 )(paths[1])(strokes[1]);
-anchor( "top", (xpart(point 2 of paths[0]), X) );
-anchor( "bottom", (xpart(point 2 of paths[0]), 0) );
+anchor("top", (xpart(point 2 of paths[0]), X));
+anchor("bottom", (xpart(point 2 of paths[0]), 0));
 rbearing:=0;
 endglyph;

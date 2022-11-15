@@ -15,8 +15,8 @@ paths[0] = z0..z1..z2..z3..z4..{dir 60}z5;
 paths[0] := paths[0]{dir 60}..subpath(2, 6) of da shifted(xpart(point 2.5 of paths[0]),0);
 
 pen_stroke(
-    nib(thicknib rotated 0 )(0, 2, 4)
-    nib(thinnib rotated 0 )(1, 3, 5,7, 9)
+    nib(thicknib)(0, 2, 4)
+    nib(thinnib)(1, 3, 5,7, 9)
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(terminalnib rotated terminalangle 8 of paths[0])(8)
     nib(terminalnib rotated terminalangle infinity of paths[0])(infinity)

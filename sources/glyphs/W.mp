@@ -7,7 +7,7 @@ paths[0] = z0{dir -60}.. z1 ;
 
 paths[2] := paths[0] shifted (0.5Xw, 0);
 paths[1] =  z1{dir 60}..{up}(point .3 of paths[2]) ;
-paths[3] := (z1{dir 60}..{up}z2 ) shifted (0.5Xw, 0);
+paths[3] := (z1{dir 60}..{up}z2) shifted (0.5Xw, 0);
 pen_stroke(
     nib(terminalnib rotated terminalangle 0 of paths[0])(0)
     nib(thinterminalnib rotated terminalangle infinity of paths[0])(infinity)
@@ -24,5 +24,5 @@ pen_stroke(
     nib(thinterminalnib rotated terminalangle 0 of paths[3])(0)
     nib(terminalnib rotated terminalangle infinity of paths[3])(infinity)
 )(paths[3])(strokes[3]);
-anchor( "top", (xpart(point 1 of paths[1]), 1.2X) );
+anchor("top", (xpart(point 1 of paths[1]), 1.2X));
 endglyph;
