@@ -2,6 +2,8 @@
 
 A Malayalam typeface, inspired from the early Malayalam movie titles designs. The curves are fluid, bold and expressive.
 
+**Download**: Latest versions can be downloaded from [smc.org.in/fonts/nupuram](https://smc.org.in/fonts/nupuram)
+
 Taking full advantage of variable font technology, Nupuram offers an unprecedented level of flexibility, all from a single font file. Nupuram has 4 variable axes: `Weight`, `Width`, `Slant` and `Softness`.
 
 As a variable font, Nupuram gives you fine-grained control over each one of its styles. However, it also comes with 64 predefined styles that are easy to access through your font menu. Called *named instances¹*, these work just like regular static fonts do.
@@ -136,17 +138,17 @@ Then, you can use the font with both `font-weight` and `font-variation-settings`
 
 ### Using Color fonts in web
 
-Since chrome based browsers support COLRv1 spec which allows customization of pallettes and color gradients and all other browser does not support it, we need to use some feature support testing in CSS.
+Since latest Chrome and Firefox browsers support COLRv1 spec which allows customization of pallettes and color gradients and all other browser does not support it, we need to use some feature support testing in CSS.
 
 ```css
-/* Firefox and old browsers - use ColrV0 */
+/* Old browsers and Safari - use Colrv0 */
 @supports not (font-palette: --custom) {
   @font-face {
     font-family: "NupuramShadowColor";
     src: url(../fonts/webfonts/Nupuram-Color-v0.woff2) format("woff2");
   }
 }
-/*Chromium based browsers - Use colrv1 */
+/* Latest browsers - Use colrv1 */
 @supports (font-palette: --custom) {
   @font-face {
     font-family: "NupuramShadowColor";
@@ -189,7 +191,6 @@ This will take more than 15 minutes to build everything. But if you have a multi
 make -j8
 ```
 
-A directory name d riable fonts, UFO sources generated there.
 
 ## Language support
 
