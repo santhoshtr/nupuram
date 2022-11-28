@@ -32,7 +32,7 @@ The word Nupuram means '[anklet](https://en.wikipedia.org/wiki/Anklet)'.
 
 * [Donald Ervin Knuth](https://en.wikipedia.org/wiki/Donald_Knuth) for inspiration, TeX, Metafont, for his detailed books on these topics.
 * John D. Hobby. [A METAFONT-like System with PostScript Output](http://www.tug.org/TUGboat/Articles/tb10-4/tb26hobby.pdf). TUGboat, 10(4), 1989.
-* [MetaType1](https://mirror.ctan.org/fonts/utilities/metatype1/), a font development system using MetaPost, by Bogusław Jackowski, Janus M. Nowacki, Piotr Strzelczyk. The metapost macros(`plain_ex.mp) from metatype1 package made this font feasible.
+* [MetaType1](https://mirror.ctan.org/fonts/utilities/metatype1/), a font development system using MetaPost, by Bogusław Jackowski, Janus M. Nowacki, Piotr Strzelczyk. The metapost macros(`plain_ex.mp`) from metatype1 package made this font feasible.
 * John D. Hobby. [METAPOST — A User’s Manual](http://www.tug.org/docs/metapost/mpman.pdf.), 2008.
 * Swathanthra Malayalam computing and its volunteers for all help and support.
 * [Latin letter construction](https://www.kellscraft.com/EssentialsofLettering/EssentialsofLetteringCh02.html)
