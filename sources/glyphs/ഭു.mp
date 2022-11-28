@@ -18,7 +18,6 @@ z8=(xpart(point 1.5 of paths[0]), -descent);
 z9=(xpart(point 1 of paths[0]) - mw/3, m/3);
 z10=(x9 + mw/6, m);
 paths[0] := paths[0]  ..{dir 200}z8;
-paths[0] := paths[0] shifted (mw/3, 0);
 
 pen_stroke(
     nib(thicknib)(1, 3, 4 )
