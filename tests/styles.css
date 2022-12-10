@@ -77,7 +77,10 @@ main {
   letter-spacing: var(--font-letter-spacing);
   font-size: var(--font-size);
   padding: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
   outline: none;
+  max-width: 70ch;
   font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width), 'slnt' var(--slant);
   font-palette: --custom;
 }
