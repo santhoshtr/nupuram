@@ -5,7 +5,7 @@ import re
 from datetime import datetime
 from typing import List
 from itertools import product
-from defcon import Font, Glyph, Anchor, Component
+from ufoLib2.objects import Font, Glyph, Component
 from fontFeatures import (Chaining, FontFeatures, Positioning, Routine, Attachment,
                           Substitution, ValueRecord)
 from fontTools import agl
@@ -570,16 +570,16 @@ class MalayalamFont(Font):
             'zwj': 0x200D,
         }
         for g, u in empty_glyphs.items():
-            glyph = Glyph()
+            glyph = Glyph(name=g)
             if u !=0 :
                 glyph.unicodes = [u]
-            self.insertGlyph(glyph, g)
+            self.addGlyph(glyph)
 
         # Add space
-        space = Glyph()
+        space = Glyph(name='space')
         space.width = 260
         space.unicodes = [0x0020]
-        self.insertGlyph(space, 'space')
+        self.addGlyph(space)
         # NBSP width must be same as Space width
         self['uni00A0'].width = space.width
 
@@ -589,7 +589,7 @@ class MalayalamFont(Font):
             svg_glyph = SVGGlyph(os.path.join(design_dir, f))
             svg_glyph.parse()
             log.debug(f"{f} -> {svg_glyph.glyph_name}")
-            self.insertGlyph(svg_glyph.glif, svg_glyph.glif.name)
+            self.addGlyph(svg_glyph.glif)
             if svg_glyph.alt:
                 if svg_glyph.glyph_name not in self.salts:
                     self.salts[svg_glyph.glyph_name]=[]
@@ -779,11 +779,11 @@ class MalayalamFont(Font):
         composite.unicode = unicode
         base = items[0].strip()
         items = items[1:]
-        component = composite.instantiateComponent()
+        component = Component(composite)
         component.baseGlyph = base
         baseGlyph: Glyph = self[base]
         composite.width = baseGlyph.width
-        composite.appendComponent(component)
+        composite.components.append(component)
 
         for glyphName in items:
             glyphName = glyphName.strip()
@@ -793,7 +793,7 @@ class MalayalamFont(Font):
             commonAnchorName = MalayalamFont.commonAnchor(
                 baseAnchors, glyphAnchors)
 
-            component = composite.instantiateComponent()
+            component = Component(composite)
             component.baseGlyph = glyphName
             if commonAnchorName is None:
                 # No common anchors. Avoid fallback. Just remove the glyph from font.
@@ -811,7 +811,7 @@ class MalayalamFont(Font):
                     x = anchor["x"] - _anchor["x"]
                     y = anchor["y"] - _anchor["y"]
                     component.move((x, y))
-            composite.appendComponent(component)
+            composite.components.append(component)
             composite.lib['public.markColor'] = '0.92, 0.93, 0.94, 1.0'  # grey
             # Now current glyph is base glyph for next one, if any
             baseGlyph = currentGlyph

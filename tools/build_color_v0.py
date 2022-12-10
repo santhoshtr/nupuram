@@ -1,4 +1,4 @@
-from defcon import Font, Layer
+from ufoLib2.objects import Font, Layer, Glyph
 from munch import DefaultMunch
 from operator import itemgetter
 import copy
@@ -26,15 +26,14 @@ for layer_name in config["layers"]:
     if layer_name == 'public.default':
         layer_mapping.append(
             [layer_name, config["layers"][layer_name]["order"]])
-        font = Font(config["layers"][layer_name]["source"])
+        font = Font().open(config["layers"][layer_name]["source"])
     else:
         if not font:
             raise ValueError(
                 "Default font not found. Define default source as first item in layers")
         layer: Layer = font.newLayer(layer_name)
-        layer_font: Font = Font(config["layers"][layer_name]["source"])
+        layer_font: Font = Font().open(config["layers"][layer_name]["source"])
         for base_glyph in layer_font:
-            base_glyph.decomposeAllComponents()
             glyph = copy.deepcopy(base_glyph)
             layer.insertGlyph(glyph, glyph.name)
 
@@ -55,5 +54,5 @@ for layer_colors in config["pallettes"]:
 font.lib[ufo2ft.constants.COLOR_PALETTES_KEY] = CPAL_palettes
 font.info.familyName =config['familyname']
 
-font.save(sys.argv[1])
+font.save(sys.argv[1], overwrite=True)
 log.info(f"Color UFO font saved at {sys.argv[1]}")

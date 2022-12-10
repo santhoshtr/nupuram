@@ -55,4 +55,4 @@ if __name__ == "__main__":
     font.buildFeatures()
     font.setFontInfo()
     font.updateFontVersion()
-    font.save(options.output)
+    font.save(options.output, overwrite=True)
