@@ -8,7 +8,7 @@ z3=(x1, 0);
 z4=(x0, y2);
 
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4 ;
-
+paths[0]:=reverse paths[0];
 pen_stroke(
     nib(thicknib)(1, 3)
     nib(thinnib)(0,2, 4)

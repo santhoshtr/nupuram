@@ -12,7 +12,7 @@ pen_stroke(
 )(paths[0])(strokes[0]);
 
 z20 = point 5.7 of paths[0];
-z21 = (x20 + m/3, y20 - m/4);
+z21 = (x20 + mw/3, y20 - m/4);
 z22 = (xpart(point 56 of paths[0]), y21 - m/4);
 
 paths[1] = z20{dir -20}..z21..{dir 160}z22 ;

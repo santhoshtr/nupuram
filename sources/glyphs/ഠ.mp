@@ -7,7 +7,7 @@ z3=(x2 - 0.4mw, y2 - m/2);
 z4=z0;
 
 paths[0] = z0{up}..{right}z1..{down}z2..z3{left}..{up}z4;
-paths[0] := paths[0] crotated -18;
+paths[0] := reverse paths[0] crotated -18;
 
 pen_stroke(
     nib(thicknib)(1, 3)
