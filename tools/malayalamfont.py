@@ -878,7 +878,7 @@ class MalayalamFont(Font):
         self.info.openTypeOS2TypoAscender = round(self.info.ascender*1.2)
         # the depth of the descenders in units (negative value)
         self.info.openTypeOS2TypoDescender = -round(self.info.descender*1.2)
-        self.info.openTypeOS2TypoLineGap = 0
+        self.info.openTypeOS2TypoLineGap = int((self.info.ascender + self.info.descender)/4) # For 1.25 line height
         self.info.openTypeOS2UnicodeRanges = [0, 1, 2, 3, 23]
         self.info.openTypeOS2WeightClass = int(self.weight)
         self.info.openTypeOS2WidthClass = 5
@@ -907,7 +907,7 @@ class MalayalamFont(Font):
         self.info.openTypeHheaAscender =  self.info.openTypeOS2TypoAscender
         # The depth of the descenders in units (negative value)
         self.info.openTypeHheaDescender =  self.info.openTypeOS2TypoDescender
-        self.info.openTypeHheaLineGap = 0
+        self.info.openTypeHheaLineGap = int((self.info.ascender + self.info.descender)/4) # For 1.25 line height
 
         # postscript metrics
         # info.postscriptBlueValues=[00800800]
