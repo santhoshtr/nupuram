@@ -1,2 +1,4 @@
 input ./config/Thin;
-input ./config/Oblique;
+
+slant := 20; % Degree of slanting
+soften:=0;
