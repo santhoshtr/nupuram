@@ -31,7 +31,7 @@ def getGlyphBounds(font, glyphName):
     w += x
     h += y
     # Since the shadow extends beyond width and height, increase them by a factor.
-    return x, y, w*1.25, h*1.25
+    return x, y, w*1.5, h*1.5
 
 for glyph_name, layers in colr0.ColorLayers.items():
     v1_layers = []
