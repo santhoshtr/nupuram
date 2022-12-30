@@ -224,7 +224,7 @@ $(FONTSDIR)/%/ufo: ${UFODIR}/%.ufo
 # and filename mangling in Makefile
 $(FONTSDIR)/%/webfonts:
 	@mkdir -p  $@
-	$(PY) tools/gen_webfonts.py $(FONTSDIR)/$*/**/*.ttf
+	$(PY) tools/gen_webfonts.py $(FONTSDIR)/$*/**/*.otf
 
 clean:
 	@find -iname "*.pyc" -delete
