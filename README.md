@@ -130,7 +130,7 @@ In general, you should link in the font with @font-face
  src: url('path/to/font/Nupuram-VF.woff2') format('woff2-variations');
  font-weight: 100 900;
  font-stretch: 75% 125%;
- font-style: oblique 0deg -15deg;
+ font-style: oblique 0deg 15deg;
 }
 ```
 
