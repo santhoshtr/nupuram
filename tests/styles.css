@@ -5,7 +5,7 @@
     url(../fonts/Nupuram/otf/Nupuram-Regular.otf) format("opentype");
   font-weight: 100 900;
   font-stretch: 75% 125%;
-  font-style: oblique 0deg -15deg;
+  font-style: oblique 0deg 15deg;
 }
 
 @font-face {
@@ -81,6 +81,7 @@ main {
   margin-right: auto;
   outline: none;
   max-width: 70ch;
+  font-synthesis: none;
   font-variation-settings: 'wght' var(--weight), 'soft' var(--soft), 'wdth' var(--width), 'slnt' var(--slant);
   font-palette: --custom;
 }
