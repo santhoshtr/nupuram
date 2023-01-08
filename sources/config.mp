@@ -3,7 +3,7 @@
 % Copyright 2022 Santhosh Thottingal
 % Licensed under MIT License
 
-em :=           1024;         % Height of characters - Em square
+em :=           1000;         % Height of characters - Em square
 u :=            em/10;        % Unit width. Em square divisions. This is the base for all strokes
 
 ascent  :=      8u;           % Ascender Height

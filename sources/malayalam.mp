@@ -207,16 +207,16 @@ vardef left_arch_with_eye =
     save p,loop_slant;
     path p;
     loop_slant=tand(-4);
-    z0 =(x3, y3);
+    z0 =(x3+ mw/40, y3);
     z1=(x0 + mw/2, y3 - m/6 );
     z2=(x1 - mw/5,  thick/2);
     z3=(0, m/2);
     z4=(x3 + mw/3, m);
     z5=(x4 + mw/2, m/2);
     z6=(x5, m/6);
-    p:=z0{dir 30} .. z1{down}..z2{left}..z3.. z4..{down}z5;
+    p:=z0{dir 30} .. z1{down}..z2{left}..z3.. {dir 10}z4;
     p:=p slanted loop_slant;
     p:=p shifted (-loop_slant*m/2,0);
-    p:=p{down} ---z6;
+    p:=p..z5---z6;
     p
 enddef;
