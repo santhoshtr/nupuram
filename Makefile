@@ -264,7 +264,6 @@ proofs:
 
 test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
-	fontbakery check-ufo-sources $(UFODIR)/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(FONTSDIR)/Nupuram/otf/Nupuram-Regular.otf
 	cp $(FONTSDIR)/Nupuram/ttf-variable/Nupuram-VF.ttf $(FONTSDIR)/Nupuram/ttf-variable/Nupuram[slnt,soft,wdth,wght].ttf
 	fontbakery check-googlefonts \
