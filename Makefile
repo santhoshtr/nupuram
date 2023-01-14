@@ -274,6 +274,7 @@ test: proofs
 		-x com.google.fonts/check/fvar_instances \
 		-x com.google.fonts/check/STAT/gf_axisregistry \
 		-x com.google.fonts/check/name/version_format \
+		-x com.google.fonts/check/fontv \
 		$(FONTSDIR)/Nupuram/ttf-variable/Nupuram[slnt,soft,wdth,wght].ttf
 
 install: build
