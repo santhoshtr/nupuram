@@ -1,6 +1,6 @@
 % This file is the base configuration for the font
 % Variant configuration overrides the config variables defined here.
-% Copyright 2022 Santhosh Thottingal
+% Copyright 2023 Santhosh Thottingal
 % Licensed under MIT License
 
 em :=           1000;         % Height of characters - Em square

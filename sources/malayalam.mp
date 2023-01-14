@@ -1,6 +1,6 @@
 % This file contains reusable, common glyph shapes for Malayalam script
 % for the current font.
-% Copyright 2022 Santhosh Thottingal
+% Copyright 2023 Santhosh Thottingal
 % Licensed under MIT License
 
 % Anticlockwise loop

@@ -1,5 +1,5 @@
 % This file various utility functions for drawing a glyph
-% Copyright 2022 Santhosh Thottingal
+% Copyright 2023 Santhosh Thottingal
 % Licensed under MIT License
 
 % Macros from MetaType1

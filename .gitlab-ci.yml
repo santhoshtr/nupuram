@@ -22,7 +22,6 @@ build:
 
 test:
   stage: test
-  allow_failure: true
   script:
     - make test
 
