@@ -13,13 +13,12 @@ attrs==22.2.0
 axisregistry==0.3.10
     # via fontbakery
 babelfont==3.0.0
-    # via
-    #   collidoscope
-    #   glyphtools
+    # via glyphtools
 beautifulsoup4==4.11.1
     # via fontbakery
 beziers==0.5.0
     # via
+    #   collidoscope
     #   fontbakery
     #   fontfeatures
     #   glyphtools
@@ -37,7 +36,7 @@ charset-normalizer==2.1.1
     # via requests
 cmarkgfm==2022.10.27
     # via fontbakery
-collidoscope==0.5.2
+collidoscope==0.4.1
     # via fontbakery
 commandlines==0.4.1
     # via ufolint
@@ -57,7 +56,7 @@ dehinter==4.0.0
     # via fontbakery
 font-v==2.1.0
     # via fontbakery
-fontbakery[freetype]==0.8.10
+fontbakery[freetype]==0.8.11
     # via -r requirements.in
 fontfeatures==1.7.4
     # via
@@ -115,8 +114,6 @@ glyphtools==0.8.0
     #   fontfeatures
 idna==3.4
     # via requests
-kurbopy==0.8.32
-    # via collidoscope
 lxml==4.9.2
     # via
     #   fontbakery
@@ -124,6 +121,8 @@ lxml==4.9.2
     #   fonttools
 munch==2.5.0
     # via -r requirements.in
+munkres==1.1.4
+    # via fontbakery
 numpy==1.24.0
     # via
     #   glyphtools
@@ -199,7 +198,7 @@ ufolint==1.2.0
     # via fontbakery
 ufonormalizer==0.6.1
     # via -r requirements.in
-uharfbuzz==0.33.0
+uharfbuzz==0.34.0
     # via
     #   -r requirements.in
     #   collidoscope
@@ -210,7 +209,7 @@ unicodedata2==15.0.0
     #   fonttools
 urllib3==1.26.13
     # via requests
-vharfbuzz==0.1.4
+vharfbuzz==0.2.0
     # via fontbakery
 
 # The following packages are considered to be unsafe in a requirements file:
