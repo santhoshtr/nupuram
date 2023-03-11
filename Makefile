@@ -268,7 +268,6 @@ test: proofs
 	cp $(FONTSDIR)/Nupuram/ttf-variable/Nupuram-VF.ttf $(FONTSDIR)/Nupuram/ttf-variable/Nupuram[slnt,soft,wdth,wght].ttf
 	fontbakery check-googlefonts \
 		--full-lists \
-		-x com.google.fonts/check/license/OFL_body_text \
 		-x com.google.fonts/check/version_bump \
 		-x com.google.fonts/check/repo/zip_files \
 		-x com.google.fonts/check/fvar_instances \
