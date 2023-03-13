@@ -308,14 +308,13 @@ variablefonts:
               flags: 2
             - value: -15
               name: Oblique
-        - tag: soft
+        - tag: SOFT
           name: Soft
           values:
             - value: 15
               name: Sharp
-            - value: 56
+            - value: 50
               name: Soft
-              flags: 2
             - value: 100
               name: SuperSoft
         - tag: wght
