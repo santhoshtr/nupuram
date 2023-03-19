@@ -2,7 +2,7 @@ image: "debian:bullseye-slim"
 
 before_script:
   - apt-get update -y
-  - apt-get install -y make python3-pip python3-venv python3-yaml texlive-metapost libharfbuzz-bin
+  - apt-get install -y git make python3-pip python3-venv python3-yaml texlive-metapost libharfbuzz-bin
   - pip3 install -r requirements.txt
 
 stages:
@@ -24,6 +24,10 @@ test:
   stage: test
   script:
     - make test
+  artifacts:
+    expire_in: 1000 yrs
+    paths:
+    - proofs/
 
 pages:
   stage: deploy

@@ -1,0 +1,16 @@
+exclude_checks:
+  - com.google.fonts/check/font_names
+  - com.google.fonts/check/version_bump
+  - com.google.fonts/check/repo/zip_files
+  - com.google.fonts/check/soft_dotted
+overrides:
+  com.google.fonts/check/STAT_strings:
+    bad-italic: WARN
+  com.google.fonts/check/STAT/gf_axisregistry:
+    invalid-name: WARN
+  com.google.fonts/check/fvar_instances:
+    bad-fvar-instances: WARN
+  com.google.fonts/check/canonical_filename:
+    bad-filename: WARN
+  com.google.fonts/check/fontdata_namecheck:
+    namecheck-service: WARN

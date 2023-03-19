@@ -15,14 +15,14 @@ styles: [
   "Calligraphy",
   "Calligraphy-Thin",
   "Calligraphy-Black",
-  "Outline",
   "Shadow-Regular",
   "Shadow-Thin",
   "Shadow-Black",
   "Arrows",
   "Dots"
 ]
-version: 0.160
+
+version: 1.000
 unitsPerEm: 1000
 ascender: 819
 descender: 205
@@ -311,8 +311,9 @@ variablefonts:
         - tag: SOFT
           name: Soft
           values:
-            - value: 15
+            - value: 0
               name: Sharp
+              flags: 2
             - value: 50
               name: Soft
             - value: 100

@@ -27,7 +27,7 @@ Nupuram has the following axes:
 | Weight  | `wght` | 100 to 900       | 400       | Thin to Black. Can be defined with usual font-weight property.                      |
 | Slant     | `slnt` | -15 to 0       | 0       | Upright (0°) to Slanted (about 15°)                                                |
 | Width     | `wdth` | 75 to 125  | 100     | Condensed to Expanded. Can be defined with usual font-stretch property. |
-| Soft      | `SOFT` | 15 to 100     | 50       | Sharp to normal to SuperSoft terminals                           |
+| Soft      | `SOFT` | 0 to 100     | 50       | Sharp to normal to SuperSoft terminals                           |
 
 ### Axis Definitions
 
@@ -43,7 +43,7 @@ Nupuram has the following axes:
 
     Recommended use: The condense or expand can be used to achieve precise typographic layout in a predefined rendering space. The content can be adjusted in this way to "fit" the space. Be aware of the legibility degradation when doing this.
 
-* **Soft** `SOFT`: 15 to 100. The terminals of the letters of Nupuram are slightly rounded by default. This is also known as Soft terminals. To make the terminal sharp - sharp cuts at ends, use 'Sharp' value 15. To make the terminals more rounded using a higher value. Using a value 100 means, the terminals are half circles with diameter equals the terminal width.
+* **Soft** `SOFT`: 0 to 100. The terminals of the letters of Nupuram are slightly rounded by default. This is also known as Soft terminals. To make the terminal sharp - sharp cuts at ends, use 'Sharp' value 0. To make the terminals more rounded using a higher value. Using a value 100 means, the terminals are half circles with diameter equals the terminal width.
 
     Recommended use: Roundness or Sharpness at terminals can help change the tone of communication, say from mechanical to human, from formal to informal.
 

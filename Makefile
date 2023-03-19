@@ -264,18 +264,9 @@ proofs:
 
 test: proofs
 	# fontbakery check-fontval $(FONTSDIR)/$(FAMILY)-Regular.ttf <- enable when https://github.com/microsoft/Font-Validator/issues/62 fixed
+	fontbakery check-ufo-sources $(FONTSDIR)/Nupuram/ufo/$(FAMILY)-Regular.ufo
 	fontbakery check-opentype $(FONTSDIR)/Nupuram/otf/Nupuram-Regular.otf
-	cp $(FONTSDIR)/Nupuram/ttf-variable/Nupuram-VF.ttf $(FONTSDIR)/Nupuram/ttf-variable/Nupuram[SOFT,slnt,wdth,wght].ttf
-	fontbakery check-googlefonts \
-		--full-lists \
-		-x com.google.fonts/check/version_bump \
-		-x com.google.fonts/check/repo/zip_files \
-		-x com.google.fonts/check/fvar_instances \
-		-x com.google.fonts/check/STAT/gf_axisregistry \
-		-x com.google.fonts/check/gf_axisregistry/fvar_axis_defaults \
-		-x com.google.fonts/check/name/version_format \
-		-x com.google.fonts/check/fontv \
-		$(FONTSDIR)/Nupuram/ttf-variable/Nupuram[SOFT,slnt,wdth,wght].ttf
+	fontbakery check-googlefonts --full-lists --config fontbakery.yaml --html tests/fontbakery-report.html --ghmarkdown tests/fontbakery-report.md  $(FONTSDIR)/Nupuram/ttf-variable/Nupuram-VF.ttf
 
 install: build
 	@mkdir -p $(INSTALLDIR);

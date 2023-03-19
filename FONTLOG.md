@@ -44,6 +44,7 @@ The word Nupuram means '[anklet](https://en.wikipedia.org/wiki/Anklet)'.
 * [DJR's Bungee font](https://github.com/djrrb/Bungee) font for studying the Color font gradient concepts
 * [FontFeatures](https://github.com/simoncozens/fontFeatures) python library by Simon Cozens helped programmatic generation of Opentype feature files.
 * [Gayathri Ashokan](https://en.wikipedia.org/wiki/Gayathri_Ashokan), poster designer in Malayalam film industry for inputs on the designs by SA Nair.
+* Jonathan Hoefler for [the latin kerning tests](https://github.com/hoeflerco/proofs)
 * more to add...
 
 For a complete list of authors who contributed to the project, see CONTRIBUTORS.md
