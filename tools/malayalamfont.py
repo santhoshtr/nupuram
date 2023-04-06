@@ -182,8 +182,24 @@ class MalayalamFont(Font):
         feature = "pref"
         name = "pref_reph"
         reph = "്ര"
+        # The reph sign should form only when it is after the conjuncts with
+        # designed reph forms. For all other conjuncts, reph should be virama+ra
+        # Example -> ക + ് +ര -> ക + ്ര
+        # ഖ + ് + ര -> ഖ + ്  + ര
+        glyph_names_with_reph=[]
+        for ligature in self.get_glyphs_from_named_classes('ML_REPH_CONJUNCTS'):
+            ligature = ligature.replace(reph, '')
+            ligature_glyph_name = SVGGlyph.get_glyph_name(ligature)
+            if ligature_glyph_name in self:
+                glyph_names_with_reph.append(ligature_glyph_name)
+
+        # To allow independent reph sign rendering, use zwj + reph
+        glyph_names_with_reph.append('zwj')
+
         rule = Substitution([[SVGGlyph.get_glyph_name(l)] for l in reph],
-                            replacement=[[SVGGlyph.get_glyph_name(reph)]])
+                    replacement=[[SVGGlyph.get_glyph_name(reph)]],
+                    precontext=[glyph_names_with_reph],
+        )
         routine = Routine(rules=[rule], name=name,
                           languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
