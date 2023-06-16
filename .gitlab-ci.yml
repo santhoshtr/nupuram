@@ -1,8 +1,10 @@
-image: "debian:bullseye-slim"
+image: "debian:bookworm-slim"
 
 before_script:
   - apt-get update -y
   - apt-get install -y git make python3-pip python3-venv python3-yaml texlive-metapost libharfbuzz-bin
+  - python3 -m venv .venv
+  - source .venv/bin/activate
   - pip3 install -r requirements.txt
 
 stages:
