@@ -204,7 +204,7 @@ function listen() {
             } else {
                 document.querySelector('#font-size > input[type="range"]').value = fontSize;
             }
-            root.style.setProperty('--font-size', fontSize);
+            root.style.setProperty('--font-size', `${fontSize}px`);
         });
     });
 
