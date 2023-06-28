@@ -34,6 +34,9 @@ def getGlyphBounds(font, glyphName):
     return x, y, w*1.5, h*1.5
 
 for glyph_name, layers in colr0.ColorLayers.items():
+    # Remove udatta and anudatta from color font. They skew the clibbox a lot
+    if glyph_name in ['uni952', 'uni951']:
+        continue
     v1_layers = []
     colrv1_map[glyph_name] = (ot.PaintFormat.PaintColrLayers, v1_layers)
 
