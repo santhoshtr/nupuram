@@ -1,0 +1,23 @@
+@page {
+  margin-top: 0.7in;
+  /* Getting an extra .12 inches padding on the bottom from ?? Whatever, hack! */
+  margin-bottom: 0.58in;
+  padding: 0;
+  size: A4 landscape;
+  counter-increment: page_num;
+
+  @bottom-center {
+    font-family: "Lato";
+    font-weight: 300;
+    content: counter(page_num);
+    font-size: 9pt;
+    position: relative;
+    margin-top: -0.35in;
+  }
+}
+
+
+@media print {
+  /* All your print styles go here */
+
+}
