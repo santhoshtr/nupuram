@@ -274,3 +274,13 @@ p + .meta-desc {
 .col-4 {
   grid-column: span 4;
 }
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}

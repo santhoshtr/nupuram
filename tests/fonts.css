@@ -174,6 +174,93 @@
   font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "SOFT" 100;
 }
 
+@font-palette-values --nupuramcolor-cp0  {
+  font-family: 'NupuramColor'; base-palette: 0;
+}
+
+@font-palette-values --nupuramcolor-cp1  {
+  font-family: 'NupuramColor';
+  base-palette: 1;
+}
+
+@font-palette-values --nupuramcolor-cp2  {
+  font-family: 'NupuramColor';
+  base-palette: 2;
+}
+@font-palette-values --nupuramcolor-cp3  {
+  font-family: 'NupuramColor';
+  base-palette: 3;
+}
+
+@font-palette-values --nupuramcolor-cp4  {
+  font-family: 'NupuramColor';
+  base-palette: 4;
+}
+@font-palette-values --nupuramcolor-cp5  {
+  font-family: 'NupuramColor';
+  base-palette: 5;
+}
+@font-palette-values --nupuramcolor-cp6  {
+  font-family: 'NupuramColor';
+  base-palette: 6;
+}
+@font-palette-values --nupuramcolor-cp7  {
+  font-family: 'NupuramColor';
+  base-palette: 7;
+}
+
+@font-palette-values --nupuramcolor-cp8  {
+  font-family: 'NupuramColor';
+  base-palette: 8;
+}
+
+@font-palette-values --nupuramcolor-cp9  {
+  font-family: 'NupuramColor';
+  base-palette: 9;
+}
+
+
+@font-palette-values --nupuramcolor-cp10  {
+  font-family: 'NupuramColor'; base-palette: 10;
+}
+
+@font-palette-values --nupuramcolor-cp11  {
+  font-family: 'NupuramColor';
+  base-palette: 11;
+}
+
+@font-palette-values --nupuramcolor-cp12  {
+  font-family: 'NupuramColor';
+  base-palette: 12;
+}
+@font-palette-values --nupuramcolor-cp13  {
+  font-family: 'NupuramColor';
+  base-palette: 13;
+}
+
+@font-palette-values --nupuramcolor-cp14  {
+  font-family: 'NupuramColor';
+  base-palette: 14;
+}
+@font-palette-values --nupuramcolor-cp15  {
+  font-family: 'NupuramColor';
+  base-palette: 15;
+}
+@font-palette-values --nupuramcolor-cp16  {
+  font-family: 'NupuramColor';
+  base-palette: 16;
+}
+@font-palette-values --nupuramcolor-cp17  {
+  font-family: 'NupuramColor';
+  base-palette: 17;
+}
+
+@font-palette-values --nupuramcolor-cp18  {
+  font-family: 'NupuramColor';
+  base-palette: 18;
+}
+
+
 @font-palette-values --nupuramarrows-cp0  {
   font-family: 'NupuramArrowsColor'; base-palette: 0;
 }
@@ -260,3 +347,10 @@
   base-palette: 18;
 }
 
+@font-palette-values --nupuram-gold  {
+  font-family: 'NupuramColor';
+  /* Change this to a value between 0 and 18 to chose a supplied palette. */
+  base-palette: 0;
+  /* Or provide the colors directly to override palette */
+  override-colors: 0 #FFD700, 1 #FFD700, 2 #1E0303;
+}
