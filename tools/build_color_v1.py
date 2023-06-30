@@ -33,7 +33,7 @@ def getGlyphBounds(font, glyphName):
     w += x
     h += y
     # Since the shadow extends beyond width and height, increase them by a factor.
-    # Make the box slightly bigger by reducing xMin, yMin too
+    # Make the box slightly bigger by reducing xMin, yMin toog
     return x-50, y-50, w*1.5, h*1.5
 
 

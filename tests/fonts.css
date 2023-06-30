@@ -40,3 +40,223 @@
     src: url(../fonts/Nupuram-Display/webfonts/Nupuram-Display.woff2) format("woff2"),
       url(../fonts/Nupuram-Display/otf/Nupuram-Display.otf) format("opentype");
 }
+
+/* Variable instances */
+.nupuram-regular-thin {
+  font-variation-settings: "wght" 100, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-thin-italic {
+  font-variation-settings: "wght" 100, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-condensed-thin {
+  font-variation-settings: "wght" 100, "wdth" 75, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-expanded-thin {
+  font-variation-settings: "wght" 100, "wdth" 125, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-extralight {
+  font-variation-settings: "wght" 200, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-extralight-oblique {
+  font-variation-settings: "wght" 200, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-light {
+  font-variation-settings: "wght" 300, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-light-oblique {
+  font-variation-settings: "wght" 300, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-condensed-light {
+  font-variation-settings: "wght" 300, "wdth" 75, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-expanded-light {
+  font-variation-settings: "wght" 300, "wdth" 125, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-regular {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-oblique {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-condensed {
+  font-variation-settings: "wght" 400, "wdth" 75, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-semicondensed {
+  font-variation-settings: "wght" 400, "wdth" 87.501, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-condensed-oblique {
+  font-variation-settings: "wght" 400, "wdth" 75, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-expanded {
+  font-variation-settings: "wght" 400, "wdth" 125, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-semiexpanded {
+  font-variation-settings: "wght" 400, "wdth" 112.501, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-medium {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-medium-oblique {
+  font-variation-settings: "wght" 500, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-condensed-medium {
+  font-variation-settings: "wght" 500, "wdth" 75, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-expanded-medium {
+  font-variation-settings: "wght" 500, "wdth" 125, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-semibold {
+  font-variation-settings: "wght" 600, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-semibold-oblique {
+  font-variation-settings: "wght" 600, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-bold {
+  font-variation-settings: "wght" 700, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-bold-oblique {
+  font-variation-settings: "wght" 700, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-condensed-bold {
+  font-variation-settings: "wght" 700, "wdth" 75, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-expanded-bold {
+  font-variation-settings: "wght" 700, "wdth" 125, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-extrabold {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-extrabold-oblique {
+  font-variation-settings: "wght" 800, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-black {
+  font-variation-settings: "wght" 900, "wdth" 100, "slnt" 0, "SOFT" 50;
+}
+
+.nupuram-regular-black-oblique {
+  font-variation-settings: "wght" 900, "wdth" 100, "slnt" -15, "SOFT" 50;
+}
+
+.nupuram-regular-sharp {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "SOFT" 0;
+}
+
+.nupuram-regular-supersoft {
+  font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "SOFT" 100;
+}
+
+@font-palette-values --nupuramarrows-cp0  {
+  font-family: 'NupuramArrowsColor'; base-palette: 0;
+}
+
+@font-palette-values --nupuramarrows-cp1  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 1;
+}
+
+@font-palette-values --nupuramarrows-cp2  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 2;
+}
+@font-palette-values --nupuramarrows-cp3  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 3;
+}
+
+@font-palette-values --nupuramarrows-cp4  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 4;
+}
+@font-palette-values --nupuramarrows-cp5  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 5;
+}
+@font-palette-values --nupuramarrows-cp6  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 6;
+}
+@font-palette-values --nupuramarrows-cp7  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 7;
+}
+
+@font-palette-values --nupuramarrows-cp8  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 8;
+}
+
+@font-palette-values --nupuramarrows-cp9  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 9;
+}
+
+
+@font-palette-values --nupuramarrows-cp10  {
+  font-family: 'NupuramArrowsColor'; base-palette: 10;
+}
+
+@font-palette-values --nupuramarrows-cp11  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 11;
+}
+
+@font-palette-values --nupuramarrows-cp12  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 12;
+}
+@font-palette-values --nupuramarrows-cp13  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 13;
+}
+
+@font-palette-values --nupuramarrows-cp14  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 14;
+}
+@font-palette-values --nupuramarrows-cp15  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 15;
+}
+@font-palette-values --nupuramarrows-cp16  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 16;
+}
+@font-palette-values --nupuramarrows-cp17  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 17;
+}
+
+@font-palette-values --nupuramarrows-cp18  {
+  font-family: 'NupuramArrowsColor';
+  base-palette: 18;
+}
+
