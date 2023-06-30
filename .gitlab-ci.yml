@@ -35,7 +35,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - cp -rf fonts tests public
+    - cp -rf fonts tests specimen public
   artifacts:
     expire_in: 1000 yrs
     paths:
