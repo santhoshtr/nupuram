@@ -4,6 +4,7 @@ from fontTools.ttLib.tables import otTables as ot
 import sys
 import logging
 from io import BytesIO
+
 import uharfbuzz as hb
 
 log = logging.getLogger(__name__)
@@ -21,6 +22,7 @@ cpal.numPaletteEntries = len(cpal.palettes[0])
 colrv1_map = {}
 clipBoxes = {}
 
+
 def getGlyphBounds(font, glyphName):
     gid = font.getGlyphID(glyphName)
     assert gid is not None, glyphName
@@ -31,7 +33,9 @@ def getGlyphBounds(font, glyphName):
     w += x
     h += y
     # Since the shadow extends beyond width and height, increase them by a factor.
-    return x, y, w*1.5, h*1.5
+    # Make the box slightly bigger by reducing xMin, yMin too
+    return x-50, y-50, w*1.5, h*1.5
+
 
 for glyph_name, layers in colr0.ColorLayers.items():
     # Remove udatta and anudatta from color font. They skew the clibbox a lot
@@ -54,10 +58,10 @@ for glyph_name, layers in colr0.ColorLayers.items():
                 "Glyph": layer.name,
             })
         else:
-            if layer.colorID == 0: # Shadow
+            if layer.colorID == 0:  # Shadow
                 c1 = 0
                 c2 = 2
-            if layer.colorID == 1: #  Main
+            if layer.colorID == 1:  # Main
                 c1 = 2
                 c2 = 1
             v1_layers.append({
@@ -77,6 +81,8 @@ for glyph_name, layers in colr0.ColorLayers.items():
                 },
                 "Glyph": layer.name,
             })
+
+    if glyph_name not in clipBoxes:
         clipBoxes[glyph_name] = getGlyphBounds(font, glyph_name)
 
     # If there is only one layer, simplify
