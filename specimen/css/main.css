@@ -51,7 +51,7 @@ main {
   align-items: center;
   overflow: hidden;
   height: 100%;
-  justify-items: center;
+  justify-items: start;
 }
 
 .page {
@@ -74,7 +74,6 @@ main {
   overflow: hidden;
   align-items: start;
 }
-
 
 .page > footer {
   border-top: 1px solid var(--border-color);
@@ -120,7 +119,7 @@ main {
 }
 
 .color-bg-green {
-  background-color: #1B5E20;
+  background-color: #1b5e20;
   color: #fff;
 }
 
@@ -134,10 +133,13 @@ main {
   color: #fff;
 }
 
+
 .color-bg-brown {
-  background-color: #3E2723;
+  background-color: #3e2723;
   color: #fff;
 }
+
+
 
 .text-center {
   text-align: center;
@@ -192,6 +194,15 @@ main {
 
   line-height: 1.5;
 }
+.text-14 {
+  font-size: 14pt;
+  line-height: 1.5;
+}
+
+.text-16 {
+  font-size: 16pt;
+  line-height: 1.5;
+}
 
 .text-20 {
   font-size: 20pt;
@@ -220,7 +231,7 @@ main {
 
 .text-96 {
   font-size: 96pt;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 .text-128 {
@@ -233,7 +244,6 @@ main {
   line-height: 1;
 }
 
-
 .text-180 {
   font-size: 180pt;
   line-height: 1.5;
@@ -245,12 +255,12 @@ main {
 
 p {
   margin: 0;
-  text-align:start;
+  text-align: start;
   text-justify: inter-word;
 }
 
 .text-justify {
-  text-align:justify;
+  text-align: justify;
 }
 
 p:first-child {
@@ -281,7 +291,6 @@ p + .meta-desc {
   grid-column: span 4;
 }
 
-
 a {
   text-decoration: none;
   color: inherit;
@@ -289,4 +298,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.languages {
+  column-count: 8;
+  font-size: 8pt;
+  column-gap: 41px;
 }
