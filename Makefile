@@ -19,7 +19,7 @@ UFO=$(STYLES:%=$(UFODIR)/$(FAMILY)-%.ufo) \
 	$(UFODIR)/$(FAMILY)-Color-Black.ufo \
 	$(UFODIR)/$(FAMILY)-Arrows-Color.ufo
 
-.PHONY: $(STYLES) ufo clean glyphs build proofs autobuild
+.PHONY: $(STYLES) ufo clean glyphs build proofs autobuild update-deps init update
 
 default: build
 
@@ -151,7 +151,7 @@ $(FONTSDIR)/%/otf-variable : %.designspace
 	$(PY) tools/stat.py $* $@/*.otf
 
 # Create Variable Color fonts-OTF from variable font. The variable font will be colrv0 already
-# We just rename as per naminc conventions. Then build colrv1 from it.
+# We just rename as per naming conventions. Then build colrv1 from it.
 $(FONTSDIR)/%/otf-color : $(FONTSDIR)/%/otf-variable
 	@mkdir -p $@
 	@mv $</$*-VF.otf $@/$*.colrv0.otf
@@ -159,7 +159,7 @@ $(FONTSDIR)/%/otf-color : $(FONTSDIR)/%/otf-variable
 	@rm -rf $<
 
 # Create Color fonts-OTF from otf font. The otf font will be colrv0 already
-# We just rename as per naminc conventions. Then build colrv1 from it.
+# We just rename as per naming conventions. Then build colrv1 from it.
 $(FONTSDIR)/%/otf-color : $(FONTSDIR)/%/otf
 	@mkdir -p $@
 	@mv $</$*.otf $@/$*.colrv0.otf
@@ -167,7 +167,7 @@ $(FONTSDIR)/%/otf-color : $(FONTSDIR)/%/otf
 	@rm -rf $<
 
 # Create Variable Color fonts-TTF from variable font. The variable font will be colrv0 already
-# We just rename as per naminc conventions. Then build colrv1 from it.
+# We just rename as per naming conventions. Then build colrv1 from it.
 $(FONTSDIR)/%/ttf-color : $(FONTSDIR)/%/ttf-variable
 	@mkdir -p $@
 	@mv $</$*-VF.ttf $@/$*.colrv0.ttf
@@ -175,7 +175,7 @@ $(FONTSDIR)/%/ttf-color : $(FONTSDIR)/%/ttf-variable
 	@rm -rf $<
 
 # Create Color fonts-TTF from TTF font. The otf font will be colrv0 already
-# We just rename as per naminc conventions. Then build colrv1 from it.
+# We just rename as per naming conventions. Then build colrv1 from it.
 $(FONTSDIR)/%/ttf-color : $(FONTSDIR)/%/ttf
 	@mkdir -p $@
 	@mv $</$*.ttf $@/$*.colrv0.ttf
@@ -332,3 +332,14 @@ release:
 	zip -r $(FONTSDIR)/Nupuram-Display.zip README.md OFL.txt $(FONTSDIR)/Nupuram-Display
 	sha256sum $(FONTSDIR)/Nupuram-Display.zip > $(FONTSDIR)/Nupuram-Display.zip.sha256
 	md5sum $(FONTSDIR)/Nupuram-Display.zip > $(FONTSDIR)/Nupuram-Display.zip.md5
+
+init:
+	pip-sync
+	pip check
+
+update: update-deps init
+
+update-deps:
+	export PIP_REQUIRE_VIRTUALENV=true
+	pip install --upgrade pip-tools pip wheel
+	pip-compile --upgrade --extra=tests,dev -o requirements.txt pyproject.toml

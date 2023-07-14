@@ -1,12 +1,13 @@
 """
 Generate STAT tables for a Variable Font Family
 """
+import logging
+import sys
+
+import yaml
 from fontTools import ttLib
 from fontTools.otlLib.builder import buildStatTable
 from munch import DefaultMunch
-import yaml
-import sys
-import logging
 
 log = logging.getLogger(__name__)
 

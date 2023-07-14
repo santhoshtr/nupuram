@@ -1,11 +1,11 @@
-from fontTools import ttLib
-from fontTools.colorLib import builder
-from fontTools.ttLib.tables import otTables as ot
-import sys
 import logging
+import sys
 from io import BytesIO
 
 import uharfbuzz as hb
+from fontTools import ttLib
+from fontTools.colorLib import builder
+from fontTools.ttLib.tables import otTables as ot
 
 log = logging.getLogger(__name__)
 
@@ -34,12 +34,12 @@ def getGlyphBounds(font, glyphName):
     h += y
     # Since the shadow extends beyond width and height, increase them by a factor.
     # Make the box slightly bigger by reducing xMin, yMin toog
-    return x-50, y-50, w*1.5, h*1.5
+    return x - 50, y - 50, w * 1.5, h * 1.5
 
 
 for glyph_name, layers in colr0.ColorLayers.items():
     # Remove udatta and anudatta from color font. They skew the clibbox a lot
-    if glyph_name in ['uni952', 'uni951']:
+    if glyph_name in ["uni952", "uni951"]:
         continue
     v1_layers = []
     colrv1_map[glyph_name] = (ot.PaintFormat.PaintColrLayers, v1_layers)
@@ -48,15 +48,17 @@ for glyph_name, layers in colr0.ColorLayers.items():
         # Match COLRv0 fill
 
         if cpal.numPaletteEntries == 2:
-            v1_layers.append({
-                "Format": ot.PaintFormat.PaintGlyph,
-                "Paint": {
-                    "Format": ot.PaintFormat.PaintSolid,
-                    "PaletteIndex": layer.colorID,
-                    "Alpha": 1,
-                },
-                "Glyph": layer.name,
-            })
+            v1_layers.append(
+                {
+                    "Format": ot.PaintFormat.PaintGlyph,
+                    "Paint": {
+                        "Format": ot.PaintFormat.PaintSolid,
+                        "PaletteIndex": layer.colorID,
+                        "Alpha": 1,
+                    },
+                    "Glyph": layer.name,
+                }
+            )
         else:
             if layer.colorID == 0:  # Shadow
                 c1 = 0
@@ -64,23 +66,22 @@ for glyph_name, layers in colr0.ColorLayers.items():
             if layer.colorID == 1:  # Main
                 c1 = 2
                 c2 = 1
-            v1_layers.append({
-                "Format": ot.PaintFormat.PaintGlyph,
-                "Paint":  {
-                    "Format": ot.PaintFormat.PaintLinearGradient,
-                    "ColorLine": {
-                        "ColorStop": [(0.0, c1), (1.0, c2)],
-                        "Extend": "reflect"
+            v1_layers.append(
+                {
+                    "Format": ot.PaintFormat.PaintGlyph,
+                    "Paint": {
+                        "Format": ot.PaintFormat.PaintLinearGradient,
+                        "ColorLine": {"ColorStop": [(0.0, c1), (1.0, c2)], "Extend": "reflect"},
+                        "x0": 0,
+                        "y0": 0,
+                        "x1": 0,
+                        "y1": 400,
+                        "x2": 100,
+                        "y2": 0,
                     },
-                    "x0": 0,
-                    "y0": 0,
-                    "x1": 0,
-                    "y1": 400,
-                    "x2": 100,
-                    "y2": 0,
-                },
-                "Glyph": layer.name,
-            })
+                    "Glyph": layer.name,
+                }
+            )
 
     if glyph_name not in clipBoxes:
         clipBoxes[glyph_name] = getGlyphBounds(font, glyph_name)

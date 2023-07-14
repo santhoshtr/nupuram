@@ -1,17 +1,16 @@
-from ufoLib2.objects import Font, Layer
-from munch import DefaultMunch
-from operator import itemgetter
 import copy
-import yaml
-import ufo2ft
-import sys
 import logging
+import sys
+from operator import itemgetter
+
+import ufo2ft
+import yaml
+from munch import DefaultMunch
+from ufoLib2.objects import Font, Layer
 
 log = logging.getLogger(__name__)
 
-colorConfig = DefaultMunch.fromDict(
-    yaml.load(open("config.yaml"), Loader=yaml.FullLoader)
-)
+colorConfig = DefaultMunch.fromDict(yaml.load(open("config.yaml"), Loader=yaml.FullLoader))
 
 config = colorConfig.colorfonts[sys.argv[1]]
 
@@ -20,7 +19,7 @@ def hex_to_rgba(hexcolor):
     hexcolor = hexcolor.lstrip("#")
     if len(hexcolor) == 6:
         hexcolor = hexcolor + "FF"
-    return tuple(int(hexcolor[i:i + 2], 16) for i in (0, 2, 4, 6))
+    return tuple(int(hexcolor[i : i + 2], 16) for i in (0, 2, 4, 6))
 
 
 layer_mapping = []
@@ -31,9 +30,7 @@ for layer_name in config["layers"]:
         font = Font().open(config["layers"][layer_name]["source"])
     else:
         if not font:
-            raise ValueError(
-                "Default font not found. Define default source as first item in layers"
-            )
+            raise ValueError("Default font not found. Define default source as first item in layers")
         layer: Layer = font.newLayer(layer_name)
         layer_font: Font = Font().open(config["layers"][layer_name]["source"])
         for base_glyph in layer_font:
