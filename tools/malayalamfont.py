@@ -567,7 +567,7 @@ class MalayalamFont(Font):
             ".null": 0,
             "nonmarkingreturn": 0,
             "uni00A0": 0x00A0,  # NBSP
-            "uni00AD": 0x00AD,  # Soft hyphen
+            # "uni00AD": 0x00AD,  # Soft hyphen
             "zwnj": 0x200C,
             "zwj": 0x200D,
         }
