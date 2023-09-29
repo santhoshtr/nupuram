@@ -268,6 +268,23 @@ class MalayalamFont(Font):
         routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
         self.fontFeatures.addFeature(feature, [routine])
 
+    def build_aam_sign(self):
+        """
+        Remove dotted circle from aam sign 'ാം'
+        """
+        feature = "akhn"
+        name = "remove_dotted_circle"
+
+        ligature_glyph_name = SVGGlyph.get_glyph_name("ാം")
+        sub = Substitution(
+            [[SVGGlyph.get_glyph_name("◌")], [SVGGlyph.get_glyph_name("ാ")], [SVGGlyph.get_glyph_name("ം")]],
+            replacement=[[ligature_glyph_name]],
+        )
+        rules = [sub]
+
+        routine = Routine(rules=rules, name=name, languages=LANGUAGE_MALAYALAM)
+        self.fontFeatures.addFeature(feature, [routine])
+
     def build_cons_conj_vowel_signs(self):
         feature = "psts"
         name = "psts_vowel_signs"
@@ -553,6 +570,7 @@ class MalayalamFont(Font):
         self.build_ra_sign()
         self.build_cons_ra_substitutions()
         self.build_cons_conj_vowel_signs()
+        self.build_aam_sign()
         self.build_kern()
         self.build_gpos()
         self.build_gdef()

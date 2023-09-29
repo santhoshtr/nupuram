@@ -49,6 +49,7 @@ AGL2UV_EXTRA = {
     "dotlessj": 0x0237,
     "jcaron": 0x01F0,
     "notdef": 0,
+    "uni25CC": 0x25CC,
 }
 UV2AGL_EXTRA = {
     0x0326: "commaaccent",
