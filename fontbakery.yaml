@@ -14,3 +14,7 @@ overrides:
     bad-filename: WARN
   com.google.fonts/check/fontdata_namecheck:
     namecheck-service: WARN
+  com.google.fonts/check/alt_caron:googlefonts:
+    bad-mark: WARN
+    wrong-mark: WARN
+
